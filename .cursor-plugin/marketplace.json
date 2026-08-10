@@ -1,0 +1,17 @@
+{
+  "name": "productos",
+  "owner": {
+    "name": "Chris Ashby",
+    "email": "chris@telescope.design"
+  },
+  "metadata": {
+    "description": "ProductOS — a complete operating system for taking a product from idea to revenue with AI agents."
+  },
+  "plugins": [
+    {
+      "name": "productos",
+      "source": ".",
+      "description": "Four phases (Define, Design, Develop, Distribute) with checklists, templates, and 35 skills that take a product from idea to revenue."
+    }
+  ]
+}
