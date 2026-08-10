@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onboarding Wireframe — [Product Name]</title>
+<style>
+  :root {
+    --bg: #f5f5f4;
+    --panel: #ffffff;
+    --border: #d6d3d1;
+    --ink: #1c1917;
+    --muted: #78716c;
+    --accent: #44403c;
+    --device-bg: #fafaf9;
+    --wire-fill: #e7e5e4;
+    --wire-line: #a8a29e;
+    --wire-text: #57534e;
+    --note-bg: #fef3c7;
+    --note-border: #fbbf24;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .app-header {
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+  }
+  .app-header h1 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+  .app-header p { margin: 0; color: var(--muted); font-size: 13px; }
+  .layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 320px;
+    min-height: calc(100vh - 56px);
+  }
+  .sidebar {
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    padding: 16px;
+    overflow-y: auto;
+  }
+  .sidebar h2, .annotation h2 {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  .screen-list { list-style: none; padding: 0; margin: 0; }
+  .screen-list li {
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+    margin-bottom: 2px;
+  }
+  .screen-list li:hover { background: var(--bg); }
+  .screen-list li.active { background: var(--bg); border-color: var(--border); font-weight: 500; }
+  .screen-list .num {
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    background: var(--border);
+    color: var(--ink);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .screen-list li.active .num { background: var(--ink); color: white; }
+  .canvas { padding: 40px; display: flex; align-items: flex-start; justify-content: center; overflow: auto; }
+
+  /* === DEVICE FRAMES — swap the class on .device to match the product's primary surface. === */
+  .device {
+    background: var(--device-bg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+  }
+  .screen { display: none; position: absolute; overflow-y: auto; }
+  .screen.active { display: block; }
+
+  /* Mobile phone — 320×640. iOS-style phone with notch. For consumer mobile AI apps. */
+  .device-mobile {
+    border: 8px solid var(--accent);
+    border-radius: 36px;
+    width: 320px;
+    height: 640px;
+  }
+  .device-mobile .notch {
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin: 8px auto 0;
+  }
+  .device-mobile .screen { inset: 24px 16px 16px; padding: 16px 0; }
+
+  /* Tablet — 480×680. Portrait tablet with thicker bezel. For iPad-first products. */
+  .device-tablet {
+    border: 12px solid var(--accent);
+    border-radius: 28px;
+    width: 480px;
+    height: 680px;
+  }
+  .device-tablet .screen { inset: 20px 24px 24px; padding: 16px 8px; }
+
+  /* Browser / web app — 800×500. Web chrome with traffic lights and URL bar. For B2B SaaS, marketplaces, creator economy, vertical SaaS, API/dev tool dashboards, productized service client portals. */
+  .device-browser {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 800px;
+    height: 500px;
+  }
+  .device-browser .browser-chrome {
+    height: 36px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 12px;
+  }
+  .device-browser .traffic-lights,
+  .device-desktop .traffic-lights { display: flex; gap: 6px; flex-shrink: 0; }
+  .device-browser .traffic-lights span,
+  .device-desktop .traffic-lights span { width: 10px; height: 10px; background: var(--wire-line); border-radius: 50%; display: block; }
+  .device-browser .url-bar {
+    flex: 1;
+    max-width: 360px;
+    margin: 0 auto;
+    height: 22px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .device-browser .screen { inset: 36px 0 0 0; padding: 24px 40px; }
+
+  /* Desktop native app window — 720×480. macOS-style chrome with title bar. For Granola, Raycast, Superhuman, Linear Desktop. */
+  .device-desktop {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 720px;
+    height: 480px;
+  }
+  .device-desktop .title-bar {
+    height: 28px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 12px;
+  }
+  .device-desktop .title-text { flex: 1; text-align: center; font-size: 11px; color: var(--muted); }
+  .device-desktop .screen { inset: 28px 0 0 0; padding: 24px 32px; }
+
+  /* Browser extension popup — 360×500. Small popover with a tab/arrow indicating it pops from the toolbar. For Grammarly, Honey, Loom, AI-extension products. */
+  .device-extension {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 360px;
+    height: 500px;
+    margin-top: 24px;
+  }
+  .device-extension .ext-arrow {
+    position: absolute;
+    top: -8px;
+    right: 32px;
+    width: 14px;
+    height: 14px;
+    background: var(--device-bg);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    transform: rotate(45deg);
+  }
+  .device-extension .screen { inset: 16px 16px 16px; padding: 8px 0; }
+  .wire-progress { display: flex; gap: 4px; margin-bottom: 24px; }
+  .wire-progress span { flex: 1; height: 3px; background: var(--wire-fill); border-radius: 2px; }
+  .wire-progress span.done { background: var(--wire-line); }
+  .wire-progress span.current { background: var(--ink); }
+  .wire-headline { font-size: 18px; font-weight: 600; color: var(--ink); margin: 0 0 8px; line-height: 1.3; }
+  .wire-sub { color: var(--wire-text); font-size: 13px; margin: 0 0 16px; }
+  .wire-box {
+    background: var(--wire-fill);
+    border: 1px dashed var(--wire-line);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    color: var(--wire-text);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+  .wire-option {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    cursor: default;
+  }
+  .wire-cta {
+    background: var(--ink);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 16px;
+    font-family: inherit;
+  }
+  .wire-cta:hover { opacity: 0.9; }
+  .wire-back {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    font-family: inherit;
+  }
+  .wire-loading { text-align: center; padding: 24px 0; }
+  .wire-loading-bar {
+    height: 4px;
+    background: var(--wire-fill);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 24px 0 16px;
+  }
+  .wire-loading-bar div {
+    height: 100%;
+    background: var(--ink);
+    width: 100%;
+    animation: load 2.5s ease-out infinite;
+    transform-origin: left;
+  }
+  @keyframes load {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+  }
+  .wire-testimonial {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 12px;
+    color: var(--wire-text);
+    margin: 12px 0;
+    font-style: italic;
+  }
+  .annotation {
+    background: var(--panel);
+    border-left: 1px solid var(--border);
+    padding: 24px;
+    overflow-y: auto;
+  }
+  .annotation .ann-screen-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+  .annotation dl { margin: 0; }
+  .annotation dt {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 16px;
+  }
+  .annotation dt:first-child { margin-top: 0; }
+  .annotation dd { margin: 4px 0 0; font-size: 13px; line-height: 1.55; color: var(--ink); }
+  .annotation .ref {
+    background: var(--note-bg);
+    border-left: 3px solid var(--note-border);
+    padding: 10px 12px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--wire-text);
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <h1>Onboarding Wireframe — [Product Name]</h1>
+  <p>Click the primary CTA on each screen to advance. Use the sidebar to jump to any screen. The right panel explains what each screen tests.</p>
+</header>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <h2>Screens</h2>
+    <ol class="screen-list" id="screen-list">
+      <li class="active" data-jump="1"><span class="num">1</span> Goal selection</li>
+      <li data-jump="2"><span class="num">2</span> Personalization</li>
+      <li data-jump="3"><span class="num">3</span> Analyzing</li>
+      <li data-jump="4"><span class="num">4</span> Plan reveal</li>
+      <li data-jump="5"><span class="num">5</span> Paywall</li>
+    </ol>
+  </aside>
+
+  <main class="canvas">
+    <!--
+      DEVICE FRAME — pick the class on .device that matches the product's primary surface.
+      Five frames are defined in the CSS above; their dimensions are sized to fit the canvas.
+
+      device-mobile     (320×640)  Consumer mobile AI apps. Cal AI / Noom / Rizz shape.
+                        Chrome: <div class="notch"></div>
+
+      device-tablet     (480×680)  iPad-first or large-tablet products.
+                        Chrome: none.
+
+      device-browser    (800×500)  B2B AI SaaS, marketplaces, creator economy, vertical SaaS,
+                                   API/dev tool dashboards, productized service client portals.
+                        Chrome: <div class="browser-chrome">
+                                  <div class="traffic-lights"><span></span><span></span><span></span></div>
+                                  <div class="url-bar">app.yourproduct.com</div>
+                                </div>
+
+      device-desktop    (720×480)  Native desktop apps. Granola / Raycast / Superhuman shape.
+                        Chrome: <div class="title-bar">
+                                  <div class="traffic-lights"><span></span><span></span><span></span></div>
+                                  <div class="title-text">Product Name</div>
+                                </div>
+
+      device-extension  (360×500)  Browser extension popups. Grammarly / Honey / Loom shape.
+                        Chrome: <div class="ext-arrow"></div>
+
+      Replace `device-mobile` and the `<div class="notch"></div>` below with the right pair
+      for the user's product. All .screen content sizing adapts automatically.
+    -->
+    <div class="device device-mobile">
+      <div class="notch"></div>
+
+      <section class="screen active" data-screen="1">
+        <div class="wire-progress">
+          <span class="current"></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h1 class="wire-headline">What's your goal?</h1>
+        <p class="wire-sub">We'll tailor the plan to it.</p>
+        <div class="wire-option">Lose weight</div>
+        <div class="wire-option">Maintain</div>
+        <div class="wire-option">Gain muscle</div>
+        <button class="wire-cta" data-next="2">Continue</button>
+      </section>
+
+      <section class="screen" data-screen="2">
+        <div class="wire-progress">
+          <span class="done"></span><span class="current"></span><span></span><span></span><span></span>
+        </div>
+        <button class="wire-back" data-next="1">← Back</button>
+        <h1 class="wire-headline">A few quick questions</h1>
+        <p class="wire-sub">Personalizes your plan in 60 seconds.</p>
+        <div class="wire-box">[ HEIGHT INPUT ]</div>
+        <div class="wire-box">[ WEIGHT INPUT ]</div>
+        <div class="wire-box">[ AGE INPUT ]</div>
+        <button class="wire-cta" data-next="3">Continue</button>
+      </section>
+
+      <section class="screen" data-screen="3">
+        <div class="wire-progress">
+          <span class="done"></span><span class="done"></span><span class="current"></span><span></span><span></span>
+        </div>
+        <div class="wire-loading">
+          <h1 class="wire-headline">Building your plan…</h1>
+          <div class="wire-loading-bar"><div></div></div>
+          <p class="wire-sub">Analyzing your answers</p>
+          <div class="wire-testimonial">★★★★★ "Lost 12 lbs in 6 weeks." — Sarah, 34</div>
+          <div class="wire-testimonial">★★★★★ "Finally hit my macros." — Mike, 28</div>
+        </div>
+        <button class="wire-cta" data-next="4">Continue →</button>
+      </section>
+
+      <section class="screen" data-screen="4">
+        <div class="wire-progress">
+          <span class="done"></span><span class="done"></span><span class="done"></span><span class="current"></span><span></span>
+        </div>
+        <h1 class="wire-headline">Your plan is ready</h1>
+        <p class="wire-sub">Custom-built from your answers.</p>
+        <div class="wire-box">[ 1,840 CAL / DAY ]</div>
+        <div class="wire-box">[ 140G PROTEIN ]</div>
+        <div class="wire-box">[ GOAL: 90 DAYS ]</div>
+        <button class="wire-cta" data-next="5">Start my plan</button>
+      </section>
+
+      <section class="screen" data-screen="5">
+        <div class="wire-progress">
+          <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="current"></span>
+        </div>
+        <div class="wire-testimonial">★★★★★ "Best app I've ever bought."</div>
+        <h1 class="wire-headline">Unlock your plan</h1>
+        <p class="wire-sub">3-day free trial, then $59.99/year.</p>
+        <div class="wire-option">Annual — $59.99/yr (Best value)</div>
+        <div class="wire-option">Monthly — $9.99/mo</div>
+        <button class="wire-cta">Start free trial</button>
+      </section>
+
+    </div>
+  </main>
+
+  <aside class="annotation">
+    <h2>Screen notes</h2>
+    <div id="ann-content"></div>
+  </aside>
+
+</div>
+
+<script>
+const annotations = {
+  "1": {
+    title: "1. Goal selection",
+    goal: "Open with a question, not a logo. Activates investment from second zero.",
+    action: "Tap one of three goal options within 5 seconds of landing.",
+    proves: "The user is here for a real reason — and the AI is going to personalize on that reason.",
+    risk: "Unclear headline or vague options = first-screen bounce.",
+    ref: "BONUS - Mobile Onboarding Best Practice, Tactic #1 (Open With a Question, Not a Logo)."
+  },
+  "2": {
+    title: "2. Personalization questions",
+    goal: "Collect the data the AI needs to produce the personalized plan. Each question is a sunk-cost deposit.",
+    action: "Enter height, weight, age — three taps, no keyboard where possible.",
+    proves: "The product is asking about THEM, not pitching itself.",
+    risk: "Keyboard typing or more than 5 inputs collapses completion rate.",
+    ref: "BONUS - Mobile Onboarding, Tactics #2–6 (The Personalization Quiz). Roughly 40% data, 30% aspiration, 30% pain."
+  },
+  "3": {
+    title: "3. Analyzing loading screen",
+    goal: "Make the personalization feel earned. Layer social proof at the moment of trust transfer.",
+    action: "Wait 8–12 seconds while the loading bar fills and testimonials rotate.",
+    proves: "The AI did real work. Other people have succeeded with this.",
+    risk: "Too short = unbelievable. Too long = bounce. Sweet spot 8–12 seconds.",
+    ref: "BONUS - Mobile Onboarding, Tactic #7 (Analyzing Your Answers Loading Screen). +8.5% trial-start lift documented."
+  },
+  "4": {
+    title: "4. Plan reveal",
+    goal: "Show the user the artifact they just earned. This is the magic moment.",
+    action: "Read the personalized numbers. Tap Start my plan.",
+    proves: "The product can do for them what they hoped — proven on their real data.",
+    risk: "Generic-feeling numbers (not personalized to their inputs) breaks the spell.",
+    ref: "BONUS - Mobile Onboarding, Tactic #8 (The Personalized Plan Reveal). The Magic Moment lives here."
+  },
+  "5": {
+    title: "5. Paywall",
+    goal: "Convert the earned commitment into a trial start. Loss aversion at the cliff edge.",
+    action: "Tap Start free trial. Annual + trial is the default-selected option.",
+    proves: "The cost of walking away (lose the plan) > the cost of paying (free trial).",
+    risk: "Hard paywall without trial collapses conversion. Multiple plans = decision fatigue.",
+    ref: "BONUS - Mobile Onboarding, Tactics #10–11 (Lead With Review, Annual With Trial as Default)."
+  }
+};
+
+const screens = document.querySelectorAll(".screen");
+const listItems = document.querySelectorAll("#screen-list li");
+const annContent = document.getElementById("ann-content");
+
+function go(n) {
+  const target = String(n);
+  screens.forEach(s => s.classList.toggle("active", s.dataset.screen === target));
+  listItems.forEach(li => li.classList.toggle("active", li.dataset.jump === target));
+  renderAnnotation(target);
+}
+
+function renderAnnotation(n) {
+  const a = annotations[n];
+  if (!a) { annContent.innerHTML = ""; return; }
+  annContent.innerHTML = `
+    <div class="ann-screen-title">${a.title}</div>
+    <dl>
+      <dt>Goal of this screen</dt><dd>${a.goal}</dd>
+      <dt>User action expected</dt><dd>${a.action}</dd>
+      <dt>What this proves</dt><dd>${a.proves}</dd>
+      <dt>Drop-off risk</dt><dd>${a.risk}</dd>
+    </dl>
+    <div class="ref">${a.ref}</div>
+  `;
+}
+
+document.querySelectorAll("[data-next]").forEach(el => {
+  el.addEventListener("click", e => go(e.currentTarget.dataset.next));
+});
+listItems.forEach(li => {
+  li.addEventListener("click", () => go(li.dataset.jump));
+});
+
+renderAnnotation("1");
+</script>
+
+</body>
+</html>

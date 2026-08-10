@@ -1,0 +1,16 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Environment / secrets
+.env
+.env.*
+
+# Private research material — never ship
+_private/
+data/
+coach/dist/

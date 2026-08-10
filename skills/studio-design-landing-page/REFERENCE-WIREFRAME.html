@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page Wireframe — [Product Name]</title>
+<style>
+  :root {
+    --bg: #f5f5f4;
+    --panel: #ffffff;
+    --border: #d6d3d1;
+    --ink: #1c1917;
+    --muted: #78716c;
+    --accent: #44403c;
+    --device-bg: #fafaf9;
+    --wire-fill: #e7e5e4;
+    --wire-line: #a8a29e;
+    --wire-text: #57534e;
+    --note-bg: #fef3c7;
+    --note-border: #fbbf24;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .app-header {
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .app-header h1 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+  .app-header p { margin: 0; color: var(--muted); font-size: 13px; }
+  .layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 320px;
+    min-height: calc(100vh - 56px);
+  }
+  .sidebar {
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    padding: 16px;
+    position: sticky;
+    top: 56px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+  }
+  .sidebar h2, .annotation h2 {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  .section-list { list-style: none; padding: 0; margin: 0; }
+  .section-list li {
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+    margin-bottom: 2px;
+  }
+  .section-list li:hover { background: var(--bg); }
+  .section-list li.active { background: var(--bg); border-color: var(--border); font-weight: 500; }
+  .section-list .num {
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    background: var(--border);
+    color: var(--ink);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .section-list li.active .num { background: var(--ink); color: white; }
+
+  /* Browser-frame canvas */
+  .canvas {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .browser-frame {
+    width: 100%;
+    max-width: 1080px;
+    background: var(--device-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+  }
+  .browser-chrome {
+    height: 36px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .traffic-lights { display: flex; gap: 6px; flex-shrink: 0; }
+  .traffic-lights span {
+    width: 10px;
+    height: 10px;
+    background: var(--wire-line);
+    border-radius: 50%;
+    display: block;
+  }
+  .url-bar {
+    flex: 1;
+    max-width: 360px;
+    margin: 0 auto;
+    height: 22px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  /* Page sections */
+  .page-content { background: var(--panel); }
+  .page-section {
+    padding: 60px 40px;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 60px;
+  }
+  .page-section:last-child { border-bottom: none; padding-bottom: 0; }
+  .page-section.section-header {
+    padding: 16px 40px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Nav */
+  .wire-nav { display: flex; align-items: center; gap: 24px; }
+  .wire-logo {
+    background: var(--wire-fill);
+    border: 1px dashed var(--wire-line);
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: var(--wire-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .wire-nav-links {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    color: var(--wire-text);
+    font-size: 13px;
+  }
+  .wire-cta-small {
+    background: var(--ink);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* Hero */
+  .wire-hero { text-align: center; padding: 40px 0 20px; }
+  .wire-headline-xl {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 16px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .wire-sub-lg {
+    font-size: 18px;
+    color: var(--wire-text);
+    margin: 0 auto 24px;
+    max-width: 600px;
+  }
+  .wire-cta-lg {
+    background: var(--ink);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    margin-bottom: 32px;
+  }
+  .wire-hero-visual {
+    background: var(--wire-fill);
+    border: 1px dashed var(--wire-line);
+    border-radius: 8px;
+    padding: 60px;
+    color: var(--wire-text);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .wire-hero-testimonial {
+    margin: 16px auto 0;
+    max-width: 500px;
+    font-size: 13px;
+    color: var(--wire-text);
+    font-style: italic;
+  }
+
+  /* Logo bar */
+  .wire-logos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .wire-logo-box {
+    background: var(--wire-fill);
+    border: 1px dashed var(--wire-line);
+    border-radius: 4px;
+    padding: 14px;
+    text-align: center;
+    color: var(--wire-text);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Section headings */
+  .wire-eyebrow {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .wire-h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 12px;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+  .wire-section-sub {
+    font-size: 16px;
+    color: var(--wire-text);
+    margin: 0 auto 32px;
+    text-align: center;
+    max-width: 600px;
+  }
+
+  /* Steps */
+  .wire-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .wire-step { background: var(--bg); border-radius: 8px; padding: 20px; }
+  .wire-step-num {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    background: var(--ink);
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .wire-step-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .wire-step-desc { font-size: 13px; color: var(--wire-text); }
+
+  /* Features grid */
+  .wire-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .wire-feature { padding: 20px; border: 1px solid var(--border); border-radius: 8px; }
+  .wire-feature-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--wire-fill);
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .wire-feature-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .wire-feature-desc { font-size: 13px; color: var(--wire-text); }
+
+  /* Testimonials */
+  .wire-testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .wire-testimonial-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .wire-testimonial-quote { font-size: 14px; color: var(--ink); margin-bottom: 12px; font-style: italic; }
+  .wire-testimonial-author { font-size: 12px; color: var(--wire-text); }
+  .wire-rating { text-align: center; margin-top: 24px; font-size: 14px; color: var(--ink); font-weight: 600; }
+
+  /* Pricing */
+  .wire-pricing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .wire-pricing-tier {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
+    position: relative;
+  }
+  .wire-pricing-tier.popular { border: 2px solid var(--ink); }
+  .wire-popular-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ink);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .wire-pricing-name {
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  .wire-pricing-amount { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+  .wire-pricing-period { font-size: 12px; color: var(--wire-text); margin-bottom: 16px; }
+  .wire-pricing-features { list-style: none; padding: 0; margin: 0 0 16px; }
+  .wire-pricing-features li { font-size: 13px; color: var(--wire-text); padding: 4px 0; }
+  .wire-pricing-cta {
+    width: 100%;
+    background: var(--ink);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .wire-pricing-tier:not(.popular) .wire-pricing-cta {
+    background: var(--bg);
+    color: var(--ink);
+    border: 1px solid var(--border);
+  }
+
+  /* FAQ */
+  .wire-faq { max-width: 700px; margin: 0 auto; }
+  .wire-faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+  .wire-faq-q { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .wire-faq-a { font-size: 13px; color: var(--wire-text); }
+
+  /* Final CTA */
+  .wire-final-cta {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--bg);
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .wire-secondary-link { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+  /* Footer */
+  .wire-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 0 20px 20px;
+  }
+  .wire-footer-col h4 {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 10px;
+  }
+  .wire-footer-col ul { list-style: none; padding: 0; margin: 0; }
+  .wire-footer-col li { font-size: 12px; color: var(--wire-text); padding: 3px 0; }
+  .wire-footer-bottom {
+    border-top: 1px solid var(--border);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .wire-compliance-badges { display: flex; gap: 8px; }
+  .wire-compliance-badges span {
+    background: var(--wire-fill);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    color: var(--wire-text);
+  }
+
+  /* Annotation panel */
+  .annotation {
+    background: var(--panel);
+    border-left: 1px solid var(--border);
+    padding: 24px;
+    position: sticky;
+    top: 56px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+  }
+  .ann-screen-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+  .annotation dl { margin: 0; }
+  .annotation dt {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 16px;
+  }
+  .annotation dt:first-child { margin-top: 0; }
+  .annotation dd { margin: 4px 0 0; font-size: 13px; line-height: 1.55; color: var(--ink); }
+  .annotation .ref {
+    background: var(--note-bg);
+    border-left: 3px solid var(--note-border);
+    padding: 10px 12px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--wire-text);
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <h1>Landing Page Wireframe — [Product Name]</h1>
+  <p>Scroll through the page to feel the flow. Sidebar jumps to sections. Right panel explains what each section tests as you scroll.</p>
+</header>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <h2>Sections</h2>
+    <ol class="section-list" id="section-list">
+      <li class="active" data-section="header"><span class="num">1</span> Header</li>
+      <li data-section="hero"><span class="num">2</span> Hero</li>
+      <li data-section="social-proof"><span class="num">3</span> Social Proof Bar</li>
+      <li data-section="problem"><span class="num">4</span> Problem</li>
+      <li data-section="solution"><span class="num">5</span> Solution</li>
+      <li data-section="features"><span class="num">6</span> Features</li>
+      <li data-section="testimonials"><span class="num">7</span> Deep Social Proof</li>
+      <li data-section="pricing"><span class="num">8</span> Pricing</li>
+      <li data-section="faq"><span class="num">9</span> FAQ</li>
+      <li data-section="final-cta"><span class="num">10</span> Final CTA</li>
+      <li data-section="footer"><span class="num">11</span> Footer</li>
+    </ol>
+  </aside>
+
+  <main class="canvas">
+    <div class="browser-frame">
+      <div class="browser-chrome">
+        <div class="traffic-lights"><span></span><span></span><span></span></div>
+        <div class="url-bar">yourproduct.com</div>
+      </div>
+      <div class="page-content">
+
+        <section class="page-section section-header" data-section="header">
+          <div class="wire-nav">
+            <div class="wire-logo">[Logo]</div>
+            <div class="wire-nav-links"><span>Product</span><span>Pricing</span><span>Customers</span><span>Docs</span><span>Login</span></div>
+            <div class="wire-cta-small">Start free</div>
+          </div>
+        </section>
+
+        <section class="page-section" data-section="hero">
+          <div class="wire-hero">
+            <h1 class="wire-headline-xl">The outcome users want, in plain English</h1>
+            <p class="wire-sub-lg">A one-sentence sub-headline that names the customer or the timeframe.</p>
+            <button class="wire-cta-lg">Start my free trial</button>
+            <div class="wire-hero-visual">[ HERO VISUAL — runnable code / prompt box / product UI screenshot ]</div>
+            <p class="wire-hero-testimonial">★★★★★ "We shipped 3x faster" — Lara, eng lead at Acme</p>
+          </div>
+        </section>
+
+        <section class="page-section" data-section="social-proof">
+          <p class="wire-eyebrow">Trusted by teams at</p>
+          <div class="wire-logos">
+            <div class="wire-logo-box">Logo 1</div>
+            <div class="wire-logo-box">Logo 2</div>
+            <div class="wire-logo-box">Logo 3</div>
+            <div class="wire-logo-box">Logo 4</div>
+            <div class="wire-logo-box">Logo 5</div>
+            <div class="wire-logo-box">Logo 6</div>
+          </div>
+        </section>
+
+        <section class="page-section" data-section="problem">
+          <p class="wire-eyebrow">The problem</p>
+          <h2 class="wire-h2">The pain in the customer's own language</h2>
+          <p class="wire-section-sub">A 2–3 sentence problem statement naming a specific cost (hours, dollars, missed opportunities).</p>
+          <div class="wire-hero-visual" style="max-width: 600px; padding: 40px;">[ SUPPORTING VISUAL OR STAT ]</div>
+        </section>
+
+        <section class="page-section" data-section="solution">
+          <p class="wire-eyebrow">How it works</p>
+          <h2 class="wire-h2">Three steps from problem to outcome</h2>
+          <div class="wire-steps">
+            <div class="wire-step">
+              <div class="wire-step-num">1</div>
+              <div class="wire-step-title">Connect your data</div>
+              <div class="wire-step-desc">Action verb, 20-word description of what happens.</div>
+            </div>
+            <div class="wire-step">
+              <div class="wire-step-num">2</div>
+              <div class="wire-step-title">AI generates a draft</div>
+              <div class="wire-step-desc">Action verb, 20-word description of what happens.</div>
+            </div>
+            <div class="wire-step">
+              <div class="wire-step-num">3</div>
+              <div class="wire-step-title">You ship in minutes</div>
+              <div class="wire-step-desc">Action verb, 20-word description of what happens.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section" data-section="features">
+          <p class="wire-eyebrow">Why teams choose us</p>
+          <h2 class="wire-h2">Benefits, not features</h2>
+          <div class="wire-features">
+            <div class="wire-feature">
+              <div class="wire-feature-icon"></div>
+              <div class="wire-feature-title">Benefit-led headline</div>
+              <div class="wire-feature-desc">20-word description of the outcome this unlocks for the user.</div>
+            </div>
+            <div class="wire-feature">
+              <div class="wire-feature-icon"></div>
+              <div class="wire-feature-title">Benefit-led headline</div>
+              <div class="wire-feature-desc">20-word description of the outcome this unlocks for the user.</div>
+            </div>
+            <div class="wire-feature">
+              <div class="wire-feature-icon"></div>
+              <div class="wire-feature-title">Benefit-led headline</div>
+              <div class="wire-feature-desc">20-word description of the outcome this unlocks for the user.</div>
+            </div>
+            <div class="wire-feature">
+              <div class="wire-feature-icon"></div>
+              <div class="wire-feature-title">Benefit-led headline</div>
+              <div class="wire-feature-desc">20-word description of the outcome this unlocks for the user.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section" data-section="testimonials">
+          <p class="wire-eyebrow">Customer outcomes</p>
+          <h2 class="wire-h2">Real results from real teams</h2>
+          <div class="wire-testimonials">
+            <div class="wire-testimonial-card">
+              <p class="wire-testimonial-quote">"Specific quantified result — e.g., generated $504k Net New ARR in 90 days."</p>
+              <div class="wire-testimonial-author">— Name, Role at Company</div>
+            </div>
+            <div class="wire-testimonial-card">
+              <p class="wire-testimonial-quote">"Second case study quote with a specific number tied to a real outcome."</p>
+              <div class="wire-testimonial-author">— Name, Role at Company</div>
+            </div>
+            <div class="wire-testimonial-card">
+              <p class="wire-testimonial-quote">"Third case study quote with a specific number tied to a real outcome."</p>
+              <div class="wire-testimonial-author">— Name, Role at Company</div>
+            </div>
+          </div>
+          <div class="wire-rating">★★★★★ 4.8 from 12,400 reviews on G2</div>
+        </section>
+
+        <section class="page-section" data-section="pricing">
+          <p class="wire-eyebrow">Simple, transparent pricing</p>
+          <h2 class="wire-h2">Pick a plan that fits</h2>
+          <div class="wire-pricing">
+            <div class="wire-pricing-tier">
+              <div class="wire-pricing-name">Starter</div>
+              <div class="wire-pricing-amount">$0</div>
+              <div class="wire-pricing-period">forever · no credit card</div>
+              <ul class="wire-pricing-features">
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+              </ul>
+              <button class="wire-pricing-cta">Start free</button>
+            </div>
+            <div class="wire-pricing-tier popular">
+              <div class="wire-popular-badge">Most popular</div>
+              <div class="wire-pricing-name">Growth</div>
+              <div class="wire-pricing-amount">$29</div>
+              <div class="wire-pricing-period">per user / month</div>
+              <ul class="wire-pricing-features">
+                <li>Everything in Starter</li>
+                <li>Feature 4</li>
+                <li>Feature 5</li>
+                <li>Feature 6</li>
+              </ul>
+              <button class="wire-pricing-cta">Start my free trial</button>
+            </div>
+            <div class="wire-pricing-tier">
+              <div class="wire-pricing-name">Enterprise</div>
+              <div class="wire-pricing-amount">Custom</div>
+              <div class="wire-pricing-period">contact us</div>
+              <ul class="wire-pricing-features">
+                <li>Everything in Growth</li>
+                <li>SSO + SCIM</li>
+                <li>Audit logs</li>
+                <li>SLA</li>
+              </ul>
+              <button class="wire-pricing-cta">Talk to sales</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section" data-section="faq">
+          <p class="wire-eyebrow">Frequently asked</p>
+          <h2 class="wire-h2">Questions buyers actually ask</h2>
+          <div class="wire-faq">
+            <div class="wire-faq-item">
+              <div class="wire-faq-q">Can I change plans anytime?</div>
+              <div class="wire-faq-a">One-sentence answer in plain English.</div>
+            </div>
+            <div class="wire-faq-item">
+              <div class="wire-faq-q">What happens at the end of trial?</div>
+              <div class="wire-faq-a">One-sentence answer in plain English.</div>
+            </div>
+            <div class="wire-faq-item">
+              <div class="wire-faq-q">Do you offer refunds?</div>
+              <div class="wire-faq-a">One-sentence answer in plain English.</div>
+            </div>
+            <div class="wire-faq-item">
+              <div class="wire-faq-q">How does the seat count work?</div>
+              <div class="wire-faq-a">One-sentence answer in plain English.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section" data-section="final-cta">
+          <div class="wire-final-cta">
+            <h2 class="wire-h2">Repeated closing headline</h2>
+            <p class="wire-sub-lg" style="margin-bottom: 24px;">Same promise as the hero, restated.</p>
+            <button class="wire-cta-lg">Start my free trial</button>
+            <p class="wire-secondary-link">Or watch a 3-minute demo →</p>
+          </div>
+        </section>
+
+        <section class="page-section" data-section="footer">
+          <div class="wire-footer">
+            <div class="wire-footer-col">
+              <h4>Product</h4>
+              <ul>
+                <li>Features</li>
+                <li>Pricing</li>
+                <li>Changelog</li>
+              </ul>
+            </div>
+            <div class="wire-footer-col">
+              <h4>Company</h4>
+              <ul>
+                <li>About</li>
+                <li>Customers</li>
+                <li>Careers</li>
+              </ul>
+            </div>
+            <div class="wire-footer-col">
+              <h4>Resources</h4>
+              <ul>
+                <li>Docs</li>
+                <li>API</li>
+                <li>Status</li>
+              </ul>
+            </div>
+            <div class="wire-footer-col">
+              <h4>Legal</h4>
+              <ul>
+                <li>Privacy</li>
+                <li>Terms</li>
+                <li>Security</li>
+              </ul>
+            </div>
+          </div>
+          <div class="wire-footer-bottom">
+            <span>© [Year] [Product Name]</span>
+            <div class="wire-compliance-badges">
+              <span>SOC 2</span>
+              <span>GDPR</span>
+              <span>ISO 27001</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <aside class="annotation">
+    <h2>Section notes</h2>
+    <div id="ann-content"></div>
+  </aside>
+
+</div>
+
+<script>
+const annotations = {
+  "header": {
+    title: "1. Header",
+    goal: "Provide persistent nav and the sticky CTA. The CTA in the header is the same copy as the hero CTA.",
+    proves: "The product takes itself seriously and self-serve is available.",
+    risk: "More than 5 nav items dilutes intent. Hidden pricing in nav reads as expensive.",
+    ref: "Landing Page Tactics #1 & #2 (Sticky Header + Pricing Link in Nav)."
+  },
+  "hero": {
+    title: "2. Hero",
+    goal: "Make one promise above the fold in plain English. The 10-word value-prop + above-fold CTA combo drives +96% engagement (Hotjar 2026).",
+    proves: "The product does this specific thing for this specific user.",
+    risk: "Stock illustration hero, multi-CTA, 'Submit' button copy, or video that delays comprehension.",
+    ref: "Landing Page Tactics #3–6 (Value-Prop Headline, Sub-Headline, First-Person CTA, Hero Demonstration)."
+  },
+  "social-proof": {
+    title: "3. Social Proof Bar",
+    goal: "Above-the-fold (or just below-the-fold) credibility signal. 81% of best-in-class heroes show social proof before the scroll.",
+    proves: "Other teams take this product seriously.",
+    risk: "Too many logos (>10) reads as desperate. 'Trusted by leaders' tagline above adds nothing.",
+    ref: "Landing Page Tactic #7 (Logo Bar Below Hero)."
+  },
+  "problem": {
+    title: "4. Problem",
+    goal: "Name the pain in the customer's own language. Sets up the solution.",
+    proves: "The product team understands what the user actually struggles with.",
+    risk: "Generic problem framing or abstract corporate language.",
+    ref: "Landing Page Tactic #9 (The Problem Statement). Uses verbatim user language."
+  },
+  "solution": {
+    title: "5. Solution / How It Works",
+    goal: "Three steps the user can mentally simulate. Each step ≤15 words with a small visual.",
+    proves: "The path from signup to outcome is concrete and short.",
+    risk: "Abstract concepts instead of verbs. More than 3 steps.",
+    ref: "Landing Page Tactic #10 (Solution / How It Works)."
+  },
+  "features": {
+    title: "6. Features as Benefits",
+    goal: "4–6 benefit blocks. Each headline is benefit-led, not feature-led.",
+    proves: "Specific outcomes the user will unlock.",
+    risk: "Feature names ('Slack integration') instead of benefits ('Get alerted when a customer churns').",
+    ref: "Landing Page Tactic #11 (Features as Benefits)."
+  },
+  "testimonials": {
+    title: "7. Deep Social Proof",
+    goal: "Three case study pull-quotes with specific revenue/outcome numbers + star rating + review count.",
+    proves: "Real teams have shipped real outcomes — not just used the product.",
+    risk: "Generic praise. No revenue numbers. Anonymous testimonials.",
+    ref: "Landing Page Tactics #12–13 (Case Study Pull-Quotes + Star Rating)."
+  },
+  "pricing": {
+    title: "8. Pricing",
+    goal: "Three tiers, one highlighted as 'most popular'. Annual/monthly toggle. CTAs match the hero CTA.",
+    proves: "Pricing is transparent, self-serve is available, the path to value isn't hidden.",
+    risk: "Hidden pricing (sales-gate). More than 3 tiers. No 'most popular' anchor.",
+    ref: "Landing Page Tactic #14 (Three-Tier Pricing Table)."
+  },
+  "faq": {
+    title: "9. FAQ",
+    goal: "Defuse the 4–6 objections the sales team gets most often — pricing, implementation, security, refunds.",
+    proves: "The team has anticipated objections and handled them honestly.",
+    risk: "Generic FAQs ('How does it work?'). Adds length without conversion lift.",
+    ref: "Landing Page Tactic #15 (Pricing FAQ)."
+  },
+  "final-cta": {
+    title: "10. Final CTA",
+    goal: "Repeated CTA block for the scroll-to-bottom high-intent user. Same copy as the hero.",
+    proves: "The team is confident enough in the offer to repeat it.",
+    risk: "Different CTA copy than the hero (confuses). No low-friction alternative for the not-yet-ready.",
+    ref: "Landing Page Tactic #16 (Repeated CTA Block)."
+  },
+  "footer": {
+    title: "11. Footer",
+    goal: "Trust signals (SOC 2, GDPR, ISO 27001), compliance badges, status page, legal links. The procurement-team surface.",
+    proves: "The product is enterprise-ready and legally sound.",
+    risk: "Compliance badges missing. Status page absent. Privacy/terms hidden.",
+    ref: "Landing Page Tactic #17 (Footer With Trust Signals)."
+  }
+};
+
+const sections = document.querySelectorAll(".page-section");
+const listItems = document.querySelectorAll("#section-list li");
+const annContent = document.getElementById("ann-content");
+
+function renderAnnotation(sectionName) {
+  const a = annotations[sectionName];
+  if (!a) return;
+  annContent.innerHTML = `
+    <div class="ann-screen-title">${a.title}</div>
+    <dl>
+      <dt>Goal of this section</dt><dd>${a.goal}</dd>
+      <dt>What this proves</dt><dd>${a.proves}</dd>
+      <dt>Drop-off risk</dt><dd>${a.risk}</dd>
+    </dl>
+    <div class="ref">${a.ref}</div>
+  `;
+  listItems.forEach(li => li.classList.toggle("active", li.dataset.section === sectionName));
+}
+
+listItems.forEach(li => {
+  li.addEventListener("click", () => {
+    const target = document.querySelector(`.page-section[data-section="${li.dataset.section}"]`);
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      renderAnnotation(entry.target.dataset.section);
+    }
+  });
+}, {
+  rootMargin: "-30% 0px -55% 0px",
+  threshold: 0
+});
+
+sections.forEach(s => observer.observe(s));
+
+renderAnnotation("header");
+</script>
+
+</body>
+</html>
