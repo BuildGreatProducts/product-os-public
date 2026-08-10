@@ -39,13 +39,14 @@ claude plugin install ./productos
 
 ### Codex
 
-Add the `productos/` folder as a plugin source, then install:
+From your app repo root, add the `productos/` folder as a marketplace (it ships with its own `.agents/plugins/marketplace.json`), then install:
 
 ```
-codex plugin install productos
+codex plugin marketplace add ./productos
+codex plugin add productos@productos
 ```
 
-(Or point Codex at it with its plugin marketplace command — see [developers.openai.com/codex/plugins](https://developers.openai.com/codex/plugins).)
+(See [developers.openai.com/codex/plugins](https://developers.openai.com/codex/plugins) for how Codex plugins and marketplaces work.)
 
 ### Cursor
 
