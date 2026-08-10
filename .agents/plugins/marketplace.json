@@ -1,0 +1,20 @@
+{
+  "name": "productos",
+  "interface": {
+    "displayName": "ProductOS"
+  },
+  "plugins": [
+    {
+      "name": "productos",
+      "source": {
+        "source": "local",
+        "path": "."
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

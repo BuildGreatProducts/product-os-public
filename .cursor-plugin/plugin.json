@@ -1,11 +1,15 @@
 {
   "name": "productos",
+  "displayName": "ProductOS",
   "version": "1.5.0",
   "description": "ProductOS — a complete operating system for taking a product from idea to revenue with AI agents. Installs inside your app repo as productos/, optionally ships with a coach-composed programme plan, and runs four phases (Define, Design, Develop, Distribute), each with checklists, templates, and 35 skills that fill them in.",
   "author": {
     "name": "Chris Ashby",
     "email": "chris@telescope.design"
   },
+  "homepage": "https://telescope.design",
+  "repository": "https://github.com/buildgreatproducts/product-os-public",
+  "license": "Commercial - see LICENSE.md",
   "keywords": [
     "product",
     "founder",
@@ -15,5 +19,12 @@
     "design-system",
     "prd",
     "roadmap"
-  ]
+  ],
+  "category": "productivity",
+  "tags": [
+    "product",
+    "founder",
+    "workflow"
+  ],
+  "skills": "./skills/"
 }
