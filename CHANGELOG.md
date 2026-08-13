@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Cursor `/add-plugin` docs: the selected folder must be a git repository with a commit. A GitHub ZIP extract (`product-os-public-main`) has no `.git`, so Cursor's `git ls-remote HEAD` fails with "Failed to resolve git ref HEAD". README now says clone (not unzip), with `git init` + first-commit and `~/.cursor/plugins/local/` workarounds.
+
 ## 1.5.0 — July 2026
 
 **The build phase is now Develop, and it gained its quality gates.** The research on AI-built founder apps is blunt — most AI-generated code works and is insecure, and the incidents that killed real apps came from a short list: committed secrets, databases without row-level security, unprotected API routes, missing ownership checks, and secret keys shipped to the browser.

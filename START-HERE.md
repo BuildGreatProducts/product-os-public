@@ -5,7 +5,7 @@ ProductOS takes a product from idea to revenue with AI agents, in four phases �
 ## Set up (once, ~5 minutes)
 
 1. **Create or open your app repo.** Building from scratch? Make an empty folder and `git init` it — the repo exists before the product does. Already have a codebase? That repo is the one.
-2. **Put ProductOS in it as `productos/`** — clone or copy this folder into the repo root, named exactly `productos`.
+2. **Put ProductOS in it as `productos/`** — clone this folder into the repo root, named exactly `productos`. Cursor's `/add-plugin` needs a git clone, not a GitHub ZIP extract — see `productos/README.md`.
 3. **Run `studio-setup`.** Just ask your agent: *"Set up ProductOS."* It wires the coding-agent guidelines into your repo root (`CLAUDE.md`/`AGENTS.md`, from `productos/setup/` — appended, never overwriting what's already there) and adds `productos/` to your `.gitignore` — ProductOS is licensed to you, not to the public, so the materials stay uncommitted while your outputs are tracked as normal.
 
 If your copy came from your coach, your custom programme is already inside it: setup moves it to **`docs/PLAN.md`** and verifies it against your actual repo. The plan — composed from your onboarding call — says which steps of each phase you'll do in full, which are fast-tracked from what already exists, which you can skip and why, and the exact order to work in.
