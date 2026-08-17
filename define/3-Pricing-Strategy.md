@@ -2,7 +2,7 @@
 
 A worksheet for putting one honest price on your product — enough to make a real ask this week. Fill in each section below in 1-2 sentences max.
 
-This is deliberately a first pass, not the full monetization model. It gives your Mini-Launch (`4. Mini-Launch.md`) a price to carry. The full pricing ladder, cost & margin, and revenue-model work is an optional deep dive (`BONUS - Business Strategy Deep Dive.md`) for when the money questions get real — typically before spending on paid channels.
+This is deliberately a first pass, not the full monetization model. It gives your Mini-Launch (`4-Mini-Launch.md`) a price to carry. The full pricing ladder, cost & margin, and revenue-model work is an optional deep dive (`BONUS-Business-Strategy-Deep-Dive.md`) for when the money questions get real — typically before spending on paid channels.
 
 ---
 

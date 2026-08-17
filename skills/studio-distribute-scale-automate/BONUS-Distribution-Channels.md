@@ -2,11 +2,11 @@
 
 *A bonus asset for ProductOS — the ten ways a first-time builder gets a product in front of strangers, which one to start with, and what "working" actually looks like for each.*
 
-[BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) tells you *which software* to run. This doc comes first — it tells you *which channel to pick* and how to run it. A channel is the road between your product and a stranger's attention. There are only about twelve that matter for a first product, and you do not need all of them. You need **one** that fits your customer, run well enough to produce real revenue, before you touch a second.
+[BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) tells you *which software* to run. This doc comes first — it tells you *which channel to pick* and how to run it. A channel is the road between your product and a stranger's attention. There are only about twelve that matter for a first product, and you do not need all of them. You need **one** that fits your customer, run well enough to produce real revenue, before you touch a second.
 
 > **The meta-rule:** You don't choose your channel. Your customer already chose it. Your only job is to find where they already gather — and show up there before you spread yourself across a second one.
 
-This is the same idea as *Validate by Distribution* from `productos/define/BONUS - Idea Validation Cheat Sheet.md`: if you can't name the exact subreddit, hashtag, search query, or marketplace where your first 100 users already are, the product won't sell no matter how good it is. Distribution isn't what you do after you build — it's the bet the build rests on. Your channel choice should fall straight out of `productos/define/2. Customer Persona.md` (where they spend time) and `productos/define/3. Pricing Strategy.md` (what your price can afford to spend acquiring them).
+This is the same idea as *Validate by Distribution* from `productos/define/BONUS-Idea-Validation-Cheat-Sheet.md`: if you can't name the exact subreddit, hashtag, search query, or marketplace where your first 100 users already are, the product won't sell no matter how good it is. Distribution isn't what you do after you build — it's the bet the build rests on. Your channel choice should fall straight out of `productos/define/2-Customer-Persona.md` (where they spend time) and `productos/define/3-Pricing-Strategy.md` (what your price can afford to spend acquiring them).
 
 ---
 
@@ -40,7 +40,7 @@ Start at the top. Stop at the first "yes." This points you at a *starting* chann
 
 **Already have an audience or an email list — a newsletter, a waitlist, or signups you can message directly — and want to convert and keep them?**→ **Email & lifecycle.** The channel you own. Rarely your first, but the highest-ROI way to turn the traffic every other channel sends into activated, repeat customers.
 
-**None of the above, or you're stuck?**→ Run *#2 Reddit Pain Mining* from `productos/define/BONUS - Idea Validation Cheat Sheet.md` to find where they gather, then come back to the top.
+**None of the above, or you're stuck?**→ Run *#2 Reddit Pain Mining* from `productos/define/BONUS-Idea-Validation-Cheat-Sheet.md` to find where they gather, then come back to the top.
 
 ### The fit matrix
 
@@ -83,7 +83,7 @@ The highest-leverage starting channel for most first-time founders: free, compou
 
 > **Real example — Steven Cravada, PuffCount, $40K/mo.** Scrolled `#quitvaping`, found a 3.7M-like "vape-in-water" video, and rebuilt that exact format around his own app. Organic TikTok did 50M+ views and built the entire business *before* he spent a dollar on ads.
 
-**Tools:** [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §1 (Organic social & short-form video).
+**Tools:** [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §1 (Organic social & short-form video).
 
 ---
 
@@ -105,7 +105,7 @@ Where short-form wins attention, long-form earns trust and ranks. A how-to video
 
 > **Real example — Louis Pereira, AudioPen, $15K/mo.** Built the whole audience in writing — building in public on Twitter, sharing the product and the numbers until strangers asked to pay.
 
-**Tools:** [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §1–2 and §7 (video editing, SEO/content, newsletters).
+**Tools:** [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §1–2 and §7 (video editing, SEO/content, newsletters).
 
 ---
 
@@ -127,7 +127,7 @@ The most direct channel that exists: instead of building an audience, you borrow
 
 > **Real example — Julien Nahum, Note Forms, $37K/mo.** Built a form builder specifically for Notion users and seeded it in Notion subreddits and Facebook groups for the first wave — which then turned into a viral loop.
 
-**Tools:** Mostly manual. For listening at scale, see [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §1 (social listening).
+**Tools:** Mostly manual. For listening at scale, see [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §1 (social listening).
 
 ---
 
@@ -149,7 +149,7 @@ Slow to start, but the most durable channel there is: traffic that doesn't depen
 
 > **Real example — Joseph, Super Demo, $250K/mo.** Built dozens of free, ungated adjacent tools (screenshot makers, SOP builders); those free tools now drive ~20% of all traffic into the paid product.
 
-**Tools:** [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §2 (SEO & content) and §3 (GEO / AEO).
+**Tools:** [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §2 (SEO & content) and §3 (GEO / AEO).
 
 ---
 
@@ -171,7 +171,7 @@ One of the highest-leverage and most underrated channels for a first product: in
 
 > **Real example — Katie Keith, Barn2, ~$150K/mo.** A portfolio of 19 WordPress/WooCommerce plugins grown almost entirely on WordPress-ecosystem SEO and customer feature requests — same buyer, many products, one platform's gravity.
 
-**Tools:** Platform-native (each store's own listing and ASO tools). See [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §2 for the SEO/ASO overlap.
+**Tools:** Platform-native (each store's own listing and ASO tools). See [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §2 for the SEO/ASO overlap.
 
 ---
 
@@ -215,7 +215,7 @@ The channel where you don't wait to be found — you build a list of exact buyer
 
 > **Real example — Marcos, Birdhouse, $65K/mo.** Cold, warm, and hot DMs on Twitter — a disciplined one-to-one motion — paired with content, took it past $60K/mo.
 
-**Tools:** [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §4 (Outreach & lead generation).
+**Tools:** [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §4 (Outreach & lead generation).
 
 ---
 
@@ -237,7 +237,7 @@ When the audience you need already follows someone else, you can rent that trust
 
 > **Real example — Blake Anderson, Cal AI, $1M+/mo.** Scaled a calorie-tracking app primarily on influencer marketing and UGC — the right creators showing the magic moment to exactly the right audience.
 
-**Tools:** [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §6 (Influencer & creator marketing).
+**Tools:** [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §6 (Influencer & creator marketing).
 
 ---
 
@@ -259,7 +259,7 @@ A leverage channel: instead of one-to-one outreach, you strike a deal that puts 
 
 > **Real example — Dmytro, Screenshot One, $12K/mo.** Built Zapier and Make integrations so users of *those* platforms discovered the product inside the tools they already ran.
 
-**Tools:** [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §6 and §8 (creator partnerships & all-in-one GTM).
+**Tools:** [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §6 and §8 (creator partnerships & all-in-one GTM).
 
 ---
 
@@ -281,7 +281,7 @@ Every other channel rents attention from an algorithm or a platform; email is th
 
 > **Real example — Dustin, Magai, ~$100K/mo.** A 100K-subscriber email list, built off a personal brand, is the engine that converts and re-sells across his products — the owned audience compounds where rented attention doesn't.
 
-**Tools:** [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §7 (Email & lifecycle marketing).
+**Tools:** [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §7 (Email & lifecycle marketing).
 
 ---
 
@@ -297,13 +297,13 @@ The channel that only switches on once you have something worth talking about �
 
 **What good looks like:** A measurable share of new signups arriving from existing users or affiliates without paid spend — a referral/viral coefficient that's climbing, or affiliates producing steady attributable revenue.
 
-**Watch out for:** Bolting a referral program onto a product nobody loves yet — incentives can't manufacture word of mouth that the product hasn't earned. And affiliate programs need margin to fund the commission; check it against `productos/define/BONUS - Business Strategy Deep Dive.md` (run the deep dive before funding commissions).
+**Watch out for:** Bolting a referral program onto a product nobody loves yet — incentives can't manufacture word of mouth that the product hasn't earned. And affiliate programs need margin to fund the commission; check it against `productos/define/BONUS-Business-Strategy-Deep-Dive.md` (run the deep dive before funding commissions).
 
 > **Real example — Lucas Herman, Stagetimer, $25K/mo.** Put a small "powered by Stagetimer" logo on every shared timer. Every event the product ran became an ad seen by the next event's organizer — roughly a third of the business came from that built-in loop, no formal program required.
 
 > **Real example — Dustin, Magai, ~$100K/mo.** Layered a recurring-commission affiliate program on top of a 100K-person email list, paying promoters to bring buyers he'd never have reached alone.
 
-**Tools:** See [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §7 (email & lifecycle) for the retention engine referrals depend on.
+**Tools:** See [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §7 (email & lifecycle) for the retention engine referrals depend on.
 
 ---
 
@@ -313,7 +313,7 @@ The channel that only switches on once you have something worth talking about �
 
 The last channel to reach for, not the first. Ads are an **amplifier, not an igniter** — they pour fuel on a fire that's already lit. If you can't get organic conversion in the niche where your customers live, ads will burn cash and teach you nothing. But once you have a hook that converts and a funnel that pays back, ads are the fastest way to scale what's already working. The real constraint now is creative volume: winning ads fatigue in weeks.
 
-**Best fit:** Everyone, but *only* once organic has proven the message and your unit economics (LTV vs. CAC — run the `productos/define/BONUS - Business Strategy Deep Dive.md` before spending) can support paid acquisition.
+**Best fit:** Everyone, but *only* once organic has proven the message and your unit economics (LTV vs. CAC — run the `productos/define/BONUS-Business-Strategy-Deep-Dive.md` before spending) can support paid acquisition.
 
 **How to start:** Don't invent ad creative — promote the organic content that already worked. Take your best-performing post or demo, put a small budget behind it to one tightly-defined audience, and point it at a dedicated landing page (not the homepage). Measure cost-per-acquisition against payback, kill losers fast, and scale only the creative that profits.
 
@@ -325,7 +325,7 @@ The last channel to reach for, not the first. Ads are an **amplifier, not an ign
 
 > **Real example — Nico, Make Logo AI, ~$85K in 6 months.** Went fully organic first, then ran Facebook *static* ads into audience-specific landing pages once he knew which message converted.
 
-**Tools:** [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §5 (Paid ads — creative & management).
+**Tools:** [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §5 (Paid ads — creative & management).
 
 ---
 
@@ -357,7 +357,7 @@ The deeper logic: **organic proves the message, paid and referral scale it.** Ne
 | A B2B or higher-ticket product | Outreach | Search (comparison/SEO) | Partnerships |
 | A content/audience-first product | Long-form content | Email & lifecycle | Referrals & affiliates |
 
-Cross-reference your pick against `productos/define/3. Pricing Strategy.md` (and the `BONUS - Business Strategy Deep Dive.md` if you've filled it) — your price has to fund the channel's cost, and your unfair advantage often *is* owning one channel deeply.
+Cross-reference your pick against `productos/define/3-Pricing-Strategy.md` (and the `BONUS-Business-Strategy-Deep-Dive.md` if you've filled it) — your price has to fund the channel's cost, and your unfair advantage often *is* owning one channel deeply.
 
 ---
 
@@ -367,7 +367,7 @@ Cross-reference your pick against `productos/define/3. Pricing Strategy.md` (and
 
 **Jumping to ads before organic converts.** Ads amplify a working funnel; they don't create one. If strangers won't convert for free in the niche where they live, paid traffic just loses money faster.
 
-**Quitting a channel before it compounds.** SEO, communities, and content pay off in month 3, not week 3. Before you abandon a channel — or the product — check `productos/define/BONUS - Pivot Framework.md` for whether you actually have a distribution-patience problem, not a product problem.
+**Quitting a channel before it compounds.** SEO, communities, and content pay off in month 3, not week 3. Before you abandon a channel — or the product — check `productos/define/BONUS-Pivot-Framework.md` for whether you actually have a distribution-patience problem, not a product problem.
 
 **Picking the channel you like, not the one your customer is on.** Your comfort is not a strategy. The wrestler's app belongs in wrestling communities even if you'd rather write blog posts.
 
@@ -383,7 +383,7 @@ Cross-reference your pick against `productos/define/3. Pricing Strategy.md` (and
 
 Distribution is a discipline, not a launch day. The founders in this dataset who hit first revenue weren't on more channels than everyone else — they were on the *right* one, run deeper than everyone else. Pick the road your customer already walks. Run it until it pays. Then, and only then, build the second.
 
-When you've chosen your channel, open [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) for the software to run it.
+When you've chosen your channel, open [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) for the software to run it.
 
 ---
 

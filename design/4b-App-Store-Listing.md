@@ -1,6 +1,6 @@
 # App Store Listing
 
-*This template is rewritten in place by the `studio-design-app-listing` skill. The skill reads `docs/PRODUCT.md`, `productos/design/1. Product Identity.md`, and `productos/design/2. Magic Moment.md`, then designs every element of the App Store / Google Play listing — icon, title, subtitle, keyword field, all 7 screenshots, preview video, descriptions, CPP strategy, review prompts, and localization plan. Run the skill to populate this file. For web/desktop products, use the `4a. Landing Page.md` template instead with the `studio-design-landing-page` skill. The structure below shows what the filled-in version will look like.*
+*This template is rewritten in place by the `studio-design-app-listing` skill. The skill reads `docs/PRODUCT.md`, `productos/design/1-Product-Identity.md`, and `productos/design/2-Magic-Moment.md`, then designs every element of the App Store / Google Play listing — icon, title, subtitle, keyword field, all 7 screenshots, preview video, descriptions, CPP strategy, review prompts, and localization plan. Run the skill to populate this file. For web/desktop products, use the `4a-Landing-Page.md` template instead with the `studio-design-landing-page` skill. The structure below shows what the filled-in version will look like.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## The Magic Moment we're promising
 
-> [One sentence from `productos/design/2. Magic Moment.md`.]
+> [One sentence from `productos/design/2-Magic-Moment.md`.]
 
 **First impression:** "[the title + subtitle as they appear in search]"
 **First-screenshot caption:** "[the actual caption]"
@@ -138,8 +138,8 @@ Recommended next refresh: 30–60 days from now. First A/B test target: Screensh
 
 ## Sources
 
-- Reference: `productos/design/BONUS - App Store Listing Best Practice.md` ([selected pattern])
-- Tone of voice: `productos/design/1. Product Identity.md`
-- Magic moment: `productos/design/2. Magic Moment.md`
+- Reference: `productos/design/BONUS-App-Store-Listing-Best-Practice.md` ([selected pattern])
+- Tone of voice: `productos/design/1-Product-Identity.md`
+- Magic moment: `productos/design/2-Magic-Moment.md`
 - Product context: `docs/PRODUCT.md`
 - Design tokens (if available): `docs/DESIGN.md`

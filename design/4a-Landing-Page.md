@@ -1,6 +1,6 @@
 # Landing Page
 
-*This template is rewritten in place by the `studio-design-landing-page` skill. The skill reads `docs/PRODUCT.md`, `productos/design/1. Product Identity.md`, and `productos/design/2. Magic Moment.md`, then designs every section of a web/desktop landing page with exact copy in the brand's tone of voice. Run the skill to populate this file. A companion clickable HTML wireframe can optionally be generated at `productos/design/landing-page-wireframe.html`. For mobile-first products, use the `4b. App Store Listing.md` template instead with the `studio-design-app-listing` skill. The structure below shows what the filled-in version will look like.*
+*This template is rewritten in place by the `studio-design-landing-page` skill. The skill reads `docs/PRODUCT.md`, `productos/design/1-Product-Identity.md`, and `productos/design/2-Magic-Moment.md`, then designs every section of a web/desktop landing page with exact copy in the brand's tone of voice. Run the skill to populate this file. A companion clickable HTML wireframe can optionally be generated at `productos/design/landing-page-wireframe.html`. For mobile-first products, use the `4b-App-Store-Listing.md` template instead with the `studio-design-app-listing` skill. The structure below shows what the filled-in version will look like.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## The Magic Moment we're promising
 
-> [One sentence from `productos/design/2. Magic Moment.md`.]
+> [One sentence from `productos/design/2-Magic-Moment.md`.]
 
 **Hero promise:** "[the actual headline]"
 **Primary CTA:** "[the actual CTA text — 3-5 words]"
@@ -117,8 +117,8 @@ Recommended next refresh: 45 days from now. First A/B test: [headline / CTA / he
 
 ## Sources
 
-- Reference: `productos/design/BONUS - Web Landing Page Best Practice.md` ([selected pattern])
-- Tone of voice: `productos/design/1. Product Identity.md`
-- Magic moment: `productos/design/2. Magic Moment.md`
+- Reference: `productos/design/BONUS-Web-Landing-Page-Best-Practice.md` ([selected pattern])
+- Tone of voice: `productos/design/1-Product-Identity.md`
+- Magic moment: `productos/design/2-Magic-Moment.md`
 - Product context: `docs/PRODUCT.md`
 - Design tokens (if available): `docs/DESIGN.md`

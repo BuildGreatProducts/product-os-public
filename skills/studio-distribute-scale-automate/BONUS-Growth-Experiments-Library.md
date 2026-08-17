@@ -2,7 +2,7 @@
 
 *A bonus asset for ProductOS — a menu of proven, channel-by-channel growth experiments, each one a small, falsifiable bet you can run in a week to make a chosen channel work harder.*
 
-`productos/distribute/1. Go-To-Market Strategy.md` picks your channels and gets you started. This library is what you reach for next: once a channel is live, you stop guessing and start running **experiments** — small changes with a clear hypothesis, a pass threshold, and a decision at the end. Pick from the menu below, tailor each to your product, and log every result in `productos/distribute/3. Growth Experiments Tracker.md`.
+`productos/distribute/1-Go-To-Market-Strategy.md` picks your channels and gets you started. This library is what you reach for next: once a channel is live, you stop guessing and start running **experiments** — small changes with a clear hypothesis, a pass threshold, and a decision at the end. Pick from the menu below, tailor each to your product, and log every result in `productos/distribute/3-Growth-Experiments-Tracker.md`.
 
 > **The meta-rule:** An experiment is a falsifiable bet, not a chore. It names what you'll change, what you expect to happen, the number that means you were right, and what you'll do either way. "Post more" is not an experiment. "Five hook variations, one a day; a winner clears 50% 3-second retention" is.
 
@@ -10,7 +10,7 @@
 
 ## The method
 
-**The loop.** Every experiment runs the same five beats: **Hypothesis → run small → measure against a threshold → decide → log.** The decision is always one of three: **double down** (it beat the threshold — do more), **iterate** (close — change one thing and rerun), or **kill** (it missed — stop and try a different experiment). Then log it in `productos/distribute/3. Growth Experiments Tracker.md` so the learning compounds.
+**The loop.** Every experiment runs the same five beats: **Hypothesis → run small → measure against a threshold → decide → log.** The decision is always one of three: **double down** (it beat the threshold — do more), **iterate** (close — change one thing and rerun), or **kill** (it missed — stop and try a different experiment). Then log it in `productos/distribute/3-Growth-Experiments-Tracker.md` so the learning compounds.
 
 **Prioritize by effort and impact.** Don't rate experiments with a formula. Rate each on two plain axes — **Effort** (Low / Medium / High: time and money to run) and **Impact** (Low / Medium / High: how much it could move your metric) — then sequence:
 
@@ -93,7 +93,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 **Recommended tools & plugins**
 
-- **Tools** ([BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §1): **OpusClip** + **Submagic** to cut captioned clips and test hooks (Hook Test, Format Clone), **Kite** for polished app-demo clips, **Buffer** to post on cadence (Cadence Ramp).
+- **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §1): **OpusClip** + **Submagic** to cut captioned clips and test hooks (Hook Test, Format Clone), **Kite** for polished app-demo clips, **Buffer** to post on cadence (Cadence Ramp).
 - **Automate in Claude/Codex:** the **Figma** plugin for hook thumbnails and text overlays; **Claude in Chrome** to research the top-performing hooks and formats in your niche; a **scheduled task** to hold your daily posting cadence. Check the connector registry for a TikTok/YouTube scheduling MCP.
 
 ---
@@ -161,7 +161,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 **Recommended tools & plugins**
 
-- **Tools** ([BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §1–2, §7): **Descript** to record/edit video and podcasts, **Surfer**/**Frase** to build each video around one search intent (Teach-the-Pain Tutorial), **Taplio**/**Hypefury** for long-form threads and **Beehiiv** for a newsletter (Long-Form Story Post).
+- **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §1–2, §7): **Descript** to record/edit video and podcasts, **Surfer**/**Frase** to build each video around one search intent (Teach-the-Pain Tutorial), **Taplio**/**Hypefury** for long-form threads and **Beehiiv** for a newsletter (Long-Form Story Post).
 - **Automate in Claude/Codex:** the **Notion** MCP to run the content calendar and draft scripts; **Claude in Chrome** + **web search** to find the exact search intent and the right collab creators; the **Figma** plugin for thumbnails. Check the registry for a YouTube/analytics MCP to track watch-time → signups.
 
 ---
@@ -224,7 +224,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 **Recommended tools & plugins**
 
-- **Tools** ([BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §1): **Syncly** for social listening across communities; otherwise this channel is mostly hands-on.
+- **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §1): **Syncly** for social listening across communities; otherwise this channel is mostly hands-on.
 - **Automate in Claude/Codex:** **Claude in Chrome** to monitor and post in subreddits, Discords, and Facebook groups (most have no API); the **Notion** MCP to track which communities convert. Check the connector registry for a Reddit or Discord MCP.
 
 ---
@@ -287,7 +287,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 **Recommended tools & plugins**
 
-- **Tools** ([BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §2–3): **Surfer**/**Frase**/**Writesonic** for on-page content (Comparison Page), **Rankai** for an autonomous SEO/GEO agent, **Otterly**/**Profound** + free **HubSpot AI Search Grader** for AI-answer visibility (AI-Answer Pass).
+- **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §2–3): **Surfer**/**Frase**/**Writesonic** for on-page content (Comparison Page), **Rankai** for an autonomous SEO/GEO agent, **Otterly**/**Profound** + free **HubSpot AI Search Grader** for AI-answer visibility (AI-Answer Pass).
 - **Automate in Claude/Codex:** **Claude in Chrome** + **web search** for keyword/SERP research and to check whether AI engines cite you (GEO); the **Notion** MCP for the content plan. Check the registry for a Search Console / analytics MCP to track rankings and traffic.
 
 ---
@@ -476,7 +476,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 **Recommended tools & plugins**
 
-- **Tools** ([BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §4): **Apollo.io** for data + sequencing, **Clay** for enrichment and first-line personalization (First-Line Test), **Lemlist**/**Instantly**/**Smartlead** for sending and follow-ups.
+- **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §4): **Apollo.io** for data + sequencing, **Clay** for enrichment and first-line personalization (First-Line Test), **Lemlist**/**Instantly**/**Smartlead** for sending and follow-ups.
 - **Automate in Claude/Codex:** the **Apollo plugin** is the standout — `prospect` → `enrich-lead` → `sequence-load` runs the whole find-enrich-sequence loop natively. Pair with **Claude in Chrome** to research prospects and a CRM MCP to track replies → calls.
 
 ---
@@ -539,7 +539,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 **Recommended tools & plugins**
 
-- **Tools** ([BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §6): **1stCollab** for an end-to-end program, **Stormy AI** for discovery + outreach, **Kuli** to scout by actually watching content, **Beluga** for managed campaigns.
+- **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §6): **1stCollab** for an end-to-end program, **Stormy AI** for discovery + outreach, **Kuli** to scout by actually watching content, **Beluga** for managed campaigns.
 - **Automate in Claude/Codex:** the **Apollo plugin** + **Claude in Chrome** to find and contact creators; the **Notion** MCP to track briefs, angles, and per-creator cost-per-install.
 
 ---
@@ -602,7 +602,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 **Recommended tools & plugins**
 
-- **Tools** ([BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §6, §8): **1stCollab** for creator deals; all-in-one GTM agents like **Goose** to coordinate outreach.
+- **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §6, §8): **1stCollab** for creator deals; all-in-one GTM agents like **Goose** to coordinate outreach.
 - **Automate in Claude/Codex:** the **Apollo plugin** to find and reach partner contacts; **Claude in Chrome** to research a partner's audience; the **Notion** MCP to track deals and attribution.
 
 ---
@@ -665,7 +665,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 **Recommended tools & plugins**
 
-- **Tools** ([BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §7): **Loops** for SaaS lifecycle email (Welcome Series, Win-Back), **Customer.io** for behavioral triggers, **Beehiiv** for a newsletter (Newsletter Broadcast), **Klaviyo** for e-commerce.
+- **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §7): **Loops** for SaaS lifecycle email (Welcome Series, Win-Back), **Customer.io** for behavioral triggers, **Beehiiv** for a newsletter (Newsletter Broadcast), **Klaviyo** for e-commerce.
 - **Automate in Claude/Codex:** the **Notion** MCP to run the email calendar and draft sequences; a **scheduled task** to hold your broadcast cadence; **Claude in Chrome** + **web search** to research subject lines and competitor newsletters. Check the connector registry for your ESP MCP (Loops, Klaviyo, Mailchimp) and a Stripe MCP to tie email to revenue.
 
 ---
@@ -728,7 +728,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 **Recommended tools & plugins**
 
-- **Tools** ([BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §7): **Loops**/**Customer.io** for lifecycle prompts that drive invites; pair with a dedicated affiliate platform.
+- **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §7): **Loops**/**Customer.io** for lifecycle prompts that drive invites; pair with a dedicated affiliate platform.
 - **Automate in Claude/Codex:** the **Notion** MCP to manage the affiliate roster; the **Apollo plugin** to recruit affiliate-partners. Check the connector registry for a Stripe/payments MCP to track referral and affiliate revenue.
 
 ---
@@ -750,7 +750,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 3. Point every ad at your landing page or app store listing; set a small daily budget.
 4. After 5–7 days, compare click-through (and signups/installs) per version; keep the winner and cut the rest.
 
-**Decision:** a clear winner → make that line your headline everywhere (landing page, listing, organic hooks) and pour creative behind it (Creative Volume Test). Nothing gets clicks → the offer itself isn't landing — revisit `productos/define/1. Product Offer.md` before spending more.
+**Decision:** a clear winner → make that line your headline everywhere (landing page, listing, organic hooks) and pour creative behind it (Creative Volume Test). Nothing gets clicks → the offer itself isn't landing — revisit `productos/define/1-Product-Offer.md` before spending more.
 
 > *Real example — Nico, Make Logo AI, ~$85K in 6 months: ran static image ads into audience-specific landing pages, letting the ad that won clicks reveal which message and audience to pour spend into.*
 
@@ -810,15 +810,15 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 **Recommended tools & plugins**
 
-- **Tools** ([BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md) §5): **AdCreative.ai** for fast static offer ads (Validation Test, Creative Volume Test), **Arcads**/**Creatify** for UGC video, **Foreplay** for ad-swipe research, **Madgicx** for management (Audience Test), **HeyGen** for localization.
+- **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §5): **AdCreative.ai** for fast static offer ads (Validation Test, Creative Volume Test), **Arcads**/**Creatify** for UGC video, **Foreplay** for ad-swipe research, **Madgicx** for management (Audience Test), **HeyGen** for localization.
 - **Automate in Claude/Codex:** the **Figma** plugin to produce the text-on-image offer ads (Validation Test) and creative variations; **Claude in Chrome** for ad-swipe research. Check the registry for a Meta/Google Ads MCP to launch and read results, and an analytics/Stripe MCP for cost-per-acquisition.
 
 ---
 
 ## Putting it together
 
-Start with your **primary channel** from `productos/distribute/1. Go-To-Market Strategy.md`. Pull its experiments, rate each by effort and impact, run the quick wins first, and log every result in `productos/distribute/3. Growth Experiments Tracker.md`. One channel, one to three experiments per cycle, one decision each. When a channel is winning and maxed out, add the next one — and start its experiments from the top of this list.
+Start with your **primary channel** from `productos/distribute/1-Go-To-Market-Strategy.md`. Pull its experiments, rate each by effort and impact, run the quick wins first, and log every result in `productos/distribute/3-Growth-Experiments-Tracker.md`. One channel, one to three experiments per cycle, one decision each. When a channel is winning and maxed out, add the next one — and start its experiments from the top of this list.
 
 ---
 
-*Experiments distilled from 400+ founder interviews on the Starter Story channel; examples paraphrased and revenue self-reported. Pair with `productos/distribute/2. Growth Experiments.md` to plan your cycle and `productos/distribute/3. Growth Experiments Tracker.md` to log results. Compiled June 2026 by telescope.design.*
+*Experiments distilled from 400+ founder interviews on the Starter Story channel; examples paraphrased and revenue self-reported. Pair with `productos/distribute/2-Growth-Experiments.md` to plan your cycle and `productos/distribute/3-Growth-Experiments-Tracker.md` to log results. Compiled June 2026 by telescope.design.*

@@ -1,7 +1,7 @@
 ---
 name: studio-develop-design-review
 description: >-
-  Use when the user has a `docs/DESIGN.md` and uncommitted changes in their product codebase (new components, modified styles, new screens) and wants a design-system adherence review before committing or merging. Triggers on phrases like "design review", "review my design system adherence", "check my changes against DESIGN.md", "design system check", "what design tokens am I missing", or "promote my new patterns to DESIGN.md". Runs in the app repo — the repository that contains `productos/`. Reads `docs/DESIGN.md`, inspects uncommitted git changes (working tree + staged), classifies each visual change as an Inconsistency, a New Pattern, or Already-Aligned, and writes a prioritized, timestamped report to `design-review/` (a new file per run): a fix to-do list, a promotion checklist for `docs/DESIGN.md`, and a paste-ready fix prompt for a coding agent. Optionally references `productos/design/1. Product Identity.md` for tone if present; works standalone.
+  Use when the user has a `docs/DESIGN.md` and uncommitted changes in their product codebase (new components, modified styles, new screens) and wants a design-system adherence review before committing or merging. Triggers on phrases like "design review", "review my design system adherence", "check my changes against DESIGN.md", "design system check", "what design tokens am I missing", or "promote my new patterns to DESIGN.md". Runs in the app repo — the repository that contains `productos/`. Reads `docs/DESIGN.md`, inspects uncommitted git changes (working tree + staged), classifies each visual change as an Inconsistency, a New Pattern, or Already-Aligned, and writes a prioritized, timestamped report to `design-review/` (a new file per run): a fix to-do list, a promotion checklist for `docs/DESIGN.md`, and a paste-ready fix prompt for a coding agent. Optionally references `productos/design/1-Product-Identity.md` for tone if present; works standalone.
 ---
 
 # Develop: Design Review
@@ -22,7 +22,7 @@ Locate the following:
 
 2. **`docs/DESIGN.md`** — **required**. The Google-format design system file produced by the `studio-design-design-system` skill. Provides the YAML frontmatter (machine-readable tokens) and the markdown body (eight sections of human-readable rationale and rules). If `DESIGN.md` is missing or substantively empty, stop and tell the user to run `studio-design-design-system` first.
 
-3. **`productos/design/1. Product Identity.md`** — **optional** — absent in a repo without ProductOS. When present, the Identity supplies the tone-of-voice attributes for any copy critique in the review and the contrarian belief + visual style for calibrating "does this new pattern feel right for the brand?" judgments. If absent, the review focuses strictly on token-level adherence.
+3. **`productos/design/1-Product-Identity.md`** — **optional** — absent in a repo without ProductOS. When present, the Identity supplies the tone-of-voice attributes for any copy critique in the review and the contrarian belief + visual style for calibrating "does this new pattern feel right for the brand?" judgments. If absent, the review focuses strictly on token-level adherence.
 
 4. **`docs/PRODUCT.md`** — **optional**. If present, the product type contextualizes the review (a marketplace listing card has different conventions than a B2B dashboard card, even with the same tokens).
 
@@ -324,7 +324,7 @@ Group all Inconsistency To-dos into a single ordered checklist:
 ## Sources
 
 - Design system: `docs/DESIGN.md`
-- Brand strategy (optional context): `productos/design/1. Product Identity.md`
+- Brand strategy (optional context): `productos/design/1-Product-Identity.md`
 - Product context (optional): `docs/PRODUCT.md`
 - Diff scope: working tree + index at [commit SHA] on [branch name]
 ```

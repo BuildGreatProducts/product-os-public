@@ -9,7 +9,7 @@ If `docs/PLAN.md` exists (your programme plan, shipped with coached copies of Pr
 ## Step 1 — Product Identity
 
 - **What to do:** Run `studio-design-identity-creator`.
-- **What it does:** Produces `productos/design/1. Product Identity.md` — the minimum viable brand in words, five decisions: **Name** (committed and availability-checked), **Worldview** (the conviction beyond your category), **Contrarian Belief** (what your category gets wrong), **Tone of Voice**, and **Visual Style** (imagery lane + references) — assembled into a one-glance Brand Card. Colours and fonts are deliberately *not* here; they come from Step 2. Draws on `BONUS - Product Identity Deep Dive.md`.
+- **What it does:** Produces `productos/design/1-Product-Identity.md` — the minimum viable brand in words, five decisions: **Name** (committed and availability-checked), **Worldview** (the conviction beyond your category), **Contrarian Belief** (what your category gets wrong), **Tone of Voice**, and **Visual Style** (imagery lane + references) — assembled into a one-glance Brand Card. Colours and fonts are deliberately *not* here; they come from Step 2. Draws on `BONUS-Product-Identity-Deep-Dive.md`.
 
 ## Step 2 — Design System (DESIGN.md + DESIGN.html)
 
@@ -20,32 +20,32 @@ If `docs/PLAN.md` exists (your programme plan, shipped with coached copies of Pr
 ## Step 3 — Design Prompts for AI design tools
 
 - **What to do:** Run `studio-design-prompt-generator`.
-- **What it does:** Produces `productos/design/Design Prompts.md` — three paste-ready prompts (Prompt 1: the full UI component set; Prompts 2–3: two priority screens for your product type) for Pencil, paper.design, Claude Design, or MagicPath — with your DESIGN.md tokens and identity words embedded, so generated screens are on-brand from the first pass.
-- **How to use the prompts:** Read `BONUS - Design Tool Setup.md` to install and connect your AI design tool — **MagicPath is recommended**. Paste the prompts and generate your screens on top of the design system you locked in Step 2.
+- **What it does:** Produces `productos/design/Design-Prompts.md` — three paste-ready prompts (Prompt 1: the full UI component set; Prompts 2–3: two priority screens for your product type) for Pencil, paper.design, Claude Design, or MagicPath — with your DESIGN.md tokens and identity words embedded, so generated screens are on-brand from the first pass.
+- **How to use the prompts:** Read `BONUS-Design-Tool-Setup.md` to install and connect your AI design tool — **MagicPath is recommended**. Paste the prompts and generate your screens on top of the design system you locked in Step 2.
 
 ## Step 4 — Magic Moment
 
 - **What to do:** Run `studio-design-magic-moment`.
-- **What it does:** Produces `productos/design/2. Magic Moment.md` — one specific in-product event that makes users feel the product working, plus the activation hypothesis (what has to happen for a user to reach that moment).
+- **What it does:** Produces `productos/design/2-Magic-Moment.md` — one specific in-product event that makes users feel the product working, plus the activation hypothesis (what has to happen for a user to reach that moment).
 
 ## Step 5 — Onboarding Flow
 
 - **What to do:** Run `studio-design-onboarding-flow`.
-- **What it does:** Produces `productos/design/3. Onboarding Flow.md` — the screen-by-screen path from first-open to magic moment. Every screen has a purpose, a primary action, and a tie back to the activation hypothesis. Draws on the matching `productos/design/onboarding/BONUS - [product type] Onboarding Best Practice.md`.
+- **What it does:** Produces `productos/design/3-Onboarding-Flow.md` — the screen-by-screen path from first-open to magic moment. Every screen has a purpose, a primary action, and a tie back to the activation hypothesis. Draws on the matching `productos/design/onboarding/BONUS-[product-type]-Onboarding-Best-Practice.md`.
 
 ## Step 6 — Acquisition surface *(pick one based on product type)*
 
-*If your product ships both a web surface and a mobile app, run both — you'll end up with both `4a. Landing Page.md` and `4b. App Store Listing.md`, and that's correct.*
+*If your product ships both a web surface and a mobile app, run both — you'll end up with both `4a-Landing-Page.md` and `4b-App-Store-Listing.md`, and that's correct.*
 
 ### 6a — Landing Page *(web / SaaS / desktop / marketing site)*
 
 - **What to do:** Run `studio-design-landing-page`.
-- **What it does:** Produces `productos/design/4a. Landing Page.md` — hero, features-as-benefits, social proof, CTA closer. Draws on `BONUS - Web Landing Page Best Practice.md`.
+- **What it does:** Produces `productos/design/4a-Landing-Page.md` — hero, features-as-benefits, social proof, CTA closer. Draws on `BONUS-Web-Landing-Page-Best-Practice.md`.
 
 ### 6b — App Store Listing *(mobile app)*
 
 - **What to do:** Run `studio-design-app-listing`.
-- **What it does:** Produces `productos/design/4b. App Store Listing.md` — name, subtitle, screenshots brief, description, keywords. Draws on `BONUS - App Store Listing Best Practice.md`.
+- **What it does:** Produces `productos/design/4b-App-Store-Listing.md` — name, subtitle, screenshots brief, description, keywords. Draws on `BONUS-App-Store-Listing-Best-Practice.md`.
 
 ## Step 7 — Relaunch: "here's what it looks like"
 

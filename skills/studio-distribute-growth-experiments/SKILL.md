@@ -9,7 +9,7 @@ This skill turns the channels a user has already chosen into a **prioritized bac
 
 The goal is not to produce a list of generic growth tips. It is to produce **specific, falsifiable bets**: each experiment names what changes, what's expected to move, the number that means it worked, and the simple steps to run it this week. "Make better videos" is noise. "Five hook variations leading with the customer's pain, one a day; a winner clears 50% three-second retention" is an experiment. The whole value of this skill is the distance between those two sentences.
 
-This is the loop that runs *after* the first 30 days. `productos/distribute/1. Go-To-Market Strategy.md` picks the channels and gets the user started; this skill is the repeatable engine for month two and beyond — hypothesis, run small, measure against a threshold, decide (double down / iterate / kill), and log. The most common ways it fails are chasing vanity metrics, running too many experiments at once, designing experiments with no threshold, writing them too generic to act on, and never logging results so nothing compounds. The workflow below is built to prevent all five.
+This is the loop that runs *after* the first 30 days. `productos/distribute/1-Go-To-Market-Strategy.md` picks the channels and gets the user started; this skill is the repeatable engine for month two and beyond — hypothesis, run small, measure against a threshold, decide (double down / iterate / kill), and log. The most common ways it fails are chasing vanity metrics, running too many experiments at once, designing experiments with no threshold, writing them too generic to act on, and never logging results so nothing compounds. The workflow below is built to prevent all five.
 
 > **Session length:** Designed to be completable in 45–60 minutes. **All tactic research is Claude's job during the session** — finding what's working now in the niche and tearing down how competitors currently distribute. The user reacts and supplies the baseline number, the tools/analytics they have, and their weekly time budget. The skill plans **one focus channel's** cycle (one to three experiments) per run, not all channels at once.
 
@@ -19,7 +19,7 @@ This skill needs **channel context** (which channels the user is running and wha
 
 ### Channel context — Path A (standard): ProductOS in the repo — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout
 
-1. **The Go-To-Market Strategy** — usually `productos/distribute/1. Go-To-Market Strategy.md`. The **primary** input: the ranked channels, their starter plans, and their pass thresholds. The focus channel defaults to the GTM doc's **primary** channel. If this file doesn't exist, the user hasn't picked channels yet — offer to run `studio-distribute-gtm-strategy` first, or establish the channels via the Path B questions.
+1. **The Go-To-Market Strategy** — usually `productos/distribute/1-Go-To-Market-Strategy.md`. The **primary** input: the ranked channels, their starter plans, and their pass thresholds. The focus channel defaults to the GTM doc's **primary** channel. If this file doesn't exist, the user hasn't picked channels yet — offer to run `studio-distribute-gtm-strategy` first, or establish the channels via the Path B questions.
 2. **The product summary** — usually `docs/PRODUCT.md` (or the Define docs). Provides the customer, their language, the magic moment, and the north star, so experiment hypotheses are product-specific and metrics ladder to the right number.
 
 ### Channel context — Path B (standalone fallback): a repo without ProductOS
@@ -35,16 +35,16 @@ Ask only what the repo didn't answer, one at a time.
 
 ### Output target (both paths)
 
-- **`productos/distribute/2. Growth Experiments.md`** — the execution list: the metric header, Running now (1–3 experiments), and the ordered Up next queue. On the standard path it exists as a template — **rewrite it in place**. On the standalone fallback, create it fresh with the same structure at `docs/growth-experiments.md`.
-- **`productos/distribute/3. Growth Experiments Tracker.md`** — the running results log. **Seed it** with this cycle's planned experiments as pending rows so the user only has to fill in results. In a codebase, create `docs/growth-experiments-tracker.md`.
+- **`productos/distribute/2-Growth-Experiments.md`** — the execution list: the metric header, Running now (1–3 experiments), and the ordered Up next queue. On the standard path it exists as a template — **rewrite it in place**. On the standalone fallback, create it fresh with the same structure at `docs/growth-experiments.md`.
+- **`productos/distribute/3-Growth-Experiments-Tracker.md`** — the running results log. **Seed it** with this cycle's planned experiments as pending rows so the user only has to fill in results. In a codebase, create `docs/growth-experiments-tracker.md`.
 
 ### Experiments playbook (both paths)
 
 Four reference docs ship **inside this skill's folder**, so they're available in both paths. Read them at the start:
 
-- **`BONUS - Growth Experiments Library.md` (in this skill's folder)** — the **primary** playbook: the method (the loop, effort/impact prioritization, cadence, what counts as a result), the card format, and a few named experiments per channel with real examples. Every experiment you propose should be a tailored version of one from here (or built in the same shape).
-- **`BONUS - Measurement & Attribution.md` (in this skill's folder)** — how to measure each experiment's result and attribute it to the right channel, so every pass threshold is a real, readable number. Name a measurement method for every threshold before the experiment runs.
-- **`BONUS - Distribution Channels.md` (in this skill's folder)** and **`BONUS - AI Distribution Tools.md` (in this skill's folder)** — channel logic and the tool to run each.
+- **`BONUS-Growth-Experiments-Library.md` (in this skill's folder)** — the **primary** playbook: the method (the loop, effort/impact prioritization, cadence, what counts as a result), the card format, and a few named experiments per channel with real examples. Every experiment you propose should be a tailored version of one from here (or built in the same shape).
+- **`BONUS-Measurement-and-Attribution.md` (in this skill's folder)** — how to measure each experiment's result and attribute it to the right channel, so every pass threshold is a real, readable number. Name a measurement method for every threshold before the experiment runs.
+- **`BONUS-Distribution-Channels.md` (in this skill's folder)** and **`BONUS-AI-Distribution-Tools.md` (in this skill's folder)** — channel logic and the tool to run each.
 
 The same files also live in `productos/distribute/`; prefer the user's copies if customized. The bundled copies guarantee the skill has its playbook when run standalone.
 
@@ -77,11 +77,11 @@ Pick the top **one to three** to run now. For each, write the full card and hold
 
 ### 5. Write the worksheet and seed the tracker
 
-**On the standard path, rewrite `productos/distribute/2. Growth Experiments.md` in place**; on the standalone fallback, create `docs/growth-experiments.md` with the identical structure. Match the template exactly: the two header lines (**Moving** — metric, baseline, target, date; **Rhythm** — max concurrent, review day, tracker pointer), **Running now** (1–3 experiment blocks: the plain sentence, the "Do this" checklist, the Pass = line), and **Up next** (the remaining candidates as an ordered one-line list). Read the existing file first to preserve any notes.
+**On the standard path, rewrite `productos/distribute/2-Growth-Experiments.md` in place**; on the standalone fallback, create `docs/growth-experiments.md` with the identical structure. Match the template exactly: the two header lines (**Moving** — metric, baseline, target, date; **Rhythm** — max concurrent, review day, tracker pointer), **Running now** (1–3 experiment blocks: the plain sentence, the "Do this" checklist, the Pass = line), and **Up next** (the remaining candidates as an ordered one-line list). Read the existing file first to preserve any notes.
 
 **The output rule — the document is execution-only.** No effort/impact ratings, no priority guide, no backlog table, no `> Good/Bad` examples, no decision-rule boilerplate — only this member's specific experiments and the order to run them. All method lives in this skill and the BONUS library; if a sentence teaches instead of instructs, cut it. Scale/kill outcomes are recorded in the Tracker, never duplicated here.
 
-Then **seed `productos/distribute/3. Growth Experiments Tracker.md`** (or `docs/growth-experiments-tracker.md`): add this cycle's experiments as rows with their pass thresholds filled in and the result/learning/decision columns left blank, so the user just records outcomes as they finish. Don't overwrite existing log rows — append.
+Then **seed `productos/distribute/3-Growth-Experiments-Tracker.md`** (or `docs/growth-experiments-tracker.md`): add this cycle's experiments as rows with their pass thresholds filled in and the result/learning/decision columns left blank, so the user just records outcomes as they finish. Don't overwrite existing log rows — append.
 
 Date the title line, and fill the one-line *Based on:* footer naming the inputs and research used — no separate summary or Sources section; the two header lines are the summary.
 
@@ -108,7 +108,7 @@ Name them when you see them — naming compounds learning:
 - **The Generic Experiment.** Steps that fit any product — "post more," "improve SEO," "run ads." Rewrite until each step could only be this product's, in this customer's words.
 - **The Big-Bet-First Trap.** Reaching for a high-effort experiment while quick wins sit untouched. Clear the high-impact/low-effort wins first, every time.
 - **The Unlogged Result.** Running experiments but never recording outcomes, so nothing compounds. The tracker is not optional — it's the asset that makes the next cycle smarter.
-- **Optimizing a Dead Channel.** Pouring experiments into a channel that fundamentally isn't reaching buyers. If the channel can't clear its threshold after honest reps, the problem is channel choice — return to `productos/distribute/1. Go-To-Market Strategy.md`, don't keep experimenting.
+- **Optimizing a Dead Channel.** Pouring experiments into a channel that fundamentally isn't reaching buyers. If the channel can't clear its threshold after honest reps, the problem is channel choice — return to `productos/distribute/1-Go-To-Market-Strategy.md`, don't keep experimenting.
 
 ## Tone and pacing
 
@@ -120,7 +120,7 @@ Name them when you see them — naming compounds learning:
 
 ## What "done" looks like
 
-A filled `productos/distribute/2. Growth Experiments.md` (or `docs/growth-experiments.md`) and a seeded `productos/distribute/3. Growth Experiments Tracker.md` where:
+A filled `productos/distribute/2-Growth-Experiments.md` (or `docs/growth-experiments.md`) and a seeded `productos/distribute/3-Growth-Experiments-Tracker.md` where:
 
 - The **Moving** line names one channel, one north-star-linked metric, the current number, and a target with a date; the **Rhythm** line caps concurrent experiments and sets the review day.
 - **Running now** holds one to three experiments, each a plain sentence + a "Do this" checklist startable this week + a Pass = line with a number, a date, and the specific moves on pass and fail.
@@ -130,4 +130,4 @@ A filled `productos/distribute/2. Growth Experiments.md` (or `docs/growth-experi
 
 A plan the user can act on **this week** — run the top experiment, hit or miss its threshold, log the result. Anything vaguer is a draft; name the gap and sharpen it.
 
-Recommended next step after a successful session: run the cycle's quick win first, log every result in the Tracker, and re-run this skill each cycle. When the focus channel hits its target and plateaus, return to `productos/distribute/1. Go-To-Market Strategy.md` and bring the next channel online.
+Recommended next step after a successful session: run the cycle's quick win first, log every result in the Tracker, and re-run this skill each cycle. When the focus channel hits its target and plateaus, return to `productos/distribute/1-Go-To-Market-Strategy.md` and bring the next channel online.

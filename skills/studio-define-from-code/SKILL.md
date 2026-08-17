@@ -32,9 +32,9 @@ Read everything in Inputs end to end before drafting. As you read, collect: the 
 
 From the evidence, draft in one pass:
 
-- **`productos/define/1. Product Offer.md`** — all six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof), each 1–2 sentences, each traceable to evidence. Where the evidence is silent (commonly Guarantee, often Proof), write the honest gap — *"No guarantee anywhere on the current site — decide one in the review"* — not an invention.
-- **`productos/define/2. Customer Persona.md`** — the persona the product is *actually built for*, per the evidence, flagging loudly where that differs from who the member says it's for. That gap is one of the most valuable things this skill can surface.
-- **`productos/define/3. Pricing Strategy.md`** — observed pricing (from the site, the Stripe products, or "currently free — no price has ever been asked"), a who-pays inference, and any anchors the evidence suggests.
+- **`productos/define/1-Product-Offer.md`** — all six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof), each 1–2 sentences, each traceable to evidence. Where the evidence is silent (commonly Guarantee, often Proof), write the honest gap — *"No guarantee anywhere on the current site — decide one in the review"* — not an invention.
+- **`productos/define/2-Customer-Persona.md`** — the persona the product is *actually built for*, per the evidence, flagging loudly where that differs from who the member says it's for. That gap is one of the most valuable things this skill can surface.
+- **`productos/define/3-Pricing-Strategy.md`** — observed pricing (from the site, the Stripe products, or "currently free — no price has ever been asked"), a who-pays inference, and any anchors the evidence suggests.
 
 ### 3. Confirm the load-bearing inferences
 

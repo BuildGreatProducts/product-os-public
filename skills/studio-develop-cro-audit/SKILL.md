@@ -1,6 +1,6 @@
 ---
 name: studio-develop-cro-audit
-description: Use when the user has a working product codebase (web/mobile app, SaaS, marketplace, dev tool, extension, or landing page) and wants a conversion rate optimization audit of the code — what's slowing conversion, what's missing, what to fix first. Triggers on phrases like "audit my conversion rate", "CRO audit", "review my code for conversion", "what's hurting my signup rate", "find my conversion bottlenecks", "why aren't users converting", or "are my forms killing conversion". Runs in the app repo — the repository that contains `productos/`. Detects product type, scans for conversion-relevant patterns (forms, CTAs, Core Web Vitals, analytics, mobile, paywall placement, trust signals), and writes a prioritized audit to `docs/CRO-AUDIT.md` (or repo root if no `docs/`). Optionally references ProductOS files (`docs/PRODUCT.md`, `productos/design/1. Product Identity.md`, `productos/design/2. Magic Moment.md`) if present; works standalone.
+description: Use when the user has a working product codebase (web/mobile app, SaaS, marketplace, dev tool, extension, or landing page) and wants a conversion rate optimization audit of the code — what's slowing conversion, what's missing, what to fix first. Triggers on phrases like "audit my conversion rate", "CRO audit", "review my code for conversion", "what's hurting my signup rate", "find my conversion bottlenecks", "why aren't users converting", or "are my forms killing conversion". Runs in the app repo — the repository that contains `productos/`. Detects product type, scans for conversion-relevant patterns (forms, CTAs, Core Web Vitals, analytics, mobile, paywall placement, trust signals), and writes a prioritized audit to `docs/CRO-AUDIT.md` (or repo root if no `docs/`). Optionally references ProductOS files (`docs/PRODUCT.md`, `productos/design/1-Product-Identity.md`, `productos/design/2-Magic-Moment.md`) if present; works standalone.
 ---
 
 # Develop: Conversion Rate Optimization Audit
@@ -22,12 +22,12 @@ Locate the following:
 2. **PRODUCT.md** — at `docs/PRODUCT.md`. **Recommended** — in a repo without ProductOS it's simply absent; proceed standalone. Provides the product type, customer, magic moment, and business model — which drives which audit areas are prioritized. If absent, ask the user one question: *"What kind of product is this — mobile app / B2B SaaS / marketplace / API or developer tool / landing page / browser extension / productized service portal? And what's the primary conversion event you care about — signup, free-trial start, paid conversion, first transaction, first AI output?"*
 
 3. **The relevant BONUS reference** — in `productos/design/` or `productos/design/onboarding/`. **Optional** — absent in a repo without ProductOS. When present, the skill loads:
-   - `productos/design/BONUS - Web Landing Page Best Practice.md` for web/desktop conversion patterns
-   - `productos/design/BONUS - App Store Listing Best Practice.md` for mobile listing context
-   - `productos/design/onboarding/BONUS - [Type] Onboarding Best Practice.md` for in-product activation
+   - `productos/design/BONUS-Web-Landing-Page-Best-Practice.md` for web/desktop conversion patterns
+   - `productos/design/BONUS-App-Store-Listing-Best-Practice.md` for mobile listing context
+   - `productos/design/onboarding/BONUS-[Type]-Onboarding-Best-Practice.md` for in-product activation
    These supply the calibration tables and tactic numbers the audit cites.
 
-4. **Magic Moment, Product Identity** — usually `productos/design/2. Magic Moment.md` and `productos/design/1. Product Identity.md` if present. **Optional.** Provides the activation event the audit measures against and the tone the audit applies to copy critiques.
+4. **Magic Moment, Product Identity** — usually `productos/design/2-Magic-Moment.md` and `productos/design/1-Product-Identity.md` if present. **Optional.** Provides the activation event the audit measures against and the tone the audit applies to copy critiques.
 
 If PRODUCT.md and the BONUS docs are missing, the skill works standalone using the calibration tables embedded in the workflow section below.
 
@@ -192,7 +192,7 @@ Day 1 retention 26% (industry baseline) vs 40%+ (optimized onboarding). 3-step t
 
 **Code patterns to look for:**
 - Onboarding flow exists (search for `onboarding`, `welcome`, `getting-started` route/component)
-- Magic moment timing (cross-reference against `productos/design/2. Magic Moment.md` if present — flag if the documented activation event isn't visibly engineered in the flow)
+- Magic moment timing (cross-reference against `productos/design/2-Magic-Moment.md` if present — flag if the documented activation event isn't visibly engineered in the flow)
 - Empty state handling (search for empty-state components — flag if app opens to blank dashboard)
 - Pre-populated workspace (look for seed data, sample content — flag if absent for B2B SaaS)
 - Progressive disclosure (flag if all features visible in onboarding rather than just the first action)
@@ -242,11 +242,11 @@ Beyond the eleven audit areas, surface five quick-win categories that almost alw
 
 ### 5. Cross-reference against ProductOS docs (if present)
 
-If `docs/PRODUCT.md`, `productos/design/2. Magic Moment.md`, `productos/design/3. Onboarding Flow.md`, or `productos/design/4a. Landing Page.md` exist in the workspace, cross-check the audit findings against them:
+If `docs/PRODUCT.md`, `productos/design/2-Magic-Moment.md`, `productos/design/3-Onboarding-Flow.md`, or `productos/design/4a-Landing-Page.md` exist in the workspace, cross-check the audit findings against them:
 
-- Does the code's actual onboarding match the documented flow in `3. Onboarding Flow.md`?
-- Does the landing page hero copy match the spec in `4a. Landing Page.md`?
-- Does the activation event documented in `2. Magic Moment.md` actually fire — and is it tracked in analytics?
+- Does the code's actual onboarding match the documented flow in `3-Onboarding-Flow.md`?
+- Does the landing page hero copy match the spec in `4a-Landing-Page.md`?
+- Does the activation event documented in `2-Magic-Moment.md` actually fire — and is it tracked in analytics?
 - Does the tone of voice in product copy match the Identity?
 
 Discrepancies between documented strategy and shipped code are P1 findings — the team has done the strategy work but the code drifted from it.
@@ -346,7 +346,7 @@ Once approved, write the assembled report. Structure:
 ## Sources & calibration
 
 - Industry benchmarks: B2B SaaS top-decile 8–15% visitor-to-lead (SaaS Hero 2026); Core Web Vitals (Google Web Vitals 2026); paywall conversion data (RevenueCat 2026); form abandonment (Baymard 2026)
-- Workspace docs referenced (if present): `docs/PRODUCT.md`, `productos/design/1. Product Identity.md`, `productos/design/2. Magic Moment.md`, `productos/design/3. Onboarding Flow.md`, `productos/design/4a. Landing Page.md`, `productos/design/BONUS - [X] Best Practice.md`
+- Workspace docs referenced (if present): `docs/PRODUCT.md`, `productos/design/1-Product-Identity.md`, `productos/design/2-Magic-Moment.md`, `productos/design/3-Onboarding-Flow.md`, `productos/design/4a-Landing-Page.md`, `productos/design/BONUS-[X]-Best-Practice.md`
 ```
 
 Keep prose tight. Tables, not paragraphs. The whole document reads in 5–8 minutes for a developer skimming for fixes.

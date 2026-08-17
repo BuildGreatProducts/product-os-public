@@ -1,17 +1,17 @@
 ---
 name: studio-design-landing-page
-description: Use when the user has a finished `docs/PRODUCT.md`, Product Identity (`productos/design/1. Product Identity.md`), and Magic Moment (`productos/design/2. Magic Moment.md`) for a **web or desktop product** and wants to design the copy and structural direction for their landing page / marketing site. Triggers on phrases like "write my landing page", "design my landing page copy", "draft my marketing site", "outline my homepage", "design my hero", "write the hero copy", "I need a landing page spec", or any request to translate the product strategy into web-acquisition copy. Reads `productos/design/BONUS - Web Landing Page Best Practice.md`, walks the user through every section in the voice of a senior product marketing strategist, writes `productos/design/4a. Landing Page.md` with every headline, CTA, body section, and visual direction needed to ship, and optionally generates a lo-fi HTML wireframe at `productos/design/landing-page-wireframe.html`. For mobile-first, use `studio-design-app-listing` instead.
+description: Use when the user has a finished `docs/PRODUCT.md`, Product Identity (`productos/design/1-Product-Identity.md`), and Magic Moment (`productos/design/2-Magic-Moment.md`) for a **web or desktop product** and wants to design the copy and structural direction for their landing page / marketing site. Triggers on phrases like "write my landing page", "design my landing page copy", "draft my marketing site", "outline my homepage", "design my hero", "write the hero copy", "I need a landing page spec", or any request to translate the product strategy into web-acquisition copy. Reads `productos/design/BONUS-Web-Landing-Page-Best-Practice.md`, walks the user through every section in the voice of a senior product marketing strategist, writes `productos/design/4a-Landing-Page.md` with every headline, CTA, body section, and visual direction needed to ship, and optionally generates a lo-fi HTML wireframe at `productos/design/landing-page-wireframe.html`. For mobile-first, use `studio-design-app-listing` instead.
 ---
 
 # Design: Landing Page Copywriter
 
-This skill guides a founder through designing the **landing page** — the marketing surface that turns a stranger into a signed-up user — for a web or desktop product. The output is two lockstep artifacts: a markdown specification at `productos/design/4a. Landing Page.md` containing every section of the page with actual copy in the brand's tone of voice, visual direction notes, and a reference to the specific tactic from the Web Landing Page BONUS doc that justifies each section; and a self-contained clickable HTML wireframe at `productos/design/landing-page-wireframe.html` the user can open in any browser and scroll through to feel the flow before any code is written.
+This skill guides a founder through designing the **landing page** — the marketing surface that turns a stranger into a signed-up user — for a web or desktop product. The output is two lockstep artifacts: a markdown specification at `productos/design/4a-Landing-Page.md` containing every section of the page with actual copy in the brand's tone of voice, visual direction notes, and a reference to the specific tactic from the Web Landing Page BONUS doc that justifies each section; and a self-contained clickable HTML wireframe at `productos/design/landing-page-wireframe.html` the user can open in any browser and scroll through to feel the flow before any code is written.
 
 The voice is a senior product marketing strategist and brand copywriter with deep experience converting cold visitors into trialing users — and specifically with the 2026 conversion patterns that separate winners from look-alikes (Stripe's runnable-code hero, Lovable's prompt-box pre-signup, Linear's product-visual minimalism, Anthropic's quiet rigor against the AI noise floor, Notion's product-as-its-own-design-language). The copywriter's job is not to invent positioning from scratch; it is to faithfully translate the Product Identity's tone of voice, anchored in the Magic Moment's activation event, into specific copy the user can ship today and refresh on a 30–45 day cadence.
 
 A landing page built without an Identity inherits a generic tone. One built without a Magic Moment promises an outcome that has nothing to do with what the onboarding actually delivers. This skill's job is to align all three — strategy, voice, and activation — into one coherent page, then write the actual words.
 
-> **Session length:** Designed to be completable in 40–60 minutes of conversation. The skill reads four upstream documents, walks the user through every section of the page, and writes the output at the end. No external research is required — all category-specific patterns live in `productos/design/BONUS - Web Landing Page Best Practice.md`. **Use this skill only for web or desktop products. For mobile-first products, use `studio-design-app-listing` instead.**
+> **Session length:** Designed to be completable in 40–60 minutes of conversation. The skill reads four upstream documents, walks the user through every section of the page, and writes the output at the end. No external research is required — all category-specific patterns live in `productos/design/BONUS-Web-Landing-Page-Best-Practice.md`. **Use this skill only for web or desktop products. For mobile-first products, use `studio-design-app-listing` instead.**
 
 ## Inputs
 
@@ -19,11 +19,11 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 1. **PRODUCT.md** — usually `docs/PRODUCT.md`. **Required.** Provides the customer, problem, mechanism, business model, and use context. Confirm the product type is web or desktop before proceeding — if it's mobile-first, redirect to `studio-design-app-listing`. If PRODUCT.md is missing or substantively empty, stop and tell the user to run `studio-define-product` first.
 
-2. **Product Identity** — usually `productos/design/1. Product Identity.md`. **Required.** The tone of voice shapes the *register* of every headline (a dramatic brand reveals; a calm-authority brand demonstrates with measured proof; a challenger confronts; a nurturing brand reassures). The tone-of-voice attributes — and especially the explicit "we say / we don't say" list and example sentence — constrain every word the skill writes. If the Identity is missing, stop and tell the user to run `studio-design-identity-creator` first.
+2. **Product Identity** — usually `productos/design/1-Product-Identity.md`. **Required.** The tone of voice shapes the *register* of every headline (a dramatic brand reveals; a calm-authority brand demonstrates with measured proof; a challenger confronts; a nurturing brand reassures). The tone-of-voice attributes — and especially the explicit "we say / we don't say" list and example sentence — constrain every word the skill writes. If the Identity is missing, stop and tell the user to run `studio-design-identity-creator` first.
 
-3. **Magic Moment** — usually `productos/design/2. Magic Moment.md`. **Required.** The recommended primary magic moment is the *promise* the page has to make. If the page promises "10 minutes to first deploy" but the Magic Moment is "first AI-generated app in 60 seconds," the page lies and onboarding fails. The hero is the magic moment, framed as a benefit headline.
+3. **Magic Moment** — usually `productos/design/2-Magic-Moment.md`. **Required.** The recommended primary magic moment is the *promise* the page has to make. If the page promises "10 minutes to first deploy" but the Magic Moment is "first AI-generated app in 60 seconds," the page lies and onboarding fails. The hero is the magic moment, framed as a benefit headline.
 
-4. **The Web Landing Page BONUS doc** — usually `productos/design/BONUS - Web Landing Page Best Practice.md`. **Required.** Read in full at the start of the session. Its meta-rule, 12 principles, 6-pattern decision tree, 18 tactics across 8 page sections, three worked examples (Stripe / Lovable / Linear), 12 anti-patterns, and calibration table are the source of truth.
+4. **The Web Landing Page BONUS doc** — usually `productos/design/BONUS-Web-Landing-Page-Best-Practice.md`. **Required.** Read in full at the start of the session. Its meta-rule, 12 principles, 6-pattern decision tree, 18 tactics across 8 page sections, three worked examples (Stripe / Lovable / Linear), 12 anti-patterns, and calibration table are the source of truth.
 
 5. **DESIGN.md** — usually `docs/DESIGN.md`. Optional. If present, the hero visual direction can reference the brand's actual color/typography tokens.
 
@@ -33,7 +33,7 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 Adopt the voice of a senior product marketing strategist and brand copywriter:
 
-- **Tone-of-voice strict.** Every line of copy is in the brand's voice from `productos/design/1. Product Identity.md`. If the Identity says "Smart, but not academic. Authentic, but not stuffy. Helpful, but not bossy" — that's the test for every headline.
+- **Tone-of-voice strict.** Every line of copy is in the brand's voice from `productos/design/1-Product-Identity.md`. If the Identity says "Smart, but not academic. Authentic, but not stuffy. Helpful, but not bossy" — that's the test for every headline.
 - **Magic Moment honest.** Every promise on the page must be deliverable in the first session. If the Magic Moment is "first meeting transcribed in 60 seconds," the headline can promise "Notes ready in 60 seconds." It cannot promise "Your team's most productive year ever."
 - **Specific.** Never "a benefit-led headline." Always the actual 8-word headline, in the brand's voice, with character count and a one-line note on why it works.
 - **Pattern-led.** Every section references a specific tactic from the BONUS doc. "Hero is Tactic #3 (the 10-word value-prop headline). Subtitle is Tactic #4 (the specific sub-headline)."
@@ -54,7 +54,7 @@ Extract:
 
 ### 2. Confirm the product is web/desktop
 
-State back: *"Based on PRODUCT.md, this is a [web / desktop] product, so I'm writing the landing page using `BONUS - Web Landing Page Best Practice.md` as the reference. The output will go to `productos/design/4a. Landing Page.md`. Confirm or correct."*
+State back: *"Based on PRODUCT.md, this is a [web / desktop] product, so I'm writing the landing page using `BONUS-Web-Landing-Page-Best-Practice.md` as the reference. The output will go to `productos/design/4a-Landing-Page.md`. Confirm or correct."*
 
 If the product is actually mobile-first, redirect: *"This looks mobile-first. Use `studio-design-app-listing` instead — it produces an App Store listing spec which is the right acquisition surface for mobile products."*
 
@@ -104,9 +104,9 @@ Before writing the file, run five checks:
 - **Brand identity match.** The visual direction is consistent with the Product Identity's Visual Style and the docs/DESIGN.md tokens — same imagery lane, same composition principles, same character.
 - **Pattern match.** Every section maps to a tactic in the BONUS doc. Sections without a documented tactic don't belong on the page.
 
-### 7. Rewrite `productos/design/4a. Landing Page.md` in place
+### 7. Rewrite `productos/design/4a-Landing-Page.md` in place
 
-A template file already exists at `productos/design/4a. Landing Page.md` with the canonical structure (summary + magic-moment-we're-promising + the page with 11 sections + anti-patterns + refresh cadence + sources). **Rewrite the existing file in place** — do not create a sibling file. Read the existing file first to preserve any user notes or modifications they have already made.
+A template file already exists at `productos/design/4a-Landing-Page.md` with the canonical structure (summary + magic-moment-we're-promising + the page with 11 sections + anti-patterns + refresh cadence + sources). **Rewrite the existing file in place** — do not create a sibling file. Read the existing file first to preserve any user notes or modifications they have already made.
 
 Match the template's structure exactly: same section headers, same field labels (Goal / Headline / Sub-headline / CTA / Visual direction / Above-fold social proof / Reference for the hero; Goal / Step 1–3 / Reference for the solution section; etc.). Replace the `[placeholder]` markers with the filled-in content. Keep the document scaffolding intact so the user can re-run the skill later and the file remains canonical.
 
@@ -123,7 +123,7 @@ The full structure to populate:
 
 ## The Magic Moment we're promising
 
-> [One sentence from `productos/design/2. Magic Moment.md`.]
+> [One sentence from `productos/design/2-Magic-Moment.md`.]
 
 **Hero promise:** "[the actual headline]"
 **Primary CTA:** "[the actual CTA text — 3-5 words]"
@@ -230,9 +230,9 @@ Recommended next refresh: 45 days from now. First A/B test: [headline / CTA / he
 
 ## Sources
 
-- Reference: `productos/design/BONUS - Web Landing Page Best Practice.md` ([selected pattern])
-- Tone of voice: `productos/design/1. Product Identity.md`
-- Magic moment: `productos/design/2. Magic Moment.md`
+- Reference: `productos/design/BONUS-Web-Landing-Page-Best-Practice.md` ([selected pattern])
+- Tone of voice: `productos/design/1-Product-Identity.md`
+- Magic moment: `productos/design/2-Magic-Moment.md`
 - Product context: `docs/PRODUCT.md`
 - Design tokens (if available): `docs/DESIGN.md`
 ```
@@ -280,7 +280,7 @@ Test the file mentally before writing — every sidebar item must scroll to a re
 
 Re-read the markdown file and check:
 
-- Every section has goal, copy (with exact headline / sub / CTA / body), visual direction, and BONUS tactic reference. Hero promise matches Magic Moment exactly. Single CTA repeated through the page (hero, sticky, final CTA all use the same copy). All headlines ≤12 words; all CTAs 3–5 words; CTAs use first-person framing ("my" / "I"). No category-default copy. The example sentence from `productos/design/1. Product Identity.md` fits naturally inside the page copy.
+- Every section has goal, copy (with exact headline / sub / CTA / body), visual direction, and BONUS tactic reference. Hero promise matches Magic Moment exactly. Single CTA repeated through the page (hero, sticky, final CTA all use the same copy). All headlines ≤12 words; all CTAs 3–5 words; CTAs use first-person framing ("my" / "I"). No category-default copy. The example sentence from `productos/design/1-Product-Identity.md` fits naturally inside the page copy.
 
 If the wireframe was generated in step 8, also check:
 
@@ -295,13 +295,13 @@ Deliver via `computer://` link(s) and a short summary — one line for the patte
 - **Read all four inputs before writing copy.** PRODUCT.md, Product Identity, Magic Moment, BONUS doc.
 - **One section at a time.** The conversation is the value. Don't dump the whole page.
 - **Hero gets extra scrutiny.** It's the disproportionate-impact zone.
-- **Tone of voice on every line.** Headlines, sub-heads, CTAs, body, FAQ answers, error states. Each one is in the brand's voice from `productos/design/1. Product Identity.md`.
+- **Tone of voice on every line.** Headlines, sub-heads, CTAs, body, FAQ answers, error states. Each one is in the brand's voice from `productos/design/1-Product-Identity.md`.
 - **Cite the BONUS doc tactic by number for every section.** Every section exists because a documented tactic recommended it.
 - **Write the final document concisely.** Bullets, not paragraphs. Specific copy in quotes. The whole doc reads in 4–6 minutes.
 
 ## What "done" looks like
 
-**Required:** `productos/design/4a. Landing Page.md` — every section (Header → Hero → Social Proof Bar → Problem → Solution → Features → Deep Social Proof → Pricing → FAQ → Final CTA → Footer) is documented with goal, exact copy, visual direction, and BONUS doc tactic reference. Hero promise matches the Magic Moment. Every piece of copy is in the brand's tone of voice. Character counts honored (CTAs 3–5 words, headlines ≤12 words). Anti-patterns explicitly listed as avoided. Refresh cadence named (45 days; first A/B test target specified). Readable in 4–6 minutes and dated.
+**Required:** `productos/design/4a-Landing-Page.md` — every section (Header → Hero → Social Proof Bar → Problem → Solution → Features → Deep Social Proof → Pricing → FAQ → Final CTA → Footer) is documented with goal, exact copy, visual direction, and BONUS doc tactic reference. Hero promise matches the Magic Moment. Every piece of copy is in the brand's tone of voice. Character counts honored (CTAs 3–5 words, headlines ≤12 words). Anti-patterns explicitly listed as avoided. Refresh cadence named (45 days; first A/B test target specified). Readable in 4–6 minutes and dated.
 
 **Optional (only if the user accepted in step 8):** `productos/design/landing-page-wireframe.html` — a single-file clickable lo-fi wireframe with sidebar section nav, browser-chrome frame, all 11 page sections stacked vertically using the wireframe primitives, IntersectionObserver-driven annotation panel that updates on scroll, no external dependencies. Opens by double-clicking. Same lo-fi greyscale aesthetic as `productos/design/onboarding-wireframe.html` for visual consistency across the design-phase artifacts. If generated, it must stay in sync with the markdown — same section names, same copy, same headlines. If they drift, re-run the skill to re-sync.
 

@@ -1,6 +1,6 @@
 # Growth Experiments Tracker
 
-A running log of every experiment you run — the result, whether it beat its threshold, what you learned, and what you decided. Update it the day each experiment ends. This is where learning compounds: the log, not your memory, is what makes the next experiment smarter. Pairs with [2. Growth Experiments](2.%20Growth%20Experiments.md).
+A running log of every experiment you run — the result, whether it beat its threshold, what you learned, and what you decided. Update it the day each experiment ends. This is where learning compounds: the log, not your memory, is what makes the next experiment smarter. Pairs with [2. Growth Experiments](2-Growth-Experiments.md).
 
 > **How to log:** one row per experiment. Record the result as a **number** against the pass threshold, mark Pass or Fail, write the one-line learning, and commit to a decision — **double down**, **iterate**, or **kill**.
 

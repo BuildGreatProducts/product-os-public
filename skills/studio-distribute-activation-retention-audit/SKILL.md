@@ -1,6 +1,6 @@
 ---
 name: studio-distribute-activation-retention-audit
-description: Use when the user has a working product codebase and wants to find the activation and retention leaks — why new users don't reach the magic moment, and why existing users don't come back — and fix them. Triggers on phrases like "activation audit", "retention audit", "find my leaks", "why do users churn", "fix my onboarding", "users sign up but don't come back", "leaky bucket", or "audit my activation funnel". Runs in the app repo — the repository that contains `productos/`. Detects product type, maps the as-built activation funnel (signup to magic moment) and retention loop (what brings users back), checks instrumentation, and writes a prioritized audit to `docs/ACTIVATION-RETENTION-AUDIT.md` (or repo root if no `docs/`) with a paste-ready fix prompt. Optionally references ProductOS files (`docs/PRODUCT.md`, `productos/design/2. Magic Moment.md`, `productos/design/3. Onboarding Flow.md`, `productos/distribute/BONUS - Measurement & Attribution.md`) if present; works standalone.
+description: Use when the user has a working product codebase and wants to find the activation and retention leaks — why new users don't reach the magic moment, and why existing users don't come back — and fix them. Triggers on phrases like "activation audit", "retention audit", "find my leaks", "why do users churn", "fix my onboarding", "users sign up but don't come back", "leaky bucket", or "audit my activation funnel". Runs in the app repo — the repository that contains `productos/`. Detects product type, maps the as-built activation funnel (signup to magic moment) and retention loop (what brings users back), checks instrumentation, and writes a prioritized audit to `docs/ACTIVATION-RETENTION-AUDIT.md` (or repo root if no `docs/`) with a paste-ready fix prompt. Optionally references ProductOS files (`docs/PRODUCT.md`, `productos/design/2-Magic-Moment.md`, `productos/design/3-Onboarding-Flow.md`, `productos/distribute/BONUS-Measurement-and-Attribution.md`) if present; works standalone.
 ---
 
 # Distribute: Activation & Retention Audit
@@ -29,13 +29,13 @@ The voice is a senior activation and lifecycle consultant who has audited hundre
 
 1. **The user's product codebase** — **required**. Run in the repo root; detect the framework (Next.js, Vite/React, Vue/Nuxt, SvelteKit, Remix, native iOS/Android, Electron/Tauri, Expo/React Native, backend frameworks) before scanning so the file heuristics apply.
 
-2. **Magic Moment** — at `productos/design/2. Magic Moment.md`. **The most valuable input** — absent only in a repo without ProductOS — it names the activation event the whole audit measures against. If absent, ask: *"What's the one action that makes a user 'get it' — the moment they feel the product working?"*
+2. **Magic Moment** — at `productos/design/2-Magic-Moment.md`. **The most valuable input** — absent only in a repo without ProductOS — it names the activation event the whole audit measures against. If absent, ask: *"What's the one action that makes a user 'get it' — the moment they feel the product working?"*
 
-3. **Onboarding Flow** — usually `productos/design/3. Onboarding Flow.md`. **Optional.** The intended first-run path; lets the audit flag where shipped code drifted from the designed flow.
+3. **Onboarding Flow** — usually `productos/design/3-Onboarding-Flow.md`. **Optional.** The intended first-run path; lets the audit flag where shipped code drifted from the designed flow.
 
 4. **PRODUCT.md** — usually `docs/PRODUCT.md`. **Optional.** Provides product type, north star, and business model — which set the retention bar (daily / weekly / occasional).
 
-5. **Measurement & Attribution** — usually `productos/distribute/BONUS - Measurement & Attribution.md`. **Optional.** The reference for the instrumentation check in Area H.
+5. **Measurement & Attribution** — usually `productos/distribute/BONUS-Measurement-and-Attribution.md`. **Optional.** The reference for the instrumentation check in Area H.
 
 If the ProductOS docs are absent, the skill works standalone using the calibration benchmarks embedded below and one or two clarifying questions.
 
@@ -64,7 +64,7 @@ Walk these in order. For each, scan for the patterns, surface findings, and scor
 
 #### A. Time-to-Value & the Activation Path
 Users who reach the "aha" in their first session (or within 48h) are ~3.4× more likely to convert to paid.
-- Count actions from auth-complete to the magic moment (cross-ref `productos/design/2. Magic Moment.md`) — flag if >3–5, or if it requires setup/config first.
+- Count actions from auth-complete to the magic moment (cross-ref `productos/design/2-Magic-Moment.md`) — flag if >3–5, or if it requires setup/config first.
 - Is the magic moment engineered into the first-run path at all? Flag if the documented activation event isn't visibly built before the user hits the general UI.
 - "Setup tax" before value — mandatory profile completion, workspace config, integration connection. Flag anything that delays the first win.
 - A guided path to the first win vs. dumping the user into the full app.
@@ -90,7 +90,7 @@ A new user in a blank screen with no next action is a silent killer.
 - Skippable / non-blocking — flag forced tours with no skip.
 - Required fields — flag every required field not essential to the first value.
 - Progress indication — flag missing step counter/progress.
-- Onboarding ends **at** the magic moment, not before it — flag flows that dump the user at a dashboard short of the aha. Cross-ref `productos/design/3. Onboarding Flow.md` for drift.
+- Onboarding ends **at** the magic moment, not before it — flag flows that dump the user at a dashboard short of the aha. Cross-ref `productos/design/3-Onboarding-Flow.md` for drift.
 
 #### E. Re-engagement Channels *(the #1 retention leak)*
 The most common retention leak is *no mechanism to bring users back at all*.
@@ -116,7 +116,7 @@ Where users leave, and whether anything catches them.
 - Grace period / post-cancel win-back offer — flag absence.
 
 #### H. Activation & Retention Instrumentation
-You can't fix a leak you can't see (cross-ref `productos/distribute/BONUS - Measurement & Attribution.md`).
+You can't fix a leak you can't see (cross-ref `productos/distribute/BONUS-Measurement-and-Attribution.md`).
 - Is the magic-moment / activation event tracked? Flag if the activation event doesn't fire to analytics.
 - Funnel events (signup → activated → retained) instrumented — flag gaps.
 - Retention measurability — product analytics that can cut cohorts/returns (PostHog, Mixpanel, Amplitude). Flag if only page-view analytics exist (can't see retention).
@@ -139,7 +139,7 @@ Five gaps that almost always have a finding: (1) the **permission prompt on firs
 
 ### 6. Cross-reference ProductOS docs (strategy-code drift)
 
-If `productos/design/2. Magic Moment.md` or `productos/design/3. Onboarding Flow.md` exist, check the shipped code against them: does the onboarding match the designed flow? Does the documented activation event actually fire and get tracked? Drift between documented strategy and shipped code is a P1 finding — the thinking was done but the code didn't follow.
+If `productos/design/2-Magic-Moment.md` or `productos/design/3-Onboarding-Flow.md` exist, check the shipped code against them: does the onboarding match the designed flow? Does the documented activation event actually fire and get tracked? Drift between documented strategy and shipped code is a P1 finding — the thinking was done but the code didn't follow.
 
 ### 7. Draft section-by-section, then write the report
 

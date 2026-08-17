@@ -17,10 +17,10 @@ A Product Offer built from a fuzzy idea inherits the fuzziness. This skill's job
 
 Locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Product Offer template** — usually `1. Product Offer.md`. May be entirely empty or only partly filled. **The file this skill rewrites in place** at the end.
-2. **The Product Offer Examples** — usually `BONUS - Product Offer Examples.md`. Five worked examples across business models (Linear, CleanShot X, Bricks, Designjoy, Splice). Read once at the start for calibration. Note that these are pre-AI-era exemplars; their *shape* still calibrates, but the AI-era examples in this skill's body are what to draw on for AI-software founders.
-3. **The Offer Failure Patterns** — usually `BONUS - Offer Failure Patterns.md`. Eight named patterns (Wide Wedge, Vague Pain, Unmeasurable Outcome, Feature-List Mechanism, Toothless Guarantee, Hypothetical Proof, Story Break, Frame Mismatch). Reference these by name when the user's draft drifts.
-4. **The Customer Persona** — usually `2. Customer Persona.md`, if it exists. Optional. If filled in, useful for grounding Customer / Pain / Proof.
+1. **The Product Offer template** — usually `1-Product-Offer.md`. May be entirely empty or only partly filled. **The file this skill rewrites in place** at the end.
+2. **The Product Offer Examples** — usually `BONUS-Product-Offer-Examples.md`. Five worked examples across business models (Linear, CleanShot X, Bricks, Designjoy, Splice). Read once at the start for calibration. Note that these are pre-AI-era exemplars; their *shape* still calibrates, but the AI-era examples in this skill's body are what to draw on for AI-software founders.
+3. **The Offer Failure Patterns** — usually `BONUS-Offer-Failure-Patterns.md`. Eight named patterns (Wide Wedge, Vague Pain, Unmeasurable Outcome, Feature-List Mechanism, Toothless Guarantee, Hypothetical Proof, Story Break, Frame Mismatch). Reference these by name when the user's draft drifts.
+4. **The Customer Persona** — usually `2-Customer-Persona.md`, if it exists. Optional. If filled in, useful for grounding Customer / Pain / Proof.
 
 If the template is missing, ask the user where it lives before continuing.
 
@@ -96,7 +96,7 @@ After all six elements are drafted, do five whole-offer checks before applying a
 
 ### 6. Apply edits to the Product Offer file
 
-Once the six elements are sharp and the cross-cutting checks pass, **rewrite `1. Product Offer.md` in place**. Do not create a sibling file — the Product Offer is the canonical, living version of the offer.
+Once the six elements are sharp and the cross-cutting checks pass, **rewrite `1-Product-Offer.md` in place**. Do not create a sibling file — the Product Offer is the canonical, living version of the offer.
 
 Match the template's structure exactly: same section headers, same italic prompts, same `> Good: ... / Bad: ...` guidance lines. Replace each `**Your answer:**` block with the filled-in answer. Keep the scaffolding (headers, prompts, guidance) intact — the user will revisit this document later.
 

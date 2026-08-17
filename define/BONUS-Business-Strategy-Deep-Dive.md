@@ -1,6 +1,6 @@
 # BONUS — Business Strategy Deep Dive
 
-An **optional** worksheet for defining how your app actually makes money, filled in by `studio-define-business-strategy`. Most people don't need this in the first weeks — your `3. Pricing Strategy.md` carries you through the launch ladder. Run the deep dive when the money questions get real: before spending on paid channels in Distribute, when revenue starts arriving, or when an investor or co-founder asks how the model works. Fill in each section below in 1-2 sentences max.
+An **optional** worksheet for defining how your app actually makes money, filled in by `studio-define-business-strategy`. Most people don't need this in the first weeks — your `3-Pricing-Strategy.md` carries you through the launch ladder. Run the deep dive when the money questions get real: before spending on paid channels in Distribute, when revenue starts arriving, or when an investor or co-founder asks how the model works. Fill in each section below in 1-2 sentences max.
 
 ---
 

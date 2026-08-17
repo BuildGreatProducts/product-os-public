@@ -35,7 +35,7 @@ Pick the path that matches your situation:
 ## Step 4 — Relaunch: the beta invite
 
 - **What to do:** As soon as the magic moment works end to end, run `studio-launch`. Same ritual: ship within 48 hours, share a screenshot of the live message with your cohort or accountability partner, log every response in `docs/LAUNCHES.md`.
-- **What it does:** Puts the working MVP in your believers' hands — a personal invite to everyone who replied or signed up at the earlier launches, then an update on the same public thread. **The win is one activated user** — a real person reaching the magic moment (`productos/design/2. Magic Moment.md`). Their first-session feedback is the best feature-finder you'll ever get; feed it into Step 5.
+- **What it does:** Puts the working MVP in your believers' hands — a personal invite to everyone who replied or signed up at the earlier launches, then an update on the same public thread. **The win is one activated user** — a real person reaching the magic moment (`productos/design/2-Magic-Moment.md`). Their first-session feedback is the best feature-finder you'll ever get; feed it into Step 5.
 
 ## Step 5 — Build new features with the build loop
 

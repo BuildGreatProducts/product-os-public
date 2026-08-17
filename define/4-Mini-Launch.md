@@ -32,10 +32,10 @@ Pick the **warmest channel you actually have** — not the one you wish you had.
 
 *The post or DM itself, written in your persona's words.*
 
-> Good: opens with the pain in the customer's own language (steal it from `2. Customer Persona.md`), names the outcome, ends with one question that invites a reply — and states your price line if you dare
+> Good: opens with the pain in the customer's own language (steal it from `2-Customer-Persona.md`), names the outcome, ends with one question that invites a reply — and states your price line if you dare
 > Bad: a feature list, marketing voice, no question to answer, apologizing for asking
 
-Including your price line (from `3. Pricing Strategy.md`) is optional but recommended — replies to a priced message are worth far more.
+Including your price line (from `3-Pricing-Strategy.md`) is optional but recommended — replies to a priced message are worth far more.
 
 **Your message:**
 
@@ -87,8 +87,8 @@ Log each response with: who, what they said, **warm or cold** (warm = they know 
 *Your read, and your next move.*
 
 - **One or more replies** — win. You have contact with the market. Follow every thread: a real conversation is rung two, and "can I try it?" is a person to put your Magic Moment in front of later.
-- **A conversation or better** — pull their exact words into `2. Customer Persona.md` (pain language), and add the person to the believers list in `docs/LAUNCHES.md`. Your believers are the first invite at every later launch: the Design preview, the beta, the paid launch.
-- **Zero replies after the full send** — also data. Rewrite the message once (different pain hook, add or remove the price) and send through your next-warmest route. Still zero? Log it in `docs/LAUNCHES.md` and read `BONUS - Pivot Framework.md` — you've learned something in week two that most founders learn in month six.
+- **A conversation or better** — pull their exact words into `2-Customer-Persona.md` (pain language), and add the person to the believers list in `docs/LAUNCHES.md`. Your believers are the first invite at every later launch: the Design preview, the beta, the paid launch.
+- **Zero replies after the full send** — also data. Rewrite the message once (different pain hook, add or remove the price) and send through your next-warmest route. Still zero? Log it in `docs/LAUNCHES.md` and read `BONUS-Pivot-Framework.md` — you've learned something in week two that most founders learn in month six.
 
 > Good: a one-sentence honest read plus a dated next action — "2 warm replies, 1 cold; booking a call with the cold one Friday"
 > Bad: "people seemed to like it", reading one reply as validation, reading zero replies as failure instead of data

@@ -10,7 +10,7 @@ You are a technical project manager and AI-assisted development expert. You know
 
 1. Read `docs/PRD.md` — technical spec, data models, requirements
 1. Read `docs/PRODUCT.md` — strategy, customer, mechanism, business model, goal
-1. Read `productos/design/2. Magic Moment.md` — the activation milestone the core MVP phases must reach
+1. Read `productos/design/2-Magic-Moment.md` — the activation milestone the core MVP phases must reach
 1. Read `docs/DESIGN.md` if it exists — visual design tokens (colors, typography, spacing, components)
 
 The PRD is your primary input. Every task in the roadmap should trace back to a requirement in the PRD.
@@ -55,7 +55,7 @@ Each task should represent roughly one coding agent session — approximately 15
 
 ### The magic moment is the milestone
 
-The founder’s magic moment (from `productos/design/2. Magic Moment.md` and the PRD’s Overview) must be achievable by the end of the core MVP phase(s). If it can’t be, the task breakdown needs restructuring until it can. This is the most important design constraint for the roadmap.
+The founder’s magic moment (from `productos/design/2-Magic-Moment.md` and the PRD’s Overview) must be achievable by the end of the core MVP phase(s). If it can’t be, the task breakdown needs restructuring until it can. This is the most important design constraint for the roadmap.
 
 -----
 

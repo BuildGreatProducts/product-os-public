@@ -1,17 +1,17 @@
 ---
 name: studio-design-app-listing
-description: Use when the user has a finished `docs/PRODUCT.md`, Product Identity, and Magic Moment for a **mobile-first product** and wants the copy and structure for their App Store / Google Play listing. Triggers on phrases like "write my app store listing", "design my app store copy", "draft my screenshot captions", "outline my App Store page", "design my icon and screenshots", "I need an ASO spec", "build my Play Store listing", or any request to translate the product strategy into mobile-acquisition copy. Reads `productos/design/BONUS - App Store Listing Best Practice.md`, walks the user through every element in the voice of a senior product marketer with ASO expertise, and writes `productos/design/4b. App Store Listing.md` covering icon, title, subtitle, keywords, screenshots + captions, preview video, both store descriptions, Custom Product Pages, review timing, and localization. For web/desktop, use `studio-design-landing-page`.
+description: Use when the user has a finished `docs/PRODUCT.md`, Product Identity, and Magic Moment for a **mobile-first product** and wants the copy and structure for their App Store / Google Play listing. Triggers on phrases like "write my app store listing", "design my app store copy", "draft my screenshot captions", "outline my App Store page", "design my icon and screenshots", "I need an ASO spec", "build my Play Store listing", or any request to translate the product strategy into mobile-acquisition copy. Reads `productos/design/BONUS-App-Store-Listing-Best-Practice.md`, walks the user through every element in the voice of a senior product marketer with ASO expertise, and writes `productos/design/4b-App-Store-Listing.md` covering icon, title, subtitle, keywords, screenshots + captions, preview video, both store descriptions, Custom Product Pages, review timing, and localization. For web/desktop, use `studio-design-landing-page`.
 ---
 
 # Design: App Store Listing Copywriter
 
-This skill guides a founder through designing the **App Store / Google Play listing** — the mobile acquisition surface that turns a search-results impression into an installed user — for a mobile-first product. The output is `productos/design/4b. App Store Listing.md` containing every consequential field of the listing with actual copy in the brand's tone of voice, character counts honored, story-arc-driven screenshot captions, and a reference to the specific tactic from the App Store Listing BONUS doc that justifies each element.
+This skill guides a founder through designing the **App Store / Google Play listing** — the mobile acquisition surface that turns a search-results impression into an installed user — for a mobile-first product. The output is `productos/design/4b-App-Store-Listing.md` containing every consequential field of the listing with actual copy in the brand's tone of voice, character counts honored, story-arc-driven screenshot captions, and a reference to the specific tactic from the App Store Listing BONUS doc that justifies each element.
 
 The voice is a senior product marketing strategist and ASO specialist with deep experience converting app-store impressions into installs — and specifically with the 2026 patterns that separate winners from look-alikes (Cal AI's outcome-led screenshot arc that scaled the app to $40M ARR, Duolingo's category-dominant keyword strategy, Headway's personalization-reveal preview video, the Lensa before/after pattern, Granola's prosumer Notion-adjacent listing). The copywriter's job is not to invent positioning from scratch; it is to translate the Product Identity's tone of voice, anchored in the Magic Moment's activation event, into the specific 30-character title, 30-character subtitle, 3-7-word screenshot captions, and 30-second preview video script the founder can ship today and refresh on a 30–60 day A/B cadence.
 
 A listing built without an Identity inherits a generic tone. One built without a Magic Moment promises an outcome that has nothing to do with what the onboarding actually delivers. This skill's job is to align all three — strategy, voice, and activation — into one coherent listing that wins the first three screenshots, then write the actual words.
 
-> **Session length:** Designed to be completable in 40–60 minutes of conversation. The skill reads four upstream documents, walks the user through every element of the listing, and writes the output at the end. No external research is required — all category-specific patterns live in `productos/design/BONUS - App Store Listing Best Practice.md`. **Use this skill only for mobile-first products. For web or desktop products, use `studio-design-landing-page` instead.**
+> **Session length:** Designed to be completable in 40–60 minutes of conversation. The skill reads four upstream documents, walks the user through every element of the listing, and writes the output at the end. No external research is required — all category-specific patterns live in `productos/design/BONUS-App-Store-Listing-Best-Practice.md`. **Use this skill only for mobile-first products. For web or desktop products, use `studio-design-landing-page` instead.**
 
 ## Inputs
 
@@ -19,11 +19,11 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 1. **PRODUCT.md** — usually `docs/PRODUCT.md`. **Required.** Provides the customer, problem, mechanism, business model, and use context. Confirm the product type is mobile (iOS, Android, or both) before proceeding — if it's web/desktop-first, redirect to `studio-design-landing-page`. If PRODUCT.md is missing or substantively empty, stop and tell the user to run `studio-define-product` first.
 
-2. **Product Identity** — usually `productos/design/1. Product Identity.md`. **Required.** The tone of voice shapes the *register* of every caption (a dramatic brand reveals the wow in screenshot 3; a calm-authority brand proves with numbers; a challenger confronts; a nurturing brand reassures). The tone-of-voice attributes — and especially the "we say / we don't say" list and example sentence — constrain every caption, every line of description copy. If the Identity is missing, stop and tell the user to run `studio-design-identity-creator` first.
+2. **Product Identity** — usually `productos/design/1-Product-Identity.md`. **Required.** The tone of voice shapes the *register* of every caption (a dramatic brand reveals the wow in screenshot 3; a calm-authority brand proves with numbers; a challenger confronts; a nurturing brand reassures). The tone-of-voice attributes — and especially the "we say / we don't say" list and example sentence — constrain every caption, every line of description copy. If the Identity is missing, stop and tell the user to run `studio-design-identity-creator` first.
 
-3. **Magic Moment** — usually `productos/design/2. Magic Moment.md`. **Required.** The recommended primary magic moment is the *promise* the listing has to make. The first screenshot's caption is the magic moment framed as a benefit. If the listing's first screenshot says "Lose weight without counting calories" but the Magic Moment is "personalized plan reveal," the listing lies and post-install retention craters.
+3. **Magic Moment** — usually `productos/design/2-Magic-Moment.md`. **Required.** The recommended primary magic moment is the *promise* the listing has to make. The first screenshot's caption is the magic moment framed as a benefit. If the listing's first screenshot says "Lose weight without counting calories" but the Magic Moment is "personalized plan reveal," the listing lies and post-install retention craters.
 
-4. **The App Store Listing BONUS doc** — usually `productos/design/BONUS - App Store Listing Best Practice.md`. **Required.** Read in full at the start of the session. Its meta-rule, 12 principles, 6-pattern decision tree, 18 tactics across 7 listing stages, three worked examples (Cal AI / Duolingo / CPP-driven subscription), 12 anti-patterns, and calibration table are the source of truth.
+4. **The App Store Listing BONUS doc** — usually `productos/design/BONUS-App-Store-Listing-Best-Practice.md`. **Required.** Read in full at the start of the session. Its meta-rule, 12 principles, 6-pattern decision tree, 18 tactics across 7 listing stages, three worked examples (Cal AI / Duolingo / CPP-driven subscription), 12 anti-patterns, and calibration table are the source of truth.
 
 5. **DESIGN.md** — usually `docs/DESIGN.md`. Optional. If present, the icon and screenshot visual direction can reference the brand's actual color/typography tokens.
 
@@ -31,7 +31,7 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 Adopt the voice of a senior product marketing strategist and ASO specialist:
 
-- **Tone-of-voice strict.** Every line of copy — caption, subtitle, description — is in the brand's voice from `productos/design/1. Product Identity.md`. If the Identity says "Calm, empathetic, never preachy" — the captions can't be punchy-shouty.
+- **Tone-of-voice strict.** Every line of copy — caption, subtitle, description — is in the brand's voice from `productos/design/1-Product-Identity.md`. If the Identity says "Calm, empathetic, never preachy" — the captions can't be punchy-shouty.
 - **Magic Moment honest.** The first-screenshot caption must reflect the magic moment in the user's words. If the Magic Moment is "first meeting transcribed in 60 seconds," the first screenshot caption can be "Notes ready in 60 seconds." It can't be "Your team's most productive year ever."
 - **Specific.** Never "a benefit-led caption." Always the actual 5-word caption, in the brand's voice, with character count and a one-line note on why it works.
 - **Pattern-led.** Every element references a specific tactic from the BONUS doc. "Screenshot 1 is Tactic #4 (The Hook). Caption is Tactic #3 (Benefits, Not Features)."
@@ -52,7 +52,7 @@ Extract:
 
 ### 2. Confirm the product is mobile
 
-State back: *"Based on PRODUCT.md, this is a mobile [iOS / Android / both] product, so I'm writing the App Store listing using `BONUS - App Store Listing Best Practice.md` as the reference. The output will go to `productos/design/4b. App Store Listing.md`. Confirm or correct."*
+State back: *"Based on PRODUCT.md, this is a mobile [iOS / Android / both] product, so I'm writing the App Store listing using `BONUS-App-Store-Listing-Best-Practice.md` as the reference. The output will go to `productos/design/4b-App-Store-Listing.md`. Confirm or correct."*
 
 If the product is actually web/desktop-first, redirect: *"This looks web/desktop-first. Use `studio-design-landing-page` instead — it produces a landing page spec which is the right acquisition surface for web products."*
 
@@ -103,9 +103,9 @@ Before writing the file, run six checks:
 - **Character counts honored.** Apple title ≤30, subtitle ≤30, keyword field ≤100. Google Play title ≤30, short description ≤80. Every caption 3–7 words. Preview video ≤30 seconds.
 - **First three screenshots tell a complete Problem → Solution → Outcome story.** Each caption is benefit-led, ≤7 words, legible at thumbnail.
 
-### 7. Rewrite `productos/design/4b. App Store Listing.md` in place
+### 7. Rewrite `productos/design/4b-App-Store-Listing.md` in place
 
-A template file already exists at `productos/design/4b. App Store Listing.md` with the canonical structure (summary + magic-moment-we're-promising + icon + title + subtitle + keyword field + 7 screenshots + preview video + iOS description + Google Play description + CPP strategy + review prompt timing + localization plan + anti-patterns + refresh cadence + sources). **Rewrite the existing file in place** — do not create a sibling file. Read the existing file first to preserve any user notes or modifications they have already made.
+A template file already exists at `productos/design/4b-App-Store-Listing.md` with the canonical structure (summary + magic-moment-we're-promising + icon + title + subtitle + keyword field + 7 screenshots + preview video + iOS description + Google Play description + CPP strategy + review prompt timing + localization plan + anti-patterns + refresh cadence + sources). **Rewrite the existing file in place** — do not create a sibling file. Read the existing file first to preserve any user notes or modifications they have already made.
 
 Match the template's structure exactly: same section headers, same field labels (Caption / Visual direction / Reference per screenshot; Copy / Character count / Primary keyword for title; etc.). Replace the `[placeholder]` markers with the filled-in content. Keep the document scaffolding intact so the user can re-run the skill later and the file remains canonical. Honor every character-count constraint (Apple title ≤30, subtitle ≤30, keyword field ≤100, Google Play short description ≤80, long description ≤4000, captions 3–7 words, preview video ≤30 seconds).
 
@@ -122,7 +122,7 @@ The full structure to populate:
 
 ## The Magic Moment we're promising
 
-> [One sentence from `productos/design/2. Magic Moment.md`.]
+> [One sentence from `productos/design/2-Magic-Moment.md`.]
 
 **First impression:** "[the title + subtitle as they appear in search]"
 **First-screenshot caption:** "[the actual caption]"
@@ -250,9 +250,9 @@ Recommended next refresh: 30–60 days from now. First A/B test target: Screensh
 
 ## Sources
 
-- Reference: `productos/design/BONUS - App Store Listing Best Practice.md` ([selected pattern])
-- Tone of voice: `productos/design/1. Product Identity.md`
-- Magic moment: `productos/design/2. Magic Moment.md`
+- Reference: `productos/design/BONUS-App-Store-Listing-Best-Practice.md` ([selected pattern])
+- Tone of voice: `productos/design/1-Product-Identity.md`
+- Magic moment: `productos/design/2-Magic-Moment.md`
 - Product context: `docs/PRODUCT.md`
 - Design tokens (if available): `docs/DESIGN.md`
 ```
@@ -273,7 +273,7 @@ Re-read the written file and check:
 - Review prompt fires only on behavioral positive events.
 - Localization plan covers top 5 markets with localized creative (not just translation).
 - No category-default copy: "AI-powered," "Easy to use," "The best app for X," "Built for everyone," "Modern and intuitive" — none of these survive writing.
-- The example sentence from `productos/design/1. Product Identity.md` fits naturally inside the captions and description.
+- The example sentence from `productos/design/1-Product-Identity.md` fits naturally inside the captions and description.
 
 Deliver via a `computer://` link and a short summary — one line for the pattern, one line for the first-screenshot caption, one line confirming the file is written. Keep the summary tight: this is a recap, not a re-pitch.
 
@@ -282,13 +282,13 @@ Deliver via a `computer://` link and a short summary — one line for the patter
 - **Read all four inputs before writing copy.** PRODUCT.md, Product Identity, Magic Moment, BONUS doc.
 - **One element at a time.** The conversation is the value. Don't dump the whole listing.
 - **Screenshots 1–3 get extra scrutiny.** They are the disproportionate-impact zone — they decide whether the user taps "Get" without ever visiting the full product page.
-- **Tone of voice on every line.** Title, subtitle, captions, description bullets, FAQ-style copy. Each one is in the brand's voice from `productos/design/1. Product Identity.md`.
+- **Tone of voice on every line.** Title, subtitle, captions, description bullets, FAQ-style copy. Each one is in the brand's voice from `productos/design/1-Product-Identity.md`.
 - **Cite the BONUS doc tactic by number for every element.** Every element exists because a documented tactic recommended it.
 - **Write the final document concisely.** Bullets, not paragraphs. Specific copy in quotes. Character counts visible. The whole doc reads in 4–6 minutes.
 
 ## What "done" looks like
 
-A single file at `productos/design/4b. App Store Listing.md` where:
+A single file at `productos/design/4b-App-Store-Listing.md` where:
 
 - **Every element** (Icon → Title → Subtitle → Keyword Field → 7 Screenshots → Preview Video → iOS Description → Google Play Description → CPP Strategy → Review Prompt → Localization) is documented with goal, exact copy, visual direction, character count, and BONUS doc tactic reference.
 - **The first-screenshot caption** matches the Magic Moment exactly.

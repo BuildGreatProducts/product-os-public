@@ -12,22 +12,22 @@ The Mini-Launch is launch #1 of four. Every later phase closes by relaunching to
 
 - **What to do:** Run `studio-define-offer-builder`, then optionally `studio-define-offer-review` for a critique pass.
 - **Already have a product?** Run `studio-define-from-code` instead — it extracts draft offer, persona, and pricing documents from your existing codebase, live app, or landing page (covering Steps 1–3 in one pass), then `studio-define-offer-review` sharpens them. You skip the blank templates, not the thinking.
-- **What it does:** Produces `productos/define/1. Product Offer.md` — the six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof). Draws on `BONUS - Product Offer Examples.md` and `BONUS - Offer Failure Patterns.md`.
+- **What it does:** Produces `productos/define/1-Product-Offer.md` — the six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof). Draws on `BONUS-Product-Offer-Examples.md` and `BONUS-Offer-Failure-Patterns.md`.
 
 ## Step 2 — Customer Persona
 
 - **What to do:** Run `studio-define-customer-persona`.
-- **What it does:** Produces `productos/define/2. Customer Persona.md` — one specific person, what they want, what they currently do, what makes them switch. Draws on `BONUS - Customer Persona Examples.md`.
+- **What it does:** Produces `productos/define/2-Customer-Persona.md` — one specific person, what they want, what they currently do, what makes them switch. Draws on `BONUS-Customer-Persona-Examples.md`.
 
 ## Step 3 — Pricing Strategy
 
 - **What to do:** Run `studio-define-pricing`. A 20–30 minute session — one honest number, not a full monetization model.
-- **What it does:** Produces `productos/define/3. Pricing Strategy.md` — who pays, one launch price said out loud, 2–3 real anchors, and the plain-English price line your Mini-Launch will carry. *(Want the full model — revenue model, tiers, margins, moat, north star? That's `BONUS - Business Strategy Deep Dive.md`, filled by `studio-define-business-strategy`. Most people don't need it until money questions get real — typically before spending on paid channels in Distribute.)*
+- **What it does:** Produces `productos/define/3-Pricing-Strategy.md` — who pays, one launch price said out loud, 2–3 real anchors, and the plain-English price line your Mini-Launch will carry. *(Want the full model — revenue model, tiers, margins, moat, north star? That's `BONUS-Business-Strategy-Deep-Dive.md`, filled by `studio-define-business-strategy`. Most people don't need it until money questions get real — typically before spending on paid channels in Distribute.)*
 
 ## Step 4 — Mini-Launch ★ *the quick win*
 
 - **What to do:** Run `studio-launch`. Ship the ask within **48 hours** of finishing Step 3 — then share a screenshot of the **live** post or sent DM (real proof, not a draft) with your cohort community (working solo? an accountability partner or your public build-in-public feed — any witness keeps the bar honest), and come back to log the responses.
-- **What it does:** Fills `productos/define/4. Mini-Launch.md` and starts `docs/LAUNCHES.md` — your offer, in your persona's words, in front of real potential customers via the warmest channel you have (DM ask, community post, build-in-public post, or a one-pager). **The win is one reply.** Everyone who responds goes on your believers list — they're your Design preview readers, your beta users, and your first customers.
+- **What it does:** Fills `productos/define/4-Mini-Launch.md` and starts `docs/LAUNCHES.md` — your offer, in your persona's words, in front of real potential customers via the warmest channel you have (DM ask, community post, build-in-public post, or a one-pager). **The win is one reply.** Everyone who responds goes on your believers list — they're your Design preview readers, your beta users, and your first customers.
 
 ## Step 5 — Synthesize PRODUCT.md
 

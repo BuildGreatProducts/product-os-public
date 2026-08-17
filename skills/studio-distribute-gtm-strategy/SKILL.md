@@ -23,9 +23,9 @@ This skill needs three things: **product context** (what the product is, who it'
 Locate the Define work in the ProductOS folder — `productos/` at the app repo root (or the current folder in a standalone ProductOS checkout):
 
 1. **The product summary** — usually `docs/PRODUCT.md`. The **preferred** input: an 8-section plain-English summary of the whole strategy. If it exists, read it first and in full. If not, fall back to the Define docs directly (below).
-2. **The Customer Persona** — usually `productos/define/2. Customer Persona.md`. The single most useful input for channel selection. Section 11 *Watering Holes* (named communities, podcasts/newsletters, trusted people) is the raw material for the picks; section 10 *Willingness to Pay* gates which channels the price can afford; sections 5–6 (*Job-to-be-Done*, *Triggers*) feed search intent.
-3. **The Pricing Strategy** — usually `productos/define/3. Pricing Strategy.md`. The launch price and billing shape — the first check on whether a channel's cost can ever pay back. If the user has done the optional deep dive (`productos/define/BONUS - Business Strategy Deep Dive.md`), read it too: margin, north star, and Unfair Advantage (often itself a channel — a community, an audience, a platform niche) all sharpen the channel ranking.
-4. **The Launch Log** — `docs/LAUNCHES.md` (and `productos/define/4. Mini-Launch.md`). The four launches so far are the richest distribution evidence in the project: which channel produced replies, signups, activated users, or payments — and the believers list, which is itself a channel. Start the hunt from anything that already pulled; the primary channel recommendation should almost always explain its relationship to the thread the launches built.
+2. **The Customer Persona** — usually `productos/define/2-Customer-Persona.md`. The single most useful input for channel selection. Section 11 *Watering Holes* (named communities, podcasts/newsletters, trusted people) is the raw material for the picks; section 10 *Willingness to Pay* gates which channels the price can afford; sections 5–6 (*Job-to-be-Done*, *Triggers*) feed search intent.
+3. **The Pricing Strategy** — usually `productos/define/3-Pricing-Strategy.md`. The launch price and billing shape — the first check on whether a channel's cost can ever pay back. If the user has done the optional deep dive (`productos/define/BONUS-Business-Strategy-Deep-Dive.md`), read it too: margin, north star, and Unfair Advantage (often itself a channel — a community, an audience, a platform niche) all sharpen the channel ranking.
+4. **The Launch Log** — `docs/LAUNCHES.md` (and `productos/define/4-Mini-Launch.md`). The four launches so far are the richest distribution evidence in the project: which channel produced replies, signups, activated users, or payments — and the believers list, which is itself a channel. Start the hunt from anything that already pulled; the primary channel recommendation should almost always explain its relationship to the thread the launches built.
 
 If there's no ProductOS folder anywhere, you're on Path B. If ProductOS is present but the docs are still full of `**Your answer:**` placeholders, that's not Path B — say so and point them to `studio-define-product` (or the `studio-define-from-code` fast-track) first — a channel plan built on a fuzzy product targets the wrong people in the wrong places.
 
@@ -44,14 +44,14 @@ Ask only what the codebase didn't already answer, and keep it conversational —
 
 ### Output target (both paths)
 
-**The Go-To-Market Strategy template** — `productos/distribute/1. Go-To-Market Strategy.md`. On the standard path this exists, defines the exact output structure, *and is the file the skill rewrites in place* (see step 5). On the standalone fallback it won't exist — create the plan fresh with the same structure (customer line, three sequenced channel blocks, Next), at `docs/go-to-market-strategy.md` (or the repo root if there's no `docs/` folder).
+**The Go-To-Market Strategy template** — `productos/distribute/1-Go-To-Market-Strategy.md`. On the standard path this exists, defines the exact output structure, *and is the file the skill rewrites in place* (see step 5). On the standalone fallback it won't exist — create the plan fresh with the same structure (customer line, three sequenced channel blocks, Next), at `docs/go-to-market-strategy.md` (or the repo root if there's no `docs/` folder).
 
 ### Channel playbook (both paths)
 
 Two reference docs ship **inside this skill's folder**, so they're available in both paths. Read them in full at the start, and justify every channel pick through the decision tree and fit matrix:
 
-- **`BONUS - Distribution Channels.md` (in this skill's folder)** — the meta-rule (go where they already are), a decision tree mapping product shape to a starting channel, a channel-vs-business-type fit matrix, and the twelve channels each with a pass threshold and pitfalls.
-- **`BONUS - AI Distribution Tools.md` (in this skill's folder)** — the specific tool to run each channel.
+- **`BONUS-Distribution-Channels.md` (in this skill's folder)** — the meta-rule (go where they already are), a decision tree mapping product shape to a starting channel, a channel-vs-business-type fit matrix, and the twelve channels each with a pass threshold and pitfalls.
+- **`BONUS-AI-Distribution-Tools.md` (in this skill's folder)** — the specific tool to run each channel.
 
 The same two files also live in `productos/distribute/`; if the user has customized those project copies, prefer them. The bundled copies guarantee the skill always has its playbook when run standalone.
 
@@ -108,7 +108,7 @@ Plan all three fully. Channel 1 gets the most detail, but the next and experimen
 
 ### 5. Rewrite the Go-To-Market Strategy file in place
 
-Output depends on the path. **On the standard path, rewrite `productos/distribute/1. Go-To-Market Strategy.md` in place** with the filled-in answers — do not create a sibling draft; the user wants this to be the canonical, living plan. **On the standalone fallback, where that template doesn't exist, create the plan fresh** with the identical structure, at `docs/go-to-market-strategy.md` (or the repo root if there's no `docs/` folder).
+Output depends on the path. **On the standard path, rewrite `productos/distribute/1-Go-To-Market-Strategy.md` in place** with the filled-in answers — do not create a sibling draft; the user wants this to be the canonical, living plan. **On the standalone fallback, where that template doesn't exist, create the plan fresh** with the identical structure, at `docs/go-to-market-strategy.md` (or the repo root if there's no `docs/` folder).
 
 Match the template's structure exactly: the customer line, the one-rule line, then **three channel blocks in sequence order** (start here / next / experiment), each with its one-sentence why, the five-step "Do this" checklist, "Working =", and "If it stalls" — then the short **Next** handoff and the one-line *Based on:* footer naming the inputs and research used. Date the header line. Because this overwrites the template, **read the existing file first** to preserve any notes the user already added, and surface conflicts before writing.
 
@@ -150,7 +150,7 @@ Name them when you see them — naming compounds learning, and the user will cat
 
 ## What "done" looks like
 
-A completed Go-To-Market Strategy document — the rewritten `productos/distribute/1. Go-To-Market Strategy.md` on the standard path, or a fresh `docs/go-to-market-strategy.md` in a repo without ProductOS — where:
+A completed Go-To-Market Strategy document — the rewritten `productos/distribute/1-Go-To-Market-Strategy.md` on the standard path, or a fresh `docs/go-to-market-strategy.md` in a repo without ProductOS — where:
 
 - The customer line says who they are and where they already gather — one line, no framework language.
 - Exactly **three channel blocks in sequence order**, one marked "start here", the others gated on the previous channel's number.
