@@ -8,6 +8,7 @@
 - **`studio-develop-refactor-plan` drops its hard PRD gate.** When `docs/PRD.md` doesn't exist it now runs a new step 0 — deriving a refactor-scoped PRD from `PRODUCT.md`, `DESIGN.md`, the codebase, and a short interview — then proceeds into the audit as before. `docs/REFACTOR.md` serves as the roadmap on this path, so members refactoring an existing codebase skip `studio-develop-prd-roadmap` entirely.
 - Develop checklist updated to match: Step 1 notes the PRD is optional on path 3b, and Step 3b points platform arrivals at `studio-develop-migrate` before any refactor.
 - Skill count 35 → 36 across the README and all three plugin manifests.
+- `studio-setup` re-pointed at the new coached-plan format: plans now carry a single **Your Programme** list with inline *Check at setup* lines (replacing the separate **Sequence** and **Verify at setup** sections). Same installer workflow, updated section names.
 - Cursor `/add-plugin` docs: the selected folder must be a git repository with a commit. A GitHub ZIP extract (`product-os-public-main`) has no `.git`, so Cursor's `git ls-remote HEAD` fails with "Failed to resolve git ref HEAD". README now says clone (not unzip), with `git init` + first-commit and `~/.cursor/plugins/local/` workarounds.
 
 ## 1.6.0 — August 2026
