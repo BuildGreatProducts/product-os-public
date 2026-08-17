@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Cursor `/add-plugin` docs: the selected folder must be a git repository with a commit. A GitHub ZIP extract (`product-os-public-main`) has no `.git`, so Cursor's `git ls-remote HEAD` fails with "Failed to resolve git ref HEAD". README now says clone (not unzip), with `git init` + first-commit and `~/.cursor/plugins/local/` workarounds.
+
 ## 1.6.0 — August 2026
 
 **Every filename is now zip-safe.** Uploading ProductOS as a plugin zip through the Claude desktop app failed with "Zip file contains path with invalid characters" — the upload validator rejects paths containing spaces or `&`. Every affected path (47 files and one folder) is renamed; no content moved, nothing was added or removed.

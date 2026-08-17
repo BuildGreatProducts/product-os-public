@@ -24,7 +24,7 @@ One thread runs through all four phases: **the launch ladder.** Each phase close
 Three steps, the same for every tool and every stage:
 
 1. **Create or open your app repo.** Starting from scratch? Make an empty folder and `git init` it — your product's repo exists before your product does.
-2. **Put ProductOS in it as `productos/`** — clone or copy this folder into the repo root, named exactly `productos`.
+2. **Put ProductOS in it as `productos/`** — clone this folder into the repo root, named exactly `productos`. A copy (or a GitHub ZIP extract) is fine for Claude Code and Codex; **Cursor's `/add-plugin` needs a real git clone** — see below.
 3. **Run `studio-setup`.** It wires the agent guidelines into your repo root (`CLAUDE.md`/`AGENTS.md`, from `productos/setup/`), adds `productos/` to your `.gitignore` (see the licence note below), and — if your copy shipped with a programme plan — moves it to `docs/PLAN.md` and verifies it against your actual repo.
 
 ProductOS is also a plugin for **Claude Code**, **Codex**, and **Cursor** — one package, three manifests, the same 35 skills:
@@ -50,7 +50,30 @@ codex plugin add productos@productos
 
 ### Cursor
 
-Type `/add-plugin` in the editor and point it at the `productos/` folder. Cursor auto-discovers all skills from `productos/skills/`.
+`/add-plugin` clones the selected folder as a git remote (`file://…` + `git ls-remote HEAD`). That only works if the folder **is a git repository with at least one commit**. A GitHub ZIP extract (`product-os-public-main`, no `.git`) fails with:
+
+> Failed to resolve git ref "HEAD" … does not appear to be a git repository
+
+**Clone, don't unzip:**
+
+```
+git clone https://github.com/BuildGreatProducts/product-os-public productos
+```
+
+Then type `/add-plugin` and point it at that `productos/` folder. Cursor auto-discovers all skills from `productos/skills/`.
+
+**Already unzipped?** Turn the folder into a git repo, then retry `/add-plugin`:
+
+```
+cd /path/to/product-os-public-main
+git init
+git add .
+git commit -m "ProductOS"
+```
+
+(`git init` alone is not enough — Cursor needs a resolvable `HEAD`, which means one commit.)
+
+**Without using git:** copy the folder to `~/.cursor/plugins/local/productos` (it must contain `.cursor-plugin/plugin.json`) and reload the window. See [Test plugins locally](https://cursor.com/docs/plugins.md#test-plugins-locally).
 
 ### Cowork / Claude Desktop (no install)
 
