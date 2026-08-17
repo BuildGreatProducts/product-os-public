@@ -1,7 +1,13 @@
 # Changelog
 
-## Unreleased
+## 1.7.0 — August 2026
 
+**Escaping the prompt-to-app platforms.** Members arriving from Lovable, Bolt, v0, or Base44 needed a safe path into their own repo, stack, and coding agent — and members refactoring an existing app no longer need to run the full PRD interview first.
+
+- **New skill `studio-develop-migrate`** — moves an app off a prompt-to-app platform completely, safely, and once. Inventories everything the platform manages (hosting, database, auth, secrets, storage, edge functions, cron jobs — and the easy-to-miss inbound webhooks like Stripe endpoints pointing at platform URLs), recommends the target stack on a keep-what-you-own rule, researches the platform's current export mechanics live (they change fast — Lovable only shipped official backend Export/Pause/Remove controls in mid-2026), then writes `docs/MIGRATION.md`: a phased checkbox plan ending in a verification gate — real login with a pre-migration password, test payment, storage URLs — all green before the old platform is ever paused. Baked-in traps from the research: secrets never export and should be rotated, signed storage URLs break silently, exports are point-in-time snapshots so the plan enforces a clean break, and DNS cutover comes last. Migration moves and rewires; it never improves code — `studio-develop-refactor-plan` runs afterwards for that.
+- **`studio-develop-refactor-plan` drops its hard PRD gate.** When `docs/PRD.md` doesn't exist it now runs a new step 0 — deriving a refactor-scoped PRD from `PRODUCT.md`, `DESIGN.md`, the codebase, and a short interview — then proceeds into the audit as before. `docs/REFACTOR.md` serves as the roadmap on this path, so members refactoring an existing codebase skip `studio-develop-prd-roadmap` entirely.
+- Develop checklist updated to match: Step 1 notes the PRD is optional on path 3b, and Step 3b points platform arrivals at `studio-develop-migrate` before any refactor.
+- Skill count 35 → 36 across the README and all three plugin manifests.
 - Cursor `/add-plugin` docs: the selected folder must be a git repository with a commit. A GitHub ZIP extract (`product-os-public-main`) has no `.git`, so Cursor's `git ls-remote HEAD` fails with "Failed to resolve git ref HEAD". README now says clone (not unzip), with `git init` + first-commit and `~/.cursor/plugins/local/` workarounds.
 
 ## 1.6.0 — August 2026

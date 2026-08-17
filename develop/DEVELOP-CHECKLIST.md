@@ -9,6 +9,7 @@ If `docs/PLAN.md` exists (your programme plan, shipped with coached copies of Pr
 ## Step 1 — PRD & Roadmap
 
 - **What to do:** Run `studio-develop-prd-roadmap`.
+- **Refactoring an existing codebase (path 3b)?** This step is optional — `studio-develop-refactor-plan` generates its own refactor-scoped PRD when `docs/PRD.md` doesn't exist, so you can go straight to Step 3b.
 - **No `docs/PRODUCT.md` yet?** Run the Define fast-track first — `studio-define-from-code` extracts the Define documents from your existing product, then `studio-define-product` synthesises PRODUCT.md.
 - **What it does:** Scopes your MVP through a structured interview (core loop, feature cuts, tech stack), then produces `docs/PRD.md` — the technical spec a coding agent builds from — and `docs/ROADMAP.md` — the phased build plan with task checkboxes. Draws on `productos/develop/guides/PRD-GENERATION.md`, `ROADMAP-GENERATION.md`, and `TECH-STACK-OPTIONS.md`.
 
@@ -29,7 +30,8 @@ Pick the path that matches your situation:
 ### 3b — Refactoring an existing codebase
 
 - **What to do:** First protect your working code — work in a git worktree or duplicate the codebase folder before refactoring, so you can always get back to a working version. Then run `studio-develop-refactor-plan`, review each difference it finds with you, and once `docs/REFACTOR.md` exists, run `studio-develop-refactor-build`.
-- **What it does:** The plan skill audits your code against the PRD and turns your keep/remove decisions into `docs/REFACTOR.md`; the build skill executes it task by task until the codebase matches the PRD.
+- **Coming from a prompt-to-app platform (Lovable, Bolt, v0, Base44)?** Run `studio-develop-migrate` first — it inventories everything the platform manages, moves the app into your own repo, stack, and deployment via `docs/MIGRATION.md`, and gates decommissioning the old platform behind a full verification pass. Refactor after you fully own the codebase.
+- **What it does:** The plan skill audits your code against the PRD (generating a refactor-scoped PRD first if `docs/PRD.md` doesn't exist) and turns your keep/remove decisions into `docs/REFACTOR.md`; the build skill executes it task by task until the codebase matches the PRD.
 - **No `docs/DESIGN.md` yet?** Run `studio-design-design-system-from-code` first — it reverse-engineers the design system already in your code into `docs/DESIGN.md`, so the refactor has real design tokens to converge on.
 
 ## Step 4 — Relaunch: the beta invite
