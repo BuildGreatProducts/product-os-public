@@ -1,6 +1,6 @@
 ---
 name: studio-define-offer-review
-description: Use when the user has filled out their Product Offer and wants a rigorous, strategic critique before moving on. Triggers on phrases like "review my product offer", "critique my offer", "is my offer any good", "tear apart my product offer", "audit my offer", "sanity-check my positioning", "what's wrong with my offer", or any request to evaluate, sharpen, pressure-test, or rewrite the six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof) of a product offer. Reads the filled-in Product Offer, identifies gaps in thinking, references the worked Product Offer Examples as calibration anchors, proposes rewrites in the voice of a strategic startup advisor with deep launch and exit experience, and applies approved edits directly to the Product Offer file. Especially appropriate inside a ProductOS-style "Define" workflow where the user has filled in `1. Product Offer.md` and wants it sharpened before building the customer persona or strategy.
+description: Use when the user has filled out their Product Offer and wants a rigorous, strategic critique before moving on. Triggers on phrases like "review my product offer", "critique my offer", "is my offer any good", "tear apart my product offer", "audit my offer", "sanity-check my positioning", "what's wrong with my offer", or any request to evaluate, sharpen, pressure-test, or rewrite the six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof) of a product offer. Reads the filled-in Product Offer, identifies gaps in thinking, references the worked Product Offer Examples as calibration anchors, proposes rewrites in the voice of a strategic startup advisor with deep launch and exit experience, and applies approved edits directly to the Product Offer file. Especially appropriate inside a ProductOS-style "Define" workflow where the user has filled in `1-Product-Offer.md` and wants it sharpened before building the customer persona or strategy.
 ---
 
 # Define: Product Offer Critique
@@ -17,9 +17,9 @@ A product offer is six sentences (Customer, Current Pain, Outcome, Mechanism, Gu
 
 Locate three files in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Product Offer** — usually `1. Product Offer.md`. The file this skill audits and rewrites. If it is mostly empty, stop and ask the user to take a first pass before invoking this skill — the skill's job is to sharpen, not to draft from scratch.
-2. **The Product Offer Examples** — usually `BONUS - Product Offer Examples.md`. Five worked examples across business models. Read this once at the start to ground every critique in a real benchmark. Use as **calibration**, never as a script to retrofit the user onto.
-3. **The Customer Persona** — usually `2. Customer Persona.md`, if it has been filled in already. Optional, but if present, use it for coherence checks (does the offer's Customer line match the persona's Identity? does the Proof match the persona's trust threshold?).
+1. **The Product Offer** — usually `1-Product-Offer.md`. The file this skill audits and rewrites. If it is mostly empty, stop and ask the user to take a first pass before invoking this skill — the skill's job is to sharpen, not to draft from scratch.
+2. **The Product Offer Examples** — usually `BONUS-Product-Offer-Examples.md`. Five worked examples across business models. Read this once at the start to ground every critique in a real benchmark. Use as **calibration**, never as a script to retrofit the user onto.
+3. **The Customer Persona** — usually `2-Customer-Persona.md`, if it has been filled in already. Optional, but if present, use it for coherence checks (does the offer's Customer line match the persona's Identity? does the Proof match the persona's trust threshold?).
 
 If the Product Offer file is missing, ask where it lives before proceeding.
 
@@ -80,7 +80,7 @@ Now propose the actual edits. For each section that needs changing:
 2. **Show the proposed rewrite** — specific, concrete, in the style of the examples (named entities, numbers, ranges, real competitors).
 3. **Explain the *why*** in one sentence — what gap the rewrite closes and what strategic risk it removes.
 4. **Wait for the user's response.** They can approve, reject, or counter-propose. Don't apply edits without explicit approval — this is their offer, not yours.
-5. **On approval**, apply the edit to `1. Product Offer.md` as a surgical `Edit` (replace the user's previous answer text under the relevant section heading; preserve the section header, the italic prompt, and the `> Good: ... / Bad: ...` guidance lines — they remain useful when the user re-runs this skill later).
+5. **On approval**, apply the edit to `1-Product-Offer.md` as a surgical `Edit` (replace the user's previous answer text under the relevant section heading; preserve the section header, the italic prompt, and the `> Good: ... / Bad: ...` guidance lines — they remain useful when the user re-runs this skill later).
 
 Do not batch-apply edits. The user should see each one land and have a chance to roll back before the next.
 

@@ -22,7 +22,7 @@ Two threads carry between launches:
 1. **The believers list.** Everyone who ever responds gets a name on the list in `docs/LAUNCHES.md`. Launch #1's replier is launch #2's preview reader, launch #3's beta user, and launch #4's first customer and testimonial. Every launch goes to the believers *first*, then to the wider channel — warm before cold, always.
 2. **The same channel, by default.** Relaunches return to the thread that worked — same community, same feed, ideally the same literal thread ("update on the thing I posted about in March…"). Attention compounds only if it accumulates in one place. Pick a new channel only if the last one was silent after a full send and one rewrite.
 
-And one rule keeps the ladder honest: **each rung is a target that triggers a conversation, not a gate.** Missing a rung once means rewrite and resend. Missing the same rung twice is a signal worth respecting — open `productos/define/BONUS - Pivot Framework.md`, and if the user is in a cohort, this is the moment to talk to their coach. Nobody stalls out of the program for missing a rung; they course-correct because of it.
+And one rule keeps the ladder honest: **each rung is a target that triggers a conversation, not a gate.** Missing a rung once means rewrite and resend. Missing the same rung twice is a signal worth respecting — open `productos/define/BONUS-Pivot-Framework.md`, and if the user is in a cohort, this is the moment to talk to their coach. Nobody stalls out of the program for missing a rung; they course-correct because of it.
 
 > **Session shape:** Every launch is two sittings. **Sitting one (20–30 min): arm and ship** — route, draft, commit a send time inside 48 hours. **Sitting two: log and read** — confirm proof, log every response, read the signal, name the next rung. Do not let sitting one end without a committed send time, and do not let "one more polish pass" move it.
 
@@ -36,12 +36,12 @@ Read **`docs/LAUNCHES.md`**. If it doesn't exist, this is **launch #1 — the Mi
 
 Locate in the ProductOS folder (`productos/` at the app repo root, or the current folder in a standalone checkout) and the repo-root `docs/`. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Product Offer** — `productos/define/1. Product Offer.md`. **Required.** The outcome and pitch every message is built from.
-2. **The Customer Persona** — `productos/define/2. Customer Persona.md`. **Required.** The pain language the message opens with and the watering holes that decide where it ships.
-3. **The Pricing Strategy** — `productos/define/3. Pricing Strategy.md`. **Required.** The price line. If empty, run `studio-define-pricing` first — it's a 20-minute session.
+1. **The Product Offer** — `productos/define/1-Product-Offer.md`. **Required.** The outcome and pitch every message is built from.
+2. **The Customer Persona** — `productos/define/2-Customer-Persona.md`. **Required.** The pain language the message opens with and the watering holes that decide where it ships.
+3. **The Pricing Strategy** — `productos/define/3-Pricing-Strategy.md`. **Required.** The price line. If empty, run `studio-define-pricing` first — it's a 20-minute session.
 4. **The Launch Log** — `docs/LAUNCHES.md`, if it exists. The believers list and every previous entry. Created by this skill at the end of launch #1.
-5. **The Mini-Launch worksheet** — `productos/define/4. Mini-Launch.md`. Launch #1's worksheet; the skill fills it in place (sections 1–2 in sitting one, 3–6 in sitting two).
-6. **Phase payloads, per launch:** #2 reads `productos/design/4a. Landing Page.md` (or `4b. App Store Listing.md`), `productos/design/1. Product Identity.md`, and `productos/design/2. Magic Moment.md` for the "look what it looks like" material. #3 reads `docs/DEPLOY.md` (or wherever the app's URL/TestFlight link lives) and `productos/design/2. Magic Moment.md` — activation is defined there. #4 reads `productos/distribute/1. Go-To-Market Strategy.md` for the primary channel and `docs/PRODUCT.md` for the story.
+5. **The Mini-Launch worksheet** — `productos/define/4-Mini-Launch.md`. Launch #1's worksheet; the skill fills it in place (sections 1–2 in sitting one, 3–6 in sitting two).
+6. **Phase payloads, per launch:** #2 reads `productos/design/4a-Landing-Page.md` (or `4b-App-Store-Listing.md`), `productos/design/1-Product-Identity.md`, and `productos/design/2-Magic-Moment.md` for the "look what it looks like" material. #3 reads `docs/DEPLOY.md` (or wherever the app's URL/TestFlight link lives) and `productos/design/2-Magic-Moment.md` — activation is defined there. #4 reads `productos/distribute/1-Go-To-Market-Strategy.md` for the primary channel and `docs/PRODUCT.md` for the story.
 
 ## Workflow — Sitting one: arm and ship
 
@@ -56,7 +56,7 @@ Locate in the ProductOS folder (`productos/` at the app repo root, or the curren
 | An active social feed — or a half-built product with screenshots | **The Build-in-Public Post** | "Here's what I'm building and why" + screenshot |
 | Any of the above, plus an hour spare | **The One-Pager** *(optional upgrade)* | One-page site + email box, shared via one of the routes above |
 
-Half-built products are an advantage — a screenshot of something real is more credible than an idea. The zero-network user takes the Community Post, and if they can't name the community, that's a persona gap: fix the watering holes in `2. Customer Persona.md` first, and check the community's self-promotion rules. DM lists must be *named* — eight actual people, not "some old clients."
+Half-built products are an advantage — a screenshot of something real is more credible than an idea. The zero-network user takes the Community Post, and if they can't name the community, that's a persona gap: fix the watering holes in `2-Customer-Persona.md` first, and check the community's self-promotion rules. DM lists must be *named* — eight actual people, not "some old clients."
 
 **Launches #2–4** route themselves: believers first (personal messages — they replied last time, they get the update before anyone), then the same channel as the previous launch, as a continuation of the same thread where the platform allows it. Ask only one routing question: *"Anything changed about who you can reach since last time?"*
 
@@ -64,7 +64,7 @@ Half-built products are an advantage — a screenshot of something real is more 
 
 Draft *for* the user — they edit, they don't face a blank page. Every variant, every launch:
 
-- **Opens with the pain in the persona's verbatim language** — from `2. Customer Persona.md`, not founder-speak.
+- **Opens with the pain in the persona's verbatim language** — from `2-Customer-Persona.md`, not founder-speak.
 - **Shows the new thing** — launch #1 the offer, #2 the screenshot/preview link, #3 the "you can use it now" link, #4 the live product.
 - **Ends with one question that invites a reply** — "Does this match your experience?" / "Can I show you?" / "Want an invite?" / "Would this be worth $X to you?"
 - **Carries the price line if the user is willing** — optional but recommend it plainly: a priced message converts "sounds cool" into "I'd pay for that." By launch #4 the price isn't a line in a post — it's a checkout link. If the user declines earlier, don't relitigate; note it in the log so the signal is read accordingly.
@@ -73,7 +73,7 @@ Draft *for* the user — they edit, they don't face a blank page. Every variant,
 
 ### 3. Commit the ship time
 
-Fill the pre-ship half of the record (launch #1: sections 1–2 of `productos/define/4. Mini-Launch.md`; relaunches: a new draft entry in `docs/LAUNCHES.md`). Get a **committed send time inside 48 hours** — ideally today. The post is where perfectionism hides; name it if you see it forming. End sitting one stating exactly what returning looks like: *ship it, screenshot the live post or sent DM, share the screenshot with your cohort, come back and log what happened.*
+Fill the pre-ship half of the record (launch #1: sections 1–2 of `productos/define/4-Mini-Launch.md`; relaunches: a new draft entry in `docs/LAUNCHES.md`). Get a **committed send time inside 48 hours** — ideally today. The post is where perfectionism hides; name it if you see it forming. End sitting one stating exactly what returning looks like: *ship it, screenshot the live post or sent DM, share the screenshot with your cohort, come back and log what happened.*
 
 ## Workflow — Sitting two: log and read
 
@@ -88,9 +88,9 @@ Who, what they said, **warm or cold** (warm = they know the user), date, and the
 ### 6. Read the signal and set the next rung
 
 - **Rung hit** — the win. Say so plainly, mark it in the log, and name the next rung and roughly when it comes (the next phase's launch). Anyone who leaned in gets a follow-up action *now*: "can I try it?" is a name for the beta list; a payment question is a checkout link to send.
-- **Harvest the words.** Verbatim replies go back into `2. Customer Persona.md` (pain language) and forward into `docs/PRODUCT.md`'s Proof section when it's next synthesized.
+- **Harvest the words.** Verbatim replies go back into `2-Customer-Persona.md` (pain language) and forward into `docs/PRODUCT.md`'s Proof section when it's next synthesized.
 - **Rung missed** — one rewrite (different hook, toggle the price), one resend through the next-warmest route. Log the miss honestly.
-- **Same rung missed twice** — stop relaunching and read `productos/define/BONUS - Pivot Framework.md`: is it the product, the persona, or the price? In a cohort, this is a coach conversation, not a private shame spiral. The ladder's job is to surface this in weeks, not months.
+- **Same rung missed twice** — stop relaunching and read `productos/define/BONUS-Pivot-Framework.md`: is it the product, the persona, or the price? In a cohort, this is a coach conversation, not a private shame spiral. The ladder's job is to surface this in weeks, not months.
 
 ### 7. Update the Launch Log
 
@@ -112,7 +112,7 @@ Channel · message summary · proof link · signal summary · rung reached · pa
 [one entry per launch, newest last]
 ```
 
-Launch #1 additionally lives in full in `productos/define/4. Mini-Launch.md`; the log entry is its dated summary. Relaunches log here directly. This file is the program's momentum record — a coach or co-founder should read it in one minute and know exactly how much market contact the product has had.
+Launch #1 additionally lives in full in `productos/define/4-Mini-Launch.md`; the log entry is its dated summary. Relaunches log here directly. This file is the program's momentum record — a coach or co-founder should read it in one minute and know exactly how much market contact the product has had.
 
 ## Failure patterns to look for
 

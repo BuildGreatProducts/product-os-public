@@ -1,6 +1,6 @@
 ---
 name: studio-design-identity-creator
-description: Use when the user has a synthesised `docs/PRODUCT.md` (the plain-English roll-up of their Define-phase work) and wants to build their minimum viable brand identity from it. Triggers on phrases like "help me create my product identity", "build my brand identity", "design my brand", "name my product", "what's my brand worldview", "develop my brand voice", "define my visual style", or any request to guide a founder through the five word-level elements (Name, Worldview, Contrarian Belief, Tone of Voice, Visual Style) of a Product Identity. Reads `docs/PRODUCT.md`, does live research on the category's names and visual defaults, walks the user through each element in the voice of a senior brand strategist and design director, and rewrites `productos/design/1. Product Identity.md` in place — every section ending in a concrete artifact, assembled into a one-glance Brand Card. Colours, fonts, and tokens are deliberately downstream — the Design System step derives them from a real image reference.
+description: Use when the user has a synthesised `docs/PRODUCT.md` (the plain-English roll-up of their Define-phase work) and wants to build their minimum viable brand identity from it. Triggers on phrases like "help me create my product identity", "build my brand identity", "design my brand", "name my product", "what's my brand worldview", "develop my brand voice", "define my visual style", or any request to guide a founder through the five word-level elements (Name, Worldview, Contrarian Belief, Tone of Voice, Visual Style) of a Product Identity. Reads `docs/PRODUCT.md`, does live research on the category's names and visual defaults, walks the user through each element in the voice of a senior brand strategist and design director, and rewrites `productos/design/1-Product-Identity.md` in place — every section ending in a concrete artifact, assembled into a one-glance Brand Card. Colours, fonts, and tokens are deliberately downstream — the Design System step derives them from a real image reference.
 ---
 
 # Design: Product Identity Creator
@@ -17,8 +17,8 @@ The failure mode this skill exists to kill is **strategic direction without arti
 
 Locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Product Identity template** — usually `productos/design/1. Product Identity.md`. May be entirely empty or only partly filled. **The file this skill rewrites in place** at the end.
-2. **The Product Identity Deep Dive** — usually `productos/design/BONUS - Product Identity Deep Dive.md`. Detailed breakdown of the elements with good/bad examples across 25+ named brands (Patagonia, Tesla, Linear, Liquid Death, Mailchimp, Slack, Apple, Stripe, Notion, etc.). Read once at the start for calibration.
+1. **The Product Identity template** — usually `productos/design/1-Product-Identity.md`. May be entirely empty or only partly filled. **The file this skill rewrites in place** at the end.
+2. **The Product Identity Deep Dive** — usually `productos/design/BONUS-Product-Identity-Deep-Dive.md`. Detailed breakdown of the elements with good/bad examples across 25+ named brands (Patagonia, Tesla, Linear, Liquid Death, Mailchimp, Slack, Apple, Stripe, Notion, etc.). Read once at the start for calibration.
 3. **The PRODUCT.md** — usually `docs/PRODUCT.md`. **Required.** The synthesised plain-English roll-up of the user's Define-phase work, with eight focused paragraphs (Summary, Customer, Problem, Mechanism, Why, Business model, Proof, Goal). The Worldview and Contrarian Belief draw on Why + Mechanism + Problem; the Tone is calibrated against the customer described in Customer; the Visual Style is briefed against the wedge described in Summary + Why.
 4. **The Launch Log** — `docs/LAUNCHES.md`, if it exists. If the mini-launch already shipped under a working name that got replies, that's evidence for keeping it; if the name confused people, that's evidence too.
 
@@ -104,7 +104,7 @@ Then assemble the **Brand Card** — the table at the top of the template: name,
 
 ### 6. Apply edits to the Product Identity file
 
-Rewrite `productos/design/1. Product Identity.md` in place. Do not create a sibling file — the Product Identity is the canonical, living version of the identity.
+Rewrite `productos/design/1-Product-Identity.md` in place. Do not create a sibling file — the Product Identity is the canonical, living version of the identity.
 
 Match the template's structure exactly: same section headers, same italic prompts, same `> Good: ... / Bad: ...` guidance lines, same lane table (it remains reference material for later revisits). Replace each `**Your answer:**` block with the locked artifact, and fill in the Brand Card table at the top.
 

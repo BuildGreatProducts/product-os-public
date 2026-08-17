@@ -7,7 +7,7 @@ description: Use when the user has filled out their Product Offer (and ideally t
 
 This skill puts **one honest price** on the user's product — fast. It turns a filled-in Product Offer (and Persona, if available) into a four-section **Pricing Strategy**: who pays, one launch price said out loud, 2–3 real anchors, and the plain-English price line that carries the number into the Mini-Launch.
 
-The goal is deliberately **not** a complete monetization model. That work — pricing ladder, tiers, cost & margin, revenue-model coherence — lives in the optional `BONUS - Business Strategy Deep Dive.md` (filled by `studio-define-business-strategy`), which most people don't need until the money questions get real — typically before spending on paid channels in Distribute. This skill exists because the Mini-Launch (the next step in the Define checklist) needs a price to carry, and founders will happily spend three weeks "figuring out pricing" as a way of not talking to anyone. Twenty to thirty minutes, one number, done.
+The goal is deliberately **not** a complete monetization model. That work — pricing ladder, tiers, cost & margin, revenue-model coherence — lives in the optional `BONUS-Business-Strategy-Deep-Dive.md` (filled by `studio-define-business-strategy`), which most people don't need until the money questions get real — typically before spending on paid channels in Distribute. This skill exists because the Mini-Launch (the next step in the Define checklist) needs a price to carry, and founders will happily spend three weeks "figuring out pricing" as a way of not talking to anyone. Twenty to thirty minutes, one number, done.
 
 A price the founder has never said out loud is not a price — it's a guess hiding in a spreadsheet. The measure of success for this session is that the user can finish the sentence *"it'll be about ___"* to a stranger without flinching.
 
@@ -17,9 +17,9 @@ A price the founder has never said out loud is not a price — it's a guess hidi
 
 Before starting, locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Product Offer** — usually `1. Product Offer.md`. The **required** input. The Customer, Outcome, and Mechanism sections drive who pays and what shape the price takes.
-2. **The Pricing Strategy template** — usually `3. Pricing Strategy.md`. Defines the exact output structure, *and is also the file the skill rewrites in place* at the end.
-3. **The Customer Persona** — usually `2. Customer Persona.md`, if filled in. Optional but the single most useful input: willingness-to-pay, anchor products, and budget bucket come from here.
+1. **The Product Offer** — usually `1-Product-Offer.md`. The **required** input. The Customer, Outcome, and Mechanism sections drive who pays and what shape the price takes.
+2. **The Pricing Strategy template** — usually `3-Pricing-Strategy.md`. Defines the exact output structure, *and is also the file the skill rewrites in place* at the end.
+3. **The Customer Persona** — usually `2-Customer-Persona.md`, if filled in. Optional but the single most useful input: willingness-to-pay, anchor products, and budget bucket come from here.
 
 If the Product Offer is missing or mostly empty, stop and point the user to `studio-define-offer-builder` first.
 
@@ -45,7 +45,7 @@ Use web search to pull today's actual prices for 2–3 products the persona alre
 
 ### 4. Rewrite the Pricing Strategy file in place
 
-Rewrite `3. Pricing Strategy.md` in place — same section headers, same italic prompts, same `> Good/Bad` lines, same shapes table — replacing each `**Your answer:**` block. Add a dated header ("Drafted: [month year]") and a one-line footer noting the anchors' source URLs and the reminder: *"First-pass price for the Mini-Launch — expand into the full ladder via `BONUS - Business Strategy Deep Dive.md` when the money questions get real."* Read the existing file first to preserve any user notes.
+Rewrite `3-Pricing-Strategy.md` in place — same section headers, same italic prompts, same `> Good/Bad` lines, same shapes table — replacing each `**Your answer:**` block. Add a dated header ("Drafted: [month year]") and a one-line footer noting the anchors' source URLs and the reminder: *"First-pass price for the Mini-Launch — expand into the full ladder via `BONUS-Business-Strategy-Deep-Dive.md` when the money questions get real."* Read the existing file first to preserve any user notes.
 
 ### 5. Verify before delivering
 
@@ -59,4 +59,4 @@ Check: buyer is named with a budget bucket; the launch price is **one number** w
 
 ## What "done" looks like
 
-A rewritten `3. Pricing Strategy.md` where the buyer and budget are named, the launch price is one number the user has said out loud, the anchors are real and current, and the price line reads as one natural sentence — ready to be dropped into a mini-launch post or DM within 48 hours.
+A rewritten `3-Pricing-Strategy.md` where the buyer and budget are named, the launch price is one number the user has said out loud, the anchors are real and current, and the price line reads as one natural sentence — ready to be dropped into a mini-launch post or DM within 48 hours.

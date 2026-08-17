@@ -95,7 +95,7 @@ Skill names follow the `studio-<phase>-*` convention (e.g. `studio-define-offer-
 
 - **`productos/START-HERE.md`** — the front door: setup in three steps, and how your programme plan works.
 - **Checklists** (`*-CHECKLIST.md`) — the runbook for each phase. Source of truth for how each step runs; your plan says which steps apply to you.
-- **Numbered templates** (`1.`–`4.` in each phase folder) — worksheets the skills fill in place, with `> Good/Bad` calibration examples throughout.
+- **Numbered templates** (`1-`–`4-` in each phase folder) — worksheets the skills fill in place, with `> Good/Bad` calibration examples throughout.
 - **BONUS docs** — reference playbooks: worked examples, failure patterns, channel guides, best-practice libraries.
 - **`productos/skills/`** — one flat folder per skill (35 total). Each contains a `SKILL.md` plus any bundled reference files.
 - **`productos/setup/CLAUDE.md` + `productos/setup/AGENTS.md`** — agent guidelines wired into your repo root at setup (by `studio-setup`), so your coding agent behaves from day one.
@@ -107,4 +107,4 @@ Skill names follow the `studio-<phase>-*` convention (e.g. `studio-define-offer-
 
 ## Version
 
-**1.5.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
+**1.6.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.

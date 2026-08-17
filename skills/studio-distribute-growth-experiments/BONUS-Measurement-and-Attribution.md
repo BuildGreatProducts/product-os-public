@@ -19,7 +19,7 @@ Every channel feeds the same funnel. Measure as far down it as you can — the c
 | Reach | Views, impressions, opens | ½ — vanity unless it converts |
 | Click | A tagged click to your product | ★★ — proves the hook works |
 | Signup | An account or trial | ★★★ — a real lead |
-| Activated | Reached the magic moment (`productos/distribute/2. Growth Experiments.md` → `productos/design/2. Magic Moment.md`) | ★★★★ — predicts retention |
+| Activated | Reached the magic moment (`productos/distribute/2-Growth-Experiments.md` → `productos/design/2-Magic-Moment.md`) | ★★★★ — predicts retention |
 | Paid | A card swipe | ★★★★★ — the only number that never lies |
 
 Every experiment's **Pass =** threshold should sit as far down this funnel as you can measure. "100K views" is a ½ result; "20 paying users from one community in 30 days" is a ★★★★★ one. Reach is a leading indicator — useful, but never the finish line.
@@ -36,7 +36,7 @@ The minimum a non-technical founder needs to run the whole phase. You do not nee
 | Product analytics | PostHog (generous free tier) | Whether users reach the magic moment (activation) |
 | Payment data | Stripe / RevenueCat dashboard | Real revenue — the signal that survives every other test |
 | Self-reported attribution | A "How did you hear about us?" question at signup | What UTMs miss (word of mouth, "saw your TikTok then googled you") |
-| The results log | `productos/distribute/3. Growth Experiments Tracker.md` | What worked, what didn't, what you decided |
+| The results log | `productos/distribute/3-Growth-Experiments-Tracker.md` | What worked, what didn't, what you decided |
 
 That's it. Five layers, all free to start, enough to run every experiment in the phase.
 
@@ -80,7 +80,7 @@ Don't over-engineer it. First-touch (what first brought them) is enough to decid
 
 ## Measuring each channel
 
-What to actually watch for each of the twelve channels (full channel detail in [BONUS - Distribution Channels](BONUS%20-%20Distribution%20Channels.md)):
+What to actually watch for each of the twelve channels (full channel detail in [BONUS - Distribution Channels](BONUS-Distribution-Channels.md)):
 
 | Channel | The number that matters | How to read it |
 | --- | --- | --- |
@@ -103,7 +103,7 @@ For **ads especially**, never trust the ad platform's conversion count alone —
 
 ## Tie it back to your experiments
 
-Every **Pass =** line in `productos/distribute/2. Growth Experiments.md` needs a measurement method named *before* you run it. If you can't measure the threshold, the experiment is unfalsifiable — pick a threshold you can actually read. And every result you log in `productos/distribute/3. Growth Experiments Tracker.md` should be a measured number, because `productos/distribute/4. Scale & Automation Roadmap.md` scales straight from that tracker: feed it guesses and you'll automate a guess.
+Every **Pass =** line in `productos/distribute/2-Growth-Experiments.md` needs a measurement method named *before* you run it. If you can't measure the threshold, the experiment is unfalsifiable — pick a threshold you can actually read. And every result you log in `productos/distribute/3-Growth-Experiments-Tracker.md` should be a measured number, because `productos/distribute/4-Scale-and-Automation-Roadmap.md` scales straight from that tracker: feed it guesses and you'll automate a guess.
 
 ---
 
@@ -120,8 +120,8 @@ Every **Pass =** line in `productos/distribute/2. Growth Experiments.md` needs a
 
 ## The minimum to start today
 
-If you do nothing else: install **GA4 or Plausible**, save a **UTM template** you reuse for every link, add a **"How did you hear about us?"** question to signup, and watch **Stripe**. Log results in `productos/distribute/3. Growth Experiments Tracker.md`. That's enough to read every experiment in this phase honestly — escalate to product analytics and richer attribution only once your volume earns it.
+If you do nothing else: install **GA4 or Plausible**, save a **UTM template** you reuse for every link, add a **"How did you hear about us?"** question to signup, and watch **Stripe**. Log results in `productos/distribute/3-Growth-Experiments-Tracker.md`. That's enough to read every experiment in this phase honestly — escalate to product analytics and richer attribution only once your volume earns it.
 
 ---
 
-*Compiled June 2026 by telescope.design. Tool names and free tiers change — verify current options before committing. Pair with [BONUS - Growth Experiments Library](BONUS%20-%20Growth%20Experiments%20Library.md) to plan experiments and `productos/distribute/3. Growth Experiments Tracker.md` to log what you measure.*
+*Compiled June 2026 by telescope.design. Tool names and free tiers change — verify current options before committing. Pair with [BONUS - Growth Experiments Library](BONUS-Growth-Experiments-Library.md) to plan experiments and `productos/distribute/3-Growth-Experiments-Tracker.md` to log what you measure.*

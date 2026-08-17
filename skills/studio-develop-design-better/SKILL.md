@@ -14,7 +14,7 @@ A craft layer for any coding agent generating or reviewing UI. Style is owned by
 
 - **`docs/DESIGN.md`** — required. If missing, stop and tell the user to run `studio-design-design-system`.
 - **The thing being built or refactored** — a brief, a file, or uncommitted diff.
-- **`productos/design/1. Product Identity.md`** and **`docs/PRODUCT.md`** — optional. Identity informs microcopy tone; PRODUCT.md helps weight which heuristic categories dominate.
+- **`productos/design/1-Product-Identity.md`** and **`docs/PRODUCT.md`** — optional. Identity informs microcopy tone; PRODUCT.md helps weight which heuristic categories dominate.
 
 ## Workflow
 

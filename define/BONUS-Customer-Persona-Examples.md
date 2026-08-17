@@ -1,6 +1,6 @@
 # Customer Persona Examples
 
-Five completed personas across different software business models — vertical B2B SaaS, agent-native app, AI-enabled service, consumer mobile subscription, and developer tools. Use these as references when filling out [Customer Persona Framework](2.%20Customer%20Persona.md) for your own customer. Each answer follows the framework's "good" guidance: specific, dated, evidence-backed, and tight enough that a stranger could re-recognize the person.
+Five completed personas across different software business models — vertical B2B SaaS, agent-native app, AI-enabled service, consumer mobile subscription, and developer tools. Use these as references when filling out [Customer Persona Framework](2-Customer-Persona.md) for your own customer. Each answer follows the framework's "good" guidance: specific, dated, evidence-backed, and tight enough that a stranger could re-recognize the person.
 
 ---
 

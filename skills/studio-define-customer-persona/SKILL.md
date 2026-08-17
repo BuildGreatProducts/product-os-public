@@ -15,9 +15,9 @@ The goal is not to fill in 12 sections quickly. The goal is to make the user a s
 
 Before starting, locate three files in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Product Offer** — usually `1. Product Offer.md`. This is the **required** input. If sections are blank or vague ("our customer is small businesses"), stop and ask the user to tighten the offer before proceeding. A persona built on a fuzzy offer inherits the fuzziness, and you will spend the whole conversation re-deriving the offer instead of building the persona.
-2. **The Customer Persona template** — usually `2. Customer Persona.md`. This defines the exact output structure to follow, **and it is also the file the skill rewrites in place** at the end (see step 5).
-3. **The Customer Persona examples** — usually `BONUS - Customer Persona Examples.md`. Read this once at the start to internalize what "good" looks like across business models (B2B SaaS, agent-native app, AI-enabled service, consumer subscription, developer tool). Use them as **calibration**, never as templates to copy from — the user's persona must be their own.
+1. **The Product Offer** — usually `1-Product-Offer.md`. This is the **required** input. If sections are blank or vague ("our customer is small businesses"), stop and ask the user to tighten the offer before proceeding. A persona built on a fuzzy offer inherits the fuzziness, and you will spend the whole conversation re-deriving the offer instead of building the persona.
+2. **The Customer Persona template** — usually `2-Customer-Persona.md`. This defines the exact output structure to follow, **and it is also the file the skill rewrites in place** at the end (see step 5).
+3. **The Customer Persona examples** — usually `BONUS-Customer-Persona-Examples.md`. Read this once at the start to internalize what "good" looks like across business models (B2B SaaS, agent-native app, AI-enabled service, consumer subscription, developer tool). Use them as **calibration**, never as templates to copy from — the user's persona must be their own.
 
 If any of these files are missing, ask the user where they live before continuing.
 
@@ -72,7 +72,7 @@ A handful of sections are disproportionately diagnostic — if these are weak, t
 
 ### 5. Rewrite the Customer Persona file in place
 
-Output: **rewrite `2. Customer Persona.md` in place** with the filled-in answers. Do not create a new file — the user wants the persona document to be the canonical, living version, not a sibling draft.
+Output: **rewrite `2-Customer-Persona.md` in place** with the filled-in answers. Do not create a new file — the user wants the persona document to be the canonical, living version, not a sibling draft.
 
 Match the template's structure exactly: same headers, same section order, same instructional prompts (keep the *italic* prompt lines and the `> Good: ... / Bad: ...` guidance intact — they remain useful when the user revisits the doc in three months). Replace each `**Your answer:**` (or equivalent blank field) with the filled-in answer.
 

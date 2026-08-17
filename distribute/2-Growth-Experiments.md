@@ -3,7 +3,7 @@
 *Filled in by `studio-distribute-growth-experiments`. This is your execution list — only your specific experiments live here; the method, library, and frameworks stay in the skill and the BONUS docs.*
 
 **Moving:** [one metric] from [current baseline] to [target] by [date].
-**Rhythm:** max [N] experiments at once · review every [day] · log every result in `3. Growth Experiments Tracker.md` the day an experiment ends.
+**Rhythm:** max [N] experiments at once · review every [day] · log every result in `3-Growth-Experiments-Tracker.md` the day an experiment ends.
 
 ---
 
@@ -41,6 +41,6 @@
 2. [Experiment] — [one line]
 3. [Experiment] — [one line]
 
-When a slot opens, promote the top of this list — re-run `studio-distribute-growth-experiments` to turn it into a full experiment. When the metric hits its target, return to `1. Go-To-Market Strategy.md` and start your next channel.
+When a slot opens, promote the top of this list — re-run `studio-distribute-growth-experiments` to turn it into a full experiment. When the metric hits its target, return to `1-Go-To-Market-Strategy.md` and start your next channel.
 
 *Based on: [inputs and research used — one line, filled by the skill]*

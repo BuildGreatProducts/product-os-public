@@ -1,12 +1,12 @@
 ---
 name: studio-design-prompt-generator
 description: >-
-  Use when the user has a finished `productos/design/1. Product Identity.md` and `docs/PRODUCT.md` and wants paste-ready prompts for AI design tools (Pencil, paper.design, Claude Design, or MagicPath) that produce on-brand designs immediately. Triggers on phrases like "generate design prompts", "create AI design prompts", "make screen prompts for my product", "give me prompts for Claude Design / Pencil / paper / MagicPath", "prompts to design my screens", "draft my screens with AI", "give me a design prompt for [screen]", "what should I prompt my AI design tool with", or any request to translate the Product Identity into design-tool prompts. Reads both source files and writes `productos/design/Design Prompts.md` with three prompts: Prompt 1 is always a comprehensive UI design system foundation (colors, typography, components, layout, motion) so screens share a consistent component vocabulary; Prompts 2 and 3 are two priority screens for the product type.
+  Use when the user has a finished `productos/design/1-Product-Identity.md` and `docs/PRODUCT.md` and wants paste-ready prompts for AI design tools (Pencil, paper.design, Claude Design, or MagicPath) that produce on-brand designs immediately. Triggers on phrases like "generate design prompts", "create AI design prompts", "make screen prompts for my product", "give me prompts for Claude Design / Pencil / paper / MagicPath", "prompts to design my screens", "draft my screens with AI", "give me a design prompt for [screen]", "what should I prompt my AI design tool with", or any request to translate the Product Identity into design-tool prompts. Reads both source files and writes `productos/design/Design-Prompts.md` with three prompts: Prompt 1 is always a comprehensive UI design system foundation (colors, typography, components, layout, motion) so screens share a consistent component vocabulary; Prompts 2 and 3 are two priority screens for the product type.
 ---
 
 # Design: Design Prompt Generator
 
-This skill turns a finished Product Identity and Design System into **three paste-ready prompts for AI design tools** — Pencil (pencil.dev), paper.design, Claude Design, or MagicPath. The output is `productos/design/Design Prompts.md` containing one prompt per priority screen for the user's specific product, with the full brand identity context (brand character, tone, visual style, type pairing, colour palette, what-to-avoid) embedded inside every prompt so the generated designs are on-brand from screen one.
+This skill turns a finished Product Identity and Design System into **three paste-ready prompts for AI design tools** — Pencil (pencil.dev), paper.design, Claude Design, or MagicPath. The output is `productos/design/Design-Prompts.md` containing one prompt per priority screen for the user's specific product, with the full brand identity context (brand character, tone, visual style, type pairing, colour palette, what-to-avoid) embedded inside every prompt so the generated designs are on-brand from screen one.
 
 The voice is a senior design strategist and prompt engineer with deep experience extracting brand context into compressed, AI-tool-ingestible format — and specifically with the 2026 generation of AI design tools (Pencil at pencil.dev, paper.design, Claude Design, MagicPath) that take 200–500 word prompts and produce usable screen drafts in seconds. The strategist's job is not to invent new design direction; it is to faithfully translate the documented Product Identity into the specific format AI design tools consume best, and to pick the three screens that produce the most useful drafts first.
 
@@ -20,7 +20,7 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 1. **PRODUCT.md** — usually `docs/PRODUCT.md`. **Required.** Provides the product type, customer, mechanism, and use context. The product type drives which three screens are most useful to design first. If PRODUCT.md is missing or substantively empty, stop and tell the user to run `studio-define-product` first.
 
-2. **Product Identity** — usually `productos/design/1. Product Identity.md`. **Required.** Provides the words: the Brand Card, worldview, contrarian belief, tone-of-voice attributes (the "X but not Y" phrases), no-go words, example sentence, and Visual Style (lane, notes, references). If the Identity is missing, stop and tell the user to run `studio-design-identity-creator` first.
+2. **Product Identity** — usually `productos/design/1-Product-Identity.md`. **Required.** Provides the words: the Brand Card, worldview, contrarian belief, tone-of-voice attributes (the "X but not Y" phrases), no-go words, example sentence, and Visual Style (lane, notes, references). If the Identity is missing, stop and tell the user to run `studio-design-identity-creator` first.
 
 3. **DESIGN.md** — usually `docs/DESIGN.md` (with its `docs/DESIGN.html` mirror). **Required — this is where the visuals live.** Produced by `studio-design-design-system` in Step 2: the palette hexes, font pairing, spacing, shapes, and component tokens every prompt embeds. If it's missing, stop and tell the user to run Step 2 first — prompts without tokens generate generic AI-startup screens.
 
@@ -182,7 +182,7 @@ Both screen prompts must be **paste-ready** — no markdown placeholders the use
 
 Present the three composed prompts in conversation. Ask one question: *"Do these read as on-brand? Any prompt I should rework before writing the file?"* Iterate once if needed — usually the user spots something specific about screen layout or copy that needs adjustment.
 
-### 6. Write `productos/design/Design Prompts.md`
+### 6. Write `productos/design/Design-Prompts.md`
 
 Once approved, write the assembled file. If the file already exists, read it first, surface the diff in conversation, overwrite on the user's approval.
 
@@ -191,7 +191,7 @@ Structure:
 ```
 # Design Prompts
 
-*Drafted: [Month Year]. Generated from `docs/PRODUCT.md` and `productos/design/1. Product Identity.md`. Paste each prompt below into Pencil (pencil.dev), paper.design, Claude Design, or MagicPath to generate that screen's design — the brand context is already in the prompt so the output is on-brand.*
+*Drafted: [Month Year]. Generated from `docs/PRODUCT.md` and `productos/design/1-Product-Identity.md`. Paste each prompt below into Pencil (pencil.dev), paper.design, Claude Design, or MagicPath to generate that screen's design — the brand context is already in the prompt so the output is on-brand.*
 
 ## How to use this file
 
@@ -251,7 +251,7 @@ Structure:
 ## Sources
 
 - Product context: `docs/PRODUCT.md`
-- Brand strategy: `productos/design/1. Product Identity.md`
+- Brand strategy: `productos/design/1-Product-Identity.md`
 - Design tokens: `docs/DESIGN.md`
 ```
 
@@ -282,7 +282,7 @@ Deliver via a `computer://` link and a short summary — one line for the brand 
 
 ## What "done" looks like
 
-A `productos/design/Design Prompts.md` where:
+A `productos/design/Design-Prompts.md` where:
 
 - **Prompt 1 is the design system foundation** — a paste-ready prompt covering colors, typography, foundations (spacing, radius, elevation, motion), components (buttons, forms, cards, modals, navigation, lists/tables, badges, avatars, tooltips, toasts, icons, empty/loading/error states, progress), and layout. Always this; no product-type variation.
 - **Prompts 2 and 3 are two priority screens** for the user's specific product type, each with a one-sentence purpose and a journey position. Both prompts explicitly tell the AI design tool to **reuse the components from Prompt 1** so the screens inherit a coherent component vocabulary.

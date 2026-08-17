@@ -29,7 +29,7 @@ Before pivoting, write down two sentences:
 | **Persona** | Who you're selling to (role, vertical, life context) | Same product, same price band, same core mechanism | Strangers in a different segment keep asking "can it do X for me?" — and they bring cash |
 | **Price** | Model, packaging, anchor, or amount | Same product, same persona, same outcome | People want it, click Buy, then bounce at checkout |
 
-Pick exactly one per cycle. Run the same validation tests from [the Idea Validation Cheat Sheet](BONUS%20-%20Idea%20Validation%20Cheat%20Sheet.md) against the new variable. If two pivots feel necessary at once, do the persona pivot first — the wrong audience makes every other test lie to you.
+Pick exactly one per cycle. Run the same validation tests from [the Idea Validation Cheat Sheet](BONUS-Idea-Validation-Cheat-Sheet.md) against the new variable. If two pivots feel necessary at once, do the persona pivot first — the wrong audience makes every other test lie to you.
 
 ---
 
@@ -42,7 +42,7 @@ Work through this diagnosis first.
 ### Is it a distribution problem?
 
 > **Signal:** People who try the product love it, but you can't get enough strangers to try it.
-> **Fix:** Don't pivot. Run more reps of [Show-Don't-Tell Reddit Demo Post](BONUS%20-%20Idea%20Validation%20Cheat%20Sheet.md#3-show-dont-tell-reddit-demo-post), [Niche Sub-Community Smoke Test](BONUS%20-%20Idea%20Validation%20Cheat%20Sheet.md#10-niche-sub-community-smoke-test), or [Customer-Pain Content Flywheel](BONUS%20-%20Idea%20Validation%20Cheat%20Sheet.md#15-customer-pain-content-flywheel).
+> **Fix:** Don't pivot. Run more reps of [Show-Don't-Tell Reddit Demo Post](BONUS-Idea-Validation-Cheat-Sheet.md#3-show-dont-tell-reddit-demo-post), [Niche Sub-Community Smoke Test](BONUS-Idea-Validation-Cheat-Sheet.md#10-niche-sub-community-smoke-test), or [Customer-Pain Content Flywheel](BONUS-Idea-Validation-Cheat-Sheet.md#15-customer-pain-content-flywheel).
 
 If trial-to-paid is healthy but top-of-funnel is empty, no amount of pivoting will help. You need more distribution, not a different product.
 
@@ -58,7 +58,7 @@ A clunky onboarding, a confusing empty state, or a broken checkout flow looks li
 > **Signal:** It's been under 60 days, you've run fewer than 10 demo posts, and you're considering scrapping it.
 > **Fix:** Don't pivot. Run 10 more demo posts.
 
-The data on [Speed of Iteration Beats Perfection](BONUS%20-%20Idea%20Validation%20Cheat%20Sheet.md#7-speed-of-iteration-beats-perfection) is clear: fast builders fail 90% of the time but iterate. They don't quit at week three. If you haven't given the first version 4–8 weeks of real distribution, you don't have enough signal to pivot from.
+The data on [Speed of Iteration Beats Perfection](BONUS-Idea-Validation-Cheat-Sheet.md#7-speed-of-iteration-beats-perfection) is clear: fast builders fail 90% of the time but iterate. They don't quit at week three. If you haven't given the first version 4–8 weeks of real distribution, you don't have enough signal to pivot from.
 
 ### When it actually is a pivot problem
 
@@ -66,7 +66,7 @@ Run the pivot diagnosis below if **two or more** of these are true after 4+ week
 
 - You're getting trial signups but zero or near-zero conversion to paid.
 - The feedback you're getting from strangers in your ICP is repeatedly "this isn't for me" or "I'd want it to do X instead."
-- You can't honestly answer the [Customer](1.%20Product%20Offer.md#1-customer) question with a specific role.
+- You can't honestly answer the [Customer](1-Product-Offer.md#1-customer) question with a specific role.
 - Your best users keep asking the product to do something completely different from what you built.
 - Price-page traffic is healthy, but checkout starts cleanly drop to zero.
 
@@ -122,8 +122,8 @@ A product pivot is when you keep your validated persona and price band, but chan
 
 | Stays | Changes |
 | --- | --- |
-| Persona (the role, vertical, life context) | The mechanism in [1. Product Offer](1.%20Product%20Offer.md#4-mechanism) |
-| Price band ($10 stays $10, $99 stays $99) | The outcome in [1. Product Offer](1.%20Product%20Offer.md#3-outcome) (often) |
+| Persona (the role, vertical, life context) | The mechanism in [1. Product Offer](1-Product-Offer.md#4-mechanism) |
+| Price band ($10 stays $10, $99 stays $99) | The outcome in [1. Product Offer](1-Product-Offer.md#3-outcome) (often) |
 | Distribution channel | The product offer statement |
 
 ### Real examples
@@ -141,7 +141,7 @@ A product pivot is when you keep your validated persona and price band, but chan
 ### Validation test for a product pivot
 
 - Ship the changed product to your *existing* users (same persona, same price).
-- Run [Show-Don't-Tell Reddit Demo Post](BONUS%20-%20Idea%20Validation%20Cheat%20Sheet.md#3-show-dont-tell-reddit-demo-post) in the same channels you used the first time.
+- Run [Show-Don't-Tell Reddit Demo Post](BONUS-Idea-Validation-Cheat-Sheet.md#3-show-dont-tell-reddit-demo-post) in the same channels you used the first time.
 - **Pass threshold:** Trial-to-paid conversion at least 2x the pre-pivot baseline within 30 days, *and* one unsolicited paying customer cites the new mechanism specifically in their reason for paying.
 
 ### Common product-pivot traps
@@ -164,7 +164,7 @@ A persona pivot is when the same product, at roughly the same price, performs dr
 >
 > - Users in an unexpected segment keep finding the product and converting at 2–3x the rate of your target persona.
 > - The unexpected segment pays without negotiation, while your "official" target stalls in pricing conversations.
-> - When you look at your top 10 paying users, 6+ share a job, vertical, or life context you didn't list in [Customer Persona](2.%20Customer%20Persona.md).
+> - When you look at your top 10 paying users, 6+ share a job, vertical, or life context you didn't list in [Customer Persona](2-Customer-Persona.md).
 > - The objection that kills the deal with your target persona doesn't even come up with the unexpected segment.
 
 > **Bad signals (don't pivot the persona):**
@@ -185,7 +185,7 @@ A persona pivot is when the same product, at roughly the same price, performs dr
 
 | Stays | Changes |
 | --- | --- |
-| The product (core mechanism) | The persona in [2. Customer Persona](2.%20Customer%20Persona.md#header) |
+| The product (core mechanism) | The persona in [2. Customer Persona](2-Customer-Persona.md#header) |
 | The price band (usually — but watch for sticker-shock differences across segments) | The watering holes — every channel resets |
 | The outcome (often, but framed differently) | The objection, the proof, and the trigger event |
 
@@ -195,21 +195,21 @@ A persona pivot is when the same product, at roughly the same price, performs dr
 
 > **Shopify — move sideways.** Tobias Lütke was building Snowdevil, a snowboarding e-commerce store. The shopping cart he built for himself was better than anything available off the shelf. He stopped selling snowboards and started selling the cart to other small store owners. Same product, different persona — store owners instead of snowboarders.
 
-> **Praneeth, Canvas Mode — move up.** Originally targeted free-tier hobbyists with a subscription. Paying customers were power users willing to spend more once, not subscribers willing to spend a little forever. He moved the persona from "casual creator" to "serious creator," changed the price to a one-time paywall, made $80K in 6 months. (See also [Buy Button Test](BONUS%20-%20Idea%20Validation%20Cheat%20Sheet.md#5-buy-button-test).)
+> **Praneeth, Canvas Mode — move up.** Originally targeted free-tier hobbyists with a subscription. Paying customers were power users willing to spend more once, not subscribers willing to spend a little forever. He moved the persona from "casual creator" to "serious creator," changed the price to a one-time paywall, made $80K in 6 months. (See also [Buy Button Test](BONUS-Idea-Validation-Cheat-Sheet.md#5-buy-button-test).)
 
 > **Superhuman — niche down hard.** Could have been "email for everyone." Niched to "high-output professionals who do email 3+ hours/day" — VCs, founders, executive recruiters, top-tier sales. Same product. Picked a persona that justified a $30/month price by saving 2 hours/week.
 
 ### Validation test for a persona pivot
 
-- Re-write the [Product Offer](1.%20Product%20Offer.md) for the new persona without changing the product.
-- Re-run the [Niche Sub-Community Smoke Test](BONUS%20-%20Idea%20Validation%20Cheat%20Sheet.md#10-niche-sub-community-smoke-test) in the new persona's watering holes.
-- **Pass threshold:** Trial-to-paid conversion in the new persona at least 2x the conversion you saw in the old persona, *and* at least 5 paying customers from the new persona within 30 days who match the new [Customer Persona](2.%20Customer%20Persona.md) write-up.
+- Re-write the [Product Offer](1-Product-Offer.md) for the new persona without changing the product.
+- Re-run the [Niche Sub-Community Smoke Test](BONUS-Idea-Validation-Cheat-Sheet.md#10-niche-sub-community-smoke-test) in the new persona's watering holes.
+- **Pass threshold:** Trial-to-paid conversion in the new persona at least 2x the conversion you saw in the old persona, *and* at least 5 paying customers from the new persona within 30 days who match the new [Customer Persona](2-Customer-Persona.md) write-up.
 
 ### Common persona-pivot traps
 
 - **Mistaking a fan for a market.** One delighted user in a different vertical is exciting. Five are a market.
 - **Pivoting to the bigger market.** "I'll just go up-market to enterprise" is almost always a multi-quarter rebuild in disguise, not a pivot.
-- **Skipping the persona re-write.** If you can't fill out a fresh [Customer Persona](2.%20Customer%20Persona.md) for the new audience, you don't know them well enough to sell to them. You just know they like your demo.
+- **Skipping the persona re-write.** If you can't fill out a fresh [Customer Persona](2-Customer-Persona.md) for the new audience, you don't know them well enough to sell to them. You just know they like your demo.
 - **Keeping the old watering holes.** A persona pivot resets your distribution — every Reddit thread, every podcast pitch, every cold DM template. Plan for the channel reset.
 
 ---
@@ -249,9 +249,9 @@ A price pivot is when the product and the persona are both working, but money is
 
 | Stays | Changes |
 | --- | --- |
-| The product (every feature) | The revenue model in [BONUS - Business Strategy Deep Dive](BONUS%20-%20Business%20Strategy%20Deep%20Dive.md#1-revenue-model) |
-| The persona | The pricing ladder in [BONUS - Business Strategy Deep Dive](BONUS%20-%20Business%20Strategy%20Deep%20Dive.md#2-pricing-ladder) |
-| The distribution channels | The willingness-to-pay anchors in [2. Customer Persona](2.%20Customer%20Persona.md#10-willingness-to-pay) |
+| The product (every feature) | The revenue model in [BONUS - Business Strategy Deep Dive](BONUS-Business-Strategy-Deep-Dive.md#1-revenue-model) |
+| The persona | The pricing ladder in [BONUS - Business Strategy Deep Dive](BONUS-Business-Strategy-Deep-Dive.md#2-pricing-ladder) |
+| The distribution channels | The willingness-to-pay anchors in [2. Customer Persona](2-Customer-Persona.md#10-willingness-to-pay) |
 | The outcome and mechanism | The packaging and what's included per tier |
 
 ### Real examples
@@ -324,7 +324,7 @@ Fill out *before* making the change. Keep this with your launch retro notes.
 
 ## Common Pivot Mistakes
 
-**Pivoting before you have signal.** A pivot with no validated piece to keep is just a fresh start. If you can't name the thing that's working, you're not ready to pivot — you need more reps from [the Idea Validation Cheat Sheet](BONUS%20-%20Idea%20Validation%20Cheat%20Sheet.md) first.
+**Pivoting before you have signal.** A pivot with no validated piece to keep is just a fresh start. If you can't name the thing that's working, you're not ready to pivot — you need more reps from [the Idea Validation Cheat Sheet](BONUS-Idea-Validation-Cheat-Sheet.md) first.
 
 **Changing two variables at once.** The classic founder mistake — pivot the persona *and* the price *and* a feature in the same week. Now you can't tell what fixed the conversion (or what broke it). Move one variable per cycle, period.
 

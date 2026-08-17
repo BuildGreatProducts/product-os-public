@@ -13,7 +13,7 @@ The cardinal rule is **document reality, don't silently improve it.** This skill
 
 The voice is a senior design systems engineer doing a brownfield audit — someone who has reverse-engineered token systems out of React, Vue, Svelte, SwiftUI, Android, and raw-CSS codebases, knows the difference between a deliberate variant and an accidental fork, and is allergic to documenting a system that doesn't match the code it claims to describe.
 
-> **Session length:** Designed to be completable in 30–60 minutes. The skill scans the codebase, builds the token inventory, clusters the conflicts, walks the user through resolving each one, and writes the file. No external research required — everything needed lives in the code, with optional context from `productos/design/1. Product Identity.md` and `docs/PRODUCT.md` if they exist in the workspace.
+> **Session length:** Designed to be completable in 30–60 minutes. The skill scans the codebase, builds the token inventory, clusters the conflicts, walks the user through resolving each one, and writes the file. No external research required — everything needed lives in the code, with optional context from `productos/design/1-Product-Identity.md` and `docs/PRODUCT.md` if they exist in the workspace.
 
 ## Inputs
 
@@ -23,7 +23,7 @@ Locate the following. The skill runs in the **app repo root** — the repository
 
 2. **The Google DESIGN.md format spec** — **required, embedded below.** The output must conform exactly to Google's open-source DESIGN.md format (Google Labs, Apache 2.0, [github.com/google-labs-code/design.md](https://github.com/google-labs-code/design.md)) — the same format `studio-design-design-system` produces. If the `REFERENCE-DESIGN.md` bundled with the `studio-design-design-system` skill happens to be accessible, read it once as the structural blueprint. If you're running inside the product repo where it isn't present, use the embedded spec in the "Output format" section below. If a `docs/DESIGN.md` already exists, read it first and treat its structure as the format reference, and the session as a reconciliation rather than a from-scratch write.
 
-3. **`productos/design/1. Product Identity.md`** — **optional, tiebreaker only** — absent in a repo without ProductOS. When present, the Identity's tone and named visual references are used *only* as a tiebreaker when the code is genuinely ambiguous (e.g., two blues are used equally often and you need a reason to pick one). It does **not** override what the code does — this skill documents the implementation, not the aspiration. If absent, resolve conflicts purely on code evidence.
+3. **`productos/design/1-Product-Identity.md`** — **optional, tiebreaker only** — absent in a repo without ProductOS. When present, the Identity's tone and named visual references are used *only* as a tiebreaker when the code is genuinely ambiguous (e.g., two blues are used equally often and you need a reason to pick one). It does **not** override what the code does — this skill documents the implementation, not the aspiration. If absent, resolve conflicts purely on code evidence.
 
 4. **`docs/PRODUCT.md`** — **optional, context only.** If present, it tells you what the product is and who uses it — useful for naming the aesthetic in the `Brand & Style` section and for sanity-checking which surfaces matter most. Not required.
 
@@ -96,7 +96,7 @@ components:
 
 ### 1. Read context and set expectations
 
-If `docs/DESIGN.md` already exists, read it — this becomes a reconciliation session (extend/correct the existing file) rather than a from-scratch write; tell the user. If `productos/design/1. Product Identity.md` and/or `docs/PRODUCT.md` exist, read them for tiebreaker and naming context. State the plan back in one line: *"I'll scan the codebase, inventory the design tokens you're actually using, flag every internal inconsistency, we'll pick the canonical value for each together, then I'll write `docs/DESIGN.md` in the Google format. Starting the scan."*
+If `docs/DESIGN.md` already exists, read it — this becomes a reconciliation session (extend/correct the existing file) rather than a from-scratch write; tell the user. If `productos/design/1-Product-Identity.md` and/or `docs/PRODUCT.md` exist, read them for tiebreaker and naming context. State the plan back in one line: *"I'll scan the codebase, inventory the design tokens you're actually using, flag every internal inconsistency, we'll pick the canonical value for each together, then I'll write `docs/DESIGN.md` in the Google format. Starting the scan."*
 
 ### 2. Map the styling architecture
 
@@ -240,7 +240,7 @@ When recommending a canonical value, weigh these in order — but always present
 1. **Frequency.** The most-used value is the default canonical pick. Production usage is the strongest evidence of intent.
 2. **Source authority.** A value defined in the central token source (Tailwind config, `:root`, theme file, token JSON) outranks scattered inline literals, even if the inline ones are individually more numerous.
 3. **Location weight.** Values in shared / design-system / component-library folders outrank values in one-off pages or marketing routes.
-4. **Identity tiebreaker.** Only when code evidence is genuinely tied: use `productos/design/1. Product Identity.md` (tone, visual style references) to break the tie. Never to override clear code evidence.
+4. **Identity tiebreaker.** Only when code evidence is genuinely tied: use `productos/design/1-Product-Identity.md` (tone, visual style references) to break the tie. Never to override clear code evidence.
 5. **Accessibility tiebreaker.** Among otherwise-equal candidates, prefer the one meeting WCAG AA. (Note: this is a *tiebreaker*, not a mandate to change a clear winner — AA failures of a clear winner are advisories in step 8.)
 6. **Recency.** Newer code may reflect the current direction; use git history sparingly as a final tiebreaker, not a primary signal.
 

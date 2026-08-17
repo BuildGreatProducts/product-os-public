@@ -1,6 +1,6 @@
 # Scale & Automation Roadmap Framework
 
-A worksheet for turning proven wins into scale. It takes only what your [3. Growth Experiments Tracker](3.%20Growth%20Experiments%20Tracker.md) has shown works, then plans two moves for each winner — **double down** (do more, do better) and **automate** (make it run without more of your hours). Pairs with [BONUS - Growth Experiments Library](BONUS%20-%20Growth%20Experiments%20Library.md) (the per-channel tool/plugin recipes) and [BONUS - AI Distribution Tools](BONUS%20-%20AI%20Distribution%20Tools.md). Runs once you have winners logged.
+A worksheet for turning proven wins into scale. It takes only what your [3. Growth Experiments Tracker](3-Growth-Experiments-Tracker.md) has shown works, then plans two moves for each winner — **double down** (do more, do better) and **automate** (make it run without more of your hours). Pairs with [BONUS - Growth Experiments Library](BONUS-Growth-Experiments-Library.md) (the per-channel tool/plugin recipes) and [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md). Runs once you have winners logged.
 
 ---
 
@@ -29,7 +29,7 @@ A worksheet for turning proven wins into scale. It takes only what your [3. Grow
 ### Winner 1 — [name]
 
 - **Do more (scale lever + target):**
-- **Do better (next experiment →** [2. Growth Experiments](2.%20Growth%20Experiments.md)**):**
+- **Do better (next experiment →** [2. Growth Experiments](2-Growth-Experiments.md)**):**
 
 ### Winner 2 — [name]
 
@@ -113,6 +113,6 @@ A worksheet for turning proven wins into scale. It takes only what your [3. Grow
 
 **Re-run this roadmap when:** [the tracker logs new winners, or an automation is ready for its next maturity rung]
 
-**Keep improving:** run [2. Growth Experiments](2.%20Growth%20Experiments.md) on each scaled channel — *doing better* never stops, even once *doing more* is automated.
+**Keep improving:** run [2. Growth Experiments](2-Growth-Experiments.md) on each scaled channel — *doing better* never stops, even once *doing more* is automated.
 
 ---

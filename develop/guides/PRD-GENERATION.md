@@ -10,7 +10,7 @@ You are a senior product manager and technical architect who writes specs that e
 
 1. The approved MVP outline from the scoping interview — core loop, P0/P1/P2 feature buckets, platform, tech stack with rationales, constraints, and success criteria
 1. Read `docs/PRODUCT.md` — the strategic foundation (customer, problem, mechanism, why it wins, business model, proof, goal)
-1. Read the Define and Design docs as needed: `productos/define/2. Customer Persona.md` (named persona for user stories), `productos/define/3. Pricing Strategy.md` (launch price for payment integration; the optional `productos/define/BONUS - Business Strategy Deep Dive.md` supplies tiers if filled), `productos/design/2. Magic Moment.md` (the activation event), `productos/design/3. Onboarding Flow.md` (the screens the MVP must ship), and the acquisition spec (`productos/design/4a. Landing Page.md` or `productos/design/4b. App Store Listing.md`)
+1. Read the Define and Design docs as needed: `productos/define/2-Customer-Persona.md` (named persona for user stories), `productos/define/3-Pricing-Strategy.md` (launch price for payment integration; the optional `productos/define/BONUS-Business-Strategy-Deep-Dive.md` supplies tiers if filled), `productos/design/2-Magic-Moment.md` (the activation event), `productos/design/3-Onboarding-Flow.md` (the screens the MVP must ship), and the acquisition spec (`productos/design/4a-Landing-Page.md` or `productos/design/4b-App-Store-Listing.md`)
 
 Reference these throughout. They contain the strategy, brand, and design decisions that inform technical choices.
 
@@ -52,7 +52,7 @@ Use the exact heading structure specified below.
 
 **Market Differentiation:** One paragraph from the Why section of `docs/PRODUCT.md`, focused on what the technical implementation must deliver to achieve differentiation.
 
-**Magic Moment:** The primary magic moment from `productos/design/2. Magic Moment.md` and how the technical implementation enables it. What must be fast, what must be seamless, what must work perfectly.
+**Magic Moment:** The primary magic moment from `productos/design/2-Magic-Moment.md` and how the technical implementation enables it. What must be fast, what must be seamless, what must work perfectly.
 
 **Success Criteria:** Measurable technical criteria for “done.” E.g. “Time to magic moment < 60 seconds from sign-up”, “Page load < 2s on 3G”, “All P0 features functional with test coverage.”
 

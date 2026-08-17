@@ -186,7 +186,7 @@ Distinctive enough that someone seeing it once can recall it later. Memorability
 
 ### 6. Relevant
 
-Matches the brand's industry, belief, and personality. A children's hospital and a heavy-metal record label don't share the same visual language; their logos shouldn't either. Logos that mismatch the brand's character (a nurturing brand with a punk logo, or vice versa) confuse the audience. (See `1. Product Identity.md` — the contrarian belief, tone of voice, and visual style should anchor the logo direction.)
+Matches the brand's industry, belief, and personality. A children's hospital and a heavy-metal record label don't share the same visual language; their logos shouldn't either. Logos that mismatch the brand's character (a nurturing brand with a punk logo, or vice versa) confuse the audience. (See `1-Product-Identity.md` — the contrarian belief, tone of voice, and visual style should anchor the logo direction.)
 
 ### 7. Original
 
@@ -258,7 +258,7 @@ A logo that's just a wordmark in a specific shade of blue is a wordmark with bra
 Long shadows, neon glows, lens flares, hyper-realistic gradients, all the bevels. Whatever the current visual fashion is, it dates the logo to within a 3-year window.
 
 ### The Founder's Personal Taste
-"I like green." The brand's audience doesn't care what color the founder likes. The color should serve the brand's palette (`1. Product Identity.md`, section 5), the category, and the differentiation strategy.
+"I like green." The brand's audience doesn't care what color the founder likes. The color should serve the brand's palette (`1-Product-Identity.md`, section 5), the category, and the differentiation strategy.
 
 ### No Documented Lockup System
 A logo without exact specs (clear space, minimum size, color values, allowed treatments, banned treatments) gets used inconsistently across surfaces — sometimes inverted, sometimes recolored, sometimes squished — and the brand fractures.

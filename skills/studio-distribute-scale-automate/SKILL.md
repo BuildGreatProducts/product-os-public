@@ -19,8 +19,8 @@ This skill needs the **proven winners**, **product context** (so automations are
 
 ### Winners — Path A (standard): ProductOS in the repo — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout
 
-1. **The Growth Experiments Tracker** — usually `productos/distribute/3. Growth Experiments Tracker.md`. The **primary** input. Read the log for rows marked **Pass** with a **"double down"** decision, and the **Cumulative Learnings**. These are the only candidates for scaling and automation. If the tracker is empty or has no winners yet, stop and point the user back to `studio-distribute-growth-experiments` — there's nothing proven to scale.
-2. **Context:** `productos/distribute/2. Growth Experiments.md` (the rhythm and up-next queue) and `productos/distribute/1. Go-To-Market Strategy.md` (the channels). Plus `docs/PRODUCT.md` or the Define docs for the customer, the magic moment, and the north star.
+1. **The Growth Experiments Tracker** — usually `productos/distribute/3-Growth-Experiments-Tracker.md`. The **primary** input. Read the log for rows marked **Pass** with a **"double down"** decision, and the **Cumulative Learnings**. These are the only candidates for scaling and automation. If the tracker is empty or has no winners yet, stop and point the user back to `studio-distribute-growth-experiments` — there's nothing proven to scale.
+2. **Context:** `productos/distribute/2-Growth-Experiments.md` (the rhythm and up-next queue) and `productos/distribute/1-Go-To-Market-Strategy.md` (the channels). Plus `docs/PRODUCT.md` or the Define docs for the customer, the magic moment, and the north star.
 
 ### Winners — Path B (standalone fallback): a repo without ProductOS
 
@@ -28,15 +28,15 @@ When there's no tracker — the skill runs in a normal app repo — read the cod
 
 ### Output target (both paths)
 
-**`productos/distribute/4. Scale & Automation Roadmap.md`** — on the standard path this exists as a template; **rewrite it in place**. On the standalone fallback, create it fresh with the same six-section structure at `docs/scale-automation-roadmap.md`. Match the headers exactly: **1. What's Working → 2. Double Down → 3. Automate → 4. The Roadmap → 5. Guardrails → 6. Next.**
+**`productos/distribute/4-Scale-and-Automation-Roadmap.md`** — on the standard path this exists as a template; **rewrite it in place**. On the standalone fallback, create it fresh with the same six-section structure at `docs/scale-automation-roadmap.md`. Match the headers exactly: **1. What's Working → 2. Double Down → 3. Automate → 4. The Roadmap → 5. Guardrails → 6. Next.**
 
 ### Automation playbook (both paths)
 
 Three reference docs ship **inside this skill's folder**, so they're available in both paths:
 
-- **`BONUS - Growth Experiments Library.md` (in this skill's folder)** — the **primary** automation reference: each channel's **"Recommended tools & plugins"** block names the tools, MCPs/plugins, and scheduled tasks that automate that channel's work. The automated version of each winner should be built from these.
-- **`BONUS - AI Distribution Tools.md` (in this skill's folder)** — the full tool stack to draw specific tools from.
-- **`BONUS - Distribution Channels.md` (in this skill's folder)** — channel context for each winner.
+- **`BONUS-Growth-Experiments-Library.md` (in this skill's folder)** — the **primary** automation reference: each channel's **"Recommended tools & plugins"** block names the tools, MCPs/plugins, and scheduled tasks that automate that channel's work. The automated version of each winner should be built from these.
+- **`BONUS-AI-Distribution-Tools.md` (in this skill's folder)** — the full tool stack to draw specific tools from.
+- **`BONUS-Distribution-Channels.md` (in this skill's folder)** — channel context for each winner.
 
 The same files also live in `productos/distribute/`; prefer the user's copies if customized. The bundled copies guarantee the skill has its playbook when run standalone.
 
@@ -55,7 +55,7 @@ For each proven winner, work out two things: the **scale lever** (what "more" lo
 For each winner, write both moves:
 
 - **Do more** — the scale lever with a **target number** ("1/day → 3/day," "$50/day → $200/day at the same cost-per-acquisition," "50 sends/week → 200"). Scaling is only safe while the result holds, so tie it to the metric.
-- **Do better** — the next experiment that lifts the win further, drawn from the same channel in the Library. This links back to `2. Growth Experiments`: doing better never stops, even once doing more is automated.
+- **Do better** — the next experiment that lifts the win further, drawn from the same channel in the Library. This links back to `2-Growth-Experiments.md`: doing better never stops, even once doing more is automated.
 
 ### 4. Automate — map manual to automated, with a human-in-the-loop
 
@@ -65,7 +65,7 @@ For each winning process, write the **manual steps today**, then the **automated
 
 Order the automations into **Now / Next / Later**, rated by effort and impact — ship the highest-leverage, lowest-effort one first, and automate one process well before starting the next. Then write the **guardrails**: the "don't automate (yet)" list (the unproven, the human-magic), the **one metric** that proves automation is lifting results (not just throughput — watch conversion/quality, not only volume), and a **stop rule** if that metric drops after an automation ships.
 
-Rewrite `productos/distribute/4. Scale & Automation Roadmap.md` in place (or create the fresh doc on Path B). Match the template structure exactly; read the existing file first to preserve notes. Add a short **summary** at the top (the top winners being scaled and the first automation to ship), a **dated header**, and an **evidence footer** citing the tracker rows the roadmap is built on.
+Rewrite `productos/distribute/4-Scale-and-Automation-Roadmap.md` in place (or create the fresh doc on Path B). Match the template structure exactly; read the existing file first to preserve notes. Add a short **summary** at the top (the top winners being scaled and the first automation to ship), a **dated header**, and an **evidence footer** citing the tracker rows the roadmap is built on.
 
 ### 6. Verify before delivering
 
@@ -101,7 +101,7 @@ Name them when you see them:
 
 ## What "done" looks like
 
-A filled `productos/distribute/4. Scale & Automation Roadmap.md` (or `docs/scale-automation-roadmap.md`) where:
+A filled `productos/distribute/4-Scale-and-Automation-Roadmap.md` (or `docs/scale-automation-roadmap.md`) where:
 
 - **What's Working** lists only tracker-proven winners, each with its number and why it works.
 - **Double Down** gives every winner a do-more (with a target) and a do-better.

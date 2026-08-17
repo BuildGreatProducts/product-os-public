@@ -318,9 +318,9 @@ If any of those three steps fail, see the troubleshooting subsection for that sp
 
 ## What to do after setup
 
-Once you've got at least one design tool connected to at least one AI coding client, run the **`studio-design-prompt-generator`** skill to produce `productos/design/Design Prompts.md`. That file contains three paste-ready prompts — one per priority screen for your product — that you can paste directly into the design tool you just connected. The prompts have your brand identity context (brand character, tone, type pairing, colour palette, what-to-avoid) embedded inside them, so the generated screens are on-brand from the first generation.
+Once you've got at least one design tool connected to at least one AI coding client, run the **`studio-design-prompt-generator`** skill to produce `productos/design/Design-Prompts.md`. That file contains three paste-ready prompts — one per priority screen for your product — that you can paste directly into the design tool you just connected. The prompts have your brand identity context (brand character, tone, type pairing, colour palette, what-to-avoid) embedded inside them, so the generated screens are on-brand from the first generation.
 
-If you want to test the connection *before* running the prompt generator, paste any of the screens from your existing `productos/design/Design Prompts.md` (if you've already run the generator) into the design tool's chat panel — or just write a quick freeform prompt like *"design a sign-up screen for a calorie tracking app, with a clean editorial aesthetic — Newsreader for headlines, Public Sans for body, warm cream background, deep ink text, terracotta accent."*
+If you want to test the connection *before* running the prompt generator, paste any of the screens from your existing `productos/design/Design-Prompts.md` (if you've already run the generator) into the design tool's chat panel — or just write a quick freeform prompt like *"design a sign-up screen for a calorie tracking app, with a clean editorial aesthetic — Newsreader for headlines, Public Sans for body, warm cream background, deep ink text, terracotta accent."*
 
 ---
 

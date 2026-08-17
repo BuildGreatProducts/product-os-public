@@ -1,6 +1,6 @@
 # Onboarding Flow
 
-*This template is rewritten in place by the `studio-design-onboarding-flow` skill. The skill reads `docs/PRODUCT.md`, `productos/design/1. Product Identity.md`, and `productos/design/2. Magic Moment.md`, auto-selects the appropriate best-practice reference from `productos/design/onboarding/`, and designs a screen-by-screen onboarding flow that engineers the user toward the magic moment. Run the skill to populate this file. A companion clickable HTML wireframe will also be generated at `productos/design/onboarding-wireframe.html`. The structure below shows what the filled-in version will look like.*
+*This template is rewritten in place by the `studio-design-onboarding-flow` skill. The skill reads `docs/PRODUCT.md`, `productos/design/1-Product-Identity.md`, and `productos/design/2-Magic-Moment.md`, auto-selects the appropriate best-practice reference from `productos/design/onboarding/`, and designs a screen-by-screen onboarding flow that engineers the user toward the magic moment. Run the skill to populate this file. A companion clickable HTML wireframe will also be generated at `productos/design/onboarding-wireframe.html`. The structure below shows what the filled-in version will look like.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## The magic moment we're engineering toward
 
-> [One sentence from `productos/design/2. Magic Moment.md`'s recommended primary.]
+> [One sentence from `productos/design/2-Magic-Moment.md`'s recommended primary.]
 
 **Position:** Screen [N] of [total].
 **Time-to-aha target:** [from Magic Moment doc].
@@ -75,7 +75,7 @@ A clickable HTML wireframe is at `productos/design/onboarding-wireframe.html` â€
 
 ## Sources
 
-- Reference: `productos/design/onboarding/BONUS - [X] Onboarding Best Practice.md` ([selected pattern])
-- Tone of voice: `productos/design/1. Product Identity.md`
-- Magic moment: `productos/design/2. Magic Moment.md`
+- Reference: `productos/design/onboarding/BONUS-[X]-Onboarding-Best-Practice.md` ([selected pattern])
+- Tone of voice: `productos/design/1-Product-Identity.md`
+- Magic moment: `productos/design/2-Magic-Moment.md`
 - Product context: `docs/PRODUCT.md`
