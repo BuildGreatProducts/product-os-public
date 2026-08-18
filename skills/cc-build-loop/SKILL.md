@@ -1,9 +1,9 @@
 ---
-name: claude-code-build-loop
+name: cc-build-loop
 description: Use when building features with **Claude Code** in any codebase and the work should go through a disciplined build → review → test → fix loop. Triggers on "run the build loop", "build the next task", "continue the plan", "build this feature properly", or any request to implement work from a plan file or a direct feature prompt. Builds from the plan (or the prompt if no plan exists), runs Claude Code's `/review` (plus `/security-review` for sensitive surfaces) and fixes every issue found, tests and verifies the feature end to end, fixes anything testing surfaces, and reports back once complete. Repeats until all plan tasks are checked off.
 ---
 
-# Claude Code Build Loop
+# CC Build Loop
 
 Quality-gated feature work: nothing ships on "it compiles" — every increment is built, reviewed, tested end to end, and fixed before the user hears "done."
 

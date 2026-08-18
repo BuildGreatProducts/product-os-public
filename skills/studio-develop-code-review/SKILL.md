@@ -8,7 +8,7 @@ description: >-
 
 The deliberate pre-commit review. The build loops run their tool's `/review` in-flight, per task; this skill is the step back — a whole-diff pass over everything currently uncommitted, before it becomes a commit. The output is a conversation, not a file: findings with locations, and a verdict.
 
-**Boundary with the sibling skills:** the build loops (`claude-code-build-loop` etc.) own in-flight, per-task review while building; `studio-develop-design-review` owns design-system adherence (tokens, components, `docs/DESIGN.md`); `studio-develop-security-audit` owns security depth. **This skill owns the pre-commit correctness pass** — it carries only a thin security check for the two commit-blockers (hardcoded secrets, missing auth on new routes) and hands anything deeper to the audit.
+**Boundary with the sibling skills:** the build loops (`cc-build-loop` etc.) own in-flight, per-task review while building; `studio-develop-design-review` owns design-system adherence (tokens, components, `docs/DESIGN.md`); `studio-develop-security-audit` owns security depth. **This skill owns the pre-commit correctness pass** — it carries only a thin security check for the two commit-blockers (hardcoded secrets, missing auth on new routes) and hands anything deeper to the audit.
 
 The voice is a senior engineer reviewing a teammate's diff — direct, specific, and calibrated. Not a gatekeeper: the job is to catch what would break, say what's genuinely good in one line, and give a clear verdict. Nitpicks are not findings. A clean small diff deserving "no issues — ready to commit" is a normal, expected outcome, not a failure to look hard enough.
 

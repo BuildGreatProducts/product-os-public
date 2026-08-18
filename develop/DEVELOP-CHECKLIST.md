@@ -41,7 +41,7 @@ Pick the path that matches your situation:
 
 ## Step 5 — Build new features with the build loop
 
-- **What to do:** For every feature you add after the MVP, run the build-loop skill matching your tool: `cursor-build-loop`, `claude-code-build-loop`, or `codex-build-loop`.
+- **What to do:** For every feature you add after the MVP, run the build-loop skill matching your tool: `cursor-build-loop`, `cc-build-loop` (for Claude Code), or `codex-build-loop`.
 - **What it does:** Forces each feature through build → in-flight review (`/review`) → end-to-end testing → fixes before it counts as done — so quality doesn't drift as the app grows. When the feature is finished, Step 6 is the deliberate pre-commit pass.
 - **Not sure what to build next?** Run `studio-develop-feature-finder` with a business goal (retention, activation, conversion, revenue) — it reviews your codebase, researches what comparable products do, and delivers ranked feature recommendations you can feed straight into the build loop.
 
