@@ -1,6 +1,6 @@
 {
   "name": "productos",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "ProductOS — a complete operating system for taking a product from idea to revenue with AI agents. Installs inside your app repo as productos/, optionally ships with a coach-composed programme plan, and runs four phases (Define, Design, Develop, Distribute), each with checklists, templates, and 36 skills that fill them in.",
   "author": {
     "name": "Chris Ashby",
