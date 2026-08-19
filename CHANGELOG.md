@@ -4,6 +4,8 @@
 
 **The Claude Code build loop is now `cc-build-loop`.** Claude Code's plugin validation rejects skill names containing "claude", so `claude-code-build-loop` errored at setup for members installing ProductOS there. The skill is renamed — folder, frontmatter `name`, and title — and every reference (AGENTS.md, the Develop checklist, `studio-develop-code-review`) is updated. Behaviour is unchanged; only the name moved.
 
+- All 36 skill descriptions verified under Claude Code's 1024-character limit, counted in both characters and UTF-8 bytes. Two needed trimming: `studio-develop-migrate` (dropped one redundant trigger phrase and two filler words) and `studio-distribute-gtm-strategy` (shortened the closing sentence — it sat at exactly 1024 bytes). Meaning and trigger coverage unchanged.
+
 ## 1.7.0 — August 2026
 
 **Escaping the prompt-to-app platforms.** Members arriving from Lovable, Bolt, v0, or Base44 needed a safe path into their own repo, stack, and coding agent — and members refactoring an existing app no longer need to run the full PRD interview first.
