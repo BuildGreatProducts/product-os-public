@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.8.0 — August 2026
+
+**A third door into Define: arriving with a business instead of an idea.** Members who run a company or carry deep domain expertise — but have no software idea yet — had no entry point: the offer-builder assumes an idea and the fast-track assumes a product. The new leverage finder excavates the idea from the business they already have.
+
+- **New skill `studio-define-leverage-finder`** — audits the existing business the way an acquirer would (where the money and hours actually go), inventories six leverage categories (repeated manual processes, spreadsheet-shaped work, judgment calls only the expert can make, unique data or access, repeated client requests, the capacity bottleneck), researches comparables live, scores a 3–5 idea shortlist on pain frequency × willingness to pay × MVP buildability × distribution advantage, routes between an internal tool (removing your own bottleneck) and a customer-facing product (productizing the value you already deliver), and converges on ONE idea — handing into `studio-define-offer-builder` with its two intake questions already answered.
+- **New fillable template `define/BONUS-Leverage-Audit.md`** — business snapshot, leverage inventory, scored shortlist, the route, the leverage brief, and a parking lot of pre-scored runners-up in case the Mini-Launch comes back silent. (Fillable despite the BONUS prefix, same precedent as the Business Strategy Deep Dive; the numbered 1–4 templates are unchanged.)
+- `BONUS-Idea-Validation-Cheat-Sheet.md` is no longer orphaned — the new skill reads it at the start, scores against its principles, and names its tactics at handoff.
+- The Define checklist gains the "No idea yet?" branch beside "Already have a product?"; the offer-builder's intake points idea-less members back to the leverage finder; the AGENTS.md dependency chain, README, and START-HERE name the new entry point.
+- Skill count 36 → 37 across the README and all plugin manifests; the codex and cursor manifest versions are re-synced (they had missed the 1.7.1 bump).
+
 ## 1.7.1 — August 2026
 
 **The Claude Code build loop is now `cc-build-loop`.** Claude Code's plugin validation rejects skill names containing "claude", so `claude-code-build-loop` errored at setup for members installing ProductOS there. The skill is renamed — folder, frontmatter `name`, and title — and every reference (AGENTS.md, the Develop checklist, `studio-develop-code-review`) is updated. Behaviour is unchanged; only the name moved.
