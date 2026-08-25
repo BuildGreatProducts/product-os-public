@@ -71,7 +71,7 @@ Before scoring, research each shortlisted candidate so the scores rest on eviden
 - **2–3 comparable products in the member's niche** with any traction signal — Indie Hackers revenue pages, Starter Story interviews, ProductHunt, app-store listings, G2/Capterra category pages.
 - **What similar experts and operators have productized** — search "[niche] software", "[niche] tool", vertical-SaaS lists.
 - **Pricing signals** — what existing tools charge, and what the member's clients currently pay humans for the same job. The human price is the strongest anchor.
-- **Absence check** — if a candidate has *no* comparables and no current spend, flag it with the cheat sheet's "No Competitors = No Market" principle before it gets scored.
+- **Absence check** — if a candidate has *no* comparables and no current spend, the cheat sheet's "No Competitors = No Market" principle applies: cut it from the shortlist before scoring. It never gets a row in the scores table and cannot be the chosen idea — record the cut and the rule in the audit's Scores notes so the member sees why it went.
 
 Collect 4–6 concrete data points across the shortlist. Say explicitly: competitors found here are *good news* — they are proof of demand, the inverse of how founders usually read them.
 
