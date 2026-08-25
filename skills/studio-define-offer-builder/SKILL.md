@@ -45,6 +45,8 @@ Start with the user's idea in their own words. Ask two questions and stop:
 
 That's the entire intake. Don't ask for the whole framework upfront — the point of this skill is to help the founder *find* the answers, not to test whether they already have them.
 
+If the member has no idea at all — a business or expertise but nothing to describe — stop and run `studio-define-leverage-finder` first; it ends with these two questions answered.
+
 From the answer, form a **working hypothesis** in 3 sentences: idea shape (vertical AI agent / AI coding tool / prosumer creator tool / job-to-be-done agent / AI-enabled service / "boring back office" agent / horizontal SaaS / indie utility), likely customer wedge, candidate price band, candidate distribution surface. State this back to the user before going further. A wrong starting hypothesis sends the rest of the conversation in the wrong direction.
 
 ### 2. Research the category (live)

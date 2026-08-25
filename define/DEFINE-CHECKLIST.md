@@ -12,6 +12,7 @@ The Mini-Launch is launch #1 of four. Every later phase closes by relaunching to
 
 - **What to do:** Run `studio-define-offer-builder`, then optionally `studio-define-offer-review` for a critique pass.
 - **Already have a product?** Run `studio-define-from-code` instead — it extracts draft offer, persona, and pricing documents from your existing codebase, live app, or landing page (covering Steps 1–3 in one pass), then `studio-define-offer-review` sharpens them. You skip the blank templates, not the thinking.
+- **No idea yet?** Run `studio-define-leverage-finder` first — it audits your existing business or expertise for the leverage point software can multiply, routes between an internal tool and a customer-facing product, and converges on one idea, filling `productos/define/BONUS-Leverage-Audit.md`. You arrive back at this step with the offer-builder's two intake questions already answered.
 - **What it does:** Produces `productos/define/1-Product-Offer.md` — the six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof). Draws on `BONUS-Product-Offer-Examples.md` and `BONUS-Offer-Failure-Patterns.md`.
 
 ## Step 2 — Customer Persona

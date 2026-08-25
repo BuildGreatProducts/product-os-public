@@ -12,7 +12,7 @@ If your copy came from your coach, your custom programme is already inside it: s
 
 Two things are in every programme, whatever your stage, because they're where the value concentrates:
 
-- **The Define work** — the product offer is what clarifies exactly what you're building. If you already have a product, you take the fast-track: `studio-define-from-code` extracts the drafts from what exists, then the review sharpens them.
+- **The Define work** — the product offer is what clarifies exactly what you're building. If you already have a product, you take the fast-track: `studio-define-from-code` extracts the drafts from what exists, then the review sharpens them. Arriving with a business but no idea? `studio-define-leverage-finder` finds the idea first.
 - **The Distribute loop** — everyone needs distribution. Only the timing varies.
 
 ## Starting completely from scratch?
