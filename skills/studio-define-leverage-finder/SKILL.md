@@ -88,10 +88,10 @@ Highest total wins, but the score is a conversation-forcing device, not an oracl
 
 ### 6. Route: internal tool or customer-facing product
 
-Apply one test to the front-runner: **"Who feels the pain most — you running the business, or the people you serve?"** Two tie-breakers:
+Apply one test to the front-runner: **"Who feels the pain most — you running the business, or the people you serve?"** If that test is ambiguous, apply two tie-breakers **in order — the first that matches decides**:
 
-- If the member has never shipped software, **internal-first is the lower-risk route** — the first user is guaranteed, honest, and free (the cheat sheet's be-your-own-customer principle).
-- If the candidate productizes something clients already pay for, **customer-facing wins** — existing invoices are pre-validation (the concierge-MVP principle).
+1. If the candidate productizes something clients already pay for, **customer-facing wins** — existing invoices are pre-validation (the concierge-MVP principle), and this holds even for a member who has never shipped software: the concierge path lets them deliver manually while learning to ship.
+2. Otherwise, if the member has never shipped software, **internal-first is the lower-risk route** — the first user is guaranteed, honest, and free (the cheat sheet's be-your-own-customer principle).
 
 Name the route explicitly and record it. It changes who the Customer is in the downstream offer.
 
