@@ -51,6 +51,7 @@ Extract:
 - From Product Identity: worldview, contrarian belief, tone-of-voice attributes (the "X but not Y" phrases), we-say / we-don't-say list, example sentence, visual style (informs icon, screenshot, and preview video direction; concrete tokens live in docs/DESIGN.md).
 - From Magic Moment: the recommended primary magic moment, position in journey, time-to-aha target, named success metric.
 - From the BONUS doc: the selected pattern from the decision tree, the most relevant 6–10 tactics, the anti-patterns, the calibration table values.
+- From COPY.md (if present): the lexicon's canonical nouns and verbs — the subtitle, captions, and descriptions must name features by their in-product terms.
 
 ### 2. Confirm the product is mobile
 

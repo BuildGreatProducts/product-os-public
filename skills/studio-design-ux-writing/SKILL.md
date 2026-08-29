@@ -183,8 +183,8 @@ If the file already exists (a re-run), read it first and rewrite it in place, pr
 ## Sources
 
 - Reference: `productos/design/BONUS-UX-Writing-Best-Practice.md`
-- Tone of voice: `productos/design/1-Product-Identity.md`
-- Product context: `docs/PRODUCT.md`
+- Tone of voice: `productos/design/1-Product-Identity.md` *(standalone mode: the recorded tone answers instead)*
+- Product context: `docs/PRODUCT.md` *(standalone mode: the sampled codebase paths instead)*
 - Design tokens (if available): `docs/DESIGN.md`
 ```
 

@@ -79,7 +79,7 @@ Voice is who the product is; tone is how it reads the room. You never know a use
 
 ### 11. The Mechanical Layer Is Fixed
 
-Beneath any brand voice sits a non-negotiable layer of mechanics: sentence case everywhere; no terminal periods on titles, labels, or buttons; active voice; second person ("you") — first person ("my") only for ownership and consent, never mixed in one phrase; present tense ("Message sent", not "Message has been sent"); numerals, not words ("3 messages"); positive framing ("Use only letters", not "Don't use numbers or symbols"). These are not style preferences — each one is a tested comprehension gain. Voice lives in word choice and rhythm *inside* these rules, never instead of them.
+Beneath any brand voice sits a non-negotiable layer of mechanics: sentence case everywhere; no terminal periods on titles, labels, or buttons; active voice — with one sanctioned exception, the terse agentless result toast ("Message sent", "Product saved"), the noun + past participle form Tactic #16 defines; second person ("you") — first person ("my") only for ownership and consent, never mixed in one phrase; present tense ("Message sent", not "Message has been sent"); numerals, not words ("3 messages"); positive framing ("Use only letters", not "Don't use numbers or symbols"). These are not style preferences — each one is a tested comprehension gain. Voice lives in word choice and rhythm *inside* these rules, never instead of them.
 
 ### 12. Copy Is a System, Not a String
 
