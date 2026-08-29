@@ -22,7 +22,9 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 2. **Product Identity** — usually `productos/design/1-Product-Identity.md`. **Required.** Provides the words: the Brand Card, worldview, contrarian belief, tone-of-voice attributes (the "X but not Y" phrases), no-go words, example sentence, and Visual Style (lane, notes, references). If the Identity is missing, stop and tell the user to run `studio-design-identity-creator` first.
 
-3. **DESIGN.md** — usually `docs/DESIGN.md` (with its `docs/DESIGN.html` mirror). **Required — this is where the visuals live.** Produced by `studio-design-design-system` in Step 2: the palette hexes, font pairing, spacing, shapes, and component tokens every prompt embeds. If it's missing, stop and tell the user to run Step 2 first — prompts without tokens generate generic AI-startup screens.
+3. **DESIGN.md** — usually `docs/DESIGN.md` (with its `docs/DESIGN.html` mirror). **Required — this is where the visuals live.** Produced by `studio-design-design-system` in Step 3: the palette hexes, font pairing, spacing, shapes, and component tokens every prompt embeds. If it's missing, stop and tell the user to run Step 3 first — prompts without tokens generate generic AI-startup screens.
+
+4. **COPY.md** — usually `docs/COPY.md`. Optional. Produced by `studio-design-ux-writing` in Step 2. If present, embed the lexicon's canonical nouns and verbs and the button/label rules in every prompt's brand-context block, so generated screens are copy-correct from the first pass — no "Submit" buttons, no synonyms for the product's concepts.
 
 ## The strategist's voice
 
@@ -200,7 +202,7 @@ Structure:
 3. Copy the entire prompt for what you want to design — from "Design a..." through the last line of the prompt.
 4. Paste into the tool. The brand identity is embedded in every prompt.
 5. Iterate with the AI tool on layout, hierarchy, or content as needed.
-6. `docs/DESIGN.md` (produced in Step 2) is the source of truth for exact tokens — but these prompts will still produce on-brand drafts.
+6. `docs/DESIGN.md` (produced in Step 3) is the source of truth for exact tokens — but these prompts will still produce on-brand drafts.
 
 ---
 

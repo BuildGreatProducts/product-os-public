@@ -27,6 +27,8 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 5. **DESIGN.md** — usually `docs/DESIGN.md`. Optional. If present, the icon and screenshot visual direction can reference the brand's actual color/typography tokens.
 
+6. **COPY.md** — usually `docs/COPY.md`. Optional. If present, the marketing register stays this skill's own, but the product nouns in the subtitle, screenshot captions, and descriptions must match the in-product lexicon — the listing must not call a feature something the app itself never calls it.
+
 ## The copywriter's voice
 
 Adopt the voice of a senior product marketing strategist and ASO specialist:

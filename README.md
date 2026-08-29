@@ -15,7 +15,7 @@ One thread runs through all four phases: **the launch ladder.** Each phase close
 | Phase | Folder | What you end up with |
 |---|---|---|
 | 1. **Define** | `productos/define/` | Offer, persona, pricing, mini-launch (your first real customer signal) → `docs/PRODUCT.md` |
-| 2. **Design** | `productos/design/` | Identity (in words), design system from an image you love, magic moment, onboarding, relaunch #2 → `docs/DESIGN.md` + `docs/DESIGN.html` |
+| 2. **Design** | `productos/design/` | Identity (in words), UX writing guide, design system from an image you love, magic moment, onboarding, relaunch #2 → `docs/COPY.md`, `docs/DESIGN.md` + `docs/DESIGN.html` |
 | 3. **Develop** | `productos/develop/` | PRD, roadmap, agent-built MVP, code review + security audit, the beta invite → `docs/PRD.md`, `docs/ROADMAP.md`, `docs/SECURITY-AUDIT.md`, `docs/DEPLOY.md` |
 | 4. **Distribute** | `productos/distribute/` | Go-to-market, the public launch, growth experiments, scaling — a loop, not a finish line |
 
@@ -27,7 +27,7 @@ Three steps, the same for every tool and every stage:
 2. **Put ProductOS in it as `productos/`** — clone this folder into the repo root, named exactly `productos`. A copy (or a GitHub ZIP extract) is fine for Claude Code and Codex; **Cursor's `/add-plugin` needs a real git clone** — see below.
 3. **Run `studio-setup`.** It wires the agent guidelines into your repo root (`CLAUDE.md`/`AGENTS.md`, from `productos/setup/`), adds `productos/` to your `.gitignore` (see the licence note below), and — if your copy shipped with a programme plan — moves it to `docs/PLAN.md` and verifies it against your actual repo.
 
-ProductOS is also a plugin for **Claude Code**, **Codex**, and **Cursor** — one package, three manifests, the same 37 skills:
+ProductOS is also a plugin for **Claude Code**, **Codex**, and **Cursor** — one package, three manifests, the same 38 skills:
 
 ### Claude Code
 
@@ -97,7 +97,7 @@ Skill names follow the `studio-<phase>-*` convention (e.g. `studio-define-offer-
 - **Checklists** (`*-CHECKLIST.md`) — the runbook for each phase. Source of truth for how each step runs; your plan says which steps apply to you.
 - **Numbered templates** (`1-`–`4-` in each phase folder) — worksheets the skills fill in place, with `> Good/Bad` calibration examples throughout.
 - **BONUS docs** — reference playbooks: worked examples, failure patterns, channel guides, best-practice libraries.
-- **`productos/skills/`** — one flat folder per skill (37 total). Each contains a `SKILL.md` plus any bundled reference files.
+- **`productos/skills/`** — one flat folder per skill (38 total). Each contains a `SKILL.md` plus any bundled reference files.
 - **`productos/setup/CLAUDE.md` + `productos/setup/AGENTS.md`** — agent guidelines wired into your repo root at setup (by `studio-setup`), so your coding agent behaves from day one.
 
 ## Requirements
@@ -107,4 +107,4 @@ Skill names follow the `studio-<phase>-*` convention (e.g. `studio-define-offer-
 
 ## Version
 
-**1.8.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
+**1.9.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.

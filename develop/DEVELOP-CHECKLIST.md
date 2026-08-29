@@ -53,7 +53,7 @@ Pick the path that matches your situation:
 ## Step 7 — Design changes
 
 - **What to do:** Run `studio-develop-design-better` whenever you're generating or changing UI, and `studio-develop-design-review` before committing design work.
-- **What it does:** Keeps every screen aligned with `docs/DESIGN.md` tokens and catches visual drift before it ships.
+- **What it does:** Keeps every screen aligned with `docs/DESIGN.md` tokens and every user-facing string aligned with `docs/COPY.md`, catching visual and copy drift before it ships.
 
 ## Step 8 — Conversion review
 

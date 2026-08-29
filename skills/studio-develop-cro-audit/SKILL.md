@@ -29,6 +29,8 @@ Locate the following:
 
 4. **Magic Moment, Product Identity** — usually `productos/design/2-Magic-Moment.md` and `productos/design/1-Product-Identity.md` if present. **Optional.** Provides the activation event the audit measures against and the tone the audit applies to copy critiques.
 
+5. **COPY.md** — usually `docs/COPY.md` if present. **Optional.** When present, copy critiques audit against its review rubric and lexicon — not just the Identity's tone words — and error-message findings cite its error anatomy.
+
 If PRODUCT.md and the BONUS docs are missing, the skill works standalone using the calibration tables embedded in the workflow section below.
 
 ## The auditor's voice
@@ -247,7 +249,7 @@ If `docs/PRODUCT.md`, `productos/design/2-Magic-Moment.md`, `productos/design/3-
 - Does the code's actual onboarding match the documented flow in `3-Onboarding-Flow.md`?
 - Does the landing page hero copy match the spec in `4a-Landing-Page.md`?
 - Does the activation event documented in `2-Magic-Moment.md` actually fire — and is it tracked in analytics?
-- Does the tone of voice in product copy match the Identity?
+- Does the tone of voice in product copy match the Identity — and, when `docs/COPY.md` exists, pass its review rubric (lexicon, budgets, banned words)?
 
 Discrepancies between documented strategy and shipped code are P1 findings — the team has done the strategy work but the code drifted from it.
 

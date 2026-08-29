@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.9.0 — August 2026
+
+**The product gets a copy system the way it already gets a design system.** Members build their UIs with coding agents, and an LLM's default register is marketing English — verbose, abstract, apologetic, exclamatory. Nothing owned the in-product copy: buttons, labels, errors, empty states, confirmations, toasts, notifications, terminology. Now `docs/COPY.md` does — DESIGN.md is how the product looks; COPY.md is how it speaks.
+
+- **New skill `studio-design-ux-writing`** — Design checklist Step 2, right after the Product Identity. Translates the Identity's Tone of Voice into an operational copy system: a voice chart (every cell a followable rule), a terminology lexicon (one name per thing), per-surface rules with product-specific good/bad pairs, the product's 3–5 real error messages fully written, a banned-word list, and a per-screen review rubric. Routes by arrival state — greenfield builds the guide from the design docs; a repo with real UI strings additionally gets an audit pass that classifies offenders by anti-pattern and appends an executable fix list; a repo without ProductOS runs a standalone fallback (codebase + three tone questions).
+- **New reference `design/BONUS-UX-Writing-Best-Practice.md`** — the source of truth the skill cites by tactic number: a meta-rule (clear beats concise beats consistent beats voice beats wit), 12 principles, a which-kind-of-string decision tree, 20 tactics across 8 surface stages (including the Polaris verb dictionary and the three-part error anatomy), 3 worked examples, and 12 named anti-patterns (The Marketing Bleed, The Are-You-Sure Dialog, The Synonym Shuffle, …) — distilled from Apple HIG, Material, Microsoft, Polaris, Mailchimp, Atlassian, GOV.UK, NN/g, Podmajersky, and Yifrah.
+- **`setup/CLAUDE.md` + `setup/AGENTS.md` gain §7 Copy Fidelity** — "the copy guide is law": coding agents read `docs/COPY.md` before touching any user-facing string, write from the lexicon, and run the rubric on every screen they change. Existing member repos pick this up on their next `studio-setup` re-run (same as §6 in 1.5.0). `COPY.md` joins the canonical docs list.
+- Design checklist renumbered: UX Writing Guide is Step 2; Design System, Prompts, Magic Moment, Onboarding, Acquisition, and Relaunch shift to 3–8. The three skills that name Steps 2–3 (`identity-creator`, `design-system`, `prompt-generator`) and the Product Identity template are renumbered to match; the identity-creator's closing now routes to the UX writing session first.
+- Downstream skills read the guide when present: the prompt generator embeds the lexicon so AI-generated screens are copy-correct; onboarding flow, landing page, and app listing conform their copy to it; `design-better`, `design-review`, `cro-audit`, and `prd-roadmap` check or inherit it.
+- Skill count 37 → 38 across the README and all plugin manifests.
+
 ## 1.8.0 — August 2026
 
 **A third door into Define: arriving with a business instead of an idea.** Members who run a company or carry deep domain expertise — but have no software idea yet — had no entry point: the offer-builder assumes an idea and the fast-track assumes a product. The new leverage finder excavates the idea from the business they already have.

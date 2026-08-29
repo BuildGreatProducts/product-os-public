@@ -24,7 +24,9 @@ Locate the following:
 
 3. **`productos/design/1-Product-Identity.md`** — **optional** — absent in a repo without ProductOS. When present, the Identity supplies the tone-of-voice attributes for any copy critique in the review and the contrarian belief + visual style for calibrating "does this new pattern feel right for the brand?" judgments. If absent, the review focuses strictly on token-level adherence.
 
-4. **`docs/PRODUCT.md`** — **optional**. If present, the product type contextualizes the review (a marketplace listing card has different conventions than a B2B dashboard card, even with the same tokens).
+4. **`docs/COPY.md`** — **optional**. When present, new or changed user-facing strings in the diff are checked against its review rubric — lexicon conformance, mechanical rules, banned words — and violations are reported as Inconsistencies alongside the token findings.
+
+5. **`docs/PRODUCT.md`** — **optional**. If present, the product type contextualizes the review (a marketplace listing card has different conventions than a B2B dashboard card, even with the same tokens).
 
 If `docs/DESIGN.md` does not exist, stop and tell the user which skill to run first. Do not improvise a review against an undocumented design system.
 

@@ -27,6 +27,8 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 5. **DESIGN.md** — usually `docs/DESIGN.md`. Optional. If present, the hero visual direction can reference the brand's actual color/typography tokens.
 
+6. **COPY.md** — usually `docs/COPY.md`. Optional. If present, the marketing register stays this skill's own, but the product nouns and CTA verbs on the page must match the in-product lexicon — the page must not call a feature something the product itself never calls it.
+
 6. **The Reference Wireframe** — `REFERENCE-WIREFRAME.html` in this skill's folder. Read this once at the start. It demonstrates the exact HTML structure the skill will generate — sidebar with section nav, browser-chrome frame, all 11 page sections stacked vertically with wireframe primitives, right-side annotation panel that updates on scroll via IntersectionObserver, lo-fi greyscale styling matching the onboarding wireframe. Use it as the structural template. **Do not copy its placeholder copy** — its purpose is to show the *shape* of a correct wireframe, not the content for the user's product.
 
 ## The copywriter's voice
