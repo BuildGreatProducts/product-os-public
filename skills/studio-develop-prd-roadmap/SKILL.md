@@ -28,12 +28,13 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 4. **The Magic Moment** — `productos/design/2-Magic-Moment.md`. The single most important scoping input. The primary magic moment is the milestone the core MVP phases must reach; its instrumentation note becomes a PRD requirement.
 5. **The Onboarding Flow** — `productos/design/3-Onboarding-Flow.md`. Every screen in the flow is a screen the MVP must ship. This is the backbone of the PRD's UI/UX Requirements section.
 6. **The acquisition spec** — `productos/design/4a-Landing-Page.md` (web/desktop) or `productos/design/4b-App-Store-Listing.md` (mobile). Whichever exists confirms the platform, and every capability promised in its copy is a feature the MVP either ships or the copy must stop claiming. Harvest the promises.
+7. **COPY.md** — `docs/COPY.md`. If present, the PRD's UI/UX requirements inherit its lexicon (features are named by their canonical nouns) and its error and empty-state patterns become named requirements rather than afterthoughts.
 
 **Guides — read before the corresponding step:**
 
-7. `productos/develop/guides/TECH-STACK-OPTIONS.md` — comparison data for the tech stack questions.
-8. `productos/develop/guides/PRD-GENERATION.md` — section requirements and formats for the PRD.
-9. `productos/develop/guides/ROADMAP-GENERATION.md` — phase design, task format, and the agent session guide for the roadmap.
+8. `productos/develop/guides/TECH-STACK-OPTIONS.md` — comparison data for the tech stack questions.
+9. `productos/develop/guides/PRD-GENERATION.md` — section requirements and formats for the PRD.
+10. `productos/develop/guides/ROADMAP-GENERATION.md` — phase design, task format, and the agent session guide for the roadmap.
 
 ## Workflow
 

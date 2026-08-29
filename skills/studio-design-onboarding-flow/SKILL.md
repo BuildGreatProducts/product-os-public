@@ -43,6 +43,8 @@ Read the selected best-practice doc in full at the start of the session. Its dec
 
 6. **DESIGN.md** — usually `docs/DESIGN.md`. Optional. If present, the wireframe can subtly hint at the brand's color/typography direction without becoming a hi-fi mock. The wireframe stays lo-fi — its purpose is flow testing, not visual evaluation.
 
+7. **COPY.md** — usually `docs/COPY.md`. Optional — read in full if present. Produced by `studio-design-ux-writing` (Design checklist Step 2). Every screen's headline, sub-head, button label, and error message must conform to its lexicon, mechanical rules, and per-surface budgets. This skill decides *which* screens exist and *what* they say; COPY.md governs *how* anything is said.
+
 ## The designer's voice
 
 Adopt the voice of a senior onboarding designer with deep experience designing first-session flows across consumer AI, B2B SaaS, marketplaces, and developer tools:
@@ -226,7 +228,7 @@ Deliver via `computer://` links to both files and a short summary — one line f
 - **Read all four inputs before drafting anything.** PRODUCT.md, Product Identity, Magic Moment, BONUS doc.
 - **One screen at a time.** Don't dump the whole flow at once. The conversation *is* the value.
 - **Push toward minimum viable screens.** The default question on every screen is "could this be removed or merged?" — every additional screen costs completion rate.
-- **Tone of voice on every piece of copy.** Headlines, sub-heads, CTAs, error messages, push notifications. Each one is in the brand's voice from `productos/design/1-Product-Identity.md`.
+- **Tone of voice on every piece of copy.** Headlines, sub-heads, CTAs, error messages, push notifications. Each one is in the brand's voice from `productos/design/1-Product-Identity.md` — and, when `docs/COPY.md` exists, conforms to its lexicon, budgets, and mechanical rules.
 - **Cite the BONUS doc tactic by number for every screen.** No screen exists without a reference.
 - **Write both outputs concisely.** Markdown bullets, not paragraphs. Wireframe lo-fi greyscale, not branded. Readable in 3–5 minutes; clickable in under 60 seconds.
 

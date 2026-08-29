@@ -1,7 +1,7 @@
 ---
 name: studio-design-design-system
 description: >-
-  Use when the user wants to turn an image reference — a screenshot, mockup, Figma URL, or live website they love — into their Design System. Triggers on phrases like "build my design system", "create my DESIGN.md", "design from image", "image to design system", "translate this screenshot into a design system", "extract design tokens", "make my design.md", "here's a site I love, capture its design", or when the user shares an image/URL in a design context with no other clear intent. Produces two mirrored artifacts: docs/DESIGN.md (Google-format YAML tokens + prose, the source of truth coding agents read) and docs/DESIGN.html (a self-contained live style guide for the human). Reads the image(s), asks only the context questions the ProductOS docs don't already answer, derives the tokens, reconciles them with the Product Identity, and writes both files together. Design phase Step 2 — runs right after the Product Identity and supplies the colours, fonts, and tokens the identity leaves undecided.
+  Use when the user wants to turn an image reference — a screenshot, mockup, Figma URL, or live website they love — into their Design System. Triggers on phrases like "build my design system", "create my DESIGN.md", "design from image", "image to design system", "translate this screenshot into a design system", "extract design tokens", "make my design.md", "here's a site I love, capture its design", or when the user shares an image/URL in a design context with no other clear intent. Produces two mirrored artifacts: docs/DESIGN.md (Google-format YAML tokens + prose, the source of truth coding agents read) and docs/DESIGN.html (a self-contained live style guide for the human). Reads the image(s), asks only the context questions the ProductOS docs don't already answer, derives the tokens, reconciles them with the Product Identity, and writes both files together. Design phase Step 3 — runs after the UX Writing Guide and supplies the colours, fonts, and tokens the identity leaves undecided.
 ---
 
 # Design: Design System (image → DESIGN.md + DESIGN.html)
@@ -13,7 +13,7 @@ This skill takes an **image reference the user loves** — a screenshot, mockup,
 
 Same system, two audiences: the agent reads the `.md`, the human opens the `.html`. They are always written and updated together so they never drift.
 
-In ProductOS this is **Design phase Step 2**, immediately after the Product Identity. The identity supplies the *words* (name, worldview, contrarian belief, tone, visual style direction) and deliberately leaves the *visuals* undecided — this skill derives the colours, fonts, spacing, shapes, and components from a real image, guided by those words. The user's job before this session: find one image or site that looks the way the brand *feels*. The Visual Style references in the identity are the natural hunting ground.
+In ProductOS this is **Design phase Step 3**, after the Product Identity and UX Writing Guide. The identity supplies the *words* (name, worldview, contrarian belief, tone, visual style direction) and deliberately leaves the *visuals* undecided — this skill derives the colours, fonts, spacing, shapes, and components from a real image, guided by those words. The user's job before this session: find one image or site that looks the way the brand *feels*. The Visual Style references in the identity are the natural hunting ground.
 
 > **Session length:** 30–60 minutes. The user supplies the image; Claude does the visual analysis, the token extraction, the identity reconciliation, and both file writes. Already have a codebase instead of an image? `studio-design-design-system-from-code` reverse-engineers the system from the code.
 
@@ -170,7 +170,7 @@ Then deliver both via `computer://` links:
 
 > *"Your design system is captured in two mirrored files: **`docs/DESIGN.md`** — tokens + rationale for any coding agent to implement from (the source of truth) — and **`docs/DESIGN.html`** — open it in a browser to see every token and component rendered live. When tokens change, both update together."*
 
-Recommended next step: run **`studio-design-prompt-generator`** (Step 3) — it embeds these tokens plus the identity's words into paste-ready prompts for AI design tools, so the first generated screens are on-brand.
+Recommended next step: run **`studio-design-prompt-generator`** (Step 4) — it embeds these tokens plus the identity's words into paste-ready prompts for AI design tools, so the first generated screens are on-brand.
 
 ## Image analysis patterns
 

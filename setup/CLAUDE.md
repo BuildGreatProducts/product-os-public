@@ -5,7 +5,7 @@
 
 - The product strategy system lives in `productos/` — checklists, templates, and skills. The strategy docs are the source of intent; don't guess at product decisions the docs already answer.
 - The programme plan is `docs/PLAN.md`, when present (adopted at setup by `studio-setup`) — consult it before starting any phase work.
-- The canonical product documents live in `docs/` at the repo root (`PRODUCT.md`, `DESIGN.md`, `PRD.md`, `ROADMAP.md`, `LAUNCHES.md`, `SECURITY-AUDIT.md`, …). ProductOS skills write them; they may sit alongside the repo's own docs.
+- The canonical product documents live in `docs/` at the repo root (`PRODUCT.md`, `COPY.md`, `DESIGN.md`, `PRD.md`, `ROADMAP.md`, `LAUNCHES.md`, `SECURITY-AUDIT.md`, …). ProductOS skills write them; they may sit alongside the repo's own docs.
 - Build-loop plan files are `docs/ROADMAP.md` and `docs/REFACTOR.md` — never `docs/PLAN.md` (the programme plan, no checkboxes) and never `productos/*-CHECKLIST.md`.
 - Full system orientation: `productos/AGENTS.md`.
 <!-- END PRODUCTOS -->
@@ -91,6 +91,17 @@ Before writing or changing any UI code:
 - Verify webhook signatures (Stripe, Clerk, GitHub) before trusting the payload.
 - `service_role` and `sk_live_` keys never reach the client. The anon key / `pk_live_` are public by design — that's fine *because* the rules above hold.
 
+## 7. Copy Fidelity
+
+**The copy guide is law. Reference `docs/COPY.md` for every user-facing string.**
+
+- Before writing or changing UI text, read the relevant section of `docs/COPY.md` — voice chart, terminology lexicon, per-surface rules.
+- Product nouns and verbs come from the lexicon. Never introduce a synonym for an existing concept.
+- The mechanical rules are fixed: sentence case, no terminal periods on labels or buttons, active voice, second person, present tense, numerals.
+- Errors say what happened, why, and what to do next. Buttons say what they do ({Verb} {noun}). Never "Are you sure?", never bare "OK" on consequential actions.
+- Run the copy review rubric from `docs/COPY.md` against any screen you create or change.
+- If a copy need isn't covered, flag the gap and ask — don't invent voice.
+
 ---
 
-**These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, clarifying questions come before implementation rather than after mistakes, and no hardcoded style values appear in any diff.
+**These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, clarifying questions come before implementation rather than after mistakes, no hardcoded style values appear in any diff, and no off-lexicon terms or banned phrases appear in UI strings.

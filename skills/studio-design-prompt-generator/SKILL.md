@@ -22,7 +22,9 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 2. **Product Identity** — usually `productos/design/1-Product-Identity.md`. **Required.** Provides the words: the Brand Card, worldview, contrarian belief, tone-of-voice attributes (the "X but not Y" phrases), no-go words, example sentence, and Visual Style (lane, notes, references). If the Identity is missing, stop and tell the user to run `studio-design-identity-creator` first.
 
-3. **DESIGN.md** — usually `docs/DESIGN.md` (with its `docs/DESIGN.html` mirror). **Required — this is where the visuals live.** Produced by `studio-design-design-system` in Step 2: the palette hexes, font pairing, spacing, shapes, and component tokens every prompt embeds. If it's missing, stop and tell the user to run Step 2 first — prompts without tokens generate generic AI-startup screens.
+3. **DESIGN.md** — usually `docs/DESIGN.md` (with its `docs/DESIGN.html` mirror). **Required — this is where the visuals live.** Produced by `studio-design-design-system` in Step 3: the palette hexes, font pairing, spacing, shapes, and component tokens every prompt embeds. If it's missing, stop and tell the user to run Step 3 first — prompts without tokens generate generic AI-startup screens.
+
+4. **COPY.md** — usually `docs/COPY.md`. Optional. Produced by `studio-design-ux-writing` in Step 2. If present, embed the lexicon's canonical nouns and verbs and the button/label rules in every prompt's brand-context block, so generated screens are copy-correct from the first pass — no "Submit" buttons, no synonyms for the product's concepts.
 
 ## The strategist's voice
 
@@ -154,7 +156,7 @@ Layout (top to bottom):
 Content / copy hints:
 - Headline: "[exact headline in the brand voice]"
 - Sub-headline / supporting copy: "[exact copy]"
-- CTAs: "[exact CTA text, 3-5 words, first-person where applicable]"
+- CTAs and buttons: "[exact text — in-product buttons verb-first {Verb} {noun}, 1-3 words, per docs/COPY.md when present; conversion CTAs 3-5 words, first-person where applicable]"
 - Other key labels: "[as needed]"
 
 Visual notes:
@@ -200,7 +202,7 @@ Structure:
 3. Copy the entire prompt for what you want to design — from "Design a..." through the last line of the prompt.
 4. Paste into the tool. The brand identity is embedded in every prompt.
 5. Iterate with the AI tool on layout, hierarchy, or content as needed.
-6. `docs/DESIGN.md` (produced in Step 2) is the source of truth for exact tokens — but these prompts will still produce on-brand drafts.
+6. `docs/DESIGN.md` (produced in Step 3) is the source of truth for exact tokens — but these prompts will still produce on-brand drafts.
 
 ---
 
@@ -294,4 +296,4 @@ A `productos/design/Design-Prompts.md` where:
 - **The file references `docs/DESIGN.md`** as the source of truth for tokens, but stands alone if that file doesn't exist yet.
 - **The file is dated** and sources are listed at the bottom.
 
-Recommended next step after a successful session: paste **Prompt 1 (the design system)** into Pencil (pencil.dev), paper.design, Claude Design, or MagicPath first — generate the component library, then run Prompts 2 and 3 against the same canvas so the screens pull from the just-generated components. The brand identity is already embedded in every prompt, so the output should be immediately on-brand. After generating initial drafts, run the **`studio-design-design-system`** skill to produce a `docs/DESIGN.md` file with exact tokens — once that's in place, re-running this skill will produce prompts that reference the tokens directly, yielding even more accurate token-aligned output from AI design tools.
+Recommended next step after a successful session: paste **Prompt 1 (the design system)** into Pencil (pencil.dev), paper.design, Claude Design, or MagicPath first — generate the component library, then run Prompts 2 and 3 against the same canvas so the screens pull from the just-generated components. The brand identity and the `docs/DESIGN.md` tokens are already embedded in every prompt, so the output should be immediately on-brand. If the design system evolves later, update `docs/DESIGN.md` (via **`studio-design-design-system`**) and re-run this skill to regenerate token-aligned prompts.

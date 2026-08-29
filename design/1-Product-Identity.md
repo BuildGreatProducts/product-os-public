@@ -2,11 +2,11 @@
 
 The minimum viable brand in words: five decisions — a name, two layers of belief, a voice, and a look direction — that make your product recognizable and give every later step (design system, screens, landing page, launch posts) one character to work from. Fill in each section below; keep answers concrete and short.
 
-The *visuals* — colours, fonts, tokens — are deliberately not here: they're derived from a real image reference in Step 2 (`studio-design-design-system` → `docs/DESIGN.md`).
+The *visuals* — colours, fonts, tokens — are deliberately not here: they're derived from a real image reference in Step 3 (`studio-design-design-system` → `docs/DESIGN.md`).
 
 ## Brand Card
 
-*Fill this in last — the whole identity at one glance. This is what you screenshot for your Design relaunch and hand to anyone who touches the brand. Colours, fonts, and tokens live in `docs/DESIGN.md` after Step 2.*
+*Fill this in last — the whole identity at one glance. This is what you screenshot for your Design relaunch and hand to anyone who touches the brand. Colours, fonts, and tokens live in `docs/DESIGN.md` after Step 3.*
 
 | | |
 | --- | --- |
@@ -79,7 +79,7 @@ Define three things:
 
 ## 5. Visual Style
 
-*What does the brand look like? Pick a lane and name your references — Step 2 turns this direction (plus a real image you love) into concrete colours, fonts, and tokens.*
+*What does the brand look like? Pick a lane and name your references — Step 3 turns this direction (plus a real image you love) into concrete colours, fonts, and tokens.*
 
 **Pick one imagery lane:**
 
@@ -95,7 +95,7 @@ Then define:
 
 - **Style notes** — 2-3 specifics inside your lane (e.g., "shot on film, available light, real people not models" or "hand-drawn, single-weight line, one accent color").
 - **Composition rules** — 2-3 rules for how things are arranged (e.g., "asymmetric grids, generous negative space").
-- **References** — 2-3 named brands, films, or artists the look draws from — at least one from outside your product category. One of these references often becomes the image you bring to Step 2.
+- **References** — 2-3 named brands, films, or artists the look draws from — at least one from outside your product category. One of these references often becomes the image you bring to Step 3.
 
 > Good: one committed lane, specific style notes, named references anyone on the team could look up and reproduce
 > Bad: stock photos, "modern and clean", mixing three lanes, references that are all your direct competitors
