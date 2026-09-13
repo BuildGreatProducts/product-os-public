@@ -2,7 +2,7 @@
 
 *Working plan for a new cross-phase ProductOS skill. Lives in `_plans/` (never shipped, same convention as `_private/`). Sibling plan: `sell-in-30-skill-plan.md`. Delete or move both once the skills ship.*
 
-**Status:** draft for review, reworked from the single 7-day-challenge plan. Decisions already taken in review are marked **(decided)**; everything else carries a recommended default.
+**Status:** reviewed. All twelve open questions are answered; §7 records the decisions. Ready to build once the Sell in 30 amends land.
 
 ---
 
@@ -20,10 +20,10 @@ The skill reads the repo and shows the member what it found, then **asks which s
 
 | Starting point | Evidence in the repo | What the 7 days are mostly spent on |
 | --- | --- | --- |
-| **Idea only** | No app code beyond `productos/`, Define templates empty | Define fast → spec → build the magic moment only → ship |
+| **Idea only** (decided: in scope) | No app code beyond `productos/`, Define templates empty | Define fast → spec → build the magic moment only → ship |
 | **AI-generated app, not live** | App code, no `docs/DESIGN.md`/`docs/COPY.md`, generated look | Backfill Define → identity, copy, design system → rebuild the core screens → gate → ship |
 | **Local prototype** | App code, no deploy config, no `docs/DEPLOY.md`, no production URL | Backfill Define → quality gate → deploy guide → ship → polish |
-| **Prompt-to-app platform** (Lovable, Bolt, v0, Base44) | Platform project, no owned repo | Migrate into an owned repo → gate → ship (see Q3) |
+| **Prompt-to-app platform** (Lovable, Bolt, v0, Base44) (decided: in scope) | Platform project, no owned repo | Migrate into an owned repo → gate → ship; flagged at enrol as the most ambitious path |
 
 ### How it fits the system
 
@@ -63,7 +63,8 @@ The "custom plan" is composed, not picked from a fixed list. The skill carries a
 3. **Define backfill is never skipped** when `docs/PRODUCT.md` is missing, because `golive` and the launch post read it. It is compressed, not dropped.
 4. **Design blocks are included only when the app exists and looks generated** (the "AI slop" starting point) or when the member asks. On the idea path, the Look block runs on Day 2 so the build is on tokens from the first screen (decided: the rebuild happens in code, not just on paper).
 5. **Build days are capped at two.** The MVP is the magic moment and the path to it, nothing else. Roadmap items beyond that are moved to `docs/ROADMAP.md`'s later phases, not built.
-6. **Hours/day (Q2)** scale the plan: `1h` compresses Define to the fast-track only and drops Words; `4h+` may bring Announce inside the week.
+6. **Hours per day scale one plan, never two (decided).** The member states honest hours at enrol; the composer fits the blocks to them and recommends more time where it changes the outcome, without ever presenting a "1h plan" and a "2h plan". An idea-only member whose hours can't carry Define, build, gate and deploy in seven sessions is told so plainly at enrol, before the plan is written.
+7. **Seven sessions, not seven calendar days (decided).** The skill recommends consecutive days; the day counter advances by check-in, so a weekend off is a gap, not a miss. A check-in that ends without the day's proof is a miss, logged as one.
 
 ### Worked examples (ship in the skill as `plans/`)
 
@@ -73,7 +74,7 @@ The "custom plan" is composed, not picked from a fixed list. The skill carries a
 
 **Local prototype** · D1 Define backfill · D2 Quality gate · D3 Fixes · D4 Deploy guide · D5 Go live · D6 Domain, polish, `design-review` · D7 Smoke test, Announce.
 
-**Prompt-to-app platform** · D1–D3 Migrate · D4 Quality gate · D5 Deploy guide · D6 Go live · D7 Smoke test, Announce. Flagged as the most ambitious path at enrol (Q3).
+**Prompt-to-app platform** · D1–D3 Migrate · D4 Quality gate · D5 Deploy guide · D6 Go live · D7 Smoke test, Announce. Flagged as the most ambitious path at enrol.
 
 ---
 
@@ -92,7 +93,7 @@ skills/studio-ship-in-7/
   SHIP-IN-7-TEMPLATE.md   the docs/SHIP-IN-7.md skeleton the skill fills
 ```
 
-Self-contained, like every other skill folder. The daily-loop mechanics are the same as in `studio-sell-in-30`; they are written once and kept identical in both SKILL.md files (Q10 asks whether to factor them out).
+Self-contained, like every other skill folder **(decided)**. The daily-loop mechanics are the same as in `studio-sell-in-30`; they are written once and kept identical in both SKILL.md files, with a CHANGELOG rule that a change to one loop is a change to both.
 
 ### Frontmatter
 
@@ -104,7 +105,7 @@ Self-contained, like every other skill folder. The daily-loop mechanics are the 
 1. **Setup check.** Run `studio-setup` if any of its four conditions fail **(decided)**.
 2. **Read the repo** and show the evidence in one short block: what exists (code, docs, deploy config, live URL), what's missing.
 3. **Ask the starting point (decided: always ask).** Present the starting points that fit the evidence, plus "none of these". No recommendation.
-4. **Confirm the plan's inputs:** start date (default tomorrow, so Day 1 is a full day) and honest hours per day (`1h` / `2h` / `4h+`).
+4. **Confirm the plan's inputs:** start date (default tomorrow, so Day 1 is a full day) and honest hours per day (a number, not a tier). Recommend consecutive days; say what the hours mean for this starting point.
 5. **Compose the 7 days** from the block library and show the plan as a table: day, block, skill, proof, hours. The member edits before it's written.
 6. **Write `docs/SHIP-IN-7.md`:** header (start/end dates, hours, the bar verbatim, starting point), the plan table, an empty daily log, the Skool post log.
 7. **Draft the Day-0 Skool post** and end by naming Day 1's literal first action.
@@ -113,10 +114,10 @@ Self-contained, like every other skill folder. The daily-loop mechanics are the 
 
 Triggered by the member ("day 3", "check-in", "what's today"), and by every new session in the repo once the setup templates carry the line *"if `docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` is open, run its daily check-in first"*.
 
-1. Work out the day **from the start date**, not from how many entries exist, so missed days stay visible.
-2. **Confirm yesterday's proof first.** "Did it ship? Show me." A screenshot, a file that now exists, a URL. A draft is not proof (same rule as `studio-launch`).
-3. Log yesterday: done / partial / missed, proof, one-line blocker.
-4. **Missed a day?** Apply the compression rules: drop the stretch, merge the two build days into one scoped tighter, never move Go live past Day 7. Two consecutive misses → shrink the scope of the MVP, not the bar.
+1. **The day counter advances by check-in, not by the calendar (decided).** Day N is the Nth session. A gap between sessions is logged as a gap (dates visible), not as a miss.
+2. **Confirm the last session's proof first.** "Did it ship? Show me." A screenshot, a file that now exists, a URL. A draft is not proof (same rule as `studio-launch`).
+3. Log it: done / partial / missed, proof, one-line blocker. A session that ended without its proof is a miss.
+4. **Missed?** Apply the compression rules: drop the stretch, merge the two build days into one scoped tighter, never move Go live past Day 7. Two consecutive misses → shrink the scope of the MVP, not the bar.
 5. Name today's **one** block, the skill, the proof. Run it now or hand off ("run `studio-develop-golive`, come back when `docs/DEPLOY.md` exists").
 6. **Draft today's Skool post** (see §4).
 7. End by stating exactly what returning tomorrow looks like.
@@ -126,7 +127,7 @@ Triggered by the member ("day 3", "check-in", "what's today"), and by every new 
 1. **Check the bar honestly:** is the URL live, did the smoke test pass as a real customer? Hit, partly hit, or missed. A miss is logged and read, never reframed.
 2. **Write the Ship Report** into `docs/SHIP-IN-7.md`: result vs bar, what shipped each day, what was cut to make the week, the biggest blocker, what the app can and can't do today. *Written so the member can bring it to a Product Studio call as-is*: it is the intake material a coach composes a custom plan from.
 3. **Draft the graduation Skool post** (title format in §4; body in the member's voice; a link to the live app).
-4. **The recommendation (decided):** join Product Studio and book a call. Framed by outcome, one paragraph, once, with the link (Q6). Hit the bar → "you've launched; a custom plan takes this to revenue." Missed → "this is exactly where a coach changes the outcome." Then name what to run meanwhile: `studio-sell-in-30` (Q5) or the Distribute checklist.
+4. **The recommendation (decided):** join Product Studio and book a call at **buildgreatproducts.com/product-studio**. Framed by outcome, one paragraph, once, in the closing message and in the Ship Report (not in the Skool post, which links the live app). Hit the bar → "you've launched; a custom plan takes this to revenue." Missed → "this is exactly where a coach changes the outcome." The pitch line is drafted in the skill in the ProductOS voice, for you to edit before ship. Then name what to run meanwhile **(decided: both)**: `studio-sell-in-30` as the next challenge.
 
 ### Voice
 
@@ -144,11 +145,13 @@ Two loops, because a plugin skill cannot message anyone on its own:
 
 1. **Inside the agent (pull).** The daily check-in, reached by any of its triggers and by the setup-template line that makes every session in the repo start there.
 2. **In the Skool community (push, social) (decided).** One **new post** a day, not a comment on a pinned thread. The skill drafts **title and body**; the member posts it and pastes the link into the log.
-   - **Title, house format (Q7 to approve):** `Ship in 7 · Day 3/7 — [what shipped, five words]`. Day 0: `Ship in 7 · Day 0/7 — Starting: [app name]`. Day 7: `Ship in 7 · Shipped — [app name] is live`.
+   - **Title, house format (decided):** `Ship in 7 · Day 3/7 — [what shipped, five words]`. Day 0: `Ship in 7 · Day 0/7 — Starting: [app name]`. Day 7: `Ship in 7 · Shipped — [app name] is live`.
    - **Body, free-drafted in the member's own voice (decided).** The skill builds the voice from what the member has actually written: their messages in the session, the Product Offer and Mini-Launch drafts, UI copy in the repo, previous posts in the log. Short, first person, the proof (screenshot or link), the number if there is one, tomorrow's task in one line. No marketing register.
    - Missed days are posted too: `Ship in 7 · Day 4/7 — Missed it, here's the fix`. Zero is an entry.
 
-No push reminders in v1 (Q8 default): the Skool feed carries the rhythm.
+No push reminders **(decided)**: the Skool feed carries the rhythm.
+
+**Must-nots (decided):** never post to Skool on the member's behalf; never run paid tools or create accounts without the member; never touch production data.
 
 ---
 
@@ -173,7 +176,7 @@ Shared with `studio-sell-in-30`; listed once here.
 
 ## 6. Build sequence
 
-1. Lock the answers to §7 (and the sibling plan's questions).
+1. Lock the sibling plan's remaining questions (this plan's are all answered).
 2. Write the block library and the four worked-example plans. They are the product.
 3. Write `SHIP-IN-7-TEMPLATE.md`.
 4. Write `SKILL.md`: the three modes, the composer, the Skool post format, failure patterns, "what done looks like".
@@ -186,29 +189,31 @@ Effort: two focused sessions for the skill and plans, one shared session for wir
 
 ---
 
-## 7. Open questions
+## 7. Decisions
 
-Already decided in review, carried forward: `studio-` prefix · setup runs first if missing · bar is live URL + smoke test · always ask the starting point · Skool: new post per day, house-format title, body in the member's voice · Product Studio + book a call at the close.
+From the first review: `studio-` prefix · runs after `studio-setup`, and runs it first if missing · bar is live URL + smoke test · always ask the starting point, no recommendation · Skool: a new post per day, house-format title, body in the member's voice · Product Studio + book a call at the close.
 
-1. **Idea-only members.** In scope, with the MVP scoped to the magic moment only (default), or require existing code and send idea-stage members to the Define checklist first?
-2. **Hours per day.** Offer the `1h` compressed plan (default) or state that Ship in 7 needs 2h+ and refuse to compose below it? An idea-only member at 1h/day cannot ship in 7; the honest move is to say so at enrol.
-3. **Prompt-to-app platform arrivals.** In scope with the migration as Days 1–3 (default, flagged as ambitious), or out of scope ("run `studio-develop-migrate` first, then come back")?
-4. **Announce.** Stretch only (default), or make a launch post part of the bar so the community sees every ship?
-5. **Chain to Sell in 30.** Does the close name `studio-sell-in-30` as "what to run meanwhile" next to the Product Studio recommendation (default), or keep the close to Product Studio only?
-6. **The Product Studio CTA.** The link (`go.buildgreatproducts.com`, as in the README, or a booking page?), the exact pitch line, and whether it appears in the graduation Skool post as well as in the closing message and the Ship Report (default: closing message and report; the post links the live app, not the programme).
-7. **Skool title format.** Approve `Ship in 7 · Day N/7 — [what shipped]`, or give me the pattern you want.
-8. **Reminders.** Skool feed only (default), or also a scheduled prompt where the tool supports it?
-9. **Missed days.** Compress, never extend (default), or allow one pause day?
-10. **Shared mechanics.** Keep the daily-loop text duplicated in both SKILL.md files (default: self-contained skills, house style), or factor it into a third, member-invisible reference file both skills read?
-11. **Existing material.** Do you have a Ship in 7 doc, Skool post, or video script whose structure or language I should mirror? Drop it in `_private/`.
-12. **Must-nots.** Anything the challenge must never do (never post on the member's behalf, never run paid tools, never touch production data)?
+From the second review:
+
+1. **Idea-only members:** in scope, MVP scoped to the magic moment.
+2. **Hours per day:** one plan scaled to the member's hours, never two named plans; recommend more time where it helps; warn idea-only members at enrol if their hours make seven sessions unrealistic.
+3. **Prompt-to-app platform arrivals:** in scope, migration first, flagged as the most ambitious path.
+4. **Announce:** stretch only.
+5. **Chain:** the close names both Product Studio and `studio-sell-in-30`.
+6. **Product Studio CTA:** buildgreatproducts.com/product-studio; pitch line drafted in the skill for your edit; appears in the closing message and the Ship Report, not the Skool post.
+7. **Skool title format:** approved as written in §4.
+8. **Reminders:** Skool feed only.
+9. **Missed days:** seven sessions, consecutive days recommended, the counter advances by check-in; a session without proof is a miss.
+10. **Shared mechanics:** duplicated in both SKILL.md files, self-contained.
+11. **Existing material:** none to mirror.
+12. **Must-nots:** never post on the member's behalf, never run paid tools or create accounts without them, never touch production data.
 
 ---
 
 ## 8. Risks
 
-1. **Seven days is a real constraint for the idea path.** A magic-moment-only MVP is feasible with a coding agent at 2h+/day; at 1h/day it isn't. Mitigation: enrol says so and composes honestly (Q2).
+1. **Seven sessions is a real constraint for the idea path.** A magic-moment-only MVP is feasible with a coding agent at a couple of hours a session; at much less it isn't. Mitigation: enrol says so plainly and composes to the hours given.
 2. **Quality gate vs. time.** A security audit on Day 5 can surface Critical findings that eat Day 6. Mitigation: the gate runs before deploy on every path, and the compression rules cut scope, never the gate.
 3. **Detection false positives.** "Looks generated" is a judgement. Mitigation: the member picks the starting point (decided), the evidence is shown, the dry-runs test the read.
-4. **Two skills, one loop.** Duplicated mechanics drift. Mitigation: Q10, and a CHANGELOG rule that a change to one loop is a change to both.
+4. **Two skills, one loop.** Duplicated mechanics drift. Mitigation: a CHANGELOG rule that a change to one loop is a change to both.
 5. **Scope creep into a fifth phase.** If a day's instructions exceed "run X, produce Y, post Z", the content belongs in the skill being run, not here.
