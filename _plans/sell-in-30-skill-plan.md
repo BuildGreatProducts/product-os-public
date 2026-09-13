@@ -2,13 +2,13 @@
 
 *Working plan for a new cross-phase ProductOS skill. Lives in `_plans/` (never shipped). Sibling plan: `ship-in-7-skill-plan.md`. The system wiring, build sequence and shared daily-loop mechanics are specified there and referenced here.*
 
-**Status:** in review. Q1 and Q2 decided; the daily activity model (Q3) is **tabled pending your amends**: the daily work should be defined by the go-to-market strategy's "Do this" list for the chosen channel, not by a fixed outreach quota. Q4–Q9 wait for the same review.
+**Status:** reviewed, one item tabled. Every question is answered except the daily activity model (Q3), which is **tabled pending your amends**: the daily work should be defined by the go-to-market strategy's "Do this" list for the chosen channel, not by a fixed outreach quota. Cold outreach (Q8) is deferred with it.
 
 ---
 
 ## 1. What it is
 
-The first-customer challenge. A member with a **live product and no paying customer** runs it in their app repo and gets a **custom 30-day plan that ends with their first payment**, one task a day, a daily Skool post, weekly signal reads, and a close that recommends joining Product Studio and booking a call. It is the natural next step after `studio-ship-in-7` and the strongest lead-in to the coaching programme: thirty days of logged market contact is exactly the material a coach composes a custom plan from.
+The first-customer challenge. A member with a **live product and no paying customer** runs it in their app repo and gets a **custom 30-day plan that ends with their first payment**, one task a day, a daily in-agent check-in, a weekly Skool post at each signal read, and a close that recommends joining Product Studio and booking a call. It is the natural next step after `studio-ship-in-7` and the strongest lead-in to the coaching programme: thirty days of logged market contact is exactly the material a coach composes a custom plan from.
 
 **The bar (decided):** one payment. Not a signup, not a friend's "I'd pay for that". **Free products are allowed (decided):** at enrol the skill asks whether the product will charge within the 30 days. Yes → the bar is a payment and pricing plus checkout go in week one. No → the bar is **one activated user**, a real person reaching the magic moment, and the price and checkout blocks drop out of the plan.
 
@@ -45,7 +45,7 @@ Same mechanism as Ship in 7: a **block library**, composed into **four weeks wit
 
 - **Days 1–5:** one block a day. **Tabled (Q3):** the earlier draft gave outreach days a fixed conversation quota. Your direction is that the daily activity should be **defined by the go-to-market strategy skill**, not by a quota: once `1-Go-To-Market-Strategy.md` exists, the channel's own "Do this" checklist and its "Working =" number become the daily blocks and the weekly pass bar. Some channels are outreach; others are content, community, listings, or partnerships. The plan below still shows "Conversations" as a placeholder block until you send amends.
 - **Day 6:** follow-ups only. Every open thread gets a reply; the checkout link goes to anyone who leaned in.
-- **Day 7 (7, 14, 21, 28): the weekly read.** `studio-launch` sitting two, applied to the week: log every response including silence, warm/cold labelled, ladder rung reached, believers added, the next week's rung named. On the second consecutive missed rung, `productos/define/BONUS-Pivot-Framework.md` is read and one variable (product, persona, or price) is chosen for the following week. The read is also the weekly Skool post.
+- **Day 7 (7, 14, 21, 28): the weekly read.** `studio-launch` sitting two, applied to the week: log every response including silence, warm/cold labelled, ladder rung reached, believers added, the next week's rung named. On the second consecutive missed rung, `productos/define/BONUS-Pivot-Framework.md` is read and one variable (product, persona, or price) is chosen for the following week. **The read is the weekly Skool post (decided: four 7-session weeks, one post per read).**
 
 ### Block library
 
@@ -62,7 +62,7 @@ Same mechanism as Ship in 7: a **block library**, composed into **four weeks wit
 | Channel work *(placeholder, Q3 tabled)* | the GTM strategy's "Do this" list for the primary channel, one item a day; every reply answered same day | log entries | the channel's own "Working =" number, in the log |
 | Conversion path | `studio-develop-cro-audit` on landing, pricing, checkout → fixes via the build loop | prioritised fixes, top three shipped | before/after |
 | Activation | `studio-distribute-activation-retention-audit` → fix the top leak | users reach the magic moment | one activation logged |
-| Founding offer | a time-boxed founding-customer offer built from the pricing anchors (limited seats, a price that rises on a date, a guarantee from the Product Offer) | the offer message | sent to every warm lead |
+| Founding offer | a time-boxed founding-customer offer **drafted from the member's own pricing anchors and Product Offer each time (decided: no house pattern)** | the offer message | sent to every warm lead |
 | Second push | `studio-launch` resend: rewritten hook or price toggled, through the next-warmest route | resent | screenshot |
 | Experiment | `studio-distribute-growth-experiments` | one experiment running, with a pass bar | tracker entry |
 | Weekly read | `studio-launch` sitting two, applied to the week | `docs/LAUNCHES.md` updated | the read, posted |
@@ -75,7 +75,7 @@ Same mechanism as Ship in 7: a **block library**, composed into **four weeks wit
 3. **A full send before any pivot (Q3 tabled: wording depends on the daily activity model).** The pivot framework's own rule (fewer than ten demo posts is a patience problem) still applies: the Day-14 read may not choose a pivot variable unless the channel's "Do this" list was actually worked through.
 4. **One variable per week.** After a missed rung, the following week changes product, persona, or price, never two.
 5. **Warm before cold, always.** Believers get every message first. Cold outreach starts only when the warm list is exhausted, and is logged as cold.
-6. **A payment before Day 30 does not end the challenge (Q4).** It is logged, celebrated, the customer is asked for the testimonial, and the remaining days go to customers two and three with the same loop. Momentum is the Product Studio conversation.
+6. **A payment before Day 30 does not end the challenge (decided).** It is logged, celebrated, posted (`Sell in 30 - My first customer! 🚀`), the customer is asked for the testimonial, and the remaining days go to customers two and three with the same loop. Momentum is the Product Studio conversation.
 7. **Hours per day scale one plan, never two** (same rule as Ship in 7): the composer fits the channel work and the fix blocks to the hours the member gives and recommends more where it changes the outcome.
 8. **Thirty sessions, not thirty calendar days** (same rule as Ship in 7): consecutive days recommended, the counter advances by check-in, a session without its proof is a miss. Weekly reads happen every seventh session.
 
@@ -132,7 +132,7 @@ skills/studio-sell-in-30/
 
 ### Mode 2 — Daily check-in (Days 1–30)
 
-Identical mechanics to Ship in 7 (the counter advances by check-in; confirm the last session's proof first; log done/partial/missed; compression on misses; name today's one block; draft the Skool post; say what the next session looks like), plus:
+Identical mechanics to Ship in 7 (the counter advances by check-in; confirm the last session's proof first; log done/partial/missed; compression on misses; name today's one block; say what the next session looks like), **except that the Skool post is drafted only on read days, Day 0 and Day 30 (decided)**, plus:
 
 - **Channel-work days** log the channel's own number and every reply verbatim. Silence is a count of zero, logged. *(Exact shape follows the tabled Q3.)*
 - **Every reply is answered the same day.** The check-in starts by asking about open threads.
@@ -145,8 +145,8 @@ The `studio-launch` sitting-two ritual applied to the week, written into `docs/S
 ### Mode 4 — Close (Day 30, or Day 31)
 
 1. **Check the bar honestly:** a payment (or, for a product staying free, an activated user), or not. Partial outcomes (a signup, a "send me the link") are logged on the ladder and named as what they are.
-2. **Write the Sell Report:** result vs bar; conversations held, warm/cold; believers gained; the rung reached each week; what the market said in its own words; the variable changed, if any; the biggest blocker. *Written to be brought to a Product Studio call as-is.*
-3. **Draft the graduation Skool post.**
+2. **Write the Sell Report (decided: the pre-call brief):** result vs bar; people reached, warm/cold; believers gained; the rung reached each week; what the market said in its own words; the variable changed, if any; the biggest blocker. Structured in the shape the coach intake expects, so a member who books a call arrives with their situation documented. Ends with one line: *bring this to your call.*
+3. **Draft the graduation Skool post** (`Sell in 30 completed! Here's what I learnt`).
 4. **The recommendation (decided):** join Product Studio and book a call at **buildgreatproducts.com/product-studio**, once, framed by outcome, in the closing message and the Sell Report. Paid → "you have a customer; a custom plan is how you get the next fifty." Not yet → "thirty days of real signal is exactly what a coach turns into the plan that works." The pitch line is drafted in the skill in the ProductOS voice, for you to edit. Then what to run meanwhile: the Distribute loop (`studio-distribute-growth-experiments`) or the pivot framework.
 
 ### Failure patterns (named in SKILL.md)
@@ -157,11 +157,19 @@ The Friendly Echo (warm praise read as market signal) · The Rung Leap (one repl
 
 ## 4. Daily accountability
 
-Same two loops as Ship in 7 **(decided)**: the in-agent check-in, and one **new Skool post a day** with a house-format title and a body in the member's voice.
+Two loops, as in Ship in 7 **(decided)**: the in-agent check-in **every session**, and a **new Skool post at each weekly read** plus the start and the close, six posts in all **(decided: weekly, not daily)**. House-format title, body free-drafted in the member's own voice.
 
-- **Title (Q6 to approve):** `Sell in 30 · Day 12/30 — [what happened, five words]`. Weekly reads: `Sell in 30 · Week 2 read — [rung reached]`. Day 30: `Sell in 30 · Sold — first customer` or `Sell in 30 · Day 30/30 — the honest read`.
-- **Body:** first person, the number (the channel's own metric, replies, the rung), one quote from the market if there was one, the next session's task. On channel-work days the number is the post.
-- **Thirty posts is deliberate (Q5):** daily accountability is the mechanism, and a community feed of members counting conversations is the culture. If it's too much, the fallback is a daily check-in with a Skool post on quota days and read days only.
+- **Titles (decided, your wording):**
+
+  ```
+  Sell in 30 - Day 0! [app name]
+  Sell in 30 - Week 2! [rung reached, five words]
+  Sell in 30 - My first customer! 🚀
+  Sell in 30 completed! Here's what I learnt
+  ```
+
+  The first-customer post goes out the day the payment lands, whatever the week. The Week N post is the weekly read.
+- **Body:** first person, the week's number (the channel's own metric, replies, the rung), one quote from the market if there was one, next week's target. Missed weeks are posted too, honestly. Zero is an entry.
 
 ---
 
@@ -190,21 +198,21 @@ Specified once in `ship-in-7-skill-plan.md` §5–§6 and shared. Sell-in-30-spe
 
 3. **The daily activity model.** Not a fixed outreach quota. The go-to-market strategy skill defines what the daily work is for the chosen channel (outreach, content, community, listings, partnerships), and its "Working =" number is the weekly pass bar. Send amends and I'll rewrite §2 around them.
 
-**Still open (defaults stand until you say otherwise):**
+**Decided in the second pass:**
 
-4. **Payment before Day 30.** Keep going for customers two and three (default), or close early with the report and the recommendation while the win is fresh?
-5. **Post cadence.** Daily for 30 sessions (default), or posts on channel-work and read days only?
-6. **Skool title format.** Approve `Sell in 30 · Day N/30 — [what happened]` and `Sell in 30 · Week N read — [rung]`, or give me the pattern.
-7. **The Sell Report as pre-call brief.** Ends with "bring this to your call" (default: yes).
-8. **Cold outreach.** In scope once the warm list is exhausted (default), or keep to the primary channel from the GTM plan? (Likely resolved by Q3.)
-9. **Founding offer mechanics.** A house pattern (seat cap, price rise date, guarantee), or drafted from the member's pricing anchors each time (default)?
-10. **Existing material.** A Sell in 30 doc, Skool post, or script to mirror? Drop it in `_private/`.
+4. **Payment before Day 30:** keep going for customers two and three.
+5. **Post cadence:** weekly, at each read, plus Day 0 and Day 30. Four 7-session weeks kept.
+6. **Skool titles:** your wording, recorded in §4.
+7. **The Sell Report is the pre-call brief**, ending with "bring this to your call".
+8. **Cold outreach:** deferred; depends on the daily activity model (Q3).
+9. **Founding offer:** drafted from the member's own anchors each time, no house pattern.
+10. **Existing material:** none to mirror (assumed, as for Ship in 7).
 
 ---
 
 ## 7. Risks
 
-1. **Thirty days of daily posts is a lot of surface for drop-off.** Mitigation: the check-in is five minutes, the post is drafted, misses are posted rather than hidden, and the weekly read gives a natural re-entry.
+1. **Thirty sessions is a lot of surface for drop-off.** Mitigation: the check-in is five minutes, the weekly post is drafted, misses are posted rather than hidden, and the weekly read gives a natural re-entry.
 2. **The bar is out of the member's control.** Payment depends on the market. Mitigation: the ladder records every partial rung, the read is honest, and the close's recommendation is framed for both outcomes.
 3. **Price changes on a live product.** Mitigation: Checkout live and any price change are confirmed with the member, never automated; the golive payments guidance is reused, not reinvented.
 4. **Cold outreach etiquette.** Community rules and platform norms. Mitigation: the launch skill's Pitch-Slap rule and "check the community's self-promotion rules" carry over; cold sends are always logged as cold.

@@ -145,9 +145,18 @@ Two loops, because a plugin skill cannot message anyone on its own:
 
 1. **Inside the agent (pull).** The daily check-in, reached by any of its triggers and by the setup-template line that makes every session in the repo start there.
 2. **In the Skool community (push, social) (decided).** One **new post** a day, not a comment on a pinned thread. The skill drafts **title and body**; the member posts it and pastes the link into the log.
-   - **Title, house format (decided):** `Ship in 7 · Day 3/7 — [what shipped, five words]`. Day 0: `Ship in 7 · Day 0/7 — Starting: [app name]`. Day 7: `Ship in 7 · Shipped — [app name] is live`.
+   - **Titles, house format (decided; restyled to match the Sell in 30 titles you wrote, adjust on review):**
+
+     ```
+     Ship in 7 - Day 0! [app name]
+     Ship in 7 - Day 3! [what shipped, five words]
+     Ship in 7 - It's live! 🚀
+     Ship in 7 completed! Here's what I learnt
+     ```
+
+     The "It's live" post goes out the day the smoke test passes; the "completed" post is Day 7's close.
    - **Body, free-drafted in the member's own voice (decided).** The skill builds the voice from what the member has actually written: their messages in the session, the Product Offer and Mini-Launch drafts, UI copy in the repo, previous posts in the log. Short, first person, the proof (screenshot or link), the number if there is one, tomorrow's task in one line. No marketing register.
-   - Missed days are posted too: `Ship in 7 · Day 4/7 — Missed it, here's the fix`. Zero is an entry.
+   - Missed days are posted too: `Ship in 7 - Day 4! Missed it, here's the fix`. Zero is an entry.
 
 No push reminders **(decided)**: the Skool feed carries the rhythm.
 
@@ -201,7 +210,7 @@ From the second review:
 4. **Announce:** stretch only.
 5. **Chain:** the close names both Product Studio and `studio-sell-in-30`.
 6. **Product Studio CTA:** buildgreatproducts.com/product-studio; pitch line drafted in the skill for your edit; appears in the closing message and the Ship Report, not the Skool post.
-7. **Skool title format:** approved as written in §4.
+7. **Skool title format:** approved, then restyled to match the Sell in 30 wording you gave (§4). Adjust on review.
 8. **Reminders:** Skool feed only.
 9. **Missed days:** seven sessions, consecutive days recommended, the counter advances by check-in; a session without proof is a miss.
 10. **Shared mechanics:** duplicated in both SKILL.md files, self-contained.
