@@ -24,7 +24,7 @@ Locate in the ProductOS folder (`productos/` at the app repo root) and the repo-
 3. **The member**, for what code can't say: signups or usage today (asked, never inferred), who they can already reach, whether they will charge within the thirty days.
 4. **`docs/PLAN.md`**, if present (a coached copy): compose around its Distribute steps and annotate it; never override it.
 5. **`docs/SELL-IN-30.md`**, if present: an open challenge means a check-in, a read, or a close, not an enrol. **`docs/SHIP-IN-7.md`** open means close it first; only one challenge runs at a time.
-6. **The plan library in this folder:** `plans/live-free-will-charge.md`, `plans/live-priced.md`, `plans/live-free-staying-free.md`, `plans/one-deploy-away.md`, `plans/live-with-users.md`, `plans/after-ship-in-7.md`, and `SELL-IN-30-TEMPLATE.md`.
+6. **The plan library in this folder:** `PLAN-live-free-will-charge.md`, `PLAN-live-priced.md`, `PLAN-live-free-staying-free.md`, `PLAN-one-deploy-away.md`, `PLAN-live-with-users.md`, `PLAN-after-ship-in-7.md`, and `SELL-IN-30-TEMPLATE.md`.
 
 ## Which mode is this?
 
@@ -75,12 +75,12 @@ Present the starting points the evidence fits, plus "none of these", and **ask**
 
 | Starting point | Typical evidence | Plan file |
 | --- | --- | --- |
-| **Live, free, will charge** | Live URL; no price; no payments | `plans/live-free-will-charge.md` |
-| **Live, priced, nobody has paid** | Price on the site, or Stripe in place (live or test); rung below `payment` | `plans/live-priced.md` |
-| **Live, free, staying free for now** | As the first, and no charge planned in the thirty days | `plans/live-free-staying-free.md` |
-| **Not yet live, one deploy away** | App code; deploy in progress; no production URL | `plans/one-deploy-away.md` |
-| **Live with users, no revenue** | Signups or activity; no payment | `plans/live-with-users.md` |
-| **Just shipped via Ship in 7** | `docs/SHIP-IN-7.md` closed this week | `plans/after-ship-in-7.md` |
+| **Live, free, will charge** | Live URL; no price; no payments | `PLAN-live-free-will-charge.md` |
+| **Live, priced, nobody has paid** | Price on the site, or Stripe in place (live or test); rung below `payment` | `PLAN-live-priced.md` |
+| **Live, free, staying free for now** | As the first, and no charge planned in the thirty days | `PLAN-live-free-staying-free.md` |
+| **Not yet live, one deploy away** | App code; deploy in progress; no production URL | `PLAN-one-deploy-away.md` |
+| **Live with users, no revenue** | Signups or activity; no payment | `PLAN-live-with-users.md` |
+| **Just shipped via Ship in 7** | `docs/SHIP-IN-7.md` closed this week | `PLAN-after-ship-in-7.md` |
 
 Then: **"Will the product charge within the thirty days?"** Yes → the bar is a payment; Price it and Checkout live go in week one. No → the bar is one activated user; those blocks drop out. Write the bar into the file verbatim.
 

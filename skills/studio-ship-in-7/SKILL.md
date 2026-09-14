@@ -21,7 +21,7 @@ Locate in the ProductOS folder (`productos/` at the app repo root) and the repo-
 2. **The ProductOS documents**, if any: `productos/define/1-Product-Offer.md` … `3-Pricing-Strategy.md`, `docs/PRODUCT.md`, `docs/COPY.md`, `docs/DESIGN.md`, `docs/PRD.md`, `docs/ROADMAP.md`, `docs/SECURITY-AUDIT.md`, `docs/DEPLOY.md`, `docs/LAUNCHES.md`.
 3. **`docs/PLAN.md`**, if present (a coached copy). Compose from its Develop route and annotate it; never override it.
 4. **`docs/SHIP-IN-7.md`**, if present: an open challenge means this is a check-in or a close, not an enrol. **`docs/SELL-IN-30.md`** open means stop: only one challenge runs at a time.
-5. **The plan library in this folder:** `plans/idea-only.md`, `plans/ai-generated-app.md`, `plans/local-prototype.md`, `plans/platform-migration.md`, and `SHIP-IN-7-TEMPLATE.md`.
+5. **The plan library in this folder:** `PLAN-idea-only.md`, `PLAN-ai-generated-app.md`, `PLAN-local-prototype.md`, `PLAN-platform-migration.md`, and `SHIP-IN-7-TEMPLATE.md`.
 
 ## Which mode is this?
 
@@ -49,10 +49,10 @@ Present the starting points the evidence fits, plus "none of these", and **ask**
 
 | Starting point | Typical evidence | Plan file |
 | --- | --- | --- |
-| **Idea only** | No app code beyond `productos/`; Define templates empty | `plans/idea-only.md` |
-| **AI-generated app, not live** | App code; no `docs/DESIGN.md` or `docs/COPY.md`; generated look | `plans/ai-generated-app.md` |
-| **Local prototype** | App code; no deploy config, no `docs/DEPLOY.md`, no production URL | `plans/local-prototype.md` |
-| **Prompt-to-app platform** | A Lovable / Bolt / v0 / Base44 project, no owned repo | `plans/platform-migration.md` |
+| **Idea only** | No app code beyond `productos/`; Define templates empty | `PLAN-idea-only.md` |
+| **AI-generated app, not live** | App code; no `docs/DESIGN.md` or `docs/COPY.md`; generated look | `PLAN-ai-generated-app.md` |
+| **Local prototype** | App code; no deploy config, no `docs/DEPLOY.md`, no production URL | `PLAN-local-prototype.md` |
+| **Prompt-to-app platform** | A Lovable / Bolt / v0 / Base44 project, no owned repo | `PLAN-platform-migration.md` |
 
 **App code that isn't live fits two rows** (AI-generated app, local prototype). The question that separates them is not the code, it's the look: *"Are you happy with how it looks, or do you want it to look designed by Day 7?"* Designed → AI-generated app (two rebuild days). Happy → local prototype (a fuller gate and a polish day). Ask it as a question, not a recommendation.
 
@@ -66,7 +66,7 @@ If they pick "none of these", compose from the block library directly (below) an
 
 ### 5. Compose the seven sessions
 
-Start from the plan file for the starting point, then adjust using the block library and the composition rules below: drop blocks whose output already exists, add the ones the evidence says are missing, fit to the hours. Show the plan as a table — session, block, skill, proof, hours — and let the member edit before anything is written.
+Start from the `PLAN-*.md` file for the starting point, then adjust using the block library and the composition rules below: drop blocks whose output already exists, add the ones the evidence says are missing, fit to the hours. Show the plan as a table — session, block, skill, proof, hours — and let the member edit before anything is written.
 
 ### 6. Write `docs/SHIP-IN-7.md`
 
