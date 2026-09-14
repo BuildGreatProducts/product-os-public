@@ -4,6 +4,8 @@ Work top to bottom. Requires `docs/PRODUCT.md` and `docs/DESIGN.md` to exist (ru
 
 If `docs/PLAN.md` exists (your programme plan, shipped with coached copies of ProductOS), it names your route through this phase (build from scratch, refactor, or straight to the build loop) and may mark steps as fast-tracked or skipped — follow it; this checklist remains the source of truth for how each step runs.
 
+Running a challenge (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` open)? It says which of these steps are this week's, and on which session; this checklist remains the source of truth for how each step runs.
+
 ---
 
 ## Step 1 — PRD & Roadmap

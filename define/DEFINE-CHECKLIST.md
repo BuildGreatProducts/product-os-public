@@ -4,6 +4,8 @@ Work top to bottom. Each step runs a single skill and produces a single file. Th
 
 If `docs/PLAN.md` exists (your programme plan, shipped with coached copies of ProductOS), it may mark steps below as fast-tracked or skipped for you — follow it; this checklist remains the source of truth for how each step runs.
 
+Running a challenge (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` open)? It says which of these steps are this week's, and on which session; this checklist remains the source of truth for how each step runs.
+
 The Mini-Launch is launch #1 of four. Every later phase closes by relaunching to the same thread — Design shows what it looks like, Develop puts the beta in believers' hands, Distribute launches publicly — climbing the signal ladder: `reply → conversation → signup → activated user → payment`. The whole climb is tracked in `docs/LAUNCHES.md`.
 
 ---

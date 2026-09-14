@@ -4,6 +4,8 @@ Work top to bottom. Requires `docs/PRODUCT.md` to exist and the product to be re
 
 If `docs/PLAN.md` exists (your programme plan, shipped with coached copies of ProductOS), it says where this phase starts in your sequence and which launch is next on your ladder — follow it; this checklist remains the source of truth for how each step runs.
 
+Running a challenge (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` open)? It says which of these steps are this week's, and on which session; this checklist remains the source of truth for how each step runs.
+
 Before you start, skim the two reference playbooks you'll lean on throughout: `BONUS-Distribution-Channels.md` (which channel to pick and how each one works) and `BONUS-AI-Distribution-Tools.md` (the software to run them). Set up `BONUS-Measurement-and-Attribution.md` before Step 3 so every result is a real number.
 
 ---
