@@ -2,7 +2,7 @@
 
 *Working plan for a new cross-phase ProductOS skill. Lives in `_plans/` (never shipped). Sibling plan: `ship-in-7-skill-plan.md`. The system wiring, build sequence and shared daily-loop mechanics are specified there and referenced here.*
 
-**Status:** reviewed, one item tabled. Every question is answered except the daily activity model (Q3), which is **tabled pending your amends**: the daily work should be defined by the go-to-market strategy's "Do this" list for the chosen channel, not by a fixed outreach quota. Cold outreach (Q8) is deferred with it.
+**Status:** reviewed and final. Every question is answered. The daily activity model (Q3) is settled: weeks 2–4 run the member's own growth experiments, chosen by the GTM strategy and growth experiments skills, one experiment a week with a continue/kill read at the end. Ready to build alongside Ship in 7.
 
 ---
 
@@ -21,16 +21,16 @@ The skill reads the repo and `docs/LAUNCHES.md`, shows what it found, and **asks
 | Starting point | Evidence | What the 30 days are mostly spent on |
 | --- | --- | --- |
 | **Not yet live, one deploy away** | App code, deploy config or `docs/DEPLOY.md` in progress, no production URL | Go live in the first few days, then the standard four weeks |
-| **Live, free, will charge** | Live URL, no price on the site, no payments integration | Price it, wire checkout, then launch to believers and one channel |
-| **Live, free, staying free for now** | As above; the member says no charge in the next 30 days | Bar becomes one activated user: activation audit, launch, get real people to the magic moment |
-| **Live, priced, nobody has paid** | Price on the site or Stripe in place, `docs/LAUNCHES.md` rung below `payment` | Fix the conversion path, then launch and run twenty conversations |
-| **Live with users, no revenue** | Signups or activity, no payment | Activation and conversion audits, a founding offer to the people already using it |
+| **Live, free, will charge** | Live URL, no price on the site, no payments integration | Price it, wire checkout, warm asks, then the experiment loop |
+| **Live, free, staying free for now** | As above; the member says no charge in the next 30 days | Bar becomes one activated user; experiments lean on activation |
+| **Live, priced, nobody has paid** | Price on the site or Stripe in place, `docs/LAUNCHES.md` rung below `payment` | Verify checkout, warm asks, then the experiment loop |
+| **Live with users, no revenue** | Signups or activity, no payment | Warm asks to existing users first; a founding offer is the obvious experiment 1 |
 | **Just shipped via Ship in 7** | `docs/SHIP-IN-7.md` closed this week | Announce, then the standard four weeks |
 
 ### How it fits the system
 
 - **Fourth cross-phase skill.** Runs after `studio-setup` **(decided)**; Day 0 checks the setup conditions and runs `studio-setup` first if any fail.
-- **Composes from the Distribute checklist and the launch ritual.** Launch #4 (the public launch, win: first payment) is the spine; the Distribute steps and the two audits supply the rest. Nothing new is taught; the challenge owns sequencing, the daily loop, and the log.
+- **Composes from the Distribute checklist and the launch ritual.** Week one is the warm half of launch #4 plus the GTM strategy and growth experiments steps; weeks 2–4 are the Distribute checklist's experiment cycle (run, log, decide) compressed to one experiment a week. Nothing new is taught; the challenge owns sequencing, the daily loop, and the log.
 - **Writes `docs/SELL-IN-30.md`** (tracked, the member's). Launch entries and believers go to `docs/LAUNCHES.md` through `studio-launch`, as they already do.
 - **Backfills what's missing first.** No `docs/PRODUCT.md` → `studio-define-from-code` + `studio-define-product` on Day 1 (hours, not days). No `docs/LAUNCHES.md` → create it and backfill everyone who has ever responded onto the believers list, the same move `studio-launch` makes for coached members.
 - **Only one challenge open at a time.** If `docs/SHIP-IN-7.md` is open, close it first.
@@ -39,63 +39,78 @@ The skill reads the repo and `docs/LAUNCHES.md`, shows what it found, and **asks
 
 ## 2. The plan composer
 
-Same mechanism as Ship in 7: a **block library**, composed into **four weeks with a fixed weekly shape**, fitted to the starting point and the member's hours.
+Same mechanism as Ship in 7: a **block library**, composed into **four 7-session weeks**, fitted to the starting point and the member's hours. The shape is fixed; only week one changes with the starting point.
+
+### The shape of the 30 days (decided)
+
+| Week | What it is | Ends with |
+| --- | --- | --- |
+| **1 · Foundations** | Backfill, deploy if needed, checkout live with a real test purchase, conversations with the warm network, then `studio-distribute-gtm-strategy` and `studio-distribute-growth-experiments` | Weekly read + Skool post |
+| **2 · Experiment 1** | The highest-leverage experiment from the member's own backlog, run to its pass bar | Read: **continue or kill** + Skool post |
+| **3 · Continue or next** | Continue experiment 1 (iterate or double down) or start the next from the queue | Read: continue or kill + Skool post |
+| **4 · Continue or next** | Same | Read: continue or kill + Skool post |
+| **End** | Sell Report, graduation Skool post, Product Studio call booking | |
+
+**Where the daily work comes from (decided, replaces the quota):** nothing in weeks 2–4 is a fixed block. `productos/distribute/2-Growth-Experiments.md` (written by the growth experiments skill in week one) names 1–3 experiments **running now**, each with a plain sentence, a "Do this" checklist, and a **Pass =** line stating the next move on pass and on fail, plus an ordered **up next** queue. The challenge takes the top experiment, spreads its "Do this" steps across sessions 1–5 of the week, uses session 6 for follow-ups, and reads it against its Pass = line on session 7. The result and decision go into `3-Growth-Experiments-Tracker.md` the way the Distribute checklist already says they should. Some experiments are outreach, some are content, listings, a founding offer, a conversion fix, a partnership; the mix is the member's, not the skill's. Cold outreach happens only when an experiment calls for it, and is logged as cold **(resolves the deferred Q8)**.
+
+**Two things the challenge tells the Distribute skills when it runs them:** the bar (first payment, or first activated user for a product staying free) and the clock (three experiment-weeks). The growth experiments skill ranks the backlog by *closest to that bar inside a week* and sizes each experiment to one week with a pass bar a member can actually read on day seven. Anything bigger goes to the up-next queue as two smaller experiments.
 
 ### The weekly shape (the same every week)
 
-- **Days 1–5:** one block a day. **Tabled (Q3):** the earlier draft gave outreach days a fixed conversation quota. Your direction is that the daily activity should be **defined by the go-to-market strategy skill**, not by a quota: once `1-Go-To-Market-Strategy.md` exists, the channel's own "Do this" checklist and its "Working =" number become the daily blocks and the weekly pass bar. Some channels are outreach; others are content, community, listings, or partnerships. The plan below still shows "Conversations" as a placeholder block until you send amends.
-- **Day 6:** follow-ups only. Every open thread gets a reply; the checkout link goes to anyone who leaned in.
-- **Day 7 (7, 14, 21, 28): the weekly read.** `studio-launch` sitting two, applied to the week: log every response including silence, warm/cold labelled, ladder rung reached, believers added, the next week's rung named. On the second consecutive missed rung, `productos/define/BONUS-Pivot-Framework.md` is read and one variable (product, persona, or price) is chosen for the following week. **The read is the weekly Skool post (decided: four 7-session weeks, one post per read).**
+- **Sessions 1–5:** one block a session. In week one the blocks come from the library below; in weeks 2–4 they are the running experiment's "Do this" steps.
+- **Session 6:** follow-ups only. Every open thread gets a reply; the checkout link goes to anyone who leaned in.
+- **Session 7: the weekly read.** `studio-launch` sitting two applied to the week (every response logged including silence, warm/cold, rung reached, believers added), plus in weeks 2–4 the experiment's result against its Pass = line and the decision: **continue** (double down or iterate) or **kill** (next experiment from the queue starts next week). Logged in the tracker and in `docs/SELL-IN-30.md`. **The read is the weekly Skool post.**
 
-### Block library
+### Block library (week one)
 
 | Block | Skill(s) / action | Produces | Proof |
 | --- | --- | --- | --- |
 | Setup check | `studio-setup` | wired repo | file diff |
 | Go live *(when not yet live)* | `studio-develop-golive`, then work `docs/DEPLOY.md` | live URL | smoke test as a real customer |
 | Define backfill | `studio-define-from-code` → `studio-define-product` | `docs/PRODUCT.md` | file exists |
-| Price it | `studio-define-pricing` | one launch price, the price line | price said out loud in the log |
-| Checkout live | payments switched to live via the payments section of `studio-develop-golive`, a real test purchase | a working checkout link | test-purchase receipt |
+| Price it *(will charge, no price yet)* | `studio-define-pricing` | one launch price, the price line | price said out loud in the log |
+| Checkout live *(will charge)* | payments switched to live via the payments section of `studio-develop-golive`, a **real test purchase** | a working checkout link | test-purchase receipt |
 | Believers backfill | create `docs/LAUNCHES.md`; everyone who ever responded, with source and status | the believers list | file exists |
-| Channel | `studio-distribute-gtm-strategy` | `1-Go-To-Market-Strategy.md`, one primary channel with its "Do this" list | file exists |
-| **Launch #4** | `studio-launch` sitting one | believers messaged first, then the channel; 10 named DMs | live post / sent-folder screenshot |
-| Channel work *(placeholder, Q3 tabled)* | the GTM strategy's "Do this" list for the primary channel, one item a day; every reply answered same day | log entries | the channel's own "Working =" number, in the log |
-| Conversion path | `studio-develop-cro-audit` on landing, pricing, checkout → fixes via the build loop | prioritised fixes, top three shipped | before/after |
-| Activation | `studio-distribute-activation-retention-audit` → fix the top leak | users reach the magic moment | one activation logged |
-| Founding offer | a time-boxed founding-customer offer **drafted from the member's own pricing anchors and Product Offer each time (decided: no house pattern)** | the offer message | sent to every warm lead |
-| Second push | `studio-launch` resend: rewritten hook or price toggled, through the next-warmest route | resent | screenshot |
-| Experiment | `studio-distribute-growth-experiments` | one experiment running, with a pass bar | tracker entry |
-| Weekly read | `studio-launch` sitting two, applied to the week | `docs/LAUNCHES.md` updated | the read, posted |
-| Close | the Sell Report + the recommendation | `docs/SELL-IN-30.md` complete | graduation post |
+| Warm conversations | `studio-launch` sitting one, scoped to the warm network: believers first, then named people who match the persona, checkout link in hand | messages sent | sent-folder screenshot |
+| Channel | `studio-distribute-gtm-strategy` | `1-Go-To-Market-Strategy.md`: the primary channel and its "Do this" list | file exists |
+| Experiments | `studio-distribute-growth-experiments`, briefed with the bar and the clock | `2-Growth-Experiments.md` (running now + up next), tracker seeded | experiment 1 named, pass bar written |
+| Weekly read | `studio-launch` sitting two, applied to the week | `docs/LAUNCHES.md`, tracker updated | the read, posted |
+
+### Block library (weeks two to four)
+
+| Block | Source | Proof |
+| --- | --- | --- |
+| Run the experiment | the running experiment's "Do this" steps, one or two a session | the step's own artefact (a post, a listing, a message batch, a shipped fix) |
+| Follow-ups | every open thread | replies sent |
+| Read: continue or kill | result vs the Pass = line; tracker decision | tracker row + Skool post |
+| Next experiment *(after a kill)* | top of the up-next queue; re-run `studio-distribute-growth-experiments` if the queue is empty | experiment named, pass bar written |
 
 ### Composition rules
 
-1. **Launch #4 ships by Day 5.** Nothing before it may slip it: if Define backfill or Checkout live runs long, Channel compresses to "the one place your believers already are".
-2. **Checkout works before anyone is asked for money.** A real test purchase is Day 2's proof on every path, or Day 3 at the latest.
-3. **A full send before any pivot (Q3 tabled: wording depends on the daily activity model).** The pivot framework's own rule (fewer than ten demo posts is a patience problem) still applies: the Day-14 read may not choose a pivot variable unless the channel's "Do this" list was actually worked through.
-4. **One variable per week.** After a missed rung, the following week changes product, persona, or price, never two.
-5. **Warm before cold, always.** Believers get every message first. Cold outreach starts only when the warm list is exhausted, and is logged as cold.
-6. **A payment before Day 30 does not end the challenge (decided).** It is logged, celebrated, posted (`Sell in 30 - My first customer! 🚀`), the customer is asked for the testimonial, and the remaining days go to customers two and three with the same loop. Momentum is the Product Studio conversation.
-7. **Hours per day scale one plan, never two** (same rule as Ship in 7): the composer fits the channel work and the fix blocks to the hours the member gives and recommends more where it changes the outcome.
+1. **Checkout works before anyone is asked for money.** A real test purchase is the proof, by session 3 of week one at the latest. For a product staying free this block drops out.
+2. **Warm conversations before the strategy.** The believers and the warm network get the first ask in week one, checkout link in hand, before a channel is chosen. It needs no strategy and it's the most likely source of the first payment.
+3. **Strategy and experiments close week one.** GTM strategy and growth experiments run on sessions 4–5 (one session when hours are tight), so experiment 1 is named before the week-one read.
+4. **One experiment at a time.** The experiments file may list up to three running; the challenge runs the top one. A member with 4h+ a session may run two.
+5. **Continue or kill is decided by the pass bar, not by mood.** Pass → continue (double down or iterate per the file's own "on pass" move). Fail → kill, log the learning, next from the queue. Two kills in a row → the read also opens `productos/define/BONUS-Pivot-Framework.md` and asks whether the problem is the channel or the offer.
+6. **A payment before Day 30 does not end the challenge (decided).** It is logged, celebrated, posted (`Sell in 30 - My first customer! 🚀`), the customer is asked for the testimonial, and the remaining weeks run the next experiment for customers two and three.
+7. **Hours per session scale one plan, never two** (same rule as Ship in 7).
 8. **Thirty sessions, not thirty calendar days** (same rule as Ship in 7): consecutive days recommended, the counter advances by check-in, a session without its proof is a miss. Weekly reads happen every seventh session.
 
 ### Worked examples (ship in the skill as `plans/`)
 
-*(Days marked "Channel work" are the placeholder for the tabled Q3; they will be replaced by the GTM strategy's "Do this" items once the activity model is agreed.)*
+Only week one differs; weeks 2–4 are the experiment loop in every example.
 
-**Not yet live, one deploy away** · W1: D1 Go live (deploy guide) · D2 Go live (smoke test) · D3 Define backfill + Price it · D4 Checkout live + Channel · D5 **Launch #4** · D6 follow-ups · D7 read. W2–W4 as the free-will-charge example.
+**Live, free, will charge** · S1 Define backfill + Price it · S2 Checkout live (test purchase) · S3 Believers backfill + Warm conversations · S4 Channel · S5 Experiments · S6 Follow-ups · S7 Read + post → W2–W4 experiment loop → S29 Sell Report · S30 Close.
 
-**Live, free, will charge** · W1: D1 Define backfill + Price it · D2 Checkout live · D3 Believers backfill · D4 Channel · D5 **Launch #4** · D6 follow-ups · D7 read. W2: D8–D12 Channel work + Conversion path fixes · D13 follow-ups · D14 read. W3: D15 Founding offer · D16–D19 Channel work + Activation · D20 Second push · D21 read. W4: D22 Experiment · D23–D27 Channel work · D28 read · D29 Sell Report · D30 Close.
+**Live, priced, nobody has paid** · S1 Define backfill · S2 Checkout live (verify with a real purchase) · S3 Believers backfill + Warm conversations · S4 Channel · S5 Experiments · S6 Follow-ups · S7 Read + post → experiment loop.
 
-**Live, free, staying free** (bar: one activated user) · W1: D1 Define backfill · D2 Activation (who reaches the magic moment today, fix the top leak) · D3 Believers backfill · D4 Channel · D5 **Launch #4** · D6–D7 as above. W2–W4 as above with Conversion path replaced by Activation work and no Founding offer.
+**Live, free, staying free** (bar: one activated user) · S1 Define backfill · S2 Believers backfill · S3 Warm conversations (the ask is "try it", not "buy it") · S4 Channel · S5 Experiments (backlog leans on activation) · S6 Follow-ups · S7 Read + post → experiment loop.
 
-**Live, priced, nobody has paid** · W1: D1 Define backfill · D2 Checkout live (verify with a real purchase) · D3 Conversion path · D4 Channel + Believers backfill · D5 **Launch #4** · D6–D7 as above. W2–W4 as above, with Activation in W2 if there are signups.
+**Not yet live, one deploy away** · S1 Go live (deploy guide) · S2 Go live (smoke test) + Define backfill · S3 Checkout live · S4 Warm conversations · S5 Channel + Experiments · S6 Follow-ups · S7 Read + post → experiment loop.
 
-**Live with users, no revenue** · W1: D1 Define backfill + Price it · D2 Checkout live · D3 Activation (who reaches the magic moment today) · D4 Founding offer drafted for existing users · D5 **Launch #4 to existing users first** · D6–D7 as above. W2 leads with the Conversion path; W3 with Channel and cold outreach.
+**Live with users, no revenue** · S1 Define backfill + Price it · S2 Checkout live · S3 Warm conversations to existing users first · S4 Channel · S5 Experiments (a founding offer to existing users is the obvious experiment 1) · S6 Follow-ups · S7 Read + post → experiment loop.
 
-**Just shipped via Ship in 7** · W1 opens with Announce (the launch post that was Ship in 7's stretch) as D1, then the standard shape.
-
----
+**Just shipped via Ship in 7** · S1 Announce (the launch post that was Ship in 7's stretch) + Believers backfill · S2 Checkout live · S3 Warm conversations · S4 Channel · S5 Experiments · S6 Follow-ups · S7 Read + post → experiment loop.
 
 ## 3. Skill design
 
@@ -103,12 +118,12 @@ Same mechanism as Ship in 7: a **block library**, composed into **four weeks wit
 
 ```
 skills/studio-sell-in-30/
-  SKILL.md                three modes; the block library; weekly shape; composition rules;
-                          Skool post format; failure patterns
-  plans/one-deploy-away.md
+  SKILL.md                four modes; the block library; the 30-day shape; composition rules;
+                          the experiment loop; Skool post format; failure patterns
   plans/live-free-will-charge.md
-  plans/live-free-staying-free.md   worked examples the composer starts from
   plans/live-priced.md
+  plans/live-free-staying-free.md   week-one worked examples the composer starts from
+  plans/one-deploy-away.md
   plans/live-with-users.md
   plans/after-ship-in-7.md
   SELL-IN-30-TEMPLATE.md  the docs/SELL-IN-30.md skeleton
@@ -126,7 +141,7 @@ skills/studio-sell-in-30/
 3. **Read the evidence:** live URL, price on the site, payments integration, `docs/LAUNCHES.md` and its rung, signups or usage the member reports (asked, never inferred from code), existing Define docs.
 4. **Ask the starting point (decided: always ask)**, and **whether the product will charge within the 30 days (decided)**: that sets the bar to a payment or to an activated user.
 5. **Confirm the inputs:** start date, hours per day (a number, not a tier; consecutive days recommended), the price if one exists, who they can already reach (the same two routing questions launch #1 asks).
-6. **Compose the four weeks** and show the plan as a table: day, block, skill, proof, quota. The member edits before it's written.
+6. **Compose week one** from the block library and show it as a table: session, block, skill, proof. Weeks 2–4 are shown as the experiment loop with the slots empty until the experiments file exists. The member edits before it's written.
 7. **Write `docs/SELL-IN-30.md`:** header (dates, hours, the bar verbatim, starting point, price line), the plan table, empty daily log, weekly read slots, Skool post log.
 8. **Draft the Day-0 Skool post** and name Day 1's literal task.
 
@@ -134,13 +149,13 @@ skills/studio-sell-in-30/
 
 Identical mechanics to Ship in 7 (the counter advances by check-in; confirm the last session's proof first; log done/partial/missed; compression on misses; name today's one block; say what the next session looks like), **except that the Skool post is drafted only on read days, Day 0 and Day 30 (decided)**, plus:
 
-- **Channel-work days** log the channel's own number and every reply verbatim. Silence is a count of zero, logged. *(Exact shape follows the tabled Q3.)*
+- **In weeks 2–4 the check-in reads `2-Growth-Experiments.md` first** and names the next "Do this" step of the running experiment as today's block. Experiment days log the step's artefact and every reply verbatim. Silence is a count of zero, logged.
 - **Every reply is answered the same day.** The check-in starts by asking about open threads.
-- **Missed sessions compress within the week**, never across the seventh-session read: the read always happens on schedule, with whatever the week produced. Two consecutive misses shrink that week's channel work; they don't end the challenge.
+- **Missed sessions compress within the week**, never across the seventh-session read: the read always happens on schedule, with whatever the week produced. Two consecutive misses shrink that week's experiment steps; they don't end the challenge.
 
 ### Mode 3 — Weekly read (Days 7, 14, 21, 28)
 
-The `studio-launch` sitting-two ritual applied to the week, written into `docs/SELL-IN-30.md` and `docs/LAUNCHES.md`, and posted to Skool. Ends by naming next week's rung and, if a rung was missed twice, the one variable that changes.
+The `studio-launch` sitting-two ritual applied to the week, written into `docs/SELL-IN-30.md` and `docs/LAUNCHES.md`, and posted to Skool. In weeks 2–4 it also reads the running experiment against its Pass = line, records the result and the decision (**continue or kill**) in `3-Growth-Experiments-Tracker.md`, and names next week's experiment. Two kills in a row open the Pivot Framework.
 
 ### Mode 4 — Close (Day 30, or Day 31)
 
@@ -151,7 +166,7 @@ The `studio-launch` sitting-two ritual applied to the week, written into `docs/S
 
 ### Failure patterns (named in SKILL.md)
 
-The Friendly Echo (warm praise read as market signal) · The Rung Leap (one reply → "validated" → a silent week of building) · The Quota Dodge (posting instead of talking to people) · The Pitch-Slap · The Silent Zero · The Discount Spiral (dropping the price every time someone hesitates) · The Fresh-Start Reflex (a new channel every week) · The Feature Excuse ("they'll pay once I add X").
+The Friendly Echo (warm praise read as market signal) · The Rung Leap (one reply → "validated" → a silent week of building) · The Mood Kill (killing an experiment before its pass bar because it felt slow) · The Zombie Experiment (continuing one that failed its pass bar because it felt close) · The Pitch-Slap · The Silent Zero · The Discount Spiral (dropping the price every time someone hesitates) · The Fresh-Start Reflex (a new channel every week) · The Feature Excuse ("they'll pay once I add X").
 
 ---
 
@@ -163,7 +178,7 @@ Two loops, as in Ship in 7 **(decided)**: the in-agent check-in **every session*
 
   ```
   Sell in 30 - Day 0! [app name]
-  Sell in 30 - Week 2! [rung reached, five words]
+  Sell in 30 - Week 2! [rung reached, five words]   (weeks 2–4: the experiment and its continue/kill)
   Sell in 30 - My first customer! 🚀
   Sell in 30 completed! Here's what I learnt
   ```
@@ -194,9 +209,7 @@ Specified once in `ship-in-7-skill-plan.md` §5–§6 and shared. Sell-in-30-spe
 1. **Not-live members:** allowed to enrol when they can deploy within the first few days; otherwise routed to Ship in 7.
 2. **Free products:** allowed, with one activated user as the bar when the product won't charge within the 30 days.
 
-**Tabled, pending your amends after reviewing this plan:**
-
-3. **The daily activity model.** Not a fixed outreach quota. The go-to-market strategy skill defines what the daily work is for the chosen channel (outreach, content, community, listings, partnerships), and its "Working =" number is the weekly pass bar. Send amends and I'll rewrite §2 around them.
+3. **The daily activity model (decided, your shape):** week one is foundations (backfill, deploy if needed, checkout live with a test purchase, warm-network conversations, GTM strategy, growth experiments, read + post); weeks 2–4 each run the highest-leverage experiment from the member's own backlog and end with a continue/kill read and a Skool post; the end is the Sell Report, the graduation post, and the Product Studio call booking. No fixed quota; the daily steps come from the running experiment's "Do this" list.
 
 **Decided in the second pass:**
 
@@ -204,7 +217,7 @@ Specified once in `ship-in-7-skill-plan.md` §5–§6 and shared. Sell-in-30-spe
 5. **Post cadence:** weekly, at each read, plus Day 0 and Day 30. Four 7-session weeks kept.
 6. **Skool titles:** your wording, recorded in §4.
 7. **The Sell Report is the pre-call brief**, ending with "bring this to your call".
-8. **Cold outreach:** deferred; depends on the daily activity model (Q3).
+8. **Cold outreach:** only when an experiment calls for it, logged as cold (resolved by Q3).
 9. **Founding offer:** drafted from the member's own anchors each time, no house pattern.
 10. **Existing material:** none to mirror (assumed, as for Ship in 7).
 
@@ -217,4 +230,4 @@ Specified once in `ship-in-7-skill-plan.md` §5–§6 and shared. Sell-in-30-spe
 3. **Price changes on a live product.** Mitigation: Checkout live and any price change are confirmed with the member, never automated; the golive payments guidance is reused, not reinvented.
 4. **Cold outreach etiquette.** Community rules and platform norms. Mitigation: the launch skill's Pitch-Slap rule and "check the community's self-promotion rules" carry over; cold sends are always logged as cold.
 5. **Duplicated loop mechanics with Ship in 7.** Decided: duplicated, with a CHANGELOG rule that a change to one loop is a change to both.
-6. **The daily activity model is unresolved (Q3).** Until it is, the worked examples carry a placeholder and the skill can't be written. Blocking for Sell in 30 only; Ship in 7 can be built now.
+6. **Experiments sized wrong for a week.** A backlog item that needs a month can't be read on session 7. Mitigation: the challenge briefs the experiments skill with the clock; anything bigger is split into the up-next queue.
