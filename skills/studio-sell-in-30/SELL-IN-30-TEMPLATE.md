@@ -1,0 +1,152 @@
+# Sell in 30 — [App name]
+
+**The bar:** [one payment / one activated user (product staying free this month)]
+**Starting point:** [Live, free, will charge / Live, priced / Live, free, staying free / One deploy away / Live with users / After Ship in 7]
+**Live URL:** [url] · **Price line:** [from 3-Pricing-Strategy.md, or "free this month"]
+**Started:** [date] · **Hours per session:** [n] · **Consecutive days:** [yes / as and when]
+**Status:** Open — Day [N] of 30 · Week [W]
+
+*Thirty sessions, not thirty calendar days. The day counter advances by check-in. A session that ends without its proof is a miss; a gap between sessions is a gap. Every seventh session is the weekly read.*
+
+---
+
+## Week one — foundations
+
+| Day | Block | Skill(s) | Proof |
+| --- | --- | --- | --- |
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+| 4 | | | |
+| 5 | | | |
+| 6 | | | |
+| 7 | Weekly read | `studio-launch` sitting two | the read, posted |
+
+*Edited by the member at enrol.*
+
+## Weeks two to four — the experiment loop
+
+| Week | Experiment (from `productos/distribute/2-Growth-Experiments.md`) | Pass = | Decision at the read |
+| --- | --- | --- | --- |
+| 2 | | | continue / kill |
+| 3 | | | continue / kill |
+| 4 | | | continue / kill |
+
+*Sessions 1–5 of each week run the experiment's "Do this" steps; session 6 is follow-ups; session 7 is the read. Filled as each week's experiment is chosen.*
+
+---
+
+## Session log
+
+| Day | Date | Block / step | Result | Proof | Blocker |
+| --- | --- | --- | --- | --- | --- |
+| 1 | | | done / partial / missed | | |
+| 2 | | | | | |
+| … | | | | | |
+| 30 | | | | | |
+
+*Gaps are noted in the Date column. Plan changes: [dated one-liners].*
+
+---
+
+## Experiment Log
+
+*One row per experiment session, written at the end of the check-in. Same five fields every time. This is the dataset the weekly read, the pivot review, the next experiments run, and the Sell Report all read.*
+
+| Day | Experiment | Step + artefact | Reach | Response (count · rung) | Verbatim | Surprise |
+| --- | --- | --- | --- | --- | --- | --- |
+| | | | | | | |
+| | | | | | | |
+
+*Rungs: none / reply / conversation / signup / activated / paid. Silence is "0 · none". Verbatims also go to `productos/define/2-Customer-Persona.md` and the tracker's Cumulative Learnings.*
+
+---
+
+## Weekly reads
+
+### Week 1 read — Day 7 — [date]
+
+**Signal:** [responses, warm/cold, rung reached, believers added]
+**Experiment 1 chosen:** [name] · Pass = [number + date]
+**Next week:** [rung targeted]
+**Skool post:** [link]
+
+### Week 2 read — Day 14 — [date]
+
+**Signal:** [responses, warm/cold, rung reached, believers added]
+**Experiment result:** [number] vs Pass = [threshold] → **[continue / kill]**. Tracker row added.
+**Pivot review:** [diagnosis first: distribution / execution / patience → no pivot; or the variable: persona / product / pricing, the validated piece kept, the candidate experiment and its Pass =]. Member's decision: [ ]
+**Next week:** [experiment] · Pass = [ ]
+**Skool post:** [link]
+
+### Week 3 read — Day 21 — [date]
+
+**Signal:**
+**Experiment result:** → **[continue / kill]**
+**Pivot review:**
+**Next week:**
+**Skool post:**
+
+### Week 4 read — Day 28 — [date]
+
+**Signal:**
+**Experiment result:** → **[continue / kill]**
+**Pivot review:**
+**Skool post:**
+
+---
+
+## Skool posts
+
+| When | Title | Link |
+| --- | --- | --- |
+| Day 0 | Sell in 30 - Day 0! [app name] | |
+| Day 7 | Sell in 30 - Week 1! [rung reached] | |
+| Day 14 | Sell in 30 - Week 2! [rung reached] | |
+| Day 21 | Sell in 30 - Week 3! [rung reached] | |
+| Day 28 | Sell in 30 - Week 4! [rung reached] | |
+| the day it lands | Sell in 30 - My first customer! 🚀 | |
+| Day 30 | Sell in 30 completed! Here's what I learnt | |
+
+---
+
+## Sell Report
+
+*Filled at the close. Written to be brought to a Product Studio call as-is. Structured for the coach intake.*
+
+**Result:** [Hit / Missed] — [one sentence: the payment or the activated user, or the highest rung reached]
+**The bar was:** [payment / activated user]
+**Live URL:** [url] · **Price at close:** [ ]
+
+**By the numbers (from the Experiment Log):**
+
+| Experiment | Sessions | Reach | Responses | Highest rung | Decision |
+| --- | --- | --- | --- | --- | --- |
+| Warm asks (week 1) | | | | | |
+| | | | | | |
+
+**People reached:** [total] — warm [n] · cold [n]
+**Believers at close:** [n] (see `docs/LAUNCHES.md`)
+**Rung reached each week:** W1 [ ] · W2 [ ] · W3 [ ] · W4 [ ]
+
+**What the market said, in its own words:**
+- "[verbatim]" — [who, warm/cold]
+- "[verbatim]"
+- "[verbatim]"
+
+**Pivot reviews and what I did with them:**
+- Week 2: [recommendation] → [ran it / didn't, and why]
+- Week 3:
+- Week 4:
+
+**What I changed during the month:** [price / persona / product / messaging — one line each, dated]
+
+**The biggest blocker:** [one paragraph, honest]
+
+**What I'd run next:** [the next experiment from the queue, or the pivot]
+
+**Product Studio:** [the recommendation paragraph, and the link: buildgreatproducts.com/product-studio]
+
+*Bring this to your call.*
+
+**Status:** Closed — [date]
