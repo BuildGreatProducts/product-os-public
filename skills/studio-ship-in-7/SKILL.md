@@ -25,9 +25,11 @@ Locate in the ProductOS folder (`productos/` at the app repo root) and the repo-
 
 ## Which mode is this?
 
-- No `docs/SHIP-IN-7.md` → **Enrol** (Day 0).
-- The file exists and the last logged day is below 7 → **Daily check-in**.
-- Day 7 is logged (or the member says "close") → **Close**.
+Read the header's `Status:` line first.
+
+- No `docs/SHIP-IN-7.md`, or the file's status is `Closed` → **Enrol** (Day 0). A closed file is a finished Ship Report: move it to `docs/SHIP-IN-7-<closed date>.md` before writing the new one, never overwrite it.
+- Status `Open` and the last assigned day is below 7 → **Daily check-in**.
+- Status `Open`, Day 7 logged (or the member says "close") → **Close**.
 
 Confirm with the member in one line before proceeding.
 
@@ -66,7 +68,7 @@ If they pick "none of these", compose from the block library directly (below) an
 
 ### 5. Compose the seven sessions
 
-Start from the `PLAN-*.md` file for the starting point, then adjust using the block library and the composition rules below: drop blocks whose output already exists, add the ones the evidence says are missing, fit to the hours. Show the plan as a table — session, block, skill, proof, hours — and let the member edit before anything is written.
+Start from the `PLAN-*.md` file for the starting point, then adjust using the block library and the composition rules below: drop a block only when its artefact exists **and is current and complete** (a `docs/PRODUCT.md` that describes today's product; a `docs/SECURITY-AUDIT.md` whose verdict covers today's code with Critical/High fixed, not merely a file with that name); otherwise keep the block. Add the ones the evidence says are missing, fit to the hours. Show the plan as a table — session, block, skill, proof, hours — and let the member edit before anything is written.
 
 ### 6. Write `docs/SHIP-IN-7.md`
 
@@ -129,7 +131,7 @@ Every block is an existing skill (or a plain action) with a proof. The composer 
 | Words | `studio-design-identity-creator` → `studio-design-ux-writing` | `productos/design/1-Product-Identity.md` (the Brand Card), `docs/COPY.md` | both files exist; `COPY.md`'s audit fix list present | 1.5 h |
 | Look | `studio-design-design-system` (one image you love) or `studio-design-design-system-from-code` | `docs/DESIGN.md` + `docs/DESIGN.html` | screenshot of `DESIGN.html` | 1 h |
 | Magic moment + spec | `studio-design-magic-moment` → `studio-develop-prd-roadmap`, MVP scoped to the magic moment only | `docs/PRD.md`, `docs/ROADMAP.md` | roadmap of one phase | 1.5 h |
-| Build | `studio-develop-mvp-build` (idea) · `studio-develop-design-better` + the build loop (`cc-build-loop` / `codex-build-loop` / `cursor-build-loop`) + `studio-develop-design-review` (rebuild) · `studio-develop-refactor-plan` → `studio-develop-refactor-build` (messy code) | the working core flow | screen recording or before/after | 4 h+ per day |
+| Build | `studio-develop-mvp-build` (idea) · `studio-develop-design-better` + the build loop (`cc-build-loop` / `codex-build-loop` / `cursor-build-loop`) + `studio-develop-design-review` (rebuild) · `studio-develop-refactor-plan` → `studio-develop-refactor-build` (messy code) | the working core flow | before/after screenshots saved to `docs/`, or a recording the agent can open | 4 h+ per day |
 | Migrate | `studio-develop-migrate` | `docs/MIGRATION.md`, an owned repo | the migration's verification gate green | 1–2 days |
 | Quality gate | `studio-develop-code-review` → `studio-develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` | the verdict line; Fix plan Critical/High ticked | 2–3 h |
 | Deploy guide | `studio-develop-golive` | `docs/DEPLOY.md` | file exists; accounts created | 1 h |
@@ -163,7 +165,7 @@ Ship in 7 - It's live! 🚀
 Ship in 7 completed! Here's what I learnt
 ```
 
-The `It's live` post goes out the day the smoke test passes, whatever the day number. The `completed` post is the close.
+The `It's live` post goes out the day the smoke test passes, whatever the day number. The `completed` post is the close. One post a day: if the smoke test passes on the same day as the close, combine them into one post titled `Ship in 7 completed! [app name] is live 🚀`.
 
 **Body, in the member's own voice.** Build the voice from what they have actually written: their messages in this session, the Product Offer and Mini-Launch drafts, UI copy in the repo, their previous posts in the log. Short, first person, the proof (screenshot or link), the number if there is one, tomorrow's task in one line. No marketing register, no exclamation-mark stacking, no "excited to announce". If you can't hear the member's voice yet, ask for one previous post of theirs.
 

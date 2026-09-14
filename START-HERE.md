@@ -17,7 +17,7 @@ Two things are in every programme, whatever your stage, because they're where th
 
 ## Starting completely from scratch?
 
-No plan in your copy? After setup (steps 1–3 always apply), run a **challenge**: ask your agent to *"start ship in 7"* if your app isn't live yet — seven sessions to a live URL — or *"start sell in 30"* if it's live and nobody has paid — thirty sessions to your first customer. Each reads your repo, asks where you're starting from, composes a day-by-day plan from the ProductOS skills, checks in with you every session, and ends with a report you can bring to a Product Studio call. (If you run a challenge before setup, it runs setup for you.)
+No plan in your copy? After setup (steps 1–3 always apply), run a **challenge**: ask your agent to *"start ship in 7"* if your app isn't live yet — seven sessions to a live URL — or *"start sell in 30"* if it's live (or one deploy away) and nobody has paid — thirty sessions to your first customer, or your first activated user if it stays free. Each reads your repo, asks where you're starting from, composes a session-by-session plan from the ProductOS skills, checks in with you every session, and ends with a report you can bring to a Product Studio call. (If you run a challenge before setup, it runs setup for you.)
 
 Prefer the long way, or want the full programme after a challenge? Open **`productos/define/DEFINE-CHECKLIST.md`** and work top to bottom, finishing each phase before the next. That's the standard programme — custom plans ship with coached copies.
 

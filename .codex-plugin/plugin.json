@@ -35,8 +35,7 @@
     "websiteURL": "https://telescope.design",
     "defaultPrompt": [
       "Set up ProductOS in my repo",
-      "Start ship in 7",
-      "Help me build my product offer",
+      "Start ship in 7 (or sell in 30)",
       "Run the next step in my ProductOS checklist"
     ]
   }

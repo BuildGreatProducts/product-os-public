@@ -8,9 +8,9 @@
 
 | Day | Block | Skill(s) | Proof | Hours |
 | --- | --- | --- | --- | --- |
-| 1 | **Migrate: inventory + plan** | `studio-setup` (the app repo may be brand new) → `studio-develop-migrate` through its inventory and `docs/MIGRATION.md` | `docs/MIGRATION.md` with the full inventory; a stack decision; the honest "does this fit in three days?" answer | 2.5 |
-| 2 | **Migrate: move** | work `docs/MIGRATION.md`: export, repo, database, auth, storage, secrets rotated | the app runs locally from the owned repo with real data | 4+ |
-| 3 | **Migrate: verify** | the migration's verification gate: real login with a pre-migration password, test payment, storage URLs, webhooks re-pointed | **verification gate green** (the platform is not yet paused) | 3 |
+| 1 | **Migrate: inventory + plan** | `studio-setup` (the app repo may be brand new) → `studio-develop-migrate` through its inventory and `docs/MIGRATION.md` | `docs/MIGRATION.md` with the full inventory; a stack decision; **the write-reconciliation rule** (below); the honest "does this fit in three days?" answer | 2.5 |
+| 2 | **Migrate: move** | work `docs/MIGRATION.md`: freeze source writes (or note the snapshot time for the delta), export, repo, database, auth, storage, secrets rotated | the app runs locally from the owned repo with real data; the freeze or snapshot time recorded | 4+ |
+| 3 | **Migrate: verify** | the migration's verification gate: real login with a pre-migration password, test payment, storage URLs, webhooks re-pointed; the delta since the snapshot reconciled if writes weren't frozen | **verification gate green**, zero unreconciled writes (the platform is not yet paused) | 3 |
 | 4 | **Define backfill + quality gate** | `studio-define-from-code` → `studio-define-product` (fast); `studio-develop-security-audit` → Critical/High fixed | `docs/PRODUCT.md`; `docs/SECURITY-AUDIT.md` verdict; Critical/High ticked | 3 |
 | 5 | **Deploy guide** | `studio-develop-golive` | `docs/DEPLOY.md`; hosting accounts created | 1.5 |
 | 6 | **Go live** | work `docs/DEPLOY.md`; DNS cutover last | live URL on the member's own hosting | 3 |
@@ -19,6 +19,7 @@
 ## Notes for the composer
 
 - **The migration skill's rules are the plan's rules.** Secrets never export and are rotated; exports are point-in-time so the plan enforces a clean break; DNS cutover comes last; the old platform is paused only after the verification gate and the smoke test are both green. Don't compress any of that.
+- **Writes made after the snapshot must be accounted for, and `docs/MIGRATION.md` says how before anything is exported.** Either **freeze source writes before the export** (maintenance mode, or the platform's own pause, for the whole move) or **freeze at cutover and reconcile the delta**: every row, file and account created since the snapshot time is synced into the owned database and storage and checked at the gate. A migration with live users and no stated rule is not ready to move.
 - **Migration moves and rewires; it never improves.** No refactor, no redesign this week. `studio-develop-refactor-plan` is for after the app is live and owned.
 - **Define backfill is short here.** `studio-define-from-code` reads the live platform URL and the migrated code; the offer is already implicit in a product people may be using.
 - **If Day 1's inventory says it doesn't fit**, the honest composition is: Days 1–5 migrate and verify, Day 6 quality gate, Day 7 go live and smoke test, no buffer, announce dropped. Say so, and offer the alternative of running `studio-develop-migrate` first and starting Ship in 7 once the app is owned.

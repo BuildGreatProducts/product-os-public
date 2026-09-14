@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | 1 | **Define backfill + offer review + price it** | `studio-define-from-code` if the Define docs are missing → `studio-define-offer-review` (with the twist: who is *actually* using it, per the evidence, vs who the offer says) → `studio-define-product` → `studio-define-pricing` if there is no price | a sharpened offer; `docs/PRODUCT.md`; the price line |
 | 2 | **Messaging alignment** | landing page / listing copy from the reviewed offer, shipped via the build loop | before/after of the live hero |
-| 3 | **Checkout live** | payments live per `studio-develop-golive`'s payments section; a real test purchase | the receipt; a working checkout link |
+| 3 | **Checkout live** | payments live per `studio-develop-golive`'s payments section; a real test purchase, refunded the same session and never counted toward the bar | the receipt and the refund; a working checkout link |
 | 4 | **Believers backfill + warm conversations to existing users** | create `docs/LAUNCHES.md` and put every active user on it; `studio-launch` sitting one to the most active users first, personally, checkout link in hand | sent-folder screenshot; the believers list |
 | 5 | **Channel** | `studio-distribute-gtm-strategy` | `1-Go-To-Market-Strategy.md` |
 | 6 | **Experiments + follow-ups** | `studio-distribute-growth-experiments`, briefed with the bar and the clock; a founding offer to existing users is the candidate to rank first | `2-Growth-Experiments.md`; tracker seeded |

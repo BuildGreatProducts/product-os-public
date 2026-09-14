@@ -51,14 +51,14 @@
 
 ## Experiment Log
 
-*One row per session in weeks two to four, follow-up days included, written at the end of the check-in. Same five fields every time. This is the dataset the weekly read, the pivot review, the next experiments run, and the Sell Report all read.*
+*One row per session that reaches people: week one's warm asks and follow-ups (experiment name `Warm asks`), and every session in weeks two to four, follow-up days included. Written at the end of the check-in, same six fields every time. This is the dataset the weekly read, the pivot review, the next experiments run, and the Sell Report's "By the numbers" all read.*
 
-| Day | Experiment | Step + artefact | Reach | Response (count · rung) | Verbatim | Surprise |
-| --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | |
-| | | | | | | |
+| Day | Experiment | Step + artefact | Reach | Warm/cold | Response (count · rung) | Verbatim | Surprise |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| | Warm asks | | | | | | |
+| | | | | | | | |
 
-*Rungs: none / reply / conversation / signup / activated / paid. Silence is "0 · none". Verbatims also go to `productos/define/2-Customer-Persona.md` and the tracker's Cumulative Learnings.*
+*Warm/cold: `warm`, `cold`, or `mixed · n warm, n cold`; the weekly read and the Sell Report sum this column. Rungs are the signal ladder's: none / reply / conversation / signup / activated user / payment. Silence is "0 · none". Verbatims also go to `productos/define/2-Customer-Persona.md` and the tracker's Cumulative Learnings.*
 
 ---
 
@@ -83,7 +83,7 @@
 
 **Signal:**
 **Experiment result:** → **[continue / kill]**
-**Pivot review:**
+**Pivot review:** [ ]. Member's decision: [ ]
 **Next week:**
 **Skool post:**
 
@@ -91,7 +91,7 @@
 
 **Signal:**
 **Experiment result:** → **[continue / kill]**
-**Pivot review:**
+**Pivot review:** [ ]. Member's decision: [ ]
 **Skool post:**
 
 ---
@@ -128,7 +128,7 @@
 | Warm asks (week 1) | | | | | — |
 | | | | | | |
 
-**People reached:** [total] — warm [n] · cold [n]
+**People reached:** [total] — warm [n] · cold [n] (summed from the Experiment Log's Warm/cold column)
 **Believers at close:** [n] (see `docs/LAUNCHES.md`)
 **Rung reached each week:** W1 [ ] · W2 [ ] · W3 [ ] · W4 [ ]
 

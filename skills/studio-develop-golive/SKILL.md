@@ -19,7 +19,7 @@ Read the repository thoroughly before writing anything. Establish:
 - **Deploy readiness** — existing deploy config (e.g. `vercel.json`, `Dockerfile`, `eas.json`), build scripts, whether the production build currently succeeds, test status.
 - **Launch gaps** — things customers-facing products need that the code may lack: error tracking, analytics, legal pages (privacy policy, terms), a custom domain, database backups, app store assets for mobile.
 
-Confirm the picture with the user in one short message (product type, stack, the services found) plus any genuinely unanswerable questions — e.g. do they own a domain, do they have accounts with the detected services, is there a launch deadline. If `docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` is open, the deadline is the challenge's go-live session: the guide's estimated total time must fit the sessions left, and if it can't, say so now and name what to cut (the custom domain and the app-store path are the usual candidates) rather than letting the member discover it on the last day.
+Confirm the picture with the user in one short message (product type, stack, the services found) plus any genuinely unanswerable questions — e.g. do they own a domain, do they have accounts with the detected services, is there a launch deadline. If `docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` is open **and its plan table names a go-live session** (Ship in 7 always does; Sell in 30 only on its one-deploy-away path), that session is the deadline: the guide's estimated total time must fit the sessions left, and if it can't, say so now and name what to cut (the custom domain and the app-store path are the usual candidates) rather than letting the member discover it on the last day.
 
 ## Step 2: Write `docs/DEPLOY.md`
 

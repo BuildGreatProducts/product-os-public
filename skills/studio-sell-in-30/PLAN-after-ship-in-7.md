@@ -9,7 +9,7 @@
 | 1 | **Offer review + announce** | `studio-define-offer-review` on the offer Ship in 7 wrote or extracted; `studio-define-product` refreshed; then `studio-launch` — the "it's live" post that was Ship in 7's stretch, if it didn't ship | a sharpened offer; the live post screenshot; `docs/LAUNCHES.md` started |
 | 2 | **Messaging alignment + believers backfill** | landing page / listing copy from the reviewed offer, shipped; everyone who responded to the launch post onto the believers list | before/after of the live hero; the believers list |
 | 3 | **Price it + checkout live** | `studio-define-pricing` if there is no price; payments live and a real test purchase (skip if staying free) | the price line; the receipt |
-| 4 | **Warm conversations** | `studio-launch` sitting one to believers and named warm contacts, checkout link in hand | sent-folder screenshot |
+| 4 | **Warm conversations** | `studio-launch` sitting one to believers and named warm contacts, checkout link in hand (the "try it" link if the product stays free) | sent-folder screenshot |
 | 5 | **Channel** | `studio-distribute-gtm-strategy` | `1-Go-To-Market-Strategy.md` |
 | 6 | **Experiments + follow-ups** | `studio-distribute-growth-experiments`, briefed with the bar and the clock | `2-Growth-Experiments.md`; tracker seeded |
 | 7 | **Weekly read** | `studio-launch` sitting two | the read; the Week 1 Skool post |

@@ -41,7 +41,7 @@ Annotate, don't recompose: this pass adjusts details the coach couldn't see, it 
 ### 5. Name the first action
 
 - **Plan adopted** → read its **Your Programme** list and tell the member their literal first action — the exact checklist to open or skill to run, e.g. *"Run `studio-define-from-code` — your plan fast-tracks Define from your existing app."*
-- **No plan anywhere** (and no challenge already open in `docs/`) → offer a challenge first: **`studio-ship-in-7`** if the app isn't live yet (seven sessions to a live URL), **`studio-sell-in-30`** if it is live and nobody has paid (thirty sessions to a first customer). Each composes a day-by-day plan from the phase skills and checks in every session. The linear path — open **`productos/define/DEFINE-CHECKLIST.md`** and work top to bottom, finishing each phase before the next — remains the standard programme for members who'd rather take the long way, and the route after a challenge. (Custom programmes ship with coached copies of ProductOS.)
+- **No plan anywhere** (and no challenge already open in `docs/`) → offer a challenge first: **`studio-sell-in-30`** if the app is live, or one deploy away, and nobody has paid (or, for a free product, nobody has activated) — thirty sessions to a first customer; **`studio-ship-in-7`** if it is further from live than that — seven sessions to a live URL. Each composes a session-by-session plan from the phase skills and checks in every session. The linear path — open **`productos/define/DEFINE-CHECKLIST.md`** and work top to bottom, finishing each phase before the next — remains the standard programme for members who'd rather take the long way, and the route after a challenge. (Custom programmes ship with coached copies of ProductOS.)
 
 ## What "done" looks like
 

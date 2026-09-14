@@ -16,7 +16,7 @@
 
 ## Notes for the composer
 
-- **Day 1 is three skills, and it fits** because the offer review is a critique of what exists (not the builder's interview) and the pricing session is designed to take twenty minutes. If the Define docs are entirely missing, `studio-define-from-code` reads the live product first; the whole day is still one sitting.
+- **Day 1 is three skills (four when `studio-define-from-code` has to run first), and it fits** because the offer review is a critique of what exists (not the builder's interview) and the pricing session is designed to take twenty minutes. If the Define docs are entirely missing, `studio-define-from-code` reads the live product first; the whole day is still one sitting.
 - **The price goes on the page on Day 2, before the checkout exists.** A page that names the price and a "get started" that leads to a waitlist for one day is fine; a warm ask on Day 4 to a page with no price is not.
 - **Day 3's test purchase is real money, refunded.** Test-mode keys are not the proof; the member has to see a live receipt.
 - **Week one's warm ask is the most likely source of the first payment.** Don't let the strategy work on Days 5–6 delay Day 4.
