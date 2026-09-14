@@ -9,7 +9,9 @@ Ship in 7 takes a member from wherever they are to **their app live at a real UR
 
 **The bar:** a live URL and a **smoke test passed as a real customer** — sign up, do the core thing, see it work. Not a beta user, not payments live, not a landing page. Announcing it is the Day 7 stretch, never the bar. Whatever the member arrives with, Day 7 is the same. The composition changes; the destination doesn't.
 
-> **Session shape:** Day 0 is an enrol session (~20 min). Days 1–7 each start with a check-in (~5 min of overhead) and then run the day's block. Day 7 (or 8) ends with the close (~15 min). Seven sessions, not seven calendar days: recommend consecutive days, but the counter advances by check-in, so a weekend off is a gap, not a miss.
+> **Session shape:** Day 0 is an enrol session (~20 min). Days 1–7 each start with a check-in (~5 min of overhead) and then run the day's block. The close follows Day 7 (~15 min). Seven sessions, not seven calendar days: recommend consecutive days, but the counter advances by check-in, so a weekend off is a gap, not a miss.
+>
+> **Days, misses and gaps, precisely.** A day is *assigned* at the check-in that names its block. The next check-in confirms that day's proof: present → done; partial → logged as partial; absent → that day is a **miss**, logged as one, and its block is re-planned under the compression rules, never silently re-assigned. Calendar time between check-ins is a **gap**, noted with dates, never a miss. A second check-in on the same day, or a member saying the block is still in progress, *continues* the current day rather than advancing the counter.
 
 ## Inputs
 
@@ -35,7 +37,7 @@ Confirm with the member in one line before proceeding.
 
 ### 1. Setup check
 
-Ship in 7 runs after `studio-setup`, but the member may run it first. Check the four setup conditions: `productos/` sits inside a git repo; the root `CLAUDE.md`/`AGENTS.md` carry the `<!-- BEGIN PRODUCTOS -->` block; `.gitignore` excludes `productos/`; any shipped `productos/PLAN.md` has been moved to `docs/PLAN.md`. **If any fails, run `studio-setup` now**, then continue. Don't send the member away.
+Ship in 7 runs after `studio-setup`, but the member may run it first. Check the four setup conditions: `productos/` sits inside a git repo; the root `CLAUDE.md`/`AGENTS.md` carry the `<!-- BEGIN PRODUCTOS -->` block; `.gitignore` excludes `productos/` *and* nothing under it is tracked (`git ls-files productos` is empty); any shipped `productos/PLAN.md` has been moved to `docs/PLAN.md`. **If any fails, run `studio-setup` in full now** (it takes seconds and is idempotent), then continue. Don't send the member away.
 
 ### 2. Read the repo and show the evidence
 
@@ -51,6 +53,8 @@ Present the starting points the evidence fits, plus "none of these", and **ask**
 | **AI-generated app, not live** | App code; no `docs/DESIGN.md` or `docs/COPY.md`; generated look | `plans/ai-generated-app.md` |
 | **Local prototype** | App code; no deploy config, no `docs/DEPLOY.md`, no production URL | `plans/local-prototype.md` |
 | **Prompt-to-app platform** | A Lovable / Bolt / v0 / Base44 project, no owned repo | `plans/platform-migration.md` |
+
+**App code that isn't live fits two rows** (AI-generated app, local prototype). The question that separates them is not the code, it's the look: *"Are you happy with how it looks, or do you want it to look designed by Day 7?"* Designed → AI-generated app (two rebuild days). Happy → local prototype (a fuller gate and a polish day). Ask it as a question, not a recommendation.
 
 If they pick "none of these", compose from the block library directly (below) and say which plan file is closest.
 
@@ -78,13 +82,13 @@ Title `Ship in 7 - Day 0! [app name]`; body in the member's voice (see **The Sko
 
 Every session in the repo starts here while the challenge is open (the root guidelines say so). Five minutes of overhead, then the day's block.
 
-1. **Find the day.** Day N is the Nth session, counted from the log, not from the calendar. Log a gap (dates visible) if days have passed; a gap is not a miss.
-2. **Confirm the last session's proof first.** "Did it ship? Show me." A screenshot, a file that now exists, a URL, a passing command. A draft is not proof; a description of what was planned is not proof.
-3. **Log it.** Done / partial / missed, the proof, a one-line blocker. A session that ended without its proof is a miss, logged as one.
-4. **Missed?** Apply the compression rules (below). Two consecutive misses → shrink the scope of the MVP, never the bar.
-5. **Name today's one block**: the skill to run, the artefact, the proof. Then either run that skill in this session or hand off ("run `studio-develop-golive`; come back when `docs/DEPLOY.md` exists and the accounts are created").
-6. **Draft today's Skool post** (title from the house format, body in the member's voice).
-7. **End by saying exactly what returning tomorrow looks like.**
+1. **Find the day.** Read the log: the last assigned day is the one to confirm. If the member says its block is still in progress, continue it; don't advance. Note any gap since the last check-in with dates; a gap is not a miss.
+2. **Confirm the last assigned day's proof first.** "Did it ship? Show me." A file that now exists in the repo, a screenshot saved to `docs/` (something the agent can open), a URL, a passing command. A draft is not proof; a description of what was planned is not proof; a screen recording the agent can't open is a claim, not proof.
+3. **Log it.** Done / partial / missed, the proof, a one-line blocker. No proof → that day is a miss, logged as one. **Partial** (the artefact exists but the day's bar isn't met, e.g. the audit is written but Critical findings aren't fixed): log it as partial, carry the remainder into the next day as its first task, and apply compression rule 1. Two partials in a row count as a miss.
+4. **Missed?** Apply the compression rules (below) **in order, first that fits**. Two consecutive misses → shrink the scope of the MVP, never the bar. If the MVP is already the magic moment alone, the next lever is hours: ask for more, or name the honest miss now rather than on Day 7.
+5. **Assign today's one block**: the skill to run, the artefact, the proof. Then either run that skill in this session or hand off ("run `studio-develop-golive`; come back when `docs/DEPLOY.md` exists and the accounts are created"). Say what the member needs to bring (an image they love for the Look block, hosting account logins for Go live).
+6. **Draft today's Skool post** (title from the house format, body in the member's voice). If the block is handed off, draft it with a `[proof]` slot and finish it at the next check-in when the proof lands; a post never claims proof that doesn't exist yet.
+7. **End by saying exactly what returning next time looks like.**
 
 ### Compression rules (when a session is missed or runs short)
 
@@ -98,12 +102,14 @@ Every session in the repo starts here while the challenge is open (the root guid
 
 ## Mode 3 — Close (Day 7 or 8)
 
-1. **Check the bar honestly.** Is the URL live? Did the smoke test pass as a real customer? Hit, partly hit (live but the core flow fails), or missed. Say which, plainly. A miss is logged and read, never reframed as "nearly".
-2. **Write the Ship Report** into `docs/SHIP-IN-7.md` (section in the template): result vs the bar, what shipped each session, what was cut to make the week, the biggest blocker, what the app can and can't do today, the live URL. Written so the member can bring it to a Product Studio call as-is — it is the intake material a coach composes a custom plan from.
+1. **Check the bar honestly.** Is the URL live? Did the smoke test pass as a real customer? Hit, partly hit (live but the core flow fails), or missed. Say which, plainly. A miss is logged and read, never reframed as "nearly". Set the header's `Status:` line to `Closed — [date]`, so the root guidelines stop starting sessions with the check-in.
+2. **Write the Ship Report** into `docs/SHIP-IN-7.md` (section in the template): result vs the bar, the live URL and repo, the stack and hosting, hours planned vs spent, what shipped each session, what was cut to make the week, the audit's open findings, which canonical docs exist and are current, the biggest blocker, what the app can and can't do today, the hours the member has going forward and what they want next. Written so the member can bring it to a Product Studio call as-is — it is the intake material a coach composes a custom plan from.
 3. **Draft the graduation Skool post.** Title `Ship in 7 completed! Here's what I learnt` (the `It's live! 🚀` post went out the day the smoke test passed). Body in the member's voice, with the live URL.
 4. **The recommendation.** Once, one paragraph, framed by the outcome, in the closing message and in the Ship Report, not in the Skool post:
 
    > **Hit the bar:** You've just done in seven sessions what most people never do — put something real in front of the world. The **Product Studio** is where that turns into revenue: a custom programme composed from exactly where you are now, 1-1 support through every phase, and a coach who has watched a lot of first launches become first customers. Book a call at **buildgreatproducts.com/product-studio** and bring your Ship Report — it's the first thing we'll read.
+   >
+   > **Partly hit (live, but the core flow fails for a fresh account):** You're live, which most people never are, and the one thing between you and a working product is named in your Ship Report. That's a short, specific problem — and exactly the kind a coach closes in the first week of a custom plan. Book a call at **buildgreatproducts.com/product-studio** and bring the report.
    >
    > **Missed the bar:** You got further in seven sessions than most people get in seven months, and the thing that stopped you is written down in your Ship Report. That's exactly the point where a coach changes the outcome — a custom plan composed from where you actually are, and 1-1 support until it's live. Book a call at **buildgreatproducts.com/product-studio** and bring the report.
 
@@ -120,7 +126,7 @@ Every block is an existing skill (or a plain action) with a proof. The composer 
 | Setup check | `studio-setup` | wired root files, gitignore | file diff | 10 min |
 | Define from idea | `studio-define-offer-builder` → `studio-define-customer-persona` → `studio-define-pricing` → `studio-define-product`, compressed into one sitting | `docs/PRODUCT.md` | file exists, 8 sections filled | 3 h |
 | Define backfill | `studio-define-from-code` → `studio-define-product` | `docs/PRODUCT.md` | file exists | 1.5 h |
-| Words | `studio-design-identity-creator` → `studio-design-ux-writing` | Brand Card, `docs/COPY.md` | files exist | 1.5 h |
+| Words | `studio-design-identity-creator` → `studio-design-ux-writing` | `productos/design/1-Product-Identity.md` (the Brand Card), `docs/COPY.md` | both files exist; `COPY.md`'s audit fix list present | 1.5 h |
 | Look | `studio-design-design-system` (one image you love) or `studio-design-design-system-from-code` | `docs/DESIGN.md` + `docs/DESIGN.html` | screenshot of `DESIGN.html` | 1 h |
 | Magic moment + spec | `studio-design-magic-moment` → `studio-develop-prd-roadmap`, MVP scoped to the magic moment only | `docs/PRD.md`, `docs/ROADMAP.md` | roadmap of one phase | 1.5 h |
 | Build | `studio-develop-mvp-build` (idea) · `studio-develop-design-better` + the build loop (`cc-build-loop` / `codex-build-loop` / `cursor-build-loop`) + `studio-develop-design-review` (rebuild) · `studio-develop-refactor-plan` → `studio-develop-refactor-build` (messy code) | the working core flow | screen recording or before/after | 4 h+ per day |
@@ -132,7 +138,7 @@ Every block is an existing skill (or a plain action) with a proof. The composer 
 
 ### Composition rules
 
-1. **Go live sits on Day 6 with Day 7 as buffer and smoke test**, or on Day 7 outright when hours are tight. Never before the quality gate.
+1. **Go live sits on Day 5, 6 or 7**: Day 6 with Day 7 as buffer and smoke test is the default; Day 5 when the gate is done early (the local-prototype plan); Day 7 outright when hours are tight. Never before the quality gate.
 2. **The quality gate is never skipped.** The security audit runs before anything is reachable, on every path.
 3. **Define backfill is never skipped when `docs/PRODUCT.md` is missing.** `studio-develop-golive` and the launch post read it. Compressed, not dropped.
 4. **Design blocks are included only when the app exists and looks generated**, or when the member asks. On the idea path, Look runs on Day 2 so the build is on tokens from the first screen.
@@ -185,6 +191,7 @@ The `studio-launch` register: coach at the moment of fear. The bar is visibly lo
 - Never run paid tools or create accounts without the member; the deploy guide marks those steps 🧑 for a reason.
 - Never touch production data.
 - Never skip the quality gate or move Go live past Day 7 to "make room".
+- Never write a proof artefact yourself to make a day "done". The skills the plan names produce the files; the member produces the screenshots and URLs. If the proof isn't there, the day is a miss.
 
 ## What "done" looks like
 

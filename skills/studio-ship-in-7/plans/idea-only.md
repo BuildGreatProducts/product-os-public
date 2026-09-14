@@ -2,7 +2,7 @@
 
 *The member has an idea and an empty repo (or nothing but `productos/`). Seven sessions to a live app with one working core flow.*
 
-**Honest note at enrol:** this is the path where hours matter most. With a coding agent, Define → spec → build → gate → deploy fits in seven sessions at a couple of hours each. At much less, it doesn't — say so before writing the plan, and offer the two honest alternatives: more hours, or a smaller magic moment (a single screen that does the one thing).
+**Honest note at enrol:** this is the path where hours matter most. As written below the week is roughly twenty hours, about three a session, with the build days carrying the most. At two hours a session it fits only with a smaller magic moment (sign up → do the one thing → see it work; no logo upload, no editing, no settings); at one hour it doesn't fit. Say so before writing the plan, and offer the two honest alternatives: more hours, or the smaller magic moment. Tell the member on Day 1 to bring **one image or website they love** for Day 2's design system.
 
 ## The seven sessions
 
@@ -10,8 +10,8 @@
 | --- | --- | --- | --- | --- |
 | 1 | **Define from idea** | `studio-define-offer-builder` → `studio-define-customer-persona` → `studio-define-pricing` → `studio-define-product`, one sitting, no research rabbit holes | `docs/PRODUCT.md` exists, 8 sections filled; the offer read out loud | 3 |
 | 2 | **Look + magic moment + spec** | `studio-design-design-system` from one image the member loves → `studio-design-magic-moment` → `studio-develop-prd-roadmap` with the MVP scoped to the magic moment only | `docs/DESIGN.html` screenshot; `docs/ROADMAP.md` with one phase | 2.5 |
-| 3 | **Build, day one** | `studio-develop-mvp-build` (or the build loop task by task) | screen recording of the first working screen | 4+ |
-| 4 | **Build, day two** | continue; the core flow works end to end locally | screen recording: signup → magic moment | 4+ |
+| 3 | **Build, day one** | `studio-develop-mvp-build` (or the build loop task by task) | a screenshot of the first working screen, saved to `docs/` | 4 |
+| 4 | **Build, day two** | continue; the core flow works end to end locally | screenshots of signup → magic moment, saved to `docs/`; the test suite passing | 4 |
 | 5 | **Quality gate** | `studio-develop-code-review` → `studio-develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` verdict; Critical/High ticked | 2 |
 | 6 | **Deploy guide + go live** | `studio-develop-golive` → work `docs/DEPLOY.md` top to bottom | live URL, HTTPS | 3 |
 | 7 | **Smoke test, buffer, announce** | smoke test as a real customer; fix what it finds; `studio-launch` if there's time | **smoke test passed**; live post screenshot (stretch) | 2 |
@@ -27,7 +27,7 @@
 
 1. Drop Announce.
 2. Merge Days 3–4 into one build day: the magic moment screen only, no onboarding, no settings.
-3. Merge Day 2's Look into the spec session: use `studio-design-design-system` with the framework's default component library as the "image" and move on.
+3. Shorten Day 2's Look: run `studio-design-design-system` with the framework's default component library as the reference instead of a chosen image, and move on to the spec.
 4. Never move Day 5 (gate) after Day 6 (go live). Never move go live past Day 7.
 
 ## What Day 7 looks like

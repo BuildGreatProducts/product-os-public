@@ -6,7 +6,7 @@
 **Started:** [date] · **Hours per session:** [n] · **Consecutive days:** [yes / as and when]
 **Status:** Open — Day [N] of 30 · Week [W]
 
-*Thirty sessions, not thirty calendar days. The day counter advances by check-in. A session that ends without its proof is a miss; a gap between sessions is a gap. Every seventh session is the weekly read.*
+*Thirty sessions, not thirty calendar days. A day is assigned at the check-in that names its block; the next check-in confirms its proof. No proof means a miss; time between check-ins is a gap, not a miss. Every seventh session is the weekly read. The close sets Status to Closed.*
 
 ---
 
@@ -51,7 +51,7 @@
 
 ## Experiment Log
 
-*One row per experiment session, written at the end of the check-in. Same five fields every time. This is the dataset the weekly read, the pivot review, the next experiments run, and the Sell Report all read.*
+*One row per session in weeks two to four, follow-up days included, written at the end of the check-in. Same five fields every time. This is the dataset the weekly read, the pivot review, the next experiments run, and the Sell Report all read.*
 
 | Day | Experiment | Step + artefact | Reach | Response (count · rung) | Verbatim | Surprise |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -116,13 +116,16 @@
 
 **Result:** [Hit / Missed] — [one sentence: the payment or the activated user, or the highest rung reached]
 **The bar was:** [payment / activated user]
-**Live URL:** [url] · **Price at close:** [ ]
+**Live URL:** [url] · **Stack / hosting:** [one line]
+**Price line at close:** [ ] · **Guarantee:** [ ] · **Checkout:** [live / test]
+**Product state:** [what works, what doesn't, one line]
+**Hours:** planned [n] · spent [n] · available going forward [n per week]
 
 **By the numbers (from the Experiment Log):**
 
 | Experiment | Sessions | Reach | Responses | Highest rung | Decision |
 | --- | --- | --- | --- | --- | --- |
-| Warm asks (week 1) | | | | | |
+| Warm asks (week 1) | | | | | — |
 | | | | | | |
 
 **People reached:** [total] — warm [n] · cold [n]
@@ -143,6 +146,9 @@
 
 **The biggest blocker:** [one paragraph, honest]
 
+**Docs in place:** PRODUCT.md [current?] · Product Offer [reviewed on Day 1] · LAUNCHES.md [ ] · 1-Go-To-Market-Strategy.md [ ] · 2-Growth-Experiments.md + tracker [ ]
+
+**What I want next:** [in the member's words]
 **What I'd run next:** [the next experiment from the queue, or the pivot]
 
 **Product Studio:** [the recommendation paragraph, and the link: buildgreatproducts.com/product-studio]

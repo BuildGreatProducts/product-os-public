@@ -5,7 +5,7 @@
 **Started:** [date] · **Hours per session:** [n] · **Consecutive days:** [yes / as and when]
 **Status:** Open — Day [N] of 7
 
-*Seven sessions, not seven calendar days. The day counter advances by check-in. A session that ends without its proof is a miss; a gap between sessions is a gap.*
+*Seven sessions, not seven calendar days. A day is assigned at the check-in that names its block; the next check-in confirms its proof. No proof means a miss; time between check-ins is a gap, not a miss. The close sets Status to Closed.*
 
 ---
 
@@ -21,7 +21,7 @@
 | 6 | | | | |
 | 7 | | | | |
 
-*Edited by the member at enrol. Changes after that are logged below, dated.*
+*Edited by the member at enrol. Changes after that are logged under the session log, dated.*
 
 ---
 
@@ -52,9 +52,10 @@
 | 4 | | |
 | 5 | | |
 | 6 | | |
+| the day it passes | Ship in 7 - It's live! 🚀 | |
 | 7 | Ship in 7 completed! Here's what I learnt | |
 
-*The "Ship in 7 - It's live! 🚀" post goes out the day the smoke test passes, whatever the day number.*
+*The "It's live" post goes out the day the smoke test passes, whatever the day number. Handed-off days: draft the post with a `[proof]` slot, finish it when the proof lands.*
 
 ---
 
@@ -63,8 +64,9 @@
 *Filled at the close. Written to be brought to a Product Studio call as-is.*
 
 **Result:** [Hit / Partly hit / Missed] — [one sentence]
-**Live URL:** [url]
+**Live URL:** [url] · **Repo:** [url or path] · **Stack / hosting:** [one line, with monthly cost if known]
 **Smoke test:** [what a real customer did, and what happened] — [date]
+**Hours:** planned [n] · spent [n] · available going forward [n per week]
 
 **What shipped, by session:**
 1. [Day 1]
@@ -77,11 +79,18 @@
 
 **What was cut to make the week:** [roadmap items moved to later phases, design blocks merged, etc.]
 
+**Plan changes during the week:** [dated one-liners, from the session log]
+
+**Open findings from the audit:** [High / Medium items not yet fixed, from `docs/SECURITY-AUDIT.md`]
+
+**Docs in place:** PRODUCT.md [yes/no, current?] · COPY.md [ ] · DESIGN.md [ ] · PRD.md / ROADMAP.md [ ] · DEPLOY.md [ ] · LAUNCHES.md [ ]
+
 **The biggest blocker:** [one paragraph, honest]
 
 **What the app can do today:** [the core flow, in a sentence or two]
 **What it can't do yet:** [the honest list]
 
+**What I want next:** [revenue / users / polish / something else, in the member's words]
 **Next:** [`studio-sell-in-30` / the Develop checklist step / other]
 
 **Product Studio:** [the recommendation paragraph, and the link: buildgreatproducts.com/product-studio]
