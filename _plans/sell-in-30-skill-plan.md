@@ -45,10 +45,10 @@ Same mechanism as Ship in 7: a **block library**, composed into **four 7-session
 
 | Week | What it is | Ends with |
 | --- | --- | --- |
-| **1 · Foundations** | Backfill, deploy if needed, checkout live with a real test purchase, conversations with the warm network, then `studio-distribute-gtm-strategy` and `studio-distribute-growth-experiments` | Weekly read + Skool post |
-| **2 · Experiment 1** | The highest-leverage experiment from the member's own backlog, run to its pass bar | Read: **continue or kill** + Skool post |
-| **3 · Continue or next** | Continue experiment 1 (iterate or double down) or start the next from the queue | Read: continue or kill + Skool post |
-| **4 · Continue or next** | Same | Read: continue or kill + Skool post |
+| **1 · Foundations** | Backfill and **review the Product Offer**, **align the messaging on every acquisition surface** with it, deploy if needed, checkout live with a real test purchase, conversations with the warm network, then `studio-distribute-gtm-strategy` and `studio-distribute-growth-experiments` | Weekly read + Skool post |
+| **2 · Experiment 1** | The highest-leverage experiment from the member's own backlog, run to its pass bar, **every session's result captured in the experiment log** | Read: **continue or kill** + **pivot review** + Skool post |
+| **3 · Continue or next** | Continue experiment 1 (iterate or double down) or start the next from the queue | Read: continue or kill + pivot review + Skool post |
+| **4 · Continue or next** | Same | Read: continue or kill + pivot review + Skool post |
 | **End** | Sell Report, graduation Skool post, Product Studio call booking | |
 
 **Where the daily work comes from (decided, replaces the quota):** nothing in weeks 2–4 is a fixed block. `productos/distribute/2-Growth-Experiments.md` (written by the growth experiments skill in week one) names 1–3 experiments **running now**, each with a plain sentence, a "Do this" checklist, and a **Pass =** line stating the next move on pass and on fail, plus an ordered **up next** queue. The challenge takes the top experiment, spreads its "Do this" steps across sessions 1–5 of the week, uses session 6 for follow-ups, and reads it against its Pass = line on session 7. The result and decision go into `3-Growth-Experiments-Tracker.md` the way the Distribute checklist already says they should. Some experiments are outreach, some are content, listings, a founding offer, a conversion fix, a partnership; the mix is the member's, not the skill's. Cold outreach happens only when an experiment calls for it, and is logged as cold **(resolves the deferred Q8)**.
@@ -57,9 +57,41 @@ Same mechanism as Ship in 7: a **block library**, composed into **four 7-session
 
 ### The weekly shape (the same every week)
 
-- **Sessions 1–5:** one block a session. In week one the blocks come from the library below; in weeks 2–4 they are the running experiment's "Do this" steps.
+- **Sessions 1–5:** one block a session. In week one the blocks come from the library below; in weeks 2–4 they are the running experiment's "Do this" steps, and **every experiment session ends with the member feeding back what happened** (see "The experiment log" below).
 - **Session 6:** follow-ups only. Every open thread gets a reply; the checkout link goes to anyone who leaned in.
-- **Session 7: the weekly read.** `studio-launch` sitting two applied to the week (every response logged including silence, warm/cold, rung reached, believers added), plus in weeks 2–4 the experiment's result against its Pass = line and the decision: **continue** (double down or iterate) or **kill** (next experiment from the queue starts next week). Logged in the tracker and in `docs/SELL-IN-30.md`. **The read is the weekly Skool post.**
+- **Session 7: the weekly read.** Three parts, in order:
+  1. **The signal read.** `studio-launch` sitting two applied to the week: every response logged including silence, warm/cold, rung reached, believers added.
+  2. **Continue or kill** (weeks 2–4). The experiment's result against its Pass = line and the decision: **continue** (double down or iterate) or **kill** (next experiment from the queue starts next week). Logged in the tracker.
+  3. **The pivot review** (weeks 2–4, decided). Reads the week's experiment log against `productos/define/BONUS-Pivot-Framework.md` and says whether a pivot on **persona, product, or pricing** might improve results, or whether this is a distribution, execution, or patience problem and no pivot is warranted. Suggests, never decides; see below.
+
+  Logged in `docs/SELL-IN-30.md`. **The read is the weekly Skool post.**
+
+### The experiment log (decided: capture data every experiment session)
+
+The daily check-in in weeks 2–4 ends with a short structured feedback, four questions, answered in a minute, written as a row in the **Experiment Log** table of `docs/SELL-IN-30.md`:
+
+| Field | What the member answers |
+| --- | --- |
+| Step | which "Do this" step ran, and the artefact (post, listing, message batch, fix) |
+| Reach | how many people it reached or was sent to (a number, or "unknown") |
+| Response | how many responded, and the ladder rung each reached: none / reply / conversation / signup / activated / paid |
+| Verbatim | the most useful thing anyone said, in their words (or "silence") |
+| Surprise | one line: what happened that the member didn't expect |
+
+Same schema every session, so the rows add up. The log is what the weekly read, the pivot review, the next run of `studio-distribute-growth-experiments`, and the Sell Report all read. Verbatims flow to `2-Customer-Persona.md` (pain language) and the tracker's Cumulative Learnings, the same harvesting move `studio-launch` already makes. Over four weeks the member ends up with a dataset of their own market contact that no coach could reconstruct from memory, and a system that sees more of it each week.
+
+*What "the system learns" means here:* within the member's repo, each skill run reads the log and gets better at ranking, sizing and reading experiments for this product. Across members, the skill cannot phone home (never post on the member's behalf, never send their data anywhere); what reaches you is the Sell Report at the call and whatever the member chooses to share in Skool. The weekly post template includes one "what I learnt" line for that reason.
+
+### The pivot review (decided: at every weekly read from week two)
+
+Runs after continue/kill, reads the Experiment Log rows for the week and the tracker, and follows the Pivot Framework's own discipline:
+
+1. **Diagnose before pivoting.** Is it a **distribution** problem (people who try it like it, not enough try it), an **execution** problem (people hit the same wall and bounce), or a **patience** problem (fewer than a full send, under the framework's own thresholds)? If any of these, say so and recommend no pivot: more reps, fix the wall, or keep going.
+2. **Otherwise, read where people fall off** and map it to the one variable most likely to move it: no replies at all → **persona** (or channel, which is distribution); replies but no click on the link → **messaging or the offer**, a persona/product signal; clicks but no payment → **pricing**; paid or activated but didn't come back → **product**.
+3. **Name the validated piece the member keeps** and the one variable to change, per the framework's meta-rule. Never two.
+4. **Turn it into an experiment.** A pivot recommendation is written as a candidate for the up-next queue with its own Pass = line, so the following week tests it the same way as everything else. The member decides whether it jumps the queue.
+
+Tone: a suggestion with evidence, in the framework's own words. Two kills in a row upgrade it from "worth considering" to "the read recommends this pivot next week".
 
 ### Block library (week one)
 
@@ -67,7 +99,8 @@ Same mechanism as Ship in 7: a **block library**, composed into **four 7-session
 | --- | --- | --- | --- |
 | Setup check | `studio-setup` | wired repo | file diff |
 | Go live *(when not yet live)* | `studio-develop-golive`, then work `docs/DEPLOY.md` | live URL | smoke test as a real customer |
-| Define backfill | `studio-define-from-code` → `studio-define-product` | `docs/PRODUCT.md` | file exists |
+| Define backfill **+ offer review (decided)** | `studio-define-from-code` if the Define docs are missing, then **`studio-define-offer-review` always**, then `studio-define-product` | a sharpened `1-Product-Offer.md`, `docs/PRODUCT.md` | the review's edits applied; the member has read their offer out loud |
+| Messaging alignment (decided) | re-run `studio-design-landing-page` and/or `studio-design-app-listing` against the reviewed offer, then ship the copy changes to the live surface via the build loop with `studio-develop-design-review` (and `docs/COPY.md` where it exists) | live landing page / store listing that says what the offer says | before/after of the hero and the first screen of the listing |
 | Price it *(will charge, no price yet)* | `studio-define-pricing` | one launch price, the price line | price said out loud in the log |
 | Checkout live *(will charge)* | payments switched to live via the payments section of `studio-develop-golive`, a **real test purchase** | a working checkout link | test-purchase receipt |
 | Believers backfill | create `docs/LAUNCHES.md`; everyone who ever responded, with source and status | the believers list | file exists |
@@ -80,37 +113,41 @@ Same mechanism as Ship in 7: a **block library**, composed into **four 7-session
 
 | Block | Source | Proof |
 | --- | --- | --- |
-| Run the experiment | the running experiment's "Do this" steps, one or two a session | the step's own artefact (a post, a listing, a message batch, a shipped fix) |
+| Run the experiment | the running experiment's "Do this" steps, one or two a session, **ending with the four-question feedback** | the step's own artefact (a post, a listing, a message batch, a shipped fix) + a row in the Experiment Log |
 | Follow-ups | every open thread | replies sent |
-| Read: continue or kill | result vs the Pass = line; tracker decision | tracker row + Skool post |
+| Read: continue or kill + pivot review | result vs the Pass = line; tracker decision; the pivot review over the week's log rows | tracker row + pivot note + Skool post |
 | Next experiment *(after a kill)* | top of the up-next queue; re-run `studio-distribute-growth-experiments` if the queue is empty | experiment named, pass bar written |
 
 ### Composition rules
 
-1. **Checkout works before anyone is asked for money.** A real test purchase is the proof, by session 3 of week one at the latest. For a product staying free this block drops out.
-2. **Warm conversations before the strategy.** The believers and the warm network get the first ask in week one, checkout link in hand, before a channel is chosen. It needs no strategy and it's the most likely source of the first payment.
-3. **Strategy and experiments close week one.** GTM strategy and growth experiments run on sessions 4–5 (one session when hours are tight), so experiment 1 is named before the week-one read.
-4. **One experiment at a time.** The experiments file may list up to three running; the challenge runs the top one. A member with 4h+ a session may run two.
-5. **Continue or kill is decided by the pass bar, not by mood.** Pass → continue (double down or iterate per the file's own "on pass" move). Fail → kill, log the learning, next from the queue. Two kills in a row → the read also opens `productos/define/BONUS-Pivot-Framework.md` and asks whether the problem is the channel or the offer.
-6. **A payment before Day 30 does not end the challenge (decided).** It is logged, celebrated, posted (`Sell in 30 - My first customer! 🚀`), the customer is asked for the testimonial, and the remaining weeks run the next experiment for customers two and three.
-7. **Hours per session scale one plan, never two** (same rule as Ship in 7).
-8. **Thirty sessions, not thirty calendar days** (same rule as Ship in 7): consecutive days recommended, the counter advances by check-in, a session without its proof is a miss. Weekly reads happen every seventh session.
+1. **The offer is reviewed on session one, always (decided).** Even when the Define docs exist, `studio-define-offer-review` runs before anything is sent to anyone: every message, page and experiment in the 30 days is built from it.
+2. **Messaging follows the offer, before the first ask (decided).** The session after the review updates every acquisition surface the product has (landing page, app store listing, both if both exist) so the warm asks send people to a page that says what the message says. When hours are tight, the skill drafts the copy changes in the review session and the member ships them the same day.
+3. **Checkout works before anyone is asked for money.** A real test purchase is the proof, before the warm asks go out. For a product staying free this block drops out.
+4. **Warm conversations before the strategy.** The believers and the warm network get the first ask in week one, checkout link in hand, before a channel is chosen. It needs no strategy and it's the most likely source of the first payment.
+5. **Strategy and experiments close week one.** GTM strategy and growth experiments run on sessions 5–6 (one session when hours are tight), so experiment 1 is named before the week-one read.
+6. **One experiment at a time.** The experiments file may list up to three running; the challenge runs the top one. A member with 4h+ a session may run two.
+7. **Every experiment session ends with the feedback (decided).** No row in the Experiment Log, no proof for the day. The four questions take a minute; the log is the dataset everything downstream reads.
+8. **Continue or kill is decided by the pass bar, not by mood.** Pass → continue (double down or iterate per the file's own "on pass" move). Fail → kill, log the learning, next from the queue.
+9. **The pivot review suggests; the member decides (decided).** It runs at every read from week two, diagnoses before it recommends, names one variable at most, and writes its recommendation as a candidate experiment with a pass bar. Two kills in a row make the recommendation firm.
+10. **A payment before Day 30 does not end the challenge (decided).** It is logged, celebrated, posted (`Sell in 30 - My first customer! 🚀`), the customer is asked for the testimonial, and the remaining weeks run the next experiment for customers two and three.
+11. **Hours per session scale one plan, never two** (same rule as Ship in 7).
+12. **Thirty sessions, not thirty calendar days** (same rule as Ship in 7): consecutive days recommended, the counter advances by check-in, a session without its proof is a miss. Weekly reads happen every seventh session.
 
 ### Worked examples (ship in the skill as `plans/`)
 
 Only week one differs; weeks 2–4 are the experiment loop in every example.
 
-**Live, free, will charge** · S1 Define backfill + Price it · S2 Checkout live (test purchase) · S3 Believers backfill + Warm conversations · S4 Channel · S5 Experiments · S6 Follow-ups · S7 Read + post → W2–W4 experiment loop → S29 Sell Report · S30 Close.
+**Live, free, will charge** · S1 Define backfill + **Offer review** + Price it · S2 **Messaging alignment** · S3 Checkout live (test purchase) · S4 Believers backfill + Warm conversations · S5 Channel · S6 Experiments + follow-ups · S7 Read + post → W2–W4 experiment loop (each session: step + feedback; each read: signal, continue/kill, pivot review, post) → S29 Sell Report · S30 Close.
 
-**Live, priced, nobody has paid** · S1 Define backfill · S2 Checkout live (verify with a real purchase) · S3 Believers backfill + Warm conversations · S4 Channel · S5 Experiments · S6 Follow-ups · S7 Read + post → experiment loop.
+**Live, priced, nobody has paid** · S1 Define backfill + Offer review · S2 Messaging alignment · S3 Checkout live (verify with a real purchase) · S4 Believers backfill + Warm conversations · S5 Channel · S6 Experiments + follow-ups · S7 Read + post → experiment loop.
 
-**Live, free, staying free** (bar: one activated user) · S1 Define backfill · S2 Believers backfill · S3 Warm conversations (the ask is "try it", not "buy it") · S4 Channel · S5 Experiments (backlog leans on activation) · S6 Follow-ups · S7 Read + post → experiment loop.
+**Live, free, staying free** (bar: one activated user) · S1 Define backfill + Offer review · S2 Messaging alignment · S3 Believers backfill · S4 Warm conversations (the ask is "try it", not "buy it") · S5 Channel · S6 Experiments (backlog leans on activation) + follow-ups · S7 Read + post → experiment loop.
 
-**Not yet live, one deploy away** · S1 Go live (deploy guide) · S2 Go live (smoke test) + Define backfill · S3 Checkout live · S4 Warm conversations · S5 Channel + Experiments · S6 Follow-ups · S7 Read + post → experiment loop.
+**Not yet live, one deploy away** · S1 Go live (deploy guide) · S2 Go live (smoke test) + Define backfill + Offer review · S3 Messaging alignment + Checkout live · S4 Warm conversations · S5 Channel · S6 Experiments + follow-ups · S7 Read + post → experiment loop. The tightest week one; the skill says so at enrol.
 
-**Live with users, no revenue** · S1 Define backfill + Price it · S2 Checkout live · S3 Warm conversations to existing users first · S4 Channel · S5 Experiments (a founding offer to existing users is the obvious experiment 1) · S6 Follow-ups · S7 Read + post → experiment loop.
+**Live with users, no revenue** · S1 Define backfill + Offer review + Price it · S2 Messaging alignment · S3 Checkout live · S4 Warm conversations to existing users first · S5 Channel · S6 Experiments (a founding offer to existing users is the obvious experiment 1) + follow-ups · S7 Read + post → experiment loop.
 
-**Just shipped via Ship in 7** · S1 Announce (the launch post that was Ship in 7's stretch) + Believers backfill · S2 Checkout live · S3 Warm conversations · S4 Channel · S5 Experiments · S6 Follow-ups · S7 Read + post → experiment loop.
+**Just shipped via Ship in 7** · S1 Offer review + Announce (the launch post that was Ship in 7's stretch) · S2 Messaging alignment + Believers backfill · S3 Checkout live · S4 Warm conversations · S5 Channel · S6 Experiments + follow-ups · S7 Read + post → experiment loop.
 
 ## 3. Skill design
 
@@ -126,7 +163,9 @@ skills/studio-sell-in-30/
   plans/one-deploy-away.md
   plans/live-with-users.md
   plans/after-ship-in-7.md
-  SELL-IN-30-TEMPLATE.md  the docs/SELL-IN-30.md skeleton
+  SELL-IN-30-TEMPLATE.md  the docs/SELL-IN-30.md skeleton: header, week-one plan, the experiment
+                          loop slots, the Experiment Log table, weekly read slots (signal /
+                          continue-kill / pivot review), Skool post log, the Sell Report
 ```
 
 ### Frontmatter
@@ -149,24 +188,25 @@ skills/studio-sell-in-30/
 
 Identical mechanics to Ship in 7 (the counter advances by check-in; confirm the last session's proof first; log done/partial/missed; compression on misses; name today's one block; say what the next session looks like), **except that the Skool post is drafted only on read days, Day 0 and Day 30 (decided)**, plus:
 
-- **In weeks 2–4 the check-in reads `2-Growth-Experiments.md` first** and names the next "Do this" step of the running experiment as today's block. Experiment days log the step's artefact and every reply verbatim. Silence is a count of zero, logged.
+- **In weeks 2–4 the check-in reads `2-Growth-Experiments.md` first** and names the next "Do this" step of the running experiment as today's block.
+- **Every experiment session ends with the four-question feedback (decided)**: step and artefact, reach, response with rung, verbatim, surprise. Written as a row in the Experiment Log. Silence is a count of zero, logged. The check-in doesn't close without the row.
 - **Every reply is answered the same day.** The check-in starts by asking about open threads.
 - **Missed sessions compress within the week**, never across the seventh-session read: the read always happens on schedule, with whatever the week produced. Two consecutive misses shrink that week's experiment steps; they don't end the challenge.
 
 ### Mode 3 — Weekly read (Days 7, 14, 21, 28)
 
-The `studio-launch` sitting-two ritual applied to the week, written into `docs/SELL-IN-30.md` and `docs/LAUNCHES.md`, and posted to Skool. In weeks 2–4 it also reads the running experiment against its Pass = line, records the result and the decision (**continue or kill**) in `3-Growth-Experiments-Tracker.md`, and names next week's experiment. Two kills in a row open the Pivot Framework.
+The `studio-launch` sitting-two ritual applied to the week, written into `docs/SELL-IN-30.md` and `docs/LAUNCHES.md`, and posted to Skool. In weeks 2–4 it also (a) reads the running experiment against its Pass = line and records the result and the decision (**continue or kill**) in `3-Growth-Experiments-Tracker.md`, (b) runs the **pivot review** over the week's Experiment Log rows (diagnose first; then persona, product, or pricing, one at most; written as a candidate experiment with a pass bar), and (c) names next week's experiment. The post carries the decision and one "what I learnt" line.
 
 ### Mode 4 — Close (Day 30, or Day 31)
 
 1. **Check the bar honestly:** a payment (or, for a product staying free, an activated user), or not. Partial outcomes (a signup, a "send me the link") are logged on the ladder and named as what they are.
-2. **Write the Sell Report (decided: the pre-call brief):** result vs bar; people reached, warm/cold; believers gained; the rung reached each week; what the market said in its own words; the variable changed, if any; the biggest blocker. Structured in the shape the coach intake expects, so a member who books a call arrives with their situation documented. Ends with one line: *bring this to your call.*
+2. **Write the Sell Report (decided: the pre-call brief):** result vs bar; the Experiment Log totals (reach, responses, rungs) per experiment; people reached, warm/cold; believers gained; the rung reached each week; what the market said in its own words; every pivot review's recommendation and what the member did with it; the biggest blocker. Structured in the shape the coach intake expects, so a member who books a call arrives with their situation documented. Ends with one line: *bring this to your call.*
 3. **Draft the graduation Skool post** (`Sell in 30 completed! Here's what I learnt`).
 4. **The recommendation (decided):** join Product Studio and book a call at **buildgreatproducts.com/product-studio**, once, framed by outcome, in the closing message and the Sell Report. Paid → "you have a customer; a custom plan is how you get the next fifty." Not yet → "thirty days of real signal is exactly what a coach turns into the plan that works." The pitch line is drafted in the skill in the ProductOS voice, for you to edit. Then what to run meanwhile: the Distribute loop (`studio-distribute-growth-experiments`) or the pivot framework.
 
 ### Failure patterns (named in SKILL.md)
 
-The Friendly Echo (warm praise read as market signal) · The Rung Leap (one reply → "validated" → a silent week of building) · The Mood Kill (killing an experiment before its pass bar because it felt slow) · The Zombie Experiment (continuing one that failed its pass bar because it felt close) · The Pitch-Slap · The Silent Zero · The Discount Spiral (dropping the price every time someone hesitates) · The Fresh-Start Reflex (a new channel every week) · The Feature Excuse ("they'll pay once I add X").
+The Friendly Echo (warm praise read as market signal) · The Rung Leap (one reply → "validated" → a silent week of building) · The Mood Kill (killing an experiment before its pass bar because it felt slow) · The Zombie Experiment (continuing one that failed its pass bar because it felt close) · The Empty Log (an experiment day with no feedback row, so the read has nothing to read) · The Triple Pivot (changing persona, product and price in the same week) · The Pitch-Slap · The Silent Zero · The Discount Spiral (dropping the price every time someone hesitates) · The Fresh-Start Reflex (a new channel every week) · The Feature Excuse ("they'll pay once I add X").
 
 ---
 
@@ -221,6 +261,13 @@ Specified once in `ship-in-7-skill-plan.md` §5–§6 and shared. Sell-in-30-spe
 9. **Founding offer:** drafted from the member's own anchors each time, no house pattern.
 10. **Existing material:** none to mirror (assumed, as for Ship in 7).
 
+**Decided in the third pass:**
+
+11. **Offer review on session one, always.** `studio-define-offer-review` runs before anything is sent.
+12. **Messaging alignment the session after.** Landing page and/or app store listing brought in line with the reviewed offer and shipped live before the warm asks.
+13. **Data capture every experiment session.** A four-question feedback (step, reach, response with rung, verbatim, surprise) written as an Experiment Log row; no row, no proof. The log is what the reads, the pivot review, the experiments skill and the Sell Report read.
+14. **A pivot review at every weekly read from week two**, after continue/kill: diagnose (distribution, execution, patience) before recommending; then persona, product, or pricing, one at most, written as a candidate experiment with a pass bar. Suggests, never decides; firm after two kills in a row.
+
 ---
 
 ## 7. Risks
@@ -231,3 +278,5 @@ Specified once in `ship-in-7-skill-plan.md` §5–§6 and shared. Sell-in-30-spe
 4. **Cold outreach etiquette.** Community rules and platform norms. Mitigation: the launch skill's Pitch-Slap rule and "check the community's self-promotion rules" carry over; cold sends are always logged as cold.
 5. **Duplicated loop mechanics with Ship in 7.** Decided: duplicated, with a CHANGELOG rule that a change to one loop is a change to both.
 6. **Experiments sized wrong for a week.** A backlog item that needs a month can't be read on session 7. Mitigation: the challenge briefs the experiments skill with the clock; anything bigger is split into the up-next queue.
+7. **Week one is now seven blocks in seven sessions.** Offer review and messaging alignment add two; at low hours the one-deploy-away path doesn't fit. Mitigation: the composition rules name the merges (review + drafted copy in one session; strategy + experiments in one), and enrol says which path is tight.
+8. **The pivot review over-recommends.** A model reading four log rows can see pivots everywhere. Mitigation: it must diagnose distribution/execution/patience first, cite the rows it reads, name the validated piece being kept, and stay a suggestion until two kills.
