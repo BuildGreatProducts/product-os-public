@@ -5,8 +5,9 @@
 
 - The product strategy system lives in `productos/` — checklists, templates, and skills. The strategy docs are the source of intent; don't guess at product decisions the docs already answer.
 - The programme plan is `docs/PLAN.md`, when present (adopted at setup by `studio-setup`) — consult it before starting any phase work.
-- The canonical product documents live in `docs/` at the repo root (`PRODUCT.md`, `COPY.md`, `DESIGN.md`, `PRD.md`, `ROADMAP.md`, `LAUNCHES.md`, `SECURITY-AUDIT.md`, …). ProductOS skills write them; they may sit alongside the repo's own docs.
+- The canonical product documents live in `docs/` at the repo root (`PRODUCT.md`, `COPY.md`, `DESIGN.md`, `PRD.md`, `ROADMAP.md`, `LAUNCHES.md`, `SECURITY-AUDIT.md`, the challenge logs `SHIP-IN-7.md` / `SELL-IN-30.md`, …). ProductOS skills write them; they may sit alongside the repo's own docs.
 - Build-loop plan files are `docs/ROADMAP.md` and `docs/REFACTOR.md` — never `docs/PLAN.md` (the programme plan, no checkboxes) and never `productos/*-CHECKLIST.md`.
+- If `docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` exists with `Status: Open`, a challenge is running: start every session with that challenge's daily check-in (`studio-ship-in-7` / `studio-sell-in-30`) before any other work.
 - Full system orientation: `productos/AGENTS.md`.
 <!-- END PRODUCTOS -->
 

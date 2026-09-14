@@ -42,6 +42,7 @@ Locate in the ProductOS folder (`productos/` at the app repo root, or the curren
 4. **The Launch Log** — `docs/LAUNCHES.md`, if it exists. The believers list and every previous entry. Created by this skill at the end of launch #1.
 5. **The Mini-Launch worksheet** — `productos/define/4-Mini-Launch.md`. Launch #1's worksheet; the skill fills it in place (sections 1–2 in sitting one, 3–6 in sitting two).
 6. **Phase payloads, per launch:** #2 reads `productos/design/4a-Landing-Page.md` (or `4b-App-Store-Listing.md`), `productos/design/1-Product-Identity.md`, and `productos/design/2-Magic-Moment.md` for the "look what it looks like" material. #3 reads `docs/DEPLOY.md` (or wherever the app's URL/TestFlight link lives) and `productos/design/2-Magic-Moment.md` — activation is defined there. #4 reads `productos/distribute/1-Go-To-Market-Strategy.md` for the primary channel and `docs/PRODUCT.md` for the story.
+7. **An open challenge** — `docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` with `Status: Open`, if either exists. The challenge names which session this launch (or warm ask) falls on: that session is the send deadline, inside the 48-hour rule. Sell in 30's week-one warm ask is sitting one scoped to believers and named warm contacts only; its weekly read is sitting two applied to the whole week.
 
 ## Workflow — Sitting one: arm and ship
 

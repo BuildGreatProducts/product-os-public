@@ -15,6 +15,8 @@ This is the loop that runs *after* the first 30 days. `productos/distribute/1-Go
 
 ## Inputs
 
+> **Inside a challenge:** if `docs/SELL-IN-30.md` is open, read its header and Experiment Log first. The bar (a payment, or an activated user) and the clock (three experiment-weeks) override the month-two framing: rank the backlog by *closest to the bar inside one week*, size every experiment to one week with a Pass = line the member can read on the week's seventh session, split anything bigger into the up-next queue, and treat the Experiment Log's rows and verbatims as the baseline. In challenge mode **Running now holds exactly one experiment**, the top-ranked; every other candidate goes to Up next, so the week runs one experiment and the seventh-session read decides on one.
+
 This skill needs **channel context** (which channels the user is running and what "working" means for each), **product context** (so experiments are specific), an **output target**, and the **experiments playbook**. Channel and product context come one of two ways depending on where the skill runs — the rest of the workflow is identical.
 
 ### Channel context — Path A (standard): ProductOS in the repo — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout

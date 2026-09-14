@@ -16,6 +16,8 @@ The most common ways a first go-to-market fails are picking too many channels, p
 
 ## Inputs
 
+> **Inside a challenge:** if `docs/SELL-IN-30.md` is open, read its header first. The bar (a payment, or an activated user) and the clock (three experiment-weeks after this one) shape the choice: the primary channel is the one that can reach the bar inside that window, its "Do this" list is what the member runs this week, and the second and third channels stay written but don't start until after the challenge.
+
 This skill needs three things: **product context** (what the product is, who it's for, how it makes money), an **output target** (where the strategy gets written), and the **channel playbook** (how to choose and run channels). Product context is gathered one of two ways — the standard path reads the ProductOS folder (`productos/` at the app repo root, or the current folder in a standalone ProductOS checkout); the fallback covers a repo with no ProductOS at all — but the rest of the workflow is identical either way.
 
 ### Product context — Path A (standard): ProductOS in the repo
