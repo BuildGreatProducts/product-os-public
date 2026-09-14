@@ -1,6 +1,6 @@
 # Pricing Strategy Framework
 
-A worksheet for deciding how your product earns and what it costs — filled in by `studio-define-pricing` in a 30–45 minute session. Keep each answer to 1-2 sentences; the tables in sections 3 and 5 are the exception.
+A worksheet for deciding how your product earns and what it costs — filled in by `define-pricing` in a 30–45 minute session. Keep each answer to 1-2 sentences; the tables in sections 3 and 5 are the exception.
 
 This is the canonical pricing document. It answers, in order: who pays, how the business earns, what the price multiplies by and how people start, what the price sits against, one launch price, and the sentence that carries it into your Mini-Launch (`4-Mini-Launch.md`). The economics behind the price — what each customer costs to serve, why a clone doesn't kill you, the one number to watch — are the optional deep dive (`BONUS-Business-Strategy-Deep-Dive.md`) for when the money questions get real.
 

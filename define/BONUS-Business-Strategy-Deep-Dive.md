@@ -1,6 +1,6 @@
 # BONUS — Business Strategy Deep Dive
 
-An **optional** worksheet for the economics behind your price, filled in by `studio-define-business-strategy`. Your `3-Pricing-Strategy.md` owns the business model, the pricing model, and the price. This deep dive adds the three things that make them survivable: what each customer costs you to serve, why a clone doesn't kill you in six months, and the one number to watch. Most people don't need it in the first weeks. Run it when the money questions get real: before spending on paid channels in Distribute, when revenue starts arriving, or when an investor or co-founder asks how the model works. Keep each answer to 1-2 sentences; the cost table in section 1 is the exception.
+An **optional** worksheet for the economics behind your price, filled in by `define-business-strategy`. Your `3-Pricing-Strategy.md` owns the business model, the pricing model, and the price. This deep dive adds the three things that make them survivable: what each customer costs you to serve, why a clone doesn't kill you in six months, and the one number to watch. Most people don't need it in the first weeks. Run it when the money questions get real: before spending on paid channels in Distribute, when revenue starts arriving, or when an investor or co-founder asks how the model works. Keep each answer to 1-2 sentences; the cost table in section 1 is the exception.
 
 ---
 

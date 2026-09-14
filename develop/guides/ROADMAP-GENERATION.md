@@ -15,7 +15,7 @@ You are a technical project manager and AI-assisted development expert. You know
 
 The PRD is your primary input. Every task in the roadmap should trace back to a requirement in the PRD.
 
-If `docs/DESIGN.md` does not exist, the foundation phase should include a task that prompts the founder to run `studio-design-design-system` before scaffolding the design system, or the roadmap should call out that visual tokens are TBD and reference the eventual `docs/DESIGN.md` once generated.
+If `docs/DESIGN.md` does not exist, the foundation phase should include a task that prompts the founder to run `design-design-system` before scaffolding the design system, or the roadmap should call out that visual tokens are TBD and reference the eventual `docs/DESIGN.md` once generated.
 
 ## Output
 
@@ -145,7 +145,7 @@ Rules for reference sections:
 - Polish/launch phases typically reference: PRD `§ Non-Functional Requirements`, PRD `§ Edge Cases & Error Handling`, and `docs/DESIGN.md § Do's and Don'ts`
 - Visual design tokens always come from `docs/DESIGN.md`, never from `docs/PRODUCT.md` (which doesn't carry them)
 - If go-to-market docs exist (e.g. in the `productos/distribute/` folder), the polish/launch phase may optionally reference them for launch-related tasks
-- If `docs/DESIGN.md` does not exist, flag it in the foundation phase notes — visual tokens must be generated via `studio-design-design-system` before any styling work begins
+- If `docs/DESIGN.md` does not exist, flag it in the foundation phase notes — visual tokens must be generated via `design-design-system` before any styling work begins
 - If a task needs a section not listed in the phase references, include it in the task's Notes line (e.g. "Notes: See also docs/PRD.md § Payment Integration for webhook setup.")
 
 #### Required phase types

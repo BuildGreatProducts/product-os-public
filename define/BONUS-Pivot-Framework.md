@@ -84,7 +84,7 @@ Start at the top. Stop at the first "yes."
 
 **Are users using only 1 of your 5 features daily, and ignoring the rest, or asking you to do something adjacent to what you built?**→ **Product Pivot.** The audience and price are right — the mechanism is bloated or pointed at the wrong outcome.
 
-**Are *all three* broken — no buyers, no usage, no clarity on who it's for?**→ Don't pivot. Go back to rung one of the launch ladder — re-run `studio-launch` with a fresh mini-launch — and rebuild signal from scratch. You don't have enough to triangulate from.
+**Are *all three* broken — no buyers, no usage, no clarity on who it's for?**→ Don't pivot. Go back to rung one of the launch ladder — re-run `mini-launch` with a fresh mini-launch — and rebuild signal from scratch. You don't have enough to triangulate from.
 
 ---
 

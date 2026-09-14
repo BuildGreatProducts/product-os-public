@@ -1,6 +1,6 @@
 # BONUS - Business Models
 
-The sixteen ways an app business can earn, one section each. Read by `studio-define-pricing` when it fills section 2 of your Pricing Strategy (*How the Business Earns*); useful on its own whenever you are choosing, questioning, or changing how the money arrives.
+The sixteen ways an app business can earn, one section each. Read by `define-pricing` when it fills section 2 of your Pricing Strategy (*How the Business Earns*); useful on its own whenever you are choosing, questioning, or changing how the money arrives.
 
 Start from your Product Offer: **customer, pain, outcome, mechanism, proof, guarantee**. The business model is the answer to *who pays, and for what relationship or value* — it is not the billing unit (seat, document, location), not the packaging (tiers, add-ons), and not the entry route (free tier, trial, pilot). Those live in [BONUS - Pricing Models](BONUS-Pricing-Models.md). Pick **one primary model**; add a secondary only if it earns its place.
 

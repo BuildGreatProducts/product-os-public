@@ -1,6 +1,6 @@
 # BONUS - Pricing Models
 
-Twenty-four ways to shape a price — billing units, packaging, quantity calculations, payment timing, entry routes — followed by three chapters on setting and presenting the number. Read by `studio-define-pricing` when it fills sections 3 to 5 of your Pricing Strategy (*Pricing Model*, *Price Anchors*, *Launch Price*); useful on its own whenever a plan, unit, or discount needs designing.
+Twenty-four ways to shape a price — billing units, packaging, quantity calculations, payment timing, entry routes — followed by three chapters on setting and presenting the number. Read by `define-pricing` when it fills sections 3 to 5 of your Pricing Strategy (*Pricing Model*, *Price Anchors*, *Launch Price*); useful on its own whenever a plan, unit, or discount needs designing.
 
 Choose the business model first ([BONUS - Business Models](BONUS-Business-Models.md)), then combine only the layers your buyer needs. Freemium is an entry choice. Seats are a billing unit. Annual payment is a cadence. They can all belong to one offer, and none of them is a business model.
 

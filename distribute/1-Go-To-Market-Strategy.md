@@ -1,6 +1,6 @@
 # Go-To-Market Plan
 
-*Filled in by `studio-distribute-gtm-strategy`. This is your execution plan — only your specific instructions live here; the reasoning, channel playbooks, and frameworks stay in the skill and the BONUS docs.*
+*Filled in by `distribute-gtm-strategy`. This is your execution plan — only your specific instructions live here; the reasoning, channel playbooks, and frameworks stay in the skill and the BONUS docs.*
 
 **Customer:** [who they are + where they already gather, one line]
 
@@ -65,6 +65,6 @@
 
 ## Next
 
-When your channel is working, run `studio-distribute-growth-experiments` to sharpen it — one channel at a time.
+When your channel is working, run `distribute-growth-experiments` to sharpen it — one channel at a time.
 
 *Based on: [inputs and research used — one line, filled by the skill]*
