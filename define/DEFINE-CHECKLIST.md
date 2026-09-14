@@ -1,6 +1,6 @@
 # Define — Checklist
 
-Work top to bottom. Each step runs a single skill and produces a single file. The whole phase fits in the first two weeks: three short documents, then the **Mini-Launch** — your offer in front of real potential customers, with the win bar set at one reply. The final step rolls everything into `docs/PRODUCT.md` — the readable summary every downstream Design and Develop skill reads.
+Work top to bottom. Each step runs a single skill and produces a single file. The whole phase fits in the first two weeks: three documents, then the **Mini-Launch** — your offer in front of real potential customers, with the win bar set at one reply. The final step rolls everything into `docs/PRODUCT.md` — the readable summary every downstream Design and Develop skill reads.
 
 If `docs/PLAN.md` exists (your programme plan, shipped with coached copies of ProductOS), it may mark steps below as fast-tracked or skipped for you — follow it; this checklist remains the source of truth for how each step runs.
 
@@ -24,8 +24,8 @@ The Mini-Launch is launch #1 of four. Every later phase closes by relaunching to
 
 ## Step 3 — Pricing Strategy
 
-- **What to do:** Run `studio-define-pricing`. A 20–30 minute session — one honest number, not a full monetization model.
-- **What it does:** Produces `productos/define/3-Pricing-Strategy.md` — who pays, one launch price said out loud, 2–3 real anchors, and the plain-English price line your Mini-Launch will carry. *(Want the full model — revenue model, tiers, margins, moat, north star? That's `BONUS-Business-Strategy-Deep-Dive.md`, filled by `studio-define-business-strategy`. Most people don't need it until money questions get real — typically before spending on paid channels in Distribute.)*
+- **What to do:** Run `studio-define-pricing`. A 30–45 minute session — how the product earns and what it costs, decided once.
+- **What it does:** Produces `productos/define/3-Pricing-Strategy.md` — who pays, which business model matches how the value arrives, the pricing model (billing unit, plans, entry, cadence), 2–3 real anchors, one launch price with the value, cost, and anchor lines behind it, and the plain-English price line your Mini-Launch will carry. Draws on `BONUS-Business-Models.md` and `BONUS-Pricing-Models.md`. *(Want the economics — cost & margin, moat, north star? That's `BONUS-Business-Strategy-Deep-Dive.md`, filled by `studio-define-business-strategy`. Most people don't need it until money questions get real — typically before spending on paid channels in Distribute.)*
 
 ## Step 4 — Mini-Launch ★ *the quick win*
 

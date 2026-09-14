@@ -20,7 +20,7 @@
 
 - **No Words block.** Identity and the copy guide are worth having, but not this week. The design system gives the build its tokens; `docs/COPY.md` can come after launch. If hours allow (4h+), add `studio-design-ux-writing` to Day 2 so the first screens are copy-correct.
 - **The spec is the scope control.** `studio-develop-prd-roadmap` will want to scope a full MVP; brief it with the challenge: one phase, the magic moment and the path to it, everything else in "later". The roadmap must fit two build days.
-- **Day 1 is the long one.** Four Define skills in one sitting is possible because the challenge sets the pace: the offer-builder's interview, then persona and pricing at their fastest, then the synthesis. No web-research spirals; the pricing skill's 20-minute session is the model.
+- **Day 1 is the long one.** Four Define skills in one sitting is possible because the challenge sets the pace: the offer-builder's interview, then persona and pricing at their fastest, then the synthesis. No web-research spirals; the pricing skill's fast path (about thirty minutes: one model, one unit, one number) is the model.
 - **Build days are the only days that can absorb more hours.** If the member has 4h+, Day 4 usually finishes early; pull the quality gate forward and give Day 6 a full buffer.
 
 ## Compression (a missed or short session)

@@ -1,6 +1,6 @@
 # BONUS - Real Business Strategy Examples
 
-Five filled-in canvases across real software businesses. Use them as reference when working through your own framework. Figures are drawn from public reporting and founder interviews where available; exact internals (margins, North Star targets) are reasonable estimates marked with \~.
+Six filled-in canvases across real software businesses. `studio-define-pricing` reads the Revenue Model and Pricing Ladder rows as calibration for the business model and pricing model; `studio-define-business-strategy` reads the Cost & Margin, Unfair Advantage, and North Star rows. Use them as reference when working through your own framework. Figures are drawn from public reporting and founder interviews where available; exact internals (margins, North Star targets) are reasonable estimates marked with \~.
 
 ---
 

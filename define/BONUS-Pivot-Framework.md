@@ -240,7 +240,7 @@ A price pivot is when the product and the persona are both working, but money is
 
 | Move | What you do | When it fits |
 | --- | --- | --- |
-| **Change the model** | Switch revenue model entirely (e.g. subscription → one-time, LTD → annual, freemium → paid trial) | The model is fighting your customer's mental model of how this category gets bought |
+| **Change the model** | Switch business model entirely (e.g. subscription → one-time, LTD → annual, freemium → paid trial) | The model is fighting your customer's mental model of how this category gets bought |
 | **Re-tier** | Keep the model, redesign the tiers (engineer a middle default, add a cap, kill a tier) | You have one flat price or three tiers nobody picks the middle of |
 | **Re-anchor** | Move the price up or down significantly to land near a category anchor | Your price is in no-man's-land — neither "cheap" nor "premium" |
 | **Repackage** | Same total revenue, different bundle (per-seat vs. per-usage, BYOK vs. flat, agency vs. team) | The buyer can't get sign-off because the unit you bill on is wrong for their budget |
@@ -249,10 +249,10 @@ A price pivot is when the product and the persona are both working, but money is
 
 | Stays | Changes |
 | --- | --- |
-| The product (every feature) | The revenue model in [BONUS - Business Strategy Deep Dive](BONUS-Business-Strategy-Deep-Dive.md#1-revenue-model) |
-| The persona | The pricing ladder in [BONUS - Business Strategy Deep Dive](BONUS-Business-Strategy-Deep-Dive.md#2-pricing-ladder) |
+| The product (every feature) | The business model in [3. Pricing Strategy](3-Pricing-Strategy.md#2-how-the-business-earns) |
+| The persona | The pricing model and launch price in [3. Pricing Strategy](3-Pricing-Strategy.md#3-pricing-model) |
 | The distribution channels | The willingness-to-pay anchors in [2. Customer Persona](2-Customer-Persona.md#10-willingness-to-pay) |
-| The outcome and mechanism | The packaging and what's included per tier |
+| The outcome and mechanism | The packaging and what's included per plan |
 
 ### Real examples
 
@@ -276,7 +276,7 @@ A price pivot is when the product and the persona are both working, but money is
 
 - **Discounting to fix a value problem.** If nobody buys at $99, $49 won't fix it. They didn't see the value at $99. Drop the price only after you've fixed the offer, the persona, or the proof.
 - **Adding a free tier "for funnel."** Freemium kills more first apps than it makes. Free users cost more in support than they pay you. Add freemium only when you have a clear paid-conversion funnel that already works.
-- **Burying the ladder in features.** A pricing ladder works when each tier maps to a recognizable buyer (solo / team / agency). Don't differentiate by feature flags nobody can compare.
+- **Burying the plans in features.** Plans work when each one maps to a recognizable buyer (solo / team / agency). Don't differentiate by feature flags nobody can compare.
 - **Testing pricing on your audience.** Your followers will pay anything to support you. Test new prices on strangers in the ICP, from channels that don't know your name.
 - **Pivoting price too often.** Once per quarter is healthy. Once a week trains your audience to wait you out.
 

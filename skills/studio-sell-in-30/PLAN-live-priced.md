@@ -18,7 +18,7 @@
 
 - **Day 3 is a verification first, a setup only if test mode is found.** Priced products with no real payments are common: a Stripe integration in test mode, a checkout that 404s on mobile, a webhook pointing at a dead URL. Walk it as a stranger. Anything found is fixed the same day.
 - **A conversion-path audit is a natural experiment 1** on this path (`studio-develop-cro-audit` on landing, pricing, checkout, then the top three fixes). Let the growth experiments skill rank it against the channel experiments rather than fixing it blind on Day 3.
-- **If the price has never been said out loud with reasoning**, `studio-define-pricing` on Day 1 is twenty minutes well spent. A price that was guessed is a pricing experiment waiting to happen.
+- **If the price has never been said out loud with reasoning**, `studio-define-pricing` on Day 1 is thirty minutes well spent. A price that was guessed is a pricing experiment waiting to happen.
 
 ## Compression (a missed or short session)
 

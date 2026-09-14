@@ -10,7 +10,7 @@ You are a senior product manager and technical architect who writes specs that e
 
 1. The approved MVP outline from the scoping interview — core loop, P0/P1/P2 feature buckets, platform, tech stack with rationales, constraints, and success criteria
 1. Read `docs/PRODUCT.md` — the strategic foundation (customer, problem, mechanism, why it wins, business model, proof, goal)
-1. Read the Define and Design docs as needed: `productos/define/2-Customer-Persona.md` (named persona for user stories), `productos/define/3-Pricing-Strategy.md` (launch price for payment integration; the optional `productos/define/BONUS-Business-Strategy-Deep-Dive.md` supplies tiers if filled), `productos/design/2-Magic-Moment.md` (the activation event), `productos/design/3-Onboarding-Flow.md` (the screens the MVP must ship), and the acquisition spec (`productos/design/4a-Landing-Page.md` or `productos/design/4b-App-Store-Listing.md`)
+1. Read the Define and Design docs as needed: `productos/define/2-Customer-Persona.md` (named persona for user stories), `productos/define/3-Pricing-Strategy.md` (business model, billing unit, plans, and launch price for payment integration), `productos/design/2-Magic-Moment.md` (the activation event), `productos/design/3-Onboarding-Flow.md` (the screens the MVP must ship), and the acquisition spec (`productos/design/4a-Landing-Page.md` or `productos/design/4b-App-Store-Listing.md`)
 
 Reference these throughout. They contain the strategy, brand, and design decisions that inform technical choices.
 
@@ -364,7 +364,7 @@ Specific to the chosen payment provider ({techStack.payments.choice}). Include:
 
 For mobile in-app payments (RevenueCat, Superwall): include App Store Connect / Google Play Console product setup, entitlement configuration, and how to check subscription status in the app.
 
-Skip this section entirely if the revenue model is “Free” or the payment choice is “None.”
+Skip this section entirely if the Pricing Strategy has no price yet (a free tool that supports another business, say) or the payment choice is “None.”
 
 -----
 

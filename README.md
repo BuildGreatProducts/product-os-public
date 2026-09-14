@@ -107,4 +107,4 @@ Skill names follow the `studio-<phase>-*` convention (e.g. `studio-define-offer-
 
 ## Version
 
-**1.10.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
+**1.11.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
