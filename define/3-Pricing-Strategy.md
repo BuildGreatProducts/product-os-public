@@ -119,7 +119,7 @@ For each anchor, note where you sit relative to it *and why* — replaces it, do
 | Usage / credits | per-unit at 3–5× your delivery cost | base plan + overage |
 | Paid pilot / productised service | $500–5,000 fixed scope | pilot → retainer |
 
-Close with the sanity line: **price − direct cost per unit at heavy use = $___** (it must be positive; if it isn't, change the unit, the cap, or the price before you launch). A base-plus-overage product straddles two rows above and runs the line twice: at the included allowance, and at heavy use with the overage counted in the price.
+Close with the sanity line: **plan price − total direct cost to serve a heavy customer for the period (per-unit cost × heavy-use quantity) = $___** (it must be positive; if it isn't, change the unit, the cap, or the price before you launch). A base-plus-overage product straddles two rows above and runs the line twice: at the included allowance, and at heavy use with the overage counted in the price.
 
 **Your answer:**
 

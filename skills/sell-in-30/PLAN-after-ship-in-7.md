@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | 1 | **Offer review + announce** | `define-offer-review` on the offer Ship in 7 wrote or extracted; `define-product` refreshed; then `mini-launch` — the "it's live" post that was Ship in 7's stretch, if it didn't ship | a sharpened offer; the live post screenshot; `docs/LAUNCHES.md` started |
 | 2 | **Messaging alignment + believers backfill** | landing page / listing copy from the reviewed offer, shipped; everyone who responded to the launch post onto the believers list | before/after of the live hero; the believers list |
-| 3 | **Price it + checkout live** | `define-pricing` if there is no price; payments live and a real test purchase (skip if staying free) | the price line; the receipt |
+| 3 | **Price it + checkout live** | `define-pricing` if `productos/define/3-Pricing-Strategy.md` is missing or still has `**Your answer:**` placeholders; payments live and a real test purchase (skip both if staying free) | the price line; the receipt |
 | 4 | **Warm conversations** | `mini-launch` sitting one to believers and named warm contacts, checkout link in hand (the "try it" link if the product stays free) | sent-folder screenshot |
 | 5 | **Channel** | `distribute-gtm-strategy` | `1-Go-To-Market-Strategy.md` |
 | 6 | **Experiments + follow-ups** | `distribute-growth-experiments`, briefed with the bar and the clock | `2-Growth-Experiments.md`; tracker seeded |

@@ -23,7 +23,7 @@ Before starting, locate the following in the ProductOS folder — `productos/` a
 3. **The Business Models reference** — usually `BONUS-Business-Models.md`. **Required.** Read the "Start from how the value arrives" table in full; read only the 1–2 family sections the hypothesis points at. Each family carries what tends to fail, a worked economics example, and a first experiment — quote them for the user's product.
 4. **The Pricing Models reference** — usually `BONUS-Pricing-Models.md`. **Required.** Read "Keep the layers separate" and the three worked combinations in full (they are shapes, not answers — never retrofit the user's product onto one); read only the mechanic sections matching the unit, plans, entry, and cadence under discussion; read chapter 25 (Setting your price) including the delivery-cost cheat sheet when building the launch price.
 5. **The Customer Persona** — usually `2-Customer-Persona.md`, if filled in. Optional but the single most useful input: willingness-to-pay, anchor products, and budget bucket come from here and set the value ceiling.
-6. **The Business Strategy examples** — usually `BONUS-Real-Business-Strategy-Examples.md`. Calibration only: the Revenue Model and Pricing Ladder rows show what a well-matched model and ladder look like across six real businesses. Never retrofit the user onto one.
+6. **The Business Strategy examples** — usually `BONUS-Real-Business-Strategy-Examples.md`. Calibration only: the How the Business Earns and Pricing Model rows show what a well-matched model and plan structure look like across six real businesses. Never retrofit the user onto one.
 7. **The Launch Log** — `docs/LAUNCHES.md`, if present. A stranger who asked about the price is worth more than any benchmark.
 
 If the Product Offer is missing or mostly empty, stop and point the user to `define-offer-builder` first.
@@ -61,7 +61,7 @@ Build three lines, then commit one number for the default plan:
 - **Cost floor** — direct delivery cost per billing unit for a **heavy** customer, from the delivery-cost cheat sheet: platform fees, inference, failed attempts, storage, support. Tag it `[working assumption]` when unmeasured. Don't skip this because the user has no invoices yet; an order of magnitude is enough to catch a price that loses money on its best customers.
 - **Anchor position** — where the number sits against section 4.
 
-Place the product in the starting-bands table (a base-plus-overage product straddles two rows: the base plan's band and the per-unit rule), pick **one number** for the default plan, and run the sanity line: price − direct cost per unit at heavy use. For base-plus-overage, run it twice — at the included allowance and at heavy use with the overage counted in the price. If it's negative, change the unit, add a cap, or raise the price — not later, now.
+Place the product in the starting-bands table (a base-plus-overage product straddles two rows: the base plan's band and the per-unit rule), pick **one number** for the default plan, and run the sanity line: plan price − total direct cost to serve a heavy customer for the billing period (per-unit cost × heavy-use quantity). For base-plus-overage, run it twice — at the included allowance and at heavy use with the overage counted in the price. If it's negative, change the unit, add a cap, or raise the price — not later, now.
 
 ### 7. Write the price line (section 6)
 

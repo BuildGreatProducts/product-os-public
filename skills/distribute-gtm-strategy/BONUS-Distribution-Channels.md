@@ -1,6 +1,6 @@
 # BONUS - Distribution Channels
 
-*A bonus asset for ProductOS — the ten ways a first-time builder gets a product in front of strangers, which one to start with, and what "working" actually looks like for each.*
+*A bonus asset for ProductOS — the twelve ways a first-time builder gets a product in front of strangers, which one to start with, and what "working" actually looks like for each.*
 
 [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) tells you *which software* to run. This doc comes first — it tells you *which channel to pick* and how to run it. A channel is the road between your product and a stranger's attention. There are only about twelve that matter for a first product, and you do not need all of them. You need **one** that fits your customer, run well enough to produce real revenue, before you touch a second.
 

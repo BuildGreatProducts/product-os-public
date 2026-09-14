@@ -46,7 +46,7 @@ From this, form a **working hypothesis** in one paragraph: likely cost-per-custo
 
 Spend real but focused effort here. Use web search and any connected research tools to investigate:
 
-- **Cost benchmarks for the category** — typical gross margin range for the product shape (SaaS ~70–85%, AI apps with API costs often 40–60%, productized services 40–60% unless solo, marketplaces 20–40% take-rate), and current unit costs for the mechanism's expensive parts (model pricing per job, storage, platform fees).
+- **Cost benchmarks for the category** — typical gross margin range for the product shape (SaaS ~70–85%, AI apps with API costs often 40–60%, productized services 40–60% unless solo; for marketplaces the comparable figure is a 20–40% take-rate, not a margin), and current unit costs for the mechanism's expensive parts (model pricing per job, storage, platform fees).
 - **The category's typical north star** — what metric do successful companies in this category track publicly? Loom tracks weekly active creators; indie Mac apps track weekly licenses; marketplaces track GMV; usage-based APIs track paid units consumed.
 - **The moat candidates** — is there a channel, a community, a data asset, or a portfolio the user already has that comparable businesses built their advantage on?
 
@@ -58,7 +58,7 @@ Go through the template in order: **1 Cost & Margin → 2 Unfair Advantage → 3
 
 For each section:
 
-1. **Propose a hypothesis** based on the offer, the Pricing Strategy, and research. Be specific — not "AI costs" but "about $0.06 per document at expected use, $0.20 at heavy use once retries are counted; at $29 for 500 documents that's a 40% margin on the heaviest customer, which is thin."
+1. **Propose a hypothesis** based on the offer, the Pricing Strategy, and research. Be specific — not "AI costs" but "about $0.02 per document at expected use, $0.035 at heavy use once retries are counted; at $29 for 500 documents the heaviest customer costs $17.50 to serve — a 40% margin, which is thin."
 2. **Ask 1–3 targeted questions** to confirm, refine, or reject the hypothesis.
 3. **Critique weak answers.** Each section in the template has explicit "good vs bad" criteria — quote them when the user's answer drifts. Also watch for the failure patterns below.
 4. **Recommend a sharper version** anchored in the BONUS examples and in research.
