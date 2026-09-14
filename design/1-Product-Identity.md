@@ -2,7 +2,7 @@
 
 The minimum viable brand in words: five decisions — a name, two layers of belief, a voice, and a look direction — that make your product recognizable and give every later step (design system, screens, landing page, launch posts) one character to work from. Fill in each section below; keep answers concrete and short.
 
-The *visuals* — colours, fonts, tokens — are deliberately not here: they're derived from a real image reference in Step 3 (`studio-design-design-system` → `docs/DESIGN.md`).
+The *visuals* — colours, fonts, tokens — are deliberately not here: they're derived from a real image reference in Step 3 (`design-design-system` → `docs/DESIGN.md`).
 
 ## Brand Card
 

@@ -1,6 +1,6 @@
 # Leverage Audit
 
-A worksheet for finding the one MVP hiding in your existing business or expertise, filled in by `studio-define-leverage-finder`. Run it when you arrive at ProductOS with a running business — or deep domain knowledge — but no software idea yet. It ends with one chosen idea, stated in exactly the form the offer-builder's intake needs. Fill in each section below in 1-2 sentences max unless the prompt says otherwise.
+A worksheet for finding the one MVP hiding in your existing business or expertise, filled in by `define-leverage-finder`. Run it when you arrive at ProductOS with a running business — or deep domain knowledge — but no software idea yet. It ends with one chosen idea, stated in exactly the form the offer-builder's intake needs. Fill in each section below in 1-2 sentences max unless the prompt says otherwise.
 
 ---
 
@@ -106,7 +106,7 @@ A worksheet for finding the one MVP hiding in your existing business or expertis
 
 *The chosen idea, stated as the offer-builder's intake: the product in 1–2 sentences, and who it's for today.*
 
-> Good: hands straight into `studio-define-offer-builder` with nothing left to translate
+> Good: hands straight into `define-offer-builder` with nothing left to translate
 > Bad: still three ideas wearing a trenchcoat
 
 **Your answer:**
@@ -121,4 +121,4 @@ A worksheet for finding the one MVP hiding in your existing business or expertis
 
 ---
 
-**Next step:** run `studio-define-offer-builder` — Section 7 answers its two intake questions. Validation tactics (concierge MVP, be-your-own-customer, smoke tests) live in `BONUS-Idea-Validation-Cheat-Sheet.md` and come after the offer, not before.
+**Next step:** run `define-offer-builder` — Section 7 answers its two intake questions. Validation tactics (concierge MVP, be-your-own-customer, smoke tests) live in `BONUS-Idea-Validation-Cheat-Sheet.md` and come after the offer, not before.

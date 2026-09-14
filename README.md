@@ -10,7 +10,7 @@ ProductOS guides you through four phases. Each phase has a checklist that tells 
 
 Coached copies of ProductOS ship with your custom programme already inside: `docs/PLAN.md`, composed by your coach from your onboarding call — which steps of each phase you'll do in full, which are fast-tracked from what you've already built, which you can skip. No plan in your copy? Follow the checklists top to bottom — that's the standard programme. See `productos/START-HERE.md`.
 
-One thread runs through all four phases: **the launch ladder.** Each phase closes with a launch (run by `studio-launch`) that climbs one rung of the signal ladder — `reply → conversation → signup → activated user → payment` — starting with the Define phase's **Mini-Launch** in week one or two, where the win is one real person replying. Everyone who responds joins your believers list in `docs/LAUNCHES.md`; they're your preview readers, beta users, and first customers.
+One thread runs through all four phases: **the launch ladder.** Each phase closes with a launch (run by `mini-launch`) that climbs one rung of the signal ladder — `reply → conversation → signup → activated user → payment` — starting with the Define phase's **Mini-Launch** in week one or two, where the win is one real person replying. Everyone who responds joins your believers list in `docs/LAUNCHES.md`; they're your preview readers, beta users, and first customers.
 
 | Phase | Folder | What you end up with |
 |---|---|---|
@@ -25,7 +25,7 @@ Three steps, the same for every tool and every stage:
 
 1. **Create or open your app repo.** Starting from scratch? Make an empty folder and `git init` it — your product's repo exists before your product does.
 2. **Put ProductOS in it as `productos/`** — clone this folder into the repo root, named exactly `productos`. A copy (or a GitHub ZIP extract) is fine for Claude Code and Codex; **Cursor's `/add-plugin` needs a real git clone** — see below.
-3. **Run `studio-setup`.** It wires the agent guidelines into your repo root (`CLAUDE.md`/`AGENTS.md`, from `productos/setup/`), adds `productos/` to your `.gitignore` (see the licence note below), and — if your copy shipped with a programme plan — moves it to `docs/PLAN.md` and verifies it against your actual repo.
+3. **Run `setup`.** It wires the agent guidelines into your repo root (`CLAUDE.md`/`AGENTS.md`, from `productos/setup/`), adds `productos/` to your `.gitignore` (see the licence note below), and — if your copy shipped with a programme plan — moves it to `docs/PLAN.md` and verifies it against your actual repo.
 
 ProductOS is also a plugin for **Claude Code**, **Codex**, and **Cursor** — one package, three manifests, the same 40 skills:
 
@@ -81,15 +81,15 @@ Add **your app repo** (not `productos/` itself) as the project folder. The root 
 
 > **Licence note:** ProductOS is yours to use, not to redistribute — which is why setup gitignores `productos/`: the materials never get committed to your repo, so open-sourcing your product later is safe. Your outputs (`docs/`, the wired root guidelines) are yours and are tracked as normal. Collaborators install their own copy from the official repo into their clone. See `productos/LICENSE.md`.
 
-Skill names follow the `studio-<phase>-*` convention (e.g. `studio-define-offer-builder`) in every tool; the four cross-phase skills are simply `studio-setup` (the installer), `studio-launch` (the launch ritual), and the two challenges, `studio-ship-in-7` (your app live in seven sessions) and `studio-sell-in-30` (your first paying customer in thirty, or your first activated user if the product stays free).
+Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in every tool; the four cross-phase skills are simply `setup` (the installer), `mini-launch` (the launch ritual), and the two challenges, `ship-in-7` (your app live in seven sessions) and `sell-in-30` (your first paying customer in thirty, or your first activated user if the product stays free).
 
 ## Getting started
 
-1. Run **`studio-setup`** — ask your agent to *"set up ProductOS"*. It wires your repo and, if your copy came from your coach, adopts your custom programme: **`docs/PLAN.md`** says which steps of each phase you'll do in full, which are fast-tracked, which you can skip, and in what order. (No plan in your copy? Run a challenge: **`studio-ship-in-7`** if your app isn't live yet, **`studio-sell-in-30`** if it is (or is one deploy away) and nobody has paid — or, for a free product, nobody has activated. Each composes a session-by-session plan from the skills below, checks in with you every session, and ends with a report you can bring to a Product Studio call. Prefer the long way? Open **`productos/define/DEFINE-CHECKLIST.md`** and work top to bottom — that's the standard programme.)
-2. **Already have a product?** Your plan fast-tracks the Define phase via `studio-define-from-code` — it extracts your product offer, persona, and pricing drafts from your existing codebase or landing page, then the review pass sharpens them. You skip the blank-template work, not the valuable thinking. **Have a business but no software idea yet?** `studio-define-leverage-finder` audits your existing business or expertise and converges on the one MVP worth building, before the offer work begins.
+1. Run **`setup`** — ask your agent to *"set up ProductOS"*. It wires your repo and, if your copy came from your coach, adopts your custom programme: **`docs/PLAN.md`** says which steps of each phase you'll do in full, which are fast-tracked, which you can skip, and in what order. (No plan in your copy? Run a challenge: **`ship-in-7`** if your app isn't live yet, **`sell-in-30`** if it is (or is one deploy away) and nobody has paid — or, for a free product, nobody has activated. Each composes a session-by-session plan from the skills below, checks in with you every session, and ends with a report you can bring to a Product Studio call. Prefer the long way? Open **`productos/define/DEFINE-CHECKLIST.md`** and work top to bottom — that's the standard programme.)
+2. **Already have a product?** Your plan fast-tracks the Define phase via `define-from-code` — it extracts your product offer, persona, and pricing drafts from your existing codebase or landing page, then the review pass sharpens them. You skip the blank-template work, not the valuable thinking. **Have a business but no software idea yet?** `define-leverage-finder` audits your existing business or expertise and converges on the one MVP worth building, before the offer work begins.
 3. Follow your plan's sequence; within it, finish each scheduled step before the next — later skills read earlier outputs.
 4. Your product's canonical documents accumulate in **`docs/`** at the repo root — including `docs/PLAN.md`, your programme, and `docs/LAUNCHES.md`, the launch log that tracks your believers and your rung on the signal ladder. If your repo already has a `docs/` folder, the ProductOS documents simply live alongside what's there.
-5. When a checklist says "Run `studio-define-offer-builder`", just ask your agent to do that — the skill triggers by name or by describing what you want ("help me build my product offer").
+5. When a checklist says "Run `define-offer-builder`", just ask your agent to do that — the skill triggers by name or by describing what you want ("help me build my product offer").
 
 ## How it's organized
 
@@ -98,7 +98,7 @@ Skill names follow the `studio-<phase>-*` convention (e.g. `studio-define-offer-
 - **Numbered templates** (`1-`–`4-` in each phase folder) — worksheets the skills fill in place, with `> Good/Bad` calibration examples throughout.
 - **BONUS docs** — reference playbooks: worked examples, failure patterns, channel guides, best-practice libraries.
 - **`productos/skills/`** — one flat folder per skill (40 total). Each contains a `SKILL.md` plus any bundled reference files.
-- **`productos/setup/CLAUDE.md` + `productos/setup/AGENTS.md`** — agent guidelines wired into your repo root at setup (by `studio-setup`), so your coding agent behaves from day one.
+- **`productos/setup/CLAUDE.md` + `productos/setup/AGENTS.md`** — agent guidelines wired into your repo root at setup (by `setup`), so your coding agent behaves from day one.
 
 ## Requirements
 
@@ -107,4 +107,4 @@ Skill names follow the `studio-<phase>-*` convention (e.g. `studio-define-offer-
 
 ## Version
 
-**1.10.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
+**1.11.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.

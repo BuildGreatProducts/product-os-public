@@ -1,6 +1,6 @@
 # Magic Moment
 
-*This template is rewritten in place by the `studio-design-magic-moment` skill. The skill reads `docs/PRODUCT.md`, does live research on category-specific aha-moment patterns, recommends three candidate magic moments, and picks a primary. Run the skill to populate this file. The structure below shows what the filled-in version will look like.*
+*This template is rewritten in place by the `design-magic-moment` skill. The skill reads `docs/PRODUCT.md`, does live research on category-specific aha-moment patterns, recommends three candidate magic moments, and picks a primary. Run the skill to populate this file. The structure below shows what the filled-in version will look like.*
 
 ---
 

@@ -1,6 +1,6 @@
 # App Store Listing
 
-*This template is rewritten in place by the `studio-design-app-listing` skill. The skill reads `docs/PRODUCT.md`, `productos/design/1-Product-Identity.md`, and `productos/design/2-Magic-Moment.md`, then designs every element of the App Store / Google Play listing — icon, title, subtitle, keyword field, all 7 screenshots, preview video, descriptions, CPP strategy, review prompts, and localization plan. Run the skill to populate this file. For web/desktop products, use the `4a-Landing-Page.md` template instead with the `studio-design-landing-page` skill. The structure below shows what the filled-in version will look like.*
+*This template is rewritten in place by the `design-app-listing` skill. The skill reads `docs/PRODUCT.md`, `productos/design/1-Product-Identity.md`, and `productos/design/2-Magic-Moment.md`, then designs every element of the App Store / Google Play listing — icon, title, subtitle, keyword field, all 7 screenshots, preview video, descriptions, CPP strategy, review prompts, and localization plan. Run the skill to populate this file. For web/desktop products, use the `4a-Landing-Page.md` template instead with the `design-landing-page` skill. The structure below shows what the filled-in version will look like.*
 
 ---
 
