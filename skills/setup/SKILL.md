@@ -36,7 +36,7 @@ If **`productos/PLAN.md`** exists (it ships inside coached copies), move it to *
 2. Check each item against the actual repo, now that it's readable — does the app run, does the core flow work, does the codebase match what the plan assumed?
 3. Where reality matches, confirm and move on. Where it doesn't, apply the plan's own stated consequence ("if the core flow doesn't run end to end, Develop route becomes 3b") and **annotate** the affected step — a one-line note under the relevant programme step, dated.
 
-Plans written before ProductOS 1.11.0 name skills with a `studio-` prefix (`studio-define-pricing`, `studio-launch`). Read those as the current unprefixed names (`studio-launch` is now `mini-launch`; every other name simply loses the prefix) and don't rewrite the plan for it.
+Plans written before ProductOS 1.11.0 name skills with a `studio-` prefix (`studio-define-pricing`, `studio-launch`). Read those as the current names (`studio-launch` is now `mini-launch`, `studio-define-leverage-finder` is now `define-idea-finder`; every other name simply loses the prefix) and don't rewrite the plan for it.
 
 Annotate, don't recompose: this pass adjusts details the coach couldn't see, it does not redesign the programme. Anything bigger — the member's situation has genuinely changed, a phase no longer fits — goes back to the coach, who re-runs the intake and re-delivers an updated `PLAN.md` (replace `docs/PLAN.md` with it when it arrives).
 
