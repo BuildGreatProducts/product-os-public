@@ -107,7 +107,7 @@ Score each candidate 1–3 on five axes, presented as a small table in conversat
 - **Distribution advantage** — can the member name the exact channel, or the exact first 10 users, from their existing business or community?
 - **Staying power** — would the member still be working on this in two years if it earned little for a while? 3 = they'd do it anyway.
 
-Highest total (out of 15) wins, but the score is a conversation-forcing device, not an oracle. Ties break on distribution advantage — the one axis the member uniquely controls. Passion earns its points in staying power and distribution; it never outweighs willingness to pay. A 3 for staying power on a candidate nobody pays for is still a hobby.
+**Willingness to pay is a gate before it is a score.** Before comparing totals, set aside any candidate with no evidence that someone pays today, in money or hours — however high it scores elsewhere, it cannot be the chosen idea. Park it with its scores and a one-line reason in the audit's Scores notes. Among the candidates that pass the gate, highest total (out of 15) wins, but the score is a conversation-forcing device, not an oracle. Ties break on distribution advantage — the one axis the member uniquely controls. Passion earns its points in staying power and distribution; it never outweighs willingness to pay. A 3 for staying power on a candidate nobody pays for is still a hobby.
 
 ### 6. Route: for yourself first, or for the people around you
 
