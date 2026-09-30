@@ -14,7 +14,7 @@ The Mini-Launch is launch #1 of four. Every later phase closes by relaunching to
 
 - **What to do:** Run `define-offer-builder`, then optionally `define-offer-review` for a critique pass.
 - **Already have a product?** Run `define-from-code` instead — it extracts draft offer, persona, and pricing documents from your existing codebase, live app, or landing page (covering Steps 1–3 in one pass), then `define-offer-review` sharpens them. You skip the blank templates, not the thinking.
-- **No idea yet?** Run `define-leverage-finder` first — it audits your existing business or expertise for the leverage point software can multiply, routes between an internal tool and a customer-facing product, and converges on one idea, filling `productos/define/BONUS-Leverage-Audit.md`. You arrive back at this step with the offer-builder's two intake questions already answered.
+- **No idea yet?** Run `define-idea-finder` first — it audits your existing business, expertise, or passions for the point software can multiply, routes between building for yourself first and building for the people around you, and converges on one idea, filling `productos/define/BONUS-Idea-Audit.md`. You arrive back at this step with the offer-builder's two intake questions already answered.
 - **What it does:** Produces `productos/define/1-Product-Offer.md` — the six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof). Draws on `BONUS-Product-Offer-Examples.md` and `BONUS-Offer-Failure-Patterns.md`.
 
 ## Step 2 — Customer Persona
