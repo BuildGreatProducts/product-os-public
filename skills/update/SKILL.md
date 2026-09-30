@@ -15,7 +15,7 @@ Run every command from the **app repo root** (the folder that contains `producto
 
 ### 1. Check the install and read the version
 
-Run the same setup check the challenges use: `productos/` sits inside a git repo; the root `CLAUDE.md`/`AGENTS.md` carry the `<!-- BEGIN PRODUCTOS -->` block; `.gitignore` excludes `productos/` and nothing under it is tracked. **If any fails, run `setup` in full first**, then continue.
+Run the same setup check the challenges use: `productos/` sits inside a git repo; the root `CLAUDE.md`/`AGENTS.md` carry the `<!-- BEGIN PRODUCTOS -->` block; `.gitignore` excludes `productos/` and nothing under it is tracked. This step only reads. Don't fix anything yet — note which checks failed, tell the member, and carry on. Step 6 runs `setup` in full after they've approved the update. The one exception: if `productos/` isn't inside a git repo at all, stop here and offer to run `setup` first, because it may move the folder.
 
 The installed version is the `version` in `productos/.claude-plugin/plugin.json` (older copies without it: the **Version** line at the end of `productos/README.md`). Call it `V`.
 
@@ -34,7 +34,7 @@ grep -m1 '"version"' "$STAGE/.claude-plugin/plugin.json"
 
 Many agents don't keep shell variables from one command to the next. If yours doesn't, start each later block by setting `LOCAL`, `WORK` (the path printed above), `STAGE="$WORK/latest"`, `V`, and `BASE` again.
 
-- **Latest equals `V`** → fixes can still land between releases, so run step 3 anyway. If it finds nothing to `ADD`, `REPLACE`, or `REMOVE`, tell the member they're on the latest, run step 6's wiring check (it catches a root block that drifted), delete `$WORK`, and stop. Otherwise carry on without a changelog summary; just say fixes have landed since their copy.
+- **Latest equals `V`** → fixes can still land between releases, so run step 3 anyway. If it finds nothing to `ADD`, `REPLACE`, or `REMOVE`, tell the member they're on the latest and offer step 6 (it catches a root block that drifted, and fixes anything step 1 found). Delete `$WORK`, and stop. Otherwise carry on without a changelog summary; just say fixes have landed since their copy.
 - **Latest is older than `V`** (a coached copy can run ahead of the public release) → say so and stop; nothing to update.
 - **Latest is newer** → read `$STAGE/CHANGELOG.md` and show the member each release between `V` and latest: the version heading and its bold opening sentence, nothing more. Name any skill renamed along the way (their `docs/PLAN.md` keeps working — setup reads old names as aliases). Ask for a go-ahead before writing anything.
 
@@ -91,16 +91,26 @@ Show the member the counts and list every `KEEP`, `CONFLICT`, `GONE`, and `MINE`
 
 ```bash
 cd "$STAGE"
+ROOT=$(cd "$LOCAL" && pwd -P)
+inside() {  # no symlink on the destination path, and its nearest existing folder resolves under productos/
+  case "/$1/" in */../*|*/./*) return 1 ;; esac
+  local d="$LOCAL" rest="$1/"
+  while [ -n "$rest" ]; do d="$d/${rest%%/*}"; rest="${rest#*/}"; [ -L "$d" ] && return 1; done
+  d=$(dirname "$LOCAL/$1"); while [ ! -d "$d" ]; do d=$(dirname "$d"); done
+  case "$(cd "$d" && pwd -P)/" in "$ROOT"/*) return 0 ;; *) return 1 ;; esac
+}
 while IFS=' ' read -r ACT P; do
   case $ACT in
-    ADD|REPLACE) mkdir -p "$LOCAL/$(dirname "$P")" && cp -p "$P" "$LOCAL/$P" ;;
+    ADD|REPLACE)
+      if inside "$P"; then mkdir -p "$LOCAL/$(dirname "$P")" && cp -p "$P" "$LOCAL/$P"
+      else echo "SKIPPED $P"; fi ;;
     REMOVE) rm "$LOCAL/$P" ;;
   esac
 done < "$WORK/plan.txt"
 find "$LOCAL" -mindepth 1 -type d -empty ! -path "$LOCAL/.git*" -delete
 ```
 
-Nothing labelled `KEEP`, `CONFLICT`, `GONE`, or `MINE` is written.
+Nothing labelled `KEEP`, `CONFLICT`, `GONE`, or `MINE` is written. A `SKIPPED` path runs through a symlink, usually a skills folder the member linked elsewhere. Copying there would write outside `productos/` and bypass the keep checks. List these for the member and leave them alone.
 
 **If `productos/` is itself a git clone** (`productos/.git` exists — Cursor installs need one): first check `git -C productos log --oneline @{u}..HEAD 2>/dev/null` is empty; commits of the member's own in that clone mean stop and ask before going further. Then move the clone's `HEAD` to the release just applied, keeping the working tree as synced:
 
@@ -122,7 +132,7 @@ A skill folder the member edited counts as their own; flag it, don't merge into 
 
 ### 6. Re-run setup's wiring
 
-Run `setup` step 2 (replace the `<!-- BEGIN PRODUCTOS -->…<!-- END PRODUCTOS -->` block in the root `CLAUDE.md`/`AGENTS.md` from the freshly updated `productos/setup/`, or copy them whole if they don't exist) and step 3 (the gitignore check). This is how new agent guidelines reach the repo root. Don't touch `docs/PLAN.md` — setup step 4 already reads older skill names as aliases.
+If any step 1 check failed, run `setup` in full now. Otherwise run `setup` step 2 (replace the `<!-- BEGIN PRODUCTOS -->…<!-- END PRODUCTOS -->` block in the root `CLAUDE.md`/`AGENTS.md` from the freshly updated `productos/setup/`, or copy them whole if they don't exist) and step 3 (the gitignore check). This is how new agent guidelines reach the repo root. Don't touch `docs/PLAN.md` — setup step 4 already reads older skill names as aliases.
 
 Then delete the temporary folder: `rm -rf "$WORK"`.
 
