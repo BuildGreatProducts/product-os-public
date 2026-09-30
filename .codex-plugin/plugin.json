@@ -1,7 +1,7 @@
 {
   "name": "productos",
-  "version": "1.12.0",
-  "description": "ProductOS — a complete operating system for taking a product from idea to revenue with AI agents. Installs inside your app repo as productos/, optionally ships with a coach-composed programme plan, and runs four phases (Define, Design, Develop, Distribute), each with checklists, templates, and 40 skills that fill them in.",
+  "version": "1.13.0",
+  "description": "ProductOS — a complete operating system for taking a product from idea to revenue with AI agents. Installs inside your app repo as productos/, optionally ships with a coach-composed programme plan, and runs four phases (Define, Design, Develop, Distribute), each with checklists, templates, and 41 skills that fill them in.",
   "author": {
     "name": "Chris Ashby",
     "email": "chris@telescope.design",
@@ -36,7 +36,8 @@
     "defaultPrompt": [
       "Set up ProductOS in my repo",
       "Start ship in 7 (or sell in 30)",
-      "Run the next step in my ProductOS checklist"
+      "Run the next step in my ProductOS checklist",
+      "Update ProductOS to the latest version"
     ]
   }
 }

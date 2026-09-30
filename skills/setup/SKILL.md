@@ -45,6 +45,8 @@ Annotate, don't recompose: this pass adjusts details the coach couldn't see, it 
 - **Plan adopted** → read its **Your Programme** list and tell the member their literal first action — the exact checklist to open or skill to run, e.g. *"Run `define-from-code` — your plan fast-tracks Define from your existing app."*
 - **No plan anywhere** (and no challenge already open in `docs/`) → offer a challenge first: **`sell-in-30`** if the app is live, or one deploy away, and nobody has paid (or, for a free product, nobody has activated) — thirty sessions to a first customer; **`ship-in-7`** if it is further from live than that — seven sessions to a live URL. Each composes a session-by-session plan from the phase skills and checks in every session. The linear path — open **`productos/define/DEFINE-CHECKLIST.md`** and work top to bottom, finishing each phase before the next — remains the standard programme for members who'd rather take the long way, and the route after a challenge. (Custom programmes ship with coached copies of ProductOS.)
 
+Setup installs the copy the member already has; it doesn't fetch a newer one. Re-running setup to pick up a new release? Run **`update`** instead — it brings `productos/` up to the latest version, keeps the member's filled templates, and runs steps 2–3 of this skill itself.
+
 ## What "done" looks like
 
 `productos/` sits inside a git repo; the root `CLAUDE.md`/`AGENTS.md` carry the PRODUCTOS block; `.gitignore` excludes `productos/`; any shipped plan now lives at `docs/PLAN.md` with its setup checks resolved or annotated; and the member knows exactly what to do first. Anything less — name the gap and fix it before ending the session.

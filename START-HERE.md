@@ -28,4 +28,4 @@ Prefer the long way, or want the full programme after a challenge? Open **`produ
 - **Root `CLAUDE.md` / `AGENTS.md`** — coding-agent guidelines wired at setup, so your agent behaves from day one of the build.
 - **Phase checklists** (`productos/define/DEFINE-CHECKLIST.md` etc.) — how each step runs. Your plan says which steps apply to you; the checklists remain the source of truth for running them.
 
-Plan revisions come from your coach — when circumstances change, they re-run the intake and send an updated `PLAN.md` (your agent replaces `docs/PLAN.md` with it). Installation options for each tool: see `productos/README.md`.
+Plan revisions come from your coach — when circumstances change, they re-run the intake and send an updated `PLAN.md` (your agent replaces `docs/PLAN.md` with it). New versions of ProductOS itself: ask your agent to *"update ProductOS"* — it keeps everything you've filled in. Installation options for each tool: see `productos/README.md`.

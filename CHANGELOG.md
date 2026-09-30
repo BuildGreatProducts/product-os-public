@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.13.0 — September 2026
+
+**ProductOS can now update itself.** Every release since 1.5.0 has told members to re-run setup to pick up the change, but setup only wires the copy the member already has. Nothing fetched the new one. Downloading it over the top wasn't safe either, because the skills fill templates in place inside `productos/`, and a fresh copy would wipe the member's offer, persona, pricing, identity, and GTM work.
+
+- **New cross-phase skill `update`.** It reads the installed version from `productos/.claude-plugin/plugin.json`, clones the official repo into a temporary folder, and shows the headline of every release in between before writing anything. It then compares every file three ways:
+  - Content that matches anything ever published counts as untouched and takes the latest version.
+  - Content the member wrote is kept.
+  - A filled template whose structure a release reworked (the 1.11.0 Pricing Strategy, for example) is flagged. The member can carry their answers into the new structure or keep their file as it is.
+  - Files a release deleted are removed. Renamed ones (the `studio-` prefix, `BONUS-Leverage-Audit.md`) are followed to their new path.
+
+  It never touches `docs/`. It also runs when the version hasn't changed, so fixes that land between releases still arrive.
+- **Git-cloned installs stay clones.** After syncing, the skill moves `productos/`'s own `HEAD` to the release it just applied. `git status` then shows only the member's own files, and Cursor's `/add-plugin` keeps working.
+- **The update re-runs setup's wiring** (steps 2–3), so new agent guidelines reach the root `CLAUDE.md`/`AGENTS.md`. It closes with the one command that refreshes the plugin in Claude Code, Codex, or Cursor.
+- **Releases are tagged `v<version>` from 1.13.0 on.** The skill finds the member's release from its tag. Older versions fall back to searching `plugin.json`'s history.
+- `setup` points members who re-run it for a new release to `update` instead. README gains an **Updating** section, and START-HERE gets one line. README and AGENTS.md now name five cross-phase skills. Codex's `defaultPrompt` gains "Update ProductOS to the latest version". Skill count 40 → 41 across the README and all plugin manifests.
+
 ## 1.12.0 — September 2026
 
 **The leverage finder is now `define-idea-finder`, and it takes passions as well as businesses.** Members whose best idea lives in a hobby, a craft, or a community they belong to had no way in: the skill only audited a business or expertise, and its voice argued against passion outright. Now it excavates the idea from wherever the member's money, hours, or obsessions already go — and passion still has to show up as evidence (hours spent, money spent, communities joined, workarounds built), never as enthusiasm alone.

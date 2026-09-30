@@ -27,7 +27,7 @@ Three steps, the same for every tool and every stage:
 2. **Put ProductOS in it as `productos/`** — clone this folder into the repo root, named exactly `productos`. A copy (or a GitHub ZIP extract) is fine for Claude Code and Codex; **Cursor's `/add-plugin` needs a real git clone** — see below.
 3. **Run `setup`.** It wires the agent guidelines into your repo root (`CLAUDE.md`/`AGENTS.md`, from `productos/setup/`), adds `productos/` to your `.gitignore` (see the licence note below), and — if your copy shipped with a programme plan — moves it to `docs/PLAN.md` and verifies it against your actual repo.
 
-ProductOS is also a plugin for **Claude Code**, **Codex**, and **Cursor** — one package, three manifests, the same 40 skills:
+ProductOS is also a plugin for **Claude Code**, **Codex**, and **Cursor** — one package, three manifests, the same 41 skills:
 
 ### Claude Code
 
@@ -79,9 +79,13 @@ git commit -m "ProductOS"
 
 Add **your app repo** (not `productos/` itself) as the project folder. The root `CLAUDE.md`/`AGENTS.md` wired at setup orients your agent, and skills in `productos/skills/` are picked up from there. You can also copy individual skill folders into `~/.claude/skills/` (Claude) or `~/.agents/skills/` (Codex/Cursor, works across all your repos) for a manual install.
 
+### Updating
+
+When a new version ships (see `productos/CHANGELOG.md`), ask your agent to *"update ProductOS"*. The `update` skill fetches the latest release from the official repo and shows you what's new before changing anything. It replaces every file you never touched and keeps every template you've filled in; where a release reworked a template you filled, it offers to carry your answers into the new structure. It then re-wires your root guidelines and tells you how to refresh the plugin in your tool. It never touches `docs/`.
+
 > **Licence note:** ProductOS is yours to use, not to redistribute — which is why setup gitignores `productos/`: the materials never get committed to your repo, so open-sourcing your product later is safe. Your outputs (`docs/`, the wired root guidelines) are yours and are tracked as normal. Collaborators install their own copy from the official repo into their clone. See `productos/LICENSE.md`.
 
-Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in every tool; the four cross-phase skills are simply `setup` (the installer), `mini-launch` (the launch ritual), and the two challenges, `ship-in-7` (your app live in seven sessions) and `sell-in-30` (your first paying customer in thirty, or your first activated user if the product stays free).
+Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in every tool; the five cross-phase skills are simply `setup` (the installer), `update` (brings your copy up to the latest version), `mini-launch` (the launch ritual), and the two challenges, `ship-in-7` (your app live in seven sessions) and `sell-in-30` (your first paying customer in thirty, or your first activated user if the product stays free).
 
 ## Getting started
 
@@ -97,7 +101,7 @@ Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in e
 - **Checklists** (`*-CHECKLIST.md`) — the runbook for each phase. Source of truth for how each step runs; your plan says which steps apply to you.
 - **Numbered templates** (`1-`–`4-` in each phase folder) — worksheets the skills fill in place, with `> Good/Bad` calibration examples throughout.
 - **BONUS docs** — reference playbooks: worked examples, failure patterns, channel guides, best-practice libraries.
-- **`productos/skills/`** — one flat folder per skill (40 total). Each contains a `SKILL.md` plus any bundled reference files.
+- **`productos/skills/`** — one flat folder per skill (41 total). Each contains a `SKILL.md` plus any bundled reference files.
 - **`productos/setup/CLAUDE.md` + `productos/setup/AGENTS.md`** — agent guidelines wired into your repo root at setup (by `setup`), so your coding agent behaves from day one.
 
 ## Requirements
@@ -107,4 +111,4 @@ Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in e
 
 ## Version
 
-**1.12.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
+**1.13.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
