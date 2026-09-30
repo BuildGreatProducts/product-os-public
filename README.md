@@ -107,4 +107,4 @@ Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in e
 
 ## Version
 
-**1.11.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
+**1.12.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
