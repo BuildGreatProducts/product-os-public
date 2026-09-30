@@ -109,11 +109,16 @@ A worksheet for finding the one MVP hiding in your existing business, expertise,
 
 ## 5. Scores
 
-*Score each shortlisted idea 1–3 per axis, total out of 15. Ties break on distribution advantage — the axis you uniquely control. Staying power asks whether you'd still be working on it in two years if it earned little for a while; it never outweighs willingness to pay.*
+*Score each shortlisted idea 1–3 per axis, total out of 15. Ties break on distribution advantage — the axis you uniquely control. Staying power asks whether you'd still be working on it in two years if it earned little for a while; it never outweighs willingness to pay. An idea with no evidence that anyone pays today, in money or hours, can't be chosen, whatever its total — note why here. Evidence is a concrete data point (a price, an invoice, a spend, a count of hours, a public workaround), labelled [member] or [researched]. An idea for the people around you needs at least one data point showing that people other than you pay.*
 
 | Idea | Pain frequency | Willingness to pay | Buildable as MVP | Distribution advantage | Staying power | Total |
 | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  |  |  |  |  |
+
+**Pay evidence (one line per idea, each data point labelled [member] or [researched]):**
+
+> Good: "[researched] three paid route-logging apps at $4–8/mo; [member] our gym's setters spend ~3 hrs/week on a shared sheet"
+> Bad: "climbers would definitely pay for this"
 
 **Notes (one line per score that needs justifying):**
 
