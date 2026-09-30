@@ -17,7 +17,7 @@ What this skill is not: it is not blank-page ideation (that is what it exists to
 
 Locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Idea Audit template** — usually `BONUS-Idea-Audit.md` in the define folder. **The file this skill fills in place** at the end. (A fillable template despite the BONUS prefix — same precedent as `BONUS-Business-Strategy-Deep-Dive.md`.) If a filled `BONUS-Leverage-Audit.md` from before ProductOS 1.11.0 exists, read it and carry its answers over rather than asking again.
+1. **The Idea Audit template** — usually `BONUS-Idea-Audit.md` in the define folder. **The file this skill fills in place** at the end. (A fillable template despite the BONUS prefix — same precedent as `BONUS-Business-Strategy-Deep-Dive.md`.) If a filled `BONUS-Leverage-Audit.md` from before ProductOS 1.12.0 exists, read it and carry its answers over rather than asking again.
 2. **The Idea Validation Cheat Sheet** — usually `BONUS-Idea-Validation-Cheat-Sheet.md`. Read once at the start for calibration. Its principles (build for yourself first, niche down until it hurts, validate by distribution, no competitors = no market) are the scoring lens, and its tactics get named at handoff.
 3. **The member's business, expertise, or passion.** Not a file — the interview. Anything that exists (a website, a service menu, internal docs, a community they run) helps, but nothing is required.
 
