@@ -93,9 +93,10 @@ Before scoring, research each shortlisted candidate so the scores rest on eviden
 - **What similar experts, operators, and enthusiasts have productized** — search "[niche] software", "[niche] tool", "[hobby] app", vertical-SaaS lists.
 - **Pricing signals** — what existing tools charge, and what the member's clients currently pay humans for the same job. The human price is the strongest anchor.
 - **For passion candidates, what enthusiasts already pay for** — the apps, subscriptions, coaching, and gear they buy today. This is the check against an idea that is loved but never paid for.
+- **Public workarounds and complaints** — forum and subreddit threads, shared spreadsheet templates, homemade Discord bots, repeated "how do you track X?" posts. These are the outside evidence that people spend *time* on the problem, which is the member's claim about hours checked against the world.
 - **Absence check** — if a candidate has *no* comparables and no current spend, the cheat sheet's "No Competitors = No Market" principle applies: cut it from the shortlist before scoring. It never gets a row in the scores table and cannot be the chosen idea — record the cut and the rule in the audit's Scores notes so the member sees why it went.
 
-Collect 4–6 concrete data points across the shortlist. Say explicitly: competitors found here are *good news* — they are proof of demand, the inverse of how founders usually read them.
+Collect 4–6 concrete data points across the shortlist, and label every pay signal by source: **[member]** for what the member told you (their own spend, their clients' invoices, their hours), **[researched]** for what you found. Say explicitly: competitors found here are *good news* — they are proof of demand, the inverse of how founders usually read them.
 
 ### 5. Score the shortlist
 
@@ -107,7 +108,12 @@ Score each candidate 1–3 on five axes, presented as a small table in conversat
 - **Distribution advantage** — can the member name the exact channel, or the exact first 10 users, from their existing business or community?
 - **Staying power** — would the member still be working on this in two years if it earned little for a while? 3 = they'd do it anyway.
 
-**Willingness to pay is a gate before it is a score.** Before comparing totals, set aside any candidate with no evidence that someone pays today, in money or hours — however high it scores elsewhere, it cannot be the chosen idea. Park it with its scores and a one-line reason in the audit's Scores notes. Among the candidates that pass the gate, highest total (out of 15) wins, but the score is a conversation-forcing device, not an oracle. Ties break on distribution advantage — the one axis the member uniquely controls. Passion earns its points in staying power and distribution; it never outweighs willingness to pay. A 3 for staying power on a candidate nobody pays for is still a hobby.
+**Willingness to pay is a gate before it is a score.** Before comparing totals, set aside any candidate with no evidence that someone pays today, in money or hours — however high it scores elsewhere, it cannot be the chosen idea. Park it with its scores and a one-line reason in the audit's Scores notes. Evidence means at least one concrete, labelled data point: a named price, an invoice, a spend, a count of hours, a public workaround. A hunch ("people would definitely pay for this") is not evidence. The source matters too:
+
+- **Evidence from the member alone** — their own spend or hours — is enough for a candidate built for yourself first, where the member is the customer.
+- **A candidate for the people around you** needs at least one data point showing that people other than the member pay: a **[researched]** signal, or named clients or community members who already pay (the member can report these, labelled **[member]**). If its only evidence is the member's own spend or hours, it passes the gate only as a for-yourself-first candidate — record that, and step 6 must route it that way.
+
+Among the candidates that pass the gate, highest total (out of 15) wins, but the score is a conversation-forcing device, not an oracle. Ties break on distribution advantage — the one axis the member uniquely controls. Passion earns its points in staying power and distribution; it never outweighs willingness to pay. A 3 for staying power on a candidate nobody pays for is still a hobby.
 
 ### 6. Route: for yourself first, or for the people around you
 
@@ -116,7 +122,7 @@ Apply one test to the front-runner: **"Who feels the pain most — you, or the p
 1. If the candidate productizes something clients already pay for, **for-others wins** — existing invoices are pre-validation (the concierge-MVP principle), and this holds even for a member who has never shipped software: the concierge path lets them deliver manually while learning to ship.
 2. Otherwise, if the member has never shipped software, **for-yourself-first is the lower-risk route** — the first user is guaranteed, honest, and free (the cheat sheet's be-your-own-customer principle). For a passion-only member this means building it for their own hobby first, then offering it to the community once it has earned a place in their own routine.
 
-Name the route explicitly and record it. It changes who the Customer is in the downstream offer.
+A candidate that passed the gate on the member's evidence alone is routed for yourself first, whatever the test says. Name the route explicitly and record it. It changes who the Customer is in the downstream offer.
 
 ### 7. Converge on ONE
 
@@ -128,7 +134,7 @@ Fill `BONUS-Idea-Audit.md` in place — never a sibling copy, per the root `AGEN
 
 ### 9. Verify and hand off
 
-Re-read the filled audit and check: every shortlisted idea traces to a named inventory item; every score has a one-line justification where it isn't obvious; exactly one route is named, with its reason; the One Idea reads as the offer-builder's intake, not a paragraph of hedging.
+Re-read the filled audit and check: every shortlisted idea traces to a named inventory item; every score has a one-line justification where it isn't obvious; the chosen idea's pay evidence is written down and labelled **[member]** or **[researched]**, with at least one data point showing that people other than the member pay if it's routed for the people around you; exactly one route is named, with its reason; the One Idea reads as the offer-builder's intake, not a paragraph of hedging.
 
 Then hand off, in order:
 
@@ -170,7 +176,7 @@ Refresh via live research at invocation time, but these shapes tend to be durabl
 
 ## What "done" looks like
 
-A filled `BONUS-Idea-Audit.md` where: the Starting Point has real numbers (revenue and customers, or hours and money spent); every shortlisted idea traces to a named inventory item; all five axes are scored with one-line justifications; one route (for yourself first / for the people around you) is named with its reason; ONE chosen idea is stated in the offer-builder's intake format; runners-up are parked with scores; and the file carries a dated header and a one-line research footer.
+A filled `BONUS-Idea-Audit.md` where: the Starting Point has real numbers (revenue and customers, or hours and money spent); every shortlisted idea traces to a named inventory item; all five axes are scored with one-line justifications; the chosen idea's pay evidence is labelled by source; one route (for yourself first / for the people around you) is named with its reason; ONE chosen idea is stated in the offer-builder's intake format; runners-up are parked with scores; and the file carries a dated header and a one-line research footer.
 
 A session that ends with a research-backed idea the member still wants to sleep on is a success — the audit holds the shortlist either way. A session that ends with three ideas is a failure of convergence; go back to step 5.
 
