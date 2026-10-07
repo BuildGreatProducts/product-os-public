@@ -1,6 +1,6 @@
 # Customer Persona Framework
 
-A worksheet for building a sharp, evidence-backed picture of one real customer. Keep each answer to 1-2 sentences.
+The structure and guidance for the `## 2. Customer Persona` section of `docs/DEFINE.md` — a sharp, evidence-backed picture of one real customer, filled by `define-customer-persona`. This worksheet itself stays blank. Keep each answer to 1-2 sentences.
 
 ---
 

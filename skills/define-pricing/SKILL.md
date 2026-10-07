@@ -1,14 +1,14 @@
 ---
 name: define-pricing
 description: >-
-  Use when the user has a filled-in Product Offer (and ideally Customer Persona) and needs to decide how the product earns and what it costs — business model, pricing model, one launch price — in 30–45 minutes before the Mini-Launch. Triggers on "what should I charge", "pick my launch price", "pricing strategy", "business model for my app", "pricing model", "how should I charge", "subscription or one-time", "per seat or per usage", "should I have tiers", "freemium or trial", "put a price on it", "what's my price line", or any request to fill in the six-section Pricing Strategy (Who Pays, How the Business Earns, Pricing Model, Price Anchors, Launch Price, Your Price Line). Reads the Offer and Persona plus BONUS-Business-Models.md and BONUS-Pricing-Models.md, researches 2–3 anchor prices, triangulates the number from value, cost, and anchors, and rewrites 3-Pricing-Strategy.md in place. Cost & margin, unfair advantage, and north star live in the optional deep dive, define-business-strategy.
+  Use when the user has a filled-in Product Offer (and ideally Customer Persona) and needs to decide how the product earns and what it costs — business model, pricing model, one launch price — in 30–45 minutes. Triggers on "what should I charge", "pick my launch price", "pricing strategy", "business model for my app", "pricing model", "how should I charge", "subscription or one-time", "per seat or per usage", "should I have tiers", "freemium or trial", "put a price on it", "what's my price line", or any request to fill in the six-section Pricing Strategy (Who Pays, How the Business Earns, Pricing Model, Price Anchors, Launch Price, Your Price Line). Reads the Offer and Persona in docs/DEFINE.md plus BONUS-Business-Models.md and BONUS-Pricing-Models.md, researches 2–3 anchor prices, triangulates the number from value, cost, and anchors, and writes the Pricing Strategy section of docs/DEFINE.md. Cost & margin, unfair advantage, and north star live in the optional deep dive, define-business-strategy.
 ---
 
 # Define: Pricing Strategy
 
-This skill decides **how the product earns and what it costs** — fast. It turns a filled-in Product Offer (and Persona, if available) into a six-section **Pricing Strategy**: who pays, which business model matches how the value arrives, what the price multiplies by and how people start, 2–3 real anchors, one launch price with the value, cost, and anchor lines behind it, and the plain-English price line that carries the number into the Mini-Launch.
+This skill decides **how the product earns and what it costs** — fast. It turns a filled-in Product Offer (and Persona, if available) into a six-section **Pricing Strategy** in `docs/DEFINE.md`: who pays, which business model matches how the value arrives, what the price multiplies by and how people start, 2–3 real anchors, one launch price with the value, cost, and anchor lines behind it, and the plain-English price line that carries the number to customers.
 
-The model and the number are decided here, once, because a price without a unit is not a price. "$29" means nothing until it's "$29 per workspace per month, one plan, 14-day trial." What this skill deliberately does **not** do is the economics behind the number — cost-per-user modelling, margin targets, the moat, the north star. Those live in the optional `BONUS-Business-Strategy-Deep-Dive.md` (filled by `define-business-strategy`), which most people don't need until the money questions get real — typically before spending on paid channels in Distribute. This skill exists because the Mini-Launch (the next step in the Define checklist) needs a price to carry, and founders will happily spend three weeks "figuring out pricing" as a way of not talking to anyone.
+The model and the number are decided here, once, because a price without a unit is not a price. "$29" means nothing until it's "$29 per workspace per month, one plan, 14-day trial." What this skill deliberately does **not** do is the economics behind the number — cost-per-user modelling, margin targets, the moat, the north star. Those live in the optional `## 4. Business Strategy` section (filled by `define-business-strategy` from the worksheet `BONUS-Business-Strategy-Deep-Dive.md`), which most people don't need until the money questions get real — typically before spending on paid channels in Distribute. This skill exists because every conversation with a potential customer needs a price to carry, and founders will happily spend three weeks "figuring out pricing" as a way of not talking to anyone.
 
 A price the founder has never said out loud is not a price — it's a guess hiding in a spreadsheet. The measure of success for this session is that the user can finish the sentence *"it'll be about ___ per ___"* to a stranger without flinching.
 
@@ -16,17 +16,18 @@ A price the founder has never said out loud is not a price — it's a guess hidi
 
 ## Inputs
 
-Before starting, locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
+Before starting, locate the following. The member's answers live in `docs/DEFINE.md` at the app repo root; the worksheets and references live in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Product Offer** — usually `1-Product-Offer.md`. The **required** input. Customer, Outcome, and Mechanism drive who pays, how the value arrives, and what the price should multiply by.
-2. **The Pricing Strategy template** — usually `3-Pricing-Strategy.md`. Defines the exact output structure, *and is also the file the skill rewrites in place* at the end.
+1. **The Product Offer** — `## 1. Product Offer` in `docs/DEFINE.md`. The **required** input. Customer, Outcome, and Mechanism drive who pays, how the value arrives, and what the price should multiply by.
+2. **The Pricing Strategy worksheet** — usually `3-Pricing-Strategy.md`. Defines the section structure, prompts, tables, and `> Good/Bad` criteria. Read it; never write to it. The output goes to `## 3. Pricing Strategy` in `docs/DEFINE.md`.
 3. **The Business Models reference** — usually `BONUS-Business-Models.md`. **Required.** Read the "Start from how the value arrives" table in full; read only the 1–2 family sections the hypothesis points at. Each family carries what tends to fail, a worked economics example, and a first experiment — quote them for the user's product.
 4. **The Pricing Models reference** — usually `BONUS-Pricing-Models.md`. **Required.** Read "Keep the layers separate" and the three worked combinations in full (they are shapes, not answers — never retrofit the user's product onto one); read only the mechanic sections matching the unit, plans, entry, and cadence under discussion; read chapter 25 (Setting your price) including the delivery-cost cheat sheet when building the launch price.
-5. **The Customer Persona** — usually `2-Customer-Persona.md`, if filled in. Optional but the single most useful input: willingness-to-pay, anchor products, and budget bucket come from here and set the value ceiling.
+5. **The Customer Persona** — `## 2. Customer Persona` in `docs/DEFINE.md`, if filled in. Optional but the single most useful input: willingness-to-pay, anchor products, and budget bucket come from here and set the value ceiling.
 6. **The Business Strategy examples** — usually `BONUS-Real-Business-Strategy-Examples.md`. Calibration only: the How the Business Earns and Pricing Model rows show what a well-matched model and plan structure look like across six real businesses. Never retrofit the user onto one.
-7. **The Launch Log** — `docs/LAUNCHES.md`, if present. A stranger who asked about the price is worth more than any benchmark.
 
-If the Product Offer is missing or mostly empty, stop and point the user to `define-offer-builder` first.
+Ask, too, whether the member has had any real customer replies or conversations that touched on price — a stranger who asked about the price is worth more than any benchmark.
+
+If the Product Offer is missing or mostly placeholder, stop and point the user to `define-offer-builder` first.
 
 ## Workflow
 
@@ -65,15 +66,22 @@ Place the product in the starting-bands table (a base-plus-overage product strad
 
 ### 7. Write the price line (section 6)
 
-Make the user type the DM version and read it back in the session. If they flinch, that's the fear the Mini-Launch is designed to break — say so. The full version is the section 3 sentence with the number filled in.
+Make the user type the DM version and read it back in the session. If they flinch, say so — the flinch is normal, and saying the number to real people is the only way through it. The full version is the section 3 sentence with the number filled in.
 
-### 8. Rewrite the Pricing Strategy file in place
+### 8. Write the Pricing Strategy section of `docs/DEFINE.md`
 
-Rewrite `3-Pricing-Strategy.md` in place — same section headers, same italic prompts, same `> Good/Bad` lines, same tables — replacing each `**Your answer:**` block and filling the section 3 table. Add a dated header ("Drafted: [month year]") and a **Sources** footer listing the anchor URLs, the BONUS sections cited (by anchor, e.g. `BONUS-Business-Models.md#business-03-usage-based`), and every cost-floor assumption. Read the existing file first to preserve any user notes.
+Output: `## 3. Pricing Strategy` in `docs/DEFINE.md`. The worksheet `3-Pricing-Strategy.md` stays blank; never write answers back into `productos/`.
+
+- **If `docs/DEFINE.md` doesn't exist** (only when the member pointed you to an offer held elsewhere), create it (`mkdir -p docs`) from `productos/define/DEFINE-TEMPLATE.md` and leave every other section as the template's one-line placeholder.
+- **If it exists**, read it first. Write only `## 3. Pricing Strategy`; never touch the other sections. If the section is already filled, show the user a diff of the proposed change and get approval before overwriting — preserve the member's own edits. If it carries `define-from-code`'s italic *Extracted draft* line, remove that line once the member approves the rewrite.
+
+Use the worksheet's headings — `### Who Pays`, `### How the Business Earns`, `### Pricing Model`, `### Price Anchors`, `### Launch Price`, `### Your Price Line` — with clean answers: no italic prompts, no `> Good/Bad` lines, no `**Your answer:**` labels. Keep the filled five-decision table under Pricing Model, and the value, cost, and anchor lines plus the sanity line under Launch Price; drop the worksheet's reference tables (the sixteen models, the starting bands).
+
+Update the `*Last updated:*` line, and add a `### Pricing Strategy` entry under `## Sources` listing the anchor URLs, the BONUS sections cited (by anchor, e.g. `BONUS-Business-Models.md#business-03-usage-based`), and every cost-floor assumption. Write for a reader without context: spell out acronyms like MRR, LTD, and BYOK on first use — `docs/DEFINE.md` is the document the member shares.
 
 ### 9. Verify before delivering
 
-Check: buyer is named with a budget bucket and a value shape; one business model with a rejected alternative written down; a billing unit the customer already counts in, with plans that each have a buyer and an entry route with a reason; anchors named with current prices; one launch price with value, cost, and anchor lines and a positive sanity line; the price line is one sentence a stranger would understand. Then hand off: the recommended next step is always the Mini-Launch (`mini-launch`) — within 48 hours, while the number is still warm.
+Check: buyer is named with a budget bucket and a value shape; one business model with a rejected alternative written down; a billing unit the customer already counts in, with plans that each have a buyer and an entry route with a reason; anchors named with current prices; one launch price with value, cost, and anchor lines and a positive sanity line; the price line is one sentence a stranger would understand. Then close the phase: once `docs/DEFINE.md` has its Summary, Offer, Persona and Pricing filled, the Define phase is done — the next step is Design (`productos/design/DESIGN-CHECKLIST.md`). If any of those sections is still a placeholder or an extracted draft, name the skill that fills it first. Say the price line to real potential customers while the number is still warm.
 
 ## Failure patterns to look for
 
@@ -100,4 +108,4 @@ Name them when you see them — naming compounds learning:
 
 ## What "done" looks like
 
-A rewritten `3-Pricing-Strategy.md` where the buyer, budget, and value shape are named; one business model is chosen with its rejected alternative; the billing unit, plans, entry, and cadence are filled in and read as one sentence; the anchors are real and current; the launch price is one number with value, cost, and anchor lines behind it and a positive sanity line; and the price line reads as one natural sentence — ready to be dropped into a mini-launch post or DM within 48 hours.
+A filled `## 3. Pricing Strategy` in `docs/DEFINE.md` where the buyer, budget, and value shape are named; one business model is chosen with its rejected alternative; the billing unit, plans, entry, and cadence are filled in and read as one sentence; the anchors are real and current; the launch price is one number with value, cost, and anchor lines behind it and a positive sanity line; and the price line reads as one natural sentence — ready to say to a potential customer this week.

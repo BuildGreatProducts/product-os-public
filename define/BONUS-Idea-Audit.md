@@ -1,6 +1,6 @@
 # Idea Audit
 
-A worksheet for finding the one MVP hiding in your existing business, expertise, or passion, filled in by `define-idea-finder`. Run it when you arrive at ProductOS with a running business, deep domain knowledge, or a hobby or community you keep coming back to — but no software idea yet. It ends with one chosen idea, stated in exactly the form the offer-builder's intake needs. Fill in each section below in 1-2 sentences max unless the prompt says otherwise.
+The structure and guidance for the idea audit — finding the one MVP hiding in your existing business, expertise, or passion — which `define-idea-finder` works through with you in conversation. At the end you choose which parts to keep in the optional `## Idea Audit` section of `docs/DEFINE.md`. This worksheet itself stays blank. Run it when you arrive at ProductOS with a running business, deep domain knowledge, or a hobby or community you keep coming back to — but no software idea yet. It ends with one chosen idea, stated in exactly the form the offer-builder's intake needs. Each answer is 1-2 sentences max unless the prompt says otherwise.
 
 ---
 
@@ -148,7 +148,7 @@ A worksheet for finding the one MVP hiding in your existing business, expertise,
 
 ## 8. Parking Lot
 
-*Runners-up with their scores, kept warm. If the Mini-Launch on the chosen idea comes back silent, the next idea here is already pre-scored.*
+*Runners-up with their scores, kept warm. If the chosen idea gets no response once real customers see it, the next idea here is already pre-scored.*
 
 **Your answer:**
 

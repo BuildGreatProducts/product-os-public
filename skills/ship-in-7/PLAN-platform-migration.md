@@ -11,10 +11,10 @@
 | 1 | **Migrate: inventory + plan** | `setup` (the app repo may be brand new) → `develop-migrate` through its inventory and `docs/MIGRATION.md` | `docs/MIGRATION.md` with the full inventory; a stack decision; **the write-reconciliation rule** (below); the honest "does this fit in three days?" answer | 2.5 |
 | 2 | **Migrate: move** | work `docs/MIGRATION.md`: freeze source writes (or note the snapshot time for the delta), export, repo, database, auth, storage, secrets rotated | the app runs locally from the owned repo with real data; the freeze or snapshot time recorded | 4+ |
 | 3 | **Migrate: verify** | the migration's verification gate: real login with a pre-migration password, test payment, storage URLs, webhooks re-pointed; the delta since the snapshot reconciled if writes weren't frozen | **verification gate green**, zero unreconciled writes (the platform is not yet paused) | 3 |
-| 4 | **Define backfill + quality gate** | `define-from-code` → `define-product` (fast); `develop-security-audit` → Critical/High fixed | `docs/PRODUCT.md`; `docs/SECURITY-AUDIT.md` verdict; Critical/High ticked | 3 |
+| 4 | **Define backfill + quality gate** | `define-from-code` (fast); `develop-security-audit` → Critical/High fixed | `docs/DEFINE.md` has Summary, Offer, Persona and Pricing filled; `docs/SECURITY-AUDIT.md` verdict; Critical/High ticked | 3 |
 | 5 | **Deploy guide** | `develop-golive` | `docs/DEPLOY.md`; hosting accounts created | 1.5 |
 | 6 | **Go live** | work `docs/DEPLOY.md`; DNS cutover last | live URL on the member's own hosting | 3 |
-| 7 | **Smoke test, decommission, announce** | smoke test as a real customer on the new URL; only then pause the platform per `docs/MIGRATION.md`; `mini-launch` (stretch) | **smoke test passed**; platform paused; live post (stretch) | 2 |
+| 7 | **Smoke test, decommission, announce** | smoke test as a real customer on the new URL; only then pause the platform per `docs/MIGRATION.md`; post the live URL where your customers are (stretch) | **smoke test passed**; platform paused; the post's link (stretch) | 2 |
 
 ## Notes for the composer
 

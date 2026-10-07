@@ -1,7 +1,7 @@
 ---
 name: define-business-strategy
 description: >-
-  Use for the optional deep dive into the economics behind the price — when the money questions get real: before paid channels in Distribute, at first revenue, or when an investor asks how the model works. Requires a filled-in Product Offer and Pricing Strategy. Triggers on phrases like "build my business strategy", "what are my margins", "what does each customer cost me", "what's my unfair advantage", "what's my north star metric", "unit economics", "can I afford paid acquisition", or any request to fill in the three-section Business Strategy (Cost & Margin, Unfair Advantage, North Star Metric). Reads the Pricing Strategy's model, unit, plans, and price as given, researches cost benchmarks and category north stars, then walks the user section by section — building the cost-per-customer equation together, critiquing weak moats — and fills in BONUS-Business-Strategy-Deep-Dive.md. A BONUS deep dive, not a checklist step: the business model and price are decided in define-pricing.
+  Use for the optional deep dive into the economics behind the price — when the money questions get real: before paid channels in Distribute, at first revenue, or when an investor asks how the model works. Requires the Offer and Pricing sections of docs/DEFINE.md. Triggers on phrases like "build my business strategy", "what are my margins", "what does each customer cost me", "what's my unfair advantage", "what's my north star metric", "unit economics", "can I afford paid acquisition", or any request to fill in the three-section Business Strategy (Cost & Margin, Unfair Advantage, North Star Metric). Reads the Pricing Strategy's model, unit, plans, and price as given, researches cost benchmarks and category north stars, then walks the user section by section — building the cost-per-customer equation together, critiquing weak moats — and writes the Business Strategy section of docs/DEFINE.md. A BONUS deep dive, not a checklist step: the business model and price are decided in define-pricing.
 ---
 
 # Define: Business Strategy Deep Dive (optional)
@@ -16,28 +16,28 @@ A Business Strategy that contradicts itself silently is more dangerous than one 
 
 ## Inputs
 
-Before starting, locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
+Before starting, locate the following. The member's answers live in `docs/DEFINE.md` at the app repo root; the worksheet and references live in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Product Offer** — usually `1-Product-Offer.md`. **Required.** The Mechanism tells you where the variable cost is (AI tokens, storage, payouts, human time); the Proof and Guarantee hint at distribution and the moat.
-2. **The Pricing Strategy** — usually `3-Pricing-Strategy.md`, produced by `define-pricing`. **Required.** Read as given: the business model, billing unit, plans, entry route, cadence, launch price, and the cost-floor assumption behind it. This skill turns that one-line cost floor into a real per-customer equation at low, expected, and heavy use. If it's empty, stop and run `define-pricing` first — you cannot check economics against a price that doesn't exist.
-3. **The Business Strategy Deep Dive template** — usually `BONUS-Business-Strategy-Deep-Dive.md` in the `productos/define/` folder. Defines the exact output structure to follow, *and is also the file the skill rewrites in place* at the end (see step 5).
+1. **The Product Offer** — `## 1. Product Offer` in `docs/DEFINE.md`. **Required.** The Mechanism tells you where the variable cost is (AI tokens, storage, payouts, human time); the Proof and Guarantee hint at distribution and the moat.
+2. **The Pricing Strategy** — `## 3. Pricing Strategy` in `docs/DEFINE.md`, produced by `define-pricing`. **Required.** Read as given: the business model, billing unit, plans, entry route, cadence, launch price, and the cost-floor assumption behind it. This skill turns that one-line cost floor into a real per-customer equation at low, expected, and heavy use. If it's still a placeholder, stop and run `define-pricing` first — you cannot check economics against a price that doesn't exist.
+3. **The Business Strategy worksheet** — usually `BONUS-Business-Strategy-Deep-Dive.md` in the `productos/define/` folder. Defines the section structure, prompts, tables, and `> Good/Bad` criteria. Read it; never write to it. The output goes to `## 4. Business Strategy` in `docs/DEFINE.md` (see step 5).
 4. **The Business Strategy examples** — usually `BONUS-Real-Business-Strategy-Examples.md`. Six worked examples across business models (B2B SaaS, indie Mac app, WordPress LTD, productized service, marketplace, usage-based API). Read the Cost & Margin, Unfair Advantage, and North Star rows once at the start to internalize what "good" looks like across these shapes. Use as **calibration**, never as a script to retrofit the user onto.
 5. **The Pricing Models reference** — usually `BONUS-Pricing-Models.md`. Read chapter 25's *Check delivery economics* and the delivery-cost cheat sheet; they supply the planning figures for the cost equation.
-6. **The Customer Persona** — usually `2-Customer-Persona.md`, if filled in. Optional; the willingness-to-pay section is the check that the margin math and the buyer's budget agree.
-7. **The Launch Log** — `docs/LAUNCHES.md` and `productos/define/4-Mini-Launch.md`, if present. Optional but gold: real replies, signups, activated users, and payments from every launch so far. A channel that already pulled is often the unfair advantage; a rung reached is the north star's first data point.
+6. **The Customer Persona** — `## 2. Customer Persona` in `docs/DEFINE.md`, if filled in. Optional; the willingness-to-pay section is the check that the margin math and the buyer's budget agree.
+7. **Real traction** — not a file: ask about any real customer replies, conversations, signups, or payments the member has had. Optional but gold. A channel that already pulled is often the unfair advantage; real usage is the north star's first data point.
 
-If any of the required files are missing, ask the user where they live before continuing.
+If any of the required inputs are missing, ask the user where they live before continuing.
 
 ## Workflow
 
 ### 1. Absorb the pricing decisions and form a working hypothesis
 
-Read the Product Offer and the Pricing Strategy end-to-end (and the Persona and launch log if available). Extract:
+Read the Product Offer and the Pricing Strategy end-to-end (and the Persona and any real traction if available). Extract:
 
 - The business model, billing unit, plans, entry route, cadence, and launch price — as decided. These are inputs, not questions.
 - The mechanism's variable cost drivers — AI inference (and failed attempts), storage, payment or platform fees, payouts, human time.
 - The cost-floor assumption already in the Pricing Strategy, and whether it was tagged `[working assumption]`.
-- Any distribution edge visible in the proof, the persona's watering holes, or the launch log.
+- Any distribution edge visible in the proof, the persona's watering holes, or the traction so far.
 - The category, which usually narrows the north star for you.
 
 From this, form a **working hypothesis** in one paragraph: likely cost-per-customer shape and gross margin band, candidate unfair advantage, candidate north star. State it back to the user and ask them to confirm or correct before doing research.
@@ -54,13 +54,13 @@ Collect 4–6 concrete data points before walking the user through the framework
 
 ### 3. Walk the user through the strategy, section by section
 
-Go through the template in order: **1 Cost & Margin → 2 Unfair Advantage → 3 North Star Metric.** Each answer constrains the next: the margin tells you how much room there is to fund a moat, and the moat often names the channel the north star should track.
+Go through the worksheet in order: **1 Cost & Margin → 2 Unfair Advantage → 3 North Star Metric.** Each answer constrains the next: the margin tells you how much room there is to fund a moat, and the moat often names the channel the north star should track.
 
 For each section:
 
 1. **Propose a hypothesis** based on the offer, the Pricing Strategy, and research. Be specific — not "AI costs" but "about $0.02 per document at expected use, $0.035 at heavy use once retries are counted; at $29 for 500 documents the heaviest customer costs $17.50 to serve — a 40% margin, which is thin."
 2. **Ask 1–3 targeted questions** to confirm, refine, or reject the hypothesis.
-3. **Critique weak answers.** Each section in the template has explicit "good vs bad" criteria — quote them when the user's answer drifts. Also watch for the failure patterns below.
+3. **Critique weak answers.** Each section in the worksheet has explicit "good vs bad" criteria — quote them when the user's answer drifts. Also watch for the failure patterns below.
 4. **Recommend a sharper version** anchored in the BONUS examples and in research.
 5. **Do the best you can in the session.** If the user can't confirm from memory (especially common for Cost & Margin pre-launch), accept Claude's benchmark-based estimate and tag it `[working assumption — re-ground with real data post-launch]` — then continue. A research-backed strategy tagged for validation is a successful output.
 
@@ -70,32 +70,28 @@ For each section:
 - **Unfair Advantage (section 2).** The single most-faked section. "We built it first," "our AI is smarter," "we have better UX," "our team" — none of these are moats; they're hopes. A real unfair advantage compounds with time and use. Push for distribution density, niche expertise, audience, switching costs, cross-product portfolio, open-source community, or counter-positioning. **Naming a moat to *build* over the next 12 months is just as valid a session output as naming one you already have** — it just gets tagged as a build commitment rather than a present-tense claim.
 - **Cross-cutting coherence.** After all three sections are drafted, read them together with the Pricing Strategy as one paragraph. Does the cost structure support the price? Does the persona's willingness to pay leave room for the margin? Does the north star track the engine of the chosen business model (MRR for subscription, weekly buyers for one-time, paid units for usage, active retainers for services)? If any pair contradicts, fix the upstream one.
 
-### 5. Rewrite the Business Strategy file in place
+### 5. Write the Business Strategy section of `docs/DEFINE.md`
 
-Output: **rewrite `BONUS-Business-Strategy-Deep-Dive.md` in place** with the filled-in answers. Do not create a new file.
+Output: `## 4. Business Strategy` in `docs/DEFINE.md`. The worksheet `BONUS-Business-Strategy-Deep-Dive.md` stays blank; never write answers back into `productos/`.
 
-Match the template's structure exactly: same section headers, same italic prompts, same `> Good: ... / Bad: ...` guidance lines, same tables. Replace each `**Your answer:**` block with the filled-in answer and fill the three-customer contribution table. Keep the option tables (Common unfair advantages, Common north stars by business model) intact.
+Read `docs/DEFINE.md` first (it exists — the Pricing Strategy is a required input). Write only `## 4. Business Strategy`; never touch the other sections — if the economics say the price is wrong, the fix goes through `define-pricing`, not an edit here. If the section is already filled, show the user a diff of the proposed change and get approval before overwriting — preserve the member's own edits and surface any conflicts.
 
-At the top of the rewritten file, add:
+Use the worksheet's headings — `### Cost & Margin`, `### Unfair Advantage`, `### North Star Metric` — with clean answers: no italic prompts, no `> Good/Bad` lines, no `**Your answer:**` labels. Keep the cost equation and the filled three-customer contribution table under Cost & Margin; drop the worksheet's option tables (Common unfair advantages, Common north stars by business model).
 
-- A short **strategy summary** — 2–3 sentences that restate the business model and price from the Pricing Strategy, then the gross margin, the moat, and the north star, so a co-founder can read it in 10 seconds.
-- A **dated header** — e.g., "Drafted: May 2026"
-- A short **evidence footer** — e.g., "Based on: 1 Product Offer, 1 Pricing Strategy, 3 cost benchmarks, 0 actual usage data. Recommended next step: re-ground cost-per-customer with the first month of real invoices."
+Open the section with a short **strategy summary** — 2–3 sentences that restate the business model and price from the Pricing Strategy, then the gross margin, the moat, and the north star, so a co-founder can read it in 10 seconds — and close it with one short evidence line — e.g., "Based on: the Product Offer, the Pricing Strategy, 3 cost benchmarks, 0 actual usage data. Recommended next step: re-ground cost-per-customer with the first month of real invoices."
 
-At the bottom of the rewritten file, add a **Sources** section listing the benchmark references, model and platform price pages, and any other research used — so the user can re-verify later.
-
-Because this overwrites the template, **read the existing file first** to preserve any user notes or modifications, and surface any conflicts before writing.
+Update the `*Last updated:*` line, and add a `### Business Strategy` entry under `## Sources` listing the benchmark references, model and platform price pages, and any other research used — so the user can re-verify later. Write for a reader without context: spell out acronyms like MRR, GMV, and LTD on first use — `docs/DEFINE.md` is the document the member shares.
 
 ### 6. Verify before delivering
 
-Re-read the rewritten strategy against the framework's "good vs bad" criteria and the failure patterns below. Specifically check:
+Re-read the written strategy against the framework's "good vs bad" criteria and the failure patterns below. Specifically check:
 
 - Does the heavy-use row stay positive, and is gross margin in the healthy band for the category? Can the user recite cost-per-customer from memory?
 - Is the Unfair Advantage a real moat (distribution, switching costs, audience, niche expertise, counter-positioning) — or is it "we built it first" with a thesaurus on top?
 - Is the North Star **one** metric, with a 90-day target, that matches the business model in the Pricing Strategy?
 - Do the three answers and the Pricing Strategy tell **one** story when read in sequence?
 
-Deliver the rewritten file via a `computer://` link and a one-paragraph summary of what is solid and what still needs validation.
+Deliver `docs/DEFINE.md` via a `computer://` link and a one-paragraph summary of what is solid and what still needs validation.
 
 ## Failure patterns to look for
 
@@ -120,12 +116,12 @@ When you spot one of these, name it. Naming is half the cure.
 
 ## What "done" looks like
 
-A rewritten Business Strategy file where:
+A filled `## 4. Business Strategy` in `docs/DEFINE.md` where:
 
 - **Cost & Margin** has an explicit per-customer cost equation, a filled low / expected / heavy-use table with a positive heavy-use contribution, a named gross margin %, and fixed monthly costs covered by current or near-term MRR.
 - **Unfair Advantage** names a real, compounding moat — or honestly names one to build over the next 12 months. Both count as done.
 - **North Star** is one metric, with a 90-day target, that matches the business model in the Pricing Strategy.
-- The three answers and the Pricing Strategy read as **one** story in the strategy summary at the top of the file.
-- The file is dated and sourced.
+- The three answers and the Pricing Strategy read as **one** story in the strategy summary at the top of the section.
+- The `*Last updated:*` line is current and the `### Business Strategy` sources entry is filled.
 
 Recommended next step after a successful session: if the economics changed the price, re-run `define-pricing` for the specific section that broke; otherwise live with the strategy, pick a tracker for the north star, and re-run this skill once a month of real usage data is in.

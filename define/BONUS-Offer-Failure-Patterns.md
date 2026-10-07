@@ -162,7 +162,7 @@ The offer is sold in one frame (consumer / B2B / enterprise / dev tool / indie) 
 
 ## How to use this document
 
-Run this checklist after a first draft of your Product Offer. If any of the eight patterns are present, treat that section as unfinished — every downstream artifact (Customer Persona, Pricing Strategy, Mini-Launch message, growth plan, ad copy) inherits the weakness.
+Run this checklist after a first draft of your Product Offer. If any of the eight patterns are present, treat that section as unfinished — every downstream artifact (Customer Persona, Pricing Strategy, landing page, growth plan, ad copy) inherits the weakness.
 
 Name the pattern when you spot it. Naming is half the cure: "this is a Frame Mismatch" gives you and your team a shared vocabulary for the fix, instead of the vaguer "this just feels off."
 

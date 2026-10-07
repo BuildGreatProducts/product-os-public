@@ -8,19 +8,19 @@
 
 | Day | Block | Skill(s) | Proof | Hours |
 | --- | --- | --- | --- | --- |
-| 1 | **Define from idea** | `define-offer-builder` → `define-customer-persona` → `define-pricing` → `define-product`, one sitting, no research rabbit holes | `docs/PRODUCT.md` exists, 8 sections filled; the offer read out loud | 3 |
+| 1 | **Define from idea** | `define-offer-builder` → `define-customer-persona` → `define-pricing`, one sitting, no research rabbit holes | `docs/DEFINE.md` has Summary, Offer, Persona and Pricing filled; the offer read out loud | 2.5 |
 | 2 | **Look + magic moment + spec** | `design-design-system` from one image the member loves → `design-magic-moment` → `develop-prd-roadmap` with the MVP scoped to the magic moment only | `docs/DESIGN.html` screenshot; `docs/ROADMAP.md` with one phase | 2.5 |
 | 3 | **Build, day one** | `develop-mvp-build` (or the build loop task by task) | a screenshot of the first working screen, saved to `docs/` | 4 |
 | 4 | **Build, day two** | continue; the core flow works end to end locally | screenshots of signup → magic moment, saved to `docs/`; the test suite passing | 4 |
 | 5 | **Quality gate** | `develop-code-review` → `develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` verdict; Critical/High ticked | 2 |
 | 6 | **Deploy guide + go live** | `develop-golive` → work `docs/DEPLOY.md` top to bottom | live URL, HTTPS | 3 |
-| 7 | **Smoke test, buffer, announce** | smoke test as a real customer; fix what it finds; `mini-launch` if there's time | **smoke test passed**; live post screenshot (stretch) | 2 |
+| 7 | **Smoke test, buffer, announce** | smoke test as a real customer; fix what it finds; if there's time, post the live URL where your customers are | **smoke test passed**; the post's link (stretch) | 2 |
 
 ## Notes for the composer
 
 - **No Words block.** Identity and the copy guide are worth having, but not this week. The design system gives the build its tokens; `docs/COPY.md` can come after launch. If hours allow (4h+), add `design-ux-writing` to Day 2 so the first screens are copy-correct.
 - **The spec is the scope control.** `develop-prd-roadmap` will want to scope a full MVP; brief it with the challenge: one phase, the magic moment and the path to it, everything else in "later". The roadmap must fit two build days.
-- **Day 1 is the long one.** Four Define skills in one sitting is possible because the challenge sets the pace: the offer-builder's interview, then persona and pricing at their fastest, then the synthesis. No web-research spirals; the pricing skill's fast path (about thirty minutes: one model, one unit, one number) is the model.
+- **Day 1 is dense.** Three Define skills in one sitting is possible because the challenge sets the pace: the offer-builder's interview, then persona and pricing at their fastest, each filling its own section of `docs/DEFINE.md`. No web-research spirals; the pricing skill's fast path (about thirty minutes: one model, one unit, one number) is the model.
 - **Build days are the only days that can absorb more hours.** If the member has 4h+, Day 4 usually finishes early; pull the quality gate forward and give Day 6 a full buffer.
 
 ## Compression (a missed or short session)
@@ -32,4 +32,4 @@
 
 ## What Day 7 looks like
 
-A real person (the member, in an incognito window, with a fresh account) signs up, does the one thing, and sees it work at a URL that isn't localhost. That's the bar. The launch post is a bonus.
+A real person (the member, in an incognito window, with a fresh account) signs up, does the one thing, and sees it work at a URL that isn't localhost. That's the bar. The announcement post is a bonus.

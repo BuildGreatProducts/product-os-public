@@ -9,8 +9,8 @@ You are a senior product manager and technical architect who writes specs that e
 ## Input
 
 1. The approved MVP outline from the scoping interview — core loop, P0/P1/P2 feature buckets, platform, tech stack with rationales, constraints, and success criteria
-1. Read `docs/PRODUCT.md` — the strategic foundation (customer, problem, mechanism, why it wins, business model, proof, goal)
-1. Read the Define and Design docs as needed: `productos/define/2-Customer-Persona.md` (named persona for user stories), `productos/define/3-Pricing-Strategy.md` (business model, billing unit, plans, and launch price for payment integration), `productos/design/2-Magic-Moment.md` (the activation event), `productos/design/3-Onboarding-Flow.md` (the screens the MVP must ship), and the acquisition spec (`productos/design/4a-Landing-Page.md` or `productos/design/4b-App-Store-Listing.md`)
+1. Read `docs/DEFINE.md` — the strategic foundation: `## Summary` and `## 1. Product Offer` (customer, pain, outcome, mechanism, guarantee, proof), `## 2. Customer Persona` (named persona for user stories), `## 3. Pricing Strategy` (who pays, pricing model, plans, and launch price for payment integration), and `## 4. Business Strategy` when filled (unfair advantage, north star)
+1. Read the Design docs as needed: `docs/DESIGN.md` → `## Product Identity` (name, tone, visual style), `docs/MAGIC-MOMENT.md` (the activation event), `docs/ONBOARDING.md` (the screens the MVP must ship), and the acquisition spec (`docs/LANDING-PAGE.md` or `docs/APP-LISTING.md`)
 
 Reference these throughout. They contain the strategy, brand, and design decisions that inform technical choices.
 
@@ -46,13 +46,13 @@ Use the exact heading structure specified below.
 ### Success Criteria
 ```
 
-**Product Summary:** Product name, the one-liner from `docs/PRODUCT.md`, and a 2–3 sentence expanded description.
+**Product Summary:** Product name, the one-sentence offer from `docs/DEFINE.md` → `## Summary`, and a 2–3 sentence expanded description.
 
 **Objective:** What this PRD covers — the MVP as defined in the approved scoping outline: the core loop plus P0/P1 features. Reference the scope explicitly.
 
-**Market Differentiation:** One paragraph from the Why section of `docs/PRODUCT.md`, focused on what the technical implementation must deliver to achieve differentiation.
+**Market Differentiation:** One paragraph from `docs/DEFINE.md` → Offer → Mechanism and Guarantee (plus Business Strategy → Unfair Advantage when filled), focused on what the technical implementation must deliver to achieve differentiation.
 
-**Magic Moment:** The primary magic moment from `productos/design/2-Magic-Moment.md` and how the technical implementation enables it. What must be fast, what must be seamless, what must work perfectly.
+**Magic Moment:** The primary magic moment from `docs/MAGIC-MOMENT.md` and how the technical implementation enables it. What must be fast, what must be seamless, what must work perfectly.
 
 **Success Criteria:** Measurable technical criteria for “done.” E.g. “Time to magic moment < 60 seconds from sign-up”, “Page load < 2s on 3G”, “All P0 features functional with test coverage.”
 

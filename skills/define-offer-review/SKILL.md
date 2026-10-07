@@ -1,6 +1,6 @@
 ---
 name: define-offer-review
-description: Use when the user has filled out their Product Offer and wants a rigorous, strategic critique before moving on. Triggers on phrases like "review my product offer", "critique my offer", "is my offer any good", "tear apart my product offer", "audit my offer", "sanity-check my positioning", "what's wrong with my offer", or any request to evaluate, sharpen, pressure-test, or rewrite the six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof) of a product offer. Reads the filled-in Product Offer, identifies gaps in thinking, references the worked Product Offer Examples as calibration anchors, proposes rewrites in the voice of a strategic startup advisor with deep launch and exit experience, and applies approved edits directly to the Product Offer file. Especially appropriate inside a ProductOS-style "Define" workflow where the user has filled in `1-Product-Offer.md` and wants it sharpened before building the customer persona or strategy.
+description: Use when the user has filled out their Product Offer and wants a rigorous, strategic critique before moving on. Triggers on phrases like "review my product offer", "critique my offer", "is my offer any good", "tear apart my product offer", "audit my offer", "sanity-check my positioning", "what's wrong with my offer", or any request to evaluate, sharpen, pressure-test, or rewrite the six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof) of a product offer. Reads the Product Offer section of docs/DEFINE.md, identifies gaps in thinking, references the worked Product Offer Examples as calibration anchors, proposes rewrites in the voice of a strategic startup advisor with deep launch and exit experience, and applies approved edits to that section (refreshing the Summary when the pitch changes). Especially appropriate inside a ProductOS-style "Define" workflow where the offer is drafted and the user wants it sharpened before building the customer persona or pricing.
 ---
 
 # Define: Product Offer Critique
@@ -15,13 +15,14 @@ A product offer is six sentences (Customer, Current Pain, Outcome, Mechanism, Gu
 
 ## Inputs
 
-Locate three files in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
+The member's answers live in `docs/DEFINE.md` at the app repo root; the reference files live in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Product Offer** — usually `1-Product-Offer.md`. The file this skill audits and rewrites. If it is mostly empty, stop and ask the user to take a first pass before invoking this skill — the skill's job is to sharpen, not to draft from scratch.
-2. **The Product Offer Examples** — usually `BONUS-Product-Offer-Examples.md`. Five worked examples across business models. Read this once at the start to ground every critique in a real benchmark. Use as **calibration**, never as a script to retrofit the user onto.
-3. **The Customer Persona** — usually `2-Customer-Persona.md`, if it has been filled in already. Optional, but if present, use it for coherence checks (does the offer's Customer line match the persona's Identity? does the Proof match the persona's trust threshold?).
+1. **The Product Offer** — `## 1. Product Offer` (and `## Summary`) in `docs/DEFINE.md`. The section this skill audits and rewrites. If it is missing or mostly placeholder, stop and point the user to `define-offer-builder` (or `define-from-code` for an existing product) — the skill's job is to sharpen, not to draft from scratch.
+2. **The Product Offer worksheet** — usually `1-Product-Offer.md`. The six elements' prompts and `> Good/Bad` criteria the audit grades against. Read it; never write to it.
+3. **The Product Offer Examples** — usually `BONUS-Product-Offer-Examples.md`. Five worked examples across business models. Read this once at the start to ground every critique in a real benchmark. Use as **calibration**, never as a script to retrofit the user onto.
+4. **The Customer Persona** — `## 2. Customer Persona` in `docs/DEFINE.md`, if it has been filled in already. Optional, but if present, use it for coherence checks (does the offer's Customer line match the persona's Identity? does the Proof match the persona's trust threshold?).
 
-If the Product Offer file is missing, ask where it lives before proceeding.
+If `docs/DEFINE.md` isn't where you expect, ask where it lives before proceeding.
 
 ## The advisor's voice
 
@@ -60,7 +61,7 @@ Move through all six sections before proposing any rewrites. The user needs the 
 
 After the section audit, do five whole-offer checks. These are the ones that separate a competent critique from an advisor-level one:
 
-- **Coherence.** Plug the six answers into the one-sentence pitch at the top of the template: *"For \[customer\] to help them avoid \[pain\] and achieve \[outcome\]. \[Product\] does this using \[mechanism\], backed by \[proof\] and de-risking with \[guarantee\]."* Read it out loud. Does it tell one story, or does it read like a Mad Libs page? Most weak offers fail this test — the customer line names one persona, the proof line names a different one.
+- **Coherence.** Plug the six answers into the one-sentence pitch at the top of the worksheet: *"For \[customer\] to help them avoid \[pain\] and achieve \[outcome\]. \[Product\] does this using \[mechanism\], backed by \[proof\] and de-risking with \[guarantee\]."* Read it out loud. Does it tell one story, or does it read like a Mad Libs page? Most weak offers fail this test — the customer line names one persona, the proof line names a different one.
 - **Mechanism → Outcome credibility.** Does the mechanism *plausibly* deliver the outcome to a skeptical buyer? "AI-powered" doesn't deliver "95+ PageSpeed." "Native Swift app" plausibly delivers "polished screenshot in 10 seconds." Name the gap when the mechanism doesn't carry the weight.
 - **Proof → Customer trust match.** Does the proof clear the trust bar the named customer actually has? An enterprise IT buyer needs SOC2 and Fortune 500 logos; a Mac power user needs a Wirecutter mention and 4.9 stars on the App Store. Mismatched proof is one of the most common offer failures — and the most expensive to fix late.
 - **Guarantee → Killer objection match.** What's the buyer's #1 objection? Does the guarantee actually defuse it? "30-day refund" doesn't help if the objection is "this will break our production pipeline" — the real guarantee for that buyer is a sandboxed pilot, not a refund. Surface the mismatch.
@@ -80,15 +81,17 @@ Now propose the actual edits. For each section that needs changing:
 2. **Show the proposed rewrite** — specific, concrete, in the style of the examples (named entities, numbers, ranges, real competitors).
 3. **Explain the *why*** in one sentence — what gap the rewrite closes and what strategic risk it removes.
 4. **Wait for the user's response.** They can approve, reject, or counter-propose. Don't apply edits without explicit approval — this is their offer, not yours.
-5. **On approval**, apply the edit to `1-Product-Offer.md` as a surgical `Edit` (replace the user's previous answer text under the relevant section heading; preserve the section header, the italic prompt, and the `> Good: ... / Bad: ...` guidance lines — they remain useful when the user re-runs this skill later).
+5. **On approval**, apply the edit to `docs/DEFINE.md` as a surgical `Edit` — replace the previous answer under the matching `### <Element>` heading in `## 1. Product Offer`, as a clean answer (no prompts, no `> Good/Bad` lines). Never touch the other sections, and never write to the worksheet.
 
 Do not batch-apply edits. The user should see each one land and have a chance to roll back before the next.
 
 ### 6. Final assembly and read-back
 
-Once edits are applied, fill in the "Describe your product using your product offer" section at the top of the file by assembling the six approved answers into the one-sentence template. Read this assembled sentence back to the user and ask: does this sound like a thing your customer would forward to a colleague? If not, you're not done — identify which section is breaking the sentence and propose one more pass on it.
+Once edits are applied, reassemble the six approved answers into the one-sentence template and read it back to the user: does this sound like a thing your customer would forward to a colleague? If not, you're not done — identify which section is breaking the sentence and propose one more pass on it. If the pitch changed (or `## Summary` is still a placeholder), refresh `## Summary` to match — the new one-sentence pitch plus its 2–3 framing sentences — showing the diff and getting approval like any other edit.
 
-Add a dated footer at the bottom of the file — e.g., "Critiqued and rewritten: May 2026." Personas decay; offers decay faster. The date matters.
+If the Offer and Summary sections carry `define-from-code`'s italic *Extracted draft* line, remove it from those two sections once the review is done — they've now been sharpened. Leave the line on the Persona and Pricing sections; those skills clear their own.
+
+Update the `*Last updated:*` line — personas decay; offers decay faster, so the date matters — and add any new evidence to the `### Product Offer` entry under `## Sources`. Write for a reader without context: spell out acronyms like ICP, JTBD, and MRR on first use — `docs/DEFINE.md` is the document the member shares.
 
 ## Failure patterns to look for
 
@@ -109,18 +112,18 @@ When you see one of these, name it. Naming the pattern teaches the user to catch
 
 - **Audit first, propose second.** Do not interleave critique and rewriting. The user needs to see the whole problem before debating any single fix.
 - **One edit at a time on the file.** Each approved rewrite is one `Edit` operation. The user must explicitly approve before any file modification.
-- **Preserve the template scaffolding.** Section headers, italic prompts, and `> Good: ... / Bad: ...` lines stay intact. They are reference material for the next time this skill is invoked on a refresh.
+- **Stay inside the Offer.** Only `## 1. Product Offer` (and `## Summary` when the pitch changes) gets edited. The worksheet keeps its prompts and good/bad guidance for the next refresh; the other DEFINE.md sections belong to other skills.
 - **Don't grade — diagnose.** Avoid "this is a 6/10 offer." Diagnose the specific risks and propose the specific fixes. Grades are useless; risks are actionable.
 
 ## What "done" looks like
 
-A Product Offer file where:
+A `## 1. Product Offer` section in `docs/DEFINE.md` where:
 
 - Every section names something specific — a role, a tool, a number, a competitor, a community, a verifiable result.
 - The mechanism plausibly delivers the outcome to a skeptical buyer.
 - The proof clears the named customer's trust bar.
 - The guarantee actually defuses the predicted killer objection.
-- The one-sentence pitch at the top reads like one product, not six.
-- The file is dated.
+- The one-sentence pitch in `## Summary` reads like one product, not six.
+- The `*Last updated:*` line is current.
 
-Anything less is a draft. Say so explicitly, surface the remaining risks, and recommend the next step — usually one more round of customer interviews to back the still-weakest section with evidence.
+Anything less is a draft. Say so explicitly, surface the remaining risks, and recommend the next step — usually one more round of customer interviews to back the still-weakest section with evidence. Then point to the next Define skill: `define-customer-persona` if `## 2. Customer Persona` is still a placeholder (or an extracted draft), otherwise `define-pricing`.

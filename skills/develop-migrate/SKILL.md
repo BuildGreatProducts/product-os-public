@@ -18,7 +18,7 @@ Two rules frame the whole session:
 
 Locate in the ProductOS folder (`productos/` at the app repo root, or the current folder in a standalone checkout) and the repo-root `docs/`:
 
-1. **`docs/PRODUCT.md`** — if present, the canon for what the app is; useful for the verification gate's core-flow list. Not required.
+1. **`docs/DEFINE.md`** — if present, the canon for what the app is; useful for the verification gate's core-flow list. Not required.
 2. **`productos/develop/guides/TECH-STACK-OPTIONS.md`** — the stack recommendations the target should be chosen from.
 3. **The platform project itself** — the user demonstrates or describes it; if a repo export already exists, read it directly.
 

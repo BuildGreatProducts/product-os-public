@@ -6,13 +6,13 @@
 
 | Day | Block | Skill(s) | Proof | Hours |
 | --- | --- | --- | --- | --- |
-| 1 | **Define backfill** | `define-from-code` → `define-product` (skip if `docs/PRODUCT.md` exists and is current) | `docs/PRODUCT.md` exists; the extracted offer confirmed by the member | 1.5 |
+| 1 | **Define backfill** | `define-from-code` (skip if `docs/DEFINE.md` exists and is current) | `docs/DEFINE.md` has Summary, Offer, Persona and Pricing filled; the extracted offer confirmed by the member | 1 |
 | 2 | **Words + Look** | `design-identity-creator` → `design-ux-writing` (with its audit of the real UI strings) → `design-design-system` from one image the member loves | Brand Card; `docs/COPY.md` with the fix list; `docs/DESIGN.html` screenshot | 3 |
 | 3 | **Rebuild, day one** | `develop-design-better` + the build loop on the highest-traffic screen; `develop-design-review` before commit | before/after of that screen | 4+ |
 | 4 | **Rebuild, day two** | same, on the onboarding-to-magic-moment screens; apply `docs/COPY.md`'s fix list | before/after of the core flow | 4+ |
 | 5 | **Quality gate** | `develop-code-review` → `develop-security-audit` → Critical/High fixed | `docs/SECURITY-AUDIT.md` verdict; Critical/High ticked | 2 |
 | 6 | **Deploy guide + go live** | `develop-golive` → work `docs/DEPLOY.md` | live URL, HTTPS | 3 |
-| 7 | **Smoke test, buffer, announce** | smoke test as a real customer; `develop-design-review` over the whole app if there's time; `mini-launch` (stretch) | **smoke test passed**; live post screenshot (stretch) | 2 |
+| 7 | **Smoke test, buffer, announce** | smoke test as a real customer; `develop-design-review` over the whole app if there's time; post the live URL where your customers are (stretch) | **smoke test passed**; the post's link (stretch) | 2 |
 
 ## Notes for the composer
 
@@ -25,7 +25,7 @@
 
 1. Drop Announce.
 2. Merge Days 3–4 into one: the magic moment screen and the screen before it, nothing else.
-3. Merge Words into Look: identity in a paragraph from `docs/PRODUCT.md`, `docs/COPY.md` from the ux-writing skill's defaults without the audit pass.
+3. Merge Words into Look: identity in a paragraph from `docs/DEFINE.md`, `docs/COPY.md` from the ux-writing skill's defaults without the audit pass.
 4. Never move the gate after go live; never move go live past Day 7.
 
 ## What Day 7 looks like

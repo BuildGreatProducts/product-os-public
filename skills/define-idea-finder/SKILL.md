@@ -1,6 +1,6 @@
 ---
 name: define-idea-finder
-description: Use when the user has a business, deep expertise, or a passion but no software idea yet and wants one MVP worth building. Triggers on phrases like "find my idea", "what should I build", "I have a business but no product idea", "turn my expertise into software", "turn my hobby into a product", "I'm passionate about X, what could I build", "find an idea from my interests", "I don't know what to build", "productize my service", or any request to go from a business, expertise, or passion to a single software idea. Audits where the money, hours, and obsessions already go, inventories leverage points, generates a 3-5 idea shortlist, scores it, routes between building for yourself first and building for the people around you, converges on ONE idea, and writes the Idea Audit before handing off to define-offer-builder. Not for picking features in an existing codebase — that's develop-feature-finder. The Define entry point for members arriving without an idea.
+description: Use when the user has a business, deep expertise, or a passion but no software idea yet and wants one MVP worth building. Triggers on phrases like "find my idea", "what should I build", "I have a business but no product idea", "turn my expertise into software", "turn my hobby into a product", "I'm passionate about X, what could I build", "find an idea from my interests", "I don't know what to build", "productize my service", or any request to go from a business, expertise, or passion to a single software idea. Audits where the money, hours, and obsessions already go, inventories leverage points, generates a 3-5 idea shortlist, scores it, routes between building for yourself first and building for the people around you, converges on ONE idea, and folds what the member chooses into docs/DEFINE.md before handing off to define-offer-builder. Not for picking features in an existing codebase — that's develop-feature-finder. The Define entry point for members arriving without an idea.
 ---
 
 # Define: Idea Finder
@@ -9,7 +9,7 @@ This is the Define entry point for the member who arrives **without an idea** �
 
 The core belief: the best first software idea is almost never invented — it is *excavated* from where the member's money, hours, or obsessions already go. A business has customers, pain, and distribution; a passion has a community, recurring frustrations, and people already spending on it. The member's unfair advantage already exists; this skill's job is to find where software multiplies it. That is also why the session is an audit, not a brainstorm: every candidate idea must trace back to something the member already does, knows, owns, or keeps coming back to.
 
-What this skill is not: it is not blank-page ideation (that is what it exists to prevent), it is not the offer (the offer-builder owns turning the chosen idea into a Product Offer), and it is not validation (that comes after the Mini-Launch — though the audit scores every candidate against the validation principles in `BONUS-Idea-Validation-Cheat-Sheet.md`).
+What this skill is not: it is not blank-page ideation (that is what it exists to prevent), it is not the offer (the offer-builder owns turning the chosen idea into a Product Offer), and it is not validation (that comes once real customers see the offer — though the audit scores every candidate against the validation principles in `BONUS-Idea-Validation-Cheat-Sheet.md`).
 
 > **Session length:** 45–60 minutes. The member's only job is to answer questions about how their business runs or how their passion actually plays out; all comparable-product and pricing research is Claude's job during the session, not homework for the user. The session ends with one chosen idea and a short idea brief — not an offer, and not a validated idea.
 
@@ -17,11 +17,11 @@ What this skill is not: it is not blank-page ideation (that is what it exists to
 
 Locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Idea Audit template** — usually `BONUS-Idea-Audit.md` in the define folder. **The file this skill fills in place** at the end. (A fillable template despite the BONUS prefix — same precedent as `BONUS-Business-Strategy-Deep-Dive.md`.) If a filled `BONUS-Leverage-Audit.md` from before ProductOS 1.12.0 exists, read it and carry its answers over rather than asking again.
+1. **The Idea Audit worksheet** — usually `BONUS-Idea-Audit.md` in the define folder. The section structure, prompts, and `> Good/Bad` criteria; read it, never write to it. The audit is worked through in conversation; nothing gets its own file. At the end (step 8) the member chooses what to fold into the optional `## Idea Audit` section of **`docs/DEFINE.md`**, so the product keeps one Define document. If an earlier audit exists — an `## Idea Audit` section already in `docs/DEFINE.md`, a filled `productos/define/BONUS-Idea-Audit.md` from a pre-1.14.0 copy, or a `BONUS-Leverage-Audit.md` from before 1.12.0 — read it and carry its answers over rather than asking again.
 2. **The Idea Validation Cheat Sheet** — usually `BONUS-Idea-Validation-Cheat-Sheet.md`. Read once at the start for calibration. Its principles (build for yourself first, niche down until it hurts, validate by distribution, no competitors = no market) are the scoring lens, and its tactics get named at handoff.
 3. **The member's business, expertise, or passion.** Not a file — the interview. Anything that exists (a website, a service menu, internal docs, a community they run) helps, but nothing is required.
 
-If the template is missing, ask the user where it lives before continuing.
+If the worksheet is missing, ask the user where it lives before continuing.
 
 ## The finder's eye
 
@@ -61,7 +61,7 @@ That's the entire intake. From the answers, form a **working hypothesis** about 
 
 ### 2. Idea inventory
 
-Walk the categories one at a time, asking for concrete instances of each. Walk only the lenses that apply — a passion-only member skips the business lens, and vice versa. These map one-to-one onto the template's Section 3 sub-blocks.
+Walk the categories one at a time, asking for concrete instances of each. Walk only the lenses that apply — a passion-only member skips the business lens, and vice versa. These map one-to-one onto the worksheet's Section 3 sub-blocks.
 
 **Business & expertise lens:**
 
@@ -126,20 +126,26 @@ A candidate that passed the gate on the member's evidence alone is routed for yo
 
 ### 7. Converge on ONE
 
-State the chosen idea in the one-sentence format and confirm it with the member. Park the runners-up with their scores in the template's Parking Lot — if the Mini-Launch on idea #1 gets zero replies, idea #2 is already pre-scored.
+State the chosen idea in the one-sentence format and confirm it with the member. Park the runners-up with their scores in the audit's Parking Lot — if idea #1 gets no response once real customers see it, idea #2 is already pre-scored.
 
-### 8. Fill the Idea Audit in place
+### 8. Ask what to fold into `docs/DEFINE.md`
 
-Fill `BONUS-Idea-Audit.md` in place — never a sibling copy, per the root `AGENTS.md` rules. Match the template's structure exactly: same section headers, same italic prompts, same `> Good: ... / Bad: ...` guidance lines. Replace each `**Your answer:**` block, keep the scaffolding intact — write "Not applicable" under a lens the member doesn't bring. Add a dated header at the top ("Audited: [month year]") and a one-line research footer listing the comparables and pricing signals found. Read the existing file first to preserve any user notes.
+The audit lives in the conversation; `docs/DEFINE.md` stays the one Define document. Play the finished audit back in one short block (the worksheet's eight sections, a line or two each), then ask the member what to keep:
+
+> *"Which parts should go into `docs/DEFINE.md`? I'd suggest **The One Idea** and **The Route** (the why behind this idea) and the **Parking Lot** (idea #2 is pre-scored if #1 comes back silent). The inventory, shortlist and scores can stay in this conversation, or I can add them too."*
+
+Write only what the member picks into the optional `## Idea Audit` section of `docs/DEFINE.md`. If the file doesn't exist yet (the usual case — this skill runs before the offer), create it from `productos/define/DEFINE-TEMPLATE.md` (`mkdir -p docs`) and leave the other sections as placeholders. Use the worksheet's section names as `###` headings, in the worksheet's order, as clean answers: no italic prompts, no `> Good/Bad` lines, no `**Your answer:**` labels (keep the scores table if Scores is chosen). Add a dated line ("Audited: [month year]") under the section heading and an `### Idea Audit` entry under `## Sources` listing the comparables and pricing signals found. Update the *Last updated:* line, and touch no other section. The member picks nothing → write nothing and say so; the One Idea still opens the offer-builder.
+
+If the section already holds an earlier audit, read it first, preserve the member's edits, show a diff and get approval before overwriting. If you carried answers over from an older file (`productos/define/BONUS-Idea-Audit.md`, `BONUS-Leverage-Audit.md`), tell the member what moved into `docs/DEFINE.md` and leave the old file alone (`update` resets it). The worksheet stays blank; never write answers back into `productos/`.
 
 ### 9. Verify and hand off
 
-Re-read the filled audit and check: every shortlisted idea traces to a named inventory item; every score has a one-line justification where it isn't obvious; the chosen idea's pay evidence is written down and labelled **[member]** or **[researched]**, with at least one data point showing that people other than the member pay if it's routed for the people around you; exactly one route is named, with its reason; the One Idea reads as the offer-builder's intake, not a paragraph of hedging.
+Re-read the audit (and whatever was folded into `docs/DEFINE.md`) and check: every shortlisted idea traces to a named inventory item; every score has a one-line justification where it isn't obvious; the chosen idea's pay evidence is written down and labelled **[member]** or **[researched]**, with at least one data point showing that people other than the member pay if it's routed for the people around you; exactly one route is named, with its reason; the One Idea reads as the offer-builder's intake, not a paragraph of hedging.
 
 Then hand off, in order:
 
 1. **`define-offer-builder`** — the mandatory next step. Open it with its two intake questions *already answered* from the idea brief: "What's the product, in one or two sentences?" → the chosen idea sentence. "Who is this for, today?" → the member themselves (for-yourself-first route), or the named client segment or enthusiast segment (for-others route).
-2. **`BONUS-Idea-Validation-Cheat-Sheet.md`** — name the 1–2 tactics the route implies (for-yourself-first → Be-Your-Own-Customer; productized service → Concierge MVP; niche community position or a passion community → the insider-network tactics), but do not run them. Validation comes after the offer and the Mini-Launch.
+2. **`BONUS-Idea-Validation-Cheat-Sheet.md`** — name the 1–2 tactics the route implies (for-yourself-first → Be-Your-Own-Customer; productized service → Concierge MVP; niche community position or a passion community → the insider-network tactics), but do not run them. Validation comes after the offer.
 
 ## Idea-to-software patterns to draw on
 
@@ -172,12 +178,12 @@ Refresh via live research at invocation time, but these shapes tend to be durabl
 - **One inventory category at a time.** The conversation is the audit.
 - **Kill untraceable candidates immediately** — name the rule when you do it.
 - **Converge, don't collect.** The session ends with one idea, or it failed.
-- **Preserve the template scaffolding.** Headers, prompts, and good/bad lines stay — the audit gets revisited if the first idea's Mini-Launch comes back silent.
+- **Keep the audit's structure.** Same headers as the worksheet, in order — in the playback and in whatever goes into `docs/DEFINE.md`, which gets revisited if the first idea comes back silent once real customers see it.
 
 ## What "done" looks like
 
-A filled `BONUS-Idea-Audit.md` where: the Starting Point has real numbers (revenue and customers, or hours and money spent); every shortlisted idea traces to a named inventory item; all five axes are scored with one-line justifications; the chosen idea's pay evidence is labelled by source; one route (for yourself first / for the people around you) is named with its reason; ONE chosen idea is stated in the offer-builder's intake format; runners-up are parked with scores; and the file carries a dated header and a one-line research footer.
+An audit, worked through in the session, where: the Starting Point has real numbers (revenue and customers, or hours and money spent); every shortlisted idea traces to a named inventory item; all five axes are scored with one-line justifications; the chosen idea's pay evidence is labelled by source; one route (for yourself first / for the people around you) is named with its reason; ONE chosen idea is stated in the offer-builder's intake format; runners-up are parked with scores; and the member has chosen what to fold into the `## Idea Audit` section of `docs/DEFINE.md`, which carries a dated line and a Sources entry.
 
-A session that ends with a research-backed idea the member still wants to sleep on is a success — the audit holds the shortlist either way. A session that ends with three ideas is a failure of convergence; go back to step 5.
+A session that ends with a research-backed idea the member still wants to sleep on is a success — the parking lot holds the shortlist either way, once it's folded into `docs/DEFINE.md`. A session that ends with three ideas is a failure of convergence; go back to step 5.
 
-Recommended next step after a successful session: run `define-offer-builder` with the idea brief as its intake, then follow the standard Define checklist — persona, pricing, Mini-Launch. Validation tactics from the cheat sheet come after the offer, not before.
+Recommended next step after a successful session: run `define-offer-builder` with the idea brief as its intake, then follow the standard Define checklist — persona, then pricing. Validation tactics from the cheat sheet come after the offer, not before.

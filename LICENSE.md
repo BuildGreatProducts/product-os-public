@@ -8,7 +8,7 @@ ProductOS is source-available, not open source. Obtaining a copy — by cloning 
 
 - Use ProductOS (its templates, checklists, reference documents, and skills) to define, design, build, and distribute **your own products**, including commercial products, without limit.
 - Modify and adapt the templates and skills for your own use.
-- Keep and use everything ProductOS generates for you (`docs/PRODUCT.md`, `PRD.md`, your filled templates, your built app) with no restrictions — your outputs are entirely yours.
+- Keep and use everything ProductOS generates for you (`docs/DEFINE.md`, `docs/DESIGN.md`, `docs/PRD.md`, everything else the skills write to `docs/`, your built app) with no restrictions — your outputs are entirely yours.
 
 One copy covers one person. Teammates get their own copy the same way you did — from the official repository or the Product Studio — not from your clone or your repo.
 

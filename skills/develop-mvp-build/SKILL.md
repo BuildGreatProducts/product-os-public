@@ -1,6 +1,6 @@
 ---
 name: develop-mvp-build
-description: Use in the app repo — the repository that contains `productos/` — when the user wants the full MVP built from their ProductOS spec documents. Triggers on phrases like "build my MVP", "build the app", "execute the roadmap", "start the build", "work through the whole roadmap", "build everything", or any request to implement the entire plan rather than a single task or phase. Requires `docs/PRD.md` and `docs/ROADMAP.md` (plus `docs/PRODUCT.md` and `docs/DESIGN.md` for context). Works through every roadmap task in order — implementing, testing, and verifying each before moving on, marking checkboxes and updating the status line, committing at each phase boundary — and runs until all tasks are complete and the magic moment works end to end.
+description: Use in the app repo — the repository that contains `productos/` — when the user wants the full MVP built from their ProductOS spec documents. Triggers on phrases like "build my MVP", "build the app", "execute the roadmap", "start the build", "work through the whole roadmap", "build everything", or any request to implement the entire plan rather than a single task or phase. Requires `docs/PRD.md` and `docs/ROADMAP.md` (plus `docs/DEFINE.md` and `docs/DESIGN.md` for context). Works through every roadmap task in order — implementing, testing, and verifying each before moving on, marking checkboxes and updating the status line, committing at each phase boundary — and runs until all tasks are complete and the magic moment works end to end.
 ---
 
 # Develop: MVP Build
@@ -9,7 +9,7 @@ Build the complete app by executing every task in `docs/ROADMAP.md`, in order, u
 
 ## Setup
 
-Read `docs/ROADMAP.md` first — it is the source of truth for what to build and in what order. `docs/PRD.md` is the technical spec behind it; `docs/DESIGN.md` holds the visual design tokens; `docs/PRODUCT.md` holds the product strategy. Do not load these documents wholesale — each phase lists the specific Reference sections to read, plus whatever a task's Notes line points to. If `docs/ROADMAP.md` or `docs/PRD.md` is missing, stop and tell the user to run `develop-prd-roadmap` first.
+Read `docs/ROADMAP.md` first — it is the source of truth for what to build and in what order. `docs/PRD.md` is the technical spec behind it; `docs/DESIGN.md` holds the visual design tokens; `docs/DEFINE.md` holds the product strategy. Do not load these documents wholesale — each phase lists the specific Reference sections to read, plus whatever a task's Notes line points to. If `docs/ROADMAP.md` or `docs/PRD.md` is missing, stop and tell the user to run `develop-prd-roadmap` first.
 
 ## Work loop
 

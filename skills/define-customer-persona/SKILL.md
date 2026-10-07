@@ -1,6 +1,6 @@
 ---
 name: define-customer-persona
-description: Use when the user has filled out their Product Offer and wants to develop a sharp, evidence-backed Customer Persona. Triggers on phrases like "build a customer persona", "define my customer", "fill in the customer persona", "who is my ideal customer", "create an ICP", "target customer profile", "persona for my product", or any request to translate a product offer into a customer persona document. Reads the user's Product Offer, researches the target market online, then walks them section by section through the Customer Persona framework — proposing hypotheses, critiquing vague answers, and producing a filled-in customer persona document. Especially appropriate inside a ProductOS-style "Define" workflow where a Product Offer markdown file already exists and a Customer Persona template is waiting to be filled in.
+description: Use when the user has filled out their Product Offer and wants to develop a sharp, evidence-backed Customer Persona. Triggers on phrases like "build a customer persona", "define my customer", "fill in the customer persona", "who is my ideal customer", "create an ICP", "target customer profile", "persona for my product", or any request to translate a product offer into a customer persona document. Reads the Product Offer section of docs/DEFINE.md, researches the target market online, then walks them section by section through the Customer Persona framework — proposing hypotheses, critiquing vague answers, and writing the Customer Persona section of docs/DEFINE.md. Especially appropriate inside a ProductOS-style "Define" workflow where the offer is filled in and the persona is next.
 ---
 
 # Define: Customer Persona
@@ -13,10 +13,10 @@ The goal is not to fill in 12 sections quickly. The goal is to make the user a s
 
 ## Inputs
 
-Before starting, locate three files in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
+Before starting, locate the following. The member's answers live in `docs/DEFINE.md` at the app repo root; the worksheets and examples live in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **The Product Offer** — usually `1-Product-Offer.md`. This is the **required** input. If sections are blank or vague ("our customer is small businesses"), stop and ask the user to tighten the offer before proceeding. A persona built on a fuzzy offer inherits the fuzziness, and you will spend the whole conversation re-deriving the offer instead of building the persona.
-2. **The Customer Persona template** — usually `2-Customer-Persona.md`. This defines the exact output structure to follow, **and it is also the file the skill rewrites in place** at the end (see step 5).
+1. **The Product Offer** — `## 1. Product Offer` (and `## Summary`) in `docs/DEFINE.md`. This is the **required** input. If the section is missing, a placeholder, or vague ("our customer is small businesses"), stop and point the user to `define-offer-builder` (or `define-offer-review` to tighten it) before proceeding. A persona built on a fuzzy offer inherits the fuzziness, and you will spend the whole conversation re-deriving the offer instead of building the persona.
+2. **The Customer Persona worksheet** — usually `2-Customer-Persona.md`. Defines the section structure, prompts, and `> Good/Bad` criteria to follow. Read it; never write to it. The output goes to `## 2. Customer Persona` in `docs/DEFINE.md` (see step 5).
 3. **The Customer Persona examples** — usually `BONUS-Customer-Persona-Examples.md`. Read this once at the start to internalize what "good" looks like across business models (B2B SaaS, agent-native app, AI-enabled service, consumer subscription, developer tool). Use them as **calibration**, never as templates to copy from — the user's persona must be their own.
 
 If any of these files are missing, ask the user where they live before continuing.
@@ -27,11 +27,11 @@ If any of these files are missing, ask the user where they live before continuin
 
 Read the Product Offer end-to-end. Extract:
 
-- The customer description (section 1)
-- The current pain (section 2)
-- The outcome (section 3)
-- The mechanism (section 4) — often hints at where the customer hangs out and what tools they already use
-- The guarantee and proof (sections 5, 6) — hint at price sensitivity and trust signals
+- The customer description (Customer)
+- The current pain (Pain)
+- The outcome (Outcome)
+- The mechanism (Mechanism) — often hints at where the customer hangs out and what tools they already use
+- The guarantee and proof (Guarantee, Proof) — hint at price sensitivity and trust signals
 
 From this, form a working hypothesis of the persona's role, context, and likely business model (vertical B2B SaaS, indie tool, productized service, consumer subscription, dev tool, marketplace, etc.). State this hypothesis back to the user in 2–3 sentences and ask them to confirm or correct it **before** doing research. A wrong starting hypothesis wastes the entire research budget.
 
@@ -50,13 +50,13 @@ Collect 8–12 concrete data points before walking the user through the framewor
 
 ### 3. Walk the user through the persona, section by section
 
-Go through the template in order: **Header → 1 Identity → 2 Problem Context → 3 Behaviors & Habits → 4 Tools & Tech Fluency → 5 Job-to-be-Done → 6 Triggers → 7 Current Alternatives → 8 Pains & Frustrations → 9 Decision Criteria & Objections → 10 Willingness to Pay → 11 Watering Holes → 12 Anti-Persona.**
+Go through the worksheet in order: **Header → 1 Identity → 2 Problem Context → 3 Behaviors & Habits → 4 Tools & Tech Fluency → 5 Job-to-be-Done → 6 Triggers → 7 Current Alternatives → 8 Pains & Frustrations → 9 Decision Criteria & Objections → 10 Willingness to Pay → 11 Watering Holes → 12 Anti-Persona.**
 
 For each section:
 
 1. **Propose a hypothesis** based on the offer + research. Be specific — not "they're frustrated" but "they're tense around Sunday 9pm after the kids are in bed, with a glass of wine and a stack of receipts."
 2. **Ask 1–3 targeted questions** to confirm, refine, or reject the hypothesis. Don't ask open-ended "tell me about your customer" questions — ask "is this the moment the problem hurts, or is it actually Monday morning when the bookkeeper emails?"
-3. **Critique weak answers.** Each section in the template has explicit "good" and "bad" criteria — quote them when the user's answer drifts into the "bad" column. Common offenders: "all the time", "various", "tech-savvy", "depends", "I'd have to ask", "anyone who isn't our customer", "Twitter", "industry events".
+3. **Critique weak answers.** Each section in the worksheet has explicit "good" and "bad" criteria — quote them when the user's answer drifts into the "bad" column. Common offenders: "all the time", "various", "tech-savvy", "depends", "I'd have to ask", "anyone who isn't our customer", "Twitter", "industry events".
 4. **Recommend a sharper version**, drawing on the BONUS examples and on research. For instance, instead of "they use spreadsheets" → "Maria maintains a parallel Google Sheet because Dentrix's aging report doesn't match the bank deposits."
 5. **Do the best you can in the session.** If the user can confirm or correct from memory, great. If they can't, accept Claude's research-backed best guess and tag it `[research-backed; confirm in next 5 customer interviews]` — then continue. A research-backed draft tagged for validation is more useful than either a fake answer or a session that stalls. The conversation continues; the goal is to leave the session with an actionable persona, not a perfect one.
 
@@ -70,32 +70,29 @@ A handful of sections are disproportionately diagnostic — if these are weak, t
 - **Willingness to Pay (section 10).** Push for real numbers and named anchor products. If the user can't name three competitors with prices, they don't yet know the price ceiling — say so.
 - **Anti-Persona (section 12).** The strongest test of understanding. A real anti-persona is a *recognizable lookalike* with a *reason they'd churn* and a *gating signal that filters them out at signup*. If the user can't draft one from memory, Claude proposes a recognizable anti-persona from research + offer; the user revises after live customer contact. Tag the section for validation rather than blocking the session.
 
-### 5. Rewrite the Customer Persona file in place
+### 5. Write the Customer Persona section of `docs/DEFINE.md`
 
-Output: **rewrite `2-Customer-Persona.md` in place** with the filled-in answers. Do not create a new file — the user wants the persona document to be the canonical, living version, not a sibling draft.
+Output: `## 2. Customer Persona` in `docs/DEFINE.md` — the one product definition every Define skill fills, a section each. The worksheet `2-Customer-Persona.md` stays blank; never write answers back into `productos/`.
 
-Match the template's structure exactly: same headers, same section order, same instructional prompts (keep the *italic* prompt lines and the `> Good: ... / Bad: ...` guidance intact — they remain useful when the user revisits the doc in three months). Replace each `**Your answer:**` (or equivalent blank field) with the filled-in answer.
+- **If `docs/DEFINE.md` doesn't exist** (only when the member pointed you to an offer held elsewhere — normally the offer skill has already created it), create it (`mkdir -p docs`) from `productos/define/DEFINE-TEMPLATE.md` and leave every other section as the template's one-line placeholder.
+- **If it exists**, read it first. Write only `## 2. Customer Persona`; never touch the other sections. If the section is already filled, show the user a diff of the proposed change and get approval before overwriting — preserve the member's own edits and surface any conflicts. If it carries `define-from-code`'s italic *Extracted draft* line, remove that line once the member approves the rewrite.
 
-At the top of the rewritten file, add:
+Use one `###` heading per worksheet section, same names and order — `### Header`, `### Identity`, `### Problem Context` … `### Anti-Persona` — with clean answers: no italic prompts, no `> Good/Bad` lines, no `**Your answer:**` labels (keep the worksheet's field labels like **Persona:** and **Tagline:** where they carry the answer, and keep any tables). `### Header` carries the persona's role-based **name** and **tagline**. Keep validation tags on the sections they apply to, and end the section with one short evidence line — e.g., "Based on: the Product Offer, 4 web research passes (Reddit, G2, podcast transcripts), 0 customer interviews. Recommended next step: 5 customer interviews to validate Problem Context, Triggers, Pains, Willingness to Pay."
 
-- The persona's role-based **name** and **tagline**
-- A **dated header** — e.g., "Drafted: May 2026"
-- A short **evidence footer** — e.g., "Based on: 1 user-provided product offer, 4 web research passes (Reddit, G2, podcast transcripts), 0 customer interviews. Recommended next step: 5 customer interviews to validate sections 2, 6, 8, 10."
+Update the `*Last updated:*` line, and add a `### Customer Persona` entry under `## Sources` listing the URLs, communities, and posts that backed the research — so the user can re-verify and re-research later. Personas decay; sources let you re-date them.
 
-At the bottom of the rewritten file, add a **Sources** section listing the URLs, communities, and posts that backed the research — so the user can re-verify and re-research later. Personas decay; sources let you re-date them.
-
-Because this overwrites the template, **read the existing file first** to preserve any user notes or modifications they have already made to it, and surface any conflicts to the user before writing.
+Write for a reader without context: spell out acronyms like ICP, JTBD, and MRR on first use — `docs/DEFINE.md` is the document the member shares.
 
 ### 6. Verify before delivering
 
-Re-read the rewritten persona against the framework's "good vs bad" criteria. Specifically check:
+Re-read the written persona against the framework's "good vs bad" criteria. Specifically check:
 
 - Does any answer contain "various", "depends", "all the time", "tech-savvy", "it depends", or "anyone who isn't our customer"? If so, fix or explicitly flag for the user.
 - Can a stranger, reading only the persona, recognize this person in a coffee shop? If not, push for more specificity before delivering.
 - Is the anti-persona recognizable enough to act on? If not, flag the section for live validation rather than treating it as a failure — a research-backed anti-persona to be sharpened with interview evidence is a normal output.
-- Is the persona **dated**? Personas decay; an undated persona is a future fight with the team about "who's the customer again?"
+- Is the `*Last updated:*` line current? Personas decay; an undated persona is a future fight with the team about "who's the customer again?"
 
-Deliver the rewritten file via a `computer://` link and a one-paragraph summary of what is solid and what still needs validation.
+Deliver `docs/DEFINE.md` via a `computer://` link and a one-paragraph summary of what is solid and what still needs validation.
 
 ## Tone and pacing
 
@@ -106,7 +103,7 @@ Deliver the rewritten file via a `computer://` link and a one-paragraph summary 
 
 ## What "done" looks like
 
-A rewritten persona file that:
+A filled `## 2. Customer Persona` in `docs/DEFINE.md` that:
 
 - Names a specific role with a specific moment, place, mood, and device
 - Lists **named** tools, communities, podcasts, and people — no categories like "social media" or "industry leaders"
@@ -117,4 +114,4 @@ A rewritten persona file that:
 
 A research-backed persona with some sections tagged for live validation is a *successful* session output, not a failure. The goal is a persona the user can act on this week — write landing-page copy, pick growth channels, draft an interview script. Validation (5+ customer interviews, sharpening the tagged sections) is a normal next phase that happens after the session, not a precondition for the persona being useful.
 
-Recommended next step after a successful session: live with the draft for 2–3 days, then book 3–5 short customer conversations to sharpen the tagged sections, and re-run this skill once the new evidence is in.
+Recommended next step after a successful session: `define-pricing` — the last Define step, which fills `## 3. Pricing Strategy`. Alongside it, book 3–5 short customer conversations to sharpen the tagged sections, and re-run this skill once the new evidence is in.

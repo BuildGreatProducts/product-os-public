@@ -1,6 +1,6 @@
 # Landing Page
 
-*This template is rewritten in place by the `design-landing-page` skill. The skill reads `docs/PRODUCT.md`, `productos/design/1-Product-Identity.md`, and `productos/design/2-Magic-Moment.md`, then designs every section of a web/desktop landing page with exact copy in the brand's tone of voice. Run the skill to populate this file. A companion clickable HTML wireframe can optionally be generated at `productos/design/landing-page-wireframe.html`. For mobile-first products, use the `4b-App-Store-Listing.md` template instead with the `design-app-listing` skill. The structure below shows what the filled-in version will look like.*
+*This is a worksheet for the `design-landing-page` skill. The skill reads `docs/DEFINE.md`, the Product Identity in `docs/DESIGN.md`, and `docs/MAGIC-MOMENT.md`, designs every section of a web/desktop landing page with exact copy in the brand's tone of voice, and writes the filled version to `docs/LANDING-PAGE.md` using the structure below. A companion clickable HTML wireframe can optionally be generated at `docs/LANDING-PAGE-WIREFRAME.html`. For mobile-first products, use the `design-app-listing` skill (worksheet: `4b-App-Store-Listing.md`) instead. This file itself is never filled in.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## The Magic Moment we're promising
 
-> [One sentence from `productos/design/2-Magic-Moment.md`.]
+> [One sentence from `docs/MAGIC-MOMENT.md`.]
 
 **Hero promise:** "[the actual headline]"
 **Primary CTA:** "[the actual CTA text — 3-5 words]"
@@ -118,7 +118,7 @@ Recommended next refresh: 45 days from now. First A/B test: [headline / CTA / he
 ## Sources
 
 - Reference: `productos/design/BONUS-Web-Landing-Page-Best-Practice.md` ([selected pattern])
-- Tone of voice: `productos/design/1-Product-Identity.md`
-- Magic moment: `productos/design/2-Magic-Moment.md`
-- Product context: `docs/PRODUCT.md`
+- Tone of voice: `docs/DESIGN.md` → Product Identity
+- Magic moment: `docs/MAGIC-MOMENT.md`
+- Product context: `docs/DEFINE.md`
 - Design tokens (if available): `docs/DESIGN.md`

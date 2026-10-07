@@ -1,13 +1,13 @@
 ---
 name: update
-description: Use when the member wants the latest version of ProductOS in a repo where it's already installed. Triggers on phrases like "update ProductOS", "upgrade ProductOS", "get the latest ProductOS", "is there a new version of ProductOS", "pull the new release", or "am I on the latest version". Reads the installed version from productos/, fetches the latest from the official public repo into a temporary folder, and compares every file three ways (the member's copy, the published history, the latest release): files the member never touched take the new version, files the member filled in are kept, files a release deleted or renamed are removed or moved, and filled templates whose structure changed upstream are flagged so their content can be carried into the new structure. Never touches docs/. Then re-runs setup's wiring so new agent guidelines reach the repo root, and reports what changed. Safe to re-run any time.
+description: Use when the member wants the latest version of ProductOS in a repo where it's already installed. Triggers on phrases like "update ProductOS", "upgrade ProductOS", "get the latest ProductOS", "is there a new version of ProductOS", "pull the new release", or "am I on the latest version". Reads the installed version from productos/, fetches the latest from the official public repo into a temporary folder, and compares every file three ways (the member's copy, the published history, the latest release): files the member never touched take the new version, files the member filled in are kept, files a release deleted or renamed are removed or moved, and outputs an older copy kept inside productos/ (filled templates, wireframes, PRODUCT.md's inputs) are moved into docs/, where every output lives from 1.14.0. Never overwrites a docs/ file. Then re-runs setup's wiring so new agent guidelines reach the repo root, and reports what changed. Safe to re-run any time.
 ---
 
 # Update — bring ProductOS up to the latest version
 
-ProductOS improves between releases — new skills, reworked templates, sharper guidelines — and this skill moves an installed copy to the latest one without losing the member's work. The catch it exists to handle: skills fill templates **in place** inside `productos/` (`define/1-Product-Offer.md`, `design/1-Product-Identity.md`, `distribute/1-Go-To-Market-Strategy.md`, `define/BONUS-Idea-Audit.md`, the onboarding wireframe…), so a fresh download over the top would erase them. Instead, every file is compared against the published history: anything the member never touched is replaced, anything they wrote is kept.
+ProductOS improves between releases — new skills, reworked worksheets, sharper guidelines — and this skill moves an installed copy to the latest one without losing the member's work. From 1.14.0 every skill writes its output to `docs/`, so `productos/` holds only the system. Copies older than that filled templates **in place** inside `productos/` (`define/1-Product-Offer.md`, `design/1-Product-Identity.md`, `distribute/1-Go-To-Market-Strategy.md`, `define/BONUS-Idea-Audit.md`, the onboarding wireframe…), so a fresh download over the top would erase them. Instead, every file is compared against the published history: anything the member never touched is replaced, anything they wrote is kept, and an older copy's outputs are moved into `docs/` (step 5).
 
-> **Session shape:** minutes. Writes only inside `productos/`, plus what `setup` steps 2–3 write at the repo root. Never touches `docs/` — the member's canonical documents are theirs, and no release changes them. Nothing is written until the member has seen what's new and said go.
+> **Session shape:** minutes. Writes inside `productos/`, plus what `setup` steps 2–3 write at the repo root. Writes to `docs/` only to move an older copy's outputs there, one file at a time with the member's approval, and never overwrites a `docs/` file — the member's canonical documents are theirs. Nothing is written until the member has seen what's new and said go.
 
 Run every command from the **app repo root** (the folder that contains `productos/`). Git is required — ProductOS already needs it.
 
@@ -81,9 +81,9 @@ cut -d' ' -f1 "$WORK/plan.txt" | sort | uniq -c
 | `REPLACE` | Untouched by the member, changed upstream | Replaced with the latest |
 | `REMOVE` | Untouched by the member, deleted or renamed upstream | Deleted (a rename's new path arrives as `ADD`) |
 | `KEEP` | Edited by the member; the release didn't change that file | Kept as-is |
-| `CONFLICT` | Edited by the member *and* changed upstream — usually a filled template whose structure was reworked | Kept as-is, then step 5 |
+| `CONFLICT` | Edited by the member *and* changed upstream — usually a template an older copy filled in place | Kept as-is, then step 5 |
 | `GONE` | Edited by the member, but deleted or renamed upstream | Kept as-is, then step 5 |
-| `MINE` | Never published — the member's own file (a generated wireframe, an unmoved `PLAN.md`) | Kept as-is |
+| `MINE` | Never published — the member's own file (a wireframe or prompts file an older copy generated, an unmoved `PLAN.md`) | Kept as-is, then step 5 if it's an old output |
 
 Show the member the counts and list every `KEEP`, `CONFLICT`, `GONE`, and `MINE` path by name — those are the files the update leaves alone. The `ADD`/`REPLACE`/`REMOVE` lists can be summarised.
 
@@ -121,12 +121,46 @@ git -C "$LOCAL" status --short
 
 The status should list only the member's own files (`KEEP`, `CONFLICT`, `GONE`, `MINE`). The clone stays valid for Cursor's `/add-plugin`.
 
-### 5. Resolve conflicts with the member
+### 5. Move older outputs into `docs/`, then resolve what's left
 
-Take each `CONFLICT` and `GONE` file one at a time. Never discard the member's content; the default is always to keep it.
+Take each `KEEP`, `CONFLICT`, `GONE`, and `MINE` file one at a time. Never discard the member's content; the default is always to keep it.
 
-- **`CONFLICT`** — show what changed: the CHANGELOG line that reworked it, plus `git -C "$STAGE" diff --stat "$BASE" HEAD -- <path>` for the shape of the change. Offer to carry the member's content into the new structure: take the latest template (`git -C "$STAGE" show HEAD:<path>`), fill it in place from their answers — preserving the `> Good/Bad` scaffolding, never creating a parallel copy (the rule in `productos/AGENTS.md`) — and name any new section their old answers don't cover, with the skill that fills it. Or keep their file exactly as it is. Their call.
-- **`GONE`** — find where the file went: `git -C "$STAGE" log --all -M30% --diff-filter=R --name-status --format= | awk -F'\t' -v p="<path>" '$2==p {print $3}'` (the low similarity threshold catches templates reworked as they were renamed). Nothing back → search `$STAGE/CHANGELOG.md` for the filename; releases name their renames. **Renamed** (e.g. `BONUS-Leverage-Audit.md` → `BONUS-Idea-Audit.md`, `studio-*` skills losing the prefix) → offer to carry the content into the new path the same way as a conflict, then delete the old file once the member confirms. **Deleted outright** → tell the member the release retired it and ask whether to keep it; it no longer does anything.
+**Outputs from a copy older than 1.14.0.** Any of these paths holding the member's answers (not a blank template) is an output that now belongs in `docs/`:
+
+| Old location (in `productos/` unless noted) | New home in `docs/` |
+|---|---|
+| `define/1-Product-Offer.md` | `DEFINE.md` → `## Summary` (from "Describe your product") and `## 1. Product Offer` |
+| `define/2-Customer-Persona.md` | `DEFINE.md` → `## 2. Customer Persona` |
+| `define/3-Pricing-Strategy.md` | `DEFINE.md` → `## 3. Pricing Strategy` |
+| `define/BONUS-Business-Strategy-Deep-Dive.md` | `DEFINE.md` → `## 4. Business Strategy` |
+| `define/BONUS-Idea-Audit.md` (or `BONUS-Leverage-Audit.md`) | `DEFINE.md` → `## Idea Audit` (ask which parts to keep, as `define-idea-finder` does) |
+| `design/1-Product-Identity.md` | `DESIGN.md` and `DESIGN.html` → the Product Identity section |
+| `design/Design-Prompts.md` | `DESIGN-PROMPTS.md` |
+| `design/2-Magic-Moment.md` | `MAGIC-MOMENT.md` |
+| `design/3-Onboarding-Flow.md`, `design/onboarding-wireframe.html` | `ONBOARDING.md`, `ONBOARDING-WIREFRAME.html` |
+| `design/4a-Landing-Page.md`, `design/landing-page-wireframe.html` | `LANDING-PAGE.md`, `LANDING-PAGE-WIREFRAME.html` |
+| `design/4b-App-Store-Listing.md` | `APP-LISTING.md` |
+| `distribute/1-Go-To-Market-Strategy.md` | `GO-TO-MARKET.md` |
+| `distribute/2-Growth-Experiments.md` | `GROWTH-EXPERIMENTS.md` |
+| `distribute/3-Growth-Experiments-Tracker.md` | `GROWTH-TRACKER.md` |
+| `distribute/4-Scale-and-Automation-Roadmap.md` | `SCALE.md` |
+| `design-review/`, `CRO-AUDIT.md`, `ACTIVATION-RETENTION-AUDIT.md` at the repo root | `design-reviews/`, `CRO-AUDIT.md`, `ACTIVATION-RETENTION-AUDIT.md` |
+
+The last row sits outside `productos/`, so step 3 doesn't list it — check the repo root for it directly. For each, show the member where it's going and move it on their go-ahead:
+
+- **Build the new file from the latest structure.** `DEFINE.md` starts from `productos/define/DEFINE-TEMPLATE.md`; every other file follows the matching worksheet in the freshly updated `productos/`. Carry the member's answers across word for word under the same headings, and leave out the italic prompts and `> Good/Bad` lines — the worksheet keeps those. Where a worksheet was reworked since their copy (the 1.11.0 Pricing Strategy, for example), name the new sections their old answers don't cover and the skill that fills them.
+- **Never overwrite.** If the `docs/` file already exists, add only the sections it's missing, show the diff, and ask. For `DESIGN.md`, insert the Product Identity section directly after the YAML frontmatter and touch nothing else; add the matching section to `DESIGN.html` after its header. No `DESIGN.md` yet → create it the way `design-identity-creator` does.
+- **Then clear the old copy.** Once the member confirms the content is in `docs/`, reset a template to the latest blank worksheet (`git -C "$STAGE" show HEAD:<path> > "$LOCAL/<path>"`) and delete a generated file (wireframes, `Design-Prompts.md`).
+
+Three retired documents need a word with the member:
+
+- **`docs/PRODUCT.md`** was a summary of the same Define work. Once `DEFINE.md` exists, compare the two and offer to add anything `PRODUCT.md` holds that `DEFINE.md` doesn't (usually a customer quote or a north star) to the matching section. Then offer to delete it — nothing reads it any more. If `PRODUCT.md` is all that survives (a collaborator's clone never had the filled templates), build the `DEFINE.md` sections from it as drafts, each marked *"Carried over from PRODUCT.md — re-run the owning skill to sharpen"*.
+- **`define/4-Mini-Launch.md` and `docs/LAUNCHES.md`** — launches were retired in 1.14.0 and nothing reads them. Offer to carry any real customer quotes into the Persona or the Offer's Proof in `DEFINE.md`. Delete the template; `docs/LAUNCHES.md` is the member's own file, so leave it unless they ask.
+
+**Everything else:**
+
+- **`CONFLICT`** — a file the member edited that also changed upstream (usually a skill or guide they customised). Show what changed: the CHANGELOG line, plus `git -C "$STAGE" diff --stat "$BASE" HEAD -- <path>` for the shape of the change. Offer to reapply their edit on top of the latest version, or keep their file exactly as it is. Their call.
+- **`GONE`** — find where the file went: `git -C "$STAGE" log --all -M30% --diff-filter=R --name-status --format= | awk -F'\t' -v p="<path>" '$2==p {print $3}'` (the low similarity threshold catches files reworked as they were renamed). Nothing back → search `$STAGE/CHANGELOG.md` for the filename; releases name their renames. **Renamed** (e.g. `studio-*` skills losing the prefix) → offer to carry the content into the new path the same way as a conflict, then delete the old file once the member confirms. **Deleted outright** (e.g. `skills/mini-launch/`, `skills/define-product/`) → tell the member the release retired it and ask whether to keep it; it no longer does anything.
 
 A skill folder the member edited counts as their own; flag it, don't merge into it.
 
@@ -146,8 +180,8 @@ If the member installed ProductOS as a plugin, the tool keeps its own copy of th
 
 Skills read straight from `productos/skills/` (Cowork, Claude Desktop) need nothing.
 
-Close with a short report: old → new version and the headline change of each release; counts of files added, updated, and removed; every file kept as the member's own; each conflict and how it was resolved; and the member's next action, which the update doesn't change — the step their plan or open challenge was already on.
+Close with a short report: old → new version and the headline change of each release; counts of files added, updated, and removed; every output moved into `docs/` and where it landed; every file kept as the member's own; each conflict and how it was resolved; and the member's next action, which the update doesn't change — the step their plan or open challenge was already on.
 
 ## What "done" looks like
 
-`productos/` matches the latest release everywhere the member hadn't written, and every file they had written is still there — carried into the new structure where they chose to, untouched otherwise. The root `CLAUDE.md`/`AGENTS.md` carry the current PRODUCTOS block, a git-cloned `productos/` sits at the new release with only the member's files showing as changes, the temporary clone is gone, and the member knows what changed and what to do next. Anything less — name the gap and fix it before ending the session.
+`productos/` matches the latest release everywhere the member hadn't written; every output an older copy kept inside `productos/` now lives in `docs/` (or stayed put where the member chose); and every other file they had written is still there — carried into the new structure where they chose to, untouched otherwise. The root `CLAUDE.md`/`AGENTS.md` carry the current PRODUCTOS block, a git-cloned `productos/` sits at the new release with only the member's files showing as changes, the temporary clone is gone, and the member knows what changed and what to do next. Anything less — name the gap and fix it before ending the session.

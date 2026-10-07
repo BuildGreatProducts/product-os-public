@@ -26,7 +26,7 @@ Run the four checks from the framework:
 
 - **Say it** — use it in the sentence "I use ___ for that" out loud. If you stumble, or have to explain the pronunciation, it fails.
 - **Spell it** — say it to someone and have them type it. Creative misspellings (Lyft, Tumblr) cost real traffic unless you have a marketing budget to teach the spelling.
-- **Search it** — is the .com or a clean variant (get___.com, ___app.com) available? The social handle where your believers live? Does anything else rank for the name *in your category*? (A name shared with a landscaping company is fine; shared with another SaaS tool is not.)
+- **Search it** — is the .com or a clean variant (get___.com, ___app.com) available? The social handle where your customers spend time? Does anything else rank for the name *in your category*? (A name shared with a landscaping company is fine; shared with another SaaS tool is not.)
 - **Feel it** — does it belong next to your worldview, belief, and tone? A deadpan-punk brand called "FriendlyBot" is fighting itself.
 
 If you're choosing fresh, pick **one naming direction** that fits the worldview and tone, and generate candidates only inside it: descriptive (says what it does: Basecamp), evocative (says what it feels like: Notion, Linear), invented (coined word: Kodak, Zapier), compound (two words fused: Facebook, Mailchimp), or real-word (an existing word borrowed: Stripe, Arc, Slack).

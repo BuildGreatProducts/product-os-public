@@ -1,7 +1,7 @@
 {
   "name": "productos",
-  "version": "1.13.0",
-  "description": "ProductOS — a complete operating system for taking a product from idea to revenue with AI agents. Installs inside your app repo as productos/, optionally ships with a coach-composed programme plan, and runs four phases (Define, Design, Develop, Distribute), each with checklists, templates, and 41 skills that fill them in.",
+  "version": "1.14.0",
+  "description": "ProductOS — a complete operating system for taking a product from idea to revenue with AI agents. Installs inside your app repo as productos/, optionally ships with a coach-composed programme plan, and runs four phases (Define, Design, Develop, Distribute), each with checklists, worksheets, and 39 skills that write every output to your repo's docs/ folder.",
   "author": {
     "name": "Chris Ashby",
     "email": "chris@telescope.design",
@@ -24,7 +24,7 @@
   "interface": {
     "displayName": "ProductOS",
     "shortDescription": "From idea to revenue with AI agents",
-    "longDescription": "ProductOS guides you through four phases — Define, Design, Develop, Distribute — each with checklists, templates, and skills that fill them in. Your AI agent does the heavy lifting; the system keeps it honest, closing every phase with a launch that climbs the signal ladder from first reply to first payment.",
+    "longDescription": "ProductOS guides you through four phases — Define, Design, Develop, Distribute — each with checklists, worksheets, and skills. Your AI agent does the heavy lifting; the system keeps it honest, and every output lands in your repo's docs/ folder — one source of truth for your offer, design, build plan, and growth.",
     "developerName": "Chris Ashby",
     "category": "Productivity",
     "capabilities": [
@@ -35,7 +35,8 @@
     "websiteURL": "https://telescope.design",
     "defaultPrompt": [
       "Set up ProductOS in my repo",
-      "Start ship in 7 (or sell in 30)",
+      "Build my product offer (new project)",
+      "Start ship in 7 (existing project)",
       "Run the next step in my ProductOS checklist",
       "Update ProductOS to the latest version"
     ]

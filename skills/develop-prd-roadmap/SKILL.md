@@ -1,6 +1,6 @@
 ---
 name: develop-prd-roadmap
-description: Use when the user has a finished `docs/PRODUCT.md` and `docs/DESIGN.md` and is ready to scope their MVP and generate the two documents a coding agent builds from — `docs/PRD.md` (technical spec) and `docs/ROADMAP.md` (phased build plan with task checkboxes). Triggers on phrases like "create my PRD", "generate my roadmap", "scope my MVP", "what should my MVP be", "turn my product docs into a build plan", "start the develop phase", "I'm ready to build", or any request to translate Define and Design outputs into implementation-ready spec documents. Reads the Define docs, Magic Moment, Onboarding Flow, and Landing Page or App Store Listing, runs a structured MVP scoping interview in the voice of a senior technical product lead — core loop, feature cuts, tech stack selection — then generates both documents per the guides in `productos/develop/guides/`. Especially appropriate as the first step in a ProductOS-style Develop workflow.
+description: Use when the user has a finished `docs/DEFINE.md` and `docs/DESIGN.md` and is ready to scope their MVP and generate the two documents a coding agent builds from — `docs/PRD.md` (technical spec) and `docs/ROADMAP.md` (phased build plan with task checkboxes). Triggers on phrases like "create my PRD", "generate my roadmap", "scope my MVP", "what should my MVP be", "turn my product docs into a build plan", "start the develop phase", "I'm ready to build", or any request to translate Define and Design outputs into implementation-ready spec documents. Reads DEFINE.md (offer, persona, pricing), the Product Identity in DESIGN.md, and the Magic Moment, Onboarding Flow, and Landing Page or App Store Listing docs, runs a structured MVP scoping interview in the voice of a senior technical product lead — core loop, feature cuts, tech stack selection — then generates both documents per the guides in `productos/develop/guides/`. Especially appropriate as the first step in a ProductOS-style Develop workflow.
 ---
 
 # Develop: MVP PRD & Roadmap
@@ -15,19 +15,19 @@ The voice is a senior technical product lead — someone who has shipped dozens 
 
 ## Inputs
 
-Locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
+Locate the member's documents in the repo-root `docs/` folder and the guides in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
 **Required — stop if missing or thin:**
 
-1. **PRODUCT.md** — usually `docs/PRODUCT.md`. The plain-English roll-up of the Define phase. Provides the customer, problem, mechanism, business model, proof, and goal. If missing or substantively empty, stop and tell the user to run `define-product` first.
-2. **DESIGN.md** — usually `docs/DESIGN.md`. The Google-format design system with token YAML and component specs. The PRD references its tokens and component names rather than redefining them. If missing, ask the user whether to proceed anyway — the PRD will then carry a note that `design-design-system` must be run before implementation begins — or pause and generate it first.
+1. **DEFINE.md** — `docs/DEFINE.md`. The Define phase in one file. Its `## Summary` and `## 1. Product Offer` provide the customer, pain, mechanism, guarantee, and proof; `## 2. Customer Persona` and `## 3. Pricing Strategy` are read in step 3 below. If missing, or if Summary, Offer, Persona and Pricing are substantively empty, stop and tell the user to run the Define skills first (`define-offer-builder` → `define-customer-persona` → `define-pricing`), or `define-from-code` for an existing product.
+2. **DESIGN.md** — usually `docs/DESIGN.md`. The Google-format design system with token YAML and component specs, opening with the `## Product Identity` section (name, worldview, tone of voice, visual style) — read the identity for naming and copy context. The PRD references its tokens and component names rather than redefining them. If missing, ask the user whether to proceed anyway — the PRD will then carry a note that `design-design-system` must be run before implementation begins — or pause and generate it first.
 
 **Supporting context — read whichever exist:**
 
-3. **The Define docs** — `productos/define/1-Product-Offer.md` (guarantee and proof commitments the MVP must honour), `productos/define/2-Customer-Persona.md` (persona names and verbatim language for user stories), `productos/define/3-Pricing-Strategy.md` (the business model, billing unit, plans, entry route, and launch price — this determines whether the Payment Integration section exists, what it charges, and which plans and limits the MVP must enforce), and `docs/LAUNCHES.md` (the launch ladder — the MVP must enable the beta invite's pass bar: one believer reaching the magic moment, and ultimately the public launch's first payment).
-4. **The Magic Moment** — `productos/design/2-Magic-Moment.md`. The single most important scoping input. The primary magic moment is the milestone the core MVP phases must reach; its instrumentation note becomes a PRD requirement.
-5. **The Onboarding Flow** — `productos/design/3-Onboarding-Flow.md`. Every screen in the flow is a screen the MVP must ship. This is the backbone of the PRD's UI/UX Requirements section.
-6. **The acquisition spec** — `productos/design/4a-Landing-Page.md` (web/desktop) or `productos/design/4b-App-Store-Listing.md` (mobile). Whichever exists confirms the platform, and every capability promised in its copy is a feature the MVP either ships or the copy must stop claiming. Harvest the promises.
+3. **The rest of DEFINE.md** — Offer → Guarantee and Proof (commitments the MVP must honour), `## 2. Customer Persona` (persona names and verbatim language for user stories), `## 3. Pricing Strategy` (who pays, the pricing model, billing unit, plans, entry route, and launch price — this determines whether the Payment Integration section exists, what it charges, and which plans and limits the MVP must enforce), and `## 4. Business Strategy` when filled (the north star the success criteria can point at).
+4. **The Magic Moment** — `docs/MAGIC-MOMENT.md`. The single most important scoping input. The primary magic moment is the milestone the core MVP phases must reach; its instrumentation note becomes a PRD requirement.
+5. **The Onboarding Flow** — `docs/ONBOARDING.md`. Every screen in the flow is a screen the MVP must ship. This is the backbone of the PRD's UI/UX Requirements section.
+6. **The acquisition spec** — `docs/LANDING-PAGE.md` (web/desktop) or `docs/APP-LISTING.md` (mobile). Whichever exists confirms the platform, and every capability promised in its copy is a feature the MVP either ships or the copy must stop claiming. Harvest the promises.
 7. **COPY.md** — `docs/COPY.md`. If present, the PRD's UI/UX requirements inherit its lexicon (features are named by their canonical nouns) and its error and empty-state patterns become named requirements rather than afterthoughts.
 
 **Guides — read before the corresponding step:**
@@ -51,7 +51,7 @@ This skill is resumable. Before anything else, check what exists:
 
 Read all available inputs in full before asking the user anything. Build a private working picture:
 
-- **The core loop hypothesis** — from the Mechanism (PRODUCT.md) and the primary magic moment: what single user journey, end to end, delivers the aha?
+- **The core loop hypothesis** — from the Offer's Mechanism (DEFINE.md) and the primary magic moment: what single user journey, end to end, delivers the aha?
 - **The candidate feature list** — harvest every concrete capability mentioned anywhere: each promise in the landing page / app listing copy, each screen and permission in the onboarding flow, each element of the mechanism, the guarantee from the Product Offer, the instrumentation the magic moment needs. Deduplicate into a flat list of 10–25 candidate features.
 - **The platform** — usually evident: an App Store Listing means mobile, a Landing Page means web or desktop. Confirm rather than ask cold.
 - **The business model facts** — business model, billing unit, plans, entry route, and trial mechanics from the Pricing Strategy. These determine the payments scope.
@@ -83,13 +83,13 @@ These are typically P1 setup tasks in the foundation phase, not features — but
 
 **D. Constraints and tooling.** Three quick questions: Which coding agent will build this (Claude Code, Cursor, Windsurf, other)? What's the realistic timeline and weekly time budget? Any hard constraints — budget ceiling for services, existing accounts, compliance needs?
 
-**E. Success criteria.** Define measurably what "MVP done" means, drawing from the Magic Moment metric, the launch ladder pass bar (one believer activated at the beta invite, from docs/LAUNCHES.md), and PRODUCT.md's goal. Aim for 3–5 criteria like *"time from signup to magic moment under 2 minutes"*, *"core loop completable on mobile Safari"*, *"all P0 features pass their acceptance criteria."*
+**E. Success criteria.** Define measurably what "MVP done" means, drawing from the Magic Moment metric (the first real user reaching the magic moment is the bar that matters) and DEFINE.md's north star when Business Strategy is filled. Aim for 3–5 criteria like *"time from signup to magic moment under 2 minutes"*, *"core loop completable on mobile Safari"*, *"all P0 features pass their acceptance criteria."*
 
 **Close the interview** by presenting the complete MVP outline back in one compact block — core loop, P0/P1/P2 lists, platform, stack table with rationales, constraints, success criteria — and get explicit approval. This outline is the contract for everything generated next.
 
 ### 4. Generate `docs/PRD.md`
 
-Read `productos/develop/guides/PRD-GENERATION.md` in full and follow it — persona, critical rules, all 14 section requirements, and formats. The approved MVP outline from the interview supplies the scope, stack choices, and success criteria the guide expects; `docs/PRODUCT.md` and the Define/Design docs supply the strategic foundation.
+Read `productos/develop/guides/PRD-GENERATION.md` in full and follow it — persona, critical rules, all 14 section requirements, and formats. The approved MVP outline from the interview supplies the scope, stack choices, and success criteria the guide expects; `docs/DEFINE.md` and the Design docs supply the strategic foundation.
 
 Generate and write to file in four chunks, presenting each in conversation for approval before moving on (a 14-section read-back is the wrong shape; four checkpoints is right):
 

@@ -1,6 +1,6 @@
 # Go-To-Market Plan
 
-*Filled in by `distribute-gtm-strategy`. This is your execution plan — only your specific instructions live here; the reasoning, channel playbooks, and frameworks stay in the skill and the BONUS docs.*
+*Worksheet for `distribute-gtm-strategy`, which writes your filled plan to `docs/GO-TO-MARKET.md` using this structure — this file stays blank. That doc is your execution plan — only your specific instructions live here; the reasoning, channel playbooks, and frameworks stay in the skill and the BONUS docs.*
 
 **Customer:** [who they are + where they already gather, one line]
 

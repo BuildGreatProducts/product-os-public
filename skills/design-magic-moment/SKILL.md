@@ -1,27 +1,27 @@
 ---
 name: design-magic-moment
-description: Use when the user has a finished `docs/PRODUCT.md` and wants to identify their product's aha moment — the specific instant the customer realizes the product is worth keeping. Triggers on phrases like "find my aha moment", "identify the magic moment", "what's my product's aha", "where should the wow happen", "design the activation moment", "what's the Facebook-7-friends moment for my product", "magic number for my product", "where does the customer first realize the value", or any request to recommend candidate aha moments for a product. Reads `docs/PRODUCT.md`, does live research on category-specific aha-moment patterns, recommends three candidate magic moments in the voice of a senior growth strategist, picks a primary, and writes the result to `productos/design/2-Magic-Moment.md`. Especially appropriate after the Product Identity is locked in and the user is ready to design onboarding around a specific activation event.
+description: Use when the user has a finished `docs/DEFINE.md` and wants to identify their product's aha moment — the specific instant the customer realizes the product is worth keeping. Triggers on phrases like "find my aha moment", "identify the magic moment", "what's my product's aha", "where should the wow happen", "design the activation moment", "what's the Facebook-7-friends moment for my product", "magic number for my product", "where does the customer first realize the value", or any request to recommend candidate aha moments for a product. Reads `docs/DEFINE.md`, does live research on category-specific aha-moment patterns, recommends three candidate magic moments in the voice of a senior growth strategist, picks a primary, and writes the result to `docs/MAGIC-MOMENT.md`. Especially appropriate after the Product Identity is locked in and the user is ready to design onboarding around a specific activation event.
 ---
 
 # Design: Magic Moment Identification
 
-This skill guides a founder through identifying their product's **magic moment** — the specific user action that triggers the realization "this is worth keeping." The output is `productos/design/2-Magic-Moment.md` containing three evidence-backed candidate aha moments and a primary recommendation, drawn from `docs/PRODUCT.md` and live research into how comparable products in the same category have engineered activation.
+This skill guides a founder through identifying their product's **magic moment** — the specific user action that triggers the realization "this is worth keeping." The output is `docs/MAGIC-MOMENT.md` containing three evidence-backed candidate aha moments and a primary recommendation, drawn from `docs/DEFINE.md` and live research into how comparable products in the same category have engineered activation.
 
 The voice is a senior growth strategist with deep experience documenting and designing aha moments across consumer mobile, B2B SaaS, AI products, marketplaces, and productized services — the same lineage as Sean Ellis ("the moment the utility really clicks"), Brian Balfour and Andrew Chen's Reforge framework (setup → aha → habit), and Chamath Palihapitiya's documented Facebook north star (7 friends in 10 days). The strategist's job is not to invent a clever aha; it is to identify the *shape* of aha that fits this product's category, then propose three specific, testable candidates the founder can actually engineer into the first session.
 
 A magic moment is not an opinion. It is the documented action that separates users who retain from users who churn — and in the absence of retention data (pre-launch or early-stage), it is the hypothesis grounded in named comparables that the team commits to testing first.
 
-> **Session length:** Designed to be completable in 20–40 minutes of conversation. The user only needs to have a finished `PRODUCT.md`. All category research, comparable lookups, and candidate generation are Claude's job during the session. The output is a single decision document and a measurable hypothesis to test.
+> **Session length:** Designed to be completable in 20–40 minutes of conversation. The user only needs to have a finished `DEFINE.md`. All category research, comparable lookups, and candidate generation are Claude's job during the session. The output is a single decision document and a measurable hypothesis to test.
 
 ## Inputs
 
 Locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **PRODUCT.md** — usually `docs/PRODUCT.md`. **Required.** The synthesised plain-English roll-up of the user's Define-phase work. The Customer section tells you who's experiencing the aha; the Problem section tells you what pain is being relieved; the Mechanism section tells you the action that delivers the relief; the Goal section tells you what success looks like. If PRODUCT.md doesn't exist or is substantively empty, stop and tell the user to run the `define-product` skill first.
+1. **DEFINE.md** — usually `docs/DEFINE.md`. **Required.** The user's Define-phase work in one file. Offer → Customer and the Customer Persona tell you who's experiencing the aha; Offer → Pain and the Persona's pains and triggers tell you what pain is being relieved; Offer → Mechanism tells you the action that delivers the relief; Offer → Outcome (and Business Strategy → North Star, when filled) tells you what success looks like; `## 3. Pricing Strategy` gives the business model. If DEFINE.md doesn't exist or its Offer and Persona are still placeholders, stop and tell the user to run the Define skills first (`define-offer-builder` → `define-customer-persona` → `define-pricing`), or `define-from-code` for an existing product.
 
-2. **The Product Identity** — usually `productos/design/1-Product-Identity.md`. Optional but useful. The tone of voice influences *how the aha is presented* (a Magician's reveal vs. a Sage's measured proof vs. an Outlaw's irreverent shock), and the tone of voice constrains the copy used at the aha moment.
+2. **The Product Identity** — the `## Product Identity` section of `docs/DESIGN.md`. Optional but useful. The tone of voice influences *how the aha is presented* (a Magician's reveal vs. a Sage's measured proof vs. an Outlaw's irreverent shock), and the tone of voice constrains the copy used at the aha moment.
 
-If PRODUCT.md is missing or thin, stop and surface the gap before continuing — an aha hypothesis built on a thin product strategy inherits the thinness.
+If DEFINE.md is missing or thin, stop and surface the gap before continuing — an aha hypothesis built on a thin product strategy inherits the thinness.
 
 ## The strategist's voice
 
@@ -35,11 +35,11 @@ Adopt the voice of a senior growth strategist with deep experience documenting a
 
 ## Workflow
 
-### 1. Read PRODUCT.md and Product Identity
+### 1. Read DEFINE.md and Product Identity
 
 Read both files in full before forming any hypothesis. Extract:
 
-- From PRODUCT.md: the customer (who), the problem (what pain), the mechanism (what action delivers value), the use moment (when and where the product is used), the goal (what success looks like), the business model (subscription, one-time, marketplace, freemium — affects how early the aha needs to be).
+- From DEFINE.md: the customer (who), the problem (what pain), the mechanism (what action delivers value), the use moment (when and where the product is used), the goal (what success looks like), the business model (subscription, one-time, marketplace, freemium — affects how early the aha needs to be).
 - From Product Identity (if present): the brand character (a dramatic reveal, a measured proof, a defiant shock — read it off the tone words and contrarian belief), the tone of voice (how copy at the aha moment should sound).
 
 Form a **working hypothesis** in 2 sentences: candidate aha *shape* (one of the seven shapes below) and candidate *position* in the journey (pre-signup, first 60 seconds, first session, day 1, day 7). State this back to the user before going further.
@@ -68,7 +68,7 @@ Most products map cleanly to one or two shapes. Name which one(s) fit and why.
 
 Search live for:
 
-- **2–3 named comparable products** in the same category as the user's PRODUCT.md. For each, identify the documented aha moment if public, or the most credible inferred one if not.
+- **2–3 named comparable products** in the same category as the product in DEFINE.md. For each, identify the documented aha moment if public, or the most credible inferred one if not.
 - **The activation benchmarks for the category** — what's the typical time-to-aha, what's the typical first-session conversion, what's the typical day-1 retention bar.
 - **Any documented patterns specific to AI products in this category** — most categories now have an AI-augmented incumbent whose aha is faster and earlier than the pre-AI norm.
 
@@ -94,7 +94,7 @@ After all three candidates are drafted, pick one as the **recommended primary**.
 
 1. **Speed.** Which candidate gets the user to aha fastest from first contact?
 2. **Evidence.** Which candidate has the strongest comparable evidence in the same category?
-3. **Fit with the product's mechanism.** Which candidate is most consistent with the Mechanism described in PRODUCT.md?
+3. **Fit with the product's mechanism.** Which candidate is most consistent with the Offer's Mechanism in DEFINE.md?
 
 State the recommendation in one sentence with reasoning in two sentences. The other two candidates remain in the document as alternates — useful if the primary hypothesis fails its test in 4–6 weeks.
 
@@ -102,18 +102,18 @@ State the recommendation in one sentence with reasoning in two sentences. The ot
 
 Present the three candidates in conversation with the recommended primary clearly marked. Ask one question: *"Does the recommended primary feel like the right first bet, or does one of the other two candidates fit better for reasons I haven't captured?"* Fold any user pushback in. Iterate once if needed — usually the user knows something about the customer's first session that adjusts the ordering.
 
-### 7. Rewrite `productos/design/2-Magic-Moment.md` in place
+### 7. Write `docs/MAGIC-MOMENT.md`
 
-A template file already exists at `productos/design/2-Magic-Moment.md` with the canonical structure (recommended magic moment + three candidates + sources). **Rewrite the existing file in place** — do not create a sibling file. Read the existing file first to preserve any user notes or modifications they have already made (e.g., if the file has been previously populated and they're refining it).
+The worksheet at `productos/design/2-Magic-Moment.md` holds the canonical structure (recommended magic moment + three candidates + sources) — read it for structure, but never write to it. Write the filled version to `docs/MAGIC-MOMENT.md` (`mkdir -p docs` if needed). If that file already exists (the user is refining it), read it first, preserve the member's edits, and show a diff and get approval before overwriting.
 
-Match the template's structure exactly: same section headers, same field labels (Action / Wow / Where / Time-to-aha / Comparable evidence / Risk / Metric for each candidate; Where it sits / Time-to-aha target / Success metric for the primary). Replace the `[placeholder]` markers with the filled-in content. Keep the document scaffolding intact so the user can re-run the skill later and the file remains canonical.
+Match the worksheet's structure exactly: same section headers, same field labels (Action / Wow / Where / Time-to-aha / Comparable evidence / Risk / Metric for each candidate; Where it sits / Time-to-aha target / Success metric for the primary). Replace the `[placeholder]` markers with the filled-in content and drop the worksheet's italic intro, so the doc reads clean and the user can re-run the skill later against the same structure.
 
 **Structure of the output file:**
 
 ```
 # Magic Moment
 
-*Drafted: [Month Year]. Generated from PRODUCT.md.*
+*Drafted: [Month Year]. Generated from DEFINE.md.*
 
 ## The recommended magic moment
 
@@ -238,7 +238,7 @@ These are publicly documented or widely-attributed aha moments to use as compara
 
 ## What "done" looks like
 
-A `productos/design/2-Magic-Moment.md` where:
+A `docs/MAGIC-MOMENT.md` where:
 
 - **A recommended primary magic moment** is stated in one sentence, with position-in-journey, time-to-aha target, and success metric.
 - **Three distinct candidates** are documented, each with action, wow, where, time-to-aha, comparable evidence, risk, and metric.

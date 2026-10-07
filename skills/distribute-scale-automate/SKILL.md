@@ -1,11 +1,11 @@
 ---
 name: distribute-scale-automate
-description: Use after the user has run growth experiments and logged results, when they want to scale what's proven and automate it. Triggers on phrases like "scale my product", "automation roadmap", "automate what works", "double down on what works", "how do I scale this", "systematize my marketing", "make my growth scalable", "what should I automate", or "scale my growth". Reads the Growth Experiments Tracker (or, in a repo without ProductOS, asks what's already working), takes only the proven winners, and builds a roadmap that amplifies each one (do more, do better) and automates it with specific tools, MCPs/plugins, and scheduled tasks — sequenced Now/Next/Later on a manual-to-delegated maturity ladder. Produces a Scale & Automation Roadmap document. Works with ProductOS in the repo (productos/ at the app repo root) or standalone in a repo without it.
+description: Use after the user has run growth experiments and logged results, when they want to scale what's proven and automate it. Triggers on phrases like "scale my product", "automation roadmap", "automate what works", "double down on what works", "how do I scale this", "systematize my marketing", "make my growth scalable", "what should I automate", or "scale my growth". Reads docs/GROWTH-TRACKER.md (or, in a repo without ProductOS, asks what's already working), takes only the proven winners, and builds a roadmap that amplifies each one (do more, do better) and automates it with specific tools, MCPs/plugins, and scheduled tasks — sequenced Now/Next/Later on a manual-to-delegated maturity ladder. Writes the Scale & Automation Roadmap to docs/SCALE.md. Works with ProductOS in the repo (productos/ at the app repo root) or standalone in a repo without it.
 ---
 
 # Distribute: Scale & Automate
 
-This skill is the capstone of the Distribute phase. It reads the **Growth Experiments Tracker**, takes only the experiments that *proved* they work, and turns each into a plan to **double down** (do more, do better) and **automate** (make the winning process run without more of the founder's hours). The output is a sequenced Scale & Automation Roadmap.
+This skill is the capstone of the Distribute phase. It reads the **Growth Experiments Tracker**, takes only the experiments that *proved* they work, and turns each into a plan to **double down** (do more, do better) and **automate** (make the winning process run without more of the founder's hours). The output is a sequenced Scale & Automation Roadmap at `docs/SCALE.md`.
 
 The two principles are the whole skill. **Double down:** a proven win is a license to do *more* of it (scale the volume, spend, or reach) and *better* (the next experiment that lifts it further). **Automate:** a manual process that works is a process worth systematizing — clip-and-schedule pipelines, enrichment-and-sequence loops, scheduled tasks, templates, and eventually delegation — so output grows without the founder's time growing with it. Scale is what happens when both run at once: you amplify the result and remove yourself from the loop.
 
@@ -19,8 +19,8 @@ This skill needs the **proven winners**, **product context** (so automations are
 
 ### Winners — Path A (standard): ProductOS in the repo — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout
 
-1. **The Growth Experiments Tracker** — usually `productos/distribute/3-Growth-Experiments-Tracker.md`. The **primary** input. Read the log for rows marked **Pass** with a **"double down"** decision, and the **Cumulative Learnings**. These are the only candidates for scaling and automation. If the tracker is empty or has no winners yet, stop and point the user back to `distribute-growth-experiments` — there's nothing proven to scale.
-2. **Context:** `productos/distribute/2-Growth-Experiments.md` (the rhythm and up-next queue) and `productos/distribute/1-Go-To-Market-Strategy.md` (the channels). Plus `docs/PRODUCT.md` or the Define docs for the customer, the magic moment, and the north star.
+1. **The Growth Experiments Tracker** — `docs/GROWTH-TRACKER.md`. The **primary** input. Read the log for rows marked **Pass** with a **"double down"** decision, and the **Cumulative Learnings**. These are the only candidates for scaling and automation. If the tracker is empty or has no winners yet, stop and point the user back to `distribute-growth-experiments` — there's nothing proven to scale.
+2. **Context:** `docs/GROWTH-EXPERIMENTS.md` (the rhythm and up-next queue) and `docs/GO-TO-MARKET.md` (the channels). Plus `docs/DEFINE.md` for the customer (Offer and Persona) and the north star (Business Strategy, when filled), and `docs/MAGIC-MOMENT.md` for the magic moment.
 
 ### Winners — Path B (standalone fallback): a repo without ProductOS
 
@@ -28,7 +28,7 @@ When there's no tracker — the skill runs in a normal app repo — read the cod
 
 ### Output target (both paths)
 
-**`productos/distribute/4-Scale-and-Automation-Roadmap.md`** — on the standard path this exists as a template; **rewrite it in place**. On the standalone fallback, create it fresh with the same six-section structure at `docs/scale-automation-roadmap.md`. Match the headers exactly: **1. What's Working → 2. Double Down → 3. Automate → 4. The Roadmap → 5. Guardrails → 6. Next.**
+**`docs/SCALE.md`** at the app repo root, on both paths (create `docs/` if needed). On the standard path the worksheet `productos/distribute/4-Scale-and-Automation-Roadmap.md` gives the structure — read it, never write to it. On the standalone fallback, use the same six-section structure. Match the headers exactly: **1. What's Working → 2. Double Down → 3. Automate → 4. The Roadmap → 5. Guardrails → 6. Next.**
 
 ### Automation playbook (both paths)
 
@@ -55,7 +55,7 @@ For each proven winner, work out two things: the **scale lever** (what "more" lo
 For each winner, write both moves:
 
 - **Do more** — the scale lever with a **target number** ("1/day → 3/day," "$50/day → $200/day at the same cost-per-acquisition," "50 sends/week → 200"). Scaling is only safe while the result holds, so tie it to the metric.
-- **Do better** — the next experiment that lifts the win further, drawn from the same channel in the Library. This links back to `2-Growth-Experiments.md`: doing better never stops, even once doing more is automated.
+- **Do better** — the next experiment that lifts the win further, drawn from the same channel in the Library. This links back to `docs/GROWTH-EXPERIMENTS.md`: doing better never stops, even once doing more is automated.
 
 ### 4. Automate — map manual to automated, with a human-in-the-loop
 
@@ -65,7 +65,7 @@ For each winning process, write the **manual steps today**, then the **automated
 
 Order the automations into **Now / Next / Later**, rated by effort and impact — ship the highest-leverage, lowest-effort one first, and automate one process well before starting the next. Then write the **guardrails**: the "don't automate (yet)" list (the unproven, the human-magic), the **one metric** that proves automation is lifting results (not just throughput — watch conversion/quality, not only volume), and a **stop rule** if that metric drops after an automation ships.
 
-Rewrite `productos/distribute/4-Scale-and-Automation-Roadmap.md` in place (or create the fresh doc on Path B). Match the template structure exactly; read the existing file first to preserve notes. Add a short **summary** at the top (the top winners being scaled and the first automation to ship), a **dated header**, and an **evidence footer** citing the tracker rows the roadmap is built on.
+Write `docs/SCALE.md` using the worksheet's structure (the same structure on Path B), without the worksheet's `> Good/Bad` lines and italic prompts. If it already exists, read it first, preserve the member's edits, show a diff, and get approval before overwriting. Add a short **summary** at the top (the top winners being scaled and the first automation to ship), a **dated header**, and an **evidence footer** citing the tracker rows the roadmap is built on.
 
 ### 6. Verify before delivering
 
@@ -101,7 +101,7 @@ Name them when you see them:
 
 ## What "done" looks like
 
-A filled `productos/distribute/4-Scale-and-Automation-Roadmap.md` (or `docs/scale-automation-roadmap.md`) where:
+A filled `docs/SCALE.md` where:
 
 - **What's Working** lists only tracker-proven winners, each with its number and why it works.
 - **Double Down** gives every winner a do-more (with a target) and a do-better.

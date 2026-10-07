@@ -6,7 +6,7 @@
 
 > **The meta-rule:** You don't choose your channel. Your customer already chose it. Your only job is to find where they already gather — and show up there before you spread yourself across a second one.
 
-This is the same idea as *Validate by Distribution* from `productos/define/BONUS-Idea-Validation-Cheat-Sheet.md`: if you can't name the exact subreddit, hashtag, search query, or marketplace where your first 100 users already are, the product won't sell no matter how good it is. Distribution isn't what you do after you build — it's the bet the build rests on. Your channel choice should fall straight out of `productos/define/2-Customer-Persona.md` (where they spend time) and `productos/define/3-Pricing-Strategy.md` (what your price can afford to spend acquiring them).
+This is the same idea as *Validate by Distribution* from `productos/define/BONUS-Idea-Validation-Cheat-Sheet.md`: if you can't name the exact subreddit, hashtag, search query, or marketplace where your first 100 users already are, the product won't sell no matter how good it is. Distribution isn't what you do after you build — it's the bet the build rests on. Your channel choice should fall straight out of the Customer Persona in `docs/DEFINE.md` (where they spend time) and its Pricing Strategy (what your price can afford to spend acquiring them).
 
 ---
 
@@ -297,7 +297,7 @@ The channel that only switches on once you have something worth talking about �
 
 **What good looks like:** A measurable share of new signups arriving from existing users or affiliates without paid spend — a referral/viral coefficient that's climbing, or affiliates producing steady attributable revenue.
 
-**Watch out for:** Bolting a referral program onto a product nobody loves yet — incentives can't manufacture word of mouth that the product hasn't earned. And affiliate programs need margin to fund the commission; check it against `productos/define/BONUS-Business-Strategy-Deep-Dive.md` (run the deep dive before funding commissions).
+**Watch out for:** Bolting a referral program onto a product nobody loves yet — incentives can't manufacture word of mouth that the product hasn't earned. And affiliate programs need margin to fund the commission; check it against the Business Strategy section of `docs/DEFINE.md` (run `define-business-strategy` before funding commissions).
 
 > **Real example — Lucas Herman, Stagetimer, $25K/mo.** Put a small "powered by Stagetimer" logo on every shared timer. Every event the product ran became an ad seen by the next event's organizer — roughly a third of the business came from that built-in loop, no formal program required.
 
@@ -313,7 +313,7 @@ The channel that only switches on once you have something worth talking about �
 
 The last channel to reach for, not the first. Ads are an **amplifier, not an igniter** — they pour fuel on a fire that's already lit. If you can't get organic conversion in the niche where your customers live, ads will burn cash and teach you nothing. But once you have a hook that converts and a funnel that pays back, ads are the fastest way to scale what's already working. The real constraint now is creative volume: winning ads fatigue in weeks.
 
-**Best fit:** Everyone, but *only* once organic has proven the message and your unit economics (LTV vs. CAC — run the `productos/define/BONUS-Business-Strategy-Deep-Dive.md` before spending) can support paid acquisition.
+**Best fit:** Everyone, but *only* once organic has proven the message and your unit economics (LTV vs. CAC — run `define-business-strategy` before spending) can support paid acquisition.
 
 **How to start:** Don't invent ad creative — promote the organic content that already worked. Take your best-performing post or demo, put a small budget behind it to one tightly-defined audience, and point it at a dedicated landing page (not the homepage). Measure cost-per-acquisition against payback, kill losers fast, and scale only the creative that profits.
 
@@ -357,7 +357,7 @@ The deeper logic: **organic proves the message, paid and referral scale it.** Ne
 | A B2B or higher-ticket product | Outreach | Search (comparison/SEO) | Partnerships |
 | A content/audience-first product | Long-form content | Email & lifecycle | Referrals & affiliates |
 
-Cross-reference your pick against `productos/define/3-Pricing-Strategy.md` (and the `BONUS-Business-Strategy-Deep-Dive.md` if you've filled it) — your price has to fund the channel's cost, and your unfair advantage often *is* owning one channel deeply.
+Cross-reference your pick against the Pricing Strategy in `docs/DEFINE.md` (and its Business Strategy section if you've filled it) — your price has to fund the channel's cost, and your unfair advantage often *is* owning one channel deeply.
 
 ---
 

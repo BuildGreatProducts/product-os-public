@@ -19,15 +19,15 @@ There is a clean ownership split with the neighbouring skills: the Onboarding Fl
 
 Locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **PRODUCT.md** — usually `docs/PRODUCT.md`. **Required on the standard path.** The mechanism determines which surfaces the product actually has (does it send notifications? does it have destructive actions? is there a paywall?), and the customer determines the reading register. If PRODUCT.md is missing or substantively empty, stop and tell the user to run `define-product` first — unless the standalone fallback below applies.
+1. **DEFINE.md** — usually `docs/DEFINE.md`. **Required on the standard path.** The Offer's Mechanism determines which surfaces the product actually has (does it send notifications? does it have destructive actions? is there a paywall?), and the Offer's Customer plus the Customer Persona determine the reading register. If DEFINE.md is missing or its Offer and Persona are still placeholders, stop and tell the user to run the Define skills first (`define-offer-builder` → `define-customer-persona` → `define-pricing`), or `define-from-code` for an existing product — unless the standalone fallback below applies.
 
-2. **Product Identity** — usually `productos/design/1-Product-Identity.md`, specifically **section 4, Tone of Voice**. **Required on the standard path.** The voice attributes (the "X, but not Y" phrases), the we-say / we-don't-say list, and the example sentence are the raw material the voice chart operationalizes. If the Identity is missing, stop and tell the user to run `design-identity-creator` first.
+2. **Product Identity** — the `## Product Identity` section of `docs/DESIGN.md`, specifically its **Tone of Voice**. **Required on the standard path.** The voice attributes (the "X, but not Y" phrases), the we-say / we-don't-say list, and the example sentence are the raw material the voice chart operationalizes. If the Identity is missing, stop and tell the user to run `design-identity-creator` first.
 
 3. **The UX Writing BONUS doc** — usually `productos/design/BONUS-UX-Writing-Best-Practice.md`. **Required.** Read in full at the start of the session. Its meta-rule, 12 principles, decision tree, 20 tactics across 8 surface stages, three worked examples, 12 named anti-patterns, and calibration table are the source of truth. Every rule and example the skill writes cites a tactic from this doc by number.
 
-4. **Magic Moment** — usually `productos/design/2-Magic-Moment.md`. Optional (it's produced later in the Design checklist; it exists on re-runs and fast-tracked plans). If present, it defines the one place celebration copy is *earned* — the milestone rule's whitelist.
+4. **Magic Moment** — usually `docs/MAGIC-MOMENT.md`. Optional (it's produced later in the Design checklist; it exists on re-runs and fast-tracked plans). If present, it defines the one place celebration copy is *earned* — the milestone rule's whitelist.
 
-5. **DESIGN.md** — usually `docs/DESIGN.md`. Optional. If present, its component names feed the lexicon — the copy system and the design system must call things by the same names.
+5. **DESIGN.md's design system** — the tokens and `## Components` section of `docs/DESIGN.md`. Optional (it arrives at Step 3). If present, its component names feed the lexicon — the copy system and the design system must call things by the same names.
 
 6. **The codebase's UI strings** — audit-mode input. If the repo contains real user-facing strings (component files, i18n/locale files, templates, native string catalogs), they are both evidence of the product's actual surfaces and the raw material for the audit pass in step 7.
 
@@ -47,7 +47,7 @@ Adopt the voice of a senior UX writer and content designer:
 
 ### 1. Read the inputs and route by arrival state
 
-Read PRODUCT.md, the Product Identity's Tone of Voice, and the BONUS doc in full. Then route in two ordered decisions — in each, **the first test that matches decides**.
+Read DEFINE.md, the Product Identity's Tone of Voice, and the BONUS doc in full. Then route in two ordered decisions — in each, **the first test that matches decides**.
 
 **First, the voice source:**
 
@@ -58,7 +58,7 @@ Read PRODUCT.md, the Product Identity's Tone of Voice, and the BONUS doc in full
 **Then, the mode:**
 
 1. **The repo contains real user-facing UI strings** (components, i18n files, templates, string catalogs) → **audit mode**: run the full workflow below *plus* the rewrite pass in step 7. The real strings are evidence — read a sample before drafting anything.
-2. **Otherwise** → **greenfield mode**: examples are written for the surfaces PRODUCT.md's mechanism implies.
+2. **Otherwise** → **greenfield mode**: examples are written for the surfaces DEFINE.md's Mechanism implies.
 
 Name the route explicitly and record it: *"This repo has real UI strings in `src/components/`, so I'm running in audit mode — the guide gets built first, then your existing copy gets rewritten against it. Output goes to `docs/COPY.md`. Confirm or correct."*
 
@@ -111,12 +111,12 @@ The full findings go into the guide's **Fix list** section: a checkbox list (`- 
 
 ### 8. Write `docs/COPY.md`
 
-If the file already exists (a re-run), read it first and rewrite it in place, preserving any user notes. The structure to write:
+If the file already exists (a re-run), read it first, preserve any user notes, and show a diff and get approval before overwriting. The structure to write:
 
 ```
 # Copy
 
-*Drafted: [Month Year]. Generated from PRODUCT.md and the Product Identity. DESIGN.md is how the product looks; this is how it speaks.*
+*Drafted: [Month Year]. Generated from DEFINE.md and the Product Identity. DESIGN.md is how the product looks; this is how it speaks.*
 
 ## Voice at a glance
 
@@ -183,8 +183,8 @@ If the file already exists (a re-run), read it first and rewrite it in place, pr
 ## Sources
 
 - Reference: `productos/design/BONUS-UX-Writing-Best-Practice.md`
-- Tone of voice: `productos/design/1-Product-Identity.md` *(standalone mode: the recorded tone answers instead)*
-- Product context: `docs/PRODUCT.md` *(standalone mode: the sampled codebase paths instead)*
+- Tone of voice: `docs/DESIGN.md` → Product Identity *(standalone mode: the recorded tone answers instead)*
+- Product context: `docs/DEFINE.md` *(standalone mode: the sampled codebase paths instead)*
 - Design tokens (if available): `docs/DESIGN.md`
 ```
 
@@ -227,7 +227,7 @@ Calibration products for sentence rhythm: Stripe's dashboard (dense finance at g
 
 ## Pacing and approval
 
-- **Read all inputs before drafting.** PRODUCT.md, the Identity's Tone of Voice, the BONUS doc — and in audit mode, a sample of the real strings.
+- **Read all inputs before drafting.** DEFINE.md, the Identity's Tone of Voice, the BONUS doc — and in audit mode, a sample of the real strings.
 - **One surface at a time.** The conversation is the value. Don't dump the whole guide.
 - **The lexicon and the errors get extra scrutiny.** They're the disproportionate-impact zones.
 - **Every example in the brand's voice.** Good/Bad pairs use the product's real nouns, not generic placeholders.

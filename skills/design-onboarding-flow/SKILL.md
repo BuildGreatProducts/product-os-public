@@ -1,11 +1,11 @@
 ---
 name: design-onboarding-flow
-description: Use when the user has a finished `docs/PRODUCT.md`, a Product Identity, and a Magic Moment hypothesis, and wants to design the onboarding flow that engineers the user toward that magic moment. Triggers on phrases like "design the onboarding flow", "create my onboarding", "build the activation flow", "wireframe my onboarding", "lay out the first-session experience", "what screens do I need for onboarding", "make the onboarding flow document", "click-through wireframe of my onboarding", or any request to translate the activation hypothesis into a screen-by-screen flow spec. Auto-selects the best-practice reference from `productos/design/onboarding/` based on product type, drafts a screen-by-screen flow in the voice of a senior onboarding designer, writes `productos/design/3-Onboarding-Flow.md`, and generates a clickable lo-fi HTML wireframe at `productos/design/onboarding-wireframe.html` the user can click through to feel the flow.
+description: Use when the user has a finished `docs/DEFINE.md`, a Product Identity, and a Magic Moment hypothesis, and wants to design the onboarding flow that engineers the user toward that magic moment. Triggers on phrases like "design the onboarding flow", "create my onboarding", "build the activation flow", "wireframe my onboarding", "lay out the first-session experience", "what screens do I need for onboarding", "make the onboarding flow document", "click-through wireframe of my onboarding", or any request to translate the activation hypothesis into a screen-by-screen flow spec. Auto-selects the best-practice reference from `productos/design/onboarding/` based on product type, drafts a screen-by-screen flow in the voice of a senior onboarding designer, writes `docs/ONBOARDING.md`, and generates a clickable lo-fi HTML wireframe at `docs/ONBOARDING-WIREFRAME.html` the user can click through to feel the flow.
 ---
 
 # Design: Onboarding Flow
 
-This skill guides a founder through designing the **concrete onboarding flow** — the screen-by-screen sequence that engineers a new user from "I just installed this" to "I felt the magic moment and I'm in." The output is two artifacts in lockstep: a markdown specification at `productos/design/3-Onboarding-Flow.md` listing every screen with goal, copy, action, drop-off risk, and reference; and a self-contained clickable HTML wireframe at `productos/design/onboarding-wireframe.html` that lets the user feel the flow in their browser.
+This skill guides a founder through designing the **concrete onboarding flow** — the screen-by-screen sequence that engineers a new user from "I just installed this" to "I felt the magic moment and I'm in." The output is two artifacts in lockstep: a markdown specification at `docs/ONBOARDING.md` listing every screen with goal, copy, action, drop-off risk, and reference; and a self-contained clickable HTML wireframe at `docs/ONBOARDING-WIREFRAME.html` that lets the user feel the flow in their browser.
 
 The voice is a senior onboarding designer with deep experience translating activation strategy into the first 60–180 seconds of an actual product — and specifically with the AI-era patterns that separate winners from look-alikes (Cal AI's 33-screen quiz, Cursor's first-completion-in-the-real-repo, Lovable's prompt-box-before-signup, Granola's microphone-only ask, Linear's pre-populated workspace). The designer's job is not to invent a flow from first principles; it is to translate the Magic Moment hypothesis, anchored in the Product Identity's tone and the right category-specific best practice doc, into screens the user can click through *today* and stress-test before any code is written.
 
@@ -17,15 +17,15 @@ A flow defined only in prose is a flow nobody can stress-test. A wireframe witho
 
 Locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **PRODUCT.md** — usually `docs/PRODUCT.md`. **Required.** Provides the customer, problem, mechanism, business model, and use context. The mechanism in particular drives what screens are needed (an AI-generation product needs a prompt input; a meeting tool needs a microphone permission; a marketplace needs a category browse). If PRODUCT.md is missing or thin, stop and tell the user to run `define-product` first.
+1. **DEFINE.md** — usually `docs/DEFINE.md`. **Required.** Provides the customer and use context (Offer → Customer plus the Customer Persona), the problem (Offer → Pain), the mechanism (Offer → Mechanism), and the business model (`## 3. Pricing Strategy`). The mechanism in particular drives what screens are needed (an AI-generation product needs a prompt input; a meeting tool needs a microphone permission; a marketplace needs a category browse). If DEFINE.md is missing or thin, stop and tell the user to run the Define skills first (`define-offer-builder` → `define-customer-persona` → `define-pricing`), or `define-from-code` for an existing product.
 
-2. **Product Identity** — usually `productos/design/1-Product-Identity.md`. **Required.** The tone of voice shapes the *emotional register* of the flow (a Magician reveals; a Sage demonstrates; an Outlaw confronts). The tone of voice attributes constrain every piece of copy — every headline, button label, error message, push notification. The visual style informs the wireframe's general direction.
+2. **Product Identity** — the `## Product Identity` section of `docs/DESIGN.md`. **Required.** The tone of voice shapes the *emotional register* of the flow (a Magician reveals; a Sage demonstrates; an Outlaw confronts). The tone of voice attributes constrain every piece of copy — every headline, button label, error message, push notification. The visual style informs the wireframe's general direction.
 
-3. **Magic Moment** — usually `productos/design/2-Magic-Moment.md`. **Required.** Names the recommended primary magic moment, its position in the journey, time-to-aha target, and success metric. The flow's single job is to engineer the user to this moment. If the Magic Moment document is missing, stop and tell the user to run `design-magic-moment` first.
+3. **Magic Moment** — usually `docs/MAGIC-MOMENT.md`. **Required.** Names the recommended primary magic moment, its position in the journey, time-to-aha target, and success metric. The flow's single job is to engineer the user to this moment. If the Magic Moment document is missing, stop and tell the user to run `design-magic-moment` first.
 
 4. **The appropriate Onboarding Best Practice reference** — auto-selected from `productos/design/onboarding/` based on the product type. Mapping table:
 
-| Product type (from PRODUCT.md) | Reference file in `productos/design/onboarding/` |
+| Product type (from DEFINE.md) | Reference file in `productos/design/onboarding/` |
 | --- | --- |
 | Mobile consumer AI app | `BONUS-Mobile-Onboarding-Best-Practice.md` |
 | B2B AI SaaS / web app for teams | `BONUS-B2B-AI-SaaS-Onboarding-Best-Practice.md` |
@@ -59,18 +59,18 @@ Adopt the voice of a senior onboarding designer with deep experience designing f
 
 ### 1. Read all four upstream inputs
 
-Read in this order: PRODUCT.md, Product Identity, Magic Moment, then the appropriate onboarding best-practice doc from `productos/design/onboarding/`. Also read the REFERENCE-WIREFRAME.html once to internalize the output format.
+Read in this order: DEFINE.md, Product Identity, Magic Moment, then the appropriate onboarding best-practice doc from `productos/design/onboarding/`. Also read the REFERENCE-WIREFRAME.html once to internalize the output format.
 
 Extract:
 
-- From PRODUCT.md: product type, customer, mechanism, business model.
+- From DEFINE.md: product type, customer, mechanism, business model.
 - From Product Identity: contrarian belief, tone-of-voice attributes (the actual "X but not Y" phrases), no-go words, example sentence.
 - From Magic Moment: the recommended primary magic moment, position in journey, time-to-aha target, success metric, the three candidates (so alternates are known).
 - From the best-practice doc: the relevant decision-tree pattern, the most relevant 6–10 tactics, the anti-patterns, the calibration table values.
 
 ### 2. Classify the product and confirm the reference doc
 
-State back to the user: *"Based on PRODUCT.md, this looks like a [product type] with a [business model] business model — so I'm using `BONUS-[X]-Onboarding-Best-Practice.md` as the reference. Confirm or correct."*
+State back to the user: *"Based on DEFINE.md, this looks like a [product type] with a [business model] business model — so I'm using `BONUS-[X]-Onboarding-Best-Practice.md` as the reference. Confirm or correct."*
 
 If the user pushes back (e.g., "it's a mobile app but the buyer is a business"), reconcile and choose the primary reference, optionally pulling specific tactics from a secondary doc. Most products map cleanly; some blend.
 
@@ -100,7 +100,7 @@ Present each screen in conversation, get a confirm/correct, then move to the nex
 
 ### 5. Mark the magic-moment screen
 
-When the flow reaches the magic-moment screen, **call it out explicitly**: *"This is the magic moment. The user has now hit [the activation event from `2-Magic-Moment.md`]. Every screen up to this point was preparation; every screen after this point is consolidation."* The magic-moment screen gets extra scrutiny — its copy, wireframe, and timing should be the most-polished elements in the flow.
+When the flow reaches the magic-moment screen, **call it out explicitly**: *"This is the magic moment. The user has now hit [the activation event from `docs/MAGIC-MOMENT.md`]. Every screen up to this point was preparation; every screen after this point is consolidation."* The magic-moment screen gets extra scrutiny — its copy, wireframe, and timing should be the most-polished elements in the flow.
 
 ### 6. Cross-cutting checks
 
@@ -109,21 +109,21 @@ Before writing the files, run five checks:
 - **Time-to-magic-moment.** Estimate the total user time from screen 1 to the magic-moment screen. Compare to the Magic Moment doc's stated time-to-aha target. If the estimate exceeds the target by more than 20%, the flow has too many screens — go back and merge or remove.
 - **Drop-off curve.** Anti-patterns from the best-practice doc should not appear (e.g., no email-verification gate before the test key for a dev tool; no empty workspace for B2B SaaS; no 12-field signup form anywhere). Audit explicitly.
 - **Tone-of-voice consistency.** Read all the copy aloud as one sequence. Does it sound like the same brand from screen 1 to the last? Any screen whose copy could come from a different brand needs a rewrite.
-- **Magic-moment match.** The magic-moment screen actually delivers the activation event described in `productos/design/2-Magic-Moment.md`. If the flow's named magic-moment screen doesn't match the Magic Moment doc, surface the contradiction now.
+- **Magic-moment match.** The magic-moment screen actually delivers the activation event described in `docs/MAGIC-MOMENT.md`. If the flow's named magic-moment screen doesn't match the Magic Moment doc, surface the contradiction now.
 - **Mobile vs web vs desktop.** The wireframe defaults to a mobile phone frame. If the product is web/desktop/extension, change the device frame in the wireframe to match (a browser frame, a desktop window, a chrome extension popup).
 
-### 7. Rewrite `productos/design/3-Onboarding-Flow.md` in place
+### 7. Write `docs/ONBOARDING.md`
 
-A template file already exists at `productos/design/3-Onboarding-Flow.md` with the canonical structure (summary + magic-moment-we're-engineering-toward + the flow + anti-patterns + success metric + wireframe + sources). **Rewrite the existing file in place** — do not create a sibling file. Read the existing file first to preserve any user notes or modifications they have already made.
+The worksheet at `productos/design/3-Onboarding-Flow.md` holds the canonical structure (summary + magic-moment-we're-engineering-toward + the flow + anti-patterns + success metric + wireframe + sources) — read it for structure, but never write to it. Write the filled version to `docs/ONBOARDING.md` (`mkdir -p docs` if needed). If that file already exists, read it first, preserve the member's edits, and show a diff and get approval before overwriting.
 
-Match the template's structure exactly: same section headers, same field labels (Goal / User action / Copy / Wireframe / Drop-off risk / Reference per screen; ★ marker on the magic-moment screen). Replace the `[placeholder]` markers with the filled-in content. Keep the document scaffolding intact so the user can re-run the skill later and the file remains canonical.
+Match the worksheet's structure exactly: same section headers, same field labels (Goal / User action / Copy / Wireframe / Drop-off risk / Reference per screen; ★ marker on the magic-moment screen). Replace the `[placeholder]` markers with the filled-in content and drop the worksheet's italic intro, so the doc reads clean and the user can re-run the skill later against the same structure.
 
 The full structure to populate:
 
 ```
 # Onboarding Flow
 
-*Drafted: [Month Year]. Generated from PRODUCT.md, Product Identity, and Magic Moment.*
+*Drafted: [Month Year]. Generated from DEFINE.md, Product Identity, and Magic Moment.*
 
 ## Summary
 
@@ -131,7 +131,7 @@ The full structure to populate:
 
 ## The magic moment we're engineering toward
 
-> [One sentence from `productos/design/2-Magic-Moment.md`'s recommended primary.]
+> [One sentence from `docs/MAGIC-MOMENT.md`'s recommended primary.]
 
 **Position:** Screen [N] of [total].
 **Time-to-aha target:** [from Magic Moment doc].
@@ -177,25 +177,25 @@ The full structure to populate:
 
 ## Wireframe
 
-A clickable HTML wireframe is at `productos/design/onboarding-wireframe.html` — open in any browser and click through to feel the flow.
+A clickable HTML wireframe is at `docs/ONBOARDING-WIREFRAME.html` — open in any browser and click through to feel the flow.
 
 ## Sources
 
 - Reference: `productos/design/onboarding/BONUS-[X]-Onboarding-Best-Practice.md` ([selected pattern])
-- Tone of voice: `productos/design/1-Product-Identity.md`
-- Magic moment: `productos/design/2-Magic-Moment.md`
-- Product context: `docs/PRODUCT.md`
+- Tone of voice: `docs/DESIGN.md` → Product Identity
+- Magic moment: `docs/MAGIC-MOMENT.md`
+- Product context: `docs/DEFINE.md`
 ```
 
 Keep prose tight — each screen is a bullet block, not paragraphs. The whole doc should be readable end-to-end in 3–5 minutes.
 
-### 8. Generate `productos/design/onboarding-wireframe.html`
+### 8. Generate `docs/ONBOARDING-WIREFRAME.html`
 
 Build a single self-contained HTML file by adapting `REFERENCE-WIREFRAME.html` from this skill's folder:
 
 1. **Keep the structural skeleton exactly** — header, sidebar, device frame, annotation panel, navigation script. **Pick the right device frame class** for the user's product. The reference HTML defines five device frame classes; the CSS sizes them to fit the canvas; the device chrome markup differs per class:
 
-   | Product type (from PRODUCT.md) | Device class | Size | Chrome markup |
+   | Product type (from DEFINE.md) | Device class | Size | Chrome markup |
    | --- | --- | --- | --- |
    | Consumer mobile AI app | `device-mobile` | 320×640 | `<div class="notch"></div>` |
    | iPad-first / tablet product | `device-tablet` | 480×680 | (none) |
@@ -225,19 +225,19 @@ Deliver via `computer://` links to both files and a short summary — one line f
 
 ## Pacing and approval
 
-- **Read all four inputs before drafting anything.** PRODUCT.md, Product Identity, Magic Moment, BONUS doc.
+- **Read all four inputs before drafting anything.** DEFINE.md, Product Identity, Magic Moment, BONUS doc.
 - **One screen at a time.** Don't dump the whole flow at once. The conversation *is* the value.
 - **Push toward minimum viable screens.** The default question on every screen is "could this be removed or merged?" — every additional screen costs completion rate.
-- **Tone of voice on every piece of copy.** Headlines, sub-heads, CTAs, error messages, push notifications. Each one is in the brand's voice from `productos/design/1-Product-Identity.md` — and, when `docs/COPY.md` exists, conforms to its lexicon, budgets, and mechanical rules.
+- **Tone of voice on every piece of copy.** Headlines, sub-heads, CTAs, error messages, push notifications. Each one is in the brand's voice from the Product Identity in `docs/DESIGN.md` — and, when `docs/COPY.md` exists, conforms to its lexicon, budgets, and mechanical rules.
 - **Cite the BONUS doc tactic by number for every screen.** No screen exists without a reference.
 - **Write both outputs concisely.** Markdown bullets, not paragraphs. Wireframe lo-fi greyscale, not branded. Readable in 3–5 minutes; clickable in under 60 seconds.
 
 ## What "done" looks like
 
-Two files at the project root:
+Two files in `docs/`:
 
-- **`productos/design/3-Onboarding-Flow.md`** — a screen-by-screen spec where every screen has goal, user action, exact copy, wireframe description, drop-off risk, and BONUS doc reference. The magic-moment screen is marked. Anti-patterns avoided are listed. Success metric is named.
-- **`productos/design/onboarding-wireframe.html`** — a single-file clickable lo-fi wireframe with sidebar navigation, device frame, primary-CTA-advances-flow, annotation panel per screen, no external dependencies. Opens by double-clicking.
+- **`docs/ONBOARDING.md`** — a screen-by-screen spec where every screen has goal, user action, exact copy, wireframe description, drop-off risk, and BONUS doc reference. The magic-moment screen is marked. Anti-patterns avoided are listed. Success metric is named.
+- **`docs/ONBOARDING-WIREFRAME.html`** — a single-file clickable lo-fi wireframe with sidebar navigation, device frame, primary-CTA-advances-flow, annotation panel per screen, no external dependencies. Opens by double-clicking.
 
 Both files use the same screen names, the same copy, and the same screen count. If they drift, the spec is stale — re-run the skill to re-sync.
 
