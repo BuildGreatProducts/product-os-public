@@ -1,11 +1,11 @@
 ---
 name: design-design-system-from-code
-description: Use when the user already has a product codebase and wants to reverse-engineer the design system already in the code into a Google-format `docs/DESIGN.md` — extracting the colors, typography, spacing, radii, elevation, and components actually used, flagging internal inconsistencies (competing values for one role — several "primary" blues, forked paddings, mixed radii, stray hex), resolving each with the user, then writing the file. Triggers on "design system from code", "reverse-engineer my design system", "I have a codebase but no DESIGN.md", "audit my codebase for design tokens", "consolidate my design tokens". Runs in the app repo — the repository that contains `productos/` — and reads CSS variables, Tailwind config, theme files and components; surfaces inconsistencies to resolve interactively; writes `docs/DESIGN.md` in Google's exact format (YAML tokens + eight sections), matching `design-design-system`, compatible with `develop-design-review`.
+description: Use when the user already has a product codebase and wants to reverse-engineer the design system already in the code into a Google-format `docs/DESIGN.md` — extracting the colors, typography, spacing, radii, elevation, and components actually used, flagging internal inconsistencies (competing values for one role — several "primary" blues, forked paddings, mixed radii, stray hex), resolving each with the user, then writing the file and its mirror. Triggers on "design system from code", "reverse-engineer my design system", "I have a codebase but no DESIGN.md", "audit my codebase for design tokens", "consolidate my design tokens". Runs in the app repo — the repository that contains `productos/` — and reads CSS variables, Tailwind config, theme files and components; surfaces inconsistencies to resolve interactively; writes `docs/DESIGN.md` in Google's exact format (YAML tokens + eight sections) plus its `docs/DESIGN.html` mirror, matching `design-design-system`, compatible with `develop-design-review`.
 ---
 
 # Design: Design System from Code (DESIGN.md)
 
-This skill is the **reverse** of `design-design-system`. Instead of going *forward* — Product Identity + a reference image → a brand-new `docs/DESIGN.md` — it goes *backward*: it reads the design system that already lives, implicitly and inconsistently, inside an existing product codebase, and turns it into a single documented, Google-format `docs/DESIGN.md`. The forward skill is for greenfield products with a brand but no code. This skill is for brownfield products with code but no documented system.
+This skill is the **reverse** of `design-design-system`. Instead of going *forward* — Product Identity + a reference image → a brand-new `docs/DESIGN.md` — it goes *backward*: it reads the design system that already lives, implicitly and inconsistently, inside an existing product codebase, and turns it into a single documented, Google-format `docs/DESIGN.md`, with the same `docs/DESIGN.html` mirror the forward skill builds. The forward skill is for greenfield products with a brand but no code. This skill is for brownfield products with code but no documented system.
 
 Every shipping codebase already *has* a design system — it's just undocumented, scattered across CSS files and component props, and almost always internally inconsistent. There are three blues that all mean "primary," button padding that's `12px 24px` in one component and `10px 20px` in another, cards rounded at 8px, 12px, and 14px depending on who wrote them, and a `--color-text` custom property that half the codebase ignores in favour of inline hex. The job of this skill is to **find the de-facto system, surface every internal conflict, let the user pick the canonical value for each role, and write the result down** in the exact format the rest of ProductOS consumes.
 
@@ -13,7 +13,7 @@ The cardinal rule is **document reality, don't silently improve it.** This skill
 
 The voice is a senior design systems engineer doing a brownfield audit — someone who has reverse-engineered token systems out of React, Vue, Svelte, SwiftUI, Android, and raw-CSS codebases, knows the difference between a deliberate variant and an accidental fork, and is allergic to documenting a system that doesn't match the code it claims to describe.
 
-> **Session length:** Designed to be completable in 30–60 minutes. The skill scans the codebase, builds the token inventory, clusters the conflicts, walks the user through resolving each one, and writes the file. No external research required — everything needed lives in the code, with optional context from the `## Product Identity` section of `docs/DESIGN.md` and from `docs/DEFINE.md` if they exist in the workspace.
+> **Session length:** Designed to be completable in 30–60 minutes. The skill scans the codebase, builds the token inventory, clusters the conflicts, walks the user through resolving each one, and writes the file and its HTML mirror. No external research required — everything needed lives in the code, with optional context from the `## Product Identity` section of `docs/DESIGN.md` and from `docs/DEFINE.md` if they exist in the workspace.
 
 ## Inputs
 
@@ -173,6 +173,14 @@ Present in two passes: **YAML frontmatter first** (confirm the canonical tokens 
 
 Write the approved file to `docs/DESIGN.md` (`mkdir -p docs` if needed). If the file already exists, show the diff in conversation and overwrite only on the user's approval — carrying its `## Product Identity` section over untouched.
 
+Then build the **`docs/DESIGN.html` mirror** from the markdown just approved — the same human-readable twin `design-design-system` builds, so the pair never drifts:
+
+- **Self-contained and dependency-free.** One file: all CSS inline in a `<style>` block, no frameworks, no external JS. Web fonts may load via a Google Fonts `<link>` when a documented family needs it; otherwise fall back to the stack the code uses.
+- **Token-driven.** Declare every YAML token as a CSS custom property in `:root` (`--color-primary`, `--type-body-md-size`, `--rounded-md`, `--space-md`) and style every swatch, specimen, and component from those variables — the values must match the YAML exactly.
+- **Sections, in order:** Header (name, description, "human-readable mirror of `docs/DESIGN.md`") → **Product Identity** (if the md has one) → Colors → Typography → Spacing → Radius → Elevation → Components (every YAML component rendered live, variants and states grouped) → Do's and Don'ts. Neutral style-guide chrome, not a marketing page.
+- **Keep the Product Identity.** If `docs/DESIGN.html` already has a Product Identity section, carry it over with its content unchanged (restyling it with the tokens is fine); otherwise render it from the md section. Never drop it.
+- **Never overwrite silently.** If `docs/DESIGN.html` already exists, say what will change (new token sections, regenerated components, identity kept) and write only on the user's approval — the same approval rule as the md.
+
 Then, **separately from the file**, surface the advisory notes you deliberately kept out of it — the quality issues you found but didn't silently fix:
 
 - **Contrast:** any documented `backgroundColor` + `textColor` pair that fails WCAG AA (4.5:1 body, 3:1 large). State the ratio; propose a fix; let the user decide whether to adjust the token or accept it.
@@ -184,7 +192,8 @@ Then, **separately from the file**, surface the advisory notes you deliberately 
 Re-read the written file and check:
 
 - **YAML parses** — consistent indentation, hex quoted, no trailing colons.
-- **The Product Identity section, if there was one, is intact** right after the frontmatter.
+- **The Product Identity section, if there was one, is intact** right after the frontmatter — and right after the Header in `docs/DESIGN.html`.
+- **The HTML mirrors the md** — every CSS custom property matches its YAML value, every YAML component renders, and the sections follow the md's order.
 - **All eight sections present, in order** — Brand & Style, Colors, Typography, Layout & Spacing, Elevation & Depth, Shapes, Components, Do's and Don'ts.
 - **Every component in YAML has prose in `Components`, and vice versa.**
 - **Token references use exact `{colors.primary}` / `{typography.body-md}` / `{rounded.md}` syntax.**
@@ -193,7 +202,7 @@ Re-read the written file and check:
 - **Contrast advisories computed** for every documented component pair and reported to the user (not necessarily fixed).
 - **Readable end-to-end in 4–6 minutes.**
 
-Deliver via a `computer://` link and a tight summary: one line per token group (colors, typography, spacing, shapes, components), one line on conflicts resolved (e.g., "9 conflicts consolidated"), and the advisory notes. Then point to the natural next step: run `develop-design-review` in this repo to find every place the code still uses the now-non-canonical values, and use its paste-ready fix prompt to consolidate the codebase onto the documented tokens in one pass.
+Deliver both files via `computer://` links and a tight summary: one line per token group (colors, typography, spacing, shapes, components), one line on conflicts resolved (e.g., "9 conflicts consolidated"), and the advisory notes. Then point to the natural next step: run `develop-design-review` in this repo to find every place the code still uses the now-non-canonical values, and use its paste-ready fix prompt to consolidate the codebase onto the documented tokens in one pass.
 
 ## Inconsistency patterns
 
@@ -257,7 +266,7 @@ When recommending a canonical value, weigh these in order — but always present
 
 ## What "done" looks like
 
-A `docs/DESIGN.md` file where:
+A `docs/DESIGN.md` file, and its `docs/DESIGN.html` mirror, where:
 
 - **YAML frontmatter** contains `version: alpha`, `name`, `description`, and populated `colors`, `typography`, `rounded`, `spacing`, and `components` — matching Google's schema exactly.
 - **The documented values are the canonical ones the user chose** during conflict resolution — one value per role, no competing duplicates.
@@ -266,5 +275,6 @@ A `docs/DESIGN.md` file where:
 - **Every component** in the YAML has prose in `Components`, and vice versa; **token references** use exact `{path.to.token}` syntax.
 - **An advisory summary** was delivered in conversation: contrast pairs that fail AA, non-free/excluded fonts left in place, and anything aggressively collapsed.
 - **The file is readable end-to-end in 4–6 minutes** by a human and parseable as YAML by a coding agent.
+- **`docs/DESIGN.html` opens in a browser** and renders every token and component from the same values, with the Product Identity section (if any) kept after the Header — written only with the user's approval if it already existed.
 
 Recommended next step after a successful session: run `develop-design-review` inside this same repo. It will compare the codebase against the freshly-documented `docs/DESIGN.md` and produce a prioritized, paste-ready fix prompt to migrate every non-canonical value (the "drift" you identified during conflict resolution) onto the documented tokens — turning the newly-written system into the one the code actually follows. From there, `develop-design-better` will keep new UI on-system as it's built.

@@ -149,13 +149,19 @@ Take each `KEEP`, `CONFLICT`, `GONE`, and `MINE` file one at a time. Never disca
 The last row sits outside `productos/`, so step 3 doesn't list it — check the repo root for it directly. For each, show the member where it's going and move it on their go-ahead:
 
 - **Build the new file from the latest structure.** `DEFINE.md` starts from `productos/define/DEFINE-TEMPLATE.md`; every other file follows the matching worksheet in the freshly updated `productos/`. Carry the member's answers across word for word under the same headings, and leave out the italic prompts and `> Good/Bad` lines — the worksheet keeps those. Where a worksheet was reworked since their copy (the 1.11.0 Pricing Strategy, for example), name the new sections their old answers don't cover and the skill that fills them.
-- **Never overwrite.** If the `docs/` file already exists, add only the sections it's missing, show the diff, and ask. For `DESIGN.md`, insert the Product Identity section directly after the YAML frontmatter and touch nothing else; add the matching section to `DESIGN.html` after its header. No `DESIGN.md` yet → create it the way `design-identity-creator` does.
-- **Then clear the old copy.** Once the member confirms the content is in `docs/`, reset a template to the latest blank worksheet (`git -C "$STAGE" show HEAD:<path> > "$LOCAL/<path>"`) and delete a generated file (wireframes, `Design-Prompts.md`).
+- **Never overwrite a filled section.** If the `docs/` file already exists, add the sections it's missing. A section still holding only its one-line placeholder (the `*Filled by …*` line from `DEFINE-TEMPLATE.md`) counts as unfilled: it may be replaced with the member's completed answers from `productos/` (their persona or pricing, say). Show the proposed diff for every addition and replacement, write only on the member's approval, and leave every filled section exactly as it is. For `DESIGN.md`, insert the Product Identity section directly after the YAML frontmatter and touch nothing else; add the matching section to `DESIGN.html` after its header. No `DESIGN.md` yet → create it the way `design-identity-creator` does.
+- **Then clear the old copy.** Once the member confirms the content is in `docs/`, reset a template to the latest blank worksheet — but only after confirming the path exists at the latest release, so a failed `git show` can't truncate the file:
+
+  ```bash
+  git -C "$STAGE" cat-file -e "HEAD:<path>" && git -C "$STAGE" show "HEAD:<path>" > "$WORK/blank" && mv "$WORK/blank" "$LOCAL/<path>"
+  ```
+
+  A retired template that isn't at the latest release (e.g. `define/4-Mini-Launch.md`) has no blank to reset to: ask the member whether to delete it, and otherwise leave it in place. Delete a generated file (wireframes, `Design-Prompts.md`) once its content is in `docs/`.
 
 Three retired documents need a word with the member:
 
 - **`docs/PRODUCT.md`** was a summary of the same Define work. Once `DEFINE.md` exists, compare the two and offer to add anything `PRODUCT.md` holds that `DEFINE.md` doesn't (usually a customer quote or a north star) to the matching section. Then offer to delete it — nothing reads it any more. If `PRODUCT.md` is all that survives (a collaborator's clone never had the filled templates), build the `DEFINE.md` sections from it as drafts, each marked *"Carried over from PRODUCT.md — re-run the owning skill to sharpen"*.
-- **`define/4-Mini-Launch.md` and `docs/LAUNCHES.md`** — launches were retired in 1.14.0 and nothing reads them. Offer to carry any real customer quotes into the Persona or the Offer's Proof in `DEFINE.md`. Delete the template; `docs/LAUNCHES.md` is the member's own file, so leave it unless they ask.
+- **`define/4-Mini-Launch.md` and `docs/LAUNCHES.md`** — launches were retired in 1.14.0 and nothing reads them. Offer to carry any real customer quotes into the Persona or the Offer's Proof in `DEFINE.md`. Ask before deleting the template (it has no blank at the latest release); `docs/LAUNCHES.md` is the member's own file, so leave it unless they ask.
 
 **Everything else:**
 
