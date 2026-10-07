@@ -1,6 +1,6 @@
 # Product Offer Framework
 
-A worksheet for defining your offer across the six core elements. Fill in each section below for your product in 1-2 sentences max.
+The structure and guidance for the `## Summary` and `## 1. Product Offer` sections of `docs/DEFINE.md`, which `define-offer-builder` fills (and `define-offer-review` sharpens) — this worksheet itself stays blank. Each element is 1-2 sentences max.
 
 ## Describe your product using your product offer
 

@@ -1,8 +1,8 @@
 # Pricing Strategy Framework
 
-A worksheet for deciding how your product earns and what it costs — filled in by `define-pricing` in a 30–45 minute session. Keep each answer to 1-2 sentences; the tables in sections 3 and 5 are the exception.
+The structure and guidance for the `## 3. Pricing Strategy` section of `docs/DEFINE.md` — how your product earns and what it costs, filled by `define-pricing` in a 30–45 minute session. This worksheet itself stays blank. Keep each answer to 1-2 sentences; the tables in sections 3 and 5 are the exception.
 
-This is the canonical pricing document. It answers, in order: who pays, how the business earns, what the price multiplies by and how people start, what the price sits against, one launch price, and the sentence that carries it into your Mini-Launch (`4-Mini-Launch.md`). The economics behind the price — what each customer costs to serve, why a clone doesn't kill you, the one number to watch — are the optional deep dive (`BONUS-Business-Strategy-Deep-Dive.md`) for when the money questions get real.
+The section answers, in order: who pays, how the business earns, what the price multiplies by and how people start, what the price sits against, one launch price, and the sentence that carries it to customers. The economics behind the price — what each customer costs to serve, why a clone doesn't kill you, the one number to watch — are the optional deep dive (`BONUS-Business-Strategy-Deep-Dive.md`, filling `## 4. Business Strategy`) for when the money questions get real.
 
 Two reference docs sit behind this worksheet: `BONUS-Business-Models.md` (the sixteen ways an app earns) and `BONUS-Pricing-Models.md` (the twenty-four ways to shape a price, plus how to set the number). Read the sections that match your pick, not all forty.
 
@@ -127,13 +127,13 @@ Close with the sanity line: **plan price − total direct cost to serve a heavy 
 
 ## 6. Your Price Line
 
-*The one plain-English sentence that carries the price into your Mini-Launch.*
+*The one plain-English sentence that carries the price to customers — on your landing page and in your first sales conversations.*
 
 > Good: "I'm building X for Y — it'll be around $29/month, about half what [anchor] charges. Would that be worth it for you?"
 > Bad: a paragraph of hedging, apologizing for the price, hiding the number behind "affordable"
 
-Two lengths. The DM version above is what goes in the Mini-Launch. The full version is the one-sentence offer from section 3 — use it on a pricing page, a one-pager, or when someone asks "so how does it work?"
+Two lengths. The DM version above is what goes in a message or a first sales conversation. The full version is the one-sentence offer from section 3 — use it on a pricing page, a one-pager, or when someone asks "so how does it work?"
 
-Including the price in your mini-launch message is **optional — but recommended.** A post with a price gets you a dramatically more honest signal than one without: "sounds cool" is free, "I'd pay $29 for that" is data. If saying the number out loud feels scary, that's normal — it's also exactly the fear the mini-launch is designed to break.
+Say the price whenever you put the offer in front of someone. A message with a price gets you a dramatically more honest signal than one without: "sounds cool" is free, "I'd pay $29 for that" is data. If saying the number out loud feels scary, that's normal — saying it is the only way through the fear.
 
 **Your answer:**

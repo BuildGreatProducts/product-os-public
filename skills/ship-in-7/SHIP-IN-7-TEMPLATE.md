@@ -83,7 +83,7 @@
 
 **Open findings from the audit:** [High / Medium items not yet fixed, from `docs/SECURITY-AUDIT.md`]
 
-**Docs in place:** PRODUCT.md [yes/no, current?] · COPY.md [ ] · DESIGN.md [ ] · PRD.md / ROADMAP.md [ ] · DEPLOY.md [ ] · LAUNCHES.md [ ]
+**Docs in place:** DEFINE.md [yes/no, current?] · COPY.md [ ] · DESIGN.md [ ] · PRD.md / ROADMAP.md [ ] · DEPLOY.md [ ]
 
 **The biggest blocker:** [one paragraph, honest]
 

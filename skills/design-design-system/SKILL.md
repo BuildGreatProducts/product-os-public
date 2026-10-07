@@ -1,7 +1,7 @@
 ---
 name: design-design-system
 description: >-
-  Use when the user wants to turn an image reference — a screenshot, mockup, Figma URL, or live website they love — into their Design System. Triggers on phrases like "build my design system", "create my DESIGN.md", "design from image", "image to design system", "translate this screenshot into a design system", "extract design tokens", "make my design.md", "here's a site I love, capture its design", or when the user shares an image/URL in a design context with no other clear intent. Produces two mirrored artifacts: docs/DESIGN.md (Google-format YAML tokens + prose, the source of truth coding agents read) and docs/DESIGN.html (a self-contained live style guide for the human). Reads the image(s), asks only the context questions the ProductOS docs don't already answer, derives the tokens, reconciles them with the Product Identity, and writes both files together. Design phase Step 3 — runs after the UX Writing Guide and supplies the colours, fonts, and tokens the identity leaves undecided.
+  Use when the user wants to turn an image reference — a screenshot, mockup, Figma URL, or live website they love — into their Design System. Triggers on phrases like "build my design system", "create my DESIGN.md", "design from image", "image to design system", "translate this screenshot into a design system", "extract design tokens", "make my design.md", "here's a site I love, capture its design", or when the user shares an image/URL in a design context with no other clear intent. Produces two mirrored artifacts: docs/DESIGN.md (Google-format YAML tokens + prose, the source of truth coding agents read) and docs/DESIGN.html (a self-contained live style guide for the human). Reads the image(s), asks only the questions the ProductOS docs don't answer, derives the tokens, reconciles them with the Product Identity section of docs/DESIGN.md, and writes both files around it. Design phase Step 3 — runs after the UX Writing Guide and supplies the colours, fonts, and tokens the identity leaves undecided.
 ---
 
 # Design: Design System (image → DESIGN.md + DESIGN.html)
@@ -13,14 +13,15 @@ This skill takes an **image reference the user loves** — a screenshot, mockup,
 
 Same system, two audiences: the agent reads the `.md`, the human opens the `.html`. They are always written and updated together so they never drift.
 
-In ProductOS this is **Design phase Step 3**, after the Product Identity and UX Writing Guide. The identity supplies the *words* (name, worldview, contrarian belief, tone, visual style direction) and deliberately leaves the *visuals* undecided — this skill derives the colours, fonts, spacing, shapes, and components from a real image, guided by those words. The user's job before this session: find one image or site that looks the way the brand *feels*. The Visual Style references in the identity are the natural hunting ground.
+In ProductOS this is **Design phase Step 3**, after the Product Identity and UX Writing Guide. The identity already lives in `docs/DESIGN.md` as its `## Product Identity` section (Step 1 created the file); this skill adds the tokens and the eight design-system sections around it. The identity supplies the *words* (name, worldview, contrarian belief, tone, visual style direction) and deliberately leaves the *visuals* undecided — this skill derives the colours, fonts, spacing, shapes, and components from a real image, guided by those words. The user's job before this session: find one image or site that looks the way the brand *feels*. The Visual Style references in the identity are the natural hunting ground.
 
 > **Session length:** 30–60 minutes. The user supplies the image; Claude does the visual analysis, the token extraction, the identity reconciliation, and both file writes. Already have a codebase instead of an image? `design-design-system-from-code` reverse-engineers the system from the code.
 
 ## Modes
 
 - **No image provided yet:** ask for one (Step 0) before doing anything else. Don't draft a DESIGN.md from imagination. If the user has no image after one prompt, offer the weak fallback: *"I can draft a starter system from your Product Identity's words alone and we'll refine it — but it will be far weaker than working from an image you love. Want to proceed that way, or grab a reference first?"*
-- **`docs/DESIGN.md` already exists:** read it (and `docs/DESIGN.html` if present) and ask what they want — refine specific tokens, replace with a fresh analysis from new imagery, or merge. Confirm before destructive overwrites. Whatever changes, regenerate `docs/DESIGN.html` so it stays in sync.
+- **`docs/DESIGN.md` holds only the Product Identity** (frontmatter with no token groups, plus the identity section — the usual state after Step 1): this is a first run. Build the system around the identity; no overwrite question needed beyond the diff in Step 6.
+- **`docs/DESIGN.md` already has tokens:** read it (and `docs/DESIGN.html` if present) and ask what they want — refine specific tokens, replace with a fresh analysis from new imagery, or merge. Confirm before destructive overwrites. Whatever changes, regenerate `docs/DESIGN.html` so it stays in sync.
 - **Partial conversation:** if the session was interrupted mid-flow, note where it left off and resume from that step. Don't restart.
 
 ## Inputs
@@ -30,8 +31,8 @@ In ProductOS this is **Design phase Step 3**, after the Product Identity and UX 
    - **Figma URLs** (`figma.com/design/...`, `/board/...`, `/make/...`) — use the Figma MCP tools (`get_design_context`, `get_screenshot`, `get_metadata`) if connected.
    - **Live website URLs** — you can't screenshot arbitrary URLs without browser tooling; ask the user to paste a screenshot of the site, and use WebFetch on the URL only as a supplementary signal (font names, colour values in CSS) — never as the primary visual source.
    - **A mix.** If multiple, ask which is the **primary anchor** and which are mood references — the primary drives the token decisions.
-2. **The Product Identity** — usually `productos/design/1-Product-Identity.md`. **Required.** Supplies the words: name, worldview, contrarian belief, tone of voice, visual style (lane, style notes, composition rules, references). If missing or substantively empty, stop and point to `design-identity-creator` first.
-3. **PRODUCT.md** — usually `docs/PRODUCT.md`. **Required.** What the product is, who uses it, in what context — a productivity tool's system differs structurally from a consumer app's even with the same brand character.
+2. **The Product Identity** — the `## Product Identity` section of `docs/DESIGN.md`. **Required.** Supplies the words: name, worldview, contrarian belief, tone of voice, visual style (lane, style notes, composition rules, references). If the section is missing or substantively empty, stop and point to `design-identity-creator` first.
+3. **DEFINE.md** — usually `docs/DEFINE.md`. **Required.** What the product is (`## Summary`, Offer → Mechanism), who uses it and in what context (Offer → Customer plus the Customer Persona) — a productivity tool's system differs structurally from a consumer app's even with the same brand character.
 4. **The Reference DESIGN.md** — `REFERENCE-DESIGN.md` in this skill's folder. Read once at the start: it demonstrates the exact format, YAML schema, and `{path.to.token}` conventions. Use it as the structural template only — **never copy its design choices.**
 
 ## The engineer's voice
@@ -42,7 +43,7 @@ A senior design director and systems engineer with strong taste. **Observant** �
 
 ### 0. Image intake
 
-Read the identity and PRODUCT.md first, then open with:
+Read the identity and DEFINE.md first, then open with:
 
 > *"Share the image (or images) you want me to translate — a screenshot of a product you love, a marketing site capture, a Figma link, or a mix. If you have several, tell me which is the primary anchor. Your identity's Visual Style references are a good place to hunt."*
 
@@ -62,7 +63,7 @@ Summarize back in 5–8 tight bullets, mirroring the imagery's actual character.
 
 ### 2. Context questions — only the ones ProductOS hasn't answered
 
-Ask one at a time, offering 3 tailored suggestions drawn from the analysis. **Skip everything the docs already answer:** the product, audience, and use context come from PRODUCT.md; the emotional tone, worldview, belief, and imagery lane come from the Product Identity — acknowledge what's known instead of re-asking. What's left:
+Ask one at a time, offering 3 tailored suggestions drawn from the analysis. **Skip everything the docs already answer:** the product, audience, and use context come from DEFINE.md; the emotional tone, worldview, belief, and imagery lane come from the Product Identity — acknowledge what's known instead of re-asking. What's left:
 
 1. **Colour role assignments** — from the colours spotted: which is `primary`, which is the accent, which carry semantic meaning? Light, dark, or both? Suggest a mapping.
 2. **Typography confirmation** — confirm the typeface direction and the scale levels the product needs. (Free-fonts rule below applies.)
@@ -132,9 +133,9 @@ components:
 
 ### 5. Prose drafting
 
-Draft the eight canonical sections, in this exact order, each 3–8 tight sentences. Don't restate the YAML — explain the *why*, so a coding agent can make sound choices in cases the tokens don't cover:
+Draft the eight canonical sections, in this exact order after the Product Identity section, each 3–8 tight sentences. Don't restate the YAML — explain the *why*, so a coding agent can make sound choices in cases the tokens don't cover:
 
-1. **`## Brand & Style`** — the look-and-feel north star. Pulls from PRODUCT.md (what it is) + the identity (worldview, belief, tone, visual style). Names the aesthetic intent in one phrase and the emotional response the UI should evoke, plus one or two anti-patterns.
+1. **`## Brand & Style`** — the look-and-feel north star. Pulls from DEFINE.md (what it is) + the identity (worldview, belief, tone, visual style). Names the aesthetic intent in one phrase and the emotional response the UI should evoke, plus one or two anti-patterns.
 2. **`## Colors`** — palette strategy: what `primary`, accent, `surface`, and semantic colours do and why those values. Note WCAG AA contrast intent.
 3. **`## Typography`** — the pairing's character and what each scale level is for. Treatment rules (uppercase labels, tabular numerals).
 4. **`## Layout & Spacing`** — grid model, max content widths, density philosophy, how spacing tokens map to layout.
@@ -145,7 +146,7 @@ Draft the eight canonical sections, in this exact order, each 3–8 tight senten
 
 ### 6. Confirm and write `docs/DESIGN.md`
 
-Show the user a brief outline first — the token names chosen (colour tokens, type levels, rounded/spacing scales, component list) and a one-line summary per prose section. Fold in last edits. Then write to `docs/DESIGN.md` (create `docs/` if needed; if the file exists, show the diff and get approval to overwrite).
+Show the user a brief outline first — the token names chosen (colour tokens, type levels, rounded/spacing scales, component list) and a one-line summary per prose section. Fold in last edits. Then write to `docs/DESIGN.md` (create `docs/` if needed; if the file exists, show the diff and get approval to overwrite). File order: the YAML frontmatter, the `# <Name>` title, the **`## Product Identity` section carried over verbatim** (it belongs to `design-identity-creator` — never rewrite or drop it), then the eight canonical sections. Drop the italic placeholder line the identity skill left saying tokens arrive at Step 3.
 
 Verify the write succeeded before confirming. On failure, surface a clear message by cause: permission denied ("the directory isn't writable — check folder permissions"), disk full ("free up space and I'll retry"), existing-file conflict ("want me to save under a different name or overwrite?"), anything else (report verbatim and ask). Only say "saved" after verification — then build the mirror.
 
@@ -158,13 +159,13 @@ The HTML is the human-readable twin — generated **from the tokens just written
 - **Mirrors the md's section order**, so the two files read side by side.
 - If the system defines **both light and dark modes**, include a small vanilla-JS theme toggle flipping a `data-theme` attribute and define both token sets.
 
-Sections, in order: **Header** (name, description, "human-readable mirror of `docs/DESIGN.md`") → **Colors** (a swatch per token: block, name, hex, and a line of text in the paired `on-` colour) → **Typography** (each level as a live specimen at its real family/size/weight, spec beside it) → **Spacing** (labeled bars showing the rhythm) → **Radius** (sample boxes per `rounded` value) → **Elevation** (a card per level) → **Components** (every `components:` entry built and rendered live, variants and states grouped; render un-triggerable states like hover as labeled static copies) → **Do's and Don'ts** (two columns, ✓/✗, small visual examples where they help).
+Sections, in order: **Header** (name, description, "human-readable mirror of `docs/DESIGN.md`") → **Product Identity** (carried over from the existing html — the Brand Card as a card plus the five elements, restyled with the new tokens if you like but with its content unchanged; rebuild it from the md section if the html is missing) → **Colors** (a swatch per token: block, name, hex, and a line of text in the paired `on-` colour) → **Typography** (each level as a live specimen at its real family/size/weight, spec beside it) → **Spacing** (labeled bars showing the rhythm) → **Radius** (sample boxes per `rounded` value) → **Elevation** (a card per level) → **Components** (every `components:` entry built and rendered live, variants and states grouped; render un-triggerable states like hover as labeled static copies) → **Do's and Don'ts** (two columns, ✓/✗, small visual examples where they help).
 
 Keep the page's own chrome neutral — it's a reference style guide, not a marketing page. Write to `docs/DESIGN.html` with the same write-error handling. **The `.md` and `.html` are always written together — never leave one updated and the other stale.**
 
 ### 8. Verify and hand off
 
-Re-read both files and check: YAML parses (consistent indentation, quoted hexes); all eight sections present in order; every YAML component explained in prose and vice versa; token references use exact `{colors.primary}` syntax; all fonts free and off the banned list; every component's `backgroundColor`+`textColor` pair meets WCAG AA (4.5:1 body, 3:1 large — flag and fix failures before delivering); the HTML's custom properties match the YAML values exactly; the md reads end-to-end in 4–6 minutes.
+Re-read both files and check: YAML parses (consistent indentation, quoted hexes); the Product Identity section is intact right after the frontmatter (md) and the Header (html); all eight canonical sections present in order after it; every YAML component explained in prose and vice versa; token references use exact `{colors.primary}` syntax; all fonts free and off the banned list; every component's `backgroundColor`+`textColor` pair meets WCAG AA (4.5:1 body, 3:1 large — flag and fix failures before delivering); the HTML's custom properties match the YAML values exactly; the md reads end-to-end in 4–6 minutes.
 
 Then deliver both via `computer://` links:
 
@@ -213,8 +214,8 @@ When the reference needs an anchor, draw on these recognized shapes:
 - **Rewrite a prose section** — update only that section; leave YAML and html untouched unless tokens change too.
 - **Add a component** — YAML entry + Components prose paragraph + live rendering (with variants/states) in the html.
 
-Preserve canonical section order and never create duplicate `##` headings.
+Preserve canonical section order — the Product Identity section first, then the eight — and never create duplicate `##` headings. Identity changes go through `design-identity-creator`, which rewrites that section in both files.
 
 ## What "done" looks like
 
-Two files, written together: a `docs/DESIGN.md` whose YAML matches the schema exactly, whose eight prose sections are tight and in order, whose fonts are free and off the banned list, whose component contrast pairs pass WCAG AA, and which coheres with the Product Identity's words — plus a `docs/DESIGN.html` that opens in a browser and renders every one of those tokens and components live, from the same values, in the same order. A founder can look at the html and *see* their brand; an agent can read the md and *build* it.
+Two files, written together: a `docs/DESIGN.md` whose YAML matches the schema exactly, whose Product Identity section is preserved and whose eight canonical sections follow it, tight and in order, whose fonts are free and off the banned list, whose component contrast pairs pass WCAG AA, and which coheres with that identity's words — plus a `docs/DESIGN.html` that opens in a browser and renders every one of those tokens and components live, from the same values, in the same order. A founder can look at the html and *see* their brand; an agent can read the md and *build* it.

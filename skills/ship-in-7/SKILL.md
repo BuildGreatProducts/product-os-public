@@ -18,7 +18,7 @@ Ship in 7 takes a member from wherever they are to **their app live at a real UR
 Locate in the ProductOS folder (`productos/` at the app repo root) and the repo-root `docs/`. Never search `node_modules/`, build output, or vendored code.
 
 1. **The repo itself.** Whether app code exists beyond `productos/`; framework, deploy config (`vercel.json`, `Dockerfile`, `eas.json`, …), a production URL anywhere; whether the UI reads as generated (default component-library look, inconsistent spacing, marketing-voice copy); whether it is a prompt-to-app platform export (Lovable, Bolt, v0, Base44).
-2. **The ProductOS documents**, if any: `productos/define/1-Product-Offer.md` … `3-Pricing-Strategy.md`, `docs/PRODUCT.md`, `docs/COPY.md`, `docs/DESIGN.md`, `docs/PRD.md`, `docs/ROADMAP.md`, `docs/SECURITY-AUDIT.md`, `docs/DEPLOY.md`, `docs/LAUNCHES.md`.
+2. **The ProductOS documents**, if any: `docs/DEFINE.md`, `docs/COPY.md`, `docs/DESIGN.md`, `docs/PRD.md`, `docs/ROADMAP.md`, `docs/SECURITY-AUDIT.md`, `docs/DEPLOY.md`.
 3. **`docs/PLAN.md`**, if present (a coached copy). Compose from its Develop route and annotate it; never override it.
 4. **`docs/SHIP-IN-7.md`**, if present: an open challenge means this is a check-in or a close, not an enrol. **`docs/SELL-IN-30.md`** open means stop: only one challenge runs at a time.
 5. **The plan library in this folder:** `PLAN-idea-only.md`, `PLAN-ai-generated-app.md`, `PLAN-local-prototype.md`, `PLAN-platform-migration.md`, and `SHIP-IN-7-TEMPLATE.md`.
@@ -51,7 +51,7 @@ Present the starting points the evidence fits, plus "none of these", and **ask**
 
 | Starting point | Typical evidence | Plan file |
 | --- | --- | --- |
-| **Idea only** | No app code beyond `productos/`; Define templates empty | `PLAN-idea-only.md` |
+| **Idea only** | No app code beyond `productos/`; no `docs/DEFINE.md` | `PLAN-idea-only.md` |
 | **AI-generated app, not live** | App code; no `docs/DESIGN.md` or `docs/COPY.md`; generated look | `PLAN-ai-generated-app.md` |
 | **Local prototype** | App code; no deploy config, no `docs/DEPLOY.md`, no production URL | `PLAN-local-prototype.md` |
 | **Prompt-to-app platform** | A Lovable / Bolt / v0 / Base44 project, no owned repo | `PLAN-platform-migration.md` |
@@ -68,7 +68,7 @@ If they pick "none of these", compose from the block library directly (below) an
 
 ### 5. Compose the seven sessions
 
-Start from the `PLAN-*.md` file for the starting point, then adjust using the block library and the composition rules below: drop a block only when its artefact exists **and is current and complete** (a `docs/PRODUCT.md` that describes today's product; a `docs/SECURITY-AUDIT.md` whose verdict covers today's code with Critical/High fixed, not merely a file with that name); otherwise keep the block. Add the ones the evidence says are missing, fit to the hours. Show the plan as a table — session, block, skill, proof, hours — and let the member edit before anything is written.
+Start from the `PLAN-*.md` file for the starting point, then adjust using the block library and the composition rules below: drop a block only when its artefact exists **and is current and complete** (a `docs/DEFINE.md` that describes today's product; a `docs/SECURITY-AUDIT.md` whose verdict covers today's code with Critical/High fixed, not merely a file with that name); otherwise keep the block. Add the ones the evidence says are missing, fit to the hours. Show the plan as a table — session, block, skill, proof, hours — and let the member edit before anything is written.
 
 ### 6. Write `docs/SHIP-IN-7.md`
 
@@ -126,9 +126,9 @@ Every block is an existing skill (or a plain action) with a proof. The composer 
 | Block | Skill(s) | Produces | Proof | Typical |
 | --- | --- | --- | --- | --- |
 | Setup check | `setup` | wired root files, gitignore | file diff | 10 min |
-| Define from idea | `define-offer-builder` → `define-customer-persona` → `define-pricing` → `define-product`, compressed into one sitting | `docs/PRODUCT.md` | file exists, 8 sections filled | 3 h |
-| Define backfill | `define-from-code` → `define-product` | `docs/PRODUCT.md` | file exists | 1.5 h |
-| Words | `design-identity-creator` → `design-ux-writing` | `productos/design/1-Product-Identity.md` (the Brand Card), `docs/COPY.md` | both files exist; `COPY.md`'s audit fix list present | 1.5 h |
+| Define from idea | `define-offer-builder` → `define-customer-persona` → `define-pricing`, compressed into one sitting | `docs/DEFINE.md` | Summary, Offer, Persona and Pricing filled | 2.5 h |
+| Define backfill | `define-from-code` | `docs/DEFINE.md` | Summary, Offer, Persona and Pricing filled | 1 h |
+| Words | `design-identity-creator` → `design-ux-writing` | the Product Identity in `docs/DESIGN.md` (the Brand Card), `docs/COPY.md` | the Product Identity section and `COPY.md` exist; `COPY.md`'s audit fix list present | 1.5 h |
 | Look | `design-design-system` (one image you love) or `design-design-system-from-code` | `docs/DESIGN.md` + `docs/DESIGN.html` | screenshot of `DESIGN.html` | 1 h |
 | Magic moment + spec | `design-magic-moment` → `develop-prd-roadmap`, MVP scoped to the magic moment only | `docs/PRD.md`, `docs/ROADMAP.md` | roadmap of one phase | 1.5 h |
 | Build | `develop-mvp-build` (idea) · `develop-design-better` + the build loop (`cc-build-loop` / `codex-build-loop` / `cursor-build-loop`) + `develop-design-review` (rebuild) · `develop-refactor-plan` → `develop-refactor-build` (messy code) | the working core flow | before/after screenshots saved to `docs/`, or a recording the agent can open | 4 h+ per day |
@@ -136,13 +136,13 @@ Every block is an existing skill (or a plain action) with a proof. The composer 
 | Quality gate | `develop-code-review` → `develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` | the verdict line; Fix plan Critical/High ticked | 2–3 h |
 | Deploy guide | `develop-golive` | `docs/DEPLOY.md` | file exists; accounts created | 1 h |
 | **Go live** | work `docs/DEPLOY.md` top to bottom | live URL, HTTPS, domain | **smoke test passed as a real customer** | 2–3 h |
-| Announce *(stretch)* | `mini-launch` | the post; `docs/LAUNCHES.md` entry | live post screenshot | 1 h |
+| Announce *(stretch)* | no skill: post the live URL where your customers are | the post | the post's link or screenshot | 30 min |
 
 ### Composition rules
 
 1. **Go live sits on Day 5, 6 or 7**: Day 6 with Day 7 as buffer and smoke test is the default; Day 5 when the gate is done early (the local-prototype plan); Day 7 outright when hours are tight. Never before the quality gate.
 2. **The quality gate is never skipped.** The security audit runs before anything is reachable, on every path.
-3. **Define backfill is never skipped when `docs/PRODUCT.md` is missing.** `develop-golive` and the launch post read it. Compressed, not dropped.
+3. **Define backfill is never skipped when `docs/DEFINE.md` is missing.** The Skool posts draw on it and `sell-in-30` opens by reviewing its offer. Compressed, not dropped.
 4. **Design blocks are included only when the app exists and looks generated**, or when the member asks. On the idea path, Look runs on Day 2 so the build is on tokens from the first screen.
 5. **Build days are capped at two.** The MVP is the magic moment and the path to it. Everything else moves to later roadmap phases.
 6. **One plan, scaled to the hours the member gave.** Never present two named plans.
@@ -167,7 +167,7 @@ Ship in 7 completed! Here's what I learnt
 
 The `It's live` post goes out the day the smoke test passes, whatever the day number. The `completed` post is the close. One post a day: if the smoke test passes on the same day as the close, combine them into one post titled `Ship in 7 completed! [app name] is live 🚀`.
 
-**Body, in the member's own voice.** Build the voice from what they have actually written: their messages in this session, the Product Offer and Mini-Launch drafts, UI copy in the repo, their previous posts in the log. Short, first person, the proof (screenshot or link), the number if there is one, tomorrow's task in one line. No marketing register, no exclamation-mark stacking, no "excited to announce". If you can't hear the member's voice yet, ask for one previous post of theirs.
+**Body, in the member's own voice.** Build the voice from what they have actually written: their messages in this session, the Product Offer in `docs/DEFINE.md`, UI copy in the repo, their previous posts in the log. Short, first person, the proof (screenshot or link), the number if there is one, tomorrow's task in one line. No marketing register, no exclamation-mark stacking, no "excited to announce". If you can't hear the member's voice yet, ask for one previous post of theirs.
 
 Missed days are posted too. Zero is an entry.
 
@@ -185,7 +185,7 @@ Missed days are posted too. Zero is an entry.
 
 ## Tone
 
-The `mini-launch` register: coach at the moment of fear. The bar is visibly low and non-negotiable. Shipping is the achievement; silence is an entry; never shame a zero. Blunt about proof, warm about everything else.
+Register: coach at the moment of fear. The bar is visibly low and non-negotiable. Shipping is the achievement; silence is an entry; never shame a zero. Blunt about proof, warm about everything else.
 
 ## Must-nots
 

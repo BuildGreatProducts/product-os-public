@@ -1,18 +1,18 @@
 # Sell in 30 — week one: Live, priced, nobody has paid
 
-*The product is live with a price on the site or a payments integration in place, and the launch log's rung is below `payment` (or there is no launch log). The bar is a payment.*
+*The product is live with a price on the site or a payments integration in place, and nobody has paid yet. The bar is a payment.*
 
 ## Week one
 
 | Day | Block | Skill(s) | Proof |
 | --- | --- | --- | --- |
-| 1 | **Define backfill + offer review** | `define-from-code` if the Define docs are missing → `define-offer-review` → `define-product`; confirm the price line against `productos/define/3-Pricing-Strategy.md` (run `define-pricing` if that file is missing or unfilled — a live price with no document behind it is a guess) | a sharpened offer, read out loud; `docs/PRODUCT.md`; the price line confirmed |
+| 1 | **Define backfill + offer review** | `define-from-code` if `docs/DEFINE.md` is missing → `define-offer-review`; confirm the price line against the Pricing Strategy section of `docs/DEFINE.md` (run `define-pricing` if that section is missing or unfilled — a live price with no document behind it is a guess) | a sharpened offer, read out loud; the price line confirmed |
 | 2 | **Messaging alignment** | `design-landing-page` (and/or `design-app-listing`) against the reviewed offer → ship the copy via the build loop, `develop-design-review` before commit | before/after of the live hero and the pricing section |
 | 3 | **Checkout verified, or made live** | if Stripe is still in test mode (key prefix `sk_test_` rather than `sk_live_`, the dashboard's test-mode toggle, or `livemode: false` on the Price object; never inferred from a price ID's name), switch it to live per the payments section of `develop-golive` first; then a real purchase through the live checkout as a stranger would (fresh account, incognito), refunded; fix what breaks | the live receipt and its refund (the test purchase never counts toward the bar); screenshots of landing → paid saved to `docs/` |
-| 4 | **Believers backfill + warm conversations** | create or update `docs/LAUNCHES.md`; `mini-launch` sitting one to believers and named warm contacts, checkout link in hand | sent-folder screenshot |
-| 5 | **Channel** | `distribute-gtm-strategy` | `1-Go-To-Market-Strategy.md` |
-| 6 | **Experiments + follow-ups** | `distribute-growth-experiments`, briefed with the bar and the clock; every open thread answered | `2-Growth-Experiments.md`; tracker seeded |
-| 7 | **Weekly read** | `mini-launch` sitting two | the read; the Week 1 Skool post |
+| 4 | **Warm list + warm conversations** | write or update the warm list in `docs/SELL-IN-30.md`; the warm ask to each, personally, checkout link in hand; every response logged in the Experiment Log | sent-folder screenshot; the warm list |
+| 5 | **Channel** | `distribute-gtm-strategy` | `docs/GO-TO-MARKET.md` |
+| 6 | **Experiments + follow-ups** | `distribute-growth-experiments`, briefed with the bar and the clock; every open thread answered | `docs/GROWTH-EXPERIMENTS.md`; `docs/GROWTH-TRACKER.md` seeded |
+| 7 | **Weekly read** | the signal read, applied to the week | the read; the Week 1 Skool post |
 
 ## Notes for the composer
 

@@ -8,13 +8,13 @@ This is the least crowded path, so it carries the fullest quality gate and a rea
 
 | Day | Block | Skill(s) | Proof | Hours |
 | --- | --- | --- | --- | --- |
-| 1 | **Define backfill + baseline** | `define-from-code` → `define-product` (skip if current); `develop-code-review` over the working tree so the starting state is known | `docs/PRODUCT.md`; the review's verdict line | 2 |
+| 1 | **Define backfill + baseline** | `define-from-code` (skip if `docs/DEFINE.md` is current); `develop-code-review` over the working tree so the starting state is known | `docs/DEFINE.md` has Summary, Offer, Persona and Pricing filled; the review's verdict line | 1.5 |
 | 2 | **Quality gate** | `develop-security-audit` → do the "Do this right now" items today | `docs/SECURITY-AUDIT.md` verdict; rotated keys if any were committed | 2 |
 | 3 | **Fixes** | the build loop over the audit's Fix plan, Critical and High first | Fix plan Critical/High ticked; tests green | 3 |
 | 4 | **Deploy guide** | `develop-golive` | `docs/DEPLOY.md`; hosting and service accounts created (🧑 steps) | 1.5 |
 | 5 | **Go live** | work `docs/DEPLOY.md` top to bottom | live URL, HTTPS, custom domain if owned | 3 |
 | 6 | **Polish** | `design-design-system-from-code` if `docs/DESIGN.md` is missing, then `develop-design-review` over the core flow; fix the inconsistencies it flags | before/after of the core flow; `docs/DESIGN.md` | 2.5 |
-| 7 | **Smoke test, announce** | smoke test as a real customer on the live URL (fresh account, incognito); `mini-launch` (stretch) | **smoke test passed**; live post screenshot (stretch) | 2 |
+| 7 | **Smoke test, announce** | smoke test as a real customer on the live URL (fresh account, incognito); post the live URL where your customers are (stretch) | **smoke test passed**; the post's link (stretch) | 2 |
 
 ## Notes for the composer
 
@@ -32,4 +32,4 @@ This is the least crowded path, so it carries the fullest quality gate and a rea
 
 ## What Day 7 looks like
 
-The app is live, the audit's Critical and High findings are closed, a real customer's path works at the real URL, and the core flow reads as one product. The launch post is a bonus.
+The app is live, the audit's Critical and High findings are closed, a real customer's path works at the real URL, and the core flow reads as one product. The announcement post is a bonus.

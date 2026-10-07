@@ -1,12 +1,12 @@
 ---
 name: develop-design-review
 description: >-
-  Use when the user has a `docs/DESIGN.md` and uncommitted changes in their product codebase (new components, modified styles, new screens) and wants a design-system adherence review before committing or merging. Triggers on phrases like "design review", "review my design system adherence", "check my changes against DESIGN.md", "design system check", "what design tokens am I missing", or "promote my new patterns to DESIGN.md". Runs in the app repo — the repository that contains `productos/`. Reads `docs/DESIGN.md`, inspects uncommitted git changes (working tree + staged), classifies each visual change as an Inconsistency, a New Pattern, or Already-Aligned, and writes a prioritized, timestamped report to `design-review/` (a new file per run): a fix to-do list, a promotion checklist for `docs/DESIGN.md`, and a paste-ready fix prompt for a coding agent. Optionally references `productos/design/1-Product-Identity.md` for tone if present; works standalone.
+  Use when the user has a `docs/DESIGN.md` and uncommitted changes in their product codebase (new components, modified styles, new screens) and wants a design-system adherence review before committing or merging. Triggers on phrases like "design review", "review my design system adherence", "check my changes against DESIGN.md", "design system check", "what design tokens am I missing", or "promote my new patterns to DESIGN.md". Runs in the app repo — the repository that contains `productos/`. Reads `docs/DESIGN.md`, inspects uncommitted git changes (working tree + staged), classifies each visual change as an Inconsistency, a New Pattern, or Already-Aligned, and writes a prioritized, timestamped report to `docs/design-reviews/` (a new file per run): a fix to-do list, a promotion checklist for `docs/DESIGN.md`, and a paste-ready fix prompt for a coding agent. Optionally references the Product Identity section of `docs/DESIGN.md` for tone if present; works standalone.
 ---
 
 # Develop: Design Review
 
-This skill runs in the **app repo** — the repository that contains `productos/` — and produces a **design system adherence review** of uncommitted UI changes against the documented `docs/DESIGN.md`. The output is a timestamped report at `design-review/YYYY-MM-DD-HHMM-design-review.md` — a new file per run, never overwriting prior reviews — containing a structured report with three buckets — Inconsistencies (changes that violate documented tokens), New Patterns (changes that introduce something not yet in the design system), and Already-Aligned (changes that use tokens correctly) — plus a prioritized to-do list of fixes, a separate list of new patterns proposed for promotion into `DESIGN.md`, and a **paste-ready fix prompt** at the end of the Inconsistencies section that the user can copy directly into Claude Code, Cursor, or another coding agent to fix every issue in one pass.
+This skill runs in the **app repo** — the repository that contains `productos/` — and produces a **design system adherence review** of uncommitted UI changes against the documented `docs/DESIGN.md`. The output is a timestamped report at `docs/design-reviews/YYYY-MM-DD-HHMM-design-review.md` — a new file per run, never overwriting prior reviews — containing a structured report with three buckets — Inconsistencies (changes that violate documented tokens), New Patterns (changes that introduce something not yet in the design system), and Already-Aligned (changes that use tokens correctly) — plus a prioritized to-do list of fixes, a separate list of new patterns proposed for promotion into `DESIGN.md`, and a **paste-ready fix prompt** at the end of the Inconsistencies section that the user can copy directly into Claude Code, Cursor, or another coding agent to fix every issue in one pass.
 
 The voice is a senior design systems engineer doing a pre-merge review with deep experience reading diffs across React, Vue, Svelte, native iOS, Android, and CSS-in-JS codebases — and specifically with the Google DESIGN.md format that the Design System skill produces. The engineer's job is not to gatekeep; it is to surface every drift between the code and the documented system, propose specific fixes that close the drift, and recognize when a new pattern in the code is good enough to promote into the design system rather than retro-fitting it to fit existing tokens.
 
@@ -20,13 +20,13 @@ Locate the following:
 
 1. **The user's product codebase** — **required**. The skill runs in the repository root. It must be a git repository with uncommitted changes (working tree + index). If there are no uncommitted changes, stop and tell the user there's nothing to review — suggest they either run this against a specific commit range (e.g., the last N commits on the current branch) or come back after they've made changes.
 
-2. **`docs/DESIGN.md`** — **required**. The Google-format design system file produced by the `design-design-system` skill. Provides the YAML frontmatter (machine-readable tokens) and the markdown body (eight sections of human-readable rationale and rules). If `DESIGN.md` is missing or substantively empty, stop and tell the user to run `design-design-system` first.
+2. **`docs/DESIGN.md`** — **required**. The Google-format design system file produced by the `design-design-system` skill. Provides the YAML frontmatter (machine-readable tokens) and the markdown body (eight sections of human-readable rationale and rules, after the `## Product Identity` section when ProductOS wrote one). If `DESIGN.md` is missing or substantively empty, stop and tell the user to run `design-design-system` first.
 
-3. **`productos/design/1-Product-Identity.md`** — **optional** — absent in a repo without ProductOS. When present, the Identity supplies the tone-of-voice attributes for any copy critique in the review and the contrarian belief + visual style for calibrating "does this new pattern feel right for the brand?" judgments. If absent, the review focuses strictly on token-level adherence.
+3. **`docs/DESIGN.md` → `## Product Identity`** — **optional** — absent in a repo without ProductOS. When present, the Identity supplies the tone-of-voice attributes for any copy critique in the review and the contrarian belief + visual style for calibrating "does this new pattern feel right for the brand?" judgments. If absent, the review focuses strictly on token-level adherence.
 
 4. **`docs/COPY.md`** — **optional**. When present, new or changed user-facing strings in the diff are checked against its review rubric — lexicon conformance, mechanical rules, banned words — and violations are reported as Inconsistencies alongside the token findings.
 
-5. **`docs/PRODUCT.md`** — **optional**. If present, the product type contextualizes the review (a marketplace listing card has different conventions than a B2B dashboard card, even with the same tokens).
+5. **`docs/DEFINE.md`** — **optional**. If present, the product type (from the Summary and Offer) contextualizes the review (a marketplace listing card has different conventions than a B2B dashboard card, even with the same tokens).
 
 If `docs/DESIGN.md` does not exist, stop and tell the user which skill to run first. Do not improvise a review against an undocumented design system.
 
@@ -148,12 +148,12 @@ State the reconciled summary back to the user: *"Found [N] Inconsistencies (P0: 
 Determine the output path. Each run produces a **new file** named with the current date and time so prior reviews are preserved:
 
 ```
-design-review/YYYY-MM-DD-HHMM-design-review.md
+docs/design-reviews/YYYY-MM-DD-HHMM-design-review.md
 ```
 
-Where `YYYY-MM-DD` is the current date and `HHMM` is the current 24-hour time. Example: `design-review/2026-06-03-1430-design-review.md` for a review run at 14:30 on June 3, 2026.
+Where `YYYY-MM-DD` is the current date and `HHMM` is the current 24-hour time. Example: `docs/design-reviews/2026-06-03-1430-design-review.md` for a review run at 14:30 on June 3, 2026.
 
-Get the current date and time programmatically (e.g., `date "+%Y-%m-%d-%H%M"` in bash) — do **not** hardcode or guess. If the `design-review/` folder doesn't exist at the repo root, create it (`mkdir -p design-review`). Never overwrite an existing review — if by some collision the same filename already exists, append `-2`, `-3`, etc. to the filename until it's unique.
+Get the current date and time programmatically (e.g., `date "+%Y-%m-%d-%H%M"` in bash) — do **not** hardcode or guess. If the `docs/design-reviews/` folder doesn't exist, create it (`mkdir -p docs/design-reviews`). Never overwrite an existing review — if by some collision the same filename already exists, append `-2`, `-3`, etc. to the filename until it's unique.
 
 Structure of the file:
 
@@ -289,7 +289,7 @@ Patterns introduced by the diff that aren't yet in `docs/DESIGN.md`. Each has a 
 - **Locations used:** [one location]
 - **New value:** […]
 - **Why "defer":** [one sentence — e.g., "Single-use today, used once on a marketing splash. If it recurs, propose it as a token then."]
-- **To-do:** [ ] Leave inline. Add comment `// one-off — see design-review/ for context` so the next reviewer recognizes it.
+- **To-do:** [ ] Leave inline. Add comment `// one-off — see docs/design-reviews/ for context` so the next reviewer recognizes it.
 
 ---
 
@@ -326,8 +326,8 @@ Group all Inconsistency To-dos into a single ordered checklist:
 ## Sources
 
 - Design system: `docs/DESIGN.md`
-- Brand strategy (optional context): `productos/design/1-Product-Identity.md`
-- Product context (optional): `docs/PRODUCT.md`
+- Brand strategy (optional context): `docs/DESIGN.md` → Product Identity
+- Product context (optional): `docs/DEFINE.md`
 - Diff scope: working tree + index at [commit SHA] on [branch name]
 ```
 
@@ -337,7 +337,7 @@ Write the report concisely. Bullets are tight. The whole document should be read
 
 Re-read the written file and check:
 
-- **File path is correct.** The file is at `design-review/YYYY-MM-DD-HHMM-design-review.md` with the actual current date and time — not hardcoded, not a guess, not a placeholder. The `design-review/` folder exists. No prior review was overwritten.
+- **File path is correct.** The file is at `docs/design-reviews/YYYY-MM-DD-HHMM-design-review.md` with the actual current date and time — not hardcoded, not a guess, not a placeholder. The `docs/design-reviews/` folder exists. No prior review was overwritten.
 - **Every finding has a location.** No bullet says "the buttons" — every bullet has a file path and line number (or a hunk range).
 - **Every Inconsistency has a fix.** No bullet says "review and decide" — every bullet has a literal replacement or a clear action.
 - **Every New Pattern has a verdict.** No bullet leaves the user to invent the resolution — each is tagged Promote / Refactor / Defer with reasoning.
@@ -369,7 +369,7 @@ Deliver via a `computer://` link and a short summary — one line for the scope 
 
 ## What "done" looks like
 
-A timestamped file at `design-review/YYYY-MM-DD-HHMM-design-review.md` (a new file per run, prior reviews preserved) where:
+A timestamped file at `docs/design-reviews/YYYY-MM-DD-HHMM-design-review.md` (a new file per run, prior reviews preserved) where:
 
 - **A summary block** at the top names the scope, the counts (by severity and by verdict), and the top three to-dos to action first.
 - **An Inconsistencies section** lists every visual change that violates `docs/DESIGN.md`, sorted by severity (P0 → P3) and grouped by finding. Each finding has file paths, line numbers, the offending literal, the documented alternative, why it matters in one sentence, the literal fix, and a to-do checkbox.
@@ -382,4 +382,4 @@ A timestamped file at `design-review/YYYY-MM-DD-HHMM-design-review.md` (a new fi
 - **Every finding has a location and a fix.** No vague bullets. No "review and decide" hand-offs.
 - **The file is readable end-to-end in 5–8 minutes** by a developer or technical founder ready to action it.
 
-Recommended next step after a successful session: copy the **paste-ready fix prompt** from the end of the Inconsistencies section into Claude Code, Cursor, or Codex to action every P0 → P3 fix in one pass. Then work through the **Promotion checklist** to update `docs/DESIGN.md` with the new tokens and prose. Once promotions land, re-run this skill — a new dated file lands in `design-review/`, and the previously-flagged New Patterns should now classify as Already-aligned, confirming the design system has absorbed the new vocabulary. Pair this skill with `develop-cro-audit` for a complete pre-merge review (design adherence + conversion performance), or run it on every PR as a lightweight design system maintenance loop. Over time, the `design-review/` folder becomes a chronological audit trail of how the design system has evolved with the product.
+Recommended next step after a successful session: copy the **paste-ready fix prompt** from the end of the Inconsistencies section into Claude Code, Cursor, or Codex to action every P0 → P3 fix in one pass. Then work through the **Promotion checklist** to update `docs/DESIGN.md` with the new tokens and prose. Once promotions land, re-run this skill — a new dated file lands in `docs/design-reviews/`, and the previously-flagged New Patterns should now classify as Already-aligned, confirming the design system has absorbed the new vocabulary. Pair this skill with `develop-cro-audit` for a complete pre-merge review (design adherence + conversion performance), or run it on every PR as a lightweight design system maintenance loop. Over time, the `docs/design-reviews/` folder becomes a chronological audit trail of how the design system has evolved with the product.

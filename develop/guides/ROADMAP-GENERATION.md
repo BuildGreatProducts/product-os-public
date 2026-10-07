@@ -9,8 +9,8 @@ You are a technical project manager and AI-assisted development expert. You know
 ## Input
 
 1. Read `docs/PRD.md` — technical spec, data models, requirements
-1. Read `docs/PRODUCT.md` — strategy, customer, mechanism, business model, goal
-1. Read `productos/design/2-Magic-Moment.md` — the activation milestone the core MVP phases must reach
+1. Read `docs/DEFINE.md` — the offer (customer, mechanism), persona, pricing strategy, and the north star when Business Strategy is filled
+1. Read `docs/MAGIC-MOMENT.md` — the activation milestone the core MVP phases must reach
 1. Read `docs/DESIGN.md` if it exists — visual design tokens (colors, typography, spacing, components)
 
 The PRD is your primary input. Every task in the roadmap should trace back to a requirement in the PRD.
@@ -55,7 +55,7 @@ Each task should represent roughly one coding agent session — approximately 15
 
 ### The magic moment is the milestone
 
-The founder’s magic moment (from `productos/design/2-Magic-Moment.md` and the PRD’s Overview) must be achievable by the end of the core MVP phase(s). If it can’t be, the task breakdown needs restructuring until it can. This is the most important design constraint for the roadmap.
+The founder’s magic moment (from `docs/MAGIC-MOMENT.md` and the PRD’s Overview) must be achievable by the end of the core MVP phase(s). If it can’t be, the task breakdown needs restructuring until it can. This is the most important design constraint for the roadmap.
 
 -----
 
@@ -133,18 +133,18 @@ Every phase needs:
 
 #### Reference sections
 
-Each phase MUST include a "Reference sections" block listing the specific sections of `docs/PRD.md` and `docs/PRODUCT.md` the coding agent should read for that phase. This prevents the agent from loading entire documents into context when only a few sections are relevant.
+Each phase MUST include a "Reference sections" block listing the specific sections of `docs/PRD.md` and `docs/DEFINE.md` the coding agent should read for that phase. This prevents the agent from loading entire documents into context when only a few sections are relevant.
 
 Rules for reference sections:
 
 - List only the sections the agent actually needs for the tasks in that phase
-- Use the exact heading text from the PRD, PRODUCT, and DESIGN docs so the agent can navigate directly (e.g. `§ Data Model`, not "the data stuff")
+- Use the exact heading text from the PRD, DEFINE, and DESIGN docs so the agent can navigate directly (e.g. `§ Data Model`, not "the data stuff")
 - Include subsections when only part of a top-level section is needed (e.g. `§ Components` from `docs/DESIGN.md` rather than the whole file)
 - The foundation phase typically references: PRD `§ Technical Architecture`, PRD `§ Auth Implementation`, and `docs/DESIGN.md` (token YAML front matter + `§ Colors`, `§ Typography`, `§ Layout`, `§ Components`)
 - Core MVP phases typically reference: PRD `§ Data Model`, PRD `§ API Specification`, PRD `§ User Stories`, PRD `§ Functional Requirements`, PRD `§ UI/UX Requirements` for the relevant screens, and `docs/DESIGN.md § Components` for styling
 - Polish/launch phases typically reference: PRD `§ Non-Functional Requirements`, PRD `§ Edge Cases & Error Handling`, and `docs/DESIGN.md § Do's and Don'ts`
-- Visual design tokens always come from `docs/DESIGN.md`, never from `docs/PRODUCT.md` (which doesn't carry them)
-- If go-to-market docs exist (e.g. in the `productos/distribute/` folder), the polish/launch phase may optionally reference them for launch-related tasks
+- Visual design tokens always come from `docs/DESIGN.md`, never from `docs/DEFINE.md` (which doesn't carry them)
+- If go-to-market docs exist (e.g. `docs/GO-TO-MARKET.md`), the polish/launch phase may optionally reference them for launch-related tasks
 - If `docs/DESIGN.md` does not exist, flag it in the foundation phase notes — visual tokens must be generated via `design-design-system` before any styling work begins
 - If a task needs a section not listed in the phase references, include it in the task's Notes line (e.g. "Notes: See also docs/PRD.md § Payment Integration for webhook setup.")
 
@@ -260,10 +260,10 @@ When generating `docs/ROADMAP.md`, the Build Philosophy section and the Agent Se
 ### Prompt Templates
 
 **Starting a new phase:**
-> "Read docs/ROADMAP.md and find the current phase. Read only the Reference sections listed for that phase from docs/PRD.md, docs/PRODUCT.md, and docs/DESIGN.md. Start working on the first unchecked task. After completing each task, update the checkbox to [x] in the roadmap file. Continue through the phase."
+> "Read docs/ROADMAP.md and find the current phase. Read only the Reference sections listed for that phase from docs/PRD.md, docs/DEFINE.md, and docs/DESIGN.md. Start working on the first unchecked task. After completing each task, update the checkbox to [x] in the roadmap file. Continue through the phase."
 
 **Resuming after a break:**
-> "Read docs/ROADMAP.md. Find where we left off (first unchecked task). Read only the Reference sections listed for the current phase from docs/PRD.md, docs/PRODUCT.md, and docs/DESIGN.md. Continue from the first unchecked task."
+> "Read docs/ROADMAP.md. Find where we left off (first unchecked task). Read only the Reference sections listed for the current phase from docs/PRD.md, docs/DEFINE.md, and docs/DESIGN.md. Continue from the first unchecked task."
 
 **Continuing to the next phase:**
 > "Phase [N] is complete and verified. Update the Status and Current Phase lines in docs/ROADMAP.md, then continue straight into the next phase — read its Reference sections and start on its first unchecked task."

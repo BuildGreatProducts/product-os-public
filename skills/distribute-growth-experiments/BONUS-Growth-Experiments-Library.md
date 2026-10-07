@@ -2,7 +2,7 @@
 
 *A bonus asset for ProductOS — a menu of proven, channel-by-channel growth experiments, each one a small, falsifiable bet you can run in a week to make a chosen channel work harder.*
 
-`productos/distribute/1-Go-To-Market-Strategy.md` picks your channels and gets you started. This library is what you reach for next: once a channel is live, you stop guessing and start running **experiments** — small changes with a clear hypothesis, a pass threshold, and a decision at the end. Pick from the menu below, tailor each to your product, and log every result in `productos/distribute/3-Growth-Experiments-Tracker.md`.
+`docs/GO-TO-MARKET.md` picks your channels and gets you started. This library is what you reach for next: once a channel is live, you stop guessing and start running **experiments** — small changes with a clear hypothesis, a pass threshold, and a decision at the end. Pick from the menu below, tailor each to your product, and log every result in `docs/GROWTH-TRACKER.md`.
 
 > **The meta-rule:** An experiment is a falsifiable bet, not a chore. It names what you'll change, what you expect to happen, the number that means you were right, and what you'll do either way. "Post more" is not an experiment. "Five hook variations, one a day; a winner clears 50% 3-second retention" is.
 
@@ -10,7 +10,7 @@
 
 ## The method
 
-**The loop.** Every experiment runs the same five beats: **Hypothesis → run small → measure against a threshold → decide → log.** The decision is always one of three: **double down** (it beat the threshold — do more), **iterate** (close — change one thing and rerun), or **kill** (it missed — stop and try a different experiment). Then log it in `productos/distribute/3-Growth-Experiments-Tracker.md` so the learning compounds.
+**The loop.** Every experiment runs the same five beats: **Hypothesis → run small → measure against a threshold → decide → log.** The decision is always one of three: **double down** (it beat the threshold — do more), **iterate** (close — change one thing and rerun), or **kill** (it missed — stop and try a different experiment). Then log it in `docs/GROWTH-TRACKER.md` so the learning compounds.
 
 **Prioritize by effort and impact.** Don't rate experiments with a formula. Rate each on two plain axes — **Effort** (Low / Medium / High: time and money to run) and **Impact** (Low / Medium / High: how much it could move your metric) — then sequence:
 
@@ -750,7 +750,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 3. Point every ad at your landing page or app store listing; set a small daily budget.
 4. After 5–7 days, compare click-through (and signups/installs) per version; keep the winner and cut the rest.
 
-**Decision:** a clear winner → make that line your headline everywhere (landing page, listing, organic hooks) and pour creative behind it (Creative Volume Test). Nothing gets clicks → the offer itself isn't landing — revisit `productos/define/1-Product-Offer.md` before spending more.
+**Decision:** a clear winner → make that line your headline everywhere (landing page, listing, organic hooks) and pour creative behind it (Creative Volume Test). Nothing gets clicks → the offer itself isn't landing — revisit the Product Offer in `docs/DEFINE.md` before spending more.
 
 > *Real example — Nico, Make Logo AI, ~$85K in 6 months: ran static image ads into audience-specific landing pages, letting the ad that won clicks reveal which message and audience to pour spend into.*
 
@@ -817,8 +817,8 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 
 ## Putting it together
 
-Start with your **primary channel** from `productos/distribute/1-Go-To-Market-Strategy.md`. Pull its experiments, rate each by effort and impact, run the quick wins first, and log every result in `productos/distribute/3-Growth-Experiments-Tracker.md`. One channel, one to three experiments per cycle, one decision each. When a channel is winning and maxed out, add the next one — and start its experiments from the top of this list.
+Start with your **primary channel** from `docs/GO-TO-MARKET.md`. Pull its experiments, rate each by effort and impact, run the quick wins first, and log every result in `docs/GROWTH-TRACKER.md`. One channel, one to three experiments per cycle, one decision each. When a channel is winning and maxed out, add the next one — and start its experiments from the top of this list.
 
 ---
 
-*Experiments distilled from 400+ founder interviews on the Starter Story channel; examples paraphrased and revenue self-reported. Pair with `productos/distribute/2-Growth-Experiments.md` to plan your cycle and `productos/distribute/3-Growth-Experiments-Tracker.md` to log results. Compiled June 2026 by telescope.design.*
+*Experiments distilled from 400+ founder interviews on the Starter Story channel; examples paraphrased and revenue self-reported. Pair with `docs/GROWTH-EXPERIMENTS.md` to plan your cycle and `docs/GROWTH-TRACKER.md` to log results. Compiled June 2026 by telescope.design.*

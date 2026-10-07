@@ -1,6 +1,6 @@
 # Scale & Automation Roadmap Framework
 
-A worksheet for turning proven wins into scale. It takes only what your [3. Growth Experiments Tracker](3-Growth-Experiments-Tracker.md) has shown works, then plans two moves for each winner — **double down** (do more, do better) and **automate** (make it run without more of your hours). Pairs with [BONUS - Growth Experiments Library](BONUS-Growth-Experiments-Library.md) (the per-channel tool/plugin recipes) and [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md). Runs once you have winners logged.
+A worksheet for turning proven wins into scale — `distribute-scale-automate` writes your filled roadmap to `docs/SCALE.md` using this structure; this file stays blank. It takes only what your growth tracker (`docs/GROWTH-TRACKER.md`) has shown works, then plans two moves for each winner — **double down** (do more, do better) and **automate** (make it run without more of your hours). Pairs with `productos/distribute/BONUS-Growth-Experiments-Library.md` (the per-channel tool/plugin recipes) and `productos/distribute/BONUS-AI-Distribution-Tools.md`. Runs once you have winners logged.
 
 ---
 
@@ -29,7 +29,7 @@ A worksheet for turning proven wins into scale. It takes only what your [3. Grow
 ### Winner 1 — [name]
 
 - **Do more (scale lever + target):**
-- **Do better (next experiment →** [2. Growth Experiments](2-Growth-Experiments.md)**):**
+- **Do better (next experiment →** `docs/GROWTH-EXPERIMENTS.md`**):**
 
 ### Winner 2 — [name]
 
@@ -113,6 +113,6 @@ A worksheet for turning proven wins into scale. It takes only what your [3. Grow
 
 **Re-run this roadmap when:** [the tracker logs new winners, or an automation is ready for its next maturity rung]
 
-**Keep improving:** run [2. Growth Experiments](2-Growth-Experiments.md) on each scaled channel — *doing better* never stops, even once *doing more* is automated.
+**Keep improving:** run `distribute-growth-experiments` on each scaled channel — *doing better* never stops, even once *doing more* is automated.
 
 ---

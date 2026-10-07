@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.14.0 — October 2026
+
+**Every output now lands in `docs/`, and each phase gives you fewer documents to read.** Skills used to fill templates in place inside `productos/`, the folder setup gitignores. So the offer, persona, pricing, identity and GTM work was never committed, a collaborator's clone never had it, and members had to run a synthesis step to get one document they could share. Now `docs/` is the source of truth for everything ProductOS produces, and the phase folders hold only the system.
+
+- **Mini-launches are retired.** Few members ran them, and the launch thread added a step and a log to every phase. The `mini-launch` skill, `define/4-Mini-Launch.md`, `docs/LAUNCHES.md`, the relaunch step that closed each phase, the believers list, and the signal ladder are gone. Steps renumber: Define becomes Steps 1–3, the Design relaunch (Step 8) goes, Develop's beta invite (Step 4) goes so Steps 5–10 become 4–9, and Distribute's public launch (Step 2) goes so Steps 3–5 become 2–4. `sell-in-30` keeps a response scale for its own Experiment Log, defined in the skill. Warm asks and the weekly read are written into the challenge instead of borrowed from the launch skill.
+- **One Define document: `docs/DEFINE.md` replaces `docs/PRODUCT.md`.** Each Define skill writes its own section as it finishes:
+  - Summary and Product Offer (`define-offer-builder`, sharpened by `define-offer-review`)
+  - Customer Persona (`define-customer-persona`)
+  - Pricing Strategy (`define-pricing`)
+  - Business Strategy, optional (`define-business-strategy`)
+  - Idea Audit, optional (`define-idea-finder`)
+
+  The skeleton lives in the new `define/DEFINE-TEMPLATE.md`. `define-from-code` fills the first four sections as extracted drafts. The synthesis skill `define-product` is removed: the Define phase is done when the four core sections are filled, and DEFINE.md is the one document to share. `define-idea-finder` works through the audit in conversation and then asks which parts to keep in an optional Idea Audit section of DEFINE.md, so Define stays one file. Every downstream skill and guide reads DEFINE.md's sections where it read PRODUCT.md's paragraphs.
+- **The Product Identity lives in `docs/DESIGN.md` and `docs/DESIGN.html`.** `design-identity-creator` writes a `## Product Identity` section (Brand Card, Name, Worldview, Contrarian Belief, Tone of Voice, Visual Style) directly after DESIGN.md's frontmatter, and a matching section in the HTML mirror. Google's format preserves custom sections. At Step 1 there's no design system yet, so the skill creates both files with the identity alone. `design-design-system` adds the tokens and the eight canonical sections after it and keeps the identity on every rewrite. `design-design-system-from-code` preserves it too, and now builds the `docs/DESIGN.html` mirror as well, so the pair stays in sync on the from-code route.
+- **Every other output moves to `docs/`:**
+  - Design prompts → `DESIGN-PROMPTS.md`
+  - Magic moment → `MAGIC-MOMENT.md`
+  - Onboarding flow → `ONBOARDING.md` + `ONBOARDING-WIREFRAME.html`
+  - Landing page → `LANDING-PAGE.md` + `LANDING-PAGE-WIREFRAME.html`
+  - App listing → `APP-LISTING.md`
+  - Go-to-market → `GO-TO-MARKET.md`
+  - Growth experiments → `GROWTH-EXPERIMENTS.md`
+  - Experiment tracker → `GROWTH-TRACKER.md`
+  - Scale and automation → `SCALE.md`
+  - Design reviews → `docs/design-reviews/`
+  - The CRO and activation-retention audits always write to `docs/`, never the repo root.
+- **Templates become worksheets.** The numbered files in each phase folder keep their structure and `> Good/Bad` calibration. Skills read them and write clean answers to `docs/`, without the prompts and calibration lines, and the worksheets stay blank. AGENTS.md's "fill in place" rule is replaced by "outputs go to `docs/`, never into `productos/`."
+- **`update` moves an older copy's work into `docs/`.** Filled templates, generated wireframes and the prompts file are each carried into their new `docs/` file, one at a time with the member's go-ahead, never overwriting. The identity is inserted into an existing DESIGN.md without touching its tokens. Once DEFINE.md exists, `docs/PRODUCT.md` is offered for deletion; if it's all that survives, it seeds DEFINE.md as drafts. Real customer quotes in `docs/LAUNCHES.md` can be carried into DEFINE.md. `setup` reads `mini-launch`, `studio-launch`, `define-product` and `studio-define-product` steps in older plans as retired, and reads `docs/PRODUCT.md` as `docs/DEFINE.md`.
+- **Two paths after setup.** With no programme plan, `setup` reads the repo and recommends one of two starts: a new project (nothing built yet) begins with `define-offer-builder` and the linear checklists; an existing project (code, a prototype, an AI-generated app) begins `ship-in-7`. `sell-in-30` is offered as Ship in 7's follow-on for an app that's already live. README, START-HERE, AGENTS.md and Codex's `defaultPrompt` match.
+- The root guidelines (`setup/CLAUDE.md`, `setup/AGENTS.md`) list the new canonical documents and point pre-1.14.0 repos to `update`. README, START-HERE and AGENTS.md describe the `docs/` map and name four cross-phase skills. Skill count 41 → 39 across the README and all plugin manifests.
+
 ## 1.13.0 — September 2026
 
 **ProductOS can now update itself.** Every release since 1.5.0 has told members to re-run setup to pick up the change, but setup only wires the copy the member already has. Nothing fetched the new one. Downloading it over the top wasn't safe either, because the skills fill templates in place inside `productos/`, and a fresh copy would wipe the member's offer, persona, pricing, identity, and GTM work.

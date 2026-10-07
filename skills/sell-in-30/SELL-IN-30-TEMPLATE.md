@@ -2,7 +2,7 @@
 
 **The bar:** [one payment / one activated user (product staying free this month)]
 **Starting point:** [Live, free, will charge / Live, priced / Live, free, staying free / One deploy away / Live with users / After Ship in 7]
-**Live URL:** [url] · **Price line:** [from 3-Pricing-Strategy.md, or "free this month"]
+**Live URL:** [url] · **Price line:** [from `docs/DEFINE.md` → Pricing Strategy, or "free this month"]
 **Started:** [date] · **Hours per session:** [n] · **Consecutive days:** [yes / as and when]
 **Status:** Open — Day [N] of 30 · Week [W]
 
@@ -20,19 +20,29 @@
 | 4 | | | |
 | 5 | | | |
 | 6 | | | |
-| 7 | Weekly read | `mini-launch` sitting two | the read, posted |
+| 7 | Weekly read | the signal read, applied to the week | the read, posted |
 
 *Edited by the member at enrol.*
 
 ## Weeks two to four — the experiment loop
 
-| Week | Experiment (from `productos/distribute/2-Growth-Experiments.md`) | Pass = | Decision at the read |
+| Week | Experiment (from `docs/GROWTH-EXPERIMENTS.md`) | Pass = | Decision at the read |
 | --- | --- | --- | --- |
 | 2 | | | continue / kill |
 | 3 | | | continue / kill |
 | 4 | | | continue / kill |
 
 *Sessions 1–5 of each week run the experiment's "Do this" steps; session 6 is follow-ups; session 7 is the read. Filled as each week's experiment is chosen.*
+
+---
+
+## Warm list
+
+*Named people who already know the member or the product and match the persona: existing users and anyone who has responded before first, then named contacts. Started at enrol; week one's warm asks go to them. Experiment 1's reach starts from people not on this list, unless the experiment is a follow-up to them, so reach is never counted twice.*
+
+| Name | Who they are | Asked (day) | Highest rung |
+| --- | --- | --- | --- |
+| | | | |
 
 ---
 
@@ -58,7 +68,7 @@
 | | Warm asks | | | | | | |
 | | | | | | | | |
 
-*Warm/cold: `warm`, `cold`, or `mixed · n warm, n cold`; the weekly read and the Sell Report sum this column. Rungs are the signal ladder's: none / reply / conversation / signup / activated user / payment. Silence is "0 · none". Verbatims also go to `productos/define/2-Customer-Persona.md` and the tracker's Cumulative Learnings.*
+*Warm/cold: `warm`, `cold`, or `mixed · n warm, n cold`; the weekly read and the Sell Report sum this column. Rungs are Sell in 30's response scale: none / reply / conversation / signup / activated user / payment. Silence is "0 · none". Verbatims also go to the Persona section of `docs/DEFINE.md` and the Cumulative Learnings in `docs/GROWTH-TRACKER.md`.*
 
 ---
 
@@ -66,14 +76,14 @@
 
 ### Week 1 read — Day 7 — [date]
 
-**Signal:** [responses, warm/cold, rung reached, believers added]
+**Signal:** [responses, warm/cold, highest rung reached, new names on the warm list]
 **Experiment 1 chosen:** [name] · Pass = [number + date]
 **Next week:** [rung targeted]
 **Skool post:** [link]
 
 ### Week 2 read — Day 14 — [date]
 
-**Signal:** [responses, warm/cold, rung reached, believers added]
+**Signal:** [responses, warm/cold, highest rung reached, new names on the warm list]
 **Experiment result:** [number] vs Pass = [threshold] → **[continue / kill]**. Tracker row added.
 **Pivot review:** [diagnosis first: distribution / execution / patience → no pivot; or the variable: persona / product / pricing, the validated piece kept, the candidate experiment and its Pass =]. Member's decision: [ ]
 **Next week:** [experiment] · Pass = [ ]
@@ -129,7 +139,6 @@
 | | | | | | |
 
 **People reached:** [total] — warm [n] · cold [n] (summed from the Experiment Log's Warm/cold column)
-**Believers at close:** [n] (see `docs/LAUNCHES.md`)
 **Rung reached each week:** W1 [ ] · W2 [ ] · W3 [ ] · W4 [ ]
 
 **What the market said, in its own words:**
@@ -146,7 +155,7 @@
 
 **The biggest blocker:** [one paragraph, honest]
 
-**Docs in place:** PRODUCT.md [current?] · Product Offer [reviewed on Day 1] · LAUNCHES.md [ ] · 1-Go-To-Market-Strategy.md [ ] · 2-Growth-Experiments.md + tracker [ ]
+**Docs in place:** DEFINE.md [current?] · Product Offer [reviewed on Day 1] · GO-TO-MARKET.md [ ] · GROWTH-EXPERIMENTS.md + GROWTH-TRACKER.md [ ]
 
 **What I want next:** [in the member's words]
 **What I'd run next:** [the next experiment from the queue, or the pivot]

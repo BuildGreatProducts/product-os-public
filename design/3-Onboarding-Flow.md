@@ -1,6 +1,6 @@
 # Onboarding Flow
 
-*This template is rewritten in place by the `design-onboarding-flow` skill. The skill reads `docs/PRODUCT.md`, `productos/design/1-Product-Identity.md`, and `productos/design/2-Magic-Moment.md`, auto-selects the appropriate best-practice reference from `productos/design/onboarding/`, and designs a screen-by-screen onboarding flow that engineers the user toward the magic moment. Run the skill to populate this file. A companion clickable HTML wireframe will also be generated at `productos/design/onboarding-wireframe.html`. The structure below shows what the filled-in version will look like.*
+*This is a worksheet for the `design-onboarding-flow` skill. The skill reads `docs/DEFINE.md`, the Product Identity in `docs/DESIGN.md`, and `docs/MAGIC-MOMENT.md`, auto-selects the appropriate best-practice reference from `productos/design/onboarding/`, designs a screen-by-screen onboarding flow that engineers the user toward the magic moment, and writes the filled version to `docs/ONBOARDING.md` using the structure below. A companion clickable HTML wireframe is generated at `docs/ONBOARDING-WIREFRAME.html`. This file itself is never filled in.*
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## The magic moment we're engineering toward
 
-> [One sentence from `productos/design/2-Magic-Moment.md`'s recommended primary.]
+> [One sentence from `docs/MAGIC-MOMENT.md`'s recommended primary.]
 
 **Position:** Screen [N] of [total].
 **Time-to-aha target:** [from Magic Moment doc].
@@ -71,11 +71,11 @@
 
 ## Wireframe
 
-A clickable HTML wireframe is at `productos/design/onboarding-wireframe.html` — open in any browser and click through to feel the flow.
+A clickable HTML wireframe is at `docs/ONBOARDING-WIREFRAME.html` — open in any browser and click through to feel the flow.
 
 ## Sources
 
 - Reference: `productos/design/onboarding/BONUS-[X]-Onboarding-Best-Practice.md` ([selected pattern])
-- Tone of voice: `productos/design/1-Product-Identity.md`
-- Magic moment: `productos/design/2-Magic-Moment.md`
-- Product context: `docs/PRODUCT.md`
+- Tone of voice: `docs/DESIGN.md` → Product Identity
+- Magic moment: `docs/MAGIC-MOMENT.md`
+- Product context: `docs/DEFINE.md`

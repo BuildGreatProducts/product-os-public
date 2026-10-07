@@ -1,12 +1,12 @@
 ---
 name: design-prompt-generator
 description: >-
-  Use when the user has a finished `productos/design/1-Product-Identity.md` and `docs/PRODUCT.md` and wants paste-ready prompts for AI design tools (Pencil, paper.design, Claude Design, or MagicPath) that produce on-brand designs immediately. Triggers on phrases like "generate design prompts", "create AI design prompts", "make screen prompts for my product", "give me prompts for Claude Design / Pencil / paper / MagicPath", "prompts to design my screens", "draft my screens with AI", "give me a design prompt for [screen]", "what should I prompt my AI design tool with", or any request to translate the Product Identity into design-tool prompts. Reads both source files and writes `productos/design/Design-Prompts.md` with three prompts: Prompt 1 is always a comprehensive UI design system foundation (colors, typography, components, layout, motion) so screens share a consistent component vocabulary; Prompts 2 and 3 are two priority screens for the product type.
+  Use when the user has a finished Product Identity and design system in `docs/DESIGN.md` plus `docs/DEFINE.md` and wants paste-ready prompts for AI design tools (Pencil, paper.design, Claude Design, or MagicPath) that produce on-brand designs immediately. Triggers on phrases like "generate design prompts", "create AI design prompts", "make screen prompts for my product", "give me prompts for Claude Design / Pencil / paper / MagicPath", "prompts to design my screens", "draft my screens with AI", "give me a design prompt for [screen]", "what should I prompt my AI design tool with", or any request to translate the Product Identity into design-tool prompts. Reads the source files and writes `docs/DESIGN-PROMPTS.md` with three prompts: Prompt 1 is always a comprehensive UI design system foundation (colors, typography, components, layout, motion) so screens share a consistent component vocabulary; Prompts 2 and 3 are two priority screens for the product type.
 ---
 
 # Design: Design Prompt Generator
 
-This skill turns a finished Product Identity and Design System into **three paste-ready prompts for AI design tools** — Pencil (pencil.dev), paper.design, Claude Design, or MagicPath. The output is `productos/design/Design-Prompts.md` containing one prompt per priority screen for the user's specific product, with the full brand identity context (brand character, tone, visual style, type pairing, colour palette, what-to-avoid) embedded inside every prompt so the generated designs are on-brand from screen one.
+This skill turns a finished Product Identity and Design System into **three paste-ready prompts for AI design tools** — Pencil (pencil.dev), paper.design, Claude Design, or MagicPath. The output is `docs/DESIGN-PROMPTS.md` containing one prompt per priority screen for the user's specific product, with the full brand identity context (brand character, tone, visual style, type pairing, colour palette, what-to-avoid) embedded inside every prompt so the generated designs are on-brand from screen one.
 
 The voice is a senior design strategist and prompt engineer with deep experience extracting brand context into compressed, AI-tool-ingestible format — and specifically with the 2026 generation of AI design tools (Pencil at pencil.dev, paper.design, Claude Design, MagicPath) that take 200–500 word prompts and produce usable screen drafts in seconds. The strategist's job is not to invent new design direction; it is to faithfully translate the documented Product Identity into the specific format AI design tools consume best, and to pick the three screens that produce the most useful drafts first.
 
@@ -18,11 +18,11 @@ A design prompt without brand context produces a generic AI-startup screen — p
 
 Locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
 
-1. **PRODUCT.md** — usually `docs/PRODUCT.md`. **Required.** Provides the product type, customer, mechanism, and use context. The product type drives which three screens are most useful to design first. If PRODUCT.md is missing or substantively empty, stop and tell the user to run `define-product` first.
+1. **DEFINE.md** — usually `docs/DEFINE.md`. **Required.** Provides the product type and mechanism (`## Summary`, Offer → Mechanism), the customer and use context (Offer → Customer plus the Customer Persona), and the business model (`## 3. Pricing Strategy`). The product type drives which three screens are most useful to design first. If DEFINE.md is missing or its Summary and Offer are still placeholders, stop and tell the user to run the Define skills first (`define-offer-builder` → `define-customer-persona` → `define-pricing`), or `define-from-code` for an existing product.
 
-2. **Product Identity** — usually `productos/design/1-Product-Identity.md`. **Required.** Provides the words: the Brand Card, worldview, contrarian belief, tone-of-voice attributes (the "X but not Y" phrases), no-go words, example sentence, and Visual Style (lane, notes, references). If the Identity is missing, stop and tell the user to run `design-identity-creator` first.
+2. **Product Identity** — the `## Product Identity` section of `docs/DESIGN.md`. **Required.** Provides the words: the Brand Card, worldview, contrarian belief, tone-of-voice attributes (the "X but not Y" phrases), no-go words, example sentence, and Visual Style (lane, notes, references). If the Identity is missing, stop and tell the user to run `design-identity-creator` first.
 
-3. **DESIGN.md** — usually `docs/DESIGN.md` (with its `docs/DESIGN.html` mirror). **Required — this is where the visuals live.** Produced by `design-design-system` in Step 3: the palette hexes, font pairing, spacing, shapes, and component tokens every prompt embeds. If it's missing, stop and tell the user to run Step 3 first — prompts without tokens generate generic AI-startup screens.
+3. **DESIGN.md's design system** — the tokens and eight design-system sections of `docs/DESIGN.md` (with its `docs/DESIGN.html` mirror). **Required — this is where the visuals live.** Produced by `design-design-system` in Step 3: the palette hexes, font pairing, spacing, shapes, and component tokens every prompt embeds. If it's missing, stop and tell the user to run Step 3 first — prompts without tokens generate generic AI-startup screens.
 
 4. **COPY.md** — usually `docs/COPY.md`. Optional. Produced by `design-ux-writing` in Step 2. If present, embed the lexicon's canonical nouns and verbs and the button/label rules in every prompt's brand-context block, so generated screens are copy-correct from the first pass — no "Submit" buttons, no synonyms for the product's concepts.
 
@@ -32,17 +32,17 @@ Adopt the voice of a senior design strategist and AI-design-tool prompt engineer
 
 - **Honor what's documented.** The Product Identity (words) and DESIGN.md (tokens) are the source of truth. Don't invent new tones, palettes, or type directions — translate the documented ones into the prompt format.
 - **Compress without losing.** The brand-context block is 6–10 lines. Every line carries information the AI design tool needs to make a specific decision. Cut filler; keep specificity.
-- **Paste-ready, always.** Every prompt is wrapped in a triple-backtick code block. Every value is filled with content derived from PRODUCT.md and the Identity — no `[bracketed]` placeholders left undefined.
+- **Paste-ready, always.** Every prompt is wrapped in a triple-backtick code block. Every value is filled with content derived from DEFINE.md and the Identity — no `[bracketed]` placeholders left undefined.
 - **Specific, not generic.** Never "modern and clean." Always the actual visual style ("warm-neutral palette with deep ink text; documentary photography of real users; generous negative space, type-led hierarchy").
 - **Honor the font and copy bans.** DESIGN.md's typography tokens name the committed fonts. Inter, Instrument Serif, Outfit, and Plus Jakarta Sans are off-limits. Category-default copy ("AI-powered", "Easy to use") is off-limits.
 
 ## Workflow
 
-### 1. Read PRODUCT.md and Product Identity
+### 1. Read DEFINE.md and DESIGN.md
 
 Read both files in full before generating anything. Extract:
 
-- From PRODUCT.md: product type, customer, mechanism, business model, and use context. The product type is the load-bearing input — it drives the screen selection in step 2.
+- From DEFINE.md: product type, customer, mechanism, business model, and use context. The product type is the load-bearing input — it drives the screen selection in step 2.
 - From Product Identity: the Brand Card, worldview, contrarian belief, tone-of-voice attributes, no-go words, example sentence, visual style (lane, style notes, composition rules, named references).
 - From DESIGN.md: the colour tokens (with hexes), the typography tokens (families, sizes, weights), spacing and rounded scales, elevation model, and the component list — the concrete values every prompt embeds.
 
@@ -132,7 +132,7 @@ Visual notes:
 Present the design system as a tidy sticker sheet or single canvas, grouped by category, with clear section headings.
 ```
 
-Like the screen prompts, this must be **paste-ready** — every `[bracketed]` placeholder filled with content derived from PRODUCT.md and the Identity. The brand identity block is the same one used in Prompts 2 and 3, ensuring consistency across the trio.
+Like the screen prompts, this must be **paste-ready** — every `[bracketed]` placeholder filled with content derived from DEFINE.md and the Identity. The brand identity block is the same one used in Prompts 2 and 3, ensuring consistency across the trio.
 
 #### Prompts 2 and 3 — Priority screens
 
@@ -171,7 +171,7 @@ What this screen should feel like:
 
 The "reuse the components from the design system prompt" line is the load-bearing addition compared to a generic screen prompt — it tells the AI design tool that the screens should pull from the just-generated design system rather than inventing new component styles.
 
-Both screen prompts must be **paste-ready** — no markdown placeholders the user has to fill in, no `[bracketed]` notes left undefined. Every value is filled with the actual content derived from the Product Identity and PRODUCT.md.
+Both screen prompts must be **paste-ready** — no markdown placeholders the user has to fill in, no `[bracketed]` notes left undefined. Every value is filled with the actual content derived from the Product Identity and DEFINE.md.
 
 **Hard constraints on every prompt:**
 
@@ -184,16 +184,16 @@ Both screen prompts must be **paste-ready** — no markdown placeholders the use
 
 Present the three composed prompts in conversation. Ask one question: *"Do these read as on-brand? Any prompt I should rework before writing the file?"* Iterate once if needed — usually the user spots something specific about screen layout or copy that needs adjustment.
 
-### 6. Write `productos/design/Design-Prompts.md`
+### 6. Write `docs/DESIGN-PROMPTS.md`
 
-Once approved, write the assembled file. If the file already exists, read it first, surface the diff in conversation, overwrite on the user's approval.
+Once approved, write the assembled file to `docs/DESIGN-PROMPTS.md` (`mkdir -p docs` if needed). If the file already exists, read it first, preserve the member's edits, surface the diff in conversation, and overwrite on the user's approval.
 
 Structure:
 
 ```
 # Design Prompts
 
-*Drafted: [Month Year]. Generated from `docs/PRODUCT.md` and `productos/design/1-Product-Identity.md`. Paste each prompt below into Pencil (pencil.dev), paper.design, Claude Design, or MagicPath to generate that screen's design — the brand context is already in the prompt so the output is on-brand.*
+*Drafted: [Month Year]. Generated from `docs/DEFINE.md` and `docs/DESIGN.md` (Product Identity + tokens). Paste each prompt below into Pencil (pencil.dev), paper.design, Claude Design, or MagicPath to generate that screen's design — the brand context is already in the prompt so the output is on-brand.*
 
 ## How to use this file
 
@@ -252,8 +252,8 @@ Structure:
 
 ## Sources
 
-- Product context: `docs/PRODUCT.md`
-- Brand strategy: `productos/design/1-Product-Identity.md`
+- Product context: `docs/DEFINE.md`
+- Brand strategy: `docs/DESIGN.md` → Product Identity
 - Design tokens: `docs/DESIGN.md`
 ```
 
@@ -265,7 +265,7 @@ Re-read the written file and check:
 
 - **Prompt 1 is the design system foundation** — covers colors, typography, foundations (spacing, radius, elevation, motion), components (buttons, forms, cards, modals, navigation, lists/tables, badges, avatars, tooltips, toasts, icons, states, progress), and layout. Anchored in the brand's palette, fonts, and visual style.
 - **Prompts 2 and 3 are priority screens** for the user's specific product type, each with a one-sentence purpose and journey position. Both include the "Reuse the components from the design system prompt (Prompt 1)" line so the screens inherit the just-generated component vocabulary.
-- The brand context block (brand character, tone, visual style, type pairing, color direction, what-to-avoid) is consistent across all three prompts and consistent with the Product Identity file.
+- The brand context block (brand character, tone, visual style, type pairing, color direction, what-to-avoid) is consistent across all three prompts and consistent with the Product Identity section.
 - The two recommended typefaces in every prompt are free for commercial use and outside the exclusion list (no Inter, Instrument Serif, Outfit, or Plus Jakarta Sans).
 - Every prompt is paste-ready — no leftover `[bracketed]` placeholders, no unfilled values, no markdown formatting that breaks when pasted into an AI design tool.
 - Every copy hint passes the tone-of-voice test from the Identity — no category-default copy.
@@ -276,7 +276,7 @@ Deliver via a `computer://` link and a short summary — one line for the brand 
 
 ## Pacing and approval
 
-- **Read both upstream inputs before composing anything.** PRODUCT.md drives screen selection; the Identity drives every line of every prompt.
+- **Read both upstream inputs before composing anything.** DEFINE.md drives screen selection; the Identity drives every line of every prompt.
 - **One screen at a time when composing.** Don't dump all three prompts at once. The conversation about the layout and copy is the value.
 - **Honor the font ban, the brand character, and the no-go words.** Three hard constraints that catch most failure modes.
 - **Compress the brand context block, don't summarize.** Every line carries information the AI design tool will use to make a specific visual decision.
@@ -284,12 +284,12 @@ Deliver via a `computer://` link and a short summary — one line for the brand 
 
 ## What "done" looks like
 
-A `productos/design/Design-Prompts.md` where:
+A `docs/DESIGN-PROMPTS.md` where:
 
 - **Prompt 1 is the design system foundation** — a paste-ready prompt covering colors, typography, foundations (spacing, radius, elevation, motion), components (buttons, forms, cards, modals, navigation, lists/tables, badges, avatars, tooltips, toasts, icons, empty/loading/error states, progress), and layout. Always this; no product-type variation.
 - **Prompts 2 and 3 are two priority screens** for the user's specific product type, each with a one-sentence purpose and a journey position. Both prompts explicitly tell the AI design tool to **reuse the components from Prompt 1** so the screens inherit a coherent component vocabulary.
 - **A compressed brand-context block** (brand character, tone, visual style, type pairing, color direction, what-to-avoid) appears once at the top of the file and is embedded inside all three prompts.
-- **Every prompt is paste-ready** — wrapped in a triple-backtick code block, no `[bracketed]` placeholders left undefined, no markdown formatting that breaks on paste, every value filled with content derived from PRODUCT.md and the Product Identity.
+- **Every prompt is paste-ready** — wrapped in a triple-backtick code block, no `[bracketed]` placeholders left undefined, no markdown formatting that breaks on paste, every value filled with content derived from DEFINE.md and the Product Identity.
 - **The two recommended typefaces** in every prompt are free for commercial use and outside the exclusion list (no Inter, Instrument Serif, Outfit, or Plus Jakarta Sans).
 - **Every copy hint** in every prompt passes the tone-of-voice test from the Identity.
 - **The "How to use this file" section** tells the user to start with Prompt 1 (design system) before generating the screens.

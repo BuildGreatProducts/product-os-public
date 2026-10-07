@@ -4,7 +4,7 @@
 
 Most "failed" first apps don't need to die. They need a precise pivot. The trap is sweeping changes — burning the codebase, rebranding, chasing a new niche, and dropping the price all in the same week. Then you don't know what fixed it, what broke it, or what the new business actually is.
 
-The discipline of a clean pivot is keeping every variable constant except one. There are three variables worth changing: **the product**, **the persona**, or **the price**. Pick one, hold the other two still, and re-test against the same pass bars from your launch log (`docs/LAUNCHES.md`) — the signal ladder rung you missed is the rung you re-test.
+The discipline of a clean pivot is keeping every variable constant except one. There are three variables worth changing: **the product**, **the persona**, or **the price**. Pick one, hold the other two still, and re-test against the same pass bar the first version missed — same channel, same kind of customer, same measure of response. (Links below point at the Define worksheets; your own answers live in the matching sections of `docs/DEFINE.md`.)
 
 ---
 
@@ -84,7 +84,7 @@ Start at the top. Stop at the first "yes."
 
 **Are users using only 1 of your 5 features daily, and ignoring the rest, or asking you to do something adjacent to what you built?**→ **Product Pivot.** The audience and price are right — the mechanism is bloated or pointed at the wrong outcome.
 
-**Are *all three* broken — no buyers, no usage, no clarity on who it's for?**→ Don't pivot. Go back to rung one of the launch ladder — re-run `mini-launch` with a fresh mini-launch — and rebuild signal from scratch. You don't have enough to triangulate from.
+**Are *all three* broken — no buyers, no usage, no clarity on who it's for?**→ Don't pivot. Go back to the start of Define — rework the offer with `define-offer-review`, put it in front of real potential customers, and rebuild signal from scratch. You don't have enough to triangulate from.
 
 ---
 
@@ -284,7 +284,7 @@ A price pivot is when the product and the persona are both working, but money is
 
 ## The Pivot Worksheet
 
-Fill out *before* making the change. Keep this with your launch retro notes.
+Fill out *before* making the change. Keep it where you'll see it when the re-test results come in.
 
 **1. What I'm keeping (the validated piece):**
 

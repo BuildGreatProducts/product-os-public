@@ -13,7 +13,7 @@ Ask what the user wants to achieve. If they're vague, offer the common shapes: a
 
 ## 2. Review the codebase
 
-Read the repository to understand the product as built: what it does, the core user journey (entry → value → return), existing features, pricing/paywall surfaces, onboarding, notifications/emails, and what analytics or instrumentation exist. If product docs are present (e.g. `docs/PRODUCT.md`, a PRD, a roadmap), read them for the customer, magic moment, and what's already planned — don't recommend what's already on the roadmap. Note the stack, since it bounds what's cheap vs. expensive to build.
+Read the repository to understand the product as built: what it does, the core user journey (entry → value → return), existing features, pricing/paywall surfaces, onboarding, notifications/emails, and what analytics or instrumentation exist. If product docs are present (e.g. `docs/DEFINE.md`, `docs/MAGIC-MOMENT.md`, a PRD, a roadmap), read them for the customer, magic moment, and what's already planned — don't recommend what's already on the roadmap. Note the stack, since it bounds what's cheap vs. expensive to build.
 
 ## 3. Research what works
 

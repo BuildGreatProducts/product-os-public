@@ -1,12 +1,14 @@
 # Product Identity Framework
 
-The minimum viable brand in words: five decisions — a name, two layers of belief, a voice, and a look direction — that make your product recognizable and give every later step (design system, screens, landing page, launch posts) one character to work from. Fill in each section below; keep answers concrete and short.
+The minimum viable brand in words: five decisions — a name, two layers of belief, a voice, and a look direction — that make your product recognizable and give every later step (design system, screens, landing page, posts) one character to work from. Keep answers concrete and short.
+
+*This is a worksheet: the `design-identity-creator` skill reads it for structure and guidance, walks you through each section, and writes your answers — clean, without the prompts — as the `## Product Identity` section of `docs/DESIGN.md` (mirrored in `docs/DESIGN.html`). This file itself stays as-is for the next revisit.*
 
 The *visuals* — colours, fonts, tokens — are deliberately not here: they're derived from a real image reference in Step 3 (`design-design-system` → `docs/DESIGN.md`).
 
 ## Brand Card
 
-*Fill this in last — the whole identity at one glance. This is what you screenshot for your Design relaunch and hand to anyone who touches the brand. Colours, fonts, and tokens live in `docs/DESIGN.md` after Step 3.*
+*Fill this in last — the whole identity at one glance. This is what you hand to anyone who touches the brand. Colours, fonts, and tokens live in `docs/DESIGN.md` after Step 3.*
 
 | | |
 | --- | --- |

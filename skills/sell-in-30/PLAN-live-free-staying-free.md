@@ -6,13 +6,13 @@
 
 | Day | Block | Skill(s) | Proof |
 | --- | --- | --- | --- |
-| 1 | **Define backfill + offer review** | `define-from-code` if the Define docs are missing → `define-offer-review` → `define-product`; confirm `productos/design/2-Magic-Moment.md` exists (run `design-magic-moment` if not — the bar is defined there) | a sharpened offer; `docs/PRODUCT.md`; the magic moment named in one sentence |
+| 1 | **Define backfill + offer review** | `define-from-code` if `docs/DEFINE.md` is missing → `define-offer-review`; confirm `docs/MAGIC-MOMENT.md` exists (run `design-magic-moment` if not — the bar is defined there) | a sharpened offer in `docs/DEFINE.md`; the magic moment named in one sentence |
 | 2 | **Messaging alignment** | `design-landing-page` (and/or `design-app-listing`) against the reviewed offer → ship the copy via the build loop, `develop-design-review` before commit | before/after of the live hero |
-| 3 | **Believers backfill + activation check** | create `docs/LAUNCHES.md`; **the member** walks the live URL as a stranger, from signup to the magic moment, with a fresh test account (never a real user's), and times it; note every wall. The agent reads the result; it never creates or touches production records | the believers list; screenshots of the stranger's path saved to `docs/`, with the walls listed |
-| 4 | **Warm conversations** | `mini-launch` sitting one to believers and named warm contacts; the ask is "try it", with the link | sent-folder screenshot |
-| 5 | **Channel** | `distribute-gtm-strategy` | `1-Go-To-Market-Strategy.md` |
-| 6 | **Experiments + follow-ups** | `distribute-growth-experiments`, briefed with the bar (activated user) and the clock; the backlog leans on activation (`distribute-activation-retention-audit` as a candidate experiment) | `2-Growth-Experiments.md`; tracker seeded |
-| 7 | **Weekly read** | `mini-launch` sitting two | the read; the Week 1 Skool post |
+| 3 | **Warm list + activation check** | the warm list written in `docs/SELL-IN-30.md` (everyone who has used it or responded, then named people who match the persona); **the member** walks the live URL as a stranger, from signup to the magic moment, with a fresh test account (never a real user's), and times it; note every wall. The agent reads the result; it never creates or touches production records | the warm list; screenshots of the stranger's path saved to `docs/`, with the walls listed |
+| 4 | **Warm conversations** | the warm ask to everyone on the warm list, personally; the ask is "try it", with the link; every response logged in the Experiment Log | sent-folder screenshot |
+| 5 | **Channel** | `distribute-gtm-strategy` | `docs/GO-TO-MARKET.md` |
+| 6 | **Experiments + follow-ups** | `distribute-growth-experiments`, briefed with the bar (activated user) and the clock; the backlog leans on activation (`distribute-activation-retention-audit` as a candidate experiment) | `docs/GROWTH-EXPERIMENTS.md`; `docs/GROWTH-TRACKER.md` seeded |
+| 7 | **Weekly read** | the signal read, applied to the week | the read; the Week 1 Skool post |
 
 ## Notes for the composer
 
