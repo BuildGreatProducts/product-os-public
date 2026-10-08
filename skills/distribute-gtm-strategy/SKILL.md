@@ -49,10 +49,10 @@ Then **ask qualifying questions to fill what the code cannot reveal** — these 
 
 ### Channel playbook (both paths)
 
-Two reference docs ship in this skill's folder so the skill works standalone. For each, if `productos/distribute/<file>` exists, read that copy; otherwise read the copy in this skill's folder.
+Two reference docs live in ProductOS's `distribute/` folder, two levels up from this skill's folder (`../../distribute/`) — the same files whether ProductOS sits in the repo as `productos/` or is installed as a plugin.
 
-- **`BONUS-Distribution-Channels.md`** — at the start, read its *Pick your channel first* section (the decision tree and the fit matrix); justify every pick through them. Once the three channels are chosen (step 3), read only those three channels' sections under *The twelve channels* for their pass thresholds and pitfalls.
-- **`BONUS-AI-Distribution-Tools.md`** — at step 4, read only the sections for the three chosen channels, for the tool to run each.
+- **[BONUS-Distribution-Channels.md](../../distribute/BONUS-Distribution-Channels.md)** — at the start, read its *Pick your channel first* section (the decision tree and the fit matrix); justify every pick through them. Once the three channels are chosen (step 3), read only those three channels' sections under *The twelve channels* for their pass thresholds and pitfalls.
+- **[BONUS-AI-Distribution-Tools.md](../../distribute/BONUS-AI-Distribution-Tools.md)** — at step 4, read only the sections for the three chosen channels, for the tool to run each.
 
 ## Workflow
 

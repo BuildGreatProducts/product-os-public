@@ -10,7 +10,7 @@
 | --- | --- | --- | --- | --- |
 | 1 | **Define from idea** | `define-offer-builder` → `define-customer-persona` → `define-pricing`, one sitting, no research rabbit holes | `docs/DEFINE.md` has Summary, Offer, Persona and Pricing filled; the offer read out loud | 2.5 |
 | 2 | **Look + magic moment + spec** | `design-design-system` from one image the member loves → `design-magic-moment` → `develop-prd-roadmap` with the MVP scoped to the magic moment only | `docs/DESIGN.html` screenshot; `docs/ROADMAP.md` with one phase | 2.5 |
-| 3 | **Build, day one** | `develop-mvp-build` (or the build loop task by task) | a screenshot of the first working screen, saved to `docs/` | 4 |
+| 3 | **Build, day one** | `develop-build` (or `build-loop` task by task) | a screenshot of the first working screen, saved to `docs/` | 4 |
 | 4 | **Build, day two** | continue; the core flow works end to end locally | screenshots of signup → magic moment, saved to `docs/`; the test suite passing | 4 |
 | 5 | **Quality gate** | `develop-code-review` → `develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` verdict; Critical/High ticked | 2 |
 | 6 | **Deploy guide + go live** | `develop-golive` → work `docs/DEPLOY.md` top to bottom | live URL, HTTPS | 3 |

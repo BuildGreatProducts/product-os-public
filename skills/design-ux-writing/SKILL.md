@@ -131,4 +131,4 @@ Re-read `docs/COPY.md` end to end:
 
 Give the member the file path and a tight recap: the route taken, the voice translation, and (in audit mode) how many strings the fix list covers.
 
-**Next:** `design-design-system` (Step 3), or continue down the checklist; with an existing product, hand the fix list to the build loop (`cc-build-loop` or its Codex/Cursor siblings). Once `setup` has wired the repo, the Copy Fidelity rule in the root CLAUDE.md/AGENTS.md binds every coding agent to `docs/COPY.md`.
+**Next:** `design-design-system` (Step 3), or continue down the checklist; with an existing product, hand the fix list to `build-loop`. Once `setup` has wired the repo, the Copy Fidelity rule in the root CLAUDE.md/AGENTS.md binds every coding agent to `docs/COPY.md`.

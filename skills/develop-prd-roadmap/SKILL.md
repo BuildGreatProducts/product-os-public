@@ -11,7 +11,7 @@ description: >-
 
 # Develop: MVP PRD & Roadmap
 
-This skill takes everything the member has decided in the Define and Design phases and converts it into the two documents an AI coding agent (Claude Code, Codex, or Cursor — the three ProductOS build loops) builds the product from: **`docs/PRD.md`** — the technical blueprint specific enough to implement without clarifying questions — and **`docs/ROADMAP.md`** — the phased build plan whose checkboxes the coding agent marks complete as it works.
+This skill takes everything the member has decided in the Define and Design phases and converts it into the two documents an AI coding agent (Claude Code, Codex, or Cursor — the tools `build-loop` supports) builds the product from: **`docs/PRD.md`** — the technical blueprint specific enough to implement without clarifying questions — and **`docs/ROADMAP.md`** — the phased build plan whose checkboxes the coding agent marks complete as it works.
 
 The MVP is the smallest slice of the product's promise that delivers the magic moment and can be built in 4–8 weeks. The skill runs in two halves: a **scoping interview** that pins down exactly what's in and what's out, then **generation** of the PRD and roadmap from those decisions using the guides in `productos/develop/guides/`.
 
@@ -89,7 +89,7 @@ Then cover the **supporting services** — the tools that make a product observa
 
 These are typically P1 setup tasks in the foundation phase, not features — but they belong in the PRD's stack table and dependencies so the coding agent wires them in early rather than retrofitting after launch.
 
-**D. Constraints and tooling.** Three quick questions: Which coding agent will build this (Claude Code, Codex, Cursor — each has a ProductOS build loop — or other)? What's the realistic timeline and weekly time budget? Any hard constraints — budget ceiling for services, existing accounts, compliance needs?
+**D. Constraints and tooling.** Three quick questions: Which coding agent will build this (Claude Code, Codex, Cursor — `build-loop` supports all three — or other)? What's the realistic timeline and weekly time budget? Any hard constraints — budget ceiling for services, existing accounts, compliance needs?
 
 **E. Success criteria.** Define measurably what "MVP done" means, drawing from the Magic Moment metric (the first real user reaching the magic moment is the bar that matters) and DEFINE.md's north star when Business Strategy is filled. Aim for 3–5 criteria like *"time from signup to magic moment under 2 minutes"*, *"core loop completable on mobile Safari"*, *"all P0 features pass their acceptance criteria."*
 
@@ -132,4 +132,4 @@ Run this checklist against both files; fix anything that fails before handing ov
 - [ ] The roadmap ends with the Agent Session Guide and its prompt templates, ready to paste into a coding agent.
 - [ ] The member can say in one sentence what the MVP is and what it is not.
 
-**Next step:** run `develop-mvp-build` to build straight through the roadmap (or go phase by phase with the roadmap's Agent Session Guide prompts).
+**Next step:** run `develop-build` to build straight through the roadmap (or go phase by phase with the roadmap's Agent Session Guide prompts).

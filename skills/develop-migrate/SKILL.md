@@ -80,7 +80,7 @@ Re-read `docs/MIGRATION.md` and check:
 
 ### 6. Hand off
 
-To execute the plan, the member tells their tool's build loop (`cc-build-loop`, `codex-build-loop`, or `cursor-build-loop`) to work through `docs/MIGRATION.md` top to bottom; it is a build-loop plan file like `docs/ROADMAP.md`. Phase 7's gate needs the member present for the real login, DNS cutover, and decommission.
+To execute the plan, the member tells `build-loop` to work through `docs/MIGRATION.md` top to bottom; it is a build-loop plan file like `docs/ROADMAP.md`. Phase 7's gate needs the member present for the real login, DNS cutover, and decommission.
 
 Summarize in conversation: what moved, what was rotated, what was decommissioned, and the baseline tag to roll back to. Then point forward: `develop-refactor-plan` for the code-quality pass the platform's generated code almost certainly needs (it generates its own refactor-scoped PRD if none exists), and the member's build loop for everything after.
 

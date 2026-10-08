@@ -18,7 +18,7 @@ Running a challenge (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` open)? It says 
 ## Step 2 — Verify your setup
 
 - **What to do:** Nothing to create or copy — ProductOS already lives inside your app repo, and the specs are already at `docs/`. Just confirm the root `CLAUDE.md`/`AGENTS.md` carry the ProductOS guidelines (wired from `productos/setup/` at setup; if they're missing, `setup` fixes it in seconds).
-- **Also recommended:** Push the repo to GitHub so your work is backed up and versioned. The agent builds straight through all phases in one go — there's no need to gate each phase behind a pull request. Code review is built in: `develop-mvp-build` reviews at every phase boundary, and the build loop reviews once its work is finished — no separate service needed.
+- **Also recommended:** Push the repo to GitHub so your work is backed up and versioned. The agent builds straight through all phases in one go — there's no need to gate each phase behind a pull request. Code review is built in: `develop-build` reviews at every phase boundary, and `build-loop` reviews once its work is finished — no separate service needed.
 
 ## Step 3 — Build the MVP
 
@@ -26,25 +26,25 @@ Pick the path that matches your situation:
 
 ### 3a — Building from scratch
 
-- **What to do:** Run `develop-mvp-build`.
+- **What to do:** Run `develop-build`.
 - **What it does:** Works through every roadmap task in order — implementing, testing, and verifying each before moving on, with a code review and a commit at every phase boundary — until all tasks are checked off and the magic moment works end to end.
 
 ### 3b — Refactoring an existing codebase
 
-- **What to do:** First protect your working code — work in a git worktree or duplicate the codebase folder before refactoring, so you can always get back to a working version. Then run `develop-refactor-plan`, review each difference it finds with you, and once `docs/REFACTOR.md` exists, run `develop-refactor-build`.
+- **What to do:** First protect your working code — work in a git worktree or duplicate the codebase folder before refactoring, so you can always get back to a working version. Then run `develop-refactor-plan`, review each difference it finds with you, and once `docs/REFACTOR.md` exists, run `develop-build`.
 - **Coming from a prompt-to-app platform (Lovable, Bolt, v0, Base44)?** Run `develop-migrate` first — it inventories everything the platform manages, moves the app into your own repo, stack, and deployment via `docs/MIGRATION.md`, and gates decommissioning the old platform behind a full verification pass. Refactor after you fully own the codebase.
 - **What it does:** The plan skill audits your code against the PRD (generating a refactor-scoped PRD first if `docs/PRD.md` doesn't exist) and turns your keep/remove decisions into `docs/REFACTOR.md`; the build skill executes it task by task until the codebase matches the PRD.
 - **No `docs/DESIGN.md` yet?** Run `design-design-system-from-code` first — it reverse-engineers the design system already in your code into `docs/DESIGN.md`, so the refactor has real design tokens to converge on.
 
 ## Step 4 — Build new features with the build loop
 
-- **What to do:** For every feature you add after the MVP, run the build-loop skill matching your tool: `cursor-build-loop`, `cc-build-loop` (for Claude Code), or `codex-build-loop`.
+- **What to do:** For every feature you add after the MVP, run `build-loop` — it works in Claude Code, Codex, and Cursor, and uses your tool's own review.
 - **What it does:** Forces each task through build → end-to-end testing → fixes, then reviews the finished work (`/review`) before it counts as done — so quality doesn't drift as the app grows.
 - **Not sure what to build next?** Run `develop-feature-finder` with a business goal (retention, activation, conversion, revenue) — it reviews your codebase, researches what comparable products do, and delivers ranked feature recommendations you can feed straight into the build loop.
 
 ## Step 5 — Code review for work outside the build skills
 
-- **What to do:** Run `develop-code-review` on uncommitted changes you made outside the build loop or a full build (a hand edit, a quick fix). Work from `develop-mvp-build`, `develop-refactor-build`, or a build loop has already been reviewed.
+- **What to do:** Run `develop-code-review` on uncommitted changes you made outside the build loop or a full build (a hand edit, a quick fix). Work from `develop-build` or `build-loop` has already been reviewed.
 - **What it does:** Reviews the whole uncommitted diff (including new untracked files) for correctness, regressions, edge cases, and leftover debug code, verifies every finding against the actual source, and ends with an explicit verdict: ready to commit, or the must-fix list first.
 
 ## Step 6 — Design changes

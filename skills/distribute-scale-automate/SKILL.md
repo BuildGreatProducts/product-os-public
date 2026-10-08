@@ -33,11 +33,11 @@ Read the codebase for product context, then **ask the member what's already work
 
 ### Automation playbook (both paths)
 
-Three reference docs ship in this skill's folder so the skill works standalone. For each, if `productos/distribute/<file>` exists, read that copy; otherwise read the copy in this skill's folder. Don't read them whole — grep for each winner's channel and read only that section:
+Three reference docs live in ProductOS's `distribute/` folder, two levels up from this skill's folder (`../../distribute/`) — the same files whether ProductOS sits in the repo as `productos/` or is installed as a plugin. Don't read them whole — grep for each winner's channel and read only that section:
 
-- **`BONUS-Growth-Experiments-Library.md`** — the **primary** automation reference: each channel section's **"Recommended tools & plugins"** block names the tools, MCPs/plugins, and scheduled tasks that automate that channel's work, and its experiments supply the "do better" move.
-- **`BONUS-AI-Distribution-Tools.md`** — the tool stack for that channel.
-- **`BONUS-Distribution-Channels.md`** — channel context for each winner.
+- **[BONUS-Growth-Experiments-Library.md](../../distribute/BONUS-Growth-Experiments-Library.md)** — the **primary** automation reference: each channel section's **"Recommended tools & plugins"** block names the tools, MCPs/plugins, and scheduled tasks that automate that channel's work, and its experiments supply the "do better" move.
+- **[BONUS-AI-Distribution-Tools.md](../../distribute/BONUS-AI-Distribution-Tools.md)** — the tool stack for that channel.
+- **[BONUS-Distribution-Channels.md](../../distribute/BONUS-Distribution-Channels.md)** — channel context for each winner.
 
 ## Workflow
 

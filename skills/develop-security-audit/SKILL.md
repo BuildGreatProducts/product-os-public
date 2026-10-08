@@ -13,7 +13,7 @@ description: >-
 
 A full security audit of the member's app, built for apps made fast with AI agents by founders who are not security engineers. It audits the short list that burns real founder apps first — committed secrets, databases without row-level security, unprotected API routes, missing ownership checks, secret keys shipped to the browser — verifies every finding to a concrete exploit path, and writes **`docs/SECURITY-AUDIT.md`**: a verdict, the findings, and a fix plan a coding agent can execute while the member keeps building.
 
-**Boundary with the sibling skills:** the build loops and full builds run their tool's security pass on sensitive surfaces when they review (build loops once the work is finished, full builds at each phase boundary); `develop-code-review` carries only a thin pre-commit check (secrets, missing auth). **This skill owns depth**: the whole attack surface, the full category list, and the durable report. Run it before go-live, and again after any significant auth, payments, or data-access work.
+**Boundary with the sibling skills:** `build-loop` and `develop-build` run the tool's security pass on sensitive surfaces when they review (`build-loop` once the work is finished, `develop-build` at each phase boundary); `develop-code-review` carries only a thin pre-commit check (secrets, missing auth). **This skill owns depth**: the whole attack surface, the full category list, and the durable report. Run it before go-live, and again after any significant auth, payments, or data-access work.
 
 **This skill never auto-fixes.** A wrong "fix" to auth middleware can lock a founder out of their own app. It reports; execution is a separate, explicit step the member chooses.
 

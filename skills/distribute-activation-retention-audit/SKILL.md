@@ -35,7 +35,7 @@ A senior activation and lifecycle consultant. The job is not to reassure; it's t
 2. **Magic Moment** — `docs/MAGIC-MOMENT.md`. **The most valuable input** — absent only in a repo without ProductOS — it names the activation event the whole audit measures against. If absent, ask: *"What's the one action that makes a user 'get it' — the moment they feel the product working?"*
 3. **Onboarding Flow** — usually `docs/ONBOARDING.md`. **Optional.** The intended first-run path; lets the audit flag where shipped code drifted from the designed flow.
 4. **DEFINE.md** — usually `docs/DEFINE.md`. **Optional.** Its Summary and Offer give the product type, its Pricing Strategy the business model, and Business Strategy → North Star (when filled) the north star — which set the retention bar (daily / weekly / occasional).
-5. **Measurement & Attribution** — `productos/distribute/BONUS-Measurement-and-Attribution.md`, **if present**. Optional: the Area H checks are complete without it.
+5. **Measurement & Attribution** — [BONUS-Measurement-and-Attribution.md](../../distribute/BONUS-Measurement-and-Attribution.md). Optional: the Area H checks are complete without it.
 
 If the ProductOS docs are absent, the skill works standalone using [references/benchmarks.md](references/benchmarks.md) and one or two clarifying questions.
 

@@ -39,7 +39,7 @@ Lead with your top 3 in detail; list the rest briefly. Include at least one chea
 
 ## 5. Hand off
 
-Discuss and let the member pick. For chosen recommendations, offer to add them as tasks ready for a build-loop skill to execute:
+Discuss and let the member pick. For chosen recommendations, offer to add them as tasks ready for `build-loop` to execute:
 
 - Append them to `docs/ROADMAP.md` — or `docs/REFACTOR.md` if that's the active plan — as `TASK-NNN` continuing from the last ID, in the three-line format from `productos/develop/guides/ROADMAP-GENERATION.md` (checkbox + ID + description, `Files:`, `Notes:` ending with `Verify:`), sized to one agent session and ordered.
 - Update the plan's `**Status:** X/Y tasks complete` total to include them.

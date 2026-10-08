@@ -226,7 +226,7 @@ Every task ends with a verification step — run the app, confirm the behavior w
 
 #### Code review lives in the build skills
 
-The roadmap doesn't schedule code review. `develop-mvp-build` and `develop-refactor-build` review at every phase boundary, and the build loops review once the requested work is finished.
+The roadmap doesn't schedule code review. `develop-build` reviews at every phase boundary, and `build-loop` reviews once the requested work is finished.
 
 #### Generated roadmap integration
 

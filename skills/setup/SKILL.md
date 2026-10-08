@@ -49,6 +49,8 @@ Older plans may use retired names. Read them as follows, and don't rewrite the p
 | `mini-launch` / `studio-launch` (before 1.14.0) | Retired — launches are no longer part of the system. Annotate the step as retired. |
 | `define-product` / `studio-define-product` (before 1.14.0) | Retired — the Define skills write `docs/DEFINE.md` directly, so there's no synthesis step. Annotate the step as retired. |
 | `docs/PRODUCT.md` | `docs/DEFINE.md` |
+| `cc-build-loop` / `codex-build-loop` / `cursor-build-loop` (before 1.15.0) | `build-loop` |
+| `develop-mvp-build` / `develop-refactor-build` (before 1.15.0) | `develop-build` |
 
 Annotate, don't recompose: this pass adjusts details the coach couldn't see, it does not redesign the programme. Anything bigger — the member's situation has genuinely changed, a phase no longer fits — goes back to the coach, who re-runs the intake and re-delivers an updated `PLAN.md` (replace `docs/PLAN.md` with it when it arrives).
 

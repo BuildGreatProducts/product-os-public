@@ -42,11 +42,11 @@ Both files land in the repo-root `docs/` folder (create it if needed). Never wri
 
 ### Experiments playbook (both paths)
 
-Four reference docs ship in this skill's folder so the skill works standalone. For each, if `productos/distribute/<file>` exists, read that copy; otherwise read the copy in this skill's folder. Read only the parts named here — the full set is long:
+Four reference docs live in ProductOS's `distribute/` folder, two levels up from this skill's folder (`../../distribute/`) — the same files whether ProductOS sits in the repo as `productos/` or is installed as a plugin. Read only the parts named here — the full set is long:
 
-- **`BONUS-Growth-Experiments-Library.md`** — the **primary** playbook. At step 1, read *The method* and *How to read a card*; once the focus channel is set, read only that channel's numbered section. Every experiment you propose is a tailored version of one from there (or built in the same shape).
-- **`BONUS-Measurement-and-Attribution.md`** — read it when writing the Pass = lines (step 4): name a measurement method for every threshold before the experiment runs, so each result is a real, readable number.
-- **`BONUS-Distribution-Channels.md`** and **`BONUS-AI-Distribution-Tools.md`** — channel logic and the tool to run each; read only the focus channel's section, when you need it.
+- **[BONUS-Growth-Experiments-Library.md](../../distribute/BONUS-Growth-Experiments-Library.md)** — the **primary** playbook. At step 1, read *The method* and *How to read a card*; once the focus channel is set, read only that channel's numbered section. Every experiment you propose is a tailored version of one from there (or built in the same shape).
+- **[BONUS-Measurement-and-Attribution.md](../../distribute/BONUS-Measurement-and-Attribution.md)** — read it when writing the Pass = lines (step 4): name a measurement method for every threshold before the experiment runs, so each result is a real, readable number.
+- **[BONUS-Distribution-Channels.md](../../distribute/BONUS-Distribution-Channels.md)** and **[BONUS-AI-Distribution-Tools.md](../../distribute/BONUS-AI-Distribution-Tools.md)** — channel logic and the tool to run each; read only the focus channel's section, when you need it.
 
 ## Workflow
 

@@ -132,7 +132,7 @@ Every block is an existing skill (or a plain action) with a proof. The composer 
 | Words | `design-identity-creator` → `design-ux-writing` | the Product Identity in `docs/DESIGN.md` (the Brand Card), `docs/COPY.md` | the Product Identity section and `COPY.md` exist; `COPY.md`'s audit fix list present | 1.5 h |
 | Look | `design-design-system` (one image you love) or `design-design-system-from-code` | `docs/DESIGN.md` + `docs/DESIGN.html` | screenshot of `DESIGN.html` | 1 h |
 | Magic moment + spec | `design-magic-moment` → `develop-prd-roadmap`, MVP scoped to the magic moment only | `docs/PRD.md`, `docs/ROADMAP.md` | roadmap of one phase | 1.5 h |
-| Build | `develop-mvp-build` (idea) · `develop-design-better` + the build loop (`cc-build-loop` / `codex-build-loop` / `cursor-build-loop`) + `develop-design-review` (rebuild) · `develop-refactor-plan` → `develop-refactor-build` (messy code) | the working core flow | before/after screenshots saved to `docs/`, or a recording the agent can open | 4 h+ per day |
+| Build | `develop-build` (idea) · `develop-design-better` + `build-loop` + `develop-design-review` (rebuild) · `develop-refactor-plan` → `develop-build` (messy code) | the working core flow | before/after screenshots saved to `docs/`, or a recording the agent can open | 4 h+ per day |
 | Migrate | `develop-migrate` | `docs/MIGRATION.md`, an owned repo | the migration's verification gate green | 1–2 days |
 | Quality gate | `develop-code-review` → `develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` | the verdict line; Fix plan Critical/High ticked | 2–3 h |
 | Deploy guide | `develop-golive` | `docs/DEPLOY.md` | file exists; accounts created | 1 h |

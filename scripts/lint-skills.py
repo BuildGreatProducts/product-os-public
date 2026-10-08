@@ -10,7 +10,10 @@ Checks
   ERROR  description: present, <=1024 chars, no XML tags, has a "Not for" line
   WARN   description over 700 chars (descriptions load into every session)
   ERROR  SKILL.md body over 500 lines
-  ERROR  a bundled BONUS-*.md differs from its canonical copy in a phase folder
+  ERROR  a relative Markdown link in a skill that doesn't resolve (skills share phase-folder docs
+         through links like ../../distribute/BONUS-*.md instead of bundling copies)
+  ERROR  setup/CLAUDE.md and setup/AGENTS.md differ below their title line (they are twins; the
+         build-plan list and every root rule live in both)
   ERROR  a computer:// link (client-specific; give the file path instead)
   WARN   a reference doc (BONUS-*.md, develop/guides/*.md) over 100 lines with no contents list
          near the top. Worksheets, *-TEMPLATE.md and REFERENCE-*.md are output shapes and are
@@ -102,21 +105,26 @@ def check_skill(name):
         errors.append(f"{rel(path)}: body is {body_lines} lines (max {BODY_MAX_LINES})")
 
 
-def check_bundled_copies():
-    for name in sorted(os.listdir(SKILLS)):
-        folder = os.path.join(SKILLS, name)
-        if not os.path.isdir(folder):
-            continue
-        for f in sorted(os.listdir(folder)):
-            if not f.startswith("BONUS-"):
+def check_links():
+    for dirpath, _, files in os.walk(SKILLS):
+        for f in files:
+            if not f.endswith(".md"):
                 continue
-            canon = [os.path.join(ROOT, p, f) for p in PHASES if os.path.isfile(os.path.join(ROOT, p, f))]
-            if not canon:
-                continue
-            with open(os.path.join(folder, f), "rb") as a, open(canon[0], "rb") as b:
-                if a.read() != b.read():
-                    errors.append(f"{rel(os.path.join(folder, f))}: differs from {rel(canon[0])} "
-                                  f"(edit the phase copy, then: python3 scripts/sync-bonus.py)")
+            path = os.path.join(dirpath, f)
+            text = open(path, encoding="utf-8").read()
+            for m in re.finditer(r"\]\(([^)#\s]+)(#[^)]*)?\)", text):
+                target = m.group(1)
+                if re.match(r"[a-z]+:", target):
+                    continue
+                if not os.path.exists(os.path.normpath(os.path.join(dirpath, target))):
+                    errors.append(f"{rel(path)}: link to {target} doesn't resolve")
+
+
+def check_setup_twins():
+    a = open(os.path.join(ROOT, "setup", "CLAUDE.md"), encoding="utf-8").read().split("\n")[1:]
+    b = open(os.path.join(ROOT, "setup", "AGENTS.md"), encoding="utf-8").read().split("\n")[1:]
+    if a != b:
+        errors.append("setup/CLAUDE.md and setup/AGENTS.md differ below their title line — keep the twins identical")
 
 
 def markdown_files():
@@ -149,7 +157,8 @@ def main():
     names = sorted(d for d in os.listdir(SKILLS) if os.path.isfile(os.path.join(SKILLS, d, "SKILL.md")))
     for name in names:
         check_skill(name)
-    check_bundled_copies()
+    check_links()
+    check_setup_twins()
     check_files()
     for w in warnings:
         print(f"WARN   {w}")
