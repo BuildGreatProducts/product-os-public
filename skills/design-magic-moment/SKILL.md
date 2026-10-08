@@ -18,7 +18,8 @@ Read inputs from `docs/` and the worksheets from `productos/design/` at the app 
 
 1. **`docs/DEFINE.md`** — **required.** Offer → Customer and the Persona: who experiences the aha. Offer → Pain and the Persona's pains and triggers: what's relieved. Offer → Mechanism: the action that delivers the relief. Offer → Outcome (and Business Strategy → North Star, when filled): what success looks like. Pricing Strategy: the business model. If it's missing or its Offer and Persona are placeholders, stop: tell the member to run the Define skills first (`define-offer-builder` → `define-customer-persona` → `define-pricing`, or `define-from-code` for an existing product).
 2. **The Product Identity** — the `## Product Identity` section of `docs/DESIGN.md`. Optional. Its Tone of Voice shapes *how the aha is presented* (a dramatic reveal, a measured proof, an irreverent shock — read off the tone attributes and contrarian belief) and constrains the copy at the aha moment.
-3. **`productos/design/2-Magic-Moment.md`** — the worksheet holding the output structure. Read it; never write to it.
+3. **Product shape** — `docs/DEFINE.md` → `## Product Shape` → `### Primary Shape` names the slug; read only the Design route row for Step 5 in `productos/shapes/<slug>.md` (from this folder, `../../shapes/<slug>.md`). It decides where the moment can happen — in a screen, a terminal, a chat, an inbox, or a delivered file. No Product Shape section (a repo from before 2.0) → treat it as `web-app` unless the code or member clearly says otherwise, and suggest `define-product-shape`.
+4. **`productos/design/2-Magic-Moment.md`** — the worksheet holding the output structure. Read it; never write to it.
 
 ## Voice
 
@@ -51,6 +52,21 @@ The product will rhyme with one or two of seven documented shapes. Name which fi
 - **First-win.** One specific outcome the user can point to and feel good about. Duolingo — first lesson with streak started; Strava — first run logged; Whoop — first sleep score; Apple Fitness — first ring closed. Fits goal-oriented, tracking, fitness, learning products.
 - **Pre-signup.** Real value *before* an account — signup becomes saving what they already made. Lovable — homepage prompt box builds an app before signup; Airbnb — browse without login; Spotify — guest play; Perplexity — search without an account. Fits high-friction-to-signup products, viral utilities, products with a strong demo wow.
 
+**Where the moment happens, by shape.** The seven aha shapes hold for every product shape; the medium changes. Place candidates in the medium the customer actually uses:
+
+| Primary shape | What the magic moment usually looks like |
+| --- | --- |
+| `web-app`, `mobile-app`, `desktop-app`, `browser-extension` | An in-product event on a screen — the first output, reveal, or win |
+| `agent-skill`, `agent-plugin` | The first useful agent output on the member's own work — the agent does the job noticeably better than it did without the skill, inside the tool they already use |
+| `mcp-server` | The first tool call that returns the customer's real data and lets the agent act on it ("the agent just answered from my CRM") |
+| `chat-assistant` | The first answer that is specific to the customer's situation where a general assistant would have been generic |
+| `developer-tool` | The first successful API call or command with a meaningful response, in the customer's own environment |
+| `productized-service` | The first delivered outcome — the first deliverable in the client's hands, ideally before the first invoice is due |
+| `digital-product` | The first downloaded asset in use — the template filled with their own data, the preset applied to their own photo |
+| `website` | The first visit that delivers what the visitor came for — the answer, listing, or resource — and the return visit or subscription that follows |
+
+For screenless shapes, the journey positions read as **pre-install / first command or message / first session / first delivery / day 7** rather than signup-based positions, and the metric comes from what the shape can measure (install-to-first-run rate, first tool call success, download-to-first-open, time from booking to first delivery) — name the instrument if there's no product analytics.
+
 ### 3. Live research on the category
 
 Read [references/benchmarks.md](references/benchmarks.md) for documented comparables and time-to-aha benchmarks, then search live for:
@@ -67,11 +83,11 @@ Each candidate is specific, evidence-backed, and placed at a real position in th
 
 - **Action** — what the user does, in 5–10 words.
 - **Wow** — what they see, feel, or unlock in that instant.
-- **Where** — pre-signup / first 60 seconds / first session / day 1 / day 3 / day 7 — the earliest position the action can realistically happen, not where it's convenient to build.
+- **Where** — pre-signup / first 60 seconds / first session / day 1 / day 3 / day 7 (screenless shapes: pre-install / first command or message / first session / first delivery / day 7) — the earliest position the action can realistically happen, not where it's convenient to build.
 - **Time-to-aha** — a concrete bound in seconds, minutes, hours, or session number ("<60 seconds from landing on the homepage"), never "as fast as possible."
 - **Comparable evidence** — at least two named products (where possible) whose documented aha rhymes with this candidate. "Other products do this" is not evidence.
 - **Risk** — what could go wrong. A candidate without a named risk hasn't been pressure-tested.
-- **Metric** — a threshold measurable in product analytics ("X% of new accounts complete Y within Z minutes", "session length ≥ N seconds on session 1").
+- **Metric** — a threshold measurable in product analytics (or, for screenless shapes, in the logs, store dashboard, or delivery records the shape has) ("X% of new accounts complete Y within Z minutes", "session length ≥ N seconds on session 1").
 
 The three must be **distinct bets**, not three flavours of one idea — pull from different shapes where the product supports it (e.g., for a B2B AI product: one Volume-of-use, one First-output, one Collaboration trigger).
 
@@ -93,7 +109,8 @@ Use the section structure of `productos/design/2-Magic-Moment.md` exactly — sa
 - [ ] Three distinct candidates, each with all seven fields.
 - [ ] Comparable evidence cites real named products — at least two per candidate where possible — not generic categories.
 - [ ] Time-to-aha targets are concrete; positions are the earliest realistic placement, biased toward pre-signup or first session.
-- [ ] Every metric is measurable in product analytics, not vibes.
+- [ ] Every metric is measurable in product analytics — or the shape's own instrument — not vibes.
+- [ ] Candidates happen in the shape's real medium (a terminal, chat, inbox, or delivered file for screenless shapes), not on an imagined screen.
 - [ ] The doc frames the primary as a committed hypothesis to test.
 - [ ] Sources cite 3–6 named references; the file is dated and reads in under 3 minutes.
 

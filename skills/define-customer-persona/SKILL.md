@@ -92,4 +92,4 @@ Spell out acronyms (ICP, JTBD, MRR) on first use — `docs/DEFINE.md` is the doc
 
 Give the member the file path (`docs/DEFINE.md`) and a one-paragraph summary of what is solid and what still needs validation.
 
-**Next:** `define-pricing` fills `## 3. Pricing Strategy`; alongside it, book 3–5 short customer conversations to sharpen the tagged sections and re-run this skill with the new evidence.
+**Next:** `define-pricing` fills `## 3. Pricing Strategy` (or `define-product-shape` first, if `## Product Shape` is still empty); alongside it, book 3–5 short customer conversations to sharpen the tagged sections and re-run this skill with the new evidence.

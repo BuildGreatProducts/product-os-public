@@ -1,19 +1,20 @@
 ---
 name: design-ux-writing
 description: >-
-  Builds the in-product copy system — voice chart, terminology lexicon, and rules for buttons,
-  labels, errors, empty states, confirmations, toasts, and notifications — from the Product
-  Identity's tone of voice, and writes docs/COPY.md; in a repo with real UI strings it also audits
-  and rewrites them. Design phase Step 2. Use when the user says "UX writing", "microcopy", "write
-  my error messages", or "copy audit". Works without ProductOS. Not for marketing copy — use
-  design-landing-page or design-app-listing.
+  Builds the copy system — voice chart, terminology lexicon, and rules for buttons, errors, empty
+  states, and notifications, or for a screenless shape its commands, tool descriptions, prompts, CLI
+  help, and client emails — from the Product Identity's tone of voice, and writes docs/COPY.md;
+  with real strings in the repo it also audits and rewrites them. Design phase Step 2. Use when the
+  user says "UX writing", "microcopy", "write my error messages", or "copy audit". Works without
+  ProductOS. Not for marketing copy — use design-landing-page, design-app-listing, or
+  design-marketplace-listing.
 ---
 
 # Design: UX Writing System
 
 Build the member's **in-product copy system** — the rules, vocabulary, and worked examples for every string a user reads inside the product (buttons, labels, errors, empty states, loading, confirmations, toasts, notifications, permission asks) — and write it to `docs/COPY.md`. **DESIGN.md is how the product looks; COPY.md is how it speaks.** The Product Identity already decided the voice; this skill *translates* its Tone of Voice into operational rules (voice chart, lexicon, per-surface budgets, banned list, review rubric) so any writer, human or AI, produces the same clear, concise, concrete copy. The enemy is LLM-written interface copy — verbose, abstract, apologetic, exclamatory ("Oops! Something went wrong 😢", "Unlock powerful insights") — which every coding-agent-built screen ships with by default unless a copy system constrains it.
 
-Ownership: the Onboarding Flow decides *which* screens exist and *what* they say; the Landing Page and App Store Listing own the marketing register. COPY.md owns *how anything inside the product is said*, and its lexicon binds even marketing surfaces to the product's canonical nouns and verbs. No external research is needed — the patterns live in the BONUS doc.
+Ownership: the Onboarding Flow decides *which* screens exist and *what* they say; the Landing Page, App Store Listing, and Marketplace Listing own the marketing register. COPY.md owns *how anything inside the product is said*, and its lexicon binds even marketing surfaces to the product's canonical nouns and verbs. No external research is needed — the patterns live in the BONUS doc.
 
 ## Inputs
 
@@ -24,7 +25,8 @@ Read inputs from `docs/` and the worksheets and BONUS docs from `productos/desig
 3. **`productos/design/BONUS-UX-Writing-Best-Practice.md`** — required; the source of truth. Every rule the skill writes cites a tactic from it by number. Read the sections named in each step below, not the whole doc up front.
 4. **`docs/MAGIC-MOMENT.md`** — optional (produced later; present on re-runs and fast-tracked plans). Defines the one place celebration copy is *earned* — the milestone whitelist.
 5. **The design system in `docs/DESIGN.md`** — optional (arrives at Step 3). Its `## Components` names feed the lexicon; the two systems must call things by the same names.
-6. **The codebase's UI strings** — audit-mode input: component files, i18n/locale files, templates, native string catalogs.
+6. **The codebase's UI strings** — audit-mode input: component files, i18n/locale files, templates, native string catalogs — and, for screenless shapes, SKILL.md files, tool definitions, CLI help, prompt files, and email templates.
+7. **Product shape** — `docs/DEFINE.md` → `## Product Shape` → `### Primary Shape` names the slug; read only the Design route row for Step 2 in `productos/shapes/<slug>.md` (from this folder, `../../shapes/<slug>.md`). **Full** → the standard surfaces; **Adapted** → the shape's surfaces from the table in step 5. No Product Shape section (a repo from before 2.0) → treat it as `web-app` unless the code or member clearly says otherwise, and suggest `define-product-shape`. If `docs/PLAN.md` schedules the step differently, the plan wins — say so.
 
 If DEFINE.md is missing or its Offer and Persona are placeholders, stop: tell the member to run the Define skills first (`define-offer-builder` → `define-customer-persona` → `define-pricing`, or `define-from-code` for an existing product) — unless the standalone fallback applies.
 
@@ -59,14 +61,14 @@ Read DEFINE.md, the Identity's Tone of Voice, and from the BONUS doc **The Meta-
 
 Name the route and record it: *"This repo has real UI strings in `src/components/`, so I'm running in audit mode — the guide gets built first, then your existing copy gets rewritten against it. Output goes to `docs/COPY.md`. Confirm or correct."*
 
-If the request is actually about the landing page or App Store listing, redirect before doing anything: *"That's marketing copy — use `design-landing-page` (or `design-app-listing` for mobile). This skill owns the copy inside the product."*
+If the request is actually about the landing page or App Store listing, redirect before doing anything: *"That's marketing copy — use `design-landing-page` (or `design-app-listing` for mobile, `design-marketplace-listing` for any other store or registry). This skill owns the copy inside the product."*
 
 ### 2. State the hypothesis back
 
 In 2–3 sentences, before drafting anything:
 
 - **The voice translation** — what the tone attributes mean operationally: *"'plain-spoken, but not blunt' and 'warm, but not chirpy' means contractions and common words, short declaratives, zero exclamation marks outside true milestones, and no humor near errors or money."*
-- **The surface inventory** — which of the 8 surface stages this product actually has, from the mechanism: *"Ledgerly has destructive actions (delete client), money errors (failed payouts), and email notifications — confirmations and errors are your high-stakes surfaces. No push, so we skip that section."*
+- **The surface inventory** — which of the 8 surface stages this product actually has, from the mechanism — or, for an Adapted shape, which of the shape's surfaces (step 5): *"Ledgerly has destructive actions (delete client), money errors (failed payouts), and email notifications — confirmations and errors are your high-stakes surfaces. No push, so we skip that section."*
 
 Get a confirm or correct. A wrong voice translation poisons every example that follows.
 
@@ -93,6 +95,20 @@ Work through the remaining surfaces in order: buttons and CTAs → labels, nav, 
 
 Present each surface, get a confirm/correct, then move on — don't drop the whole guide at once.
 
+**Adapted shapes.** When the shape's route marks Step 2 Adapted, these surfaces replace the screen list (keep any screen surfaces the product genuinely has — a settings page, a popup):
+
+| Shape | Surfaces to write rules and Good/Bad pairs for |
+| --- | --- |
+| `agent-skill`, `agent-plugin` | skill and command names; skill descriptions (the text an agent matches to decide whether to load the skill — what it does, when to use it, when not to); argument and parameter docs; output formats (the files, headings, and summaries the agent hands back); error and stop messages; install and README voice |
+| `mcp-server` | server and tool names (one verb-noun pattern, no synonyms across tools); tool descriptions (agents choose tools from these alone — what it does, when to call it, when not to, what it returns); parameter names and descriptions with units, formats, and an example; result formats (structured, short, with a next-step hint); errors an agent can recover from (what failed, why, what to try next) |
+| `chat-assistant` | greeting and conversation starters; the system prompt's voice section (the voice chart rewritten as instructions the model follows); clarifying questions; refusal and out-of-scope lines; fallback and "I'm not sure" lines; hand-off to a human |
+| `developer-tool` | error messages (code, plain-language cause, the fix, a docs link); CLI help text (usage line, flags, one example per command); command and flag names; progress and log output; docs voice (quickstart and reference); changelog entries |
+| `productized-service` | client emails (welcome, kickoff, delivery, revision, renewal, payment reminder); intake form questions and help text; delivery notes; status updates |
+| `digital-product` | product page microcopy (buy button, what's included, license line, FAQ answers — the headline stays with the acquisition surface); purchase and download emails; in-file instructions (the first page, README, or "start here" note inside the product) |
+| `website` | navigation labels; CTAs; newsletter and signup forms with their confirmations; search with no results; 404; footer microcopy |
+
+Agent-facing text has a model as its reader: precision beats personality, every name stays unique, limits come from the host (a skill description's character cap, a tool schema), and the voice shows only where a person reads the output. The anatomy rules still apply — a tool error follows Tactic #10's effect → cause → fix.
+
 ### 6. The banned list and the review rubric
 
 - **Banned list:** start from the BONUS doc's universal LLM-isms (streamline, seamless, oops, "you can", "in order to", "successfully", …), then add product-specific bans from the Identity's we-don't-say list and anything caught in steps 3–5. Every entry gets its replacement.
@@ -114,7 +130,7 @@ Use the structure in [templates/copy-md.md](templates/copy-md.md). If the file a
 
 Re-read `docs/COPY.md` end to end:
 
-- [ ] Every section is present or explicitly skipped ("This product has none — section intentionally empty").
+- [ ] Every section is present or explicitly skipped ("This product has none — section intentionally empty"); for an Adapted shape, every surface in its row is covered and tool or skill descriptions state when to use and when not to.
 - [ ] Voice chart cells are followable rules, not adjectives; the mechanical rules are listed.
 - [ ] **Identity agreement:** the Identity's example sentence could appear in this product's UI under these rules — if not, surface which one is wrong.
 - [ ] Both lexicon tables exist and cover at least the product's core concepts.

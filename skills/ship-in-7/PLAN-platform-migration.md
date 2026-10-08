@@ -20,7 +20,7 @@
 
 - **The migration skill's rules are the plan's rules.** Secrets never export and are rotated; exports are point-in-time so the plan enforces a clean break; DNS cutover comes last; the old platform is paused only after the verification gate and the smoke test are both green. Don't compress any of that.
 - **Writes made after the snapshot must be accounted for, and `docs/MIGRATION.md` says how before anything is exported.** Either **freeze source writes before the export** (maintenance mode, or the platform's own pause, for the whole move) or **freeze at cutover and reconcile the delta**: every row, file and account created since the snapshot time is synced into the owned database and storage and checked at the gate. A migration with live users and no stated rule is not ready to move.
-- **Migration moves and rewires; it never improves.** No refactor, no redesign this week. `develop-refactor-plan` is for after the app is live and owned.
+- **Migration moves and rewires; it never improves.** No refactor, no redesign this week. `develop-prd-roadmap`'s existing-codebase mode (a gap roadmap in `docs/ROADMAP.md`) is for after the app is live and owned.
 - **Define backfill is short here.** `define-from-code` reads the live platform URL and the migrated code; the offer is already implicit in a product people may be using.
 - **If Day 1's inventory says it doesn't fit**, the honest composition is: Days 1–5 migrate and verify, Day 6 quality gate, Day 7 go live and smoke test, no buffer, announce dropped. Say so, and offer the alternative of running `develop-migrate` first and starting Ship in 7 once the app is owned.
 

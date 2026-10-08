@@ -1,7 +1,7 @@
 {
   "name": "productos",
-  "version": "1.15.0",
-  "description": "ProductOS — a complete operating system for taking a product from idea to revenue with AI agents. Installs inside your app repo as productos/, optionally ships with a coach-composed programme plan, and runs four phases (Define, Design, Develop, Distribute), each with checklists, worksheets, and 36 skills that write every output to your repo's docs/ folder.",
+  "version": "2.0.0",
+  "description": "ProductOS — a complete operating system for taking an AI product from idea to revenue with AI agents — apps, agent plugins and skills, MCP servers, chat assistants, developer tools, services, websites, and digital products. Installs inside your product's repo as productos/, optionally ships with a coach-composed programme plan, and runs four phases (Define, Design, Develop, Distribute), each with checklists, worksheets, and 44 skills that write every output to your repo's docs/ folder.",
   "author": {
     "name": "Chris Ashby",
     "email": "chris@telescope.design",
@@ -24,7 +24,7 @@
   "interface": {
     "displayName": "ProductOS",
     "shortDescription": "From idea to revenue with AI agents",
-    "longDescription": "ProductOS guides you through four phases — Define, Design, Develop, Distribute — each with checklists, worksheets, and skills. Your AI agent does the heavy lifting; the system keeps it honest, and every output lands in your repo's docs/ folder — one source of truth for your offer, design, build plan, and growth.",
+    "longDescription": "ProductOS guides you through four phases — Define, Design, Develop, Distribute — each with checklists, worksheets, skills, and an orchestrator that adapts every step to your product's shape: app, extension, agent plugin or skill, MCP server, chat assistant, developer tool, service, website, or digital product. Your AI agent does the heavy lifting; the system keeps it honest, and every output lands in your repo's docs/ folder — one source of truth for your offer, design, build plan, and growth.",
     "developerName": "Chris Ashby",
     "category": "Productivity",
     "capabilities": [
@@ -35,9 +35,9 @@
     "websiteURL": "https://telescope.design",
     "defaultPrompt": [
       "Set up ProductOS in my repo",
-      "Build my product offer (new project)",
-      "Start ship in 7 (existing project)",
-      "Run the next step in my ProductOS checklist",
+      "Start define (new project)",
+      "Audit my product (existing project)",
+      "What's next in my ProductOS plan?",
       "Update ProductOS to the latest version"
     ]
   }

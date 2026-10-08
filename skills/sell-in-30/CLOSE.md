@@ -4,11 +4,11 @@ Read this only when closing the challenge: Day 30's proof is confirmed, or the m
 
 ## 1. Check the bar honestly
 
-A payment (or an activated user, for a product staying free), or not. Partial rungs (a signup, "send me the link") are logged at their rung and named as what they are, never rounded up. Rewrite the header's status line to `Status: Closed · [date]`, so the root guidelines stop starting sessions with the check-in.
+The header's bar, verbatim — the shape's first sale (or an activated user, for a product staying free) — or not. Partial rungs (a signup, "send me the link") are logged at their rung and named as what they are, never rounded up. Rewrite the header's status line to `Status: Closed · [date]`, so the root guidelines stop starting sessions with the check-in.
 
 ## 2. Write the Sell Report
 
-Fill the Sell Report section of `docs/SELL-IN-30.md` (its structure is in the template): result vs the bar; the live URL, the price line and guarantee at close, whether checkout is live or still in test, stack and hosting; a one-line product state (what works, what doesn't); hours planned vs spent and available going forward; the Experiment Log totals per experiment (reach, responses, rungs); people reached, warm/cold; the rung reached each week; what the market said in its own words; every pivot review's recommendation and what the member did with it; what changed during the month; which canonical docs exist and are current; the biggest blocker; what the member wants next. Structured for the coach intake, so a member who books a call arrives with their situation documented. Ends with one line: *bring this to your call.*
+Fill the Sell Report section of `docs/SELL-IN-30.md` (its structure is in the template): result vs the bar; where it's live (URL, listing, or install link), the price line and guarantee at close, whether the shape's checkout is live or still in test, stack and hosting; a one-line product state (what works, what doesn't); hours planned vs spent and available going forward; the Experiment Log totals per experiment (reach, responses, rungs); people reached, warm/cold; the rung reached each week; what the market said in its own words; every pivot review's recommendation and what the member did with it; what changed during the month; which canonical docs exist and are current; the biggest blocker; what the member wants next. Structured for the coach intake, so a member who books a call arrives with their situation documented. Ends with one line: *bring this to your call.*
 
 ## 3. Draft the graduation Skool post
 

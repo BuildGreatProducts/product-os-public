@@ -51,6 +51,9 @@ Older plans may use retired names. Read them as follows, and don't rewrite the p
 | `docs/PRODUCT.md` | `docs/DEFINE.md` |
 | `cc-build-loop` / `codex-build-loop` / `cursor-build-loop` (before 1.15.0) | `build-loop` |
 | `develop-mvp-build` / `develop-refactor-build` (before 1.15.0) | `develop-build` |
+| `develop-refactor-plan` (before 2.0.0) | `develop-prd-roadmap` in existing-codebase mode — it writes the gap into `docs/ROADMAP.md` |
+| `docs/REFACTOR.md` | Still run by `develop-build` if it has unchecked tasks; new plans use `docs/ROADMAP.md` |
+| A plan with no `define-product-shape` step (before 2.0.0) | Insert nothing — annotate the plan's first Design step: *"run `define-product-shape` first (added in ProductOS 2.0)"*. |
 
 Annotate, don't recompose: this pass adjusts details the coach couldn't see, it does not redesign the programme. Anything bigger — the member's situation has genuinely changed, a phase no longer fits — goes back to the coach, who re-runs the intake and re-delivers an updated `PLAN.md` (replace `docs/PLAN.md` with it when it arrives).
 
@@ -58,10 +61,10 @@ Annotate, don't recompose: this pass adjusts details the coach couldn't see, it 
 
 - **Plan adopted** → read its **Your Programme** list and tell the member their literal first action — the exact checklist to open or skill to run, e.g. *"Run `define-from-code` — your plan fast-tracks Define from your existing app."*
 - **No plan anywhere** (and no challenge already open in `docs/`) → offer the two paths, and recommend the one the repo points to:
-  - **New project** — nothing built yet (the repo holds little beyond `productos/`, `docs/`, and config files): run **`define-offer-builder`**, Step 1 of `productos/define/DEFINE-CHECKLIST.md`, then work down the checklists phase by phase. No idea yet? `define-idea-finder` runs first and hands straight into it.
-  - **Existing project** — app code, a prototype, an AI-generated app, or an app on a prompt-to-app platform: run **`ship-in-7`** — seven sessions to the app live at a real URL, composed from the phase skills, with a check-in every session. (An app already live at a real URL has met Ship in 7's bar; offer its follow-on, **`sell-in-30`**, instead.)
+  - **New project** — nothing built yet (the repo holds little beyond `productos/`, `docs/`, and config files): run **`define-phase`**, which walks Define step by step from the offer (or from `define-idea-finder` when there's no idea yet), then hands on to each later phase's orchestrator.
+  - **Existing project** — product code, a prototype, an AI-generated app, an app on a prompt-to-app platform, a live service or listing: run **`product-audit`** — it scores the product across all four phases and writes a programme for it in `docs/PLAN.md`, which `product-refactor` then works through. Want a deadline instead? **`ship-in-7`** gets it live in seven sessions; already live with no paying customer, **`sell-in-30`**.
 
-  Say what you saw and which path it points to (*"There's a Next.js app in `src/`, so this is an existing project — start Ship in 7"*), and let the member pick the other if it fits better. (Custom programmes ship with coached copies of ProductOS.)
+  Say what you saw and which path it points to (*"There's a Next.js app in `src/`, so this is an existing project — start with the product audit"*), and let the member pick another if it fits better. (Custom programmes from a coach ship inside coached copies of ProductOS and replace an audit plan.)
 
 Setup installs the copy the member already has; it doesn't fetch a newer one. Re-running setup to pick up a new release? Run **`update`** instead — it brings `productos/` up to the latest version, moves anything an older copy left inside `productos/` into `docs/`, and runs steps 2–3 of this skill itself.
 

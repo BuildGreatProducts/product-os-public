@@ -12,6 +12,7 @@ This is the same idea as *Validate by Distribution* from `productos/define/BONUS
 
 - [Pick your channel first](#pick-your-channel-first)
 - [The twelve channels](#the-twelve-channels)
+- [Shape-native channels](#shape-native-channels) — the stores, marketplaces, registries and directories native to each product shape
 - [Running more than one channel](#running-more-than-one-channel)
 - [A starter sequence (by who you're selling to)](#a-starter-sequence-by-who-youre-selling-to)
 - [The most common channel mistakes](#the-most-common-channel-mistakes)
@@ -30,6 +31,8 @@ Every channel below is just a different answer to one question: *where is your c
 The single most common first-timer mistake is "I'll do a bit of everything" — a little TikTok, a little SEO, a launch, some cold emails, a referral program. Seven channels at 10% effort each all fail quietly. One channel at 100% effort produces signal you can actually read. Choose **one primary channel** and run it until it produces repeatable revenue (hit the pass threshold in its section), then — and only then — add a second.
 
 ### The decision tree
+
+First, the shape: if your product's shape has a native store, marketplace, or registry (see [Shape-native channels](#shape-native-channels)), that native channel is one of your three by default. The tree then picks the channel that sends its first users.
 
 Start at the top. Stop at the first "yes." This points you at a *starting* channel; the amplifiers (launch platforms, partnerships, referrals, ads) come later, once the starter channel is working.
 
@@ -335,6 +338,110 @@ The last channel to reach for, not the first. Ads are an **amplifier, not an ign
 > **Real example — Nico, Make Logo AI, ~$85K in 6 months.** Went fully organic first, then ran Facebook *static* ads into audience-specific landing pages once he knew which message converted.
 
 **Tools:** [BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §5 (Paid ads — creative & management).
+
+---
+
+## Shape-native channels
+
+Every product shape (see `productos/shapes/SHAPES.md`; the primary shape is named in `docs/DEFINE.md` → `## Product Shape`) has places where its customers already go *looking for that kind of thing*: a store, a marketplace, a registry, a directory. That is the shape's **native channel**. It's usually a version of #5 Platform ecosystems or #4 Search, and it's the one channel a product of that shape can't afford to skip, because it's where intent already lives. A browser extension nobody can find in the Chrome Web Store has to buy every user it gets; one that ranks for its core keyword gets installs while its maker sleeps.
+
+### The native-channel rule
+
+- **One of your three channels is the shape's native channel**, unless there's a stated reason it isn't (the store bans the category, the product sells only to a named list of enterprise buyers, the member already owns a stronger channel). Say the reason out loud; don't drop it silently.
+- **It's rarely enough alone.** Native discovery rewards products that already have installs, reviews, and usage. Pair it with a channel that sends the first users (communities, outreach, a launch), whose installs and reviews then lift the native ranking.
+- **Your listing is the landing page.** On a store or marketplace, the listing (name, short description, images, first lines, reviews) does the job a landing page does on the web. `design-app-listing` writes App Store / Google Play listings; `design-marketplace-listing` writes every other store, marketplace, or registry listing.
+- **Build the owned list anyway.** You're a tenant on every store. Capture an email or account at first use so a policy or ranking change can't cut you off from the customers you already have.
+
+### How discovery works on any store or directory
+
+The mechanics differ by platform, but the same five forces decide who gets found almost everywhere. Optimize them in this order:
+
+1. **Relevance** — the words in the name, short description, keywords and categories match what customers type. Use the customer's words from the Persona, not your category jargon.
+2. **Conversion** — of the people who see the listing, how many install, add, or buy. Images, the first line, and the price shown do most of this work.
+3. **Social proof** — the number, recency, and average of ratings and reviews. Most stores weight recent reviews, so a steady trickle beats one launch-day burst.
+4. **Usage and retention** — installs that stay installed, servers that keep getting called, buyers who don't refund. Stores increasingly read whether people *keep* using what they found.
+5. **Curation** — editorial features, badges, "staff picks", official directories. Usually earned by quality and policy compliance, often requested through a form, never bought.
+
+Directories and registries without a ranking algorithm (a plain list, a GitHub "awesome" list, a registry that only records metadata) reward the first two forces plus being *listed at all* — get into every legitimate one the shape's customers browse, and keep the entry current.
+
+### By shape — last reviewed October 2026, re-verify before quoting
+
+Store names, fees, badges, review rules, and the existence of newer marketplaces change often; agent-tool marketplaces especially. Check each platform's current documentation before quoting any of this to a member.
+
+#### `web-app`
+
+- **Native places:** search (Google and AI answers) is the native channel; then launch platforms (Product Hunt, Hacker News "Show HN"); software review directories for B2B (G2, Capterra); AI-tool directories for AI products; and the integration directories of tools it connects to (Zapier, Slack, HubSpot, Shopify app listings).
+- **Discovery:** search ranks pages by intent match and authority (links, depth on the topic); review directories rank by review count, recency and category fit; launch platforms rank on a single day's votes and comments.
+- **First move:** one page per high-intent search ("[job] tool for [persona]", "[competitor] alternative"), and a listing in the integration directory of the platform the persona already uses.
+
+#### `mobile-app`
+
+- **Native places:** Apple's App Store and Google Play.
+- **Discovery:** App Store search reads the app name, subtitle, and a hidden keyword field; Google Play reads the title, short description and full description. Both weight install velocity, ratings and reviews, and conversion from listing view to install; Google Play also reads uninstalls and engagement. Editorial features are requested (Apple has a featuring nomination form in App Store Connect). Both stores offer native listing tests (Apple's product page optimization and custom product pages; Google Play's store listing experiments).
+- **Fees (dated):** Apple's Developer Program is $99 a year and Google Play registration is a one-time $25; both take 15% of digital sales for small developers (Apple's Small Business Program, Google's first $1M a year) and up to 30% otherwise. Rules for linking out to web payments have been changing by region since 2024–2025; check the current guidelines.
+- **First move:** keyword research for the persona's search terms, a listing written by `design-app-listing`, and a review prompt placed right after the magic moment.
+
+#### `desktop-app`
+
+- **Native places:** the Mac App Store and Microsoft Store; Setapp (a curated Mac subscription bundle you apply to); Homebrew casks for technical buyers; software-alternative directories (AlternativeTo) and Mac-app curators; Product Hunt and Hacker News for launches.
+- **Discovery:** desktop store search is weaker than mobile, so most desktop apps sell direct — a website, search, and a launch — and use the stores as a trust signal. Alternative directories rank by user likes against a named incumbent ("alternative to X").
+- **First move:** an "alternative to [incumbent]" listing on AlternativeTo and a comparison page on the site; apply to Setapp if the app is Mac-only and subscription-friendly.
+
+#### `browser-extension`
+
+- **Native places:** the Chrome Web Store (also serves Edge, Brave, Arc and other Chromium browsers), Microsoft Edge Add-ons, Firefox Add-ons, and Safari extensions via the Mac App Store.
+- **Discovery:** store search matches the name and short description; ranking weights user count, ratings count and average, and recent updates. Chrome's **Featured** badge is granted by manual review for best practices and a clear listing (request it through Chrome Web Store support); the **Established Publisher** badge comes automatically after identity verification and a clean track record over months. Google says badged extensions *may* rank higher.
+- **Fees (dated):** the Chrome Web Store charges a one-time $5 developer registration and has no built-in payments; charge through your own checkout or a licence service.
+- **First move:** a listing written by `design-marketplace-listing` around the one job, five screenshots of that job, and a review prompt after the first successful use.
+
+#### `agent-plugin`
+
+- **Native places:** Anthropic's plugin directory (surfaced in Claude Code as the official marketplace and in Cowork; submission by in-app form, reviewed), any git repo published as a Claude Code plugin marketplace (`/plugin marketplace add owner/repo`), the Cursor Marketplace (manually reviewed; community plugins on cursor.directory), Codex's plugin listings, GitHub itself, and community-curated "awesome" lists for each tool. The communities are the tools' own Discords, subreddits, and X/LinkedIn circles.
+- **Discovery:** official directories are curated, not ranked by an algorithm — getting listed is the win. Outside them, discovery is GitHub stars, inclusion in curated lists, word of mouth in the tool's community, and demos of the plugin doing one job end to end. A cross-tool plugin (one repo installable in several agents) multiplies the reachable audience.
+- **First move:** a public repo with a README that shows the first successful output in under a minute, submission to each official directory the plugin supports, and a demo post in the tool's main community.
+
+#### `agent-skill`
+
+- **Native places:** Anthropic's skills directory and the `anthropics/skills` repo; skills bundled into a plugin (then every `agent-plugin` place applies); third-party skill directories built on the open Agent Skills format published at agentskills.io (several exist; catalogue sizes and security review vary widely — some scrape GitHub with no review); community "awesome" lists.
+- **Discovery:** mostly curation and word of mouth. Agents choose a skill by its description at run time, so the description is also the in-product ranking signal: a skill whose description matches the member's request gets used, one that doesn't sits idle.
+- **First move:** ship the skill inside a small plugin so it installs in one command, list it in the official directory and one reputable third-party directory, and demo the before/after output in the persona's own community (not only AI-builder circles).
+
+#### `mcp-server`
+
+- **Native places:** the official MCP Registry (registry.modelcontextprotocol.io — an open metadata registry, still labelled a preview, that requires namespace verification; other directories build on it), GitHub's MCP registry, Anthropic's connectors directory for Claude, ChatGPT's app directory (apps built on MCP with the Apps SDK, reviewed by OpenAI), the Cursor Marketplace and cursor.directory, and independent directories (Smithery, PulseMCP, Glama, mcp.so). Also the integration pages of the system it connects to.
+- **Discovery:** the official registry only records that a server exists; ranking happens in the directories and clients built on top, which weight usage, GitHub stars, recency, and curation. Listing in a client's own directory (Claude, ChatGPT, Cursor) puts the server in front of users at the moment they add tools.
+- **Fees and rules (dated):** ChatGPT apps could not sell digital goods or subscriptions in-app at launch (December 2025); check whether that has changed.
+- **First move:** publish to the official registry, submit to the directories of the two clients the persona uses most, and write the integration page the connected system's users will search for ("[system] MCP server").
+
+#### `chat-assistant`
+
+- **Native places:** the GPT Store inside ChatGPT (custom GPTs); ChatGPT's app directory for richer apps; the Slack Marketplace, Microsoft Teams store, and Discord's App Directory for workspace bots (top.gg for community Discord bots); Telegram and WhatsApp have no real store, so their bots travel by link, QR code, and the communities that run on those apps.
+- **Discovery:** the GPT Store ranks by usage and ratings within categories, with editorial picks; workspace marketplaces rank by installs, reviews and category, and reward a listing that names the job in the first line. Off-store bots grow only through the communities they serve.
+- **First move:** a store listing that names one job, and a "try it" link posted where the persona already talks — the bot used live in front of them is the demo.
+
+#### `developer-tool`
+
+- **Native places:** the package registry for the language (npm, PyPI, crates.io, RubyGems, Go modules), Homebrew for CLIs, GitHub (stars, Trending, README), Docker Hub, API marketplaces and networks (RapidAPI, Postman's API Network), and the developer communities: Hacker News, the language's subreddit and Discord, dev.to.
+- **Discovery:** registries search by package name, keywords and description and surface download counts, recent releases and maintenance signals; GitHub Trending ranks star velocity; documentation pages rank in search and increasingly in AI coding assistants' answers.
+- **First move:** a README with a copy-paste quickstart that reaches the first successful call in under five minutes, registry keywords in the developer's own terms, and a "Show HN" once a real user has succeeded with it.
+
+#### `productized-service`
+
+- **Native places:** no store; the native channels are **outreach and referrals**. Freelance marketplaces with fixed-price catalogues (Upwork's Project Catalog, Fiverr, Contra, Malt in Europe); partner and expert directories of the platforms the service works on (Shopify Partners, HubSpot Solutions, Webflow Experts, Xero and QuickBooks advisor directories); LinkedIn, where most B2B buyers of services are reachable by name.
+- **Discovery:** marketplaces rank sellers by reviews, completion and response rates, repeat clients, and recent earnings — new sellers start at the bottom and climb by delivering. Partner directories rank by certification tier and reviews.
+- **First move:** a named list of 30 buyers who match the persona and a fixed-price offer sent personally; a marketplace listing as a second channel, priced to win the first reviews.
+
+#### `website`
+
+- **Native places:** search (Google, Google Discover, AI answers) is the native channel; newsletter recommendation networks (Substack Recommendations, beehiiv's recommendation network and Boosts, SparkLoop); Reddit and the niche's forums, where directories and resources get shared; for directories, the "list of lists" and resource roundups in the niche.
+- **Discovery:** search rewards topical depth (many pages answering the niche's questions), internal links, and links from the niche's own sites; recommendation networks reward a newsletter that converts readers it's shown to.
+- **First move:** the twenty pages answering the twenty questions the persona searches, and a recommendation swap with two newsletters the same reader already gets.
+
+#### `digital-product`
+
+- **Native places:** marketplaces for the format — Etsy (digital downloads), Gumroad Discover, the Notion Marketplace (templates), Framer and Webflow marketplaces, Figma Community, Creative Market, Envato, Udemy (courses) — plus the creator's own audience, where most sales happen.
+- **Discovery:** marketplace search ranks by keyword match in title and tags, listing quality, conversion, and reviews; Gumroad Discover surfaces products that already sell; template marketplaces add editorial features. Marketplace fees are usually far higher than a direct checkout's, which is why creators use marketplaces for discovery and their own page for repeat buyers.
+- **First move:** list the product on the one marketplace where buyers of that format search, with preview images of the finished result; send every buyer to an email list for the next product.
 
 ---
 

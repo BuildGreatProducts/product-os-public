@@ -6,9 +6,9 @@
 
 ## The recommended magic moment
 
-> [One sentence: when the user does X, they experience Y. That is the moment they realize this product is worth keeping.]
+> [One sentence: when the user does X, they experience Y. That is the moment they realize this product is worth keeping. Name the medium it happens in — a screen, a terminal, a chat, an inbox, a delivered file.]
 
-**Where it sits:** [pre-signup / first 60 seconds / first session / day 1 / day 3 / day 7]
+**Where it sits:** [pre-signup / first 60 seconds / first session / day 1 / day 3 / day 7 — screenless shapes: pre-install / first command or message / first session / first delivery / day 7]
 **Time-to-aha target:** [specific time bound — e.g., "<60 seconds from landing on the homepage"]
 **Success metric:** [measurable threshold — e.g., "X% of new accounts complete Y within Z minutes"]
 

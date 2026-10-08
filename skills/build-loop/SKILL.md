@@ -5,7 +5,7 @@ description: >-
   fix loop per task, then one review pass with the tool's own /review (plus a security pass for
   sensitive surfaces) once the work is finished. Use when the user says "run the build loop", "build
   the next task", "continue the plan", or asks to implement work from a plan file or a direct prompt.
-  Works in any repo. Not for running a whole roadmap or refactor plan in one go — use develop-build.
+  Works in any repo. Not for running a whole roadmap in one go — use develop-build.
 ---
 
 # Build Loop

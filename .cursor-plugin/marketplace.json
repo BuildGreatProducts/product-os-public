@@ -5,13 +5,13 @@
     "email": "chris@telescope.design"
   },
   "metadata": {
-    "description": "ProductOS — a complete operating system for taking a product from idea to revenue with AI agents."
+    "description": "ProductOS — a complete operating system for taking an AI product from idea to revenue with AI agents — apps, agent plugins and skills, MCP servers, chat assistants, developer tools, services, websites, and digital products."
   },
   "plugins": [
     {
       "name": "productos",
       "source": ".",
-      "description": "Four phases (Define, Design, Develop, Distribute) with checklists, worksheets, and 36 skills that take a product from idea to revenue."
+      "description": "Four phases (Define, Design, Develop, Distribute) with checklists, worksheets, and 44 skills that take any shape of AI product from idea to revenue."
     }
   ]
 }

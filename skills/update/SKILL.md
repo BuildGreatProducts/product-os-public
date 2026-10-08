@@ -140,6 +140,12 @@ Take each `KEEP`, `CONFLICT`, `GONE`, and `MINE` file one at a time. Never disca
 - The repo root (outside `productos/`, so step 3 never lists them) holds `design-review/`, `CRO-AUDIT.md`, or `ACTIVATION-RETENTION-AUDIT.md` — check directly.
 - `docs/PRODUCT.md` or `docs/LAUNCHES.md` exists.
 
+**Crossing into 2.0.0.** Nothing in `docs/` moves. Tell the member what changed for their repo:
+
+- `docs/DEFINE.md` has no `## Product Shape` section yet → run `define-product-shape` (a short session) before the next Design or Develop step; until then the orchestrators and status script treat the product as a `web-app`.
+- An unfinished `docs/REFACTOR.md` still runs with `develop-build`; future planning on an existing codebase uses `develop-prd-roadmap` in existing-codebase mode.
+- New ways in: `python3 productos/scripts/status.py` shows progress, the phase orchestrators (`define-phase` … `distribute-phase`) walk each phase, and `product-audit` composes a plan for an existing product.
+
 **Everything else:**
 
 - **`CONFLICT`** — a file the member edited that also changed upstream (usually a skill or guide they customised). Show what changed: the CHANGELOG line, plus `git -C "$STAGE" diff --stat "$BASE" HEAD -- <path>` for the shape of the change. Offer to reapply their edit on top of the latest version, or keep their file exactly as it is. Their call.

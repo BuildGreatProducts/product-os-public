@@ -1,6 +1,6 @@
 # Sell in 30 — week one: Not yet live, one deploy away
 
-*The app runs locally, deploy config or `docs/DEPLOY.md` is in progress, and the member can be live within the first few days. Anyone further from live than that belongs in `ship-in-7`. The bar is a payment (or an activated user, if the product stays free this month).*
+*The product is built, deploy or publish (`docs/DEPLOY.md`) is in progress, and the member can be live by the shape's Live-means bar within the first few days. Anyone further from live than that belongs in `ship-in-7`. The bar is a payment (or an activated user, if the product stays free this month).*
 
 **Honest note at enrol:** this is the tightest week one in the challenge. Two sessions of deploy push the offer review, messaging, checkout, warm asks, strategy and experiments into five. Say so, and recommend more hours for this week than for the rest.
 
@@ -9,8 +9,8 @@
 | Day | Block | Skill(s) | Proof |
 | --- | --- | --- | --- |
 | 1 | **Go live: the guide** | `develop-security-audit` first unless `docs/SECURITY-AUDIT.md` exists, is current, and covers the code being deployed (absent, outdated, or narrower than today's scope → re-run it); Critical findings fixed before deploy; then `develop-golive` → work `docs/DEPLOY.md`: accounts, secrets, services | `docs/DEPLOY.md`; accounts created; production services configured |
-| 2 | **Go live: the deploy + offer review** | finish `docs/DEPLOY.md`; smoke test as a real customer; then `define-from-code` if needed → `define-offer-review` | live URL, smoke test passed; a sharpened offer |
-| 3 | **Messaging alignment + checkout live** | landing page / listing copy from the reviewed offer, shipped; `define-pricing` if the Pricing Strategy section of `docs/DEFINE.md` is missing or unfilled; payments live and a real test purchase, refunded the same session and never counted toward the bar (skip both the pricing and checkout halves if staying free) | before/after of the live hero; the test-purchase receipt |
+| 2 | **Go live: the deploy + offer review** | finish `docs/DEPLOY.md`; the shape's Live-means bar passed as a real customer; then `define-from-code` if needed → `define-offer-review` | live by the shape's bar, smoke test passed; a sharpened offer |
+| 3 | **Messaging alignment + checkout live** | landing page / app listing / marketplace listing copy (whichever surfaces the shape uses) from the reviewed offer, shipped; `define-pricing` if the Pricing Strategy section of `docs/DEFINE.md` is missing or unfilled; the shape's checkout live (SKILL.md, *Checkout live, by shape*) and a real test purchase, refunded the same session and never counted toward the bar (skip both the pricing and checkout halves if staying free) | before/after of the live hero; the test-purchase receipt |
 | 4 | **Warm list + warm conversations** | the warm list written in `docs/SELL-IN-30.md`; the warm ask to each, personally, link in hand; every response logged in the Experiment Log | sent-folder screenshot; the warm list |
 | 5 | **Channel** | `distribute-gtm-strategy` | `docs/GO-TO-MARKET.md` |
 | 6 | **Experiments + follow-ups** | `distribute-growth-experiments`, briefed with the bar and the clock | `docs/GROWTH-EXPERIMENTS.md`; `docs/GROWTH-TRACKER.md` seeded |

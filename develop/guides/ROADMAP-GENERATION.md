@@ -10,6 +10,7 @@ You are generating `docs/ROADMAP.md` — a phased build plan with checkboxes tha
 - [Section Requirements](#section-requirements)
 - [Task Writing Guidelines](#task-writing-guidelines)
 - [Output Structure](#output-structure)
+- [Shape notes](#shape-notes)
 
 ## Input
 
@@ -79,6 +80,14 @@ The founder’s magic moment (from `docs/MAGIC-MOMENT.md` and the PRD’s Overvi
 ```
 
 The status line should be set to `0/Y tasks complete` and `Phase 0` when first generated. The coding agent updates this as it works.
+
+**Existing-codebase roadmaps** (a gap roadmap from `develop-prd-roadmap`'s existing-codebase mode) use the same header plus one mode line directly under the title, which `develop-build` reads to apply its existing-codebase rules:
+
+```markdown
+> **Mode:** existing-codebase — a gap roadmap from the current code to docs/PRD.md. Baseline: tag pre-refactor-{YYYY-MM-DD} on branch refactor/{YYYY-MM-DD}.
+```
+
+They replace Build Philosophy with a Refactor Philosophy (the app stays runnable after every phase; removals before rebuilds) and end with a `## Decisions` footer — see that skill's `references/existing-codebase.md`.
 
 -----
 
@@ -334,3 +343,27 @@ Reference sections:
 ## Agent Session Guide
 ...
 ```
+
+-----
+
+## Shape notes
+
+The rules above hold for every shape: three-line tasks, sequential IDs, a foundation phase first, every phase demoable, the magic moment reached by the end of the core phases, a polish and launch phase last. What changes is what goes in the phases. Read the primary shape from `docs/DEFINE.md` → `## Product Shape` and adapt:
+
+- **Screen shapes** (`web-app`, `mobile-app`, `desktop-app`, `browser-extension`) — the phase guidance above as written. Desktop adds packaging, signing, and auto-update tasks to the launch phase; extensions add the manifest and permissions to the foundation and store assets to the launch phase.
+- **`agent-skill`** — Foundation: the skill folder, frontmatter with the draft description, and the host install the member will test in. Core: one phase (or one group of tasks) per core job — SKILL.md workflow, its references, its scripts. Launch: triggering tuned across the model set, packaging, and a clean-install test.
+- **`agent-plugin`** — Foundation: the manifest and a local install in each target host. Core: components grouped by the job they serve, skills first, then commands, hooks, and connectors. Launch: the marketplace manifest, versioning, and installing from the marketplace in a clean environment.
+- **`mcp-server`** — Foundation: the SDK scaffold, the transport, and one trivial tool called successfully from a real client. Core: tools grouped by job, each with its schema, description, and errors. Then auth and hosting for a remote server. Launch: descriptions and error messages tuned, limits enforced, the package or deployment published.
+- **`chat-assistant`** — Foundation: the platform set up, the system prompt v1, and the knowledge loaded. Core: the actions and multi-turn flows per job. A guardrails phase (scope, refusals, escalation) before launch.
+- **`developer-tool`** — Foundation: the repo, packaging, CI, and a dry-run publish to the registry. Core: the public surface. A docs phase is required, not polish: the quickstart works from a clean machine before launch.
+- **`productized-service`** — Most tasks configure tools rather than write code. Foundation: booking, payments, intake, and the client record. Core: the delivery SOP — its templates, prompts, and automations — then a pilot: one client (a friend at full price, or the member as the client) taken from booking to delivery. Launch: QA checklist, touchpoint messages, capacity limits.
+- **`website`** — Foundation: the builder or framework, the content model, and hosting. Core: the templates and enough seed content to be useful on day one (a directory needs its first listings). An SEO task group sits in the launch phase.
+- **`digital-product`** — Foundation: the storefront and the delivery path, proven with a test purchase that delivers a placeholder. Core: producing the contents, item by item. Launch: the product page, preview assets, and the buyer's first-open experience.
+
+**Tasks the coding agent can't do** — creating an account, filling a store or marketplace form, building in a no-code tool, a pilot with a real client — still use the three-line format. Start their Notes with `Owner: member.`, say exactly what to do and where, and end with a `Verify:` the member can confirm. `develop-build` prepares what it can, asks the member, and checks the task off once they confirm.
+
+**Eval tasks** — when Develop Step 1b is scheduled (Full for `agent-skill`, `agent-plugin`, `mcp-server`, and `chat-assistant`; any product whose core is an AI output), `develop-agent-evals` runs after this roadmap and writes `docs/EVALS.md`. The roadmap plans for it:
+
+- Each core-job task's `Verify:` names the job's scenarios: "Verify: run the EVALS.md scenarios for {job} on the mid model; every rubric item passes."
+- An **Evals & tuning** phase (or task group, for small products) sits before the launch phase: run every scenario across the model set, refine the product until the rubrics pass, and log each run in `docs/EVALS.md`. Add its reference line: `docs/EVALS.md`.
+- Add a foundation task that runs `develop-agent-evals` if `docs/EVALS.md` doesn't exist yet (its Verify: the file has at least three scenarios per core job and a baseline run).

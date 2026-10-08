@@ -17,7 +17,7 @@
 ## Notes for the composer
 
 - **`design-design-system-from-code` is the wrong tool here.** It reverse-engineers the system already in the code; on this path the code has no system worth keeping. Use `design-design-system` from an image the member picks, so the rebuild has a look to converge on.
-- **Rebuild, don't refactor.** `develop-refactor-plan` audits code against a PRD; this path has no PRD and the problem is the surface, not the structure. `develop-design-better` plus the build loop, screen by screen, is the mechanism. If the code is genuinely a mess underneath (the security audit or the code review says so), the local-prototype plan's Day 3 fixes apply and one rebuild day is dropped.
+- **Rebuild, don't refactor.** `develop-prd-roadmap`'s existing-codebase mode writes a gap roadmap against a PRD; this path has no PRD and the problem is the surface, not the structure. `develop-design-better` plus the build loop, screen by screen, is the mechanism. If the code is genuinely a mess underneath (the security audit or the code review says so), the local-prototype plan's Day 3 fixes apply and one rebuild day is dropped.
 - **Two rebuild days cover the core flow, not the app.** Signup, onboarding, the magic moment screen, and whatever the highest-traffic screen is. Settings pages, admin screens, and edge states are later.
 - **The copy fix list is part of the rebuild.** `design-ux-writing`'s audit produces an executable fix list for the real UI strings; Day 4 applies it alongside the visual rebuild so the app stops speaking in marketing English too.
 

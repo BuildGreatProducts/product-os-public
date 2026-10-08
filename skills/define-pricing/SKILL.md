@@ -23,8 +23,9 @@ Read inputs from `docs/` and the worksheets and references from `productos/defin
 2. **`3-Pricing-Strategy.md`** — the worksheet's section structure, prompts, tables, and `> Good/Bad` criteria. Read it; never write to it.
 3. **`BONUS-Business-Models.md`** — **required**, read selectively in step 3.
 4. **`BONUS-Pricing-Models.md`** — **required**, read selectively in steps 4 and 6.
-5. **`## 2. Customer Persona`** in `docs/DEFINE.md`, if filled — optional but the single most useful input: willingness-to-pay, anchor products, and budget bucket set the value ceiling.
-6. **`BONUS-Real-Business-Strategy-Examples.md`** — calibration only: its How the Business Earns and Pricing Model rows show well-matched models and plan structures across six real businesses. Never retrofit the member onto one.
+5. **`## Product Shape`** in `docs/DEFINE.md` and its shape file's *Define notes* (`productos/shapes/<slug>.md`) — the shape sets the usual models and who collects the money (a marketplace's fees and payouts, a store's in-app purchase rules, a service's invoices). If the section is empty, recommend running `define-product-shape` first; pricing a product whose shape isn't decided usually prices the wrong thing.
+6. **`## 2. Customer Persona`** in `docs/DEFINE.md`, if filled — optional but the single most useful input: willingness-to-pay, anchor products, and budget bucket set the value ceiling.
+7. **`BONUS-Real-Business-Strategy-Examples.md`** — calibration only: its How the Business Earns and Pricing Model rows show well-matched models and plan structures across six real businesses. Never retrofit the member onto one.
 
 Ask, too, whether the member has had any real customer replies or conversations that touched on price — a stranger who asked about the price is worth more than any benchmark.
 

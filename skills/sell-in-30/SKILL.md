@@ -13,9 +13,9 @@ description: >-
 
 Sell in 30 takes a member with a live product and no paying customer to **their first payment in thirty sessions**. It is the natural next challenge after `ship-in-7`, and it is an orchestrator: week one runs the foundations through existing ProductOS skills; weeks two to four run the member's own growth experiments, one a week, each read honestly on the seventh session. This skill owns the sequencing, the daily check-in, the Experiment Log, the weekly read, and the close in `docs/SELL-IN-30.md`; it never teaches what the skills it runs already teach.
 
-**The bar:** one payment. Not a signup, not a friend's "I'd pay for that". **For a product that will not charge within the thirty days, the bar is one activated user** — a real person reaching the magic moment (`docs/MAGIC-MOMENT.md`); the price and checkout blocks drop out of the plan. The skill asks which at enrol.
+**The bar:** one payment, **as the product's shape defines a first sale.** It comes from `docs/DEFINE.md` → `## Product Shape` → `### First Sale Means`, which `define-product-shape` writes from the shape file's `## First sale means` (`productos/shapes/<slug>.md`; from this skill's folder, `../../shapes/<slug>.md`); if the DEFINE section lacks that subsection, read the shape file's. A web app's is a real payment through its live checkout that unlocks the paid plan; a mobile app's is a real in-app purchase through the store; an MCP server's is a paid plan whose key makes authenticated calls; a productized service's is a paid first engagement. Not a signup, not a friend's "I'd pay for that", never the member's own test purchase. **For a product that will not charge within the thirty days, the bar is one activated user** — a real person reaching the magic moment (`docs/MAGIC-MOMENT.md`; for shapes without screens, the shape's first successful output); the price and checkout blocks drop out of the plan. The skill asks which at enrol.
 
-**Prerequisite:** the product is reachable by customers, or can be within the first few days. A member one deploy away enrols with go-live as the opening blocks. Anyone further from live is routed to `ship-in-7` first.
+**Prerequisite:** the product is live by its shape's Live-means bar, or can be within the first few days. A member one deploy away enrols with go-live as the opening blocks. Anyone further from live is routed to `ship-in-7` first.
 
 **Register:** coach at the moment of fear. Celebrate the rung, then anchor it. Never shame a zero. Blunt about proof and about the pass bar, warm about everything else.
 
@@ -25,12 +25,13 @@ Sell in 30 takes a member with a live product and no paying customer to **their 
 
 Read inputs from `docs/` and the ProductOS folder (`productos/`) at the app repo root.
 
-1. **The repo and the live product.** The production URL; a price on the site; a payments integration (Stripe products, checkout routes); acquisition surfaces (landing page, app store listing); deploy config if not yet live.
-2. **The ProductOS documents**, if any: `docs/DEFINE.md`, `docs/MAGIC-MOMENT.md`, `docs/LANDING-PAGE.md` / `docs/APP-LISTING.md`, `docs/GO-TO-MARKET.md`, `docs/GROWTH-EXPERIMENTS.md`, `docs/GROWTH-TRACKER.md`.
-3. **The member**, for what code can't say: signups or usage today (asked, never inferred), any responses so far (replies, conversations, anyone who tried it or offered to pay), who they can already reach, whether they will charge within the thirty days.
-4. **`docs/PLAN.md`**, if present (a coached copy): compose around its Distribute steps and annotate it; never override it.
-5. **`docs/SELL-IN-30.md`**, if present: an open challenge means a check-in, a read, or a close, not an enrol. **`docs/SHIP-IN-7.md`** open means close it first; only one challenge runs at a time.
-6. **The plan library in this folder:** [PLAN-live-free-will-charge.md](PLAN-live-free-will-charge.md), [PLAN-live-priced.md](PLAN-live-priced.md), [PLAN-live-free-staying-free.md](PLAN-live-free-staying-free.md), [PLAN-one-deploy-away.md](PLAN-one-deploy-away.md), [PLAN-live-with-users.md](PLAN-live-with-users.md), [PLAN-after-ship-in-7.md](PLAN-after-ship-in-7.md), and [SELL-IN-30-TEMPLATE.md](SELL-IN-30-TEMPLATE.md). Read only the plan file for the member's starting point.
+1. **The Product Shape** — `docs/DEFINE.md` → `## Product Shape` (`### Primary Shape`, `### First Sale Means`), then only the `## First sale means` section of the shape file, and its Design route's Step 7 row for which acquisition surfaces the shape uses. Missing → enrol runs `define-product-shape` as a short fast-track session before composing.
+2. **The repo and the live product.** Where it's live (URL, store listing, marketplace or registry entry); a price; a payments setup (Stripe products, checkout routes, a payment link, in-app purchases, a marketplace payout account); acquisition surfaces (landing page, app listing, marketplace listing); deploy config if not yet live.
+3. **The ProductOS documents**, if any: `docs/DEFINE.md`, `docs/MAGIC-MOMENT.md`, `docs/LANDING-PAGE.md` / `docs/APP-LISTING.md` / `docs/MARKETPLACE-LISTING.md`, `docs/GO-TO-MARKET.md`, `docs/GROWTH-EXPERIMENTS.md`, `docs/GROWTH-TRACKER.md`.
+4. **The member**, for what code can't say: signups or usage today (asked, never inferred), any responses so far (replies, conversations, anyone who tried it or offered to pay), who they can already reach, whether they will charge within the thirty days.
+5. **`docs/PLAN.md`**, if present (a coached copy): compose around its Distribute steps and annotate it; never override it.
+6. **`docs/SELL-IN-30.md`**, if present: an open challenge means a check-in, a read, or a close, not an enrol. **`docs/SHIP-IN-7.md`** open means close it first; only one challenge runs at a time.
+7. **The plan library in this folder:** [PLAN-live-free-will-charge.md](PLAN-live-free-will-charge.md), [PLAN-live-priced.md](PLAN-live-priced.md), [PLAN-live-free-staying-free.md](PLAN-live-free-staying-free.md), [PLAN-one-deploy-away.md](PLAN-one-deploy-away.md), [PLAN-live-with-users.md](PLAN-live-with-users.md), [PLAN-after-ship-in-7.md](PLAN-after-ship-in-7.md), and [SELL-IN-30-TEMPLATE.md](SELL-IN-30-TEMPLATE.md). Read only the plan file for the member's starting point.
 
 ## Which mode is this?
 
@@ -49,7 +50,7 @@ Confirm with the member in one line before proceeding.
 
 | Week | What it is | Ends with |
 | --- | --- | --- |
-| **1 · Foundations** | Backfill and **review the Product Offer**; **align every acquisition surface** with it; go live if needed; checkout live with a real test purchase; asks to the warm network; then `distribute-gtm-strategy` and `distribute-growth-experiments` | Weekly read + Skool post |
+| **1 · Foundations** | Backfill and **review the Product Offer**; **align every acquisition surface** with it; go live if needed; the shape's checkout live, proven with a real test purchase; asks to the warm network; then `distribute-gtm-strategy` and `distribute-growth-experiments` | Weekly read + Skool post |
 | **2 · Experiment 1** | The highest-leverage experiment from the member's own backlog, run to its pass bar, every session's result captured in the Experiment Log | Read: **continue or kill** + **pivot review** + Skool post |
 | **3 · Continue or next** | Continue experiment 1 (double down or iterate) or start the next from the queue | Read: continue or kill + pivot review + Skool post |
 | **4 · Continue or next** | Same | Read: continue or kill + pivot review + Skool post |
@@ -70,13 +71,13 @@ Only week one changes with the starting point (the plan files). Weeks two to fou
 
 Check the four `setup` conditions (inside a git repo; root `CLAUDE.md`/`AGENTS.md` carry the PRODUCTOS block; `productos/` gitignored *and* untracked, `git ls-files productos` empty; any shipped plan moved to `docs/PLAN.md`). **If any fails, run `setup` in full now**, then continue.
 
-### 2. Prerequisite check
+### 2. Shape and prerequisite check
 
-Reachable now, or within the first few days (deploy config exists, or `docs/DEPLOY.md` is in progress)? Neither → stop and route to `ship-in-7`. `docs/SHIP-IN-7.md` open → close it first.
+Read `docs/DEFINE.md` → `## Product Shape`; if it's missing, run `define-product-shape` now as a short fast-track session, then state the primary shape and its Live-means and First-sale-means bars back in one line. Then: live by the shape's Live-means bar now, or within the first few days (deploy config exists, `docs/DEPLOY.md` is in progress, a store review is pending)? Neither → stop and route to `ship-in-7`. `docs/SHIP-IN-7.md` open → close it first.
 
 ### 3. Read the evidence and show it
 
-Live URL, price on the site, payments integration, acquisition surfaces, the Define and Distribute docs that exist. Then ask the member what the code can't say: signups or usage today, the responses so far and the furthest any got (a reply, a conversation, a signup, a payment), who they can already reach. One short block, facts only.
+Where it's live, the price, the payments setup, acquisition surfaces, the Define and Distribute docs that exist. Then ask the member what the code can't say: signups or usage today, the responses so far and the furthest any got (a reply, a conversation, a signup, a payment), who they can already reach. One short block, facts only.
 
 ### 4. Ask the starting point, and the bar
 
@@ -84,16 +85,16 @@ Present the starting points the evidence fits, plus "none of these", and **ask**
 
 | Starting point | Typical evidence | Plan file |
 | --- | --- | --- |
-| **Live, free, will charge** | Live URL; no price; no payments | `PLAN-live-free-will-charge.md` |
-| **Live, priced, nobody has paid** | Price on the site, or Stripe in place (live or test); nobody has paid yet | `PLAN-live-priced.md` |
+| **Live, free, will charge** | Live (URL, listing, or install link); no price; no payments | `PLAN-live-free-will-charge.md` |
+| **Live, priced, nobody has paid** | A price on the page or listing, or a payments setup in place (live or test); nobody has paid yet | `PLAN-live-priced.md` |
 | **Live, free, staying free for now** | As the first, and no charge planned in the thirty days | `PLAN-live-free-staying-free.md` |
-| **Not yet live, one deploy away** | App code; deploy in progress; no production URL | `PLAN-one-deploy-away.md` |
+| **Not yet live, one deploy away** | Built; deploy, publish, or store review in progress; not yet live | `PLAN-one-deploy-away.md` |
 | **Live with users, no revenue** | Signups or activity; no payment | `PLAN-live-with-users.md` |
 | **Just shipped via Ship in 7** | `docs/SHIP-IN-7.md` closed this week | `PLAN-after-ship-in-7.md` |
 
 If they pick "none of these", compose from the week-one block library directly and say which plan file is closest; its Compression list is the one this challenge uses.
 
-Then: **"Will the product charge within the thirty days?"** Yes → the bar is a payment; Price it and Checkout live go in week one. No → the bar is one activated user; those blocks drop out. Write the bar into the file verbatim.
+Then: **"Will the product charge within the thirty days?"** Yes → the bar is the shape's First-sale-means bar; Price it and Checkout live go in week one. No → the bar is one activated user; those blocks drop out. Write the bar into the file verbatim.
 
 ### 5. Confirm the inputs
 
@@ -141,15 +142,26 @@ Read [CLOSE.md](CLOSE.md) and follow it: check the bar honestly and close the st
 | Block | Skill(s) / action | Produces | Proof |
 | --- | --- | --- | --- |
 | Setup check | `setup` | wired repo | file diff |
-| Go live *(when not yet live)* | `develop-golive`, then work `docs/DEPLOY.md` | live URL | smoke test as a real customer |
+| Go live *(when not yet live)* | `develop-golive`, then work `docs/DEPLOY.md` | live by the shape's Live-means bar | that bar passed as a real customer |
 | Define backfill + **offer review** | `define-from-code` if `docs/DEFINE.md` is missing; then **`define-offer-review`, always** | a sharpened Offer and Summary in `docs/DEFINE.md` | the review's edits applied; the offer read out loud |
-| **Messaging alignment** | `design-landing-page` and/or `design-app-listing` re-run against the reviewed offer, then the copy shipped to the live surface via the build loop with `develop-design-review` (and `docs/COPY.md` where it exists) | a live landing page / listing that says what the offer says | before/after of the hero or the first listing screen |
+| **Messaging alignment** | every acquisition surface the shape uses (the shape file's Design Step 7 row): `design-landing-page`, `design-app-listing` (App Store / Google Play), and/or `design-marketplace-listing` (every other store, marketplace, or registry), re-run against the reviewed offer; then the copy shipped to the live surface — the page via the build loop with `develop-design-review` (and `docs/COPY.md` where it exists), a listing through the store's or marketplace's own console | a live landing page / listing that says what the offer says | before/after of the hero or the first listing screen |
 | Price it *(will charge, no price yet)* | `define-pricing` | one launch price, the price line | the price said out loud in the log |
-| Checkout live *(will charge)* | payments switched to live per the payments section of `develop-golive`; a **real test purchase, refunded the same session** and never counted toward the bar | a working checkout link | the test-purchase receipt and the refund |
+| Checkout live *(will charge)* | the shape's checkout (table below) switched to live per the payments section of `develop-golive`; a **real test purchase, refunded the same session** and never counted toward the bar | a working way to pay | the test-purchase receipt and the refund, or the shape's equivalent proof |
 | Warm conversations | the warm ask: the warm list in `docs/SELL-IN-30.md` written first (existing users and anyone who has already responded, then named people who match the persona); a personal message to each, checkout link (or "try it" link) in hand; every response logged in the Experiment Log | messages sent; the warm list | sent-folder screenshot |
 | Channel | `distribute-gtm-strategy` | `docs/GO-TO-MARKET.md`: the primary channel and its "Do this" list | file exists |
 | Experiments | `distribute-growth-experiments`, briefed with the bar and the clock | `docs/GROWTH-EXPERIMENTS.md` (running now + up next); `docs/GROWTH-TRACKER.md` seeded | experiment 1 named, Pass = line written |
 | Weekly read | the signal read ([WEEKLY-READ.md](WEEKLY-READ.md)), applied to the week | the Week 1 read in `docs/SELL-IN-30.md` | the read, posted |
+
+### Checkout live, by shape
+
+The shape file's `## First sale means` names how a customer pays; week one proves that path works before anyone is asked.
+
+| How the shape gets paid | Checkout live means | Proof |
+| --- | --- | --- |
+| **The member's own checkout** — `web-app`, `browser-extension`, `developer-tool`, the agent shapes (agent marketplaces don't process payments), `desktop-app` sold direct, `website` with paid membership | live-mode checkout or payment link (or a merchant of record) that unlocks access: the paid plan, a licence key, an API key, a private-repo invite | a real purchase, refunded; the access actually arrived |
+| **A store purchase** — `mobile-app`, store-sold `desktop-app` | the in-app product or subscription approved and live in the store | a real purchase from a non-sandbox account on a real device (the sandbox doesn't count), refunded where the store allows; the transaction visible in the store console |
+| **A marketplace's checkout** — `digital-product` on Etsy, Gumroad, or a template marketplace; a service on a freelance catalogue; a paid chat assistant | the paid listing live and the **payout account set up and verified** | the live listing at its price; the payout settings screenshot; a test purchase where the marketplace allows one |
+| **A payment link or invoice** — `productized-service`, high-ticket B2B | a payment link for the fixed-scope offer, or an invoice template with card payment enabled | a real payment through the link or a test invoice, refunded; the intake that follows it arriving |
 
 ### Weeks two to four
 
@@ -163,8 +175,8 @@ Read [CLOSE.md](CLOSE.md) and follow it: check the bar honestly and close the st
 ### Composition rules
 
 1. **The offer is reviewed on session one, always.** Even when `docs/DEFINE.md` exists. Every message, page and experiment is built from it.
-2. **Messaging follows the offer, before the first ask.** Every acquisition surface the product has (landing page, listing, both) is brought in line and shipped live before the warm asks go out. When hours are tight, draft the copy in the review session and ship it the same day.
-3. **Checkout works before anyone is asked for money.** A real test purchase before the warm asks. Drops out for a product staying free.
+2. **Messaging follows the offer, before the first ask.** Every acquisition surface the product has (landing page, app listing, marketplace listing — whichever the shape uses) is brought in line and shipped live before the warm asks go out. When hours are tight, draft the copy in the review session and ship it the same day.
+3. **Checkout works before anyone is asked for money.** A real test purchase (or the shape's equivalent proof) before the warm asks. Drops out for a product staying free.
 4. **Warm conversations before the strategy.** The warm network gets the first ask, link in hand, before a channel is chosen. It needs no strategy and it's the likeliest source of the first payment. Everyone asked is named on the warm list in `docs/SELL-IN-30.md`; experiment 1's reach starts from people *not yet asked*, unless the experiment is explicitly a follow-up to them. Partition the list at enrol so reach is never counted twice.
 5. **Strategy and experiments close week one**, on sessions 5–6 (one session when hours are tight), so experiment 1 is named before the week-one read.
 6. **One experiment at a time.** Inside the challenge, `docs/GROWTH-EXPERIMENTS.md`'s Running now holds exactly one experiment; every other candidate waits in Up next.

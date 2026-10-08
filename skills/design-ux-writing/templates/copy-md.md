@@ -32,6 +32,8 @@ The structure to write to `docs/COPY.md` at Step 8. Replace every bracket; keep 
 
 ## Per-surface rules
 
+[Adapted shapes: replace the surface headings below with the shape's surfaces from the SKILL.md table (e.g. `### Tool names`, `### Tool descriptions`, `### Parameter docs`, `### Result formats`, `### Errors` for an MCP server), each with rules, budget, and Good/Bad pairs; keep any screen surfaces the product also has.]
+
 ### Buttons & CTAs
 [rules + budget + 2–3 Good/Bad pairs — Tactics #1–3]
 

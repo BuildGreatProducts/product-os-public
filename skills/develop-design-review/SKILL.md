@@ -13,6 +13,8 @@ description: >-
 
 This skill runs in the **app repo** — the repository that contains `productos/` — and produces a **design system adherence review** of uncommitted UI changes against `docs/DESIGN.md`. Each run writes a new timestamped report at `docs/design-reviews/YYYY-MM-DD-HHMM-design-review.md` (never overwriting prior reviews) with three buckets — **Inconsistencies** (changes that violate documented tokens or rules), **New Patterns** (changes that introduce something not yet in the design system), and **Already-Aligned** (changes that use tokens correctly) — plus a prioritized fix list, a promotion checklist for `DESIGN.md`, and a **paste-ready fix prompt** the member can copy into their coding agent to fix every issue in one pass.
 
+**Shapes:** for products with screens — `web-app`, `mobile-app`, `desktop-app`, `browser-extension`, `website` — and for any landing page, settings screen, or portal another shape ships. Shapes without a UI have nothing for it to review.
+
 ## Inputs
 
 Read inputs from `docs/` at the app repo root.
