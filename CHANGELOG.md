@@ -31,7 +31,7 @@
   - `develop-code-review` runs the repo's own checks.
   - `develop-feature-finder` appends tasks in the roadmap's exact format.
   - Automation recipes draft posts and outreach for the member to send; the agent never sends them.
-- **Code review has one rhythm.** Full builds (`develop-mvp-build`, `develop-refactor-build`) review at every phase boundary. The build loops build, test and fix each task, then review once the work is finished. The roadmap no longer schedules review. Ship in 7's quality gate is the security audit alone. `develop-code-review` covers changes made outside the build skills.
+- **Code review has one rhythm.** Full builds (`develop-mvp-build`, `develop-refactor-build`) review at every phase boundary. The build loops build, test and fix each task, then review once the work is finished. The roadmap no longer schedules review. `develop-code-review` covers changes made outside the build skills.
 - **Inter is avoided everywhere.** `design-design-system-from-code` now treats an excluded font (Inter, Instrument Serif, Outfit, Plus Jakarta Sans) as a conflict to resolve with a free substitute, instead of documenting it. This matches `design-design-system` and `develop-design-review`.
 - **Maintainer scripts.** `scripts/lint-skills.py` checks every skill against the guide: name and description limits, a "Not for" line, body length, bundled BONUS copies matching the phase folder, no `computer://` links, and contents lists on long reference docs. `scripts/sync-bonus.py` copies the phase-folder BONUS docs into the skills that bundle them.
 

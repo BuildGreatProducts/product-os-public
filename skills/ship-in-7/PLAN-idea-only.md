@@ -12,7 +12,7 @@
 | 2 | **Look + magic moment + spec** | `design-design-system` from one image the member loves → `design-magic-moment` → `develop-prd-roadmap` with the MVP scoped to the magic moment only | `docs/DESIGN.html` screenshot; `docs/ROADMAP.md` with one phase | 2.5 |
 | 3 | **Build, day one** | `develop-mvp-build` (or the build loop task by task) | a screenshot of the first working screen, saved to `docs/` | 4 |
 | 4 | **Build, day two** | continue; the core flow works end to end locally | screenshots of signup → magic moment, saved to `docs/`; the test suite passing | 4 |
-| 5 | **Quality gate** | `develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` verdict; Critical/High ticked | 2 |
+| 5 | **Quality gate** | `develop-code-review` → `develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` verdict; Critical/High ticked | 2 |
 | 6 | **Deploy guide + go live** | `develop-golive` → work `docs/DEPLOY.md` top to bottom | live URL, HTTPS | 3 |
 | 7 | **Smoke test, buffer, announce** | smoke test as a real customer; fix what it finds; if there's time, post the live URL where your customers are | **smoke test passed**; the post's link (stretch) | 2 |
 

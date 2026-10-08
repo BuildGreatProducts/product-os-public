@@ -134,7 +134,7 @@ Every block is an existing skill (or a plain action) with a proof. The composer 
 | Magic moment + spec | `design-magic-moment` → `develop-prd-roadmap`, MVP scoped to the magic moment only | `docs/PRD.md`, `docs/ROADMAP.md` | roadmap of one phase | 1.5 h |
 | Build | `develop-mvp-build` (idea) · `develop-design-better` + the build loop (`cc-build-loop` / `codex-build-loop` / `cursor-build-loop`) + `develop-design-review` (rebuild) · `develop-refactor-plan` → `develop-refactor-build` (messy code) | the working core flow | before/after screenshots saved to `docs/`, or a recording the agent can open | 4 h+ per day |
 | Migrate | `develop-migrate` | `docs/MIGRATION.md`, an owned repo | the migration's verification gate green | 1–2 days |
-| Quality gate | `develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` | the verdict line; Fix plan Critical/High ticked | 2–3 h |
+| Quality gate | `develop-code-review` → `develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` | the verdict line; Fix plan Critical/High ticked | 2–3 h |
 | Deploy guide | `develop-golive` | `docs/DEPLOY.md` | file exists; accounts created | 1 h |
 | **Go live** | work `docs/DEPLOY.md` top to bottom | live URL, HTTPS, domain | **smoke test passed as a real customer** | 2–3 h |
 | Announce *(stretch)* | no skill: post the live URL where your customers are | the post | the post's link or screenshot | 30 min |
