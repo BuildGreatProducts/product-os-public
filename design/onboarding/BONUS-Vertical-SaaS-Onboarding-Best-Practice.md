@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Onboarding Pattern Should You Build?](#the-decision-tree--which-onboarding-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example 1 — The ServiceTitan Funnel Reconstructed](#worked-example-1--the-servicetitan-funnel-reconstructed)
+- [Worked Example 2 — The Harvey (AI for Legal) Funnel](#worked-example-2--the-harvey-ai-for-legal-funnel)
+- [Worked Example 3 — The Toast (Vertical SaaS + Embedded Fintech) Funnel](#worked-example-3--the-toast-vertical-saas--embedded-fintech-funnel)
+- [Anti-Patterns — What Kills Vertical SaaS Onboarding](#anti-patterns--what-kills-vertical-saas-onboarding)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The Vertical SaaS Operating Model](#the-vertical-saas-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **Vertical SaaS does not sell software. It sells an industry's operating system — and onboarding is the moment the buyer accepts that the entire way they run their business is about to change. Every screen, every data import, every training session is asking the same question: "Can I trust this with the actual revenue of my business?" The answer is delivered in evidence — implemented workflows, migrated data, a working dashboard with their real numbers — not in promises.**

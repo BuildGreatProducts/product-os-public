@@ -20,10 +20,16 @@
 
 - **The security audit is not optional because the week is tight.** An existing `docs/SECURITY-AUDIT.md` counts only if it is current and covers what is being deployed; if it is absent, outdated, or narrower than today's scope, `develop-security-audit` runs again on Day 1 before the deploy guide. Critical findings are fixed before anything is reachable. Ship in 7's quality-gate rule applies here too.
 - **If the deploy takes a third session**, it takes it: Day 3 becomes deploy, and Days 3–4 as written merge into Day 4 (messaging drafted from the review, checkout live, warm asks in one long session). The read stays on Day 7.
-- **If the deploy can't be done in three sessions**, the honest move is to stop: log it, set `docs/SELL-IN-30.md`'s header to `Status: Closed — [date]` with a one-line reason, and only then route to `ship-in-7` (one challenge open at a time). The member restarts Sell in 30 the week the app is live, with the "after Ship in 7" plan; the closed file is moved aside at that enrol, not overwritten.
+- **If the deploy can't be done in three sessions**, the honest move is to stop: log it, set `docs/SELL-IN-30.md`'s header to `Status: Closed · [date]` with a one-line reason, and only then route to `ship-in-7` (one challenge open at a time). The member restarts Sell in 30 the week the app is live, with the "after Ship in 7" plan; the closed file is moved aside at that enrol, not overwritten.
 
 ## Compression (a missed or short session)
 
+Actions, in order — use the first that fits, within the week:
+
 1. Merge Days 5–6.
 2. Merge Day 3's messaging into Day 2's review: draft and ship in one session.
-3. Never move the checkout after the warm asks. Never move the read.
+
+**Constraints** (rules, not steps — no action above may break them):
+
+- Never move the checkout after the warm asks.
+- Never move the read.

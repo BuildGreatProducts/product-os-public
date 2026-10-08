@@ -23,6 +23,12 @@
 
 ## Compression (a missed or short session)
 
+Actions, in order — use the first that fits, within the week:
+
 1. Merge Days 5–6: GTM strategy and growth experiments in one session, the channel defaulting to "the one place the people on your warm list already are".
 2. Merge Day 2 into Day 1: draft the copy changes in the review session; ship them the same day.
-3. Never move Checkout live after Warm conversations. Never move the read.
+
+**Constraints** (rules, not steps — no action above may break them):
+
+- Never move Checkout live after Warm conversations.
+- Never move the read.

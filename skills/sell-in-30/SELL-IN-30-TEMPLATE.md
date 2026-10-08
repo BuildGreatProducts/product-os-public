@@ -4,9 +4,9 @@
 **Starting point:** [Live, free, will charge / Live, priced / Live, free, staying free / One deploy away / Live with users / After Ship in 7]
 **Live URL:** [url] · **Price line:** [from `docs/DEFINE.md` → Pricing Strategy, or "free this month"]
 **Started:** [date] · **Hours per session:** [n] · **Consecutive days:** [yes / as and when]
-**Status:** Open — Day [N] of 30 · Week [W]
+Status: Open · Day [N] of 30 · Week [W]
 
-*Thirty sessions, not thirty calendar days. A day is assigned at the check-in that names its block; the next check-in confirms its proof. No proof means a miss; time between check-ins is a gap, not a miss. Every seventh session is the weekly read. The close sets Status to Closed.*
+*Thirty sessions, not thirty calendar days. A day is assigned at the check-in that names its block; the next check-in confirms its proof. No proof means a miss; time between check-ins is a gap, not a miss. Every seventh session is the weekly read. Each check-in updates the Day and Week; the close rewrites the line to `Status: Closed · [date]`. Keep this line plain (no bold): the root guidelines search for `Status: Open`.*
 
 ---
 
@@ -68,7 +68,7 @@
 | | Warm asks | | | | | | |
 | | | | | | | | |
 
-*Warm/cold: `warm`, `cold`, or `mixed · n warm, n cold`; the weekly read and the Sell Report sum this column. Rungs are Sell in 30's response scale: none / reply / conversation / signup / activated user / payment. Silence is "0 · none". Verbatims also go to the Persona section of `docs/DEFINE.md` and the Cumulative Learnings in `docs/GROWTH-TRACKER.md`.*
+*Step + artefact: which "Do this" step ran, and what it produced (post, listing, message batch, fix). Reach: how many people it reached or was sent to (a number, or "unknown"; on follow-up days, threads replied to). Warm/cold: `warm` (they know the member), `cold` (strangers), or `mixed · n warm, n cold`; the one place the label is set, and the weekly read and the Sell Report sum this column. Response: how many responded, at the highest rung each reached on Sell in 30's response scale — none → reply → conversation → signup → activated user → payment — counted per rung when there's more than one (`2 · reply, 1 · conversation`); silence is "0 · none". Verbatim: the most useful thing anyone said, in their words (or "silence"). Surprise: one line on what the member didn't expect. Verbatims also go to the Persona section of `docs/DEFINE.md` and the Cumulative Learnings in `docs/GROWTH-TRACKER.md`.*
 
 ---
 
@@ -118,6 +118,8 @@
 | the day it lands | Sell in 30 - My first customer! 🚀 | |
 | Day 30 | Sell in 30 completed! Here's what I learnt | |
 
+*Not in the Skool community? Leave this section out.*
+
 ---
 
 ## Sell Report
@@ -163,5 +165,3 @@
 **Product Studio:** [the recommendation paragraph, and the link: buildgreatproducts.com/product-studio]
 
 *Bring this to your call.*
-
-**Status:** Closed — [date]

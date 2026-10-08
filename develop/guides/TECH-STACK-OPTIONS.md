@@ -2,6 +2,18 @@
 
 Default comparison data for ProductOS's Develop-phase tech stack questions. Use these as a baseline and adapt recommendations based on the specific product’s needs. The comparison format and pros/cons should be adjusted to reflect how each option fits the founder’s particular product.
 
+## Contents
+
+- [Frontend Frameworks](#frontend-frameworks)
+- [Backend](#backend)
+- [Database](#database)
+- [Auth Providers](#auth-providers)
+- [Payment Providers](#payment-providers)
+- [Analytics](#analytics)
+- [Transactional Email](#transactional-email)
+- [Error Tracking & Monitoring](#error-tracking--monitoring)
+- [Hosting & Deployment](#hosting--deployment)
+
 -----
 
 ## Frontend Frameworks
@@ -377,3 +389,41 @@ Error tracking catches the bugs your users hit but never report. Without it, you
 - ✗ Source map and SDK configuration takes some initial setup
 - ✗ Event volume on noisy apps can push you off the free tier
 - **Best for:** Every production app. Default recommendation — set it up before launch so the first real users' errors are visible.
+
+-----
+
+## Hosting & Deployment
+
+Hosting is where the built app runs and where customers reach it. Pick the platform that matches the frontend and backend choices above; most MVPs need exactly one. Free tiers and limits change — check the provider's current pricing page before quoting a monthly cost.
+
+**Vercel** — Managed hosting for web frontends and serverless functions, made by the Next.js team.
+
+- ✓ Deploys from GitHub on every push, with a preview URL per branch
+- ✓ First-class Next.js support; zero-config for most React, Svelte, and Astro apps
+- ✓ Environment variables, custom domains, and SSL in one dashboard
+- ✗ Serverless functions have execution time limits — not for long-running jobs or always-on workers
+- ✗ Commercial use requires the paid plan
+- **Best for:** Most web apps. Default recommendation, especially on Next.js with a managed backend (Supabase, Convex, Firebase).
+
+**Netlify** — Managed hosting for static sites and web frontends with serverless functions.
+
+- ✓ Same Git-push deploys and preview URLs as Vercel
+- ✓ Strong for static and content-heavy sites (Astro, plain HTML)
+- ✗ Less tightly integrated with Next.js than Vercel
+- **Best for:** Static or content-led products, or founders who already use it.
+
+**Railway** (or **Render**) — Managed hosting for always-on servers, workers, and databases.
+
+- ✓ Runs a long-lived Node/Python/Go server, background workers, and cron jobs
+- ✓ Can host Postgres or Redis next to the app
+- ✗ More to configure than Vercel; you own the server process
+- **Best for:** Products with a custom backend (Express, FastAPI, Rails) or work that outlives a serverless request — queues, scheduled jobs, websockets.
+
+**Expo EAS + the app stores** — Build and submission pipeline for React Native/Expo apps.
+
+- ✓ Cloud builds for iOS and Android without a local Xcode or Android Studio setup
+- ✓ Submits builds to App Store Connect and Google Play; over-the-air updates for JS changes
+- ✗ App Store review adds days to every release; Apple and Google developer accounts are required
+- **Best for:** Every Expo mobile app. Pair it with the backend's own hosting (Supabase, Convex, Firebase are already hosted).
+
+**Default:** a web app on a managed backend → **Vercel**. A custom server or background workers → **Railway**. A mobile app → **Expo EAS**, with the backend where it already lives.

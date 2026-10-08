@@ -2,9 +2,14 @@
 
 You are generating `docs/ROADMAP.md` — a phased build plan with checkboxes that a coding agent marks complete as it executes tasks. This document is the project’s source of truth for what’s been done and what’s next.
 
-## Persona
+## Contents
 
-You are a technical project manager and AI-assisted development expert. You know how to break a product into buildable phases where each phase produces a working, demoable increment. You deeply understand how AI coding agents (Claude Code, Cursor, Windsurf) work and structure tasks for maximum agent effectiveness — clear scope, specific files, no ambiguity.
+- [Input](#input)
+- [Output](#output)
+- [Critical Rules](#critical-rules)
+- [Section Requirements](#section-requirements)
+- [Task Writing Guidelines](#task-writing-guidelines)
+- [Output Structure](#output-structure)
 
 ## Input
 
@@ -87,7 +92,7 @@ The status line should be set to `0/Y tasks complete` and `Phase 0` when first g
 3. **Magic moment first.** The core value proposition works as early as possible. Everything else builds on top.
 4. **Test as you go.** Don't save testing for the end. Each task includes verification.
 5. **Progressive enhancement.** Start with the simplest working version, then layer on polish.
-6. **Build straight through.** Work through all phases in one go — no need to open a pull request or stop for review between phases. For a quality pass, run your coding agent's built-in review (`/review` in Claude Code, or the built-in review in Cursor or Codex).
+6. **Build straight through.** Work through all phases in one go — no need to open a pull request between phases.
 ```
 
 Adapt these principles to the specific product but keep all 6. Add 1–2 product-specific principles if relevant.
@@ -213,25 +218,19 @@ Name phases by what they accomplish, not by number alone. Good names tell the fo
 
 ### Review & Quality
 
-The coding agent builds straight through all phases in one go. There is **no requirement to open a pull request or pause for review between phases** — stopping at every phase boundary slows the build without adding much at MVP stage. Quality is maintained continuously instead.
+The coding agent builds straight through all phases in one go. There is **no requirement to open a pull request between phases** — that slows the build without adding much at MVP stage. Quality comes from per-task verification and the build skills' own review.
 
 #### Per-task verification (always)
 
 Every task ends with a verification step — run the app, confirm the behavior works. The agent does not mark a task `- [x]` until it has verified it. Because tasks are ordered so each phase leaves the app runnable, this per-task gate keeps the build healthy without phase-level ceremony.
 
-#### Built-in code review (recommended)
+#### Code review lives in the build skills
 
-When you want an extra set of eyes — typically once the core MVP phases are done, or before launch — run your coding agent's **built-in** review rather than wiring up a separate review service:
-
-- **Claude Code:** `/review` (and `/security-review` for a security-focused pass)
-- **Cursor:** its built-in code review
-- **Codex:** its built-in code review
-
-These catch bugs, security issues, and style problems the coding agent may miss, without interrupting the straight-through build. If the review flags something, fix it and re-run the review before continuing.
+The roadmap doesn't schedule code review. `develop-build` reviews at every phase boundary, and `build-loop` reviews once the requested work is finished.
 
 #### Generated roadmap integration
 
-When generating `docs/ROADMAP.md`, the Build Philosophy section and the Agent Session Guide should both state that the agent builds straight through all phases and that the user can run their coding agent's built-in review for a quality pass. Do **not** instruct the agent to open a pull request after each phase.
+When generating `docs/ROADMAP.md`, the Build Philosophy section and the Agent Session Guide should both state that the agent builds straight through all phases. Do **not** add review tasks or review prompts — the build skills handle review — and do **not** instruct the agent to open a pull request after each phase.
 
 -----
 
@@ -246,7 +245,7 @@ When generating `docs/ROADMAP.md`, the Build Philosophy section and the Agent Se
 2. **Read selectively:** Each phase lists its Reference sections — the specific parts of the PRD and product docs needed for that phase. The agent should read only those sections, not the entire documents.
 3. **Let it work:** The agent reads the roadmap, finds the first unchecked task, implements it, and marks it complete.
 4. **One session = one phase (ideally):** Try to complete a full phase in one session for best continuity. If you need to stop, the agent can resume from the last unchecked task.
-5. **Build straight through:** Move from one phase to the next without opening a pull request in between. For a quality pass — after the core MVP phases or before launch — run your coding agent's built-in review (`/review` in Claude Code, or the built-in review in Cursor or Codex). See the Review & Quality section below.
+5. **Build straight through:** Move from one phase to the next without opening a pull request in between.
 6. **Need more context?** If a task references a section not in the phase's Reference sections, the agent should read just that section on demand.
 
 ### Session Tips
@@ -254,7 +253,6 @@ When generating `docs/ROADMAP.md`, the Build Philosophy section and the Agent Se
 - **Don't read everything:** The PRD and product docs can be large. Each phase's Reference sections tell the agent exactly what to read. Loading the full documents wastes context.
 - **Don't skip tasks:** Tasks are ordered intentionally. Skipping creates dependency issues.
 - **Verify after each phase:** Run the app after completing a phase to confirm everything works before moving on.
-- **Review with built-in tools:** You don't need to open a PR between phases — keep building. When you want extra scrutiny, run your coding agent's built-in review (`/review` in Claude Code, or the equivalent in Cursor or Codex) to catch bugs and security issues.
 - **Update the status line:** After completing tasks, update the header status: `**Status:** X/Y tasks complete` and `**Current Phase:** Phase N`.
 
 ### Prompt Templates
@@ -267,9 +265,6 @@ When generating `docs/ROADMAP.md`, the Build Philosophy section and the Agent Se
 
 **Continuing to the next phase:**
 > "Phase [N] is complete and verified. Update the Status and Current Phase lines in docs/ROADMAP.md, then continue straight into the next phase — read its Reference sections and start on its first unchecked task."
-
-**Running a quality review (optional):**
-> "The core MVP phases are complete. Run your built-in code review (`/review` in Claude Code, or the built-in review in Cursor or Codex) over the work so far and fix anything it flags before continuing."
 
 **Fixing an issue:**
 > "There's a problem with [description]. Read the relevant section of docs/PRD.md for the expected behavior and fix it. Don't mark any new tasks complete until the fix is verified."

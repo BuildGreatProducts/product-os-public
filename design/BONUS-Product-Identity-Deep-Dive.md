@@ -4,9 +4,23 @@
 
 ---
 
+## Contents
+
+- [How to Use This Guide](#how-to-use-this-guide)
+- [1. Name](#1-name)
+- [2. Worldview](#2-worldview)
+- [3. Contrarian Belief](#3-contrarian-belief)
+- [4. Tone of Voice](#4-tone-of-voice)
+- [5. Visual Style](#5-visual-style)
+- [How the Five Decisions Compose](#how-the-five-decisions-compose)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+- [Going Deeper (optional)](#going-deeper-optional)
+
+---
+
 ## How to Use This Guide
 
-The Product Identity Framework asks for five word-level decisions — a name, a worldview, a category belief, a voice, and a visual style. Most solo builders get stuck on each one because the decision is small but the commitment is hard. (Colours, fonts, and tokens are deliberately downstream: Step 2's design system derives them from a real image reference.) This guide walks through each in detail, shows you what a strong answer looks like next to a weak one, and gives you the mental model to spot the difference in your own work.
+The Product Identity Framework asks for five word-level decisions — a name, a worldview, a category belief, a voice, and a visual style. Most solo builders get stuck on each one because the decision is small but the commitment is hard. (Colours, fonts, and tokens are deliberately downstream: Step 3's design system derives them from a real image reference.) This guide walks through each in detail, shows you what a strong answer looks like next to a weak one, and gives you the mental model to spot the difference in your own work.
 
 Read each section once before you fill in the framework. Then fill in the framework with a draft. Then come back to this guide and pressure-test each answer against the Good/Bad patterns. Three passes is the right cadence. (Want the theory underneath — brand missions and the 12 Jungian archetypes? It's preserved in **Going Deeper** at the end. Optional; the five decisions don't require it.)
 
@@ -302,7 +316,7 @@ If a customer can read all five and describe the brand back to you in one senten
 
 The name tells you who they are. The worldview tells you what they stand for. The contrarian belief tells you what they reject. The tone tells you how they speak. The visual style tells you what they look like. Five decisions, one character, one brand.
 
-That is how Patagonia, Apple, Linear, Notion, Liquid Death, and Stripe built recognition — not by polishing one decision but by making them all agree, in writing, on day one. (The colours and fonts that express these five decisions come next — derived from a real image in Step 2's design system.)
+That is how Patagonia, Apple, Linear, Notion, Liquid Death, and Stripe built recognition — not by polishing one decision but by making them all agree, in writing, on day one. (The colours and fonts that express these five decisions come next — derived from a real image in Step 3's design system.)
 
 ---
 

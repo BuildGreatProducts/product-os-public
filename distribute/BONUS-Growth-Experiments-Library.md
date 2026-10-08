@@ -6,6 +6,24 @@
 
 > **The meta-rule:** An experiment is a falsifiable bet, not a chore. It names what you'll change, what you expect to happen, the number that means you were right, and what you'll do either way. "Post more" is not an experiment. "Five hook variations, one a day; a winner clears 50% 3-second retention" is.
 
+## Contents
+
+- [The method](#the-method)
+- [How to read a card](#how-to-read-a-card)
+- [1. Short-form content](#1-short-form-content)
+- [2. Long-form content](#2-long-form-content)
+- [3. Communities](#3-communities)
+- [4. Search (SEO & GEO)](#4-search-seo--geo)
+- [5. Platform ecosystems](#5-platform-ecosystems)
+- [6. Launch platforms](#6-launch-platforms)
+- [7. Outreach](#7-outreach)
+- [8. Influencer / creator](#8-influencer--creator)
+- [9. Partnerships](#9-partnerships)
+- [10. Email & lifecycle](#10-email--lifecycle)
+- [11. Referrals & affiliates](#11-referrals--affiliates)
+- [12. Ads](#12-ads)
+- [Putting it together](#putting-it-together)
+
 ---
 
 ## The method
@@ -94,7 +112,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 **Recommended tools & plugins**
 
 - **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §1): **OpusClip** + **Submagic** to cut captioned clips and test hooks (Hook Test, Format Clone), **Kite** for polished app-demo clips, **Buffer** to post on cadence (Cadence Ramp).
-- **Automate in Claude/Codex:** the **Figma** plugin for hook thumbnails and text overlays; **Claude in Chrome** to research the top-performing hooks and formats in your niche; a **scheduled task** to hold your daily posting cadence. Check the connector registry for a TikTok/YouTube scheduling MCP.
+- **Automate in Claude/Codex:** the **Figma** plugin for hook thumbnails and text overlays; **Claude in Chrome** to research the top-performing hooks and formats in your niche; a **scheduled task** to hold your daily posting cadence by drafting each day's post for you to publish. Check the connector registry for a TikTok/YouTube analytics MCP to read results.
 
 ---
 
@@ -225,7 +243,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 **Recommended tools & plugins**
 
 - **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §1): **Syncly** for social listening across communities; otherwise this channel is mostly hands-on.
-- **Automate in Claude/Codex:** **Claude in Chrome** to monitor and post in subreddits, Discords, and Facebook groups (most have no API); the **Notion** MCP to track which communities convert. Check the connector registry for a Reddit or Discord MCP.
+- **Automate in Claude/Codex:** **Claude in Chrome** to monitor subreddits, Discords, and Facebook groups (most have no API) and draft replies for you to post; the **Notion** MCP to track which communities convert. Check the connector registry for a Reddit or Discord MCP.
 
 ---
 
@@ -414,7 +432,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 **Recommended tools & plugins**
 
 - **Tools:** the launch venues themselves — Product Hunt, AppSumo/RocketHub, Hacker News — need no extra software.
-- **Automate in Claude/Codex:** **Claude in Chrome** to prep assets and monitor the launch and first comments; the **Notion** MCP for the launch checklist and asset kit; a **scheduled task** for the launch-day timeline. Check the registry for a Stripe/analytics MCP to watch the spike convert.
+- **Automate in Claude/Codex:** **Claude in Chrome** to prep assets, monitor the launch, and draft replies to first comments for you to post; the **Notion** MCP for the launch checklist and asset kit; a **scheduled task** for the launch-day timeline. Check the registry for a Stripe/analytics MCP to watch the spike convert.
 
 ---
 
@@ -477,7 +495,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 **Recommended tools & plugins**
 
 - **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §4): **Apollo.io** for data + sequencing, **Clay** for enrichment and first-line personalization (First-Line Test), **Lemlist**/**Instantly**/**Smartlead** for sending and follow-ups.
-- **Automate in Claude/Codex:** the **Apollo plugin** is the standout — `prospect` → `enrich-lead` → `sequence-load` runs the whole find-enrich-sequence loop natively. Pair with **Claude in Chrome** to research prospects and a CRM MCP to track replies → calls.
+- **Automate in Claude/Codex:** the **Apollo plugin** is the standout — `prospect` → `enrich-lead` → `sequence-load` runs the whole find-enrich-sequence loop natively, with every message drafted for you to review and send. Pair with **Claude in Chrome** to research prospects and a CRM MCP to track replies → calls.
 
 ---
 
@@ -540,7 +558,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 **Recommended tools & plugins**
 
 - **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §6): **1stCollab** for an end-to-end program, **Stormy AI** for discovery + outreach, **Kuli** to scout by actually watching content, **Beluga** for managed campaigns.
-- **Automate in Claude/Codex:** the **Apollo plugin** + **Claude in Chrome** to find and contact creators; the **Notion** MCP to track briefs, angles, and per-creator cost-per-install.
+- **Automate in Claude/Codex:** the **Apollo plugin** + **Claude in Chrome** to find creators and draft the outreach for you to send; the **Notion** MCP to track briefs, angles, and per-creator cost-per-install.
 
 ---
 
@@ -603,7 +621,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 **Recommended tools & plugins**
 
 - **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §6, §8): **1stCollab** for creator deals; all-in-one GTM agents like **Goose** to coordinate outreach.
-- **Automate in Claude/Codex:** the **Apollo plugin** to find and reach partner contacts; **Claude in Chrome** to research a partner's audience; the **Notion** MCP to track deals and attribution.
+- **Automate in Claude/Codex:** the **Apollo plugin** to find partner contacts and draft the outreach for you to send; **Claude in Chrome** to research a partner's audience; the **Notion** MCP to track deals and attribution.
 
 ---
 
@@ -811,7 +829,7 @@ Each experiment below follows the same shape — a **Hypothesis** (what you'll c
 **Recommended tools & plugins**
 
 - **Tools** ([BONUS - AI Distribution Tools](BONUS-AI-Distribution-Tools.md) §5): **AdCreative.ai** for fast static offer ads (Validation Test, Creative Volume Test), **Arcads**/**Creatify** for UGC video, **Foreplay** for ad-swipe research, **Madgicx** for management (Audience Test), **HeyGen** for localization.
-- **Automate in Claude/Codex:** the **Figma** plugin to produce the text-on-image offer ads (Validation Test) and creative variations; **Claude in Chrome** for ad-swipe research. Check the registry for a Meta/Google Ads MCP to launch and read results, and an analytics/Stripe MCP for cost-per-acquisition.
+- **Automate in Claude/Codex:** the **Figma** plugin to produce the text-on-image offer ads (Validation Test) and creative variations; **Claude in Chrome** for ad-swipe research. Check the registry for a Meta/Google Ads MCP to draft campaigns for you to launch and to read results, and an analytics/Stripe MCP for cost-per-acquisition.
 
 ---
 

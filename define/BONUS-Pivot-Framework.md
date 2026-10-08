@@ -6,6 +6,18 @@ Most "failed" first apps don't need to die. They need a precise pivot. The trap 
 
 The discipline of a clean pivot is keeping every variable constant except one. There are three variables worth changing: **the product**, **the persona**, or **the price**. Pick one, hold the other two still, and re-test against the same pass bar the first version missed — same channel, same kind of customer, same measure of response. (Links below point at the Define worksheets; your own answers live in the matching sections of `docs/DEFINE.md`.)
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Three Pivot Points](#the-three-pivot-points)
+- [Diagnose Before You Pivot](#diagnose-before-you-pivot)
+- [The Pivot Decision Tree](#the-pivot-decision-tree)
+- [Pivot 1 — Product](#pivot-1--product)
+- [Pivot 2 — Persona](#pivot-2--persona)
+- [Pivot 3 — Price](#pivot-3--price)
+- [The Pivot Worksheet](#the-pivot-worksheet)
+- [Common Pivot Mistakes](#common-pivot-mistakes)
+
 ---
 
 ## The Meta-Rule

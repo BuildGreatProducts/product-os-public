@@ -1,19 +1,23 @@
 ---
 name: develop-security-audit
-description: Use for a full security audit of the app — the whole codebase or just uncommitted changes — producing docs/SECURITY-AUDIT.md, a verdict-first report with a checkbox fix plan a coding agent can execute. Triggers on phrases like "security audit", "is my app secure", "check for vulnerabilities", "audit my code for security", "am I safe to launch", "security review of my codebase", or any request to find security problems before or after launch. Runs in the app repo — the repository that contains `productos/`. Detects the stack (framework, database, auth, payments), maps the attack surface, audits by severity tier (secrets, database access control, unprotected routes, IDOR, exposed keys first), verifies every finding to a concrete exploit path before reporting, and separates agent-executable fixes from human-only actions like key rotation. Never auto-fixes. Works standalone in any repo.
+description: >-
+  Audits the whole app (or uncommitted changes) for security problems — secrets, database access
+  control, unprotected routes, IDOR, exposed keys first — verifies each finding to a concrete
+  exploit path, and writes docs/SECURITY-AUDIT.md with a launch verdict and a checkbox fix plan that
+  separates agent fixes from human-only actions like key rotation. Never auto-fixes. Use when the
+  user asks for a "security audit", "is my app secure", or "am I safe to launch". Not for a general
+  pre-commit review — use develop-code-review.
 ---
 
 # Develop: Security Audit
 
-A full security audit of the member's app, built for how these apps are actually built — fast, with AI agents, by founders who are not security engineers. The research is blunt: most AI-generated code is functionally correct and insecure, and the incidents that killed real founder apps came from a short list — committed secrets, databases without row-level security, unprotected API routes, missing ownership checks, and secret keys shipped to the browser. This skill audits that list first, verifies every finding to a concrete exploit path, and writes **`docs/SECURITY-AUDIT.md`**: a verdict, the findings, and a fix plan a coding agent can execute while the member keeps building.
+A full security audit of the member's app, built for apps made fast with AI agents by founders who are not security engineers. It audits the short list that burns real founder apps first — committed secrets, databases without row-level security, unprotected API routes, missing ownership checks, secret keys shipped to the browser — verifies every finding to a concrete exploit path, and writes **`docs/SECURITY-AUDIT.md`**: a verdict, the findings, and a fix plan a coding agent can execute while the member keeps building.
 
-**Boundary with the sibling skills:** the build loops run their tool's security pass per task on sensitive surfaces; `develop-code-review` carries only a thin pre-commit check (secrets, missing auth). **This skill owns depth**: the whole attack surface, the full category list, and the durable report. Run it before go-live, and again after any significant auth, payments, or data-access work.
+**Boundary with the sibling skills:** `build-loop` and `develop-build` run the tool's security pass on sensitive surfaces when they review (`build-loop` once the work is finished, `develop-build` at each phase boundary); `develop-code-review` carries only a thin pre-commit check (secrets, missing auth). **This skill owns depth**: the whole attack surface, the full category list, and the durable report. Run it before go-live, and again after any significant auth, payments, or data-access work.
 
 **This skill never auto-fixes.** A wrong "fix" to auth middleware can lock a founder out of their own app. It reports; execution is a separate, explicit step the member chooses.
 
-The voice is a senior application-security engineer auditing a small production app — precise about exploitability, allergic to theater. Every finding must name what an attacker can actually do. Findings that amount to "this isn't best practice" don't ship; a report full of noise teaches the member to ignore reports.
-
-> **Session length:** 30–60 minutes for a full-codebase audit; 10–20 for uncommitted-changes scope.
+The voice is a senior application-security engineer auditing a small production app — precise about exploitability, allergic to theater. Every finding must name what an attacker can actually do; "this isn't best practice" doesn't ship — a noisy report teaches the member to ignore reports.
 
 ## Workflow
 
@@ -45,11 +49,11 @@ Work the tiers in order — never batched, never sampled. Classify each category
 4. **Broken object-level authorization (IDOR)** — routes taking a resource ID must verify *ownership*, separately from authentication, on reads **and** writes. This is the most common real vulnerability in AI-built apps: logged-in user A editing user B's data by changing an ID.
 5. **Secret keys reachable by the browser** — see the key-identity rules below; `service_role` / `sk_live_` anywhere client-reachable is Critical.
 
-**Tier 2 — High:** SQL/NoSQL injection (raw queries built from input — f-strings, template literals); XSS *only* via the framework escape hatches (`dangerouslySetInnerHTML`, `innerHTML`, `v-html` — React/Vue/Angular are otherwise safe by default); unverified webhooks (Stripe/Clerk/GitHub signature checks + idempotency); wildcard or reflected CORS, especially with `credentials: true`; SSRF where user input controls the **host or protocol** (path-only is not a finding); command injection / `eval` / unsafe deserialization; dependency risk — packages that don't exist on the registry (AI-hallucinated names) or carry known critical vulns (`npm audit` / `pip audit`); **missing rate limiting on auth endpoints** (login, register, password reset — credential stuffing is script-kiddie easy); JWT flaws (`algorithm: none`, unverified signatures, no expiry).
+**Tier 2 — High:** SQL/NoSQL injection (raw queries built from input — f-strings, template literals); XSS *only* via the framework escape hatches (`dangerouslySetInnerHTML`, `innerHTML`, `v-html` — React/Vue/Angular are otherwise safe by default); unverified webhooks (Stripe/Clerk/GitHub signature checks + idempotency); wildcard or reflected CORS, especially with `credentials: true`; SSRF where user input controls the **host or protocol** (path-only is not a finding); command injection / `eval` / unsafe deserialization; dependency risk — packages that don't exist on the registry (AI-hallucinated names) or carry known critical vulns (run the ecosystem's audit tool — `npm audit`, `pip-audit` — if available; otherwise check the lockfile against known advisories and say the check was manual); **missing rate limiting on auth endpoints** (login, register, password reset — credential stuffing is script-kiddie easy); JWT flaws (`algorithm: none`, unverified signatures, no expiry).
 
 **Tier 3 — Medium/Low:** CSRF protection / `SameSite` cookie config; security headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options); insecure file uploads (extension-only validation, no server-side size limit, uploads served from the app domain); verbose errors / stack traces / debug mode reachable in production; PII in logs.
 
-Tag each finding with its OWASP Top 10 (2025) ID for reference — but the tiers, not OWASP, order the report; the tiers are ordered by what actually burns founders.
+Tag each finding with its OWASP Top 10 (latest edition) ID for reference — but the tiers, not OWASP, order the report; the tiers are ordered by what actually burns founders.
 
 **Key identity — the rules that prevent both the worst false positive and the worst miss:**
 
@@ -67,54 +71,24 @@ Detection is generous; the report is not. Before a finding ships, re-examine it 
 
 ### 5. Write `docs/SECURITY-AUDIT.md`
 
-One canonical file at the app repo root, overwritten each run (create `docs/` if needed), in exactly this shape:
+One canonical file at the app repo root, overwritten each run (create `docs/` if needed). Get the audit date with `date +%Y-%m-%d` — never guess it. Read [templates/security-audit.md](templates/security-audit.md) and write the report in exactly that shape: Verdict, Do this right now (only when credentials leaked), Findings, What's already secure, Fix plan, Human-only actions, Excluded from this audit.
 
-```markdown
-# Security Audit — [app name]
+Every fix task's **Verify** line is a falsifiable assertion an agent can mechanically confirm — never "improve validation." The **Do this right now** section outranks everything: rotating a leaked key comes before fixing the code that leaked it — the key is in git history and is compromised no matter what the code says.
 
-*Audited [date] by develop-security-audit. Scope: [whole codebase | uncommitted changes]. Stack: [detected].*
+### 6. Verify before delivering
 
-## Verdict
-[One line a founder can act on: "**Not safe to launch** — 2 critical issues let any visitor read every user's data."
- or "**Safe to launch** — no critical or high findings; 3 medium items below."]
+Re-read the written report and check:
 
-## Do this right now
-[Only when credentials leaked: rotation steps FIRST — the key is in git history and is compromised
- no matter what the code says. Omit the section when clean.]
+- [ ] The verdict is one honest line a founder can act on.
+- [ ] Every Tier 1–3 category is classified, and every N/A says why.
+- [ ] Every finding has a location, a named attacker capability, and passed the exploit-path check; nothing from the never-report list made it in.
+- [ ] The anon-key / service-role distinction was applied correctly.
+- [ ] The fix plan is severity-ordered checkbox tasks, one concern each, with falsifiable Verify lines an agent can execute unattended.
+- [ ] Human-only actions (rotation first) are separate and specific, and include the user-A / user-B manual ownership test.
+- [ ] The excluded list shows the omissions were deliberate.
+- [ ] Nothing was auto-fixed.
+- [ ] A member who reads only the verdict and the "Do this right now" section already knows the two things that matter most.
 
-## Findings
-| # | Severity | Category (OWASP) | Location | What an attacker can do |
-[one row per verified finding, severity-ordered]
-
-## What's already secure
-[Evidence-backed credit: "Auth: Clerk with server-side session checks (`middleware.ts:8`)."
- Proves coverage; the audit checked it, it passed.]
-
-## Fix plan — agent-executable
-
-> Work top to bottom. Mark tasks `[x]` as completed. Each Verify line must pass before the task counts.
-
-- [ ] **SEC-001 — [Fix title]** ([SEVERITY])
-  Files: `path/to/file.ts`
-  Notes: [the specific change and why]. Verify: [a falsifiable assertion — "unauthenticated GET /api/orders returns 401", "`git ls-files .env` returns nothing"].
-
-[…severity-ordered; one concern per task; sized to one agent session]
-
-## Human-only actions
-- [ ] [Dashboard/hosting/key-rotation steps an agent cannot perform, each with where and how]
-- [ ] Manual test: log in as user A, take a resource ID, log in as user B, try to read and delete it. Expect 403 on both.
-
-## Excluded from this audit
-[What wasn't in scope (infrastructure, third-party provider internals) and what was deliberately
- not reported (DoS, theoretical races, hardening-without-exploit) — omissions are decisions, not gaps.]
-```
-
-Every fix task's **Verify** line is a falsifiable assertion an agent can mechanically confirm — never "improve validation." The **Do this right now** section outranks everything: rotating a leaked key comes before fixing the code that leaked it.
-
-### 6. Hand off execution
+### 7. Hand off execution
 
 Close the session with the verdict, the finding count by severity, and the one instruction: *"To execute the fixes, tell your coding agent to work through the Fix plan in `docs/SECURITY-AUDIT.md` top to bottom, marking tasks complete — or point your build loop at it. The Human-only actions are yours; do the 'right now' section first."* After the fixes land, offer a re-audit of the changed surface to confirm the Verify lines pass.
-
-## What "done" looks like
-
-A `docs/SECURITY-AUDIT.md` where the verdict is one honest line; every finding has a location and a named attacker capability; the anon-key/service-role distinction was applied correctly; every N/A says why; the fix plan is severity-ordered checkbox tasks with falsifiable Verify lines an agent can execute unattended; human actions (rotation first) are separate and specific; and the excluded list shows the omissions were deliberate. A member who reads only the verdict and the "Do this right now" section already knows the two things that matter most.

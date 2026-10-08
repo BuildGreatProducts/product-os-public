@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Onboarding Pattern Should You Build?](#the-decision-tree--which-onboarding-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example 1 — The Cursor Funnel Reconstructed](#worked-example-1--the-cursor-funnel-reconstructed)
+- [Worked Example 2 — The Lovable Funnel Reconstructed](#worked-example-2--the-lovable-funnel-reconstructed)
+- [Worked Example 3 — The Linear/Workspace Funnel](#worked-example-3--the-linearworkspace-funnel)
+- [Anti-Patterns — What Kills B2B AI Onboarding](#anti-patterns--what-kills-b2b-ai-onboarding)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The B2B AI Onboarding Operating Model](#the-b2b-ai-onboarding-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **In B2B AI SaaS, the user is not buying software. They are betting a workflow on you. Onboarding is the demonstration that the bet will pay off — in their actual environment, on their actual data, before the second team member is even invited. Every screen until that demonstration lands is friction.**

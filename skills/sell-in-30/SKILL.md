@@ -1,30 +1,36 @@
 ---
 name: sell-in-30
-description: Use when a member has a live product (or can deploy within days) and no paying customer, and wants their first one in 30 days: the ProductOS first-customer challenge. Triggers on phrases like "sell in 30", "sell in thirty", "start sell in 30", "first customer in 30 days", "get my first customer", "first paying customer", "30 day challenge", "day 12 check-in", "weekly read", "what's my task today", or "nobody has paid yet". Runs after setup (and runs it first if needed). Week one: review the offer, align every acquisition surface with it, checkout live with a real test purchase, warm-network asks, then the GTM strategy and growth experiments skills. Weeks two to four: run the top experiment, log a six-field feedback every session, and at each weekly read decide continue or kill plus a pivot review (persona, product, or pricing). Weekly Skool posts, docs/SELL-IN-30.md as the log, a Sell Report at the close, and a Product Studio call. Orchestrates existing skills; never replaces them.
+description: >-
+  Runs the ProductOS Sell in 30 challenge — thirty sessions to a first paying customer for a live
+  product. Week one aligns the offer, acquisition surfaces, and checkout and asks the warm network;
+  weeks two to four run growth experiments with weekly reads and pivot reviews, logged in
+  docs/SELL-IN-30.md and closed with a Sell Report. Use when the user says "sell in 30", "get my
+  first customer", or "nobody has paid yet", or when docs/SELL-IN-30.md has Status: Open (daily
+  check-in, weekly read). Not for an app that isn't live yet — use ship-in-7.
 ---
 
 # Sell in 30 — the first-customer challenge
 
-Sell in 30 takes a member with a live product and no paying customer to **their first payment in thirty sessions**. It is the natural next challenge after `ship-in-7`, and it is an orchestrator: week one runs the foundations through existing ProductOS skills; weeks two to four run the member's own growth experiments, one a week, each read honestly on the seventh session. This skill owns the sequencing, the daily check-in, the Experiment Log, the weekly read, and the close in `docs/SELL-IN-30.md`. It never teaches what the skills it runs already teach.
+Sell in 30 takes a member with a live product and no paying customer to **their first payment in thirty sessions**. It is the natural next challenge after `ship-in-7`, and it is an orchestrator: week one runs the foundations through existing ProductOS skills; weeks two to four run the member's own growth experiments, one a week, each read honestly on the seventh session. This skill owns the sequencing, the daily check-in, the Experiment Log, the weekly read, and the close in `docs/SELL-IN-30.md`; it never teaches what the skills it runs already teach.
 
 **The bar:** one payment. Not a signup, not a friend's "I'd pay for that". **For a product that will not charge within the thirty days, the bar is one activated user** — a real person reaching the magic moment (`docs/MAGIC-MOMENT.md`); the price and checkout blocks drop out of the plan. The skill asks which at enrol.
 
 **Prerequisite:** the product is reachable by customers, or can be within the first few days. A member one deploy away enrols with go-live as the opening blocks. Anyone further from live is routed to `ship-in-7` first.
 
-> **Session shape:** Day 0 is an enrol session (~30 min). Every session starts with a check-in (~5 min of overhead) and runs one block. Every seventh session is the weekly read (~30 min). The close follows Day 30 (~20 min). Thirty sessions, not thirty calendar days: recommend consecutive days, but the counter advances by check-in, so a weekend off is a gap, not a miss.
->
-> **Days, misses and gaps, precisely.** A day is *assigned* at the check-in that names its block. The next check-in confirms that day's proof: present → done; partial → partial; absent → a **miss**, logged as one, and the block re-planned under the compression rules, never silently re-assigned. Calendar time between check-ins is a **gap**, noted with dates, never a miss. A second check-in on the same day, or a member saying the block is still in progress, *continues* the current day rather than advancing the counter.
+**Register:** coach at the moment of fear. Celebrate the rung, then anchor it. Never shame a zero. Blunt about proof and about the pass bar, warm about everything else.
+
+**Days, misses and gaps.** Thirty sessions, not thirty calendar days: recommend consecutive days, but the counter advances by check-in. Every session opens with a short check-in and runs one block; every seventh session is the weekly read (about 45 minutes). A day is *assigned* at the check-in that names its block; the next check-in confirms its proof — present → done, partial → partial, absent → a **miss**, logged and re-planned under the compression list, never silently re-assigned. Time between check-ins is a **gap**, noted with dates, never a miss. A second check-in on the same day, or a block still in progress, *continues* the current day.
 
 ## Inputs
 
-Locate in the ProductOS folder (`productos/` at the app repo root) and the repo-root `docs/`. Never search `node_modules/`, build output, or vendored code.
+Read inputs from `docs/` and the ProductOS folder (`productos/`) at the app repo root.
 
 1. **The repo and the live product.** The production URL; a price on the site; a payments integration (Stripe products, checkout routes); acquisition surfaces (landing page, app store listing); deploy config if not yet live.
 2. **The ProductOS documents**, if any: `docs/DEFINE.md`, `docs/MAGIC-MOMENT.md`, `docs/LANDING-PAGE.md` / `docs/APP-LISTING.md`, `docs/GO-TO-MARKET.md`, `docs/GROWTH-EXPERIMENTS.md`, `docs/GROWTH-TRACKER.md`.
 3. **The member**, for what code can't say: signups or usage today (asked, never inferred), any responses so far (replies, conversations, anyone who tried it or offered to pay), who they can already reach, whether they will charge within the thirty days.
 4. **`docs/PLAN.md`**, if present (a coached copy): compose around its Distribute steps and annotate it; never override it.
 5. **`docs/SELL-IN-30.md`**, if present: an open challenge means a check-in, a read, or a close, not an enrol. **`docs/SHIP-IN-7.md`** open means close it first; only one challenge runs at a time.
-6. **The plan library in this folder:** `PLAN-live-free-will-charge.md`, `PLAN-live-priced.md`, `PLAN-live-free-staying-free.md`, `PLAN-one-deploy-away.md`, `PLAN-live-with-users.md`, `PLAN-after-ship-in-7.md`, and `SELL-IN-30-TEMPLATE.md`.
+6. **The plan library in this folder:** [PLAN-live-free-will-charge.md](PLAN-live-free-will-charge.md), [PLAN-live-priced.md](PLAN-live-priced.md), [PLAN-live-free-staying-free.md](PLAN-live-free-staying-free.md), [PLAN-one-deploy-away.md](PLAN-one-deploy-away.md), [PLAN-live-with-users.md](PLAN-live-with-users.md), [PLAN-after-ship-in-7.md](PLAN-after-ship-in-7.md), and [SELL-IN-30-TEMPLATE.md](SELL-IN-30-TEMPLATE.md). Read only the plan file for the member's starting point.
 
 ## Which mode is this?
 
@@ -32,7 +38,7 @@ Read the header's `Status:` line first.
 
 - No `docs/SELL-IN-30.md`, or the file's status is `Closed` → **Enrol** (Day 0). A closed file is a finished Sell Report: move it to `docs/SELL-IN-30-<closed date>.md` before writing the new one, never overwrite it.
 - Status `Open`, the next session is a 7th, 14th, 21st or 28th → **Weekly read** (it includes the check-in).
-- Status `Open`, any other session below 30 → **Daily check-in**.
+- Status `Open`, any other session, Day 30 not yet logged → **Daily check-in** (confirming Day 30's proof leads straight into the Close).
 - Status `Open`, Day 30 logged (or the member says "close") → **Close**.
 
 Confirm with the member in one line before proceeding.
@@ -47,11 +53,12 @@ Confirm with the member in one line before proceeding.
 | **2 · Experiment 1** | The highest-leverage experiment from the member's own backlog, run to its pass bar, every session's result captured in the Experiment Log | Read: **continue or kill** + **pivot review** + Skool post |
 | **3 · Continue or next** | Continue experiment 1 (double down or iterate) or start the next from the queue | Read: continue or kill + pivot review + Skool post |
 | **4 · Continue or next** | Same | Read: continue or kill + pivot review + Skool post |
+| **Sessions 29–30** | Keep the running experiment going and follow up every open conversation in the Experiment Log — no new experiments | Close |
 | **End** | Sell Report, graduation Skool post, Product Studio call booking | |
 
 Only week one changes with the starting point (the plan files). Weeks two to four are the same loop for everyone.
 
-**Where the daily work comes from in weeks 2–4:** nothing is a fixed block. `docs/GROWTH-EXPERIMENTS.md`, written by `distribute-growth-experiments` in week one, names the experiments **running now**, each with a plain sentence, a "Do this" checklist, and a **Pass =** line with a number, a date, and the next move on pass and on fail, plus an ordered **up next** queue. The challenge takes the top experiment, spreads its "Do this" steps across sessions 1–5 of the week, uses session 6 for follow-ups, and reads it against its Pass = line on session 7. Some experiments are outreach, some are content, listings, a founding offer, a conversion fix, a partnership; the mix is the member's. Cold outreach happens only when an experiment calls for it, and is logged as cold.
+**Where the daily work comes from in weeks 2–4:** nothing is a fixed block. `docs/GROWTH-EXPERIMENTS.md`, written by `distribute-growth-experiments` in week one, names the experiment **running now** — a plain sentence, a "Do this" checklist, and a **Pass =** line with a number, a date, and the next move on pass and on fail — plus an ordered **up next** queue. The challenge takes the top experiment, spreads its "Do this" steps across sessions 1–5 of the week, uses session 6 for follow-ups, and reads it against its Pass = line on session 7. Some experiments are outreach, some are content, listings, a founding offer, a conversion fix, a partnership; the mix is the member's. Cold outreach happens only when an experiment calls for it, and is logged as cold.
 
 **Two things this skill briefs the Distribute skills with:** the bar (a payment, or an activated user) and the clock (three experiment-weeks). The growth experiments skill normally plans month two and beyond; here it ranks the backlog by *closest to the bar inside one week* and sizes every experiment to a week with a Pass = line the member can read on session seven. Anything bigger is split into the up-next queue.
 
@@ -84,11 +91,13 @@ Present the starting points the evidence fits, plus "none of these", and **ask**
 | **Live with users, no revenue** | Signups or activity; no payment | `PLAN-live-with-users.md` |
 | **Just shipped via Ship in 7** | `docs/SHIP-IN-7.md` closed this week | `PLAN-after-ship-in-7.md` |
 
+If they pick "none of these", compose from the week-one block library directly and say which plan file is closest; its Compression list is the one this challenge uses.
+
 Then: **"Will the product charge within the thirty days?"** Yes → the bar is a payment; Price it and Checkout live go in week one. No → the bar is one activated user; those blocks drop out. Write the bar into the file verbatim.
 
 ### 5. Confirm the inputs
 
-Start date (default tomorrow); hours per session (a number, not a tier; one plan scaled to it, never two); consecutive days recommended; the price if one exists; who they can already reach, by name (the start of the warm list).
+Start date (default tomorrow); hours per session (a number, not a tier; one plan scaled to it, never two); consecutive days recommended; the price if one exists; who they can already reach, by name (the start of the warm list); whether they're in the Skool community (if not, skip every Skool post step and leave the post log out of the file).
 
 ### 6. Compose week one; show the loop
 
@@ -100,7 +109,7 @@ From `SELL-IN-30-TEMPLATE.md` (create `docs/` if needed): the header, the week-o
 
 ### 8. Draft the Day-0 Skool post and name Day 1
 
-Title `Sell in 30 - Day 0! [app name]`; body in the member's voice. Name Day 1's literal first action.
+Skip the post if the member isn't in the Skool community. Title `Sell in 30 - Day 0! [app name]`; body in the member's voice. Name Day 1's literal first action.
 
 ---
 
@@ -110,60 +119,20 @@ Title `Sell in 30 - Day 0! [app name]`; body in the member's voice. Name Day 1's
 2. **Open threads first.** "Anyone waiting on a reply from you?" Every reply is answered the same session.
 3. **Confirm the last assigned day's proof.** "Did it ship? Show me." A file in the repo, a screenshot saved to `docs/`, a URL, a receipt. A draft is not proof.
 4. **Log it.** Done / partial / missed, proof, one-line blocker. No proof → a miss. **Partial** (the artefact exists but the day's bar isn't met): log it, carry the remainder into the next session as its first task. Two partials in a row count as a miss.
-5. **Missed?** Compress within the week, never across the read: apply the plan's compression rules **in order, 1 then 2 then 3**, stopping at the first that fits; the seventh-session read always happens on schedule with whatever the week produced. Two consecutive misses shrink that week's block or experiment steps; they don't end the challenge.
-6. **Assign today's one block.** Week one: from the plan. Weeks 2–4: read `docs/GROWTH-EXPERIMENTS.md` and name the next "Do this" step of the running experiment. Run it now or hand off, saying what the member needs to bring.
-7. **End every session that reaches people with the feedback** (six fields, a minute to answer) and write it as a row in the Experiment Log (below): week one's warm-conversation and follow-up sessions, and every session in weeks 2–4, follow-up days included (reach = threads replied to). No row, no proof for the day.
+5. **Missed?** Compress within the week, never across the read: use the plan file's **Compression** actions in order, stopping at the first that fits. Its constraints ("never move the read…") are rules, not steps — no action may break one; the seventh-session read always happens on schedule with whatever the week produced. Two consecutive misses shrink that week's block or experiment steps; they don't end the challenge.
+6. **Assign today's one block.** Week one: from the plan. Weeks 2–4: read `docs/GROWTH-EXPERIMENTS.md` and name the next "Do this" step of the running experiment. Run it now or hand off, saying what the member needs to bring. Update the header's status line to today's day and week (`Status: Open · Day 12 of 30 · Week 2`).
+7. **End every session that reaches people with the six-field feedback** (a minute to answer) and write it as a row in the Experiment Log of `docs/SELL-IN-30.md` — the fields, the warm/cold label and the response scale are defined in that section of [SELL-IN-30-TEMPLATE.md](SELL-IN-30-TEMPLATE.md). That covers week one's warm-conversation and follow-up sessions (logged under the experiment name `Warm asks`) and every session in weeks 2–4, follow-up days included. Silence is a row: `0 · none`. No row, no proof for the day. The log is what the weekly read, the pivot review, the next run of `distribute-growth-experiments`, and the Sell Report all read.
 8. End by saying what the next session looks like. (The Skool post is weekly, not daily: drafted at the read, on Day 0, and at the close.)
-
-### The Experiment Log
-
-Every session that reaches people ends with six fields, answered in a minute, one row in the **Experiment Log** table of `docs/SELL-IN-30.md`. Week one's warm asks and follow-ups are logged under the experiment name `Warm asks`, so the Sell Report's week-one row has the same source as every other row:
-
-| Field | What the member answers |
-| --- | --- |
-| **Step** | which "Do this" step ran, and the artefact (post, listing, message batch, fix) |
-| **Reach** | how many people it reached or was sent to (a number, or "unknown") |
-| **Warm/cold** | `warm` (they know the member), `cold` (strangers), or `mixed · 3 warm, 5 cold` when a session sends to both. The one place the label is set; the weekly read and the Sell Report sum warm and cold from this column |
-| **Response** | how many responded, and the rung each reached on the response scale (below), counted per rung when a session yields more than one: `2 · reply, 1 · conversation` |
-| **Verbatim** | the most useful thing anyone said, in their words (or "silence") |
-| **Surprise** | one line: what happened that the member didn't expect |
-
-**The response scale.** Sell in 30's own measure of how far a response got, six rungs: **none → reply → conversation → signup → activated user → payment**. Each response is logged at the highest rung it reached; silence is `0 · none`. The weekly read, the Skool posts and the Sell Report all name rungs on this scale.
-
-Same schema every session, so the rows add up. The log is what the weekly read, the pivot review, the next run of `distribute-growth-experiments`, and the Sell Report all read. Verbatims flow into the Persona section of `docs/DEFINE.md` (pain language) and the tracker's Cumulative Learnings in `docs/GROWTH-TRACKER.md`. Silence is a count of zero, logged.
 
 ---
 
 ## Mode 3 — Weekly read (sessions 7, 14, 21, 28)
 
-About 45 minutes at the end of the seventh session. Starts with the daily check-in, then, in this order (each part reads what the previous one wrote):
-
-1. **The signal read.** Read the week's Experiment Log rows: every response logged, silence included; warm and cold summed from the Warm/cold column; the highest rung reached this week; every new responder added to the warm list; next week's target rung and the step that reaches it named.
-2. **Continue or kill** (weeks 2–4). The running experiment's result against its Pass = line. Pass → **continue**: double down or iterate, per the file's own "on pass" move. Fail → **kill**: log the learning; the next experiment from the up-next queue starts next session (re-run `distribute-growth-experiments` if the queue is empty). Write the row in `docs/GROWTH-TRACKER.md` now (result as a number, Pass or Fail, the learning, the decision) and in `docs/SELL-IN-30.md`. **The pass bar decides, not mood.**
-3. **The pivot review** (weeks 2–4). Read the week's Experiment Log rows and the tracker row just written against `productos/define/BONUS-Pivot-Framework.md`, in its own order:
-   1. **Diagnose before pivoting.** A *distribution* problem (people who try it like it; not enough try it), an *execution* problem (people hit the same wall and bounce), or a *patience* problem? **Inside the challenge, patience means: the running experiment hasn't completed a full send of its "Do this" list yet.** The framework's own 60-day and ten-post thresholds don't apply here; a completed experiment that failed its Pass = line is a result, not impatience. If any of the three applies, say so and recommend **no pivot**, naming the action instead (more reps, fix the wall, finish the send). A no-pivot diagnosis writes no candidate experiment.
-   2. **Otherwise read where people fall off** and map it to one variable: no replies at all → **persona** (or the channel, which is distribution); replies but no click → the **offer** (what's promised: a product pivot) or the **messaging** (how it's said: not a pivot — a rewrite-and-resend to the same people, logged as such); clicks but no payment → **pricing**; paid or activated but didn't return → **product**.
-   3. **Name the validated piece the member keeps** and the one variable to change. Never two (the framework's meta-rule).
-   4. **Write it as a candidate experiment** with its own Pass = line for the up-next queue, so next week tests it like everything else. The member decides whether it jumps the queue.
-
-   Cite the log rows it read. It suggests; it never decides. **Two kills in a row override the patience diagnosis**: two completed sends that failed is a signal, and the read recommends the pivot for next week rather than a third send.
-4. **Draft the weekly Skool post:** `Sell in 30 - Week N! [rung reached, five words]`, carrying the decision and one "what I learnt" line. Drafted after the read is written, never before.
-5. Name next week's first session.
-
----
+Read [WEEKLY-READ.md](WEEKLY-READ.md) and follow it: the check-in, then the signal read, continue or kill, the pivot review, the weekly Skool post, and next week's first session.
 
 ## Mode 4 — Close (Day 30 or 31)
 
-1. **Check the bar honestly.** A payment (or an activated user, for a product staying free), or not. Partial rungs (a signup, "send me the link") are logged at their rung and named as what they are, never rounded up. Set the header's `Status:` line to `Closed — [date]`, so the root guidelines stop starting sessions with the check-in.
-2. **Write the Sell Report** into `docs/SELL-IN-30.md`: result vs the bar; the live URL, the price line and guarantee at close, whether checkout is live or still in test, stack and hosting; a one-line product state (what works, what doesn't); hours planned vs spent and available going forward; the Experiment Log totals per experiment (reach, responses, rungs); people reached, warm/cold; the rung reached each week; what the market said in its own words; every pivot review's recommendation and what the member did with it; what changed during the month; which canonical docs exist and are current; the biggest blocker; what the member wants next. Structured for the coach intake, so a member who books a call arrives with their situation documented. Ends with one line: *bring this to your call.*
-3. **Draft the graduation Skool post:** `Sell in 30 completed! Here's what I learnt`. (The `Sell in 30 - My first customer! 🚀` post went out the day the payment landed.)
-4. **The recommendation.** Once, one paragraph, framed by the outcome, in the closing message and in the Sell Report, not in the Skool post:
-
-   > **Paid:** You have a customer, and thirty days of real market signal written down. The **Product Studio** is how that becomes the next fifty: a custom programme composed from exactly where you are now, 1-1 support through every phase, and a coach who reads your Sell Report before the first call. Book it at **buildgreatproducts.com/product-studio** and bring the report.
-   >
-   > **Not yet:** Thirty days of honest signal is worth more than most founders collect in a year, and it's all in your Sell Report — who you reached, what they said, what you tried, what you learnt. That is exactly what a coach turns into the plan that works. Book a call at **buildgreatproducts.com/product-studio** and bring the report; it's the first thing we'll read.
-
-   Then name what to run meanwhile: the Distribute loop (`distribute-growth-experiments` for the next cycle), or the Pivot Framework if the read recommended a pivot the member hasn't run yet.
+Read [CLOSE.md](CLOSE.md) and follow it: check the bar honestly and close the status line, write the Sell Report, draft the graduation post, give the Product Studio recommendation, and verify the log before handing over.
 
 ---
 
@@ -180,7 +149,7 @@ About 45 minutes at the end of the seventh session. Starts with the daily check-
 | Warm conversations | the warm ask: the warm list in `docs/SELL-IN-30.md` written first (existing users and anyone who has already responded, then named people who match the persona); a personal message to each, checkout link (or "try it" link) in hand; every response logged in the Experiment Log | messages sent; the warm list | sent-folder screenshot |
 | Channel | `distribute-gtm-strategy` | `docs/GO-TO-MARKET.md`: the primary channel and its "Do this" list | file exists |
 | Experiments | `distribute-growth-experiments`, briefed with the bar and the clock | `docs/GROWTH-EXPERIMENTS.md` (running now + up next); `docs/GROWTH-TRACKER.md` seeded | experiment 1 named, Pass = line written |
-| Weekly read | the signal read (Mode 3), applied to the week | the Week 1 read in `docs/SELL-IN-30.md` | the read, posted |
+| Weekly read | the signal read ([WEEKLY-READ.md](WEEKLY-READ.md)), applied to the week | the Week 1 read in `docs/SELL-IN-30.md` | the read, posted |
 
 ### Weeks two to four
 
@@ -204,14 +173,13 @@ About 45 minutes at the end of the seventh session. Starts with the daily check-
 9. **The pivot review suggests; the member decides.** Diagnose first, one variable at most, written as a candidate experiment. Firm after two kills in a row.
 10. **A payment before Day 30 does not end the challenge.** Log it, celebrate it, post `Sell in 30 - My first customer! 🚀`, ask for the testimonial, and run the next experiment for customers two and three.
 11. **One plan, scaled to the hours the member gave.** Never two named plans.
-12. **Thirty sessions, not thirty calendar days.** The read happens every seventh session.
-13. **`docs/PLAN.md` present:** compose around its Distribute steps; annotate with a dated one-liner; never recompose.
+12. **`docs/PLAN.md` present:** compose around its Distribute steps; annotate with a dated one-liner; never recompose.
 
 ---
 
 ## The Skool post
 
-Two accountability loops: the daily check-in inside the agent, and a **new Skool post at each weekly read**, plus Day 0 and the close. Six posts, seven if the first customer lands. The skill drafts **title and body**; the member posts it and pastes the link into the Skool post log. Never post on the member's behalf.
+Two accountability loops: the daily check-in inside the agent, and a **new Skool post at each weekly read**, plus Day 0 and the close — six posts, seven if the first customer lands. If the member isn't in the Skool community, skip the post. The skill drafts **title and body**; the member posts it and pastes the link into the Skool post log.
 
 **Titles, house format:**
 
@@ -244,10 +212,6 @@ Missed weeks are posted too. Zero is an entry.
 - **The Fresh-Start Reflex.** A new channel every week. The next send goes back to the thread that worked.
 - **The Feature Excuse.** "They'll pay once I add X." The log says whether anyone asked for X.
 
-## Tone
-
-Register: coach at the moment of fear. Celebrate the rung, then anchor it. Never shame a zero. Blunt about proof and about the pass bar, warm about everything else.
-
 ## Must-nots
 
 - Never send messages, post to Skool, or contact anyone on the member's behalf.
@@ -256,7 +220,3 @@ Register: coach at the moment of fear. Celebrate the rung, then anchor it. Never
 - Never touch production data.
 - Never send the member's Experiment Log or Sell Report anywhere. What reaches the community is what the member chooses to post.
 - Never write a proof artefact or an Experiment Log row yourself to make a day "done". The skills produce the files; the member answers the six fields. No proof, no row → a miss.
-
-## What "done" looks like
-
-`docs/SELL-IN-30.md` has a header with the bar verbatim, a week-one plan the member edited, thirty logged sessions (none silent), an Experiment Log with a row for every session that reached people, four weekly reads each with a signal read, a continue/kill decision and a pivot review, six Skool post links (seven if the first-customer post went out), a Sell Report with an honest result and the totals, and the Product Studio recommendation with the report ready to bring to the call. `docs/GROWTH-TRACKER.md` carries the week-by-week record. The member knows the next thing to run.

@@ -1,18 +1,21 @@
 ---
 name: develop-code-review
 description: >-
-  Use when the user has uncommitted changes and wants them reviewed before committing — the deliberate whole-diff correctness pass. Triggers on phrases like "review my changes", "code review", "check my work before I commit", "am I ready to commit", "review what we just built", "anything wrong with this diff", or any request to review uncommitted work. Runs in the app repo — the repository that contains `productos/`. Reads the working tree, staged changes, and new untracked files, states what the change is trying to do, reviews across five lenses (correctness, regressions, edge cases, a thin security pass, consistency), verifies every finding against the actual source before reporting, and delivers an in-conversation report — must-fix items, considerations, pre-existing issues — ending in an explicit verdict: ready to commit or not. Works standalone in any repo.
+  Runs the ProductOS pre-commit review of uncommitted changes (working tree, staged, and untracked
+  files): states what the change is for, checks correctness, regressions, edge cases, a light
+  security pass, and consistency, verifies every finding in the source, and ends with a
+  ready-to-commit verdict. Use when the user says "review my changes before I commit" or "am I ready
+  to commit". Works in any repo. Not for a pull request or branch — use a PR review tool; not for a
+  full security audit — use develop-security-audit.
 ---
 
 # Develop: Code Review
 
-The deliberate pre-commit review. The build loops run their tool's `/review` in-flight, per task; this skill is the step back — a whole-diff pass over everything currently uncommitted, before it becomes a commit. The output is a conversation, not a file: findings with locations, and a verdict.
+The deliberate pre-commit review. `build-loop` runs the tool's `/review` once its work is finished, and `develop-build` at every phase boundary; this skill is for changes made outside them — a whole-diff pass over everything currently uncommitted, before it becomes a commit. The output is a conversation, not a file: findings with locations, and a verdict.
 
-**Boundary with the sibling skills:** the build loops (`cc-build-loop` etc.) own in-flight, per-task review while building; `develop-design-review` owns design-system adherence (tokens, components, `docs/DESIGN.md`); `develop-security-audit` owns security depth. **This skill owns the pre-commit correctness pass** — it carries only a thin security check for the two commit-blockers (hardcoded secrets, missing auth on new routes) and hands anything deeper to the audit.
+**Boundary with the sibling skills:** `build-loop` and `develop-build` review their own work; `develop-design-review` owns design-system adherence (tokens, components, `docs/DESIGN.md`); `develop-security-audit` owns security depth. **This skill owns the pre-commit correctness pass** — it carries only a thin security check for the two commit-blockers (hardcoded secrets, missing auth on new routes) and hands anything deeper to the audit.
 
 The voice is a senior engineer reviewing a teammate's diff — direct, specific, and calibrated. Not a gatekeeper: the job is to catch what would break, say what's genuinely good in one line, and give a clear verdict. Nitpicks are not findings. A clean small diff deserving "no issues — ready to commit" is a normal, expected outcome, not a failure to look hard enough.
-
-> **Session length:** 5–15 minutes for a typical feature diff.
 
 ## Workflow
 
@@ -32,17 +35,21 @@ If there are no uncommitted changes, say so and stop — nothing to review. If t
 
 Before judging anything, say in one or two sentences what these changes are trying to do — and confirm it if it's not obvious. Read enough surrounding context to review honestly: the callers of changed functions, the consumers of changed API responses, the tests that cover the touched paths, the types. Load the repo's root `CLAUDE.md`/`AGENTS.md` conventions — deviations from *this codebase's* established patterns are findings; deviations from generic best practice are not.
 
-### 3. Review across five lenses
+### 3. Run the repo's own checks
+
+If the repo defines typecheck, lint, or test commands (`package.json` scripts, a `Makefile`, `pyproject.toml`, the root `CLAUDE.md`/`AGENTS.md`), run them. A check that fails because of the diff is a must-fix; one that was already failing before the change is Pre-existing. If none exist, say so in one line and move on — don't invent a test suite.
+
+### 4. Review across five lenses
 
 One pass per lens over the scoped diff, gathering candidate findings before reporting anything:
 
-1. **Correctness** — logic errors, inverted conditions, off-by-one, wrong operator, unhandled null/undefined, unawaited promises, wrong branch on error.
+1. **Correctness** — does the code do what step 2's stated intent says, on every path it touches?
 2. **Regressions & contracts** — changed function signatures or return shapes with un-updated callers; removed or renamed exports still imported elsewhere; schema changes vs. the queries that hit them; API response changes vs. the frontend that consumes them.
-3. **Edge cases & error handling** — empty/zero/negative inputs, network failure paths, swallowed exceptions, missing loading/error states on new UI.
+3. **Edge cases & error handling** — including failure paths and missing loading/error states on new UI.
 4. **Security (thin pass)** — two commit-blockers only: hardcoded secrets or keys anywhere in the diff or untracked files, and new routes/endpoints with no auth check. Anything subtler gets one line: "worth a `develop-security-audit` pass" — don't attempt depth here.
 5. **Consistency & reuse** — re-implements an existing helper, deviates from the codebase's own patterns, leftover debug output, commented-out blocks, TODO stubs returning fake data.
 
-### 4. Verify before reporting
+### 5. Verify before reporting
 
 Every finding earns its place or gets cut:
 
@@ -51,7 +58,7 @@ Every finding earns its place or gets cut:
 - Confirm the issue is **in the diff**. If it's real but pre-existing, re-label it Pre-existing — don't drop it, and don't blame today's change for it.
 - Cut anything you wouldn't confidently raise reviewing a colleague's PR. Better to miss a theoretical issue than to bury the two real ones in noise.
 
-### 5. Report and give the verdict
+### 6. Report and give the verdict
 
 Deliver in conversation, in this shape:
 
@@ -65,10 +72,16 @@ Deliver in conversation, in this shape:
 ## Rules
 
 - **Re-reviews converge.** After the user fixes findings and asks again, check the fixes and report must-fix items only — no new nits on a re-pass. The loop must end.
-- **Don't duplicate the machines.** Never flag formatting, import order, missing tests, or anything the repo's linter/CI already enforces.
+- **Don't duplicate the machines.** Never flag formatting, import order, or anything the repo's linter/CI already enforces. Don't flag missing tests, except for new logic on the core loop.
 - **The spec wins.** If a finding contradicts `docs/PRD.md` or the task's intent, flag the disagreement instead of asserting the code is wrong.
 - **Never say "looks good" without having read the code.** The credit line and the verdict are earned by the pass, not by politeness.
 
-## What "done" looks like
+## Verify before delivering
 
-The user knows exactly three things: what must change before committing (with locations and fixes), what can wait, and whether they're ready to commit. Every finding cites real source. Small clean diffs got a fast, confident "ready." Recommended rhythm: run this before every commit that closes a feature — and after any auth, payments, or data-access work, follow it with `develop-security-audit`.
+- [ ] Every finding cites real source (`file:line`), and every must-fix has a specific fix.
+- [ ] The repo's own checks ran (or their absence was stated), and any failure the diff caused is a must-fix.
+- [ ] Consider items are capped at five; pre-existing issues are labelled, not blamed on today's change.
+- [ ] A small clean diff got a fast, confident "ready."
+- [ ] The member knows exactly three things: what must change before committing, what can wait, and whether they're ready to commit — the verdict is explicit.
+
+**Next step:** after any auth, payments, or data-access work, follow this with `develop-security-audit`.

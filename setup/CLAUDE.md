@@ -6,7 +6,7 @@
 - The product strategy system lives in `productos/` — checklists, worksheets, and skills. Everything it produces lives in `docs/`; the strategy docs there are the source of intent — don't guess at product decisions they already answer.
 - The programme plan is `docs/PLAN.md`, when present (adopted at setup by `setup`) — consult it before starting any phase work.
 - The canonical product documents live in `docs/` at the repo root — `DEFINE.md` (offer, customer, pricing), `DESIGN.md` (product identity + design tokens), `COPY.md`, `PRD.md`, `ROADMAP.md`, `SECURITY-AUDIT.md`, `DEPLOY.md`, `GO-TO-MARKET.md`, the challenge logs `SHIP-IN-7.md` / `SELL-IN-30.md`, and the rest. ProductOS skills write them, never into `productos/`; they may sit alongside the repo's own docs. A repo set up before ProductOS 1.14.0 may still have `docs/PRODUCT.md` — run `update` to move it into `DEFINE.md`.
-- Build-loop plan files are `docs/ROADMAP.md` and `docs/REFACTOR.md` — never `docs/PLAN.md` (the programme plan, no checkboxes) and never `productos/*-CHECKLIST.md`.
+- Build-loop plan files are `docs/ROADMAP.md`, `docs/REFACTOR.md`, and `docs/MIGRATION.md` (plus the Fix plan in `docs/SECURITY-AUDIT.md` when asked for security fixes) — never `docs/PLAN.md` (the programme plan, no checkboxes) and never `productos/*-CHECKLIST.md`.
 - If `docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` exists with `Status: Open`, a challenge is running: start every session with that challenge's daily check-in (`ship-in-7` / `sell-in-30`) before any other work.
 - Full system orientation: `productos/AGENTS.md`.
 <!-- END PRODUCTOS -->

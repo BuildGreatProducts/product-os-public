@@ -2,6 +2,18 @@
 
 Eight named patterns that explain why most first-draft product offers underperform. Each pattern has a diagnostic question, a "bad" version, an explanation of why it breaks downstream, and a "good" version. Use this document as a checklist after drafting your Product Offer — learning the patterns is how you stop creating them.
 
+## Contents
+
+- [1. The Wide Wedge](#1-the-wide-wedge)
+- [2. The Vague Pain](#2-the-vague-pain)
+- [3. The Unmeasurable Outcome](#3-the-unmeasurable-outcome)
+- [4. The Feature-List Mechanism](#4-the-feature-list-mechanism)
+- [5. The Toothless Guarantee](#5-the-toothless-guarantee)
+- [6. The Hypothetical Proof](#6-the-hypothetical-proof)
+- [7. The Story Break](#7-the-story-break)
+- [8. The Frame Mismatch](#8-the-frame-mismatch)
+- [How to use this document](#how-to-use-this-document)
+
 ---
 
 ## 1. The Wide Wedge

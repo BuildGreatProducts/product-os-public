@@ -27,7 +27,7 @@ Three steps, the same for every tool and every stage:
 2. **Put ProductOS in it as `productos/`** — clone this folder into the repo root, named exactly `productos`. A copy (or a GitHub ZIP extract) is fine for Claude Code and Codex; **Cursor's `/add-plugin` needs a real git clone** — see below.
 3. **Run `setup`.** It wires the agent guidelines into your repo root (`CLAUDE.md`/`AGENTS.md`, from `productos/setup/`), adds `productos/` to your `.gitignore` (see the licence note below), and — if your copy shipped with a programme plan — moves it to `docs/PLAN.md` and verifies it against your actual repo.
 
-ProductOS is also a plugin for **Claude Code**, **Codex**, and **Cursor** — one package, three manifests, the same 39 skills:
+ProductOS is also a plugin for **Claude Code**, **Codex**, and **Cursor** — one package, three manifests, the same 36 skills:
 
 ### Claude Code
 
@@ -103,7 +103,8 @@ Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in e
 - **Checklists** (`*-CHECKLIST.md`) — the runbook for each phase. Source of truth for how each step runs; your plan says which steps apply to you.
 - **Numbered worksheets** (`1-`–`4-` in each phase folder) — the structure and `> Good/Bad` calibration each skill follows. The skills read them and write your answers to `docs/`; the worksheets stay blank.
 - **BONUS docs** — reference playbooks: worked examples, failure patterns, channel guides, best-practice libraries.
-- **`productos/skills/`** — one flat folder per skill (39 total). Each contains a `SKILL.md` plus any bundled reference files.
+- **`productos/skills/`** — one flat folder per skill (36 total). Each contains a `SKILL.md` plus any bundled files it loads only when needed (`references/`, `templates/`).
+- **`productos/scripts/`** — a maintainer tool: `lint-skills.py` checks every skill against Anthropic's skill-authoring rules. You don't need it to use ProductOS.
 - **`productos/setup/CLAUDE.md` + `productos/setup/AGENTS.md`** — agent guidelines wired into your repo root at setup (by `setup`), so your coding agent behaves from day one.
 
 ## Requirements
@@ -113,4 +114,4 @@ Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in e
 
 ## Version
 
-**1.14.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
+**1.15.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.

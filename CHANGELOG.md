@@ -1,5 +1,51 @@
 # Changelog
 
+## 1.15.0 — October 2026
+
+**Every skill is rebuilt to Anthropic's skill-authoring best practices: fewer skills, smaller to load, quicker to pick, and harder to misread.** An audit against the guide found the skills were sound, but long (up to 4,700 words each), with catalogues, report templates and dated statistics inline. Every description was close to the 1,024-character limit, they all loaded into every session, and several competed for the same triggers. Fragile steps were left to judgement, and there was a handful of real bugs.
+
+- **39 skills become 36. Duplicate skills are merged:**
+  - **`build-loop`** replaces `cc-build-loop`, `codex-build-loop` and `cursor-build-loop`. Their only difference was which review command to run, which is now one table inside the single skill.
+  - **`develop-build`** replaces `develop-mvp-build` and `develop-refactor-build`. It runs `docs/ROADMAP.md` (MVP mode) or `docs/REFACTOR.md` (refactor mode) with the same work loop.
+
+  `setup` reads the old names in older programme plans as the new ones.
+- **Skill bodies are a third smaller (94k → 63k words).** Long reference material moved into files bundled with each skill (`references/`, `templates/`), linked one level deep and read only at the step that needs it. For example:
+  - the CRO audit areas and benchmarks
+  - the 50 design heuristics
+  - the AI-era offer patterns
+  - the failure-pattern lists
+  - the design-review and security-audit report templates
+  - Sell in 30's weekly read and close, and Ship in 7's close
+
+  Repeated closing sections (Verify, Pacing, Tone, Done) are merged into one copyable checklist per skill. Worksheet templates are no longer copied into skills that already read the worksheet.
+- **Every description is rewritten.** Each now says what the skill does, its inputs and outputs, and 3–5 distinctive triggers, and ends with a "Not for X — use Y" line pointing to the nearest sibling. Total description text drops from 35k to 20k characters. The challenges trigger on an open log instead of a shared "what's my task today".
+- **Reference docs get contents lists, and skills read only what they need.** Every BONUS doc and develop guide over 100 lines starts with a contents list. Skills now go to named sections instead of reading 400-line docs in full. Reference docs exist once: the distribute skills link to `distribute/` (`../../distribute/` from the skill folder, which resolves both inside `productos/` and in a plugin install) instead of carrying nine copied files.
+- **Dated claims moved out of the instructions.** Statistics, ARR figures and platform facts now sit in dated `references/benchmarks.md`-style files, each marked for re-verification before quoting. Skills that need live research say what to do when web search isn't available. `computer://` links, which only worked in one client, are gone.
+- **Fixes:**
+  - `update` no longer deletes through a symlink, and it only removes folders it emptied itself.
+  - `design-design-system-from-code` quotes `{token}` references, so the YAML parses.
+  - The challenge logs use one plain `Status: Open · Day N of 7` line, which every check-in updates. It now matches the root guidelines' `Status: Open` check, and the last day no longer falls between modes. Sell in 30 defines sessions 29–30.
+  - `develop-golive` follows the PRD's hosting decision and gates on `docs/SECURITY-AUDIT.md`. `TECH-STACK-OPTIONS.md` gains a Hosting & Deployment section with one default per stack.
+  - `distribute-scale-automate` checks activation before scaling, and its inverted "one automation at a time" rule is corrected.
+  - `docs/MIGRATION.md` is a build plan. The build-plan list is defined once, in the root guidelines, and `build-loop` defers to it.
+  - Extracted Define drafts count as filled.
+  - The AI-app margin floor is 50% throughout.
+  - Landing pages and app listings use only real proof, and the pricing section mirrors `docs/DEFINE.md`.
+  - `develop-design-review` reads new untracked files.
+  - `develop-refactor-plan` starts from a baseline branch and tag.
+  - `develop-code-review` runs the repo's own checks.
+  - `develop-feature-finder` appends tasks in the roadmap's exact format.
+  - Automation recipes draft posts and outreach for the member to send; the agent never sends them.
+- **Code review has one rhythm.** `develop-build` reviews at every phase boundary. `build-loop` builds, tests and fixes each task, then reviews once the work is finished. The roadmap no longer schedules review. `develop-code-review` covers changes made outside the build skills.
+- **Inter is avoided everywhere.** `design-design-system-from-code` now treats an excluded font (Inter, Instrument Serif, Outfit, Plus Jakarta Sans) as a conflict to resolve with a free substitute, instead of documenting it. This matches `design-design-system` and `develop-design-review`.
+- **Maintainer lint.** `scripts/lint-skills.py` checks every skill against the guide:
+  - name and description limits, and a "Not for" line
+  - body length
+  - every relative link in a skill resolves
+  - the two root-guideline twins stay identical
+  - no `computer://` links
+  - contents lists on long reference docs
+
 ## 1.14.0 — October 2026
 
 **Every output now lands in `docs/`, and each phase gives you fewer documents to read.** Skills used to fill templates in place inside `productos/`, the folder setup gitignores. So the offer, persona, pricing, identity and GTM work was never committed, a collaborator's clone never had it, and members had to run a synthesis step to get one document they could share. Now `docs/` is the source of truth for everything ProductOS produces, and the phase folders hold only the system.

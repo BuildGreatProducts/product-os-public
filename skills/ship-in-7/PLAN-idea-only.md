@@ -10,7 +10,7 @@
 | --- | --- | --- | --- | --- |
 | 1 | **Define from idea** | `define-offer-builder` → `define-customer-persona` → `define-pricing`, one sitting, no research rabbit holes | `docs/DEFINE.md` has Summary, Offer, Persona and Pricing filled; the offer read out loud | 2.5 |
 | 2 | **Look + magic moment + spec** | `design-design-system` from one image the member loves → `design-magic-moment` → `develop-prd-roadmap` with the MVP scoped to the magic moment only | `docs/DESIGN.html` screenshot; `docs/ROADMAP.md` with one phase | 2.5 |
-| 3 | **Build, day one** | `develop-mvp-build` (or the build loop task by task) | a screenshot of the first working screen, saved to `docs/` | 4 |
+| 3 | **Build, day one** | `develop-build` (or `build-loop` task by task) | a screenshot of the first working screen, saved to `docs/` | 4 |
 | 4 | **Build, day two** | continue; the core flow works end to end locally | screenshots of signup → magic moment, saved to `docs/`; the test suite passing | 4 |
 | 5 | **Quality gate** | `develop-code-review` → `develop-security-audit` → Critical/High fixed via the build loop | `docs/SECURITY-AUDIT.md` verdict; Critical/High ticked | 2 |
 | 6 | **Deploy guide + go live** | `develop-golive` → work `docs/DEPLOY.md` top to bottom | live URL, HTTPS | 3 |
@@ -25,10 +25,16 @@
 
 ## Compression (a missed or short session)
 
+Actions, in order — use the first that fits:
+
 1. Drop Announce.
 2. Merge Days 3–4 into one build day: the magic moment screen only, no onboarding, no settings.
 3. Shorten Day 2's Look: run `design-design-system` with the framework's default component library as the reference instead of a chosen image, and move on to the spec.
-4. Never move Day 5 (gate) after Day 6 (go live). Never move go live past Day 7.
+
+**Constraints** (rules, not steps — no action above may break them):
+
+- Never move Day 5 (gate) after Day 6 (go live).
+- Never move go live past Day 7.
 
 ## What Day 7 looks like
 

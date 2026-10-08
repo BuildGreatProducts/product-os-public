@@ -26,7 +26,7 @@
 - **Wow:** [what they see / feel / unlock]
 - **Where:** [position in journey]
 - **Time-to-aha:** [target]
-- **Comparable evidence:** [1–3 named products with their documented ahas]
+- **Comparable evidence:** [2–3 named products with their documented ahas]
 - **Risk:** [what could go wrong]
 - **Metric:** [measurable threshold]
 
@@ -36,7 +36,7 @@
 - **Wow:** [what they see / feel / unlock]
 - **Where:** [position in journey]
 - **Time-to-aha:** [target]
-- **Comparable evidence:** [1–3 named products with their documented ahas]
+- **Comparable evidence:** [2–3 named products with their documented ahas]
 - **Risk:** [what could go wrong]
 - **Metric:** [measurable threshold]
 
@@ -46,7 +46,7 @@
 - **Wow:** [what they see / feel / unlock]
 - **Where:** [position in journey]
 - **Time-to-aha:** [target]
-- **Comparable evidence:** [1–3 named products with their documented ahas]
+- **Comparable evidence:** [2–3 named products with their documented ahas]
 - **Risk:** [what could go wrong]
 - **Metric:** [measurable threshold]
 

@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Listing Pattern Should You Build?](#the-decision-tree--which-listing-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example 1 — The Cal AI Listing](#worked-example-1--the-cal-ai-listing)
+- [Worked Example 2 — The Duolingo Listing](#worked-example-2--the-duolingo-listing)
+- [Worked Example 3 — The CPP-Driven Subscription App (the underused leverage)](#worked-example-3--the-cpp-driven-subscription-app-the-underused-leverage)
+- [Anti-Patterns — What Kills App Store Listing Conversion](#anti-patterns--what-kills-app-store-listing-conversion)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The App Store Listing Operating Model](#the-app-store-listing-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **An app store listing is a 5-second sales pitch. The user is scrolling search results. They see your icon, your title, your subtitle, and the first 1–3 screenshots — and they decide whether to tap "Get" or scroll past. The rest of the listing exists to convert the user who tapped through to the full product page, not to teach the user who already decided. The first three screenshots are the entire fight; everything else recovers the user who didn't convert in the first three.**

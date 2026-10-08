@@ -4,6 +4,20 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Seven Logo Types](#the-seven-logo-types)
+- [The Decision Tree — Which Type Should You Use?](#the-decision-tree--which-type-should-you-use)
+- [The Eight Timeless Principles](#the-eight-timeless-principles)
+- [Monochrome and Variant Rules](#monochrome-and-variant-rules)
+- [2026 Trends to Honor (and Trends to Skip)](#2026-trends-to-honor-and-trends-to-skip)
+- [Anti-Patterns — What Kills Logos](#anti-patterns--what-kills-logos)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **A logo is not a piece of art. It is a recognizable mark that has to work at every size, in every color treatment, on every surface — from a 16-pixel favicon to a 30-foot billboard — for the next ten years. A logo that looks great in the founder's deck but fails on the app icon, the email signature, the embroidered polo, or the dark-mode website is a logo that costs the brand twice — once to design, again to redesign.**

@@ -24,6 +24,7 @@
 
 - **Goal:** [one sentence]
 - **User action:** [tap/type/wait]
+- **What this screen proves:** [one sentence — what the user now believes about the product after this screen]
 - **Copy:**
   - Headline: "[exact headline]"
   - Sub: "[exact sub]"
@@ -36,6 +37,7 @@
 
 - **Goal:** [one sentence]
 - **User action:** [tap/type/wait]
+- **What this screen proves:** [one sentence — what the user now believes about the product after this screen]
 - **Copy:**
   - Headline: "[exact headline]"
   - Sub: "[exact sub]"
@@ -48,6 +50,7 @@
 
 - **Goal:** [one sentence]
 - **User action:** [tap/type/wait]
+- **What this screen proves:** [one sentence — what the user now believes about the product after this screen]
 - **Copy:**
   - Headline: "[exact headline]"
   - Sub: "[exact sub]"

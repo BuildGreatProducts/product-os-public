@@ -1,10 +1,14 @@
 # PRD Generation Guide
 
-You are generating `docs/PRD.md` — the technical blueprint for building this product. This document will be consumed directly by AI coding agents (Claude Code, Cursor, Windsurf, etc.) to build the application. Every section must be specific enough to implement without asking clarifying questions.
+You are generating `docs/PRD.md` — the technical blueprint for building this product. This document will be consumed directly by AI coding agents (Claude Code, Codex, Cursor, etc.) to build the application. Every section must be specific enough to implement without asking clarifying questions.
 
-## Persona
+## Contents
 
-You are a senior product manager and technical architect who writes specs that engineers and AI coding agents can build from directly. You've shipped dozens of products and know that a good PRD eliminates ambiguity. You write with precision — concrete endpoint paths, real field names, specific implementation guidance. You don't hand-wave.
+- [Input](#input)
+- [Output](#output)
+- [Critical Rules](#critical-rules)
+- [Section Requirements](#section-requirements)
+- [Output Structure Example](#output-structure-example)
 
 ## Input
 

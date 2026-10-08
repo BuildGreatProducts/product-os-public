@@ -14,8 +14,8 @@ A running log of every experiment you run — the result, whether it beat its th
 
 | Date | Experiment | Channel | Pass threshold | Result | Pass? | Learning | Decision |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| *Jun 12* | *Hook Test (pain-led opener)* | *Social* | *1 hook >50% 3-sec retention in 5 posts* | *Best hook 58%, 2.4× saves* | *✅* | *Pain-led openers beat product-led ~3:1* | *Double down* |
-| *Jun 5* | *Homepage → deep link* | *Social* | *2× click-to-trial in 1 wk* | *1.1× — no real change* | *❌* | *The link wasn't the bottleneck* | *Kill* |
+| *Jun 12* | *Hook Test (pain-led opener)* | *Social* | *1 hook >50% 3-sec retention in 5 posts* | *Best hook 58%, 2.4× saves* | *Pass* | *Pain-led openers beat product-led ~3:1* | *Double down* |
+| *Jun 5* | *Homepage → deep link* | *Social* | *2× click-to-trial in 1 wk* | *1.1× — no real change* | *Fail* | *The link wasn't the bottleneck* | *Kill* |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
