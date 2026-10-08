@@ -18,7 +18,7 @@ Running a challenge (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` open)? It says 
 ## Step 2 — Verify your setup
 
 - **What to do:** Nothing to create or copy — ProductOS already lives inside your app repo, and the specs are already at `docs/`. Just confirm the root `CLAUDE.md`/`AGENTS.md` carry the ProductOS guidelines (wired from `productos/setup/` at setup; if they're missing, `setup` fixes it in seconds).
-- **Also recommended:** Push the repo to GitHub so your work is backed up and versioned. The agent builds straight through all phases in one go — there's no need to gate each phase behind a pull request. For code review, the build loop runs your coding agent's built-in review per task, and Step 5's `develop-code-review` is the deliberate pass before each commit — no separate service needed.
+- **Also recommended:** Push the repo to GitHub so your work is backed up and versioned. The agent builds straight through all phases in one go — there's no need to gate each phase behind a pull request. Code review is built in: `develop-mvp-build` reviews at every phase boundary, and the build loop reviews once its work is finished — no separate service needed.
 
 ## Step 3 — Build the MVP
 
@@ -27,7 +27,7 @@ Pick the path that matches your situation:
 ### 3a — Building from scratch
 
 - **What to do:** Run `develop-mvp-build`.
-- **What it does:** Works through every roadmap task in order — implementing, testing, and verifying each before moving on — until all tasks are checked off and the magic moment works end to end.
+- **What it does:** Works through every roadmap task in order — implementing, testing, and verifying each before moving on, with a code review and a commit at every phase boundary — until all tasks are checked off and the magic moment works end to end.
 
 ### 3b — Refactoring an existing codebase
 
@@ -39,12 +39,12 @@ Pick the path that matches your situation:
 ## Step 4 — Build new features with the build loop
 
 - **What to do:** For every feature you add after the MVP, run the build-loop skill matching your tool: `cursor-build-loop`, `cc-build-loop` (for Claude Code), or `codex-build-loop`.
-- **What it does:** Forces each feature through build → in-flight review (`/review`) → end-to-end testing → fixes before it counts as done — so quality doesn't drift as the app grows. When the feature is finished, Step 5 is the deliberate pre-commit pass.
+- **What it does:** Forces each task through build → end-to-end testing → fixes, then reviews the finished work (`/review`) before it counts as done — so quality doesn't drift as the app grows.
 - **Not sure what to build next?** Run `develop-feature-finder` with a business goal (retention, activation, conversion, revenue) — it reviews your codebase, researches what comparable products do, and delivers ranked feature recommendations you can feed straight into the build loop.
 
-## Step 5 — Code review before commit
+## Step 5 — Code review for work outside the build skills
 
-- **What to do:** Run `develop-code-review` whenever you have uncommitted changes that are about to become a commit — the step back after the build loop's in-flight reviews.
+- **What to do:** Run `develop-code-review` on uncommitted changes you made outside the build loop or a full build (a hand edit, a quick fix). Work from `develop-mvp-build`, `develop-refactor-build`, or a build loop has already been reviewed.
 - **What it does:** Reviews the whole uncommitted diff (including new untracked files) for correctness, regressions, edge cases, and leftover debug code, verifies every finding against the actual source, and ends with an explicit verdict: ready to commit, or the must-fix list first.
 
 ## Step 6 — Design changes

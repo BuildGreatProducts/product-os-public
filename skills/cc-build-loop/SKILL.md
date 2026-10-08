@@ -1,9 +1,9 @@
 ---
 name: cc-build-loop
 description: >-
-  Builds plan tasks or a feature prompt in Claude Code through a build → review (/review, plus
-  /security-review for sensitive surfaces) → test → fix loop, finishing and checking off each task
-  before the next. Use only when running in Claude Code and the user says "run the build loop",
+  Builds plan tasks or a feature prompt in Claude Code through a build → test → fix loop per task,
+  then one review pass (/review, plus /security-review for sensitive surfaces) once the work is
+  finished. Use only when running in Claude Code and the user says "run the build loop",
   "build the next task", "continue the plan", or asks to implement work from docs/ROADMAP.md,
   docs/REFACTOR.md, docs/MIGRATION.md, or a direct prompt. Not for building the whole MVP in one run
   — use develop-mvp-build; not in Codex or Cursor — use codex-build-loop or cursor-build-loop.
@@ -11,7 +11,7 @@ description: >-
 
 # CC Build Loop
 
-Quality-gated feature work: nothing ships on "it compiles" — every increment is built, reviewed, tested end to end, and fixed before the user hears "done."
+Quality-gated feature work: nothing ships on "it compiles" — every task is built, tested end to end, and fixed, and the finished work is reviewed before the user hears "done."
 
 ## Source of work
 
@@ -20,17 +20,17 @@ Quality-gated feature work: nothing ships on "it compiles" — every increment i
 
 ## The loop
 
-Run per task (or per prompted feature). Do not advance until every step passes.
+Steps 1–4 run per task (or per prompted feature) — do not advance until each passes. Step 5 runs once, when the requested scope is complete.
 
 1. **Build.** Implement exactly what the task specifies. Simplest implementation that satisfies it, surgical changes, no speculative scope. Match existing project conventions.
 
-2. **Review.** Run **`/review`** on the changed code. If `/review` isn't available to you, run `develop-code-review` on the uncommitted changes instead. If the change touches auth, payments, user input, or data access, also run **`/security-review`**. Fix all findings in scope — bugs, security issues, edge cases, performance, style in files you touched. If the project has a design system spec (design tokens file, DESIGN.md, theme config), check UI changes against it — no hardcoded colors, type, or spacing that bypass tokens. Note pre-existing issues in untouched code for the report instead of fixing silently. Re-run `/review` until clean. If a finding contradicts the task or spec, the spec wins — flag the disagreement.
+2. **Test end to end.** Run the task's verification step (or the success criteria). Run the full test suite — everything that passed before must still pass. Add tests for new logic. Then exercise the feature as a user would: run the app, walk the real flow including empty, loading, and error states.
 
-3. **Test end to end.** Run the task's verification step (or the success criteria). Run the full test suite — everything that passed before must still pass. Add tests for new logic. Then exercise the feature as a user would: run the app, walk the real flow including empty, loading, and error states.
+3. **Fix.** Anything testing finds goes back through the loop: fix → re-test. Never mark a failing task complete; never start the next task with the app broken.
 
-4. **Fix.** Anything testing finds goes back through the loop: fix → `/review` → re-test. Never mark a failing task complete; never start the next task with the app broken.
+4. **Continue.** Mark the task `- [x]`, update any progress/status line in the plan, and loop to the next task until the requested scope is complete.
 
-5. **Continue.** Mark the task `- [x]`, update any progress/status line in the plan, and loop to the next task until the requested scope is complete.
+5. **Review the finished work.** Once every task in the requested scope is checked off, run **`/review`** over all the changes made in this run. If `/review` isn't available to you, run `develop-code-review` on the uncommitted changes instead. If the work touches auth, payments, user input, or data access, also run **`/security-review`**. Fix all findings in scope — bugs, security issues, edge cases, performance, style in files you touched. If the project has a design system spec (design tokens file, DESIGN.md, theme config), check UI changes against it — no hardcoded colors, type, or spacing that bypass tokens. Note pre-existing issues in untouched code for the report instead of fixing silently. Re-run `/review` until clean, then re-run the tests the fixes touched. If a finding contradicts the task or spec, the spec wins — flag the disagreement.
 
 6. **Report.** When done, tell the user: what was built and plan progress, review findings fixed and anything deferred, how it was verified (tests + flow walked), and what needs their attention next. Be honest about anything flaky or partially verified.
 

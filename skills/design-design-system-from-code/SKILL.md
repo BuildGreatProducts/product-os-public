@@ -14,7 +14,7 @@ description: >-
 
 The **reverse** of `design-design-system`: instead of Product Identity + a reference image → a new system, read the design system that already lives — implicitly and inconsistently — inside an existing codebase, and write it down as a single Google-format `docs/DESIGN.md` with the same `docs/DESIGN.html` mirror. Every shipping codebase has three blues that all mean "primary", button padding forked between components, cards rounded at 8, 12, and 14px, and a `--color-text` variable half the code ignores. The job: **find the de-facto system, surface every internal conflict, let the member pick the canonical value for each role, and document the result.**
 
-The cardinal rule is **document reality, don't silently improve it.** Capture the real fonts, palette, and spacing scale. Don't invent an aesthetic, substitute "better" fonts, or quietly fix contrast. The only thing you actively resolve is *internal inconsistency* — and only with the member. Quality issues (a pair failing WCAG AA, a non-free font, a sprawling type scale) are **advisory notes** delivered outside the file. A `DESIGN.md` that lies about the codebase is worse than none. No external research is needed — everything lives in the code.
+The cardinal rule is **document reality, don't silently improve it.** Capture the real fonts, palette, and spacing scale. Don't invent an aesthetic, substitute "better" fonts, or quietly fix contrast. The only things you actively resolve are *internal inconsistency* and fonts on ProductOS's exclusion list — and only with the member. Quality issues (a pair failing WCAG AA, a non-free font, a sprawling type scale) are **advisory notes** delivered outside the file. A `DESIGN.md` that lies about the codebase is worse than none. No external research is needed — everything lives in the code.
 
 ## Inputs
 
@@ -30,7 +30,7 @@ Run in the app repo root — the repository that contains `productos/` (also wor
 A senior design systems engineer doing a brownfield audit:
 
 - **Evidence-led.** "`#2563EB` appears in 34 places, `#2D6CDF` in 6, and `#3B82F6` in 2 — all used as the primary action color. I'm proposing `#2563EB` as canonical `primary`. Confirm or pick another."
-- **Descriptive, not prescriptive.** Document the system; resist "improving" the palette or swapping fonts.
+- **Descriptive, not prescriptive.** Document the system; resist "improving" the palette or swapping fonts. The one exception is an excluded font (step 4).
 - **Token-fluent and conflict-precise.** "Spacing clusters on a 4px base — `4 / 8 / 16 / 24 / 32 / 64` — except `13px`, `18px`, `25px`, which appear once or twice each. Snap them to the nearest step?" Never "there are some inconsistencies."
 - **Honest about gaps.** If a category has no discernible system (elevation as a free-for-all of ad-hoc shadows), say so and propose the smallest defensible system — flagged as a proposal, not a discovery.
 
@@ -82,7 +82,7 @@ components:
 
 1. `## Brand & Style` — the aesthetic the code adds up to ("utilitarian dashboard," "consumer-playful," "editorial-minimal"), derived from the code and contextualized by `docs/DEFINE.md` if present.
 2. `## Colors` — palette strategy, then a bullet per color role with hex and where it's used. Note any colors you consolidated.
-3. `## Typography` — the type system (single family / pair / sprawl-collapsed-to-scale), then a bullet per level. Document the **real** font families as used in the code.
+3. `## Typography` — the type system (single family / pair / sprawl-collapsed-to-scale), then a bullet per level. Document the **real** font families as used in the code — except an excluded family, which is replaced by the substitute the member picked in step 5.
 4. `## Layout & Spacing` — the base unit and scale, container widths, and grid/layout model as found in the code.
 5. `## Elevation & Depth` — the depth model actually in use (shadows / borders / glass / tonal / flat), or the model you proposed to consolidate an ad-hoc one.
 6. `## Shapes` — the corner-radius philosophy and how radius varies by component type.
@@ -115,6 +115,8 @@ Sweep the code and collect every value actually used, grouped by category. **Cou
 ### 4. Detect internal inconsistencies (the core of this skill)
 
 Cluster the inventory into **conflicts** — competing values for what should be one role. Read [references/extraction-playbook.md](references/extraction-playbook.md) → Inconsistency patterns for how to detect each type: near-duplicate colors, token defined but bypassed, off-grid spacing, multiple radii per component type, mixed units, font sprawl, competing elevation models, forked components, dead tokens.
+
+**Excluded fonts are always a conflict.** ProductOS avoids Inter, Instrument Serif, Outfit, and Plus Jakarta Sans. If the code uses one, add a typography conflict recommending the closest free substitute (Inter → Public Sans or Manrope; the full substitution list is in `design-design-system`'s font rule) and document the family the member picks. The excluded family left in the code becomes drift for `develop-design-review` to flag.
 
 Build a **conflict list**: each entry is one role with its competing values, the occurrence count and representative locations for each, and your recommended canonical pick with the reason. De-duplicate (the same stray hex in 12 files is one conflict with 12 locations) and cluster forked components into one entry.
 
@@ -162,7 +164,7 @@ Then build the **`docs/DESIGN.html` mirror** from the approved markdown — the 
 Then, **separately from the file**, give the member the advisory notes you deliberately kept out of it:
 
 - **Contrast:** every documented `backgroundColor` + `textColor` pair that fails WCAG AA (4.5:1 body, 3:1 large) — state the ratio, propose a fix, let the member decide whether to adjust the token or accept it.
-- **Non-free / excluded fonts:** a documented family that isn't free for commercial use, or is on ProductOS's exclusion list (Inter, Instrument Serif, Outfit, Plus Jakarta Sans) — note it, but **keep the real font in the file** unless the member explicitly asks to substitute.
+- **Non-free fonts:** a documented family that isn't free for commercial use — note it, but **keep the real font in the file** unless the member explicitly asks to substitute. (Excluded fonts aren't advisories; they were resolved as conflicts in step 5.)
 - **Residual sprawl:** anything collapsed aggressively (24 sizes → 8 levels) so the member knows what got rounded.
 
 ## Verify before delivering
@@ -175,6 +177,7 @@ Re-read both files:
 - [ ] Every YAML component has prose in `Components`, and vice versa; token references use exact `{colors.primary}` / `{typography.body-md}` / `{rounded.md}` syntax.
 - [ ] Every canonical decision from step 5 is reflected — one value per role, the one the member picked.
 - [ ] The file describes the code, not an idealized version — real fonts and values; advisories noted separately, not silently applied.
+- [ ] No family on the exclusion list (Inter, Instrument Serif, Outfit, Plus Jakarta Sans) appears in the typography tokens.
 - [ ] Contrast was computed for every documented component pair and reported (not necessarily fixed).
 - [ ] The HTML mirrors the md — every custom property matches its YAML value, every YAML component renders, sections follow the md's order — and an existing html was overwritten only with approval.
 - [ ] The md reads end to end in 4–6 minutes.
