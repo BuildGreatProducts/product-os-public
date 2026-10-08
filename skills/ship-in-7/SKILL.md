@@ -28,7 +28,7 @@ Locate in the ProductOS folder (`productos/` at the app repo root) and the repo-
 Read the header's `Status:` line first.
 
 - No `docs/SHIP-IN-7.md`, or the file's status is `Closed` → **Enrol** (Day 0). A closed file is a finished Ship Report: move it to `docs/SHIP-IN-7-<closed date>.md` before writing the new one, never overwrite it.
-- Status `Open` and the last assigned day is below 7 → **Daily check-in**.
+- Status `Open` and Day 7 not yet logged → **Daily check-in** (confirming Day 7's proof leads straight into the Close).
 - Status `Open`, Day 7 logged (or the member says "close") → **Close**.
 
 Confirm with the member in one line before proceeding.
@@ -88,7 +88,7 @@ Every session in the repo starts here while the challenge is open (the root guid
 2. **Confirm the last assigned day's proof first.** "Did it ship? Show me." A file that now exists in the repo, a screenshot saved to `docs/` (something the agent can open), a URL, a passing command. A draft is not proof; a description of what was planned is not proof; a screen recording the agent can't open is a claim, not proof.
 3. **Log it.** Done / partial / missed, the proof, a one-line blocker. No proof → that day is a miss, logged as one. **Partial** (the artefact exists but the day's bar isn't met, e.g. the audit is written but Critical findings aren't fixed): log it as partial, carry the remainder into the next day as its first task, and apply compression rule 1. Two partials in a row count as a miss.
 4. **Missed?** Apply the compression rules (below) **in order, first that fits**. Two consecutive misses → shrink the scope of the MVP, never the bar. If the MVP is already the magic moment alone, the next lever is hours: ask for more, or name the honest miss now rather than on Day 7.
-5. **Assign today's one block**: the skill to run, the artefact, the proof. Then either run that skill in this session or hand off ("run `develop-golive`; come back when `docs/DEPLOY.md` exists and the accounts are created"). Say what the member needs to bring (an image they love for the Look block, hosting account logins for Go live).
+5. **Assign today's one block**: the skill to run, the artefact, the proof. Update the header's status line to today's day (`Status: Open · Day 4 of 7`). Then either run that skill in this session or hand off ("run `develop-golive`; come back when `docs/DEPLOY.md` exists and the accounts are created"). Say what the member needs to bring (an image they love for the Look block, hosting account logins for Go live).
 6. **Draft today's Skool post** (title from the house format, body in the member's voice). If the block is handed off, draft it with a `[proof]` slot and finish it at the next check-in when the proof lands; a post never claims proof that doesn't exist yet.
 7. **End by saying exactly what returning next time looks like.**
 
@@ -104,7 +104,7 @@ Every session in the repo starts here while the challenge is open (the root guid
 
 ## Mode 3 — Close (Day 7 or 8)
 
-1. **Check the bar honestly.** Is the URL live? Did the smoke test pass as a real customer? Hit, partly hit (live but the core flow fails), or missed. Say which, plainly. A miss is logged and read, never reframed as "nearly". Set the header's `Status:` line to `Closed — [date]`, so the root guidelines stop starting sessions with the check-in.
+1. **Check the bar honestly.** Is the URL live? Did the smoke test pass as a real customer? Hit, partly hit (live but the core flow fails), or missed. Say which, plainly. A miss is logged and read, never reframed as "nearly". Rewrite the header's status line to `Status: Closed · [date]`, so the root guidelines stop starting sessions with the check-in.
 2. **Write the Ship Report** into `docs/SHIP-IN-7.md` (section in the template): result vs the bar, the live URL and repo, the stack and hosting, hours planned vs spent, what shipped each session, what was cut to make the week, the audit's open findings, which canonical docs exist and are current, the biggest blocker, what the app can and can't do today, the hours the member has going forward and what they want next. Written so the member can bring it to a Product Studio call as-is — it is the intake material a coach composes a custom plan from.
 3. **Draft the graduation Skool post.** Title `Ship in 7 completed! Here's what I learnt` (the `It's live! 🚀` post went out the day the smoke test passed). Body in the member's voice, with the live URL.
 4. **The recommendation.** Once, one paragraph, framed by the outcome, in the closing message and in the Ship Report, not in the Skool post:

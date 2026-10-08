@@ -39,7 +39,7 @@
 ### Social Proof Bar
 
 - **Goal:** [one sentence]
-- **Logos:** [5–8 named customer brands, no tagline above]
+- **Logos:** [5–8 real customer brands, no tagline above — or omit until you have them]
 - **Reference:** Tactic #7
 
 ### Problem
@@ -72,14 +72,12 @@
 - **Case study 1:** "[named customer + specific result number]"
 - **Case study 2:** "[named customer + specific result number]"
 - **Case study 3:** "[named customer + specific result number]"
-- **Star rating + count:** "[X.X ★ from N reviews on Source]"
+- **Star rating + count:** "[X.X ★ from N reviews on Source]" (real ratings only — omit if none)
 - **Reference:** Tactics #12–13
 
 ### Pricing
 
-- **Tier 1 (Starter):** [price, what's included, CTA]
-- **Tier 2 (Most Popular):** [price, what's included, CTA] — highlighted
-- **Tier 3 (Enterprise):** [price or "Talk to sales", what's included, CTA]
+- **Plans:** [mirror `docs/DEFINE.md` → Pricing Strategy exactly — each plan's name, price, what's included, CTA; highlight the one the pricing strategy steers buyers to. Never add tiers the strategy doesn't have]
 - **Annual/monthly toggle:** [position]
 - **Reference:** Tactic #14
 
@@ -100,7 +98,7 @@
 
 ### Footer
 
-- **Compliance badges:** [SOC 2 / GDPR / etc.]
+- **Compliance badges:** [only certifications you actually hold — SOC 2 / GDPR / etc.]
 - **Status page:** [link]
 - **Legal:** [privacy / terms / security pages]
 - **Reference:** Tactic #17

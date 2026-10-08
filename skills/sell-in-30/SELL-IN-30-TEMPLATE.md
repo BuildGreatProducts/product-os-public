@@ -4,9 +4,9 @@
 **Starting point:** [Live, free, will charge / Live, priced / Live, free, staying free / One deploy away / Live with users / After Ship in 7]
 **Live URL:** [url] · **Price line:** [from `docs/DEFINE.md` → Pricing Strategy, or "free this month"]
 **Started:** [date] · **Hours per session:** [n] · **Consecutive days:** [yes / as and when]
-**Status:** Open — Day [N] of 30 · Week [W]
+Status: Open · Day [N] of 30 · Week [W]
 
-*Thirty sessions, not thirty calendar days. A day is assigned at the check-in that names its block; the next check-in confirms its proof. No proof means a miss; time between check-ins is a gap, not a miss. Every seventh session is the weekly read. The close sets Status to Closed.*
+*Thirty sessions, not thirty calendar days. A day is assigned at the check-in that names its block; the next check-in confirms its proof. No proof means a miss; time between check-ins is a gap, not a miss. Every seventh session is the weekly read. Each check-in updates the Day and Week; the close rewrites the line to `Status: Closed · [date]`. Keep this line plain (no bold): the root guidelines search for `Status: Open`.*
 
 ---
 
@@ -163,5 +163,3 @@
 **Product Studio:** [the recommendation paragraph, and the link: buildgreatproducts.com/product-studio]
 
 *Bring this to your call.*
-
-**Status:** Closed — [date]

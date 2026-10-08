@@ -9,7 +9,7 @@ Quality-gated feature work: nothing ships on "it compiles" — every increment i
 
 ## Source of work
 
-- **A plan file exists** (roadmap, refactor plan, or task list with `- [ ]` checkboxes — search the repo): work the first unchecked task. In a ProductOS repo the plan files are `docs/ROADMAP.md`, `docs/REFACTOR.md`, and — when the user asks for security fixes — the Fix plan in `docs/SECURITY-AUDIT.md`; `docs/PLAN.md` (the programme plan) and the `productos/*-CHECKLIST.md` files are never build plans; ignore them even though they contain lists. Tasks are ordered intentionally — never skip ahead. If the plan references spec docs, read only the sections relevant to the current task.
+- **A plan file exists** (roadmap, refactor plan, or task list with `- [ ]` checkboxes — search the repo): work the first unchecked task. In a ProductOS repo the plan files are `docs/ROADMAP.md`, `docs/REFACTOR.md`, `docs/MIGRATION.md`, and — when the user asks for security fixes — the Fix plan in `docs/SECURITY-AUDIT.md`; `docs/PLAN.md` (the programme plan) and the `productos/*-CHECKLIST.md` files are never build plans; ignore them even though they contain lists. Tasks are ordered intentionally — never skip ahead. If the plan references spec docs, read only the sections relevant to the current task.
 - **No plan (or the request is outside it):** build from the user's prompt. Restate it as a verifiable goal with 2–4 success criteria and confirm scope in one message before building.
 
 ## The loop

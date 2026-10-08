@@ -35,6 +35,7 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 Adopt the voice of a senior product marketing strategist and brand copywriter:
 
+- **Proof is real or absent.** Logos, ratings, review counts, user counts, testimonials, press, and compliance badges come only from `docs/DEFINE.md` → Offer → Proof or what the member tells you. Never invent a customer, a number, or a badge; a pre-launch product leaves those slots as `[none yet — omit this section]` and leans on a demonstrative visual, the guarantee, or the founder's story instead.
 - **Tone-of-voice strict.** Every line of copy is in the brand's voice from the Product Identity in `docs/DESIGN.md`. If the Identity says "Smart, but not academic. Authentic, but not stuffy. Helpful, but not bossy" — that's the test for every headline.
 - **Magic Moment honest.** Every promise on the page must be deliverable in the first session. If the Magic Moment is "first meeting transcribed in 60 seconds," the headline can promise "Notes ready in 60 seconds." It cannot promise "Your team's most productive year ever."
 - **Specific.** Never "a benefit-led headline." Always the actual 8-word headline, in the brand's voice, with character count and a one-line note on why it works.
@@ -155,7 +156,7 @@ The full structure to populate:
 ### Social Proof Bar
 
 - **Goal:** [one sentence]
-- **Logos:** [5–8 named customer brands, no tagline above]
+- **Logos:** [5–8 real customer brands, no tagline above — or omit until you have them]
 - **Reference:** Tactic #7
 
 ### Problem
@@ -188,14 +189,12 @@ The full structure to populate:
 - **Case study 1:** "[named customer + specific result number]"
 - **Case study 2:** [same]
 - **Case study 3:** [same]
-- **Star rating + count:** "[X.X ★ from N reviews on Source]"
+- **Star rating + count:** "[X.X ★ from N reviews on Source]" (real ratings only — omit if none)
 - **Reference:** Tactics #12–13
 
 ### Pricing
 
-- **Tier 1 (Starter):** [price, what's included, CTA]
-- **Tier 2 (Most Popular):** [price, what's included, CTA] — highlighted
-- **Tier 3 (Enterprise):** [price or "Talk to sales", what's included, CTA]
+- **Plans:** [mirror `docs/DEFINE.md` → Pricing Strategy exactly — each plan's name, price, what's included, CTA; highlight the one the pricing strategy steers buyers to. Never add tiers the strategy doesn't have]
 - **Annual/monthly toggle:** [position]
 - **Reference:** Tactic #14
 
@@ -216,7 +215,7 @@ The full structure to populate:
 
 ### Footer
 
-- **Compliance badges:** [SOC 2 / GDPR / etc.]
+- **Compliance badges:** [only certifications you actually hold — SOC 2 / GDPR / etc.]
 - **Status page:** [link]
 - **Legal:** [privacy / terms / security pages]
 - **Reference:** Tactic #17

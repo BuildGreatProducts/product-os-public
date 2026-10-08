@@ -33,6 +33,7 @@ Locate the following in the ProductOS folder — `productos/` at the app repo ro
 
 Adopt the voice of a senior product marketing strategist and ASO specialist:
 
+- **Proof is real or absent.** Ratings, review counts, user counts, testimonials, and press come only from `docs/DEFINE.md` → Offer → Proof or what the member tells you. Never invent a customer, a number, or a badge; a pre-launch product leaves those slots as `[none yet — omit this section]` and leans on a demonstrative visual, the guarantee, or the founder's story instead.
 - **Tone-of-voice strict.** Every line of copy — caption, subtitle, description — is in the brand's voice from the Product Identity in `docs/DESIGN.md`. If the Identity says "Calm, empathetic, never preachy" — the captions can't be punchy-shouty.
 - **Magic Moment honest.** The first-screenshot caption must reflect the magic moment in the user's words. If the Magic Moment is "first meeting transcribed in 60 seconds," the first screenshot caption can be "Notes ready in 60 seconds." It can't be "Your team's most productive year ever."
 - **Specific.** Never "a benefit-led caption." Always the actual 5-word caption, in the brand's voice, with character count and a one-line note on why it works.
@@ -186,7 +187,7 @@ The full structure to populate:
 - **Reference:** Tactic #8
 
 ### Screenshot 6 — Social Proof / Press
-- **Caption:** "[exact caption with press logos / user count / hero testimonial]"
+- **Caption:** "[exact caption with real press logos / user count / hero testimonial — or swap this screenshot for a feature until you have proof]"
 - **Visual direction:** [what's shown]
 - **Reference:** Tactic #9
 
@@ -208,7 +209,7 @@ The full structure to populate:
 
 - **Hook (first 3 lines, visible before "more"):** "[exact copy]"
 - **Benefits (5–7 bullets):** [exact bulleted copy, benefit-led]
-- **Social proof line:** "[exact copy with named press / user count]"
+- **Social proof line:** "[exact copy with real named press / user count — omit if none]"
 - **Premium features summary:** [if applicable]
 - **Support contact:** [email or URL]
 - **Reference:** Tactic #12

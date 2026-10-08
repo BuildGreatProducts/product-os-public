@@ -126,4 +126,4 @@ A `## 1. Product Offer` section in `docs/DEFINE.md` where:
 - The one-sentence pitch in `## Summary` reads like one product, not six.
 - The `*Last updated:*` line is current.
 
-Anything less is a draft. Say so explicitly, surface the remaining risks, and recommend the next step — usually one more round of customer interviews to back the still-weakest section with evidence. Then point to the next Define skill: `define-customer-persona` if `## 2. Customer Persona` is still a placeholder (or an extracted draft), otherwise `define-pricing`.
+Anything less is a draft. Say so explicitly, surface the remaining risks, and recommend the next step — usually one more round of customer interviews to back the still-weakest section with evidence. Then point to the next Define skill: `define-customer-persona` if `## 2. Customer Persona` is still a placeholder, otherwise `define-pricing` if `## 3. Pricing Strategy` is. If both are filled — extracted drafts from `define-from-code` count as filled — the Define phase is done: offer those two skills as optional sharpening and point to Design.

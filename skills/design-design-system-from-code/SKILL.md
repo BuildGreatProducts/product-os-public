@@ -63,10 +63,10 @@ spacing:
   <scale-level>: <dimension>
 components:
   <component-name>:
-    backgroundColor: <hex or {colors.token-reference}>
-    textColor: <hex or {colors.token-reference}>
-    typography: <{typography.token-reference}>
-    rounded: <{rounded.token-reference}>
+    backgroundColor: "<hex or {colors.token-reference}>"
+    textColor: "<hex or {colors.token-reference}>"
+    typography: "{typography.token-reference}"
+    rounded: "{rounded.token-reference}"
     padding: <dimension>
     height: <dimension>
 ---
@@ -79,7 +79,7 @@ components:
 - Rounded: `none`, `sm`, `md`, `lg`, `xl`, `full`.
 - Spacing: `xs`, `sm`, `md`, `lg`, `xl`, plus named tokens like `gutter` and `margin` where the layout uses them repeatedly.
 
-**Token-reference syntax:** components reference tokens with `{colors.primary}`, `{typography.body-md}`, `{rounded.md}` — braces, dot-path, exact token name.
+**Token-reference syntax:** components reference tokens with `"{colors.primary}"`, `"{typography.body-md}"`, `"{rounded.md}"` — braces, dot-path, exact token name, always in double quotes (unquoted, YAML reads `{…}` as a map, not a string).
 
 **Markdown body — the eight canonical sections, in this order** (after the Product Identity section, if present):
 
@@ -191,7 +191,7 @@ Then, **separately from the file**, surface the advisory notes you deliberately 
 
 Re-read the written file and check:
 
-- **YAML parses** — consistent indentation, hex quoted, no trailing colons.
+- **YAML parses** — consistent indentation, hex and every `{…}` reference quoted, no trailing colons.
 - **The Product Identity section, if there was one, is intact** right after the frontmatter — and right after the Header in `docs/DESIGN.html`.
 - **The HTML mirrors the md** — every CSS custom property matches its YAML value, every YAML component renders, and the sections follow the md's order.
 - **All eight sections present, in order** — Brand & Style, Colors, Typography, Layout & Spacing, Elevation & Depth, Shapes, Components, Do's and Don'ts.

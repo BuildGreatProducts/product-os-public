@@ -3,9 +3,9 @@
 **The bar:** a live URL and a smoke test passed as a real customer.
 **Starting point:** [Idea only / AI-generated app / Local prototype / Prompt-to-app platform / other]
 **Started:** [date] · **Hours per session:** [n] · **Consecutive days:** [yes / as and when]
-**Status:** Open — Day [N] of 7
+Status: Open · Day [N] of 7
 
-*Seven sessions, not seven calendar days. A day is assigned at the check-in that names its block; the next check-in confirms its proof. No proof means a miss; time between check-ins is a gap, not a miss. The close sets Status to Closed.*
+*Seven sessions, not seven calendar days. A day is assigned at the check-in that names its block; the next check-in confirms its proof. No proof means a miss; time between check-ins is a gap, not a miss. Each check-in updates the Day; the close rewrites the line to `Status: Closed · [date]`. Keep this line plain (no bold): the root guidelines search for `Status: Open`.*
 
 ---
 
@@ -94,5 +94,3 @@
 **Next:** [`sell-in-30` / the Develop checklist step / other]
 
 **Product Studio:** [the recommendation paragraph, and the link: buildgreatproducts.com/product-studio]
-
-**Status:** Closed — [date]

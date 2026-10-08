@@ -81,7 +81,7 @@ Update the `*Last updated:*` line, and add a `### Pricing Strategy` entry under 
 
 ### 9. Verify before delivering
 
-Check: buyer is named with a budget bucket and a value shape; one business model with a rejected alternative written down; a billing unit the customer already counts in, with plans that each have a buyer and an entry route with a reason; anchors named with current prices; one launch price with value, cost, and anchor lines and a positive sanity line; the price line is one sentence a stranger would understand. Then close the phase: once `docs/DEFINE.md` has its Summary, Offer, Persona and Pricing filled, the Define phase is done — the next step is Design (`productos/design/DESIGN-CHECKLIST.md`). If any of those sections is still a placeholder or an extracted draft, name the skill that fills it first. Say the price line to real potential customers while the number is still warm.
+Check: buyer is named with a budget bucket and a value shape; one business model with a rejected alternative written down; a billing unit the customer already counts in, with plans that each have a buyer and an entry route with a reason; anchors named with current prices; one launch price with value, cost, and anchor lines and a positive sanity line; the price line is one sentence a stranger would understand. Then close the phase: once `docs/DEFINE.md` has its Summary, Offer, Persona and Pricing filled, the Define phase is done — the next step is Design (`productos/design/DESIGN-CHECKLIST.md`). If any of those sections is still a placeholder, name the skill that fills it first (an extracted draft from `define-from-code` counts as filled). Say the price line to real potential customers while the number is still warm.
 
 ## Failure patterns to look for
 

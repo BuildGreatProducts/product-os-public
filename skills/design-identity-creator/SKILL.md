@@ -92,7 +92,7 @@ For each element:
 
 ### 5. Cross-cutting checks, then the Brand Card
 
-After all five elements are drafted, run four whole-identity checks:
+After all five elements are drafted, run five whole-identity checks:
 
 - **Worldview → Belief descent.** The contrarian belief should read as the worldview applied to this category. If they're unrelated convictions, one of them is borrowed.
 - **Belief → Tone match.** A punk contrarian belief with a polite corporate tone is a contradiction; so is a calm-authority belief with an exclamation-mark voice.

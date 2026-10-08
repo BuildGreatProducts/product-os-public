@@ -60,7 +60,7 @@ If the file is malformed (YAML doesn't parse, sections missing), surface the spe
 
 ### 2. Detect uncommitted changes and scope the review
 
-Run `git status --porcelain` and `git diff` against the working tree + index to detect what's changed. Default scope: every modified, added, or staged file in the working tree.
+Run `git status --porcelain`, `git diff HEAD` (working tree + index), and `git ls-files --others --exclude-standard`. Untracked files never appear in `git diff`, and new component files are where most New Patterns live — read each one in full. Default scope: every modified, added, staged, or untracked file.
 
 Filter to **UI-relevant files** by extension and path:
 

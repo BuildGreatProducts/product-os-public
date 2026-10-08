@@ -46,7 +46,7 @@ From this, form a **working hypothesis** in one paragraph: likely cost-per-custo
 
 Spend real but focused effort here. Use web search and any connected research tools to investigate:
 
-- **Cost benchmarks for the category** — typical gross margin range for the product shape (SaaS ~70–85%, AI apps with API costs often 40–60%, productized services 40–60% unless solo; for marketplaces the comparable figure is a 20–40% take-rate, not a margin), and current unit costs for the mechanism's expensive parts (model pricing per job, storage, platform fees).
+- **Cost benchmarks for the category** — typical gross margin range for the product shape (SaaS ~70–85%, AI apps with API costs often land at 40–60%, though anything under 50% is unhealthy; productized services 40–60% unless solo; for marketplaces the comparable figure is a 20–40% take-rate, not a margin), and current unit costs for the mechanism's expensive parts (model pricing per job, storage, platform fees).
 - **The category's typical north star** — what metric do successful companies in this category track publicly? Loom tracks weekly active creators; indie Mac apps track weekly licenses; marketplaces track GMV; usage-based APIs track paid units consumed.
 - **The moat candidates** — is there a channel, a community, a data asset, or a portfolio the user already has that comparable businesses built their advantage on?
 
@@ -86,7 +86,7 @@ Update the `*Last updated:*` line, and add a `### Business Strategy` entry under
 
 Re-read the written strategy against the framework's "good vs bad" criteria and the failure patterns below. Specifically check:
 
-- Does the heavy-use row stay positive, and is gross margin in the healthy band for the category? Can the user recite cost-per-customer from memory?
+- Does the heavy-use row stay positive, and is gross margin above the category's floor (SaaS ~70%, AI apps 50%)? Can the user recite cost-per-customer from memory?
 - Is the Unfair Advantage a real moat (distribution, switching costs, audience, niche expertise, counter-positioning) — or is it "we built it first" with a thesaurus on top?
 - Is the North Star **one** metric, with a 90-day target, that matches the business model in the Pricing Strategy?
 - Do the three answers and the Pricing Strategy tell **one** story when read in sequence?

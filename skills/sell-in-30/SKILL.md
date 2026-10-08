@@ -32,7 +32,7 @@ Read the header's `Status:` line first.
 
 - No `docs/SELL-IN-30.md`, or the file's status is `Closed` → **Enrol** (Day 0). A closed file is a finished Sell Report: move it to `docs/SELL-IN-30-<closed date>.md` before writing the new one, never overwrite it.
 - Status `Open`, the next session is a 7th, 14th, 21st or 28th → **Weekly read** (it includes the check-in).
-- Status `Open`, any other session below 30 → **Daily check-in**.
+- Status `Open`, any other session, Day 30 not yet logged → **Daily check-in** (confirming Day 30's proof leads straight into the Close).
 - Status `Open`, Day 30 logged (or the member says "close") → **Close**.
 
 Confirm with the member in one line before proceeding.
@@ -47,6 +47,7 @@ Confirm with the member in one line before proceeding.
 | **2 · Experiment 1** | The highest-leverage experiment from the member's own backlog, run to its pass bar, every session's result captured in the Experiment Log | Read: **continue or kill** + **pivot review** + Skool post |
 | **3 · Continue or next** | Continue experiment 1 (double down or iterate) or start the next from the queue | Read: continue or kill + pivot review + Skool post |
 | **4 · Continue or next** | Same | Read: continue or kill + pivot review + Skool post |
+| **Sessions 29–30** | Keep the running experiment going and follow up every open conversation in the Experiment Log — no new experiments | Close |
 | **End** | Sell Report, graduation Skool post, Product Studio call booking | |
 
 Only week one changes with the starting point (the plan files). Weeks two to four are the same loop for everyone.
@@ -111,7 +112,7 @@ Title `Sell in 30 - Day 0! [app name]`; body in the member's voice. Name Day 1's
 3. **Confirm the last assigned day's proof.** "Did it ship? Show me." A file in the repo, a screenshot saved to `docs/`, a URL, a receipt. A draft is not proof.
 4. **Log it.** Done / partial / missed, proof, one-line blocker. No proof → a miss. **Partial** (the artefact exists but the day's bar isn't met): log it, carry the remainder into the next session as its first task. Two partials in a row count as a miss.
 5. **Missed?** Compress within the week, never across the read: apply the plan's compression rules **in order, 1 then 2 then 3**, stopping at the first that fits; the seventh-session read always happens on schedule with whatever the week produced. Two consecutive misses shrink that week's block or experiment steps; they don't end the challenge.
-6. **Assign today's one block.** Week one: from the plan. Weeks 2–4: read `docs/GROWTH-EXPERIMENTS.md` and name the next "Do this" step of the running experiment. Run it now or hand off, saying what the member needs to bring.
+6. **Assign today's one block.** Week one: from the plan. Weeks 2–4: read `docs/GROWTH-EXPERIMENTS.md` and name the next "Do this" step of the running experiment. Run it now or hand off, saying what the member needs to bring. Update the header's status line to today's day and week (`Status: Open · Day 12 of 30 · Week 2`).
 7. **End every session that reaches people with the feedback** (six fields, a minute to answer) and write it as a row in the Experiment Log (below): week one's warm-conversation and follow-up sessions, and every session in weeks 2–4, follow-up days included (reach = threads replied to). No row, no proof for the day.
 8. End by saying what the next session looks like. (The Skool post is weekly, not daily: drafted at the read, on Day 0, and at the close.)
 
@@ -154,7 +155,7 @@ About 45 minutes at the end of the seventh session. Starts with the daily check-
 
 ## Mode 4 — Close (Day 30 or 31)
 
-1. **Check the bar honestly.** A payment (or an activated user, for a product staying free), or not. Partial rungs (a signup, "send me the link") are logged at their rung and named as what they are, never rounded up. Set the header's `Status:` line to `Closed — [date]`, so the root guidelines stop starting sessions with the check-in.
+1. **Check the bar honestly.** A payment (or an activated user, for a product staying free), or not. Partial rungs (a signup, "send me the link") are logged at their rung and named as what they are, never rounded up. Rewrite the header's status line to `Status: Closed · [date]`, so the root guidelines stop starting sessions with the check-in.
 2. **Write the Sell Report** into `docs/SELL-IN-30.md`: result vs the bar; the live URL, the price line and guarantee at close, whether checkout is live or still in test, stack and hosting; a one-line product state (what works, what doesn't); hours planned vs spent and available going forward; the Experiment Log totals per experiment (reach, responses, rungs); people reached, warm/cold; the rung reached each week; what the market said in its own words; every pivot review's recommendation and what the member did with it; what changed during the month; which canonical docs exist and are current; the biggest blocker; what the member wants next. Structured for the coach intake, so a member who books a call arrives with their situation documented. Ends with one line: *bring this to your call.*
 3. **Draft the graduation Skool post:** `Sell in 30 completed! Here's what I learnt`. (The `Sell in 30 - My first customer! 🚀` post went out the day the payment landed.)
 4. **The recommendation.** Once, one paragraph, framed by the outcome, in the closing message and in the Sell Report, not in the Skool post:

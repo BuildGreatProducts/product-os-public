@@ -45,7 +45,7 @@ Record the inventory as a table: *item → where it lives now → where it's goi
 
 ### 2. Recommend the target stack
 
-One rule: **keep what the user already owns; replace only what the platform owns.** An external Supabase, Stripe, or Clerk account migrates by re-pointing, not rebuilding. For each platform-owned piece, recommend the standard equivalent from `productos/develop/guides/TECH-STACK-OPTIONS.md` — the common shape is: GitHub repo as source of truth, Vercel (or similar) for hosting and previews, the platform's managed database moved to the user's own Supabase project, and the user's coding agent (Claude Code / Codex / Cursor) as the development tool. Present the recommendation with the one-line reason per piece, and let the user decide anything contested.
+One rule: **keep what the user already owns; replace only what the platform owns.** An external Supabase, Stripe, or Clerk account migrates by re-pointing, not rebuilding. For each platform-owned piece, recommend the standard equivalent from `productos/develop/guides/TECH-STACK-OPTIONS.md` (hosting: its Hosting & Deployment section's **Default**) — the common shape is: GitHub repo as source of truth, Vercel (or similar) for hosting and previews, the platform's managed database moved to the user's own Supabase project, and the user's coding agent (Claude Code / Codex / Cursor) as the development tool. Present the recommendation with the one-line reason per piece, and let the user decide anything contested.
 
 ### 3. Research the platform's current export mechanics — live
 
@@ -64,6 +64,8 @@ Same format discipline as `docs/ROADMAP.md` and `docs/REFACTOR.md`: a header wit
 7. **The gate, then goodbye** — walk every core flow against the phase-1 baseline: login with a pre-migration account, the payment path in test mode, uploads and stored-file URLs, each scheduled job fired once. **All green → DNS cutover → run the old platform in parallel for a few quiet days → pause, then remove it.** Anything red → stop; the old platform stays untouched until it's green.
 
 ### 5. Hand off
+
+To execute the plan, the member tells their tool's build loop (`cc-build-loop`, `codex-build-loop`, or `cursor-build-loop`) to work through `docs/MIGRATION.md` top to bottom; it is a build-loop plan file like `docs/ROADMAP.md`. Phase 7's gate needs the member present for the real login, DNS cutover, and decommission.
 
 Summarize in conversation: what moved, what was rotated, what was decommissioned, and the baseline tag to roll back to. Then point forward: `develop-refactor-plan` for the code-quality pass the platform's generated code almost certainly needs (it generates its own refactor-scoped PRD if none exists), and the member's build loop for everything after.
 

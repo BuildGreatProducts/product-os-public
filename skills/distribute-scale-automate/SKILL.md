@@ -44,6 +44,8 @@ The same files also live in `productos/distribute/`; prefer the user's copies if
 
 ### 1. Absorb the tracker and gate to proven winners
 
+**Activation gate first** (DISTRIBUTE-CHECKLIST: "Before you scale"). Check for `docs/ACTIVATION-RETENTION-AUDIT.md`. If it doesn't exist, or it lists P0 findings that aren't fixed yet, say so before planning anything: scaling traffic into a product that doesn't activate wastes it. Recommend running `distribute-activation-retention-audit` (or fixing the open P0s) first, and continue only if the member chooses to.
+
 Read the tracker (or, on Path B, establish winners by asking). Pull every experiment that **passed and earned a "double down,"** plus the cumulative learnings that explain *why* each works. List them back to the user as the candidate winners, with their numbers. Anything not proven — iterated, killed, or never thresholded — does not pass the gate. If nothing has been proven yet, say so and route the user back to the Growth Experiments skill; there is nothing to scale.
 
 ### 2. For each winner, find the scale lever and the automation path
@@ -96,7 +98,7 @@ Name them when you see them:
 - **Conversational, not a form.** The user is deciding where to remove themselves from their own business; treat it like a real operational decision.
 - **Guard the evidence gate.** The most valuable thing this skill does is refuse to scale the unproven. Push back when the user wants to automate a hunch.
 - **Pair more with better.** Never let "do more" stand alone — scaling a win you could still improve leaves money on the table.
-- **One automation at a time.** Sequence ruthlessly; a half-built automation on three processes beats nothing finished.
+- **One automation at a time.** Sequence ruthlessly; one finished automation beats three half-built ones.
 - **Name the human step.** For every winner, say out loud what stays manual and why.
 
 ## What "done" looks like

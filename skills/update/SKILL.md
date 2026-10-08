@@ -104,10 +104,14 @@ while IFS=' ' read -r ACT P; do
     ADD|REPLACE)
       if inside "$P"; then mkdir -p "$LOCAL/$(dirname "$P")" && cp -p "$P" "$LOCAL/$P"
       else echo "SKIPPED $P"; fi ;;
-    REMOVE) rm "$LOCAL/$P" ;;
+    REMOVE)
+      if inside "$P"; then
+        rm "$LOCAL/$P"
+        d=$(dirname "$P")  # prune only folders this removal emptied
+        while [ "$d" != "." ] && rmdir "$LOCAL/$d" 2>/dev/null; do d=$(dirname "$d"); done
+      else echo "SKIPPED $P"; fi ;;
   esac
 done < "$WORK/plan.txt"
-find "$LOCAL" -mindepth 1 -type d -empty ! -path "$LOCAL/.git*" -delete
 ```
 
 Nothing labelled `KEEP`, `CONFLICT`, `GONE`, or `MINE` is written. A `SKIPPED` path runs through a symlink, usually a skills folder the member linked elsewhere. Copying there would write outside `productos/` and bypass the keep checks. List these for the member and leave them alone.

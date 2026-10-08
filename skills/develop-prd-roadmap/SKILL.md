@@ -44,7 +44,7 @@ This skill is resumable. Before anything else, check what exists:
 
 - **Neither `docs/PRD.md` nor `docs/ROADMAP.md` exists** → run the full workflow from step 2.
 - **`docs/PRD.md` exists but is incomplete** (missing numbered sections) → confirm the scoping decisions recorded in its Overview and Out of Scope sections still hold, then resume generation at the first missing section.
-- **`docs/PRD.md` is complete but `docs/ROADMAP.md` is missing** → skip to step 6.
+- **`docs/PRD.md` is complete but `docs/ROADMAP.md` is missing** → skip to step 5.
 - **Both exist** and the user asked to "regenerate" or "update" → re-read the source docs (they may have changed), regenerate only what was asked, and if the PRD changes materially, flag that the roadmap depends on it and offer to regenerate that too.
 
 ### 2. Read and absorb every input
