@@ -1,6 +1,12 @@
 ---
 name: ship-in-7
-description: Use when a member wants to launch their app in seven days: the ProductOS launch challenge. Triggers on phrases like "ship in 7", "ship in seven", "start ship in 7", "launch my app in 7 days", "7 day launch challenge", "start the challenge", "day 3 check-in", "what's my task today", "I missed a day", or "I just installed ProductOS, what do I do". Runs after setup (and runs it first if the repo isn't wired). Reads the repo, shows what exists, asks which starting point fits (idea only, AI-generated app, local prototype, prompt-to-app platform), then composes a custom 7-session plan from existing ProductOS skills, one block, one skill, one proof per session, and writes it to docs/SHIP-IN-7.md. The bar is a live URL and a passed smoke test as a real customer. A daily check-in confirms the last session's proof before naming today's and drafts a Skool post in the member's own voice; the close writes the Ship Report and recommends Product Studio. Orchestrates; never replaces the skills it runs.
+description: >-
+  Runs the ProductOS Ship in 7 challenge — seven sessions to a live URL and a passed real-customer
+  smoke test. Reads the repo, picks the plan for the starting point (idea only, AI-generated app,
+  local prototype, prompt-to-app platform), logs each session's proof in docs/SHIP-IN-7.md, and
+  closes with a Ship Report. Use when the user says "ship in 7", "launch my app in 7 days", or
+  "start the challenge", or when docs/SHIP-IN-7.md has Status: Open (daily check-in). Not for a live
+  app that needs customers — use sell-in-30; not for installing — use setup.
 ---
 
 # Ship in 7 — the launch challenge

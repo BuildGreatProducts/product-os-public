@@ -1,6 +1,12 @@
 ---
 name: define-offer-builder
-description: Use when the user has a product idea (or is brainstorming one) and wants to build their Product Offer from scratch. Triggers on phrases like "help me create my product offer", "walk me through the product offer", "build my offer", "craft my offer", "I have an idea help me turn it into an offer", "write my product offer", "fill out the product offer", "turn this idea into an offer", or any request to guide a founder through filling in the six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof) of a Product Offer. Does live web research on what's currently working in AI software and apps, walks the user through each element in the voice of a strategic startup advisor, critiques weak answers using AI-aware failure patterns, and writes the Summary and Product Offer sections of docs/DEFINE.md. Especially appropriate inside a ProductOS-style "Define" workflow where the Offer section is empty or partial and the user wants help building it from scratch.
+description: >-
+  Builds the six-element Product Offer (Customer, Pain, Outcome, Mechanism, Guarantee, Proof) from
+  an idea, with live research and advisor-style critique, and writes the Summary and Product Offer
+  sections of docs/DEFINE.md. Define phase Step 1 for a new product. Use when the user says "build
+  my offer", "turn this idea into an offer", or "walk me through the product offer". Not for
+  critiquing a written offer — use define-offer-review; not for an existing product — use
+  define-from-code; not without an idea — use define-idea-finder.
 ---
 
 # Define: Product Offer Builder

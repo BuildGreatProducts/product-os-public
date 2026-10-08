@@ -1,7 +1,12 @@
 ---
 name: define-pricing
 description: >-
-  Use when the user has a filled-in Product Offer (and ideally Customer Persona) and needs to decide how the product earns and what it costs — business model, pricing model, one launch price — in 30–45 minutes. Triggers on "what should I charge", "pick my launch price", "pricing strategy", "business model for my app", "pricing model", "how should I charge", "subscription or one-time", "per seat or per usage", "should I have tiers", "freemium or trial", "put a price on it", "what's my price line", or any request to fill in the six-section Pricing Strategy (Who Pays, How the Business Earns, Pricing Model, Price Anchors, Launch Price, Your Price Line). Reads the Offer and Persona in docs/DEFINE.md plus BONUS-Business-Models.md and BONUS-Pricing-Models.md, researches 2–3 anchor prices, triangulates the number from value, cost, and anchors, and writes the Pricing Strategy section of docs/DEFINE.md. Cost & margin, unfair advantage, and north star live in the optional deep dive, define-business-strategy.
+  Decides how the product earns and what it costs — who pays, business model, pricing model, price
+  anchors, one launch price, and a one-sentence price line — and writes the Pricing Strategy section
+  of docs/DEFINE.md. Use when the user asks "what should I charge", "pick my launch price",
+  "subscription or one-time", "freemium or trial", or "pricing strategy". Requires the Product Offer
+  (ideally the Persona too). Not for margins, moats, or a north star metric — use
+  define-business-strategy.
 ---
 
 # Define: Pricing Strategy

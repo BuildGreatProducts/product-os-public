@@ -1,6 +1,13 @@
 ---
 name: design-design-system-from-code
-description: Use when the user already has a product codebase and wants to reverse-engineer the design system already in the code into a Google-format `docs/DESIGN.md` — extracting the colors, typography, spacing, radii, elevation, and components actually used, flagging internal inconsistencies (competing values for one role — several "primary" blues, forked paddings, mixed radii, stray hex), resolving each with the user, then writing the file and its mirror. Triggers on "design system from code", "reverse-engineer my design system", "I have a codebase but no DESIGN.md", "audit my codebase for design tokens", "consolidate my design tokens". Runs in the app repo — the repository that contains `productos/` — and reads CSS variables, Tailwind config, theme files and components; surfaces inconsistencies to resolve interactively; writes `docs/DESIGN.md` in Google's exact format (YAML tokens + eight sections) plus its `docs/DESIGN.html` mirror, matching `design-design-system`, compatible with `develop-design-review`.
+description: >-
+  Reverse-engineers the design system already in a codebase — colors, type, spacing, radii,
+  elevation, and components from CSS variables, Tailwind config, theme files, and components —
+  resolves competing values with the user, and writes Google-format docs/DESIGN.md plus its
+  docs/DESIGN.html style guide. Use when the app exists but has no DESIGN.md: "design system from
+  code", "reverse-engineer my design system", "consolidate my design tokens". Not for deriving a
+  system from an image or site — use design-design-system; not for reviewing changes — use
+  develop-design-review.
 ---
 
 # Design: Design System from Code (DESIGN.md)

@@ -1,6 +1,12 @@
 ---
 name: develop-migrate
-description: Use inside (or alongside) an app built on a prompt-to-app platform — Lovable, Bolt, v0, Base44, Replit Agent, and similar — when the user wants to move it into their own repository and a developer agent tool like Claude Code, Codex, or Cursor. Triggers on phrases like "migrate from Lovable", "get my app out of Lovable", "move my project to Claude Code", "leave Bolt/v0/Base44", "own my codebase", "migration plan", or any request to take a platform-built app to a self-owned repo, stack, and deployment. Inventories everything the platform manages (hosting, database, auth, secrets, storage, functions, webhooks, domains), recommends the target stack, researches the platform's current export mechanics live, and writes `docs/MIGRATION.md` — a phased, checkbox-tracked plan the coding agent executes, ending with a verification gate before the old platform is decommissioned. Migration moves and rewires; it does not improve code — run `develop-refactor-plan` afterwards for that.
+description: >-
+  Plans the move of an app off a prompt-to-app platform (Lovable, Bolt, v0, Base44, Replit Agent)
+  into the user's own repo, stack, and coding agent: inventories what the platform owns, checks
+  current export mechanics, and writes docs/MIGRATION.md, a phased checkbox plan ending in a
+  verification gate before the old platform is decommissioned. Use when the user says "migrate from
+  Lovable", "leave Bolt", or "own my codebase". Not for improving the code — use
+  develop-refactor-plan afterwards.
 ---
 
 # Develop: Migrate

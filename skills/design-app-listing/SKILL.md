@@ -1,6 +1,12 @@
 ---
 name: design-app-listing
-description: Use when the user has a finished `docs/DEFINE.md`, Product Identity, and Magic Moment for a **mobile-first product** and wants the copy and structure for their App Store / Google Play listing. Triggers on phrases like "write my app store listing", "design my app store copy", "draft my screenshot captions", "outline my App Store page", "design my icon and screenshots", "I need an ASO spec", "build my Play Store listing", or any request to translate the product strategy into mobile-acquisition copy. Reads `productos/design/BONUS-App-Store-Listing-Best-Practice.md`, walks the user through every element in the voice of a senior product marketer with ASO expertise, and writes `docs/APP-LISTING.md` covering icon, title, subtitle, keywords, screenshots + captions, preview video, both store descriptions, Custom Product Pages, review timing, and localization. For web/desktop, use `design-landing-page`.
+description: >-
+  Writes the App Store and Google Play listing spec — icon, title, subtitle, keywords, seven
+  screenshot captions, preview video, both store descriptions, custom product pages, review timing,
+  localization — to docs/APP-LISTING.md, in the brand's voice and within store character limits. Use
+  for a mobile-first product when the user says "write my app store listing", "ASO", or "draft my
+  screenshot captions". Requires docs/DEFINE.md, the Product Identity, and docs/MAGIC-MOMENT.md. Not
+  for web or desktop products — use design-landing-page.
 ---
 
 # Design: App Store Listing Copywriter

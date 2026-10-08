@@ -1,7 +1,12 @@
 ---
 name: develop-design-review
 description: >-
-  Use when the user has a `docs/DESIGN.md` and uncommitted changes in their product codebase (new components, modified styles, new screens) and wants a design-system adherence review before committing or merging. Triggers on phrases like "design review", "review my design system adherence", "check my changes against DESIGN.md", "design system check", "what design tokens am I missing", or "promote my new patterns to DESIGN.md". Runs in the app repo — the repository that contains `productos/`. Reads `docs/DESIGN.md`, inspects uncommitted git changes (working tree + staged), classifies each visual change as an Inconsistency, a New Pattern, or Already-Aligned, and writes a prioritized, timestamped report to `docs/design-reviews/` (a new file per run): a fix to-do list, a promotion checklist for `docs/DESIGN.md`, and a paste-ready fix prompt for a coding agent. Optionally references the Product Identity section of `docs/DESIGN.md` for tone if present; works standalone.
+  Reviews uncommitted UI changes against docs/DESIGN.md, classifies each visual change as an
+  Inconsistency, a New Pattern, or Already-Aligned, and writes a timestamped report to
+  docs/design-reviews/ with a fix list, a promotion checklist for DESIGN.md, and a paste-ready fix
+  prompt. Use when the user says "design review", "check my changes against DESIGN.md", or "promote
+  my new patterns". Not for improving UI craft while building — use develop-design-better; not for
+  creating DESIGN.md — use design-design-system or design-design-system-from-code.
 ---
 
 # Develop: Design Review

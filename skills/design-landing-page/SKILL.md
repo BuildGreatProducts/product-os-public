@@ -1,6 +1,12 @@
 ---
 name: design-landing-page
-description: Use when the user has a finished `docs/DEFINE.md`, Product Identity (in `docs/DESIGN.md`), and Magic Moment (`docs/MAGIC-MOMENT.md`) for a **web or desktop product** and wants to design the copy and structural direction for their landing page / marketing site. Triggers on phrases like "write my landing page", "design my landing page copy", "draft my marketing site", "outline my homepage", "design my hero", "write the hero copy", "I need a landing page spec", or any request to translate the product strategy into web-acquisition copy. Reads `productos/design/BONUS-Web-Landing-Page-Best-Practice.md`, walks the user through every section in the voice of a senior product marketing strategist, writes `docs/LANDING-PAGE.md` with every headline, CTA, body section, and visual direction needed to ship, and optionally generates a lo-fi HTML wireframe at `docs/LANDING-PAGE-WIREFRAME.html`. For mobile-first, use `design-app-listing` instead.
+description: >-
+  Writes the landing page spec — every headline, CTA, section, and visual direction, each mapped to
+  a proven conversion tactic — to docs/LANDING-PAGE.md, with an optional clickable lo-fi wireframe
+  at docs/LANDING-PAGE-WIREFRAME.html. Use for a web or desktop product when the user says "write my
+  landing page", "design my hero", or "outline my homepage". Requires docs/DEFINE.md, the Product
+  Identity, and docs/MAGIC-MOMENT.md. Not for mobile apps — use design-app-listing; not for auditing
+  a built page — use develop-cro-audit.
 ---
 
 # Design: Landing Page Copywriter

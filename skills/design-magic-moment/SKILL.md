@@ -1,6 +1,11 @@
 ---
 name: design-magic-moment
-description: Use when the user has a finished `docs/DEFINE.md` and wants to identify their product's aha moment — the specific instant the customer realizes the product is worth keeping. Triggers on phrases like "find my aha moment", "identify the magic moment", "what's my product's aha", "where should the wow happen", "design the activation moment", "what's the Facebook-7-friends moment for my product", "magic number for my product", "where does the customer first realize the value", or any request to recommend candidate aha moments for a product. Reads `docs/DEFINE.md`, does live research on category-specific aha-moment patterns, recommends three candidate magic moments in the voice of a senior growth strategist, picks a primary, and writes the result to `docs/MAGIC-MOMENT.md`. Especially appropriate after the Product Identity is locked in and the user is ready to design onboarding around a specific activation event.
+description: >-
+  Identifies the product's aha moment — the instant the customer realizes it's worth keeping — by
+  researching category patterns, proposing three candidates, and choosing a primary with how to
+  measure it; writes docs/MAGIC-MOMENT.md. Use when the user asks "what's my aha moment", "find my
+  magic moment", or "where should the wow happen". Requires docs/DEFINE.md. Not for designing the
+  screens that lead there — use design-onboarding-flow.
 ---
 
 # Design: Magic Moment Identification

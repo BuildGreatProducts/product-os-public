@@ -1,6 +1,12 @@
 ---
 name: define-idea-finder
-description: Use when the user has a business, deep expertise, or a passion but no software idea yet and wants one MVP worth building. Triggers on phrases like "find my idea", "what should I build", "I have a business but no product idea", "turn my expertise into software", "turn my hobby into a product", "I'm passionate about X, what could I build", "find an idea from my interests", "I don't know what to build", "productize my service", or any request to go from a business, expertise, or passion to a single software idea. Audits where the money, hours, and obsessions already go, inventories leverage points, generates a 3-5 idea shortlist, scores it, routes between building for yourself first and building for the people around you, converges on ONE idea, and folds what the member chooses into docs/DEFINE.md before handing off to define-offer-builder. Not for picking features in an existing codebase — that's develop-feature-finder. The Define entry point for members arriving without an idea.
+description: >-
+  Turns a business, deep expertise, or a passion into one software idea worth building: audits where
+  money, hours, and obsessions already go, scores a 3–5 idea shortlist behind a willingness-to-pay
+  gate, converges on one idea, and records what the member keeps in docs/DEFINE.md before handing
+  off to define-offer-builder. Use when there is no idea yet: "what should I build", "find my idea",
+  "turn my expertise into software", "productize my service". Not for shaping an idea you already
+  have — use define-offer-builder; not for features in an existing app — use develop-feature-finder.
 ---
 
 # Define: Idea Finder

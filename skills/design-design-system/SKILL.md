@@ -1,7 +1,12 @@
 ---
 name: design-design-system
 description: >-
-  Use when the user wants to turn an image reference — a screenshot, mockup, Figma URL, or live website they love — into their Design System. Triggers on phrases like "build my design system", "create my DESIGN.md", "design from image", "image to design system", "translate this screenshot into a design system", "extract design tokens", "make my design.md", "here's a site I love, capture its design", or when the user shares an image/URL in a design context with no other clear intent. Produces two mirrored artifacts: docs/DESIGN.md (Google-format YAML tokens + prose, the source of truth coding agents read) and docs/DESIGN.html (a self-contained live style guide for the human). Reads the image(s), asks only the questions the ProductOS docs don't answer, derives the tokens, reconciles them with the Product Identity section of docs/DESIGN.md, and writes both files around it. Design phase Step 3 — runs after the UX Writing Guide and supplies the colours, fonts, and tokens the identity leaves undecided.
+  Derives a design system from an image reference — screenshot, mockup, Figma frame, or live site
+  the user admires — reconciles it with the Product Identity, and writes Google-format
+  docs/DESIGN.md (YAML tokens plus prose) and a live docs/DESIGN.html style guide. Design phase Step
+  3, after the UX writing guide. Use when the user says "build my design system", "create my
+  DESIGN.md", or shares an image whose look they want. Not for extracting tokens from existing code
+  — use design-design-system-from-code; not for reviewing UI changes — use develop-design-review.
 ---
 
 # Design: Design System (image → DESIGN.md + DESIGN.html)

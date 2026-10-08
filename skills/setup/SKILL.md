@@ -1,6 +1,12 @@
 ---
 name: setup
-description: Use as the first thing after receiving ProductOS — it installs the system into the app repo and adopts the custom programme plan when one shipped with the copy. Triggers on phrases like "set up ProductOS", "install ProductOS", "studio setup", "wire my repo", "adopt my plan", "get ProductOS working in this repo", or any request to install or initialise ProductOS in a codebase. Verifies productos/ sits inside a git repo (and walks a standalone checkout through creating the app repo and moving in), wires the coding-agent guidelines from productos/setup/ into the repo root (copy whole, or append the marked block — never overwriting), adds productos/ to .gitignore, and — if the copy shipped with a plan at productos/PLAN.md — moves it to docs/PLAN.md and runs a light verification pass against the actual repo. Ends by naming the member's literal first action. Run once at install; safe to re-run any time.
+description: >-
+  Installs ProductOS into the app repo: checks productos/ sits in a git repo (walking a standalone
+  checkout into one), wires the coding-agent guidelines into the root CLAUDE.md and AGENTS.md
+  without overwriting, gitignores productos/, adopts a coach's plan from productos/PLAN.md into
+  docs/PLAN.md, and names the first action. Use first after receiving ProductOS, or when the user
+  says "set up ProductOS", "install ProductOS", or "wire my repo". Safe to re-run. Not for upgrading
+  an installed copy — use update.
 ---
 
 # Setup — install ProductOS and adopt your plan

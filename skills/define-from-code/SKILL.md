@@ -1,6 +1,12 @@
 ---
 name: define-from-code
-description: Use when the user already has a product — a codebase, live app, landing page, or app store listing — and needs the Define-phase answers extracted from it fast, instead of built from blank worksheets. Triggers on phrases like "extract my offer from my code", "fast-track define", "I already built it, backfill the strategy docs", "reverse-engineer my product offer", "define from my existing product", "my product exists but I have no DEFINE.md", or any request to derive the Product Offer, Customer Persona, and Pricing Strategy from an existing product. Reads the evidence (repo, live site, listing, existing docs), infers draft answers for all six offer elements plus persona and observed pricing, writes the Summary, Offer, Persona, and Pricing sections of docs/DEFINE.md marked as extracted drafts, confirms the load-bearing inferences with the user, then hands off to define-offer-review for sharpening. The Define fast-track for members who aren't starting from scratch.
+description: >-
+  Extracts draft Define answers — Summary, Product Offer, Customer Persona, Pricing Strategy — from
+  an existing product (codebase, live app, landing page, or store listing), writes them to
+  docs/DEFINE.md marked as extracted drafts, confirms the load-bearing inferences, then hands off to
+  define-offer-review. Use when the product already exists but DEFINE.md doesn't: "fast-track
+  define", "extract my offer from my code", "backfill the strategy docs". Not for a product that is
+  still an idea — use define-offer-builder.
 ---
 
 # Define: From Code (the fast-track)

@@ -1,6 +1,11 @@
 ---
 name: distribute-scale-automate
-description: Use after the user has run growth experiments and logged results, when they want to scale what's proven and automate it. Triggers on phrases like "scale my product", "automation roadmap", "automate what works", "double down on what works", "how do I scale this", "systematize my marketing", "make my growth scalable", "what should I automate", or "scale my growth". Reads docs/GROWTH-TRACKER.md (or, in a repo without ProductOS, asks what's already working), takes only the proven winners, and builds a roadmap that amplifies each one (do more, do better) and automates it with specific tools, MCPs/plugins, and scheduled tasks — sequenced Now/Next/Later on a manual-to-delegated maturity ladder. Writes the Scale & Automation Roadmap to docs/SCALE.md. Works with ProductOS in the repo (productos/ at the app repo root) or standalone in a repo without it.
+description: >-
+  Takes only proven winners from docs/GROWTH-TRACKER.md (passed and marked double down), plans how
+  to amplify each and automate it with specific tools, MCPs, and scheduled tasks sequenced
+  Now/Next/Later, and writes docs/SCALE.md. Checks activation first. Use when the user asks to
+  "scale what works", "what should I automate", or for an "automation roadmap". Not for designing
+  new experiments — use distribute-growth-experiments.
 ---
 
 # Distribute: Scale & Automate

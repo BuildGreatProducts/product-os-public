@@ -1,6 +1,12 @@
 ---
 name: develop-security-audit
-description: Use for a full security audit of the app — the whole codebase or just uncommitted changes — producing docs/SECURITY-AUDIT.md, a verdict-first report with a checkbox fix plan a coding agent can execute. Triggers on phrases like "security audit", "is my app secure", "check for vulnerabilities", "audit my code for security", "am I safe to launch", "security review of my codebase", or any request to find security problems before or after launch. Runs in the app repo — the repository that contains `productos/`. Detects the stack (framework, database, auth, payments), maps the attack surface, audits by severity tier (secrets, database access control, unprotected routes, IDOR, exposed keys first), verifies every finding to a concrete exploit path before reporting, and separates agent-executable fixes from human-only actions like key rotation. Never auto-fixes. Works standalone in any repo.
+description: >-
+  Audits the whole app (or uncommitted changes) for security problems — secrets, database access
+  control, unprotected routes, IDOR, exposed keys first — verifies each finding to a concrete
+  exploit path, and writes docs/SECURITY-AUDIT.md with a launch verdict and a checkbox fix plan that
+  separates agent fixes from human-only actions like key rotation. Never auto-fixes. Use when the
+  user asks for a "security audit", "is my app secure", or "am I safe to launch". Not for a general
+  pre-commit review — use develop-code-review.
 ---
 
 # Develop: Security Audit

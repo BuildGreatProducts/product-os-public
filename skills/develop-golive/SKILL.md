@@ -1,6 +1,11 @@
 ---
 name: develop-golive
-description: Use when the user's product is built (or nearly built) and they want to get it live and accessible to customers. Triggers on phrases like "create my deploy checklist", "how do I deploy this", "help me launch", "get this live", "put this in production", "ship it to customers", "what do I need to do to go live", or any request for a step-by-step path from working code to a product customers can use. Audits the current codebase — stack, services, environment variables, payments, deploy config — then writes a plain-English, step-by-step deployment guide to `docs/DEPLOY.md`. Every step is marked as something the user must do themselves, something their coding agent can do, or both together, and all technical terms are explained for non-technical founders.
+description: >-
+  Audits a built app's stack, services, secrets, payments, and deploy config, then writes
+  docs/DEPLOY.md: a plain-English, step-by-step go-live guide where each step is marked for the
+  founder, their coding agent, or both, ending in a real-customer smoke test. Use when the user says
+  "how do I deploy this", "get this live", or "go live". Runs after develop-security-audit. Not for
+  moving off a prompt-to-app platform — use develop-migrate.
 ---
 
 # Develop: Go-Live Guide

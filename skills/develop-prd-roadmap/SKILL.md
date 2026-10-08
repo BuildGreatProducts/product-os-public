@@ -1,6 +1,12 @@
 ---
 name: develop-prd-roadmap
-description: Use when the user has a finished `docs/DEFINE.md` and `docs/DESIGN.md` and is ready to scope their MVP and generate the two documents a coding agent builds from — `docs/PRD.md` (technical spec) and `docs/ROADMAP.md` (phased build plan with task checkboxes). Triggers on phrases like "create my PRD", "generate my roadmap", "scope my MVP", "what should my MVP be", "turn my product docs into a build plan", "start the develop phase", "I'm ready to build", or any request to translate Define and Design outputs into implementation-ready spec documents. Reads DEFINE.md (offer, persona, pricing), the Product Identity in DESIGN.md, and the Magic Moment, Onboarding Flow, and Landing Page or App Store Listing docs, runs a structured MVP scoping interview in the voice of a senior technical product lead — core loop, feature cuts, tech stack selection — then generates both documents per the guides in `productos/develop/guides/`. Especially appropriate as the first step in a ProductOS-style Develop workflow.
+description: >-
+  Scopes the MVP in a structured interview (core loop, feature cuts, tech stack) and writes the two
+  documents a coding agent builds from: docs/PRD.md (technical spec) and docs/ROADMAP.md (phased
+  checkbox plan). Develop phase Step 1. Use when the user says "create my PRD", "scope my MVP", or
+  "I'm ready to build". Requires docs/DEFINE.md and docs/DESIGN.md; reads the magic moment,
+  onboarding, and landing page or app listing. Not for an existing codebase — use
+  develop-refactor-plan.
 ---
 
 # Develop: MVP PRD & Roadmap

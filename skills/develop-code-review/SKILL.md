@@ -1,7 +1,12 @@
 ---
 name: develop-code-review
 description: >-
-  Use when the user has uncommitted changes and wants them reviewed before committing — the deliberate whole-diff correctness pass. Triggers on phrases like "review my changes", "code review", "check my work before I commit", "am I ready to commit", "review what we just built", "anything wrong with this diff", or any request to review uncommitted work. Runs in the app repo — the repository that contains `productos/`. Reads the working tree, staged changes, and new untracked files, states what the change is trying to do, reviews across five lenses (correctness, regressions, edge cases, a thin security pass, consistency), verifies every finding against the actual source before reporting, and delivers an in-conversation report — must-fix items, considerations, pre-existing issues — ending in an explicit verdict: ready to commit or not. Works standalone in any repo.
+  Runs the ProductOS pre-commit review of uncommitted changes (working tree, staged, and untracked
+  files): states what the change is for, checks correctness, regressions, edge cases, a light
+  security pass, and consistency, verifies every finding in the source, and ends with a
+  ready-to-commit verdict. Use when the user says "review my changes before I commit" or "am I ready
+  to commit". Works in any repo. Not for a pull request or branch — use a PR review tool; not for a
+  full security audit — use develop-security-audit.
 ---
 
 # Develop: Code Review

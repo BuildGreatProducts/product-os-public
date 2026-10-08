@@ -1,6 +1,12 @@
 ---
 name: cc-build-loop
-description: Use when building features with **Claude Code** in any codebase and the work should go through a disciplined build → review → test → fix loop. Triggers on "run the build loop", "build the next task", "continue the plan", "build this feature properly", or any request to implement work from a plan file or a direct feature prompt. Builds from the plan (or the prompt if no plan exists), runs Claude Code's `/review` (plus `/security-review` for sensitive surfaces) and fixes every issue found, tests and verifies the feature end to end, fixes anything testing surfaces, and reports back once complete. Repeats until all plan tasks are checked off.
+description: >-
+  Builds plan tasks or a feature prompt in Claude Code through a build → review (/review, plus
+  /security-review for sensitive surfaces) → test → fix loop, finishing and checking off each task
+  before the next. Use only when running in Claude Code and the user says "run the build loop",
+  "build the next task", "continue the plan", or asks to implement work from docs/ROADMAP.md,
+  docs/REFACTOR.md, docs/MIGRATION.md, or a direct prompt. Not for building the whole MVP in one run
+  — use develop-mvp-build; not in Codex or Cursor — use codex-build-loop or cursor-build-loop.
 ---
 
 # CC Build Loop

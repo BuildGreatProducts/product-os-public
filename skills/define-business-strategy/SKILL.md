@@ -1,7 +1,12 @@
 ---
 name: define-business-strategy
 description: >-
-  Use for the optional deep dive into the economics behind the price — when the money questions get real: before paid channels in Distribute, at first revenue, or when an investor asks how the model works. Requires the Offer and Pricing sections of docs/DEFINE.md. Triggers on phrases like "build my business strategy", "what are my margins", "what does each customer cost me", "what's my unfair advantage", "what's my north star metric", "unit economics", "can I afford paid acquisition", or any request to fill in the three-section Business Strategy (Cost & Margin, Unfair Advantage, North Star Metric). Reads the Pricing Strategy's model, unit, plans, and price as given, researches cost benchmarks and category north stars, then walks the user section by section — building the cost-per-customer equation together, critiquing weak moats — and writes the Business Strategy section of docs/DEFINE.md. A BONUS deep dive, not a checklist step: the business model and price are decided in define-pricing.
+  Works out the economics behind the price — cost per customer and gross margin, unfair advantage,
+  north star metric — and writes the optional Business Strategy section of docs/DEFINE.md. Use when
+  the money questions get real (before paid acquisition, at first revenue, when an investor asks):
+  "what are my margins", "unit economics", "what does each customer cost me", "what's my north star
+  metric". Requires the Offer and Pricing sections. Not for choosing the business model or price —
+  use define-pricing.
 ---
 
 # Define: Business Strategy Deep Dive (optional)

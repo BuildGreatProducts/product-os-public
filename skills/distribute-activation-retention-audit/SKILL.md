@@ -1,6 +1,12 @@
 ---
 name: distribute-activation-retention-audit
-description: Use when the user has a working product codebase and wants to find the activation and retention leaks — why new users don't reach the magic moment, and why existing users don't come back — and fix them. Triggers on phrases like "activation audit", "retention audit", "find my leaks", "why do users churn", "fix my onboarding", "users sign up but don't come back", "leaky bucket", or "audit my activation funnel". Runs in the app repo — the repository that contains `productos/`. Detects product type, maps the as-built activation funnel (signup to magic moment) and retention loop (what brings users back), checks instrumentation, and writes a prioritized audit to `docs/ACTIVATION-RETENTION-AUDIT.md` with a paste-ready fix prompt. Optionally references ProductOS files (`docs/DEFINE.md`, `docs/MAGIC-MOMENT.md`, `docs/ONBOARDING.md`, `productos/distribute/BONUS-Measurement-and-Attribution.md`) if present; works standalone.
+description: >-
+  Audits a built product's code for activation and retention leaks — the path from signup to the
+  magic moment and the loop that brings users back — and writes a prioritized audit with a
+  paste-ready fix prompt to docs/ACTIVATION-RETENTION-AUDIT.md. Use when the user asks "why do users
+  churn", "users sign up but don't come back", or for an "activation audit", and before scaling
+  acquisition. Not for conversion surfaces (signup, pricing, checkout) — use develop-cro-audit; not
+  for designing a new onboarding — use design-onboarding-flow.
 ---
 
 # Distribute: Activation & Retention Audit

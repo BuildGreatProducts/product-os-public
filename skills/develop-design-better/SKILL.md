@@ -1,7 +1,11 @@
 ---
 name: develop-design-better
 description: >-
-  Use when the user is building or refactoring UI in their product codebase and wants designer-quality frontend code — not just functional code. Triggers on phrases like "design better", "make this UI feel more designed", "elevate the design quality", "build this with design best practices", "follow UX heuristics", "make this feel professional", "apply design polish", "review this for craft", or any request to apply UX/UI craft heuristics to code generation or review. Pairs with `docs/DESIGN.md`: the design system file owns **style** (colors, typography, spacing tokens, components), this skill owns **craft** (hierarchy, interaction, accessibility, motion, polish). Reference DESIGN.md tokens by name for every visual decision; apply the 50-item heuristics catalogue below for every craft decision. When a heuristic implies a token DESIGN.md doesn't have, flag it as a New Pattern for `develop-design-review` to promote — never invent a value inline.
+  Applies UX/UI craft heuristics — hierarchy, interaction states, accessibility, motion, polish —
+  while building or refactoring UI, using docs/DESIGN.md tokens for every visual value and flagging
+  missing tokens as New Patterns instead of inventing them. Use when the user says "design better",
+  "make this UI feel more designed", or "apply design polish". Not for checking changes against
+  DESIGN.md — use develop-design-review; not for conversion — use develop-cro-audit.
 ---
 
 # Develop: Design Better

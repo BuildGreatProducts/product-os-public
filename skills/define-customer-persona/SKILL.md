@@ -1,6 +1,12 @@
 ---
 name: define-customer-persona
-description: Use when the user has filled out their Product Offer and wants to develop a sharp, evidence-backed Customer Persona. Triggers on phrases like "build a customer persona", "define my customer", "fill in the customer persona", "who is my ideal customer", "create an ICP", "target customer profile", "persona for my product", or any request to translate a product offer into a customer persona document. Reads the Product Offer section of docs/DEFINE.md, researches the target market online, then walks them section by section through the Customer Persona framework — proposing hypotheses, critiquing vague answers, and writing the Customer Persona section of docs/DEFINE.md. Especially appropriate inside a ProductOS-style "Define" workflow where the offer is filled in and the persona is next.
+description: >-
+  Builds an evidence-backed Customer Persona from the Product Offer, with live market research and
+  section-by-section critique, and writes the Customer Persona section of docs/DEFINE.md. Use after
+  the offer is drafted, when the user says "build my customer persona", "who is my ideal customer",
+  "create an ICP", or "target customer profile". Requires the Product Offer section of
+  docs/DEFINE.md. Not for critiquing the offer — use define-offer-review; not for extracting a
+  persona from an existing product — use define-from-code.
 ---
 
 # Define: Customer Persona

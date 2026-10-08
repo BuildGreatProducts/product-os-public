@@ -1,7 +1,12 @@
 ---
 name: distribute-gtm-strategy
 description: >-
-  Use when the user wants a concrete go-to-market plan to get a product's first users — which distribution channels to use and exactly how to start each. Triggers on phrases like "go-to-market strategy", "GTM plan", "distribution plan", "how do I get users", "which channels should I use", "where do I distribute this", "marketing plan for my app", "first 100 users", "launch plan", or "pick my channels". Standard path: reads docs/DEFINE.md (offer, persona, pricing) in an app repo with ProductOS (productos/ at the repo root). Standalone fallback: in a repo without ProductOS it reads the codebase for product context and asks qualifying questions to fill the gaps. Then it researches the actual named channels and competitor distribution for the niche, walks the user through choosing three ranked channels, and builds a simple, product-specific, step-by-step starter plan for each — producing docs/GO-TO-MARKET.md. Especially useful in a ProductOS Distribute workflow.
+  Picks three ranked distribution channels for a product's first users — researching named
+  communities, competitors' distribution, and the niche — and writes docs/GO-TO-MARKET.md with a
+  step-by-step starter plan for each. Reads docs/DEFINE.md, or the codebase plus a few questions
+  when ProductOS isn't installed. Use when the user asks for a "go-to-market plan", "how do I get
+  users", "which channels should I use", or "first 100 users". Not for experiments on channels
+  already running — use distribute-growth-experiments; not for deploying — use develop-golive.
 ---
 
 # Distribute: Go-To-Market Strategy

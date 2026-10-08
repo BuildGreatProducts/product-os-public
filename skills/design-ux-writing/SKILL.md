@@ -1,6 +1,12 @@
 ---
 name: design-ux-writing
-description: Use when the user has their Product Identity's Tone of Voice and wants the in-product copy system — buttons, labels, errors, empty states, confirmations, toasts, notifications, and a terminology lexicon. Triggers on phrases like "write my UX copy", "UX writing", "microcopy", "fix my button labels", "write my error messages", "empty states", "in-app copy", "copy audit", "make my copy clearer", or any request to make interface writing clear, concise, and concrete. Reads the Identity's tone of voice and `productos/design/BONUS-UX-Writing-Best-Practice.md`, walks the user through the voice chart, terminology lexicon, and per-surface copy rules in the voice of a senior UX writer, and writes `docs/COPY.md` — the copy system coding agents follow the way they follow `docs/DESIGN.md`. In a repo with real UI strings it also audits and rewrites them. Works standalone without ProductOS. For marketing copy use `design-landing-page` or `design-app-listing` instead.
+description: >-
+  Builds the in-product copy system — voice chart, terminology lexicon, and rules for buttons,
+  labels, errors, empty states, confirmations, toasts, and notifications — from the Product
+  Identity's tone of voice, and writes docs/COPY.md; in a repo with real UI strings it also audits
+  and rewrites them. Design phase Step 2. Use when the user says "UX writing", "microcopy", "write
+  my error messages", or "copy audit". Works without ProductOS. Not for marketing copy — use
+  design-landing-page or design-app-listing.
 ---
 
 # Design: UX Writing System

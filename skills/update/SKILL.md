@@ -1,6 +1,11 @@
 ---
 name: update
-description: Use when the member wants the latest version of ProductOS in a repo where it's already installed. Triggers on phrases like "update ProductOS", "upgrade ProductOS", "get the latest ProductOS", "is there a new version of ProductOS", "pull the new release", or "am I on the latest version". Reads the installed version from productos/, fetches the latest from the official public repo into a temporary folder, and compares every file three ways (the member's copy, the published history, the latest release): files the member never touched take the new version, files the member filled in are kept, files a release deleted or renamed are removed or moved, and outputs an older copy kept inside productos/ (filled templates, wireframes, PRODUCT.md's inputs) are moved into docs/, where every output lives from 1.14.0. Never overwrites a docs/ file. Then re-runs setup's wiring so new agent guidelines reach the repo root, and reports what changed. Safe to re-run any time.
+description: >-
+  Updates an installed ProductOS to the latest release: fetches it into a temporary folder, compares
+  every file three ways so untouched files update and the member's edits are kept, moves outputs
+  older versions kept inside productos/ into docs/, never overwrites a docs/ file, then re-runs
+  setup's wiring. Use when the user says "update ProductOS", "upgrade ProductOS", or "am I on the
+  latest version". Not for a first install — use setup.
 ---
 
 # Update — bring ProductOS up to the latest version

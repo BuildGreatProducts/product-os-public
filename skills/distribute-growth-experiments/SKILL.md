@@ -1,6 +1,12 @@
 ---
 name: distribute-growth-experiments
-description: Use after the user has a go-to-market plan (or live channels) and wants to systematically improve and scale them. Triggers on phrases like "growth experiments", "growth plan", "growth backlog", "what should I test", "how do I scale this channel", "marketing experiments", "improve my channel", "A/B test ideas", "growth loop", or "optimize my funnel". Reads docs/GO-TO-MARKET.md (or, in a repo without ProductOS, the codebase plus a couple of questions) for the chosen channels, researches current tactics and competitor distribution for the niche, then designs product-specific experiments and writes a simple execution list to docs/GROWTH-EXPERIMENTS.md — 1–3 experiments running now, each with concrete steps and a number-plus-date pass bar, plus an ordered up-next queue — and seeds the results tracker at docs/GROWTH-TRACKER.md. Prioritization (quick wins first) happens in the session; only the instructions land in the files. Works with ProductOS in the repo (productos/ at the root) or standalone.
+description: >-
+  Designs 1–3 product-specific growth experiments for the channels already chosen, each with
+  concrete steps and a number-plus-date pass bar, plus an ordered queue; writes
+  docs/GROWTH-EXPERIMENTS.md and seeds the results tracker docs/GROWTH-TRACKER.md. Use after a
+  go-to-market plan exists, when the user asks "what should I test", "growth experiments", or
+  "improve my channel". Not for choosing channels — use distribute-gtm-strategy; not for scaling
+  proven winners — use distribute-scale-automate.
 ---
 
 # Distribute: Growth Experiments

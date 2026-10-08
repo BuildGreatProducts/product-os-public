@@ -1,6 +1,11 @@
 ---
 name: design-identity-creator
-description: Use when the user has their Define-phase work in `docs/DEFINE.md` and wants to build their minimum viable brand identity. Triggers on phrases like "help me create my product identity", "build my brand identity", "design my brand", "name my product", "what's my brand worldview", "develop my brand voice", "define my visual style", or any request to guide a founder through the five word-level elements (Name, Worldview, Contrarian Belief, Tone of Voice, Visual Style) of a Product Identity. Reads `docs/DEFINE.md`, does live research on the category's names and visual defaults, walks the user through each element in the voice of a senior brand strategist and design director, and writes the `## Product Identity` section of `docs/DESIGN.md` and its `docs/DESIGN.html` mirror — every section ending in a concrete artifact, assembled into a one-glance Brand Card. Colours, fonts, and tokens are deliberately downstream — the Design System step derives them from a real image reference.
+description: >-
+  Builds the minimum viable brand identity — Name, Worldview, Contrarian Belief, Tone of Voice,
+  Visual Style, and a one-glance Brand Card — from docs/DEFINE.md with live category research, and
+  writes the Product Identity section of docs/DESIGN.md and docs/DESIGN.html. Design phase Step 1.
+  Use when the user says "build my brand identity", "name my product", "develop my brand voice", or
+  "define my visual style". Not for colors, fonts, or tokens — use design-design-system.
 ---
 
 # Design: Product Identity Creator

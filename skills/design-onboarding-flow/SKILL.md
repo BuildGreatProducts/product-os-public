@@ -1,6 +1,12 @@
 ---
 name: design-onboarding-flow
-description: Use when the user has a finished `docs/DEFINE.md`, a Product Identity, and a Magic Moment hypothesis, and wants to design the onboarding flow that engineers the user toward that magic moment. Triggers on phrases like "design the onboarding flow", "create my onboarding", "build the activation flow", "wireframe my onboarding", "lay out the first-session experience", "what screens do I need for onboarding", "make the onboarding flow document", "click-through wireframe of my onboarding", or any request to translate the activation hypothesis into a screen-by-screen flow spec. Auto-selects the best-practice reference from `productos/design/onboarding/` based on product type, drafts a screen-by-screen flow in the voice of a senior onboarding designer, writes `docs/ONBOARDING.md`, and generates a clickable lo-fi HTML wireframe at `docs/ONBOARDING-WIREFRAME.html` the user can click through to feel the flow.
+description: >-
+  Designs the screen-by-screen onboarding flow that gets a new user to the magic moment, using the
+  best-practice reference for the product type, and writes docs/ONBOARDING.md plus a clickable lo-fi
+  wireframe at docs/ONBOARDING-WIREFRAME.html. Use when the user says "design my onboarding",
+  "wireframe my onboarding", or "what screens do I need for the first session". Requires
+  docs/DEFINE.md, the Product Identity, and docs/MAGIC-MOMENT.md. Not for auditing onboarding
+  already built — use distribute-activation-retention-audit.
 ---
 
 # Design: Onboarding Flow

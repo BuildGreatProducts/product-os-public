@@ -1,6 +1,12 @@
 ---
 name: develop-refactor-plan
-description: Use inside an **existing app codebase** when the user wants a plan to bring the code in line with their ProductOS spec documents. Triggers on phrases like "create a refactor plan", "audit my codebase against the PRD", "plan the refactor", "what's different between my app and the PRD", "make REFACTOR.md", or any request to compare an existing codebase to `docs/PRD.md` and produce an actionable migration plan. Reads `docs/PRD.md` and `docs/ROADMAP.md` when they exist; when they don't, generates its own refactor-scoped PRD from `docs/DEFINE.md`, `docs/DESIGN.md`, the codebase, and a short interview — no need to run `develop-prd-roadmap` first. Audits the codebase, classifies every difference (missing / divergent / extra), walks the user through keep-or-remove decisions one at a time, then writes `docs/REFACTOR.md` — a phased, checkbox-tracked plan in the same format as the roadmap, executable by `develop-refactor-build`.
+description: >-
+  Compares an existing codebase with docs/PRD.md (or a refactor-scoped PRD it drafts from
+  docs/DEFINE.md, docs/DESIGN.md, and a short interview), classifies every difference as missing,
+  divergent, or extra, takes keep-or-remove decisions one at a time, and writes docs/REFACTOR.md, a
+  phased checkbox plan. Use when the user says "plan the refactor" or "audit my codebase against the
+  PRD". Not for leaving a prompt-to-app platform — use develop-migrate first; to execute the plan,
+  use develop-refactor-build.
 ---
 
 # Develop: Refactor Plan

@@ -1,7 +1,12 @@
 ---
 name: design-prompt-generator
 description: >-
-  Use when the user has a finished Product Identity and design system in `docs/DESIGN.md` plus `docs/DEFINE.md` and wants paste-ready prompts for AI design tools (Pencil, paper.design, Claude Design, or MagicPath) that produce on-brand designs immediately. Triggers on phrases like "generate design prompts", "create AI design prompts", "make screen prompts for my product", "give me prompts for Claude Design / Pencil / paper / MagicPath", "prompts to design my screens", "draft my screens with AI", "give me a design prompt for [screen]", "what should I prompt my AI design tool with", or any request to translate the Product Identity into design-tool prompts. Reads the source files and writes `docs/DESIGN-PROMPTS.md` with three prompts: Prompt 1 is always a comprehensive UI design system foundation (colors, typography, components, layout, motion) so screens share a consistent component vocabulary; Prompts 2 and 3 are two priority screens for the product type.
+  Writes three paste-ready prompts for AI design tools (MagicPath by default; Pencil, paper.design,
+  or Claude Design also work) to docs/DESIGN-PROMPTS.md: a UI foundation prompt carrying the
+  docs/DESIGN.md tokens, then two priority screens for the product type. Use when the user says
+  "generate design prompts", "prompts to design my screens", or "what should I prompt my design tool
+  with". Requires the Product Identity and design system in docs/DESIGN.md, and docs/DEFINE.md. Not
+  for building the design system — use design-design-system.
 ---
 
 # Design: Design Prompt Generator

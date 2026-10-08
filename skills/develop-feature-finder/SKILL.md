@@ -1,6 +1,12 @@
 ---
 name: develop-feature-finder
-description: Use in the app repo when the user wants feature or change recommendations to achieve a specific objective. Triggers on phrases like "what should I build next", "find features to improve retention", "how do I get more users to upgrade", "recommend features", "what would increase activation", "feature ideas for my app", or any request to translate a business goal (retention, activation, conversion, revenue, referrals, engagement) into concrete product changes. Asks for the objective, reviews the codebase to understand what the app does today, researches live best practices and what comparable products have done, then delivers ranked feature recommendations with evidence, effort estimates, and how to measure each — and offers to add the chosen ones to the plan file.
+description: >-
+  Turns a business objective (activation, retention, conversion, revenue, referrals) into ranked
+  feature recommendations for an existing app — reviewing the codebase, researching comparable
+  products, and giving evidence, effort, and a metric for each — then offers to append the chosen
+  ones to the build plan. Use when the user asks "what should I build next", "features to improve
+  retention", or "what would increase activation". Not for finding a product idea — use
+  define-idea-finder; not for channel or funnel experiments — use distribute-growth-experiments.
 ---
 
 # Develop: Feature Finder

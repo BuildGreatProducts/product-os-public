@@ -1,6 +1,11 @@
 ---
 name: develop-mvp-build
-description: Use in the app repo — the repository that contains `productos/` — when the user wants the full MVP built from their ProductOS spec documents. Triggers on phrases like "build my MVP", "build the app", "execute the roadmap", "start the build", "work through the whole roadmap", "build everything", or any request to implement the entire plan rather than a single task or phase. Requires `docs/PRD.md` and `docs/ROADMAP.md` (plus `docs/DEFINE.md` and `docs/DESIGN.md` for context). Works through every roadmap task in order — implementing, testing, and verifying each before moving on, marking checkboxes and updating the status line, committing at each phase boundary — and runs until all tasks are complete and the magic moment works end to end.
+description: >-
+  Builds the whole MVP from docs/PRD.md and docs/ROADMAP.md in one run — every task in order, each
+  implemented, tested, and verified, checkboxes and status line updated, a commit at each phase
+  boundary — until the magic moment works end to end. Use when the user says "build my MVP",
+  "execute the whole roadmap", or "build everything". Not for one task at a time or post-MVP work —
+  use the build loop for your tool; not for a refactor plan — use develop-refactor-build.
 ---
 
 # Develop: MVP Build

@@ -1,6 +1,12 @@
 ---
 name: sell-in-30
-description: Use when a member has a live product (or can deploy within days) and no paying customer, and wants their first one in 30 days: the ProductOS first-customer challenge. Triggers on phrases like "sell in 30", "sell in thirty", "start sell in 30", "first customer in 30 days", "get my first customer", "first paying customer", "30 day challenge", "day 12 check-in", "weekly read", "what's my task today", or "nobody has paid yet". Runs after setup (and runs it first if needed). Week one: review the offer, align every acquisition surface with it, checkout live with a real test purchase, warm-network asks, then the GTM strategy and growth experiments skills. Weeks two to four: run the top experiment, log a six-field feedback every session, and at each weekly read decide continue or kill plus a pivot review (persona, product, or pricing). Weekly Skool posts, docs/SELL-IN-30.md as the log, a Sell Report at the close, and a Product Studio call. Orchestrates existing skills; never replaces them.
+description: >-
+  Runs the ProductOS Sell in 30 challenge — thirty sessions to a first paying customer for a live
+  product. Week one aligns the offer, acquisition surfaces, and checkout and asks the warm network;
+  weeks two to four run growth experiments with weekly reads and pivot reviews, logged in
+  docs/SELL-IN-30.md and closed with a Sell Report. Use when the user says "sell in 30", "get my
+  first customer", or "nobody has paid yet", or when docs/SELL-IN-30.md has Status: Open (daily
+  check-in, weekly read). Not for an app that isn't live yet — use ship-in-7.
 ---
 
 # Sell in 30 — the first-customer challenge

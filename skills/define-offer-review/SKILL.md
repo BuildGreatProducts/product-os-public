@@ -1,6 +1,12 @@
 ---
 name: define-offer-review
-description: Use when the user has filled out their Product Offer and wants a rigorous, strategic critique before moving on. Triggers on phrases like "review my product offer", "critique my offer", "is my offer any good", "tear apart my product offer", "audit my offer", "sanity-check my positioning", "what's wrong with my offer", or any request to evaluate, sharpen, pressure-test, or rewrite the six elements (Customer, Pain, Outcome, Mechanism, Guarantee, Proof) of a product offer. Reads the Product Offer section of docs/DEFINE.md, identifies gaps in thinking, references the worked Product Offer Examples as calibration anchors, proposes rewrites in the voice of a strategic startup advisor with deep launch and exit experience, and applies approved edits to that section (refreshing the Summary when the pitch changes). Especially appropriate inside a ProductOS-style "Define" workflow where the offer is drafted and the user wants it sharpened before building the customer persona or pricing.
+description: >-
+  Critiques a written Product Offer against worked examples and known failure patterns, proposes
+  rewrites one at a time, and applies approved edits to the Product Offer section of docs/DEFINE.md,
+  refreshing the Summary when the pitch changes. Use when the user says "review my offer", "critique
+  my offer", "is my offer any good", "pressure-test my positioning", or right after
+  define-from-code. Requires a drafted Offer. Not for writing an offer from scratch — use
+  define-offer-builder.
 ---
 
 # Define: Product Offer Critique

@@ -1,6 +1,12 @@
 ---
 name: develop-cro-audit
-description: Use when the user has a working product codebase (web/mobile app, SaaS, marketplace, dev tool, extension, or landing page) and wants a conversion rate optimization audit of the code — what's slowing conversion, what's missing, what to fix first. Triggers on phrases like "audit my conversion rate", "CRO audit", "review my code for conversion", "what's hurting my signup rate", "find my conversion bottlenecks", "why aren't users converting", or "are my forms killing conversion". Runs in the app repo — the repository that contains `productos/`. Detects product type, scans for conversion-relevant patterns (forms, CTAs, Core Web Vitals, analytics, mobile, paywall placement, trust signals), and writes a prioritized audit to `docs/CRO-AUDIT.md`. Optionally references ProductOS files (`docs/DEFINE.md`, the Product Identity in `docs/DESIGN.md`, `docs/MAGIC-MOMENT.md`) if present; works standalone.
+description: >-
+  Audits a built product's code for conversion — forms, CTAs, Core Web Vitals, analytics, mobile,
+  paywall placement, trust signals — and writes a prioritized fix list to docs/CRO-AUDIT.md. Use
+  when the user asks for a "CRO audit", "why aren't users converting", or "what's hurting my signup
+  rate". Works standalone or with ProductOS docs. Not for users who sign up but never activate or
+  return — use distribute-activation-retention-audit; not for writing landing page copy — use
+  design-landing-page.
 ---
 
 # Develop: Conversion Rate Optimization Audit
