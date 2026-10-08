@@ -116,4 +116,4 @@ Re-read the written offer against the worksheet's Good/Bad criteria and the eigh
 
 Give the member the file path (`docs/DEFINE.md`) and a one-paragraph summary of what is solid and what still needs validation.
 
-**Next:** `define-customer-persona` (optionally `define-offer-review` first); book 3–5 short customer conversations to validate the tagged elements, then re-run `define-offer-review` with the new evidence.
+**Next:** `define-product-shape` (Define Step 1b — how the customer will receive the product), then `define-customer-persona` (optionally `define-offer-review` first); book 3–5 short customer conversations to validate the tagged elements, then re-run `define-offer-review` with the new evidence.

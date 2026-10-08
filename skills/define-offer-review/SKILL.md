@@ -99,4 +99,4 @@ Follow the header rules in `productos/define/DEFINE-TEMPLATE.md`: update the `*L
 
 Anything less is a draft — say so explicitly, surface the remaining risks, and recommend the next step (usually one more round of customer interviews to back the weakest section with evidence).
 
-**Next:** `define-customer-persona` if `## 2. Customer Persona` is still a placeholder, otherwise `define-pricing` if `## 3. Pricing Strategy` is. If both are filled — extracted drafts from `define-from-code` count — the Define phase is done: offer those two as optional sharpening and point to Design.
+**Next:** `define-product-shape` if `## Product Shape` is still a placeholder (on the fast-track it's a short session confirming the shape the product already has); then `define-customer-persona` if `## 2. Customer Persona` is a placeholder, otherwise `define-pricing` if `## 3. Pricing Strategy` is. Once all are filled — extracted drafts from `define-from-code` count — the Define phase is done: offer persona and pricing as optional sharpening and point to `design-phase`.

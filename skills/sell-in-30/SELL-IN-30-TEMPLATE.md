@@ -1,8 +1,9 @@
 # Sell in 30 — [App name]
 
-**The bar:** [one payment / one activated user (product staying free this month)]
+**The bar:** [the shape's First-sale-means bar, verbatim from `docs/DEFINE.md` → Product Shape → First Sale Means / one activated user (product staying free this month)]
+**Shape:** [primary shape slug]
 **Starting point:** [Live, free, will charge / Live, priced / Live, free, staying free / One deploy away / Live with users / After Ship in 7]
-**Live URL:** [url] · **Price line:** [from `docs/DEFINE.md` → Pricing Strategy, or "free this month"]
+**Live at:** [URL / listing / install link] · **Price line:** [from `docs/DEFINE.md` → Pricing Strategy, or "free this month"]
 **Started:** [date] · **Hours per session:** [n] · **Consecutive days:** [yes / as and when]
 Status: Open · Day [N] of 30 · Week [W]
 
@@ -127,8 +128,8 @@ Status: Open · Day [N] of 30 · Week [W]
 *Filled at the close. Written to be brought to a Product Studio call as-is. Structured for the coach intake.*
 
 **Result:** [Hit / Missed] — [one sentence: the payment or the activated user, or the highest rung reached]
-**The bar was:** [payment / activated user]
-**Live URL:** [url] · **Stack / hosting:** [one line]
+**The bar was:** [the shape's first sale / activated user]
+**Live at:** [URL / listing / install link] · **Stack / hosting:** [one line]
 **Price line at close:** [ ] · **Guarantee:** [ ] · **Checkout:** [live / test]
 **Product state:** [what works, what doesn't, one line]
 **Hours:** planned [n] · spent [n] · available going forward [n per week]

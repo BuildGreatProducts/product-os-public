@@ -1,6 +1,6 @@
 # Landing Page
 
-*This is a worksheet for the `design-landing-page` skill. The skill reads `docs/DEFINE.md`, the Product Identity in `docs/DESIGN.md`, and `docs/MAGIC-MOMENT.md`, designs every section of a web/desktop landing page with exact copy in the brand's tone of voice, and writes the filled version to `docs/LANDING-PAGE.md` using the structure below. A companion clickable HTML wireframe can optionally be generated at `docs/LANDING-PAGE-WIREFRAME.html`. For mobile-first products, use the `design-app-listing` skill (worksheet: `4b-App-Store-Listing.md`) instead. This file itself is never filled in.*
+*This is a worksheet for the `design-landing-page` skill. The skill reads `docs/DEFINE.md`, the Product Identity in `docs/DESIGN.md`, and `docs/MAGIC-MOMENT.md`, designs every section of the landing page for any product with a web presence with exact copy in the brand's tone of voice, and writes the filled version to `docs/LANDING-PAGE.md` using the structure below. A companion clickable HTML wireframe can optionally be generated at `docs/LANDING-PAGE-WIREFRAME.html`. Store listings are separate: `design-app-listing` (App Store / Google Play, worksheet `4b-App-Store-Listing.md`) and `design-marketplace-listing` (every other store, marketplace, or registry, worksheet `4c-Marketplace-Listing.md`). This file itself is never filled in.*
 
 ---
 
@@ -13,7 +13,7 @@
 > [One sentence from `docs/MAGIC-MOMENT.md`.]
 
 **Hero promise:** "[the actual headline]"
-**Primary CTA:** "[the actual CTA text — 3-5 words]"
+**Primary CTA:** "[the actual CTA text — 3-5 words, set by the product shape: sign up, install, add to Chrome, book a call, buy, get the API key, subscribe]"
 **Sticky CTA:** "[same as primary]"
 
 ---
@@ -33,7 +33,7 @@
 - **Goal:** [one sentence — BONUS tactic reference]
 - **Headline:** "[exact headline, ≤12 words]"
 - **Sub-headline:** "[exact sub-head, one sentence]"
-- **CTA:** "[exact CTA text, 3-5 words, first-person]"
+- **CTA:** "[exact CTA text, 3-5 words, first-person — or the store badge / copy-paste install command the shape calls for]"
 - **Visual direction:** [2-3 lines describing what the hero shows]
 - **Above-fold social proof:** [logo bar / testimonial fragment]
 - **What this proves:** [one sentence — what the visitor now believes after this section]
@@ -133,7 +133,7 @@
 
 ## Refresh cadence
 
-Recommended next refresh: 45 days from now. First A/B test: [headline / CTA / hero visual]. Refresh trigger: traffic-to-signup conversion drops below [N]% for [duration].
+Recommended next refresh: 45 days from now. First A/B test: [headline / CTA / hero visual]. Refresh trigger: traffic-to-CTA conversion (signup, install, booking, or purchase) drops below [N]% for [duration].
 
 ## Sources
 

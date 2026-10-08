@@ -193,6 +193,31 @@
     transform: rotate(45deg);
   }
   .device-extension .screen { inset: 16px 16px 16px; padding: 8px 0; }
+
+  /* Transcript — 720×480. Optional, for screenless shapes (agent skill/plugin, MCP server, chat assistant, CLI): each "screen" is one step of a terminal or chat session. Reuses the .title-bar chrome. */
+  .device-transcript {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 720px;
+    height: 480px;
+  }
+  .device-transcript .title-bar {
+    height: 28px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 12px;
+  }
+  .device-transcript .traffic-lights { display: flex; gap: 6px; flex-shrink: 0; }
+  .device-transcript .traffic-lights span { width: 10px; height: 10px; background: var(--wire-line); border-radius: 50%; display: block; }
+  .device-transcript .title-text { flex: 1; text-align: center; font-size: 11px; color: var(--muted); }
+  .device-transcript .screen { inset: 28px 0 0 0; padding: 20px 28px; }
+  .wire-turn { font-size: 13px; line-height: 1.5; margin-bottom: 10px; padding: 8px 12px; border-radius: 8px; }
+  .wire-turn.user { background: var(--wire-fill); color: var(--ink); }
+  .wire-turn.agent { border: 1px solid var(--border); color: var(--wire-text); }
+  .wire-turn.output { font-family: ui-monospace, Menlo, monospace; font-size: 12px; border: 1px dashed var(--wire-line); color: var(--wire-text); white-space: pre-wrap; }
   .wire-progress { display: flex; gap: 4px; margin-bottom: 24px; }
   .wire-progress span { flex: 1; height: 3px; background: var(--wire-fill); border-radius: 2px; }
   .wire-progress span.done { background: var(--wire-line); }
@@ -324,7 +349,7 @@
   <main class="canvas">
     <!--
       DEVICE FRAME — pick the class on .device that matches the product's primary surface.
-      Five frames are defined in the CSS above; their dimensions are sized to fit the canvas.
+      Six frames are defined in the CSS above; their dimensions are sized to fit the canvas.
 
       device-mobile     (320×640)  Consumer mobile AI apps. Cal AI / Noom / Rizz shape.
                         Chrome: <div class="notch"></div>
@@ -347,6 +372,13 @@
 
       device-extension  (360×500)  Browser extension popups. Grammarly / Honey / Loom shape.
                         Chrome: <div class="ext-arrow"></div>
+
+      device-transcript (720×480)  Optional, screenless shapes only: a terminal or chat session,
+                                   one step per screen. Primitives: .wire-turn.user / .agent / .output.
+                        Chrome: <div class="title-bar">
+                                  <div class="traffic-lights"><span></span><span></span><span></span></div>
+                                  <div class="title-text">Terminal — or the chat surface's name</div>
+                                </div>
 
       Replace `device-mobile` and the `<div class="notch"></div>` below with the right pair
       for the user's product. All .screen content sizing adapts automatically.

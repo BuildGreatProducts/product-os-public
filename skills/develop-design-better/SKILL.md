@@ -14,6 +14,8 @@ A craft layer for any coding agent generating or reviewing UI. Style is owned by
 
 > **Boundary.** When a heuristic implies a visual property, reference a DESIGN.md token by name (`{colors.primary}`, `{rounded.md}`). If DESIGN.md doesn't have the token, flag as a New Pattern — never inline hex, font names, or arbitrary px.
 
+**Shapes:** for products with screens — `web-app`, `mobile-app`, `desktop-app`, `browser-extension`, `website` — and for any landing page, settings screen, or portal another shape ships. Not for skills, plugins, MCP servers, or chat assistants without a UI; their craft lives in `docs/COPY.md` and `docs/EVALS.md`.
+
 ## Inputs
 
 - **`docs/DESIGN.md`** — required. If missing, stop and tell the member to run `design-design-system`.

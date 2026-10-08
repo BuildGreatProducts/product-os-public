@@ -1,14 +1,14 @@
 # Sell in 30 — week one: Just shipped via Ship in 7
 
-*`docs/SHIP-IN-7.md` closed this week: the app is live, the smoke test passed, and `docs/DEFINE.md` exists (Ship in 7 never skips the backfill). Posting the live URL was Ship in 7's stretch and may not have happened. The bar is a payment (or an activated user, if the product stays free this month).*
+*`docs/SHIP-IN-7.md` closed this week: the product is live by its shape's Live-means bar, the smoke test passed, and `docs/DEFINE.md` exists (Ship in 7 never skips the backfill). Posting the live link was Ship in 7's stretch and may not have happened. The bar is the shape's first sale (or an activated user, if the product stays free this month).*
 
 ## Week one
 
 | Day | Block | Skill(s) | Proof |
 | --- | --- | --- | --- |
-| 1 | **Offer review + announce** | `define-offer-review` on the offer Ship in 7 wrote or extracted; then, if Ship in 7's stretch post didn't go out, post the live URL where your customers are, responses logged under `Warm asks` | a sharpened offer; the live post's link |
-| 2 | **Messaging alignment + warm list** | landing page / listing copy from the reviewed offer, shipped; the warm list written in `docs/SELL-IN-30.md`, starting with everyone who responded to the live post | before/after of the live hero; the warm list |
-| 3 | **Price it + checkout live** | `define-pricing` if the Pricing Strategy section of `docs/DEFINE.md` is missing or unfilled; payments live and a real test purchase (skip both if staying free) | the price line; the receipt |
+| 1 | **Offer review + announce** | `define-offer-review` on the offer Ship in 7 wrote or extracted; then, if Ship in 7's stretch post didn't go out, post the live link where your customers are, responses logged under `Warm asks` | a sharpened offer; the live post's link |
+| 2 | **Messaging alignment + warm list** | landing page / app listing / marketplace listing copy (whichever surfaces the shape uses) from the reviewed offer, shipped; the warm list written in `docs/SELL-IN-30.md`, starting with everyone who responded to the live post | before/after of the live hero; the warm list |
+| 3 | **Price it + checkout live** | `define-pricing` if the Pricing Strategy section of `docs/DEFINE.md` is missing or unfilled; the shape's checkout live (SKILL.md, *Checkout live, by shape*) and a real test purchase (skip both if staying free) | the price line; the receipt, or the shape's equivalent proof |
 | 4 | **Warm conversations** | the warm ask to everyone on the warm list, personally, checkout link in hand (the "try it" link if the product stays free); every response logged in the Experiment Log | sent-folder screenshot |
 | 5 | **Channel** | `distribute-gtm-strategy` | `docs/GO-TO-MARKET.md` |
 | 6 | **Experiments + follow-ups** | `distribute-growth-experiments`, briefed with the bar and the clock | `docs/GROWTH-EXPERIMENTS.md`; `docs/GROWTH-TRACKER.md` seeded |

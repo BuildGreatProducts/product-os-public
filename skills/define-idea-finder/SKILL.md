@@ -134,5 +134,5 @@ Write only what the member picks into the optional `## Idea Audit` section, foll
 
 Then hand off, in order:
 
-1. **`define-offer-builder`** — the mandatory next step. Open it with its two intake questions *already answered*: "What's the product, in one or two sentences?" → the chosen idea sentence. "Who is this for, today?" → the member themselves (for-yourself-first) or the named client or enthusiast segment (for-others). Then persona and pricing per the Define checklist.
+1. **`define-offer-builder`** — the mandatory next step. Open it with its two intake questions *already answered*: "What's the product, in one or two sentences?" → the chosen idea sentence. "Who is this for, today?" → the member themselves (for-yourself-first) or the named client or enthusiast segment (for-others). Then product shape, persona, and pricing per the Define checklist (`define-phase` walks them).
 2. **`BONUS-Idea-Validation-Cheat-Sheet.md`** — name the 1–2 tactics the route implies (for-yourself-first → Be-Your-Own-Customer; productized service → Concierge MVP; niche community position or a passion community → the insider-network tactics), but don't run them. Validation comes after the offer.

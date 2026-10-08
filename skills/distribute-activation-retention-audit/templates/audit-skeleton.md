@@ -5,7 +5,7 @@ Use this structure at step 7. Keep prose tight; tables over paragraphs. Effort i
 ```
 # Activation & Retention Audit
 
-*Drafted: [Month Year]. Product type: [type]. Framework: [framework]. Retention model: [daily/weekly/occasional]. Magic moment: [event].*
+*Drafted: [Month Year]. Shape: [slug]. Product type: [type]. Framework: [framework or "none — evidence from (systems)"]. Retention model: [daily/weekly/occasional]. Magic moment: [event].*
 
 ## Summary
 [Three sentences: total findings, P0/P1 count, the single biggest leak and its headline fix.]
@@ -15,7 +15,7 @@ Use this structure at step 7. Keep prose tight; tables over paragraphs. Effort i
 2. … 3. … 4. … 5. …
 
 ## The activation funnel as-built
-[The steps from signup to magic moment, friction flagged. Name the step count and the drop points.]
+[The steps from signup (or install, or payment) to the magic moment or first successful output, friction flagged. Name the step count and the drop points.]
 
 ---
 ## A. Time-to-Value & the Activation Path
@@ -25,7 +25,7 @@ Use this structure at step 7. Keep prose tight; tables over paragraphs. Effort i
 ## B. Signup Gating & Friction Walls
 ## C. Empty States & First-Run Guidance
 ## D. Onboarding Flow Friction
-[same table structure for B–D]
+[same table structure for B–D. An area that doesn't apply to the shape gets one row: `N/A — [reason]`.]
 
 ## The retention loop as-built
 [What brings users back — or "nothing currently does."]
@@ -34,7 +34,7 @@ Use this structure at step 7. Keep prose tight; tables over paragraphs. Effort i
 ## F. The Return Loop & Stored Value
 ## G. Churn & Win-Back Surfaces
 ## H. Activation & Retention Instrumentation
-[same table structure for E–H]
+[same table structure for E–H; `N/A — [reason]` where an area does not apply.]
 
 ---
 ## Cross-cutting quick wins
@@ -50,8 +50,8 @@ Use this structure at step 7. Keep prose tight; tables over paragraphs. Effort i
 > Work through them top to bottom; after each, confirm the activation event fires and is tracked.
 
 ## Verification next steps
-- [ ] Confirm the magic-moment event fires and is tracked in analytics
-- [ ] Measure Day 1 / Day 7 retention as a baseline
+- [ ] Confirm the magic-moment (or first-successful-output) event fires and is tracked
+- [ ] Measure a retention baseline (Day 1 / Day 7 for screen shapes; repeat invocations, renewals, or repeat purchases otherwise)
 - [ ] Send a test through each lifecycle email / push trigger
 - [ ] Re-run this audit in 30 days to measure the lift
 

@@ -13,6 +13,14 @@ Default comparison data for ProductOS's Develop-phase tech stack questions. Use 
 - [Transactional Email](#transactional-email)
 - [Error Tracking & Monitoring](#error-tracking--monitoring)
 - [Hosting & Deployment](#hosting--deployment)
+- [Non-App Shapes](#non-app-shapes)
+- [Agent Skills & Plugins](#agent-skills--plugins)
+- [MCP Servers](#mcp-servers)
+- [Chat Assistants](#chat-assistants)
+- [Developer Tools](#developer-tools)
+- [Websites](#websites)
+- [Digital Product Storefronts](#digital-product-storefronts)
+- [Productized-Service Tooling](#productized-service-tooling)
 
 -----
 
@@ -427,3 +435,147 @@ Hosting is where the built app runs and where customers reach it. Pick the platf
 - **Best for:** Every Expo mobile app. Pair it with the backend's own hosting (Supabase, Convex, Firebase are already hosted).
 
 **Default:** a web app on a managed backend → **Vercel**. A custom server or background workers → **Railway**. A mobile app → **Expo EAS**, with the backend where it already lives.
+
+-----
+
+## Non-App Shapes
+
+The sections above cover the screen shapes (`web-app`, `mobile-app`, `desktop-app`, `browser-extension`). Every other shape picks its stack from its own section below — the layers differ, so the interview asks about these instead of frontend, backend, and database. A shape that also runs code on a server (a remote MCP server, a bot backend, a paid API) takes its backend, database, analytics, and error tracking from the sections above too.
+
+Each section ends with dated platform facts. Platforms, fees, and policies in these markets change monthly — re-verify any fact before quoting it to the member or putting it in a PRD.
+
+-----
+
+## Agent Skills & Plugins
+
+For `agent-skill` and `agent-plugin`. The layers: the skill format, the plugin packaging per host, and distribution.
+
+- **Agent Skills format (SKILL.md folders)** — a folder with a `SKILL.md` (YAML frontmatter `name` + `description`, then instructions) plus optional references, scripts, and assets. Write every skill in this format; it is the portable unit across hosts.
+- **Host plugin packaging** — a plugin bundles skills with commands, subagents, hooks, and MCP servers behind a manifest. Each host has its own manifest folder (e.g. `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`); one repo can carry several, so one codebase reaches several hosts. ProductOS itself is packaged this way.
+- **Distribution** — a plugin marketplace (a manifest in a Git repo that customers add once, then install from and update through), a host's official directory, or a direct download (zip). Paid products usually gate a private repo or deliver a license, since marketplaces rarely handle payment.
+
+**Default:** write skills in the SKILL.md format; package them as a plugin with a manifest for each host the persona uses; distribute through a marketplace in a GitHub repo (private and access-granted on purchase for a paid product); submit to the hosts' official directories once it has users.
+
+#### Platform facts — last reviewed October 2026 — re-verify before quoting
+
+- The SKILL.md format began as Anthropic's Agent Skills and was published as an open standard; Claude's apps, Claude Code, and the API support it, and other coding agents (Codex and Cursor among them) read the same format. Check each target host's docs for its current skill and plugin support.
+- Claude Code installs plugins from marketplaces defined by `.claude-plugin/marketplace.json` in a Git repository; a plugin's own manifest is `.claude-plugin/plugin.json`.
+- Host marketplaces and directories have their own review and listing rules — check them before promising a launch date.
+
+-----
+
+## MCP Servers
+
+For `mcp-server`. The layers: SDK, transport, hosting, auth, and distribution.
+
+- **Official TypeScript SDK** — the most widely used SDK, with examples for every transport. Best for most servers, and for remote servers on JavaScript hosts.
+- **Official Python SDK (with FastMCP)** — decorator-style tool definitions, fast to write. Best when the upstream system or the member's code is Python.
+- **Transport** — **stdio** for a local server the host launches on the user's machine (needs local files, local apps, or local credentials); **Streamable HTTP** for a remote server customers connect to by URL (no install, easier to charge for, works in web and mobile clients).
+- **Hosting (remote)** — Cloudflare Workers (MCP-specific tooling, OAuth helper libraries) or Vercel (fits alongside a Next.js app); Railway for long-running work.
+- **Auth (remote)** — OAuth, per the MCP authorization spec, so each user connects their own account; an API key in a header is simpler but works in fewer clients.
+
+**Default:** a remote server on the TypeScript SDK over Streamable HTTP, hosted on Cloudflare Workers or Vercel, with OAuth. Choose a local stdio server, published as an npm or PyPI package, only when it needs the user's machine.
+
+#### Platform facts — last reviewed October 2026 — re-verify before quoting
+
+- Current spec transports are stdio and Streamable HTTP; the older HTTP+SSE transport is deprecated.
+- An official MCP Registry lists public servers; hosts also run their own connector directories with separate submission and review (e.g. Claude's connectors directory). Desktop hosts may support one-click packaged installs (e.g. MCP bundles for Claude Desktop).
+- Client support for remote OAuth, resources, and prompts varies by host — test in every host the PRD names.
+
+-----
+
+## Chat Assistants
+
+For `chat-assistant`. The layers: platform, model, backend, knowledge, and payments.
+
+- **Custom GPT (ChatGPT)** — no code, built in the GPT editor with instructions, knowledge files, and actions (OpenAPI). Best for prototyping the conversation in days; weak on billing, analytics, and owning the customer.
+- **Claude Project** — instructions plus knowledge inside Claude. Best for internal or team assistants; not a public product surface.
+- **Slack app** — a bot in the customer's workspace, built with Slack's Bolt SDK on your own backend. Best for B2B assistants used at work.
+- **Telegram or Discord bot** — your own backend behind the platform's bot API. Best for consumer and community assistants.
+- **WhatsApp (Business Platform)** — the widest consumer reach in many countries, with business verification and per-message pricing. Best for a business-specific assistant (bookings, support) in WhatsApp-first markets.
+
+**Default:** a bot on the platform the persona already uses every day — Slack for work, Telegram for consumers — backed by your own server calling the model API, so you own the users, the billing, and the logs. Prototype the conversation as a Custom GPT or Claude Project first if the member wants to test it before building.
+
+#### Platform facts — last reviewed October 2026 — re-verify before quoting
+
+- Custom GPTs and Claude Projects can't take payment from users directly; a paid assistant there needs an external checkout and access control.
+- WhatsApp's business terms restrict general-purpose AI assistants on the Business Platform; a business-specific assistant is the safe pattern. Check the current policy before choosing WhatsApp.
+- Slack Marketplace, Discord's App Directory, and Telegram each have their own listing, review, and monetization rules (Telegram supports in-bot payments for digital goods through its own currency).
+- ChatGPT also supports apps built on MCP — a route for an assistant that is really an `mcp-server` with a UI.
+
+-----
+
+## Developer Tools
+
+For `developer-tool`. The layers: language and registry, release pipeline, docs, API keys and billing.
+
+- **npm** — JavaScript and TypeScript SDKs and CLIs (run with `npx`). Default for JS/TS.
+- **PyPI** — Python SDKs and CLIs (run with `pipx` or `uvx`). Default when the users write Python.
+- **Homebrew tap** — a second install path for a CLI aimed at macOS developers. Add after launch.
+- **Release pipeline** — GitHub Actions publishing on a version tag, using the registry's trusted publishing (no long-lived tokens), with a changelog per release.
+- **Docs** — Mintlify (hosted, generates API reference from OpenAPI, fast to polish) or Docusaurus (open source, self-hosted).
+- **API keys and billing (paid APIs)** — keys issued and checked by your backend (or a key service such as Unkey); usage metered into Stripe's usage-based billing.
+
+**Default:** TypeScript published to npm (PyPI if the users are Python developers), released from GitHub Actions with trusted publishing, docs on Mintlify, and Stripe usage-based billing for a paid API.
+
+#### Platform facts — last reviewed October 2026 — re-verify before quoting
+
+- npm and PyPI both support trusted publishing from CI and encourage or require two-factor auth for publishers; check current requirements before the first release.
+- Package names are first-come — reserve the name in each registry early.
+
+-----
+
+## Websites
+
+For `website`. The layers: builder or framework, content source, hosting, and memberships if any.
+
+- **Astro** — a content-first framework a coding agent builds well; content in Markdown or JSON in the repo, fast static pages, good SEO defaults. Best for directories, resource libraries, and content sites the member builds with their agent.
+- **Next.js** — when the site needs app-like features (accounts, search over a database, submissions).
+- **Framer or Webflow** — visual builders with a built-in CMS. Best when the member wants to design and edit without code.
+- **Ghost** — publishing with newsletters and paid memberships built in. Best when the newsletter is the product.
+- **Community platforms** (Circle, Skool, Discourse) — when the community is the product and the site is its front door.
+- **Headless CMS** (Sanity, or a Git-based CMS) — add one to Astro or Next.js when non-developers edit content often.
+
+**Default:** Astro with content in the repo, hosted on Netlify or Vercel; Ghost instead when the site is a newsletter with paid memberships.
+
+#### Platform facts — last reviewed October 2026 — re-verify before quoting
+
+- Builder and community-platform plans change often, and custom domains, CMS item limits, and member features sit on paid tiers — check current pricing before quoting a monthly cost.
+
+-----
+
+## Digital Product Storefronts
+
+For `digital-product`. The layers: where it's made, where it's sold, how it's delivered.
+
+- **Gumroad** — a storefront, checkout, file delivery, and updates to past buyers in minutes; some marketplace discovery. Best for a first digital product.
+- **Lemon Squeezy or Polar** — merchant-of-record checkouts with license keys and APIs. Best for software-like products (plugins, code templates) or developer audiences.
+- **Stripe Payment Links** — when the member already has Stripe (with Managed Payments for tax); delivery needs its own step (an automation emailing the file).
+- **Marketplaces** (Etsy, Notion's template gallery, Figma and Framer communities) — discovery inside an existing audience, in exchange for fees and less control. Best as a second channel.
+- **Course platforms** (Podia, Teachable, Kajabi) — hosted lessons, drip, and student accounts. Best when the product is a course.
+
+**Default:** Gumroad for the storefront and delivery; Lemon Squeezy or Polar when the product needs license keys; a course platform when it's a course.
+
+#### Platform facts — last reviewed October 2026 — re-verify before quoting
+
+- Check whether each storefront acts as merchant of record (collecting and remitting sales tax and VAT) and what it charges per sale — both differ by platform and change.
+- Marketplace fees, payout schedules, and listing rules vary widely; read the current seller terms before listing.
+
+-----
+
+## Productized-Service Tooling
+
+For `productized-service`. The layers: booking, payments, intake, client records, delivery automation, and the AI tools the work runs on.
+
+- **Booking** — Cal.com (open source, can take payment at booking) or Calendly (most familiar to clients).
+- **Payments** — Stripe Payment Links or Checkout for fixed-price packages and subscriptions; Stripe Invoicing for deposits and custom quotes.
+- **Intake** — Tally (fast to build, conditional logic) or Typeform; the form collects everything the SOP needs before work starts.
+- **Client records** — a Notion or Airtable board (one row per client and order, with status) until volume justifies a CRM such as Attio or HubSpot.
+- **Delivery automation** — Zapier (easiest), Make (more control over complex flows), or n8n (self-hostable, code-friendly) to connect intake → records → AI steps → delivery messages.
+- **AI tools** — the SOP's prompts and templates live in a Claude Project or skills, versioned in the repo with the rest of the SOP.
+
+**Default:** Cal.com + Stripe Payment Links + Tally + a Notion client board + Zapier, with the SOP's prompts in the repo.
+
+#### Platform facts — last reviewed October 2026 — re-verify before quoting
+
+- Free tiers on booking, form, and automation tools cap usage (bookings, responses, tasks per month) and change often — check limits against the capacity in the PRD.

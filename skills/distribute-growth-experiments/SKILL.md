@@ -22,7 +22,7 @@ The skill needs **channel context**, **product context** (so experiments are spe
 ### Channel context — Path A (standard): ProductOS in the repo — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout
 
 1. **The Go-To-Market Strategy** — `docs/GO-TO-MARKET.md`. The **primary** input: the ranked channels, their starter plans, and their pass thresholds. The focus channel defaults to its **primary** channel. If this file doesn't exist, the member hasn't picked channels yet — offer to run `distribute-gtm-strategy` first, or establish the channels via the Path B questions.
-2. **The product context** — `docs/DEFINE.md` (the Summary, the Offer's Customer, the Persona's language, and Business Strategy → North Star when filled) and `docs/MAGIC-MOMENT.md` if it exists — so hypotheses are product-specific and metrics ladder to the right number.
+2. **The product context** — `docs/DEFINE.md` (the Summary, the Offer's Customer, the Persona's language, and Business Strategy → North Star when filled) and `docs/MAGIC-MOMENT.md` if it exists — so hypotheses are product-specific and metrics ladder to the right number. Read the primary shape slug from `## Product Shape` → `### Primary Shape` too, and the `## Distribute notes` of its shape file (`productos/shapes/<slug>.md`, or `../../shapes/<slug>.md` from this skill's folder) when the focus channel is the shape's native store, marketplace, or registry. No Product Shape section → treat it as `web-app` unless the codebase says otherwise.
 
 ### Channel context — Path B (standalone fallback): a repo without ProductOS
 
@@ -44,9 +44,9 @@ Both files land in the repo-root `docs/` folder (create it if needed). Never wri
 
 Four reference docs live in ProductOS's `distribute/` folder, two levels up from this skill's folder (`../../distribute/`) — the same files whether ProductOS sits in the repo as `productos/` or is installed as a plugin. Read only the parts named here — the full set is long:
 
-- **[BONUS-Growth-Experiments-Library.md](../../distribute/BONUS-Growth-Experiments-Library.md)** — the **primary** playbook. At step 1, read *The method* and *How to read a card*; once the focus channel is set, read only that channel's numbered section. Every experiment you propose is a tailored version of one from there (or built in the same shape).
+- **[BONUS-Growth-Experiments-Library.md](../../distribute/BONUS-Growth-Experiments-Library.md)** — the **primary** playbook. At step 1, read *The method* and *How to read a card*; once the focus channel is set, read only that channel's numbered section. When the focus channel is the shape's native store, marketplace, or registry, that's *5. Platform ecosystems* (Listing Optimization, Integration Wedge, Review-Velocity Push). Every experiment you propose is a tailored version of one from there (or built in the same shape).
 - **[BONUS-Measurement-and-Attribution.md](../../distribute/BONUS-Measurement-and-Attribution.md)** — read it when writing the Pass = lines (step 4): name a measurement method for every threshold before the experiment runs, so each result is a real, readable number.
-- **[BONUS-Distribution-Channels.md](../../distribute/BONUS-Distribution-Channels.md)** and **[BONUS-AI-Distribution-Tools.md](../../distribute/BONUS-AI-Distribution-Tools.md)** — channel logic and the tool to run each; read only the focus channel's section, when you need it.
+- **[BONUS-Distribution-Channels.md](../../distribute/BONUS-Distribution-Channels.md)** and **[BONUS-AI-Distribution-Tools.md](../../distribute/BONUS-AI-Distribution-Tools.md)** — channel logic and the tool to run each; read only the focus channel's section, when you need it (for a native channel, the primary shape's block under *Shape-native channels*).
 
 ## Workflow
 
@@ -65,7 +65,7 @@ If web search isn't available, say so, ask the member for the competitors and ex
 
 ### 3. Build and prioritize the backlog
 
-From the library's experiments for the focus channel (plus anything the research surfaced), draft a backlog of candidates **tailored to this product**. Rate each on **Effort** (Low/Med/High) and **Impact** (Low/Med/High) and order them: ⭐ quick wins first (high impact, low effort), then big bets one at a time, filler only when blocked, skip the high-effort/low-impact. Walk the member through the ranking one question at a time; never let a high-effort/low-impact experiment rise to the top, and push back on a cycle of more than three. **The ratings are session material, not output** — the file gets only the resulting order (Up next), never the effort/impact columns or the priority guide.
+From the library's experiments for the focus channel (plus anything the research surfaced), draft a backlog of candidates **tailored to this product**. Rate each on **Effort** (Low/Med/High) and **Impact** (Low/Med/High) and order them: ⭐ quick wins first (high impact, low effort), then big bets one at a time, filler only when blocked, skip the high-effort/low-impact. **On a native channel** (a store, marketplace, or registry), the levers are the listing and its ranking signals, not posting: listing conversion (name, first line, images, price shown — A/B through the store's own listing tests where it has them), ranking for the persona's search terms, review volume and recency (a review prompt placed right after the first successful output), and usage that keeps installs installed. Measure with the store's own console (impressions, listing views, installs, uninstalls, ratings). Walk the member through the ranking one question at a time; never let a high-effort/low-impact experiment rise to the top, and push back on a cycle of more than three. **The ratings are session material, not output** — the file gets only the resulting order (Up next), never the effort/impact columns or the priority guide.
 
 ### 4. Design this cycle's experiments (the cards)
 

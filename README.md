@@ -1,33 +1,35 @@
 # ProductOS
 
-**A complete operating system for taking a product from idea to revenue with AI agents.**
+**A complete operating system for taking an AI product from idea to revenue with AI agents — whatever its shape.**
 
 > **Want 1-1 support?** Join the **Product Studio** to get 1-1 support through this programme and a custom plan built for your app: **[go.buildgreatproducts.com](https://go.buildgreatproducts.com)**
 
-ProductOS guides you through four phases. Each phase has a checklist that tells you exactly which skill to run at each step, the file it produces, and the reference playbook it draws on. Your AI agent does the heavy lifting; the system keeps it honest.
+ProductOS guides you through four phases. Each phase has a checklist that tells you exactly which skill to run at each step, the file it produces, and the reference playbook it draws on — and an orchestrator skill that walks it with you. Your AI agent does the heavy lifting; the system keeps it honest.
 
-**ProductOS lives inside your app's repository** — it's the first thing you set up in the codebase, before there's any code. Even from scratch: create the app repo first, then put ProductOS in it as a `productos/` folder. The system stays in `productos/`; your product's canonical documents accumulate at the repo-root `docs/`.
+**It's built for every shape of AI product**, not just apps: web, mobile, and desktop apps, browser extensions, agent plugins, agent skills, MCP servers, chat assistants, developer tools (APIs, SDKs, CLIs), productized services, websites, and digital products. In the Define phase you choose your product's shape, and from then on every step adapts to it: an agent skill skips the screen-by-screen design work but gets an eval set and a marketplace listing; a productized service designs its delivery process instead of a database; a mobile app goes live through the App Store, not a deploy.
 
-Coached copies of ProductOS ship with your custom programme already inside: `docs/PLAN.md`, composed by your coach from your onboarding call — which steps of each phase you'll do in full, which are fast-tracked from what you've already built, which you can skip. No plan in your copy? Setup offers two paths: a new project starts with the offer builder and follows the checklists top to bottom (the standard programme); an existing project starts Ship in 7. See `productos/START-HERE.md`.
+**ProductOS lives inside your product's repository** — it's the first thing you set up, before there's any code. Even from scratch: create the repo first, then put ProductOS in it as a `productos/` folder. The system stays in `productos/`; your product's canonical documents accumulate at the repo-root `docs/`.
+
+Coached copies of ProductOS ship with your custom programme already inside: `docs/PLAN.md`, composed by your coach from your onboarding call — which steps of each phase you'll do in full, which are fast-tracked from what you've already built, which you can skip. No plan in your copy? Setup offers two paths: a new project starts with `define-phase` and follows the phases top to bottom (the standard programme); an existing project starts with `product-audit`, which scores what you have and writes a programme for it. See `productos/START-HERE.md`.
 
 One rule runs through all four phases: **everything ProductOS produces lands in `docs/`.** The phase folders hold the worksheets and playbooks; the skills write the results to your repo, where they're committed, shared, and read by every later skill. Each phase gives you a small set of documents to read, not a folder of worksheets.
 
 | Phase | Folder | What you end up with |
 |---|---|---|
-| 1. **Define** | `productos/define/` | Offer, persona, pricing — all in one document → `docs/DEFINE.md` |
-| 2. **Design** | `productos/design/` | Identity (in words), UX writing guide, design system from an image you love, design prompts, magic moment, onboarding, landing page or app listing → `docs/DESIGN.md` + `docs/DESIGN.html` (identity + tokens), `docs/COPY.md`, `docs/DESIGN-PROMPTS.md`, `docs/MAGIC-MOMENT.md`, `docs/ONBOARDING.md`, `docs/LANDING-PAGE.md` / `docs/APP-LISTING.md` |
-| 3. **Develop** | `productos/develop/` | PRD, roadmap, agent-built MVP, code review + security audit, go-live → `docs/PRD.md`, `docs/ROADMAP.md`, `docs/SECURITY-AUDIT.md`, `docs/DEPLOY.md` |
+| 1. **Define** | `productos/define/` | Offer, product shape, persona, pricing — all in one document → `docs/DEFINE.md` |
+| 2. **Design** | `productos/design/` | Identity (in words), UX writing guide, design system from an image you love, design prompts, magic moment, onboarding, and the acquisition surfaces your shape needs (landing page, app-store listing, marketplace listing) → `docs/DESIGN.md` + `docs/DESIGN.html` (identity + tokens), `docs/COPY.md`, `docs/DESIGN-PROMPTS.md`, `docs/MAGIC-MOMENT.md`, `docs/ONBOARDING.md`, `docs/LANDING-PAGE.md` / `docs/APP-LISTING.md` / `docs/MARKETPLACE-LISTING.md` |
+| 3. **Develop** | `productos/develop/` | PRD, roadmap (new build or existing codebase), evals for AI-native shapes, agent-built MVP, code review + security audit, go-live in your shape's form → `docs/PRD.md`, `docs/ROADMAP.md`, `docs/EVALS.md`, `docs/SECURITY-AUDIT.md`, `docs/DEPLOY.md` |
 | 4. **Distribute** | `productos/distribute/` | Go-to-market, growth experiments, scaling — a loop, not a finish line → `docs/GO-TO-MARKET.md`, `docs/GROWTH-EXPERIMENTS.md`, `docs/GROWTH-TRACKER.md`, `docs/SCALE.md` |
 
 ## Installation
 
 Three steps, the same for every tool and every stage:
 
-1. **Create or open your app repo.** Starting from scratch? Make an empty folder and `git init` it — your product's repo exists before your product does.
+1. **Create or open your product's repo.** Starting from scratch? Make an empty folder and `git init` it — your product's repo exists before your product does.
 2. **Put ProductOS in it as `productos/`** — clone this folder into the repo root, named exactly `productos`. A copy (or a GitHub ZIP extract) is fine for Claude Code and Codex; **Cursor's `/add-plugin` needs a real git clone** — see below.
 3. **Run `setup`.** It wires the agent guidelines into your repo root (`CLAUDE.md`/`AGENTS.md`, from `productos/setup/`), adds `productos/` to your `.gitignore` (see the licence note below), and — if your copy shipped with a programme plan — moves it to `docs/PLAN.md` and verifies it against your actual repo.
 
-ProductOS is also a plugin for **Claude Code**, **Codex**, and **Cursor** — one package, three manifests, the same 36 skills:
+ProductOS is also a plugin for **Claude Code**, **Codex**, and **Cursor** — one package, three manifests, the same 44 skills:
 
 ### Claude Code
 
@@ -85,26 +87,28 @@ When a new version ships (see `productos/CHANGELOG.md`), ask your agent to *"upd
 
 > **Licence note:** ProductOS is yours to use, not to redistribute — which is why setup gitignores `productos/`: the materials never get committed to your repo, so open-sourcing your product later is safe. Your outputs (`docs/`, the wired root guidelines) are yours and are tracked as normal. Collaborators install their own copy from the official repo into their clone. See `productos/LICENSE.md`.
 
-Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in every tool; the four cross-phase skills are simply `setup` (the installer), `update` (brings your copy up to the latest version), and the two challenges, `ship-in-7` (your app live in seven sessions) and `sell-in-30` (your first paying customer in thirty, or your first activated user if the product stays free).
+Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in every tool, including the four phase orchestrators (`define-phase`, `design-phase`, `develop-phase`, `distribute-phase`). The cross-phase skills are simply `setup` (the installer), `update` (brings your copy up to the latest version), `product-audit` and `product-refactor` (the path for an existing product: score it, plan it, work the plan), the two challenges, `ship-in-7` (your product live in seven sessions) and `sell-in-30` (your first paying customer in thirty, or your first activated user if the product stays free), and `build-loop` (the build loop for Claude Code, Codex, and Cursor).
 
 ## Getting started
 
 1. Run **`setup`** — ask your agent to *"set up ProductOS"*. It wires your repo and, if your copy came from your coach, adopts your custom programme: **`docs/PLAN.md`** says which steps of each phase you'll do in full, which are fast-tracked, which you can skip, and in what order. No plan in your copy? Setup ends by offering one of two paths:
-   - **New project** (nothing built yet) → **`define-offer-builder`**, Step 1 of the Define checklist. From there, work down the checklists phase by phase — that's the standard programme. No idea yet? `define-idea-finder` comes first.
-   - **Existing project** (code, a prototype, an AI-generated app) → **`ship-in-7`**, seven sessions to your app live at a real URL. It composes a session-by-session plan from the skills below, checks in with you every session, and ends with a report you can bring to a Product Studio call. Already live? Its follow-on, **`sell-in-30`**, takes you to your first paying customer.
-2. **Already have a product?** Your plan fast-tracks the Define phase via `define-from-code` — it extracts your product offer, persona, and pricing drafts from your existing codebase or landing page into `docs/DEFINE.md`, then the review pass sharpens them. You skip the blank-template work, not the valuable thinking. **No software idea yet?** `define-idea-finder` audits your existing business, expertise, or passions and converges on the one MVP worth building, before the offer work begins.
+   - **New project** (nothing built yet) → **`define-phase`** — *"start define"*. It walks Define step by step: your offer, your product's shape, your customer, your price. Then `design-phase`, `develop-phase`, and `distribute-phase` take over in turn. No idea yet? `define-idea-finder` comes first.
+   - **Existing project** (code, a prototype, an AI-generated app, a live service or listing) → **`product-audit`** — *"audit my product"*. It scores your product across all four phases with evidence, names your shape and stage, and writes a programme to `docs/PLAN.md`; **`product-refactor`** then works through it step by step. Want a deadline instead? **`ship-in-7`** gets you live in seven sessions; already live, **`sell-in-30`** takes you to your first paying customer.
+2. **Already have a product?** The audit's plan fast-tracks the Define phase via `define-from-code` — it extracts your product offer, persona, and pricing drafts from your existing codebase or landing page into `docs/DEFINE.md`, then the review pass sharpens them. You skip the blank-template work, not the valuable thinking. **No software idea yet?** `define-idea-finder` audits your existing business, expertise, or passions and converges on the one product worth building, before the offer work begins.
 3. Follow your plan's sequence; within it, finish each scheduled step before the next — later skills read earlier outputs.
-4. Everything the skills produce lands in **`docs/`** at the repo root — `docs/PLAN.md` (your programme), `docs/DEFINE.md` (offer, customer, pricing in one document), `docs/DESIGN.md` (identity + design system), and the rest. That folder is the source of truth: share it, commit it, and point anyone new at it. If your repo already has a `docs/` folder, the ProductOS documents simply live alongside what's there.
+4. Everything the skills produce lands in **`docs/`** at the repo root — `docs/PLAN.md` (your programme), `docs/DEFINE.md` (offer, shape, customer, pricing in one document), `docs/DESIGN.md` (identity + design system), and the rest. That folder is the source of truth: share it, commit it, and point anyone new at it. If your repo already has a `docs/` folder, the ProductOS documents simply live alongside what's there.
 5. When a checklist says "Run `define-offer-builder`", just ask your agent to do that — the skill triggers by name or by describing what you want ("help me build my product offer").
 
 ## How it's organized
 
 - **`productos/START-HERE.md`** — the front door: setup in three steps, and how your programme plan works.
-- **Checklists** (`*-CHECKLIST.md`) — the runbook for each phase. Source of truth for how each step runs; your plan says which steps apply to you.
+- **Checklists** (`*-CHECKLIST.md`) — the runbook for each phase. Source of truth for how each step runs; your plan and your shape say which steps apply to you. The phase orchestrators (`define-phase` … `distribute-phase`) walk them with you.
+- **`productos/shapes/`** — the twelve product shapes, one file each: what "live" and "first sale" mean, and how every step adapts.
+- **`productos/ROUTING.md`** — which step runs next: your plan, then your shape, then the checklist order.
 - **Numbered worksheets** (`1-`–`4-` in each phase folder) — the structure and `> Good/Bad` calibration each skill follows. The skills read them and write your answers to `docs/`; the worksheets stay blank.
 - **BONUS docs** — reference playbooks: worked examples, failure patterns, channel guides, best-practice libraries.
-- **`productos/skills/`** — one flat folder per skill (36 total). Each contains a `SKILL.md` plus any bundled files it loads only when needed (`references/`, `templates/`).
-- **`productos/scripts/`** — a maintainer tool: `lint-skills.py` checks every skill against Anthropic's skill-authoring rules. You don't need it to use ProductOS.
+- **`productos/skills/`** — one flat folder per skill (44 total). Each contains a `SKILL.md` plus any bundled files it loads only when needed (`references/`, `templates/`).
+- **`productos/scripts/`** — `status.py` shows what's done and what's next (*"python3 productos/scripts/status.py"*; the orchestrators run it for you), and `lint-skills.py` is the maintainer's check of every skill against Anthropic's skill-authoring rules.
 - **`productos/setup/CLAUDE.md` + `productos/setup/AGENTS.md`** — agent guidelines wired into your repo root at setup (by `setup`), so your coding agent behaves from day one.
 
 ## Requirements
@@ -114,4 +118,4 @@ Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in e
 
 ## Version
 
-**1.15.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
+**2.0.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.

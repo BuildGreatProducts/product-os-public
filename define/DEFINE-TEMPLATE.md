@@ -4,7 +4,7 @@ DEFINE-TEMPLATE.md — the canonical skeleton of docs/DEFINE.md.
 - Every Define skill copies this file to docs/DEFINE.md (mkdir -p docs) when docs/DEFINE.md doesn't exist yet, then fills its own section. Delete this comment block in the copy.
 - Each skill writes only its own section (and its own ### entry under ## Sources), plus the *Last updated:* line. It reads the other sections but never edits them.
 - A section still carrying its one-line *Filled by …* placeholder is unfilled. A skill replaces the placeholder when it fills the section and leaves every other placeholder alone.
-- The ### headings mirror the worksheets in productos/define/ (1-Product-Offer.md, 2-Customer-Persona.md, 3-Pricing-Strategy.md, BONUS-Business-Strategy-Deep-Dive.md, BONUS-Idea-Audit.md). Persona subsections follow 2-Customer-Persona.md's section names, in its order.
+- The ### headings mirror the worksheets in productos/define/ (1-Product-Offer.md, 1b-Product-Shape.md, 2-Customer-Persona.md, 3-Pricing-Strategy.md, BONUS-Business-Strategy-Deep-Dive.md, BONUS-Idea-Audit.md). Persona subsections follow 2-Customer-Persona.md's section names, in its order.
 - Clean answers only: no italic prompts, no > Good/Bad lines, no **Your answer:** labels. Tables stay where the worksheet has tables.
 -->
 
@@ -31,6 +31,24 @@ DEFINE-TEMPLATE.md — the canonical skeleton of docs/DEFINE.md.
 ### Guarantee
 
 ### Proof
+
+## Product Shape
+
+*Filled by `define-product-shape` — how the customer receives and uses the product. The shape decides which Design, Develop, and Distribute steps apply (see `productos/shapes/`).*
+
+### Primary Shape
+
+### Secondary Shapes
+
+### Why This Shape
+
+### Live Means
+
+### First Sale Means
+
+### Build Implications
+
+### Sequence
 
 ## 2. Customer Persona
 

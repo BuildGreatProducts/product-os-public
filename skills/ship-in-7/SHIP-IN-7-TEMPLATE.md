@@ -1,7 +1,7 @@
 # Ship in 7 — [App name]
 
-**The bar:** a live URL and a smoke test passed as a real customer.
-**Starting point:** [Idea only / AI-generated app / Local prototype / Prompt-to-app platform / other]
+**The bar:** [the shape's Live-means bar, verbatim from `docs/DEFINE.md` → Product Shape → Live Means], passed as a real customer.
+**Shape:** [primary shape slug] · **Starting point:** [Idea only / AI-generated app / Local prototype / Prompt-to-app platform / Agent product / Service or digital product / other]
 **Started:** [date] · **Hours per session:** [n] · **Consecutive days:** [yes / as and when]
 Status: Open · Day [N] of 7
 
@@ -64,7 +64,7 @@ Status: Open · Day [N] of 7
 *Filled at the close. Written to be brought to a Product Studio call as-is.*
 
 **Result:** [Hit / Partly hit / Missed] — [one sentence]
-**Live URL:** [url] · **Repo:** [url or path] · **Stack / hosting:** [one line, with monthly cost if known]
+**Live at:** [URL / listing / install link / registry entry] · **Repo:** [url or path] · **Stack / hosting:** [one line, with monthly cost if known]
 **Smoke test:** [what a real customer did, and what happened] — [date]
 **Hours:** planned [n] · spent [n] · available going forward [n per week]
 
@@ -83,11 +83,11 @@ Status: Open · Day [N] of 7
 
 **Open findings from the audit:** [High / Medium items not yet fixed, from `docs/SECURITY-AUDIT.md`]
 
-**Docs in place:** DEFINE.md [yes/no, current?] · COPY.md [ ] · DESIGN.md [ ] · PRD.md / ROADMAP.md [ ] · DEPLOY.md [ ]
+**Docs in place:** DEFINE.md [yes/no, current?] · COPY.md [ ] · DESIGN.md [ ] · PRD.md / ROADMAP.md [ ] · EVALS.md [ or n/a ] · LANDING-PAGE.md / MARKETPLACE-LISTING.md / APP-LISTING.md [ ] · DEPLOY.md [ ]
 
 **The biggest blocker:** [one paragraph, honest]
 
-**What the app can do today:** [the core flow, in a sentence or two]
+**What the product can do today:** [the core flow, in a sentence or two]
 **What it can't do yet:** [the honest list]
 
 **What I want next:** [revenue / users / polish / something else, in the member's words]

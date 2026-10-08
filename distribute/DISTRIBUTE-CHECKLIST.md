@@ -1,10 +1,12 @@
 # Distribute — Checklist
 
-Work top to bottom. Requires `docs/DEFINE.md` to exist and the product to be reachable by customers. Coming here directly with an already-live product? Run the Define fast-track first — `define-from-code` — so this phase has a real DEFINE.md to read; it takes hours, not weeks. This phase gets the product in front of people, finds what actually works, and scales it — it's a **loop**, not a one-pass sequence.
+Work top to bottom — or ask your agent to *"start distribute"*: `distribute-phase` says where your loop stands each visit and runs the next step. Requires `docs/DEFINE.md` to exist and the product to be reachable by customers (your shape's *Live means* bar). Coming here directly with an already-live product? Run the Define fast-track first — `define-from-code` — so this phase has a real DEFINE.md to read; it takes hours, not weeks. This phase gets the product in front of people, finds what actually works, and scales it — it's a **loop**, not a one-pass sequence.
 
-If `docs/PLAN.md` exists (your programme plan, shipped with coached copies of ProductOS), it says where this phase starts in your sequence — follow it; this checklist remains the source of truth for how each step runs.
+If `docs/PLAN.md` exists (your programme plan, from your coach or `product-audit`), it says where this phase starts in your sequence — follow it; this checklist remains the source of truth for how each step runs.
 
 Running a challenge (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` open)? It says which of these steps are this week's, and on which session; this checklist remains the source of truth for how each step runs.
+
+**Your shape has native channels** — the store, marketplace, registry, or directory where customers already look for products like yours (listed in your shape file's *Distribute notes* and in `BONUS-Distribution-Channels.md` → *Shape-native channels*). One of your three channels should usually be the native one.
 
 Before you start, skim the two reference playbooks you'll lean on throughout: `BONUS-Distribution-Channels.md` (which channel to pick and how each one works) and `BONUS-AI-Distribution-Tools.md` (the software to run them). Set up `BONUS-Measurement-and-Attribution.md` before Step 2 so every result is a real number.
 
@@ -29,7 +31,7 @@ Before you start, skim the two reference playbooks you'll lean on throughout: `B
 
 - **What to do:** Once the tracker has proven winners (Pass + double down), run `distribute-scale-automate`.
 - **What it does:** Produces `docs/SCALE.md` — for each proven winner, a plan to do more, do better, and automate the process up the maturity ladder, sequenced Now / Next / Later. Reads the winners from `docs/GROWTH-TRACKER.md`.
-- **Before you scale:** make sure activation works — that the users a channel sends actually reach the magic moment (`docs/MAGIC-MOMENT.md`). Scaling acquisition into a product that doesn't activate just pours water into a leaky bucket. Find and fix the leaks first — run `distribute-activation-retention-audit` on your codebase (and `develop-cro-audit` for conversion surfaces) — before pouring on more traffic.
+- **Before you scale:** make sure activation works — that the users a channel sends actually reach the magic moment (`docs/MAGIC-MOMENT.md`). Scaling acquisition into a product that doesn't activate just pours water into a leaky bucket. Find and fix the leaks first — run `distribute-activation-retention-audit` (it reads your codebase, or for shapes without screens, your install, usage, and delivery records — see your shape file's *Distribute notes*), and `develop-cro-audit` for conversion surfaces, — before pouring on more traffic.
 
 ---
 

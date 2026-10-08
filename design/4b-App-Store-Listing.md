@@ -1,6 +1,6 @@
 # App Store Listing
 
-*This is a worksheet for the `design-app-listing` skill. The skill reads `docs/DEFINE.md`, the Product Identity in `docs/DESIGN.md`, and `docs/MAGIC-MOMENT.md`, designs every element of the App Store / Google Play listing — icon, title, subtitle, keyword field, all 7 screenshots, preview video, descriptions, CPP strategy, review prompts, and localization plan — and writes the filled version to `docs/APP-LISTING.md` using the structure below. For web/desktop products, use the `design-landing-page` skill (worksheet: `4a-Landing-Page.md`) instead. This file itself is never filled in.*
+*This is a worksheet for the `design-app-listing` skill. The skill reads `docs/DEFINE.md`, the Product Identity in `docs/DESIGN.md`, and `docs/MAGIC-MOMENT.md`, designs every element of the App Store / Google Play listing — icon, title, subtitle, keyword field, all 7 screenshots, preview video, descriptions, CPP strategy, review prompts, and localization plan — and writes the filled version to `docs/APP-LISTING.md` using the structure below. For web pages, use the `design-landing-page` skill (worksheet: `4a-Landing-Page.md`); for any other store, marketplace, or registry, use `design-marketplace-listing` (worksheet: `4c-Marketplace-Listing.md`). This file itself is never filled in.*
 
 ---
 

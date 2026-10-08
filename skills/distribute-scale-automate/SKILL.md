@@ -21,7 +21,7 @@ The skill needs the **proven winners**, **product context** (so automations are 
 ### Winners — Path A (standard): ProductOS in the repo — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout
 
 1. **The Growth Experiments Tracker** — `docs/GROWTH-TRACKER.md`. The **primary** input. Read the log for rows whose **Pass?** is `Pass` and whose **Decision** is `double down`, and the **Cumulative Learnings**. These are the only candidates for scaling and automation.
-2. **Context:** `docs/GROWTH-EXPERIMENTS.md` (the rhythm and up-next queue) and `docs/GO-TO-MARKET.md` (the channels). Plus `docs/DEFINE.md` for the customer (Offer and Persona) and the north star (Business Strategy, when filled), and `docs/MAGIC-MOMENT.md` for the magic moment.
+2. **Context:** `docs/GROWTH-EXPERIMENTS.md` (the rhythm and up-next queue) and `docs/GO-TO-MARKET.md` (the channels). Plus `docs/DEFINE.md` for the customer (Offer and Persona) and the north star (Business Strategy, when filled), and `docs/MAGIC-MOMENT.md` for the magic moment. Read the primary shape slug from `docs/DEFINE.md` → `## Product Shape` → `### Primary Shape`, and the `## Distribute notes` of its shape file (`productos/shapes/<slug>.md`, or `../../shapes/<slug>.md` from this skill's folder) when a winner is on the shape's native store, marketplace, or registry. No Product Shape section → treat it as `web-app` unless the codebase says otherwise.
 
 ### Winners — Path B (standalone fallback): a repo without ProductOS
 
@@ -51,7 +51,7 @@ Ask the member, one question at a time, for what the tracker can't supply: their
 
 ### 2. For each winner, find the scale lever and the automation path
 
-For each proven winner, work out the **scale lever** (what "more" looks like — more posts, more spend, more sends, wider reach) and the **automation path** (which tools, MCPs/plugins, and scheduled tasks collapse the manual steps). Pull the automation path from the winner's channel section in the Library (the "Recommended tools & plugins" line) and the tools doc. Note where the work genuinely needs a human.
+For each proven winner, work out the **scale lever** (what "more" looks like — more posts, more spend, more sends, wider reach) and the **automation path** (which tools, MCPs/plugins, and scheduled tasks collapse the manual steps). Pull the automation path from the winner's channel section in the Library (the "Recommended tools & plugins" line) and the tools doc. Note where the work genuinely needs a human. **A winner on the shape's native channel** scales differently from a content channel: *more* is more surfaces (the same product listed in the adjacent stores, registries, or agent marketplaces the shape file names; listings for the next search terms; localized listings), and *automated* is the plumbing around the listing (the in-product review prompt after the first successful output, store-console reports on a schedule, release notes published with every version so the listing stays fresh). Replying to reviews stays human.
 
 ### 3. Double down — define do-more and do-better
 

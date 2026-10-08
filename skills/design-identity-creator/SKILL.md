@@ -23,6 +23,8 @@ Read inputs from `docs/` and the worksheets from `productos/design/` at the app 
 3. **`docs/DEFINE.md`** — **required.** Summary, Product Offer (Customer, Pain, Outcome, Mechanism, Guarantee, Proof), Customer Persona, Pricing Strategy, and optionally Business Strategy. Worldview and Contrarian Belief draw on the Offer's Pain and Mechanism plus the Persona's pains, triggers and current alternatives (and Business Strategy → Unfair Advantage when filled); Tone is calibrated against the Persona; Visual Style is briefed against the Summary and the Offer's Mechanism.
 4. **Existing `docs/DESIGN.md` and `docs/DESIGN.html`**, if present. Read their `## Product Identity` section to preserve the member's edits; everything else in those files belongs to the design system and stays untouched.
 
+**Product shape.** `docs/DEFINE.md` → `## Product Shape` → `### Primary Shape` names the slug; read only the Design route row for Step 1 in `productos/shapes/<slug>.md` (from this folder, `../../shapes/<slug>.md`). **Lite** (typical for a single skill or an MCP server) → Name, Worldview, and Tone of Voice run in full; Contrarian Belief is one line; Visual Style is the lane plus one reference, only as far as the README, listing, and landing page need. The Brand Card is still assembled. No Product Shape section → run Full.
+
 If `docs/DEFINE.md` is missing or its Summary, Offer and Persona are still placeholders, stop: tell the member to run the Define skills first (`define-offer-builder` → `define-customer-persona` → `define-pricing`, or `define-from-code` for an existing product).
 
 ## Voice
@@ -52,7 +54,7 @@ Know exactly what the category default looks like, so every choice below can del
 - **3–5 named competitors in the same wedge.** Their names (naming style: descriptive? invented? compound?), tone of voice (most AI products are "professional yet friendly"), stated beliefs (usually none — that's the opening), and imagery lane.
 - **Category visual saturation.** If 5 of 5 competitors are screenshot-first dark-mode minimalism, the differentiating lane is probably not that. Name the default explicitly — it also briefs the image hunt for Step 3.
 - **Adjacent-category breakthroughs.** Brands *outside* AI that broke through with distinctive identity recently (Liquid Death, Oatly, Glossier, Tracksmith) — non-AI references are where AI brands find genuine distinctiveness.
-- **Name availability.** For the working name or top candidate: a sensible domain (the .com or a clean get-/use- variant), the handle on the platform where customers spend time, and whether anything else ranks for the name in this category.
+- **Name availability.** For the working name or top candidate: a sensible domain (the .com or a clean get-/use- variant), the handle on the platform where customers spend time, and whether anything else ranks for the name in this category. If `docs/DEFINE.md` → `## Product Shape` names a store-, marketplace-, or registry-distributed shape (extension, plugin, skill, MCP server, chat assistant, package, template), also check the name there — the package or plugin identifier, the store listing names, and any platform trademark rules on the name (many hosts bar their own brand in third-party names).
 - **The member's admired brand.** Its worldview, tone, and imagery — so its DNA can inform (not be copied into) the choices below.
 
 Collect 5–8 concrete data points. If every competitor is converging on one look, name that as the opportunity before the member commits to looking the same.

@@ -3,10 +3,11 @@ name: design-design-system
 description: >-
   Derives a design system from an image reference — screenshot, mockup, Figma frame, or live site
   the user admires — reconciles it with the Product Identity, and writes Google-format
-  docs/DESIGN.md (YAML tokens plus prose) and a live docs/DESIGN.html style guide. Design phase Step
-  3, after the UX writing guide. Use when the user says "build my design system", "create my
-  DESIGN.md", or shares an image whose look they want. Not for extracting tokens from existing code
-  — use design-design-system-from-code; not for reviewing UI changes — use develop-design-review.
+  docs/DESIGN.md (YAML tokens plus prose) and a live docs/DESIGN.html style guide; Lite mode writes
+  brand tokens only for screenless shapes. Design phase Step 3. Use when the user says "build my
+  design system", "create my DESIGN.md", or shares an image whose look they want. Not for tokens
+  from existing code — use design-design-system-from-code; not for reviewing UI changes — use
+  develop-design-review.
 ---
 
 # Design: Design System (image → DESIGN.md + DESIGN.html)
@@ -26,6 +27,19 @@ This is **Design phase Step 3**. The identity already lives in `docs/DESIGN.md` 
 - **`docs/DESIGN.md` holds only the Product Identity** (frontmatter with no token groups — the usual state after Step 1): a first run. Build the system around the identity; no overwrite question beyond the diff in Step 6.
 - **`docs/DESIGN.md` already has tokens:** read it (and `docs/DESIGN.html`) and ask what the member wants — refine specific tokens, replace with a fresh analysis from new imagery, or merge. Confirm before destructive overwrites, and regenerate `docs/DESIGN.html` whatever changes.
 - **Partial conversation:** if the session was interrupted mid-flow, resume from where it left off. Don't restart.
+- **Lite:** the shape's Design route marks Step 3 **Lite** (typical for shapes without screens of their own — skills, MCP servers, services, digital products), or the member asks for brand tokens only. Run [Lite mode](#lite-mode-brand-tokens-only) instead of the full token set.
+
+### Lite mode (brand tokens only)
+
+A Lite system serves the surfaces a screenless product still has: its listing, landing page, docs, README, social images, and deliverables. Same two files, same Google format, same image-first intake (the identity-words fallback is more acceptable here) — less of it:
+
+- **Tokens:** `colors` limited to `primary`, `on-primary`, `surface`, `on-surface`, `on-surface-variant`, `outline`, and at most one accent (add `error`/`success` only if docs or output show states); 4–6 `typography` levels (`display-lg`, `headline-md`, `body-md`, `label-md`, plus `code-md` in a mono family for developer-facing shapes); `rounded` and `spacing` of 3–4 steps each.
+- **Components:** only what listings, landing, and docs visuals need — `button-primary`, `link`, `card`, `badge`, and `code-block` (agent and developer shapes) or `screenshot-frame` (when listings show a host app, chat, or terminal). Five or six entries, variants included.
+- **Logo use:** a `### Logo use` subsection inside `## Brand & Style` — the mark's light and dark variants, clear space, minimum size, the square avatar/icon crop listings require, and two don'ts. No logo yet → say so, record the wordmark rule (name set in `display-lg`), and point to `../../design/logo-references/BONUS-Logo-Types-and-Best-Practice.md` → **Monochrome and Variant Rules**.
+- **Prose:** all eight sections stay, in order (the format requires them); Layout & Spacing, Elevation & Depth, and Shapes may be one or two sentences each.
+- **Marked Lite:** the YAML `description` ends "(Lite — brand tokens for listings, landing pages, and docs)", an italic line under the title reads *Lite design system — run the full Design Step 3 before building any product screens*, and DESIGN.html's Header carries the same note.
+
+Steps 0–7 below run as written, scoped to this set; Step 2 asks only questions 1, 2, and 7. If the product later gains screens, re-run in full and extend — never discard — the Lite tokens.
 
 ## Inputs
 
@@ -38,7 +52,8 @@ Read inputs from `docs/` at the app repo root.
    - **A mix.** Ask which is the **primary anchor** and which are mood references — the primary drives the token decisions.
 2. **The Product Identity** — the `## Product Identity` section of `docs/DESIGN.md`. **Required.** If it's missing or substantively empty, stop and point to `design-identity-creator` first.
 3. **`docs/DEFINE.md`** — **required.** What the product is (Summary, Offer → Mechanism) and who uses it in what context (Offer → Customer plus the Persona) — a productivity tool's system differs structurally from a consumer app's even with the same brand character. If it's missing, stop and point to the Define skills (or `define-from-code`).
-4. **[REFERENCE-DESIGN.md](REFERENCE-DESIGN.md)** in this skill's folder. Read once at the start for the exact format, YAML schema, section order, and `{path.to.token}` conventions. Structural template only — **never copy its design choices.**
+4. **Product shape** — `docs/DEFINE.md` → `## Product Shape` → `### Primary Shape` names the slug; read only the Design route row for Step 3 in `productos/shapes/<slug>.md` (from this folder, `../../shapes/<slug>.md`). **Full** → the standard run; **Lite** → Lite mode; **Adapted** → the standard run scoped to the surfaces the row names (a browser extension's popup, side panel, options page, and injected UI). The row's note wins where it says when to go Full (a skill that outputs visual documents, a visual template, an embedded chat widget). No Product Shape section (a repo from before 2.0) → treat it as `web-app` unless the code or member clearly says otherwise, and suggest `define-product-shape`. If `docs/PLAN.md` schedules the step differently, the plan wins — say so.
+5. **[REFERENCE-DESIGN.md](REFERENCE-DESIGN.md)** in this skill's folder. Read once at the start for the exact format, YAML schema, section order, and `{path.to.token}` conventions. Structural template only — **never copy its design choices.**
 
 ## Voice
 
@@ -193,7 +208,8 @@ Re-read both files:
 - [ ] Every image-vs-identity conflict was surfaced and confirmed, and the system coheres with the identity's words.
 - [ ] The HTML's custom properties match the YAML values exactly and it renders every token and component live, in the md's section order.
 - [ ] Both files were written in the same pass; the md reads end to end in 4–6 minutes.
+- [ ] Lite mode only: the token and component sets stay within the Lite limits, `### Logo use` is filled, and both files are marked Lite.
 
 Give the member both file paths: `docs/DESIGN.md` is the source of truth any coding agent implements from; `docs/DESIGN.html` opens in a browser to show every token and component live; when tokens change, both update together.
 
-**Next:** `design-prompt-generator` (Step 4) embeds these tokens plus the identity's words into paste-ready prompts for AI design tools.
+**Next:** `design-prompt-generator` (Step 4) embeds these tokens plus the identity's words into paste-ready prompts for AI design tools. After a Lite run, follow the shape's route: Step 4 runs for listing and landing visuals only, or is skipped.

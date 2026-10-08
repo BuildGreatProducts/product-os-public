@@ -2,11 +2,12 @@
 name: design-prompt-generator
 description: >-
   Writes three paste-ready prompts for AI design tools (MagicPath by default; Pencil, paper.design,
-  or Claude Design also work) to docs/DESIGN-PROMPTS.md: a UI foundation prompt carrying the
-  docs/DESIGN.md tokens, then two priority screens for the product type. Use when the user says
-  "generate design prompts", "prompts to design my screens", or "what should I prompt my design tool
-  with". Requires the Product Identity and design system in docs/DESIGN.md, and docs/DEFINE.md. Not
-  for building the design system — use design-design-system.
+  or Claude Design also work) to docs/DESIGN-PROMPTS.md: a foundation prompt carrying the
+  docs/DESIGN.md tokens, then two priority screens for the product — or, for a Lite shape, its
+  listing and landing visuals. Use when the user says "generate design prompts", "prompts to design
+  my screens", or "what should I prompt my design tool with". Requires the Product Identity and
+  design system in docs/DESIGN.md, and docs/DEFINE.md. Not for building the design system — use
+  design-design-system.
 ---
 
 # Design: Design Prompt Generator
@@ -20,7 +21,8 @@ Read inputs from `docs/` at the app repo root.
 1. **`docs/DEFINE.md`** — **required.** Product type and mechanism (Summary, Offer → Mechanism), customer and use context (Offer → Customer plus the Persona), business model (Pricing Strategy). The product type drives which screens to design first. If it's missing or its Summary and Offer are placeholders, stop: tell the member to run the Define skills first (`define-offer-builder` → `define-customer-persona` → `define-pricing`, or `define-from-code` for an existing product).
 2. **Product Identity** — the `## Product Identity` section of `docs/DESIGN.md`. **Required.** The Brand Card, worldview, contrarian belief, tone attributes ("X but not Y"), no-go words, example sentence, and Visual Style (lane, notes, composition rules, references). If missing, stop and point to `design-identity-creator`.
 3. **The design system in `docs/DESIGN.md`** — the YAML tokens and eight sections. **Required — this is where the visuals live.** If there are no tokens, stop and point to `design-design-system` (Step 3): prompts without tokens generate generic screens.
-4. **`docs/COPY.md`** — optional (from `design-ux-writing`). If present, embed the lexicon's canonical nouns and verbs and the button/label rules in the prompts so generated screens are copy-correct — no "Submit" buttons, no synonyms for the product's concepts.
+4. **Product shape** — `docs/DEFINE.md` → `## Product Shape` → `### Primary Shape` names the slug; read only the Design route row for Step 4 in `productos/shapes/<slug>.md` (from this folder, `../../shapes/<slug>.md`). **Full** → screens (step 2's first table); **Adapted** → the screens the row names (an extension's popup and injected UI); **Optional** → offer it and, on a yes, prompt only the screens the row names (a dashboard, a client portal, a visual template's pages); **Skip** → say so in one line. When Step 3 ran Lite and no screens are being prompted, offer the **listing and landing visuals** set (step 2's second table) instead — run it only if the member wants it, otherwise name the next step and stop. No Product Shape section (a repo from before 2.0) → treat it as `web-app` unless the code or member clearly says otherwise, and suggest `define-product-shape`. If `docs/PLAN.md` schedules the step differently, the plan wins — say so.
+5. **`docs/COPY.md`** — optional (from `design-ux-writing`). If present, embed the lexicon's canonical nouns and verbs and the button/label rules in the prompts so generated screens are copy-correct — no "Submit" buttons, no synonyms for the product's concepts.
 
 ## Voice
 
@@ -46,7 +48,7 @@ Read them in full before generating anything. Extract:
 The structure is always the same:
 
 - **Prompt 1 — Design system foundation.** *Always this, no product-type variation.* Renders the DESIGN.md tokens as a full component library first, so the two screens inherit one component vocabulary instead of each inventing its own buttons and cards.
-- **Prompts 2 and 3 — Two priority screens** for this product, from the mapping below (pick the top two; the italic alternate is offered if the member prefers it):
+- **Prompts 2 and 3 — Two priority screens** for this product, from the mapping below (pick the top two; the italic alternate is offered if the member prefers it). Lite shapes use the second table instead:
 
 | Product type | Two priority screens (alternate in italics) |
 | --- | --- |
@@ -59,7 +61,20 @@ The structure is always the same:
 | Browser extension | Popup (in-context) / Post-install welcome tab *(alt: Settings)* |
 | Desktop / native app | Onboarding first-run / Main work surface *(alt: Preferences)* |
 | Creator economy / community platform | Editor or post creation / Feed or browse *(alt: Profile or dashboard)* |
-| Landing page / static site | Hero section / Features-as-benefits section *(alt: Pricing or CTA closer)* |
+| Landing page / static site / `website` | Hero section / Features-as-benefits section *(alt: Pricing or CTA closer)* |
+
+**Lite — listing and landing visuals only.** Prompt 1 becomes a **brand kit** (the Lite tokens rendered as logo lockups and the square icon crop, type specimens, colour swatches, buttons, and the code-block or screenshot-frame component); Prompts 2 and 3 are the two visuals the shape's acquisition surfaces need first:
+
+| Primary shape | Two priority visuals (alternate in italics) |
+| --- | --- |
+| `agent-skill`, `agent-plugin` | Listing or README banner / Output showcase — the skill's real output in a terminal or chat frame *(alt: marketplace icon set)* |
+| `mcp-server` | Directory icon and listing card / Landing hero showing one tool call and its result in a chat frame *(alt: README banner)* |
+| `chat-assistant` | Avatar and profile card / Conversation showcase with the starters *(alt: landing hero)* |
+| `developer-tool` | Landing hero with a working code sample / Docs header and quickstart page *(alt: README banner)* |
+| `productized-service` | Landing hero / Deliverable showcase — a sample of what the client receives *(alt: proposal or one-pager cover)* |
+| `digital-product` | Storefront cover and thumbnail / Inside-preview set — 3–4 mockups of the product in use *(alt: social preview image)* |
+
+Size every Lite visual to the store's asset spec from `docs/MARKETPLACE-LISTING.md` or `docs/LANDING-PAGE.md` when they exist; otherwise state the size in the prompt and flag it for checking.
 
 Present the three together as a set — Prompt 1 fixed; for Prompts 2 and 3, a one-sentence rationale per screen and the alternate — and get a confirm/correct before composing. Accept the member's own screen choices. If they want to skip Prompt 1 (rare), accept it but note the screens will be less coherent.
 
@@ -94,8 +109,8 @@ Once all three are approved, write the file using [templates/design-prompts-md.m
 
 ## Verify before delivering
 
-- [ ] **Prompt 1** carries every DESIGN.md color, typography level (by its DESIGN.md name), spacing, rounded, and component token verbatim, and covers foundations, the full component set (buttons, forms, cards, modals, navigation, lists/tables, badges, avatars, tooltips, toasts, icons, empty/loading/error states, progress), motion, and layout — without inventing tokens.
-- [ ] **Prompts 2 and 3** are priority screens for this product type, each with a one-sentence purpose and journey position, and both include the "Reuse the components from Prompt 1" line.
+- [ ] **Prompt 1** carries every DESIGN.md color, typography level (by its DESIGN.md name), spacing, rounded, and component token verbatim, and covers foundations, the full component set (buttons, forms, cards, modals, navigation, lists/tables, badges, avatars, tooltips, toasts, icons, empty/loading/error states, progress), motion, and layout — without inventing tokens. Lite: the brand kit covers every Lite token plus logo lockups and the square icon crop.
+- [ ] **Prompts 2 and 3** are priority screens for this product type (Lite: the shape's two priority visuals, with sizes stated), each with a one-sentence purpose and journey position, and both include the "Reuse the components from Prompt 1" line.
 - [ ] The brand context block appears once at the top and is embedded, identical, in all three prompts — consistent with the Product Identity.
 - [ ] Fonts are DESIGN.md's, free for commercial use, and off the exclusion list.
 - [ ] Every prompt is paste-ready: in a triple-backtick block, no leftover brackets, no paste-breaking markdown.

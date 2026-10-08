@@ -7,8 +7,8 @@
 | Day | Block | Skill(s) | Proof |
 | --- | --- | --- | --- |
 | 1 | **Define backfill + offer review + price it** | `define-from-code` if `docs/DEFINE.md` is missing → `define-offer-review` (with the twist: who is *actually* using it, per the evidence, vs who the offer says) → `define-pricing` if there is no price | a sharpened offer; the price line |
-| 2 | **Messaging alignment** | landing page / listing copy from the reviewed offer, shipped via the build loop | before/after of the live hero |
-| 3 | **Checkout live** | payments live per `develop-golive`'s payments section; a real test purchase, refunded the same session and never counted toward the bar | the receipt and the refund; a working checkout link |
+| 2 | **Messaging alignment** | landing page / app listing / marketplace listing copy (whichever surfaces the shape uses) from the reviewed offer, shipped | before/after of the live hero or listing |
+| 3 | **Checkout live** | the shape's checkout (SKILL.md, *Checkout live, by shape*) live per `develop-golive`'s payments section; a real test purchase, refunded the same session and never counted toward the bar | the receipt and the refund; a working checkout link |
 | 4 | **Warm list + warm conversations to existing users** | put every active user on the warm list in `docs/SELL-IN-30.md`; the warm ask to the most active users first, personally, checkout link in hand; every response logged in the Experiment Log | sent-folder screenshot; the warm list |
 | 5 | **Channel** | `distribute-gtm-strategy` | `docs/GO-TO-MARKET.md` |
 | 6 | **Experiments + follow-ups** | `distribute-growth-experiments`, briefed with the bar and the clock; a founding offer to existing users is the candidate to rank first | `docs/GROWTH-EXPERIMENTS.md`; `docs/GROWTH-TRACKER.md` seeded |

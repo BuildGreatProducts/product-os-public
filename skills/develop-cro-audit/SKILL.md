@@ -13,6 +13,8 @@ description: >-
 
 This skill runs in the **app repo** — the repository that contains `productos/` — and produces a prioritized **conversion rate optimization audit** of the current code. The output is `docs/CRO-AUDIT.md` (creating `docs/` if needed): a scored breakdown of conversion-relevant surfaces — performance, forms, CTAs, trust signals, paywall placement, analytics tracking, mobile experience, and onboarding — with each issue tagged by severity, location in the codebase, and the fix.
 
+**Shapes:** runs in full for the screen shapes (`web-app`, `mobile-app`, `desktop-app`, `browser-extension`) and a `website`; for every other shape, audit only the conversion surfaces it has — its landing page, listing, booking page, or checkout.
+
 ## Inputs
 
 Read inputs from `docs/` and the reference docs from `productos/design/` at the app repo root. In a repo without ProductOS, the optional docs are simply absent — proceed standalone.

@@ -1,5 +1,47 @@
 # Changelog
 
+## 2.0.0 — October 2026
+
+**ProductOS now builds, launches, and sells every shape of AI product, not just apps.** Every phase used to assume the product was an app with screens, a deploy, and a landing page. An agent skill, an MCP server, a productized service, or a digital product had to bend itself to fit, skipping steps by guesswork and going live by improvisation. 2.0 makes the product's **shape** a Define decision that routes everything after it. It adds an orchestrator for each phase, and a self-serve path for existing products: audit, plan, and work the plan.
+
+- **Twelve product shapes, chosen in Define.** The shapes are `web-app`, `mobile-app`, `desktop-app`, `browser-extension`, `agent-plugin`, `agent-skill`, `mcp-server`, `chat-assistant`, `developer-tool`, `productized-service`, `website` and `digital-product`.
+  - **New skill `define-product-shape` (Define Step 1b, after the offer).** It picks one primary shape (plus any secondary surface the MVP ships) by where the customer already works, names a rejected alternative, and says what "live" and "first sale" mean. The result goes into a new `## Product Shape` section of `docs/DEFINE.md` (worksheet `define/1b-Product-Shape.md`).
+  - **One file per shape in `shapes/`.** Each sets how every Design and Develop step adapts (Full / Adapted / Lite / Optional / Skip), what the PRD must cover, what going live means, and the shape's native channels.
+- **One routing rulebook, `ROUTING.md`.** Three layers decide which step runs next: the member's plan, then the shape, then the checklist order. The file also holds the hard rules and the step catalog: every step's skill, output, needs, and "Done when". `scripts/status.py` checks exactly those conditions and prints what's done and what's next. It's read-only, and the orchestrators run it.
+- **Four phase orchestrators: `define-phase`, `design-phase`, `develop-phase`, `distribute-phase`.** Each one:
+  - reads what earlier phases produced, the shape, and the plan;
+  - shows the member their route;
+  - runs each step's skill and checks its output;
+  - hands off to the next phase.
+
+  New projects start with `define-phase`.
+- **A path for existing products: `product-audit` → `product-refactor`.**
+  - **`product-audit`** reads the codebase, the docs and the live product. It scores each phase against a rubric with cited evidence, names the shape and stage, and composes a programme from `ROUTING.md`. That programme is `docs/PLAN.md` in the same format a ProductOS coach writes, plus `docs/PRODUCT-AUDIT.md`. It never overwrites a coach's plan.
+  - **`product-refactor`** works through the plan across phases. It marks each step done with evidence and re-scores the audit at every phase boundary.
+
+  Setup now recommends `product-audit` for existing projects, with Ship in 7 and Sell in 30 as the deadline options.
+- **Shape-aware Design.**
+  - `design-design-system` gains a Lite mode: brand tokens only, for shapes without screens.
+  - UX writing, onboarding, magic moment and design prompts adapt to the shape. Onboarding runs as steps (install → first output, booking → first delivery) when there are no screens.
+  - New skill **`design-marketplace-listing`** (Design Step 7c, worksheet `4c-Marketplace-Listing.md`) covers every store, marketplace, registry and directory beyond the App Store and Google Play.
+  - Four new onboarding references: agent extensions, chat assistants, digital products, websites.
+- **Shape-aware Develop.**
+  - **`develop-refactor-plan` is merged into `develop-prd-roadmap`**, which gains an existing-codebase mode. It baselines the code, writes the target PRD, takes keep-or-remove decisions, and writes the gap into `docs/ROADMAP.md`. There's no separate `REFACTOR.md`; `develop-build` still runs a legacy one.
+  - PRD and tech-stack guides gain per-shape variants.
+  - New skill **`develop-agent-evals`** (Develop Step 1b) sets the eval bar before the build for AI-native shapes.
+  - `develop-golive` goes live in the shape's form: deploy, store submission, marketplace publish, package release, booking page, or storefront.
+  - `develop-security-audit` gains an agent-tools tier.
+  - Migrate is now Develop Step 0.
+- **Shape-aware Distribute and challenges.**
+  - Channels gain a *Shape-native channels* section, and Go-To-Market includes the native channel by default.
+  - The activation-retention audit measures shapes without screens.
+  - Ship in 7's bar is the shape's *Live means*, and Sell in 30's is its *First sale means*.
+  - Ship in 7 gains plans for agent products and for services and digital products.
+- **Upgrading:** nothing in `docs/` moves.
+  - A `DEFINE.md` without a Product Shape is treated as a `web-app` until `define-product-shape` runs (a short session).
+  - Older plans that name `develop-refactor-plan` read it as `develop-prd-roadmap`'s existing-codebase mode.
+  - The lint now also checks that every skill name the docs mention exists.
+
 ## 1.15.0 — October 2026
 
 **Every skill is rebuilt to Anthropic's skill-authoring best practices: fewer skills, smaller to load, quicker to pick, and harder to misread.** An audit against the guide found the skills were sound, but long (up to 4,700 words each), with catalogues, report templates and dated statistics inline. Every description was close to the 1,024-character limit, they all loaded into every session, and several competed for the same triggers. Fragile steps were left to judgement, and there was a handful of real bugs.

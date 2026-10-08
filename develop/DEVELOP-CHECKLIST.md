@@ -1,19 +1,31 @@
 # Develop — Checklist
 
-Work top to bottom. Requires `docs/DEFINE.md` and `docs/DESIGN.md` to exist (run the Define and Design phases first — or their fast-tracks: `define-from-code` for DEFINE.md, `design-design-system-from-code` for DESIGN.md). Steps 1–3 take you from spec to working MVP; steps 4–7 are the ongoing build rhythm; step 8 is the security gate; step 9 puts the product in front of customers.
+Work top to bottom — or ask your agent to *"start develop"*: `develop-phase` sets your route from your product's shape and walks it with you. Requires `docs/DEFINE.md` and `docs/DESIGN.md` to exist (run the Define and Design phases first — or their fast-tracks: `define-from-code` for DEFINE.md, `design-design-system-from-code` for DESIGN.md; a Lite DESIGN.md is enough where your shape allows). Steps 0–3 take you from spec to a working MVP; steps 4–7 are the ongoing build rhythm; step 8 is the security gate; step 9 puts the product in front of customers.
 
-If `docs/PLAN.md` exists (your programme plan, shipped with coached copies of ProductOS), it names your route through this phase (build from scratch, refactor, or straight to the build loop) and may mark steps as fast-tracked or skipped — follow it; this checklist remains the source of truth for how each step runs.
+**Your shape decides what each step means.** Your shape file (`productos/shapes/<slug>.md`) marks which steps apply, what the PRD must cover — an agent skill's PRD specifies its SKILL.md, triggers, and eval set; an MCP server's specifies its tools and auth; a productized service's specifies its delivery process — and what "go live" means: a deploy, a store submission, a marketplace publish, a package release, a booking page, or a storefront.
+
+If `docs/PLAN.md` exists (your programme plan, from your coach or `product-audit`), it names your route through this phase (build from scratch, rework an existing codebase, or straight to the build loop) and may mark steps as fast-tracked or skipped — follow it; this checklist remains the source of truth for how each step runs.
 
 Running a challenge (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` open)? It says which of these steps are this week's, and on which session; this checklist remains the source of truth for how each step runs.
 
 ---
 
+## Step 0 — Migrate *(apps on a prompt-to-app platform only)*
+
+- **What to do:** Coming from Lovable, Bolt, v0, Base44, Replit, or similar? Run `develop-migrate` before anything else.
+- **What it does:** Inventories everything the platform manages, moves the app into your own repo, stack, and deployment via `docs/MIGRATION.md`, and gates decommissioning the old platform behind a full verification pass. Run `build-loop` on `docs/MIGRATION.md` to execute it. Plan the rest of the build (Step 1) once you fully own the codebase.
+
 ## Step 1 — PRD & Roadmap
 
 - **What to do:** Run `develop-prd-roadmap`.
-- **Refactoring an existing codebase (path 3b)?** This step is optional — `develop-refactor-plan` generates its own refactor-scoped PRD when `docs/PRD.md` doesn't exist, so you can go straight to Step 3b.
+- **Already have a codebase?** The same skill runs in existing-codebase mode: it protects your working code with a baseline branch and tag, writes the target PRD, audits your code against it, walks you through every keep-or-remove decision, and writes `docs/ROADMAP.md` as the gap between the code and the spec. (This replaces the old refactor plan — there's no separate `docs/REFACTOR.md`.)
 - **No `docs/DEFINE.md` yet?** Run the Define fast-track first — `define-from-code` extracts the Define work from your existing product into `docs/DEFINE.md`.
-- **What it does:** Scopes your MVP through a structured interview (core loop, feature cuts, tech stack), then produces `docs/PRD.md` — the technical spec a coding agent builds from — and `docs/ROADMAP.md` — the phased build plan with task checkboxes. Draws on `productos/develop/guides/PRD-GENERATION.md`, `ROADMAP-GENERATION.md`, and `TECH-STACK-OPTIONS.md`.
+- **What it does:** Scopes your MVP through a structured interview (core loop, feature cuts, tech stack), then produces `docs/PRD.md` — the technical spec a coding agent builds from, covering your shape's sections — and `docs/ROADMAP.md` — the phased build plan with task checkboxes. Draws on `productos/develop/guides/PRD-GENERATION.md`, `ROADMAP-GENERATION.md`, and `TECH-STACK-OPTIONS.md`.
+
+## Step 1b — Evals *(agent skills, plugins, MCP servers, chat assistants, and any product whose core is an AI output)*
+
+- **What to do:** Run `develop-agent-evals` before the build.
+- **What it does:** Produces `docs/EVALS.md` — at least three scenarios per core job, each with the request, the inputs, and the expected behaviour as a checkable rubric, plus a baseline without your product and runs across the models your customers use. It's the bar "done" is measured against: the build isn't finished until the evals pass.
 
 ## Step 2 — Verify your setup
 
@@ -22,19 +34,8 @@ Running a challenge (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` open)? It says 
 
 ## Step 3 — Build the MVP
 
-Pick the path that matches your situation:
-
-### 3a — Building from scratch
-
 - **What to do:** Run `develop-build`.
-- **What it does:** Works through every roadmap task in order — implementing, testing, and verifying each before moving on, with a code review and a commit at every phase boundary — until all tasks are checked off and the magic moment works end to end.
-
-### 3b — Refactoring an existing codebase
-
-- **What to do:** First protect your working code — work in a git worktree or duplicate the codebase folder before refactoring, so you can always get back to a working version. Then run `develop-refactor-plan`, review each difference it finds with you, and once `docs/REFACTOR.md` exists, run `develop-build`.
-- **Coming from a prompt-to-app platform (Lovable, Bolt, v0, Base44)?** Run `develop-migrate` first — it inventories everything the platform manages, moves the app into your own repo, stack, and deployment via `docs/MIGRATION.md`, and gates decommissioning the old platform behind a full verification pass. Refactor after you fully own the codebase.
-- **What it does:** The plan skill audits your code against the PRD (generating a refactor-scoped PRD first if `docs/PRD.md` doesn't exist) and turns your keep/remove decisions into `docs/REFACTOR.md`; the build skill executes it task by task until the codebase matches the PRD.
-- **No `docs/DESIGN.md` yet?** Run `design-design-system-from-code` first — it reverse-engineers the design system already in your code into `docs/DESIGN.md`, so the refactor has real design tokens to converge on.
+- **What it does:** Works through every roadmap task in order — implementing, testing, and verifying each before moving on, with a code review and a commit at every phase boundary — until all tasks are checked off and the magic moment works end to end. On an existing codebase it works the gap roadmap the same way, keeping the app runnable after every phase, and resets to the last phase commit rather than leave the main branch broken. *(A `docs/REFACTOR.md` from an older version of ProductOS still runs the same way.)*
 
 ## Step 4 — Build new features with the build loop
 
@@ -47,28 +48,28 @@ Pick the path that matches your situation:
 - **What to do:** Run `develop-code-review` on uncommitted changes you made outside the build loop or a full build (a hand edit, a quick fix). Work from `develop-build` or `build-loop` has already been reviewed.
 - **What it does:** Reviews the whole uncommitted diff (including new untracked files) for correctness, regressions, edge cases, and leftover debug code, verifies every finding against the actual source, and ends with an explicit verdict: ready to commit, or the must-fix list first.
 
-## Step 6 — Design changes
+## Step 6 — Design changes *(screen shapes)*
 
 - **What to do:** Run `develop-design-better` whenever you're generating or changing UI, and `develop-design-review` before committing design work.
 - **What it does:** Keeps every screen aligned with `docs/DESIGN.md` tokens — and, when `docs/COPY.md` exists, every user-facing string aligned with it — catching visual and copy drift before it ships.
 
 ## Step 7 — Conversion review
 
-- **What to do:** Run `develop-cro-audit` once the product is usable end to end (and again once it has real traffic).
+- **What to do:** Run `develop-cro-audit` once the product is usable end to end (and again once it has real traffic). It applies wherever there's a signup, pricing, or checkout surface — including the landing page of a shape without screens.
 - **What it does:** Reviews your app against conversion best practices — onboarding friction, activation drop-off, pricing page, CTAs — and produces prioritized improvements.
 
 ## Step 8 — Security audit ★ *before you go live*
 
-- **What to do:** Run `develop-security-audit` before Step 9 — and again after any significant auth, payments, or data-access work. Do the report's "Do this right now" and Human-only actions yourself; hand the Fix plan to your coding agent.
+- **What to do:** Run `develop-security-audit` before Step 9 — and again after any significant auth, payments, or data-access work. Agent plugins, skills, MCP servers, and chat assistants also get its agent-tools tier (prompt injection, tool permissions, secrets in configs). Services, websites, and digital products need it only where there's custom code or customer data. Do the report's "Do this right now" and Human-only actions yourself; hand the Fix plan to your coding agent.
 - **What it does:** Audits the codebase in the order that actually burns founder apps — committed secrets, database access control (RLS), unprotected routes, ownership checks, keys exposed to the browser — verifies every finding to a concrete exploit path, and produces `docs/SECURITY-AUDIT.md`: a one-line verdict plus a severity-ordered checkbox fix plan your agent can execute while you keep building.
 
-## Step 9 — Deploy to customers
+## Step 9 — Go live
 
 - **What to do:** Run `develop-golive` when you're ready to go live.
-- **What it does:** Audits the codebase and produces `docs/DEPLOY.md` — a plain-English, step-by-step launch guide where every step is marked 🧑 you / 🤖 agent / 🤝 together. Work through it top to bottom; you're live when the final smoke test passes as a real customer.
+- **What it does:** Produces `docs/DEPLOY.md` — a plain-English, step-by-step go-live guide in your shape's form (deploy, store submission, marketplace publish, package release, booking page, or storefront), where every step is marked 🧑 you / 🤖 agent / 🤝 together. Work through it top to bottom; you're live when your shape's *Live means* bar passes as a real customer.
 
 ---
 
 ## Next phase
 
-Once customers can reach the product, move to the Distribute phase. Open `productos/distribute/DISTRIBUTE-CHECKLIST.md`.
+Once customers can reach the product, move to the Distribute phase: ask your agent to *"start distribute"* (`distribute-phase`), or open `productos/distribute/DISTRIBUTE-CHECKLIST.md`.

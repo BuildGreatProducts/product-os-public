@@ -14,6 +14,9 @@ Checks
          through links like ../../distribute/BONUS-*.md instead of bundling copies)
   ERROR  setup/CLAUDE.md and setup/AGENTS.md differ below their title line (they are twins; the
          build-plan list and every root rule live in both)
+  ERROR  a backticked skill name (define-*, design-*, develop-*, distribute-*) in the docs, routing,
+         shapes, checklists, or skills that names no skill folder (legacy-name lines and the
+         changelog are exempt)
   ERROR  a computer:// link (client-specific; give the file path instead)
   WARN   a reference doc (BONUS-*.md, develop/guides/*.md) over 100 lines with no contents list
          near the top. Worksheets, *-TEMPLATE.md and REFERENCE-*.md are output shapes and are
@@ -127,6 +130,26 @@ def check_setup_twins():
         errors.append("setup/CLAUDE.md and setup/AGENTS.md differ below their title line — keep the twins identical")
 
 
+def check_skill_names():
+    known = {d for d in os.listdir(SKILLS) if os.path.isfile(os.path.join(SKILLS, d, "SKILL.md"))}
+    files = [os.path.join(ROOT, f) for f in ("AGENTS.md", "README.md", "START-HERE.md", "ROUTING.md")]
+    files += [os.path.join(ROOT, "setup", f) for f in ("CLAUDE.md", "AGENTS.md")]
+    for top in [SKILLS, os.path.join(ROOT, "shapes")] + [os.path.join(ROOT, p) for p in PHASES]:
+        for dirpath, _, names in os.walk(top):
+            if os.sep + "migrations" in dirpath:
+                continue  # one-off upgrade guides name retired skills on purpose
+            files += [os.path.join(dirpath, n) for n in names if n.endswith(".md")]
+    for path in files:
+        if not os.path.isfile(path):
+            continue
+        for n, line in enumerate(open(path, encoding="utf-8"), 1):
+            if re.search(r"\(before \d+\.\d+", line):
+                continue  # legacy-name tables map old names to new ones
+            for name in re.findall(r"`((?:define|design|develop|distribute)-[a-z0-9-]+)`", line):
+                if name not in known:
+                    errors.append(f"{rel(path)}:{n}: `{name}` is not a skill")
+
+
 def markdown_files():
     roots = [SKILLS] + [os.path.join(ROOT, p) for p in PHASES]
     for top in roots:
@@ -159,6 +182,7 @@ def main():
         check_skill(name)
     check_links()
     check_setup_twins()
+    check_skill_names()
     check_files()
     for w in warnings:
         print(f"WARN   {w}")

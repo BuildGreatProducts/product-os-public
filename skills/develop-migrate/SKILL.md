@@ -6,7 +6,7 @@ description: >-
   current export mechanics, and writes docs/MIGRATION.md, a phased checkbox plan ending in a
   verification gate before the old platform is decommissioned. Use when the user says "migrate from
   Lovable", "leave Bolt", or "own my codebase". Not for improving the code — use
-  develop-refactor-plan afterwards.
+  develop-prd-roadmap's existing-codebase mode afterwards.
 ---
 
 # Develop: Migrate
@@ -15,7 +15,7 @@ Move an app off a prompt-to-app platform and into the member's own repo, stack, 
 
 Two rules frame the whole session:
 
-1. **Migration is not refactoring.** This skill moves and rewires what exists; it does not restructure or improve it. Code-quality work (service layers, dead platform shims, prop drilling, styling convergence) belongs to `develop-refactor-plan`, run after the app is living safely in its new home. Keeping the two separate keeps both plans small and verifiable.
+1. **Migration is not refactoring.** This skill moves and rewires what exists; it does not restructure or improve it. Code-quality work (service layers, dead platform shims, prop drilling, styling convergence) belongs to `develop-prd-roadmap`'s existing-codebase mode, run after the app is living safely in its new home. Keeping the two separate keeps both plans small and verifiable.
 2. **Clean break.** The moment export happens, the old platform's editor is retired — the repo becomes the single source of truth. Editing in both places loses work silently: platform exports are point-in-time snapshots, and changes made platform-side after export are gone.
 
 ## Inputs
@@ -57,7 +57,7 @@ Export paths change fast. Read [references/platform-notes.md](references/platfor
 
 ### 4. Write `docs/MIGRATION.md`
 
-First show the member the phase outline — which of the phases below apply, each with its Goal and a rough task count — and get approval. Then write the plan with the same format discipline as `docs/ROADMAP.md` and `docs/REFACTOR.md`: a header with the generated-by note and a `**Status:** 0/{total} tasks complete` line, phases with a one-sentence Goal, and tasks in the canonical three-line checkbox format from `productos/develop/guides/ROADMAP-GENERATION.md` (Notes ending with `Verify:`), sized to one agent session and ordered for sequential execution. The canonical phase shape — adapt to the inventory, cut phases that don't apply:
+First show the member the phase outline — which of the phases below apply, each with its Goal and a rough task count — and get approval. Then write the plan with the same format discipline as `docs/ROADMAP.md`: a header with the generated-by note and a `**Status:** 0/{total} tasks complete` line, phases with a one-sentence Goal, and tasks in the canonical three-line checkbox format from `productos/develop/guides/ROADMAP-GENERATION.md` (Notes ending with `Verify:`), sized to one agent session and ordered for sequential execution. The canonical phase shape — adapt to the inventory, cut phases that don't apply:
 
 1. **Export & baseline** — GitHub sync/export; tag the commit as the migration baseline; capture a baseline inventory of the working app (core flows, screenshots, user count, storage file list) that the gate will compare against. From here: clean break.
 2. **Environment & secrets** — `.env.example` documenting every variable by name; secrets re-entered at the destination and **rotated where the platform held them**; nothing committed.
@@ -82,6 +82,6 @@ Re-read `docs/MIGRATION.md` and check:
 
 To execute the plan, the member tells `build-loop` to work through `docs/MIGRATION.md` top to bottom; it is a build-loop plan file like `docs/ROADMAP.md`. Phase 7's gate needs the member present for the real login, DNS cutover, and decommission.
 
-Summarize in conversation: what moved, what was rotated, what was decommissioned, and the baseline tag to roll back to. Then point forward: `develop-refactor-plan` for the code-quality pass the platform's generated code almost certainly needs (it generates its own refactor-scoped PRD if none exists), and the member's build loop for everything after.
+Summarize in conversation: what moved, what was rotated, what was decommissioned, and the baseline tag to roll back to. Then point forward: `develop-prd-roadmap` in existing-codebase mode for the code-quality pass the platform's generated code almost certainly needs (it writes the target PRD if none exists, then a gap roadmap for `develop-build`), and the member's build loop for everything after.
 
 Done means the app runs entirely from the member's repo, stack, and agent; every inventory row shows its Verify pass; secrets the platform ever held are rotated; `docs/MIGRATION.md` shows all tasks checked with the gate green; and the old platform is paused or removed — in that order, never the reverse. Anything less: the old platform stays alive and the gap is named in the plan.

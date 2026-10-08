@@ -2,8 +2,8 @@
 name: develop-security-audit
 description: >-
   Audits the whole app (or uncommitted changes) for security problems — secrets, database access
-  control, unprotected routes, IDOR, exposed keys first — verifies each finding to a concrete
-  exploit path, and writes docs/SECURITY-AUDIT.md with a launch verdict and a checkbox fix plan that
+  control, unprotected routes, IDOR, exposed keys first, then agent-tool risks such as prompt
+  injection for AI-native products — verifies each finding to a concrete exploit path, and writes docs/SECURITY-AUDIT.md with a launch verdict and a checkbox fix plan that
   separates agent fixes from human-only actions like key rotation. Never auto-fixes. Use when the
   user asks for a "security audit", "is my app secure", or "am I safe to launch". Not for a general
   pre-commit review — use develop-code-review.
@@ -25,7 +25,9 @@ The voice is a senior application-security engineer auditing a small production 
 
 Ask one question: **whole codebase, or just the uncommitted changes?** (Default whole codebase; uncommitted-only uses the same `git diff HEAD` + untracked-files scoping as `develop-code-review`.)
 
-Then detect the stack before judging anything — framework, database layer (Supabase / Firebase / Prisma / raw SQL), auth provider (Clerk / Auth0 / NextAuth / Supabase Auth / custom), payment provider, hosting config. **The stack decides which categories apply.** Managed providers make whole categories N/A — "weak password hashing: N/A, Clerk manages credentials" is a correct and required audit line, not a gap. Auditing for problems the stack can't have is the fastest way to a noise report.
+Then read the shape (`docs/DEFINE.md` → `## Product Shape` → `### Primary Shape`; no section → `web-app`) and detect the stack before judging anything — framework, database layer (Supabase / Firebase / Prisma / raw SQL), auth provider (Clerk / Auth0 / NextAuth / Supabase Auth / custom), payment provider, hosting config. **The stack decides which categories apply.** Managed providers make whole categories N/A — "weak password hashing: N/A, Clerk manages credentials" is a correct and required audit line, not a gap. Auditing for problems the stack can't have is the fastest way to a noise report.
+
+**No-code shapes** (`productized-service`, `digital-product`, `website` built in a hosted builder) need this audit only where there is custom code or stored customer data — scripts and automations that touch client files, a custom intake or portal, a database of buyers or members. Audit just that surface; if there is none, say so in one line and stop: the tools' own security is out of scope.
 
 ### 2. Map the attack surface
 
@@ -36,6 +38,7 @@ Enumerate before judging — the map is the audit's evidence base and goes in th
 - Every **environment variable** and where it's referenced — especially anything behind a public prefix (`NEXT_PUBLIC_*`, `VITE_*`, `REACT_APP_*`, `EXPO_PUBLIC_*`).
 - Every **webhook receiver**, and whether it verifies signatures.
 - Every **user-input entry point** and **file-upload path**.
+- **Agent tools** (when Tier 4 applies) — every tool a model can call (MCP tools, function-calling tools, GPT actions, bot commands) with its permissions and whether it changes or deletes anything; every hook and bundled script; every plugin, MCP, and extension manifest or config; every point where fetched or tool-returned content enters a prompt; every place model output is rendered as links or images.
 
 ### 3. Audit by tier, one category at a time
 
@@ -53,7 +56,9 @@ Work the tiers in order — never batched, never sampled. Classify each category
 
 **Tier 3 — Medium/Low:** CSRF protection / `SameSite` cookie config; security headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options); insecure file uploads (extension-only validation, no server-side size limit, uploads served from the app domain); verbose errors / stack traces / debug mode reachable in production; PII in logs.
 
-Tag each finding with its OWASP Top 10 (latest edition) ID for reference — but the tiers, not OWASP, order the report; the tiers are ordered by what actually burns founders.
+**Tier 4 — Agent tools.** Applies to `agent-plugin`, `agent-skill`, `mcp-server`, and `chat-assistant`, and to any app where a model calls tools — audit it right after Tier 1 for those shapes. Six categories: prompt injection through tool outputs and fetched content; over-broad tool permissions and scopes; secrets in plugin, MCP, and extension configs and manifests; data exfiltration via links and images; unsafe shell in hooks and scripts; missing confirmation on destructive tools. Read [references/agent-tools-tier.md](references/agent-tools-tier.md) whenever Tier 4 applies — it holds each category's checks, severity rules, and the agent-specific never-report list. Severity follows what an injected instruction can make the agent *do*: Critical when untrusted content, private data, and an outbound channel or destructive tool meet in one session.
+
+Tag each finding with its OWASP Top 10 (latest edition) ID for reference (Tier 4 findings: the OWASP Top 10 for LLM Applications ID) — but the tiers, not OWASP, order the report; the tiers are ordered by what actually burns founders.
 
 **Key identity — the rules that prevent both the worst false positive and the worst miss:**
 
@@ -65,7 +70,7 @@ Tag each finding with its OWASP Top 10 (latest edition) ID for reference — but
 
 Detection is generous; the report is not. Before a finding ships, re-examine it against the code and demand a **concrete exploit path** — who the attacker is, what they send, what they get. Drop anything below roughly 8/10 confidence. Judge new code against *this codebase's* existing security patterns, not an abstract ideal.
 
-**Never report** (noise, not findings): denial-of-service or resource-exhaustion scenarios; theoretical race conditions; missing hardening without a concrete exploit ("should add a CSP" is a Tier-3 *category check*, not a per-file finding); missing auth checks in *client-side* code (the server owns authorization — client checks are UX); XSS in React/Angular/Vue outside the escape hatches; attacks requiring control of env vars or CLI flags (those are trusted); missing audit logs; findings in documentation or test-only files.
+**Never report** (noise, not findings): denial-of-service or resource-exhaustion scenarios; theoretical race conditions; missing hardening without a concrete exploit ("should add a CSP" is a Tier-3 *category check*, not a per-file finding); missing auth checks in *client-side* code (the server owns authorization — client checks are UX); XSS in React/Angular/Vue outside the escape hatches; attacks requiring control of env vars or CLI flags (those are trusted); missing audit logs; findings in documentation or test-only files (for skills and plugins, SKILL.md files, references, and prompts are product code, not documentation).
 
 **Always report** (commonly excluded by enterprise tools only because enterprises have separate systems for them — founders don't): committed or exposed secrets, missing rate limiting on auth endpoints, and vulnerable or hallucinated dependencies.
 
@@ -80,7 +85,7 @@ Every fix task's **Verify** line is a falsifiable assertion an agent can mechani
 Re-read the written report and check:
 
 - [ ] The verdict is one honest line a founder can act on.
-- [ ] Every Tier 1–3 category is classified, and every N/A says why.
+- [ ] Every Tier 1–3 category — and every Tier 4 category when it applies — is classified, and every N/A says why.
 - [ ] Every finding has a location, a named attacker capability, and passed the exploit-path check; nothing from the never-report list made it in.
 - [ ] The anon-key / service-role distinction was applied correctly.
 - [ ] The fix plan is severity-ordered checkbox tasks, one concern each, with falsifiable Verify lines an agent can execute unattended.

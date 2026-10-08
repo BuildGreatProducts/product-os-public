@@ -4,14 +4,15 @@ description: >-
   Writes the App Store and Google Play listing spec — icon, title, subtitle, keywords, seven
   screenshot captions, preview video, both store descriptions, custom product pages, review timing,
   localization — to docs/APP-LISTING.md, in the brand's voice and within store character limits. Use
-  for a mobile-first product when the user says "write my app store listing", "ASO", or "draft my
-  screenshot captions". Requires docs/DEFINE.md, the Product Identity, and docs/MAGIC-MOMENT.md. Not
-  for web or desktop products — use design-landing-page.
+  for a mobile app when the user says "write my app store listing", "ASO", or "draft my screenshot
+  captions". Requires docs/DEFINE.md, the Product Identity, and docs/MAGIC-MOMENT.md. Not for web
+  pages — use design-landing-page; not for any other store, marketplace, or registry — use
+  design-marketplace-listing.
 ---
 
 # Design: App Store Listing Copywriter
 
-Design the **App Store / Google Play listing** for a mobile-first product — the acquisition surface that turns a search-results impression into an install — as a spec at `docs/APP-LISTING.md`: every consequential field with actual copy in the brand's voice, character counts honored, a story-arc screenshot sequence, and the App Store Listing BONUS tactic that justifies each element. The job is to align strategy (DEFINE.md), voice (the Identity), and activation (the Magic Moment) into one listing that wins the first three screenshots: without the Identity it inherits a generic tone; without the Magic Moment it promises an outcome onboarding doesn't deliver. No external research is needed — the patterns live in the BONUS doc. **Mobile-first only; for web or desktop products use `design-landing-page`.**
+Design the **App Store / Google Play listing** for a mobile-first product — the acquisition surface that turns a search-results impression into an install — as a spec at `docs/APP-LISTING.md`: every consequential field with actual copy in the brand's voice, character counts honored, a story-arc screenshot sequence, and the App Store Listing BONUS tactic that justifies each element. The job is to align strategy (DEFINE.md), voice (the Identity), and activation (the Magic Moment) into one listing that wins the first three screenshots: without the Identity it inherits a generic tone; without the Magic Moment it promises an outcome onboarding doesn't deliver. No external research is needed — the patterns live in the BONUS doc. **App Store and Google Play only** — the shape is `mobile-app` (primary, or secondary with its own store listing). For web pages use `design-landing-page`; for any other store, marketplace, or registry (browser extension stores, plugin marketplaces, MCP registries, the GPT Store, package registries, storefronts) use `design-marketplace-listing`.
 
 ## Inputs
 
@@ -49,7 +50,7 @@ Read DEFINE.md, the Product Identity, the Magic Moment, the BONUS doc sections a
 
 ### 2. Confirm the product is mobile
 
-*"Based on DEFINE.md, this is a mobile [iOS / Android / both] product, so I'm writing the App Store listing using `BONUS-App-Store-Listing-Best-Practice.md` as the reference. The output will go to `docs/APP-LISTING.md`. Confirm or correct."* If it's actually web/desktop-first, redirect: *"This looks web/desktop-first. Use `design-landing-page` instead — the landing page is the right acquisition surface for web products."*
+*"Based on DEFINE.md's Product Shape, this is a mobile [iOS / Android / both] product, so I'm writing the App Store listing using `BONUS-App-Store-Listing-Best-Practice.md` as the reference. The output will go to `docs/APP-LISTING.md`. Confirm or correct."* If the shape isn't `mobile-app`, redirect: *"This is a `[slug]` — its acquisition surface is [a landing page → `design-landing-page` / a store or registry listing → `design-marketplace-listing`]."* (No Product Shape section — a repo from before 2.0 — judge from DEFINE.md and suggest `define-product-shape`.)
 
 On both stores, write both descriptions in the same file — they differ, because the stores index descriptions differently (see store facts).
 
