@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Landing Page Pattern Should You Build?](#the-decision-tree--which-landing-page-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example 1 — The Stripe Hero](#worked-example-1--the-stripe-hero)
+- [Worked Example 2 — The Lovable Try-Before-Signup Hero](#worked-example-2--the-lovable-try-before-signup-hero)
+- [Worked Example 3 — The Linear Product-Visual Hero](#worked-example-3--the-linear-product-visual-hero)
+- [Anti-Patterns — What Kills Landing Page Conversion](#anti-patterns--what-kills-landing-page-conversion)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The Landing Page Operating Model](#the-landing-page-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **A landing page has one job: convert a stranger who clicked a link into someone who took the next step. Every section, every word, every pixel either pulls the user toward that action or pulls them away. Above the fold is the entire fight — most visitors decide whether to scroll or close the tab in under 7 seconds, and 89% of clicks on the page come from above-the-fold CTAs. The rest of the page exists to recover the user who didn't convert above the fold, not to teach the user who did.**

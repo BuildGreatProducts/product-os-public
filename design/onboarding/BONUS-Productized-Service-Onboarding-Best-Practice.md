@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Onboarding Pattern Should You Build?](#the-decision-tree--which-onboarding-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example 1 — The Designjoy Funnel Reconstructed](#worked-example-1--the-designjoy-funnel-reconstructed)
+- [Worked Example 2 — The ManyPixels / Penji Tiered Funnel](#worked-example-2--the-manypixels--penji-tiered-funnel)
+- [Worked Example 3 — The AI-Augmented Productized Service (the 2026 frontier)](#worked-example-3--the-ai-augmented-productized-service-the-2026-frontier)
+- [Anti-Patterns — What Kills Productized Service Onboarding](#anti-patterns--what-kills-productized-service-onboarding)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The Productized Service Operating Model](#the-productized-service-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **A productized service is a service that has been engineered to feel like a product — fixed price, fixed scope, fixed delivery rhythm, no calls. Onboarding is where that promise either gets proven in 48 hours or quietly broken. Every minute the client spends waiting, explaining themselves, or sitting on a Zoom call is a minute they are reconsidering whether this is actually different from the agency they just left.**

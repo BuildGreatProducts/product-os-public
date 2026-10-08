@@ -14,7 +14,7 @@ Refactor the app by executing every task in `docs/REFACTOR.md`, in order, until 
 
 ## Setup
 
-Read `docs/REFACTOR.md` first — it is the source of truth for what to change and in what order, and it encodes decisions already made with the user. Do not relitigate them. `docs/PRD.md` is the spec the refactor is converging on; `docs/DESIGN.md` holds the visual design tokens. Do not load these wholesale — each phase lists the specific Reference sections to read, plus whatever a task's Notes line points to. If `docs/REFACTOR.md` is missing, stop and tell the user to run `develop-refactor-plan` first.
+Read `docs/REFACTOR.md` first — it is the source of truth for what to change and in what order, and it encodes decisions already made with the member. Do not relitigate them. `docs/PRD.md` is the spec the refactor is converging on; `docs/DESIGN.md` holds the visual design tokens. Do not load these wholesale — each phase lists the specific Reference sections to read, plus whatever a task's Notes line points to. If `docs/REFACTOR.md` is missing, stop and tell the member to run `develop-refactor-plan` first.
 
 ## Work loop
 
@@ -25,7 +25,7 @@ Repeat until every task in the refactor plan is complete:
 3. **Implement the task** exactly as specified. Follow the repo's `CLAUDE.md`/`AGENTS.md` guidelines: surgical changes only — touch what the task names, don't "improve" adjacent code, and remove any imports, variables, or files your change orphans.
 4. **Test and verify before moving on.** Run the verification step at the end of the task's Notes, run the app, and run the test suite — a refactor's first job is to not break what works, so existing tests passing is part of every task's definition of done. If the task changes behavior intentionally, update the affected tests and say so. If verification fails, fix it first — never mark a failing task complete or start the next task with the app broken.
 5. **Mark the task complete** — change `- [ ]` to `- [x]` and update the header status line (`**Status:** X/Y tasks complete`, `**Current Phase:** ...`).
-6. **At each phase boundary:** run the app end to end and confirm the phase's Goal is true. Commit with a message `Refactor Phase {N}: {Phase Title}` summarizing the goal and completed task range, then push and keep going — there's no need to open a pull request or pause for review between phases. If the phase touched auth, payments, user input, or data access, run the coding agent's built-in review (`/review` in Claude Code, or the equivalent in Cursor or Codex) and address the findings before continuing.
+6. **At each phase boundary:** run the app end to end and confirm the phase's Goal is true. Commit with a message `Refactor Phase {N}: {Phase Title}` summarizing the goal and completed task range, push if a remote is configured, and keep going — there's no need to open a pull request or pause for review between phases. If the phase touched auth, payments, user input, or data access, run the coding agent's built-in review (`/review` in Claude Code, or the equivalent in Cursor or Codex) and address the findings before continuing.
 
 ## Rules
 
@@ -34,4 +34,5 @@ Repeat until every task in the refactor plan is complete:
 - Visual styling comes from `docs/DESIGN.md` tokens — never invent colors, type, or spacing.
 - If a task is ambiguous or conflicts with the PRD, check the PRD section it references; if still unclear, ask one specific question rather than guessing.
 - If you discover work the plan doesn't cover (e.g. a hidden dependency on removed code), surface it and propose adding a task — don't silently expand scope.
+- If a phase can't be made green, reset to the last phase commit (or the `pre-refactor-<date>` tag if no phase has been committed yet) — tell the member first, and never leave the main branch broken.
 - Keep going until `**Status:** Y/Y tasks complete`: every task checked, every phase verified, all tests passing, codebase fully aligned with the PRD.

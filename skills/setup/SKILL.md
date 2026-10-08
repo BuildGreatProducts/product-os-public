@@ -11,24 +11,22 @@ description: >-
 
 # Setup — install ProductOS and adopt your plan
 
-ProductOS lives inside your app's repository, and this skill is how it gets installed there — the first thing to run after receiving your copy. It wires the repo, and if your copy came from your coach it carries your custom programme inside: setup moves that plan to `docs/PLAN.md`, where every ProductOS skill expects it.
-
-> **Session shape:** minutes, not a meeting. The only files this skill writes are the root `CLAUDE.md`/`AGENTS.md`, `.gitignore`, and `docs/PLAN.md` (moved from the seed). All checks are idempotent — re-running costs seconds and fixes whatever drifted.
+Install ProductOS into the app repository — the first thing to run after receiving a copy — and, if the copy came from the member's coach, move the custom programme plan it carries to `docs/PLAN.md`, where every ProductOS skill expects it. It takes minutes. The only files it writes are the root `CLAUDE.md`/`AGENTS.md`, `.gitignore`, and `docs/PLAN.md` (moved from the seed). Every check is idempotent — re-running costs seconds and fixes whatever drifted.
 
 ## Workflow
 
 ### 1. Verify the repo
 
-Check that this folder is `productos/` inside a git repository (`git rev-parse --is-inside-work-tree` from the parent). If ProductOS is checked out standalone — no surrounding repo — pause and set it up: help the user create (or pick) the app repo, `git init` it if new, and move this folder into it as `productos/` exactly. From scratch is no exception; the repo exists before the product does.
+Check that this folder is `productos/` inside a git repository (`git rev-parse --is-inside-work-tree` from the parent). If ProductOS is checked out standalone — no surrounding repo — pause and set it up: help the member create (or pick) the app repo, `git init` it if new, and move this folder into it as `productos/` exactly. From scratch is no exception; the repo exists before the product does.
 
 ### 2. Wire the root guidelines
 
 The app repo root needs the coding-agent guidelines from `productos/setup/`:
 
 - Root `CLAUDE.md`/`AGENTS.md` **don't exist** → copy them from `productos/setup/` whole.
-- The repo **already has them** → **never overwrite.** Append only the `<!-- BEGIN PRODUCTOS -->…<!-- END PRODUCTOS -->` block from the setup templates, plus one pointer line to `productos/setup/CLAUDE.md` for the full guidelines. If the markers are already present, replace the block between them.
+- The repo **already has them** → **never overwrite** the member's content. Append the `<!-- BEGIN PRODUCTOS -->…<!-- END PRODUCTOS -->` block from the matching file in `productos/setup/`, and add one pointer line to `productos/setup/CLAUDE.md` (for the full guidelines) **inside** the markers, just before `<!-- END PRODUCTOS -->`. If the markers are already present (a re-run), replace everything between them — pointer line included — with the fresh block; never append a second block.
 
-Wire whichever file(s) match the user's coding agent(s); default is both.
+Wire whichever file(s) match the member's coding agent(s); default is both.
 
 ### 3. Gitignore the system
 
@@ -42,7 +40,15 @@ If **`productos/PLAN.md`** exists (it ships inside coached copies), move it to *
 2. Check each item against the actual repo, now that it's readable — does the app run, does the core flow work, does the codebase match what the plan assumed?
 3. Where reality matches, confirm and move on. Where it doesn't, apply the plan's own stated consequence ("if the core flow doesn't run end to end, Develop route becomes 3b") and **annotate** the affected step — a one-line note under the relevant programme step, dated.
 
-Plans written before ProductOS 1.11.0 name skills with a `studio-` prefix (`studio-define-pricing`, `studio-launch`). Read those as the current unprefixed names (every name simply loses the prefix; `studio-launch` became `mini-launch`, itself retired in 1.14.0 — see below) and don't rewrite the plan for it. Plans written before 1.12.0 may also name `define-leverage-finder` (or `studio-define-leverage-finder`) — read it as `define-idea-finder`. Plans written before 1.14.0 may name steps for two retired skills: `mini-launch` (or `studio-launch`) and `define-product` (or `studio-define-product`). Read those steps as retired — launches are no longer part of the system, and the Define skills now write `docs/DEFINE.md` directly, so there is no synthesis step — and annotate them as such. Where a plan names `docs/PRODUCT.md`, read `docs/DEFINE.md`.
+Older plans may use retired names. Read them as follows, and don't rewrite the plan for a rename:
+
+| The plan names | Read it as |
+| --- | --- |
+| `studio-<name>` (before 1.11.0, e.g. `studio-define-pricing`) | `<name>` — the prefix simply drops |
+| `define-leverage-finder` / `studio-define-leverage-finder` (before 1.12.0) | `define-idea-finder` |
+| `mini-launch` / `studio-launch` (before 1.14.0) | Retired — launches are no longer part of the system. Annotate the step as retired. |
+| `define-product` / `studio-define-product` (before 1.14.0) | Retired — the Define skills write `docs/DEFINE.md` directly, so there's no synthesis step. Annotate the step as retired. |
+| `docs/PRODUCT.md` | `docs/DEFINE.md` |
 
 Annotate, don't recompose: this pass adjusts details the coach couldn't see, it does not redesign the programme. Anything bigger — the member's situation has genuinely changed, a phase no longer fits — goes back to the coach, who re-runs the intake and re-delivers an updated `PLAN.md` (replace `docs/PLAN.md` with it when it arrives).
 
@@ -57,6 +63,12 @@ Annotate, don't recompose: this pass adjusts details the coach couldn't see, it 
 
 Setup installs the copy the member already has; it doesn't fetch a newer one. Re-running setup to pick up a new release? Run **`update`** instead — it brings `productos/` up to the latest version, moves anything an older copy left inside `productos/` into `docs/`, and runs steps 2–3 of this skill itself.
 
-## What "done" looks like
+## Verify before ending
 
-`productos/` sits inside a git repo; the root `CLAUDE.md`/`AGENTS.md` carry the PRODUCTOS block; `.gitignore` excludes `productos/`; any shipped plan now lives at `docs/PLAN.md` with its setup checks resolved or annotated; and the member knows exactly what to do first. Anything less — name the gap and fix it before ending the session.
+- [ ] `productos/` sits inside a git repo.
+- [ ] The root `CLAUDE.md`/`AGENTS.md` carry exactly one PRODUCTOS block.
+- [ ] `.gitignore` excludes `productos/` and nothing under it is tracked.
+- [ ] Any shipped plan lives at `docs/PLAN.md` with its setup checks resolved or annotated.
+- [ ] The member knows exactly what to do first.
+
+Anything less — name the gap and fix it before ending the session.

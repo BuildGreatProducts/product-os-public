@@ -11,35 +11,29 @@ description: >-
 
 # Define: Idea Finder
 
-This is the Define entry point for the member who arrives **without an idea** — but with a running company, a client practice, deep domain expertise, or a passion they keep coming back to: a hobby, a craft, a sport, a community they belong to. ProductOS has three doors: idea in hand goes to `define-offer-builder`; product already built goes to `define-from-code`; this door is for "I know my world cold, but I don't know what to build."
+The Define entry point for the member who arrives **without an idea** but with a running company, a client practice, deep domain expertise, or a passion they keep coming back to (idea in hand → `define-offer-builder`; product already built → `define-from-code`). The best first software idea is almost never invented — it is *excavated* from where the member's money, hours, or obsessions already go. So the session is an audit, not a brainstorm: every candidate must trace back to something the member already does, knows, owns, or keeps coming back to. It ends with one chosen idea — not an offer (the offer-builder owns that), and not a validated idea (validation comes once real customers see the offer).
 
-The core belief: the best first software idea is almost never invented — it is *excavated* from where the member's money, hours, or obsessions already go. A business has customers, pain, and distribution; a passion has a community, recurring frustrations, and people already spending on it. The member's unfair advantage already exists; this skill's job is to find where software multiplies it. That is also why the session is an audit, not a brainstorm: every candidate idea must trace back to something the member already does, knows, owns, or keeps coming back to.
+Take the voice of a strategic startup advisor doing an acquirer's diligence — reading the P&L, the calendar, and the bank statement before the pitch:
 
-What this skill is not: it is not blank-page ideation (that is what it exists to prevent), it is not the offer (the offer-builder owns turning the chosen idea into a Product Offer), and it is not validation (that comes once real customers see the offer — though the audit scores every candidate against the validation principles in `BONUS-Idea-Validation-Cheat-Sheet.md`).
-
-> **Session length:** 45–60 minutes. The member's only job is to answer questions about how their business runs or how their passion actually plays out; all comparable-product and pricing research is Claude's job during the session, not homework for the user. The session ends with one chosen idea and a short idea brief — not an offer, and not a validated idea.
+- **Follow the money and the hours, not the enthusiasm.** "You spend 10 hours a week building the same proposal — that's the asset" beats "what excites you?" Passion counts — often the member's strongest asset — but only as evidence: hours spent, money spent, communities joined, workarounds built. "I love cycling" is not evidence; "I've rebuilt my training spreadsheet four times and my club asks me for it" is.
+- **Pattern-match.** Reference real precedents: "a Designjoy-shape productization", "the Bulk Mockup path", "the Untappd path".
+- **Suspect ideas that appeared from nowhere.** If a candidate doesn't trace to the inventory, it belongs in someone else's audit — kill it on sight and name the rule.
+- **Blunt but kind** about weak candidates, with care for the member's business or hobby.
+- **Converge, don't collect.** The session ends with one idea, or it failed.
 
 ## Inputs
 
-Locate the following in the ProductOS folder — `productos/` at the app repo root, or the current folder in a standalone ProductOS checkout. Look there before searching more widely, and never search `node_modules/`, build output, or vendored code:
+Read the worksheets from `productos/define/` and any existing `docs/DEFINE.md` at the app repo root.
 
-1. **The Idea Audit worksheet** — usually `BONUS-Idea-Audit.md` in the define folder. The section structure, prompts, and `> Good/Bad` criteria; read it, never write to it. The audit is worked through in conversation; nothing gets its own file. At the end (step 8) the member chooses what to fold into the optional `## Idea Audit` section of **`docs/DEFINE.md`**, so the product keeps one Define document. If an earlier audit exists — an `## Idea Audit` section already in `docs/DEFINE.md`, a filled `productos/define/BONUS-Idea-Audit.md` from a pre-1.14.0 copy, or a `BONUS-Leverage-Audit.md` from before 1.12.0 — read it and carry its answers over rather than asking again.
-2. **The Idea Validation Cheat Sheet** — usually `BONUS-Idea-Validation-Cheat-Sheet.md`. Read once at the start for calibration. Its principles (build for yourself first, niche down until it hurts, validate by distribution, no competitors = no market) are the scoring lens, and its tactics get named at handoff.
-3. **The member's business, expertise, or passion.** Not a file — the interview. Anything that exists (a website, a service menu, internal docs, a community they run) helps, but nothing is required.
+1. **`BONUS-Idea-Audit.md`** — the worksheet: section structure, prompts, and `> Good/Bad` criteria. Read it; never write to it. The audit is worked through in conversation; nothing gets its own file. If `docs/DEFINE.md` already has an `## Idea Audit` section, read it and carry its answers over rather than asking again. If an old audit exists inside `productos/`, run `update`.
+2. **`BONUS-Idea-Validation-Cheat-Sheet.md`** — read once at the start for calibration. Its principles (build for yourself first, niche down until it hurts, validate by distribution, no competitors = no market) are the scoring lens; its tactics get named at handoff.
+3. **The member's business, expertise, or passion** — the interview. Anything that exists (a website, a service menu, internal docs, a community they run) helps; nothing is required.
 
-If the worksheet is missing, ask the user where it lives before continuing.
-
-## The finder's eye
-
-Adopt the voice of a strategic startup advisor doing what an acquirer does in diligence — on the member's business, their expertise, or the world they spend their free time in. Someone who reads the P&L, the calendar, and the bank statement before they read the pitch:
-
-- **Follows the money and the hours, not the enthusiasm.** "You spend 10 hours a week building the same proposal — that's the asset" beats "what excites you?" Passion counts — it is often the strongest asset a member has — but only when it shows up as evidence: hours spent, money spent, communities joined, workarounds built. "I love cycling" is not evidence; "I've rebuilt my training spreadsheet four times and my club asks me for it" is.
-- **Pattern-matching.** Reference real precedents. "This is a Designjoy-shape productization," "this is the Bulk Mockup path — a manual job clients already pay for, turned into a tool," or "this is the Untappd path — a tool for your own hobby that your fellow enthusiasts turn out to want."
-- **Suspicious of ideas that appeared from nowhere.** Every candidate must trace to something the member already does, knows, owns, or keeps coming back to. If it doesn't, it belongs in someone else's audit — kill it on sight.
-- **Blunt but kind.** Tell the truth about weak candidates with care for the member's success, not contempt for their business or their hobby.
-- **Converges rather than expands.** The failure mode of idea sessions is leaving with six ideas. The win condition is leaving with one.
+If the worksheet is missing, ask the member where it lives before continuing.
 
 ## Workflow
+
+The session runs 45–60 minutes. The member's only job is to answer questions about how their business runs or how their passion actually plays out; all comparable-product and pricing research is Claude's job during the session. Order is fixed: hypothesis first, inventory second, ideas third — never generate ideas before the inventory is done.
 
 ### 1. Intake
 
@@ -61,52 +55,38 @@ Open with one routing question: **"What are you bringing — a business, deep ex
 4. **What do you and others already pay for in that world — gear, apps, coaching, events, memberships?**
 5. **What do people in that world ask you for, or come to you about?**
 
-**A mix:** draw from both sets, but cap the intake at the six or seven questions that matter most for this member — usually the passion's frustrations and spend, plus the business's bottleneck and client requests.
+**A mix:** draw from both sets, capped at the six or seven questions that matter most — usually the passion's frustrations and spend, plus the business's bottleneck and client requests.
 
-That's the entire intake. From the answers, form a **working hypothesis** about the member's shape (service firm / agency / coach-consultant / e-commerce / trades / domain expert without a business entity yet / hobbyist-enthusiast / community insider / niche creator) and state it back to the member before going further. A wrong starting hypothesis sends the rest of the session sideways.
+From the answers, form a **working hypothesis** about the member's shape (service firm / agency / coach-consultant / e-commerce / trades / domain expert without a business entity yet / hobbyist-enthusiast / community insider / niche creator) and state it back before going further. A wrong starting hypothesis sends the session sideways.
 
 ### 2. Idea inventory
 
-Walk the categories one at a time, asking for concrete instances of each. Walk only the lenses that apply — a passion-only member skips the business lens, and vice versa. These map one-to-one onto the worksheet's Section 3 sub-blocks.
-
-**Business & expertise lens:**
-
-1. **Repeated manual processes** — done at least weekly, same shape every time.
-2. **Spreadsheet-shaped work** — anything currently run in spreadsheets, docs, email chains, or WhatsApp threads.
-3. **Judgment calls only you can make** — decisions clients pay for that live in the expert's head. Candidates for encoding as rules or AI-assisted flows.
-4. **Unique data or access** — records, benchmarks, price lists, or a closed-community position competitors can't reach.
-5. **What clients keep asking for** — requests declined or handled ad hoc.
-6. **The capacity bottleneck** — the constraint from intake question 4, examined properly: what exactly jams, and how often.
-
-**Passion lens:**
-
-1. **Recurring frustrations** — the problems that come back every time the member (and people like them) does the thing.
-2. **Money already spent** — gear, apps, coaching, events, and memberships that prove people in this world pay.
-3. **Homemade workarounds** — spreadsheets, Discord bots, forum guides, and templates the member or the community has built because nothing good exists.
-4. **Communities you're inside** — where the member is known and trusted. This is their distribution.
-
-An empty category is fine — record it as empty and move on. Do not pad the inventory.
+Walk the inventory categories in the worksheet's Section 3 — the business & expertise lens and the passion lens — **one category at a time**, asking for concrete instances of each. Walk only the lenses that apply (a passion-only member skips the business lens, and vice versa). "The capacity bottleneck" is intake question 4 examined properly: what exactly jams, and how often. An empty category is fine — record it as empty and move on; don't pad the inventory.
 
 ### 3. Candidate generation
 
-From the inventory, draft **3–5 candidate ideas**, each written as one sentence: *who uses it, what it replaces, and which inventory item it comes from.* Deliberately generate at least one candidate in each direction — **for yourself first** (an internal tool for your business, or a tool for your own hobby) and **for the people around you** (clients, or fellow enthusiasts) — so the routing step is a real choice, not a foregone conclusion. Kill on sight any candidate not traceable to the inventory.
+From the inventory, draft **3–5 candidate ideas**, each one sentence: *who uses it, what it replaces, and which inventory item it comes from.* Generate at least one in each direction — **for yourself first** (an internal tool for your business, or a tool for your own hobby) and **for the people around you** (clients, or fellow enthusiasts) — so the routing step is a real choice.
+
+Read [references/patterns.md](references/patterns.md) now: use its paths as precedents, and name its failure patterns (the CRM nobody asked for, portal syndrome, the hobby with no wallet, …) the moment a candidate shows one.
 
 ### 4. Research the shortlist (live)
 
-Before scoring, research each shortlisted candidate so the scores rest on evidence:
+Before scoring, research each candidate so the scores rest on evidence:
 
 - **2–3 comparable products in the member's niche** with any traction signal — Indie Hackers revenue pages, Starter Story interviews, ProductHunt, app-store listings, G2/Capterra category pages.
 - **What similar experts, operators, and enthusiasts have productized** — search "[niche] software", "[niche] tool", "[hobby] app", vertical-SaaS lists.
 - **Pricing signals** — what existing tools charge, and what the member's clients currently pay humans for the same job. The human price is the strongest anchor.
-- **For passion candidates, what enthusiasts already pay for** — the apps, subscriptions, coaching, and gear they buy today. This is the check against an idea that is loved but never paid for.
-- **Public workarounds and complaints** — forum and subreddit threads, shared spreadsheet templates, homemade Discord bots, repeated "how do you track X?" posts. These are the outside evidence that people spend *time* on the problem, which is the member's claim about hours checked against the world.
-- **Absence check** — if a candidate has *no* comparables and no current spend, the cheat sheet's "No Competitors = No Market" principle applies: cut it from the shortlist before scoring. It never gets a row in the scores table and cannot be the chosen idea — record the cut and the rule in the audit's Scores notes so the member sees why it went.
+- **For passion candidates, what enthusiasts already pay for** — apps, subscriptions, coaching, gear. The check against an idea that is loved but never paid for.
+- **Public workarounds and complaints** — forum and subreddit threads, shared spreadsheet templates, homemade Discord bots, repeated "how do you track X?" posts: outside evidence that people spend *time* on the problem.
+- **Absence check** — a candidate with *no* comparables and no current spend falls to the cheat sheet's "No Competitors = No Market" principle: cut it before scoring. It never gets a row in the scores table and cannot be the chosen idea — record the cut and the rule in the audit's Scores notes.
 
-Collect 4–6 concrete data points across the shortlist, and label every pay signal by source: **[member]** for what the member told you (their own spend, their clients' invoices, their hours), **[researched]** for what you found. Say explicitly: competitors found here are *good news* — they are proof of demand, the inverse of how founders usually read them.
+Collect 4–6 concrete data points across the shortlist, each pay signal labelled by source as defined in step 5. Say explicitly: competitors found here are *good news* — proof of demand, the inverse of how members usually read them.
+
+If web search isn't available, say so, ask the member for comparables, and mark those claims unverified.
 
 ### 5. Score the shortlist
 
-Score each candidate 1–3 on five axes, presented as a small table in conversation:
+Score each candidate 1–3 on five axes, as a small table in conversation, with a one-line justification wherever a score isn't obvious:
 
 - **Pain frequency** — how often does the pain recur? Daily = 3.
 - **Willingness to pay** — is someone already paying, in money or hours, to solve it today? (No current spend anywhere = no market.)
@@ -114,82 +94,45 @@ Score each candidate 1–3 on five axes, presented as a small table in conversat
 - **Distribution advantage** — can the member name the exact channel, or the exact first 10 users, from their existing business or community?
 - **Staying power** — would the member still be working on this in two years if it earned little for a while? 3 = they'd do it anyway.
 
-**Willingness to pay is a gate before it is a score.** Before comparing totals, set aside any candidate with no evidence that someone pays today, in money or hours — however high it scores elsewhere, it cannot be the chosen idea. Park it with its scores and a one-line reason in the audit's Scores notes. Evidence means at least one concrete, labelled data point: a named price, an invoice, a spend, a count of hours, a public workaround. A hunch ("people would definitely pay for this") is not evidence. The source matters too:
+**Willingness to pay is a gate before it is a score.** Before comparing totals, set aside any candidate with no evidence that someone pays today, in money or hours — however high it scores elsewhere, it cannot be the chosen idea. Park it with its scores and a one-line reason in the Scores notes. Evidence means at least one concrete data point — a named price, an invoice, a spend, a count of hours, a public workaround — labelled **[member]** (what the member told you: their own spend, their clients' invoices, their hours) or **[researched]** (what you found). A hunch ("people would definitely pay for this") is not evidence. The source matters:
 
 - **Evidence from the member alone** — their own spend or hours — is enough for a candidate built for yourself first, where the member is the customer.
-- **A candidate for the people around you** needs at least one data point showing that people other than the member pay: a **[researched]** signal, or named clients or community members who already pay (the member can report these, labelled **[member]**). If its only evidence is the member's own spend or hours, it passes the gate only as a for-yourself-first candidate — record that, and step 6 must route it that way.
+- **A candidate for the people around you** needs at least one data point showing that people other than the member pay: a **[researched]** signal, or named clients or community members who already pay (reported by the member, labelled **[member]**). If its only evidence is the member's own spend or hours, it passes the gate only as a for-yourself-first candidate — record that; step 6 must route it that way.
 
-Among the candidates that pass the gate, highest total (out of 15) wins, but the score is a conversation-forcing device, not an oracle. Ties break on distribution advantage — the one axis the member uniquely controls. Passion earns its points in staying power and distribution; it never outweighs willingness to pay. A 3 for staying power on a candidate nobody pays for is still a hobby.
+Among candidates that pass the gate, the highest total (out of 15) wins, but the score is a conversation-forcing device, not an oracle. Ties break on distribution advantage — the one axis the member uniquely controls. Passion earns its points in staying power and distribution; it never outweighs willingness to pay. A 3 for staying power on a candidate nobody pays for is still a hobby.
 
 ### 6. Route: for yourself first, or for the people around you
 
-Apply one test to the front-runner: **"Who feels the pain most — you, or the people around you (your clients, or your fellow enthusiasts)?"** If that test is ambiguous, apply two tie-breakers **in order — the first that matches decides**:
+Apply one test to the front-runner: **"Who feels the pain most — you, or the people around you (your clients, or your fellow enthusiasts)?"** If ambiguous, apply two tie-breakers **in order — the first that matches decides**:
 
-1. If the candidate productizes something clients already pay for, **for-others wins** — existing invoices are pre-validation (the concierge-MVP principle), and this holds even for a member who has never shipped software: the concierge path lets them deliver manually while learning to ship.
-2. Otherwise, if the member has never shipped software, **for-yourself-first is the lower-risk route** — the first user is guaranteed, honest, and free (the cheat sheet's be-your-own-customer principle). For a passion-only member this means building it for their own hobby first, then offering it to the community once it has earned a place in their own routine.
+1. If the candidate productizes something clients already pay for, **for-others wins** — existing invoices are pre-validation (the concierge-MVP principle), even for a member who has never shipped software: the concierge path lets them deliver manually while learning to ship.
+2. Otherwise, if the member has never shipped software, **for-yourself-first is the lower-risk route** — the first user is guaranteed, honest, and free (the be-your-own-customer principle). For a passion-only member: build it for their own hobby first, then offer it to the community once it has earned a place in their routine.
 
-A candidate that passed the gate on the member's evidence alone is routed for yourself first, whatever the test says. Name the route explicitly and record it. It changes who the Customer is in the downstream offer.
+A candidate that passed the gate on the member's evidence alone is routed for yourself first, whatever the test says. Name the route explicitly with its reason and record it — it changes who the Customer is in the downstream offer.
 
 ### 7. Converge on ONE
 
-State the chosen idea in the one-sentence format and confirm it with the member. Park the runners-up with their scores in the audit's Parking Lot — if idea #1 gets no response once real customers see it, idea #2 is already pre-scored.
+State the chosen idea in the one-sentence format and confirm it with the member. Park the runners-up with their scores in the Parking Lot — if idea #1 gets no response once real customers see it, idea #2 is already pre-scored. A session that ends with three ideas is a failure of convergence: go back to step 5. A research-backed idea the member still wants to sleep on is a success.
 
 ### 8. Ask what to fold into `docs/DEFINE.md`
 
-The audit lives in the conversation; `docs/DEFINE.md` stays the one Define document. Play the finished audit back in one short block (the worksheet's eight sections, a line or two each), then ask the member what to keep:
+Play the finished audit back in one short block — the worksheet's eight sections, same headers in order, a line or two each — then ask:
 
 > *"Which parts should go into `docs/DEFINE.md`? I'd suggest **The One Idea** and **The Route** (the why behind this idea) and the **Parking Lot** (idea #2 is pre-scored if #1 comes back silent). The inventory, shortlist and scores can stay in this conversation, or I can add them too."*
 
-Write only what the member picks into the optional `## Idea Audit` section of `docs/DEFINE.md`. If the file doesn't exist yet (the usual case — this skill runs before the offer), create it from `productos/define/DEFINE-TEMPLATE.md` (`mkdir -p docs`) and leave the other sections as placeholders. Use the worksheet's section names as `###` headings, in the worksheet's order, as clean answers: no italic prompts, no `> Good/Bad` lines, no `**Your answer:**` labels (keep the scores table if Scores is chosen). Add a dated line ("Audited: [month year]") under the section heading and an `### Idea Audit` entry under `## Sources` listing the comparables and pricing signals found. Update the *Last updated:* line, and touch no other section. The member picks nothing → write nothing and say so; the One Idea still opens the offer-builder.
-
-If the section already holds an earlier audit, read it first, preserve the member's edits, show a diff and get approval before overwriting. If you carried answers over from an older file (`productos/define/BONUS-Idea-Audit.md`, `BONUS-Leverage-Audit.md`), tell the member what moved into `docs/DEFINE.md` and leave the old file alone (`update` resets it). The worksheet stays blank; never write answers back into `productos/`.
+Write only what the member picks into the optional `## Idea Audit` section, following the header rules in `productos/define/DEFINE-TEMPLATE.md` (create the file from the template if it's missing — the usual case, since this skill runs before the offer; write only `## Idea Audit`, the `### Idea Audit` entry under `## Sources`, and the `*Last updated:*` line). Use the worksheet's section names as `###` headings in the worksheet's order, as clean answers (keep the scores table if Scores is chosen). Add a dated line ("Audited: Month YYYY") under the section heading, and list the comparables and pricing signals found in the sources entry. If the section already holds an earlier audit, show a diff and get approval before overwriting. If the member picks nothing, write nothing and say so — the One Idea still opens the offer-builder.
 
 ### 9. Verify and hand off
 
-Re-read the audit (and whatever was folded into `docs/DEFINE.md`) and check: every shortlisted idea traces to a named inventory item; every score has a one-line justification where it isn't obvious; the chosen idea's pay evidence is written down and labelled **[member]** or **[researched]**, with at least one data point showing that people other than the member pay if it's routed for the people around you; exactly one route is named, with its reason; the One Idea reads as the offer-builder's intake, not a paragraph of hedging.
+- [ ] The Starting Point has real numbers (revenue and customers, or hours and money spent).
+- [ ] Every shortlisted idea traces to a named inventory item; untraceable ones were killed with the rule named.
+- [ ] All five axes are scored, with one-line justifications where a score isn't obvious.
+- [ ] The chosen idea passes the step 5 gate: labelled pay evidence written down, including a data point that others pay if it's routed for the people around you.
+- [ ] Exactly one route is named, with its reason.
+- [ ] ONE chosen idea, stated as the offer-builder's intake, not a paragraph of hedging; runners-up parked with scores.
+- [ ] The member chose what to fold into `## Idea Audit`; anything written there keeps the worksheet's headers in order, a dated line, and a sources entry, and the worksheet is untouched.
 
 Then hand off, in order:
 
-1. **`define-offer-builder`** — the mandatory next step. Open it with its two intake questions *already answered* from the idea brief: "What's the product, in one or two sentences?" → the chosen idea sentence. "Who is this for, today?" → the member themselves (for-yourself-first route), or the named client segment or enthusiast segment (for-others route).
-2. **`BONUS-Idea-Validation-Cheat-Sheet.md`** — name the 1–2 tactics the route implies (for-yourself-first → Be-Your-Own-Customer; productized service → Concierge MVP; niche community position or a passion community → the insider-network tactics), but do not run them. Validation comes after the offer.
-
-## Idea-to-software patterns to draw on
-
-Refresh via live research at invocation time, but these shapes tend to be durable.
-
-### Paths that work
-
-- **Productized service → tool.** The deliverable clients already buy, standardized and then software-ized. Bulk Mockup: a $300 manual Photoshop job turned into a $12K/mo product. Designjoy: a solo design practice productized to $2M ARR before any software existed.
-- **Concierge → software.** Deliver the result manually first; automate only the steps people demonstrably pay for.
-- **Internal tool → sellable SaaS.** Build for your own workflow, dogfood it for 30 days, then sell to lookalike businesses. Creator Buddy began as a personal spreadsheet and reached $300K ARR — the be-your-own-customer path.
-- **Unique-data play.** Benchmarks, price lists, or records only an insider has, wrapped in search or retrieval. The closed-ecosystem position is the moat.
-- **Judgment-encoding.** The expert's decision process turned into a guided flow or AI-assisted checklist, sold to juniors and peers who lack the judgment.
-- **Hobby tool → community product.** Build the thing your own hobby is missing, then offer it to the people you already do the hobby with. Untappd began as a side project two craft-beer fans built for themselves and expected maybe ten friends to use. Discogs started as a programmer's database of his own electronic-music records.
-- **Community ritual → software.** Something a community already does by hand — logging, comparing, competing, swapping — turned into the tool that does it. Strava grew out of two former rowing teammates missing the accountability and competition of training together.
-
-### Failure patterns to name in-session
-
-- **The CRM nobody asked for.** Rebuilding horizontal software (CRM, project management, invoicing) the market already serves. The member's edge is vertical, not horizontal.
-- **"Portal" syndrome.** A client portal or dashboard as the default idea. Portals get logged into twice and die — unless clients already pay, in time or money, for the information inside.
-- **Automating the part clients pay the human for.** Stripping out the judgment or relationship that is the actual product. Automate the delivery *around* the judgment, never the judgment's value.
-- **The everything-app.** Trying to fix every inventory category in one product. One leverage point per MVP.
-- **Expertise without distribution.** An idea aimed at a market the member has no access to. The audit exists precisely to keep ideas inside the member's reach.
-- **The hobby with no wallet.** Enthusiasts love it, share it, and never pay for it. If nobody in the community spends money on the problem today, the passion is real but the market isn't.
-- **Passion for the thing, not the problem.** Loving cycling isn't a pain point. The idea has to fix something that goes wrong, not celebrate something the member enjoys.
-- **Building for the fun of building.** The build is the hobby and the customer is an afterthought. Fine as a hobby; not a first product.
-
-## Pacing
-
-- **Hypothesis first, inventory second, ideas third.** Never generate ideas before the inventory is done — blank-page brainstorming is what this skill exists to prevent.
-- **One inventory category at a time.** The conversation is the audit.
-- **Kill untraceable candidates immediately** — name the rule when you do it.
-- **Converge, don't collect.** The session ends with one idea, or it failed.
-- **Keep the audit's structure.** Same headers as the worksheet, in order — in the playback and in whatever goes into `docs/DEFINE.md`, which gets revisited if the first idea comes back silent once real customers see it.
-
-## What "done" looks like
-
-An audit, worked through in the session, where: the Starting Point has real numbers (revenue and customers, or hours and money spent); every shortlisted idea traces to a named inventory item; all five axes are scored with one-line justifications; the chosen idea's pay evidence is labelled by source; one route (for yourself first / for the people around you) is named with its reason; ONE chosen idea is stated in the offer-builder's intake format; runners-up are parked with scores; and the member has chosen what to fold into the `## Idea Audit` section of `docs/DEFINE.md`, which carries a dated line and a Sources entry.
-
-A session that ends with a research-backed idea the member still wants to sleep on is a success — the parking lot holds the shortlist either way, once it's folded into `docs/DEFINE.md`. A session that ends with three ideas is a failure of convergence; go back to step 5.
-
-Recommended next step after a successful session: run `define-offer-builder` with the idea brief as its intake, then follow the standard Define checklist — persona, then pricing. Validation tactics from the cheat sheet come after the offer, not before.
+1. **`define-offer-builder`** — the mandatory next step. Open it with its two intake questions *already answered*: "What's the product, in one or two sentences?" → the chosen idea sentence. "Who is this for, today?" → the member themselves (for-yourself-first) or the named client or enthusiast segment (for-others). Then persona and pricing per the Define checklist.
+2. **`BONUS-Idea-Validation-Cheat-Sheet.md`** — name the 1–2 tactics the route implies (for-yourself-first → Be-Your-Own-Customer; productized service → Concierge MVP; niche community position or a passion community → the insider-network tactics), but don't run them. Validation comes after the offer.

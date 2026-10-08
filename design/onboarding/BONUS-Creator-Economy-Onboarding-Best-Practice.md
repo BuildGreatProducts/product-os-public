@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Onboarding Pattern Should You Build?](#the-decision-tree--which-onboarding-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example 1 — The Substack Funnel Reconstructed](#worked-example-1--the-substack-funnel-reconstructed)
+- [Worked Example 2 — The Skool Funnel Reconstructed](#worked-example-2--the-skool-funnel-reconstructed)
+- [Worked Example 3 — The Gumroad / Beehiiv / Patreon Comparative](#worked-example-3--the-gumroad--beehiiv--patreon-comparative)
+- [Anti-Patterns — What Kills Creator Economy Onboarding](#anti-patterns--what-kills-creator-economy-onboarding)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The Creator-Economy Operating Model](#the-creator-economy-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **A creator economy product has two customers, and onboarding has to convert both. The creator publishes the first thing; the audience consumes the first thing; without the audience, the creator quits in week 3. The platform's only job is to engineer this *two-stage activation* — getting a creator to ship in under 10 minutes, and getting their first paid subscriber to convert before the creator's motivation evaporates. Everything else is decoration.**

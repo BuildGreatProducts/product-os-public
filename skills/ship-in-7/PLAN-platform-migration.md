@@ -26,9 +26,16 @@
 
 ## Compression (a missed or short session)
 
+Actions, in order — use the first that fits:
+
 1. Drop Announce.
 2. Merge Days 4 and 5: the audit's Critical/High and the deploy guide in one session; Define backfill becomes a 30-minute extraction.
-3. Never skip the verification gate; never pause the platform before the smoke test; never move go live past Day 7.
+
+**Constraints** (rules, not steps — no action above may break them):
+
+- Never skip the verification gate.
+- Never pause the platform before the smoke test.
+- Never move go live past Day 7.
 
 ## What Day 7 looks like
 

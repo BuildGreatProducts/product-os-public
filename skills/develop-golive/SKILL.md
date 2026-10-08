@@ -18,7 +18,7 @@ The voice is a patient senior engineer onboarding a smart non-technical founder:
 
 Read the repository thoroughly before writing anything. Establish:
 
-- **What the product is and where it runs** — web app, mobile app (App Store / Google Play), desktop, or a mix. Detect the framework, backend, database, auth, and payment providers from the code and dependencies — don't ask the user things the code answers.
+- **What the product is and where it runs** — web app, mobile app (App Store / Google Play), desktop, or a mix. Detect the framework, backend, database, auth, and payment providers from the code and dependencies — don't ask the member things the code answers.
 - **Configuration state** — environment variables used in code vs. what's documented (`.env.example` or similar), hardcoded values that must become secrets, test/sandbox keys that need live equivalents.
 - **Third-party services** — every external service the app calls, and what each needs in production (live API keys, webhook endpoints, billing enabled).
 - **Deploy readiness** — existing deploy config (e.g. `vercel.json`, `Dockerfile`, `eas.json`), build scripts, whether the production build currently succeeds, test status.
@@ -26,7 +26,7 @@ Read the repository thoroughly before writing anything. Establish:
 - **Security gate** — read `docs/SECURITY-AUDIT.md`. If it doesn't exist, or its verdict is **Not safe to launch**, the guide's first phase is "run `develop-security-audit` and clear every Critical and High finding" (DEVELOP-CHECKLIST Step 8 comes before Step 9). Say so in the confirmation message.
 - **Launch gaps** — things customers-facing products need that the code may lack: error tracking, analytics, legal pages (privacy policy, terms), a custom domain, database backups, app store assets for mobile.
 
-Confirm the picture with the user in one short message (product type, stack, the services found) plus any genuinely unanswerable questions — e.g. do they own a domain, do they have accounts with the detected services, is there a launch deadline. If `docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` is open **and its plan table names a go-live session** (Ship in 7 always does; Sell in 30 only on its one-deploy-away path), that session is the deadline: the guide's estimated total time must fit the sessions left, and if it can't, say so now and name what to cut (the custom domain and the app-store path are the usual candidates) rather than letting the member discover it on the last day.
+Confirm the picture with the member in one short message (product type, stack, the services found) plus any genuinely unanswerable questions — e.g. do they own a domain, do they have accounts with the detected services, is there a launch deadline. If `docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` is open **and its plan table names a go-live session** (Ship in 7 always does; Sell in 30 only on its one-deploy-away path), that session is the deadline: the guide's estimated total time must fit the sessions left, and if it can't, say so now and name what to cut (the custom domain and the app-store path are the usual candidates) rather than letting the member discover it on the last day.
 
 ## Step 2: Write `docs/DEPLOY.md`
 
@@ -54,9 +54,18 @@ Write the guide to `docs/DEPLOY.md` (create the folder if needed). Structure:
 - Plain-language instructions. Explain every technical term inline on first use — e.g. *"DNS (the address book that points your domain name at your app's server)"*, *"environment variable (a setting stored outside your code, used for secrets like API keys)"*, *"webhook (a way for one service to automatically notify another when something happens, like a successful payment)"*.
 - For 🤖 steps: a ready-to-paste prompt for the coding agent, in a quote block.
 - For 🧑 steps: exactly where to click/go, what they'll be asked for, and any cost.
-- A "**You'll know it worked when...**" line so the founder can verify each step without guessing.
+- A "**You'll know it worked when...**" line so the member can verify each step without guessing.
 
-## Step 3: Walk the user in
+**Verify before delivering** — re-read `docs/DEPLOY.md`:
+
+- [ ] Every step has a checkbox, a 🧑/🤖/🤝 marker, a time estimate, and a "You'll know it worked when…" line.
+- [ ] Every 🤖 step has a ready-to-paste prompt; every 🧑 step says where to go, what they'll be asked for, and the cost.
+- [ ] Every technical term is explained inline on first use.
+- [ ] Secrets are never pasted into chat or committed — the guide says so explicitly, and every secret goes straight into the hosting platform's settings.
+- [ ] The security gate is honored (a clean `docs/SECURITY-AUDIT.md`, or clearing it is the first phase), and audit blockers are Phase 0.
+- [ ] The guide ends with the real-customer smoke test, and the estimated total time fits any open challenge's go-live session.
+
+## Step 3: Walk the member in
 
 Don't just drop the file. Present a short summary in conversation: how many steps, the few 🧑 items they personally must do, total estimated cost per month, and the recommended first step. Offer to execute the first 🤖 step now.
 
@@ -64,6 +73,6 @@ Don't just drop the file. Present a short summary in conversation: how many step
 
 - Be honest about cost, time, and risk — store review delays, DNS propagation ("can take up to a day"), payment provider verification.
 - Recommend one path, not a menu. The audit chose the stack; the guide commits to the matching deployment route.
-- Never instruct the user to share secrets in chat; secrets go directly into the hosting platform's settings.
+- Never instruct the member to share secrets in chat; secrets go directly into the hosting platform's settings.
 - If the audit finds blockers (failing build, hardcoded secrets, no payment webhooks), the guide's Phase 0 is fixing them — each as a 🤖 step with a prompt.
 - The product isn't "deployed" until the smoke test passes as a real customer.

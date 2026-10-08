@@ -2,6 +2,16 @@
 
 *A bonus asset for ProductOS — 15 tactics, 8 principles, and a decision tree pulled from 400 founder interviews.*
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The 8 Principles](#the-8-principles)
+- [The Decision Tree — Which Test Should You Run?](#the-decision-tree--which-test-should-you-run)
+- [The 15 Tactics](#the-15-tactics)
+- [What Counts as Validation (and What Doesn't)](#what-counts-as-validation-and-what-doesnt)
+- [The Most Common Validation Mistakes](#the-most-common-validation-mistakes)
+- [Final Note](#final-note)
+
 ---
 
 ## The Meta-Rule

@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Onboarding Pattern Should You Build?](#the-decision-tree--which-onboarding-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example 1 — The Grammarly Funnel Reconstructed](#worked-example-1--the-grammarly-funnel-reconstructed)
+- [Worked Example 2 — The Loom Funnel Reconstructed](#worked-example-2--the-loom-funnel-reconstructed)
+- [Worked Example 3 — The 2026 AI Extension Wave (Perplexity / Claude for Chrome / HARPA)](#worked-example-3--the-2026-ai-extension-wave-perplexity--claude-for-chrome--harpa)
+- [Anti-Patterns — What Kills Browser Extension Onboarding](#anti-patterns--what-kills-browser-extension-onboarding)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The Browser-Extension Operating Model](#the-browser-extension-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **A browser extension is an invisible product. The user installs it, the icon disappears into a menu, and either the extension proves it works by silently completing the user's actual task — saving a password, fixing a typo, finding a coupon, summarizing a page — or it gets uninstalled by Sunday. Onboarding is the brief window between install and the first invisible win, and every screen, permission, and pin-to-toolbar prompt either accelerates or kills that window.**

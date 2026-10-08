@@ -23,10 +23,16 @@
 
 ## Compression (a missed or short session)
 
+Actions, in order — use the first that fits:
+
 1. Drop Announce.
 2. Merge Days 3–4 into one: the magic moment screen and the screen before it, nothing else.
 3. Merge Words into Look: identity in a paragraph from `docs/DEFINE.md`, `docs/COPY.md` from the ux-writing skill's defaults without the audit pass.
-4. Never move the gate after go live; never move go live past Day 7.
+
+**Constraints** (rules, not steps — no action above may break them):
+
+- Never move the gate after go live.
+- Never move go live past Day 7.
 
 ## What Day 7 looks like
 

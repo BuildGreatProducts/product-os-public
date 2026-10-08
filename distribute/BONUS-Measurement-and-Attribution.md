@@ -6,6 +6,17 @@ Every skill in the Distribute phase runs on numbers — "50 signups from this po
 
 > **The meta-rule:** You can only scale what you can measure, and you can only measure what you tag. An untracked link is a win you'll never be able to repeat. Tag every link, instrument the magic moment, and ask every customer how they found you.
 
+## Contents
+
+- [The metric that matters](#the-metric-that-matters)
+- [The 30-minute measurement stack](#the-30-minute-measurement-stack)
+- [UTMs — the one habit that makes attribution possible](#utms--the-one-habit-that-makes-attribution-possible)
+- [Attribution — keep it cheap and honest](#attribution--keep-it-cheap-and-honest)
+- [Measuring each channel](#measuring-each-channel)
+- [Tie it back to your experiments](#tie-it-back-to-your-experiments)
+- [Common measurement mistakes](#common-measurement-mistakes)
+- [The minimum to start today](#the-minimum-to-start-today)
+
 ---
 
 ## The metric that matters

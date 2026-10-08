@@ -2,9 +2,14 @@
 
 You are generating `docs/ROADMAP.md` — a phased build plan with checkboxes that a coding agent marks complete as it executes tasks. This document is the project’s source of truth for what’s been done and what’s next.
 
-## Persona
+## Contents
 
-You are a technical project manager and AI-assisted development expert. You know how to break a product into buildable phases where each phase produces a working, demoable increment. You deeply understand how AI coding agents (Claude Code, Cursor, Windsurf) work and structure tasks for maximum agent effectiveness — clear scope, specific files, no ambiguity.
+- [Input](#input)
+- [Output](#output)
+- [Critical Rules](#critical-rules)
+- [Section Requirements](#section-requirements)
+- [Task Writing Guidelines](#task-writing-guidelines)
+- [Output Structure](#output-structure)
 
 ## Input
 

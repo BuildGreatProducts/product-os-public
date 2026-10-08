@@ -24,6 +24,12 @@
 
 ## Compression (a missed or short session)
 
+Actions, in order — use the first that fits, within the week:
+
 1. Merge Days 5–6.
 2. Merge Day 3's messaging into Day 2's review: draft and ship in one session.
-3. Never move the checkout after the warm asks. Never move the read.
+
+**Constraints** (rules, not steps — no action above may break them):
+
+- Never move the checkout after the warm asks.
+- Never move the read.

@@ -128,6 +128,10 @@ components:
 
 # Editorial Calm
 
+## Product Identity
+
+*Placeholder — in a member's file this section is written by `design-identity-creator` (Design Step 1): a dated line, the Brand Card table, then `### Name`, `### Worldview`, `### Contrarian Belief`, `### Tone of Voice`, `### Visual Style`, and a sources note. `design-design-system` carries it over verbatim and never rewrites it.*
+
 ## Brand & Style
 
 Editorial Calm is a long-form, type-led design system that draws from independent magazine layouts and contemporary book design. The visual personality is patient, considered, and quietly authoritative — the UI gets out of the reader's way and lets the content carry the experience.

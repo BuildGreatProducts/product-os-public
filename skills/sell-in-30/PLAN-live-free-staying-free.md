@@ -23,7 +23,12 @@
 
 ## Compression (a missed or short session)
 
+Actions, in order — use the first that fits, within the week:
+
 1. Merge Days 5–6.
 2. Merge Day 2 into Day 1.
 3. Merge Day 3 into Day 4: the stranger walk in the morning, the asks in the afternoon.
-4. Never move the read.
+
+**Constraints** (rules, not steps — no action above may break them):
+
+- Never move the read.

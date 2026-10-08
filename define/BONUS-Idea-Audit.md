@@ -2,6 +2,17 @@
 
 The structure and guidance for the idea audit — finding the one MVP hiding in your existing business, expertise, or passion — which `define-idea-finder` works through with you in conversation. At the end you choose which parts to keep in the optional `## Idea Audit` section of `docs/DEFINE.md`. This worksheet itself stays blank. Run it when you arrive at ProductOS with a running business, deep domain knowledge, or a hobby or community you keep coming back to — but no software idea yet. It ends with one chosen idea, stated in exactly the form the offer-builder's intake needs. Each answer is 1-2 sentences max unless the prompt says otherwise.
 
+## Contents
+
+- [1. Starting Point](#1-starting-point)
+- [2. Where the Time Goes](#2-where-the-time-goes)
+- [3. Idea Inventory](#3-idea-inventory)
+- [4. Idea Shortlist](#4-idea-shortlist)
+- [5. Scores](#5-scores)
+- [6. The Route](#6-the-route)
+- [7. The One Idea (Idea Brief)](#7-the-one-idea-idea-brief)
+- [8. Parking Lot](#8-parking-lot)
+
 ---
 
 ## 1. Starting Point

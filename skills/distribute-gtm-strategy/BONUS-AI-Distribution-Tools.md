@@ -6,6 +6,18 @@ A curated stack for getting your product in front of people — across organic c
 
 > Batch codes: W = Winter, S = Summer, F = Fall. So "YC S23" = Summer 2023.
 
+## Contents
+
+- [1. Organic social & short-form video](#1-organic-social--short-form-video)
+- [2. SEO & content marketing](#2-seo--content-marketing)
+- [3. GEO / AEO — getting found inside AI answers](#3-geo--aeo--getting-found-inside-ai-answers)
+- [4. Outreach & lead generation](#4-outreach--lead-generation)
+- [5. Paid ads — creative & management](#5-paid-ads--creative--management)
+- [6. Influencer & creator marketing](#6-influencer--creator-marketing)
+- [7. Email & lifecycle marketing](#7-email--lifecycle-marketing)
+- [8. All-in-one GTM agents](#8-all-in-one-gtm-agents)
+- [A starter stack (if you only pick a few)](#a-starter-stack-if-you-only-pick-a-few)
+
 ---
 
 ## 1. Organic social & short-form video

@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Kind of String Am I Writing?](#the-decision-tree--which-kind-of-string-am-i-writing)
+- [The 20 Tactics](#the-20-tactics)
+- [Worked Example 1 — The Destructive Delete Flow](#worked-example-1--the-destructive-delete-flow)
+- [Worked Example 2 — The Error-and-Recovery Flow](#worked-example-2--the-error-and-recovery-flow)
+- [Worked Example 3 — The First-Run Empty State + Permission Ask](#worked-example-3--the-first-run-empty-state--permission-ask)
+- [Anti-Patterns — What Kills In-Product Copy](#anti-patterns--what-kills-in-product-copy)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The UX Writing Operating Model](#the-ux-writing-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **Every in-product string exists to help a busy person mid-task take their next action. The reader is not browsing — they are doing something, and your words are in the way of it. So the priority order is fixed: clear beats concise, concise beats consistent, consistent beats voice, and voice beats wit — and you only get to spend the next level down once the level above is satisfied. The best interface copy is the copy nobody notices, because they never had to stop and read it twice.**

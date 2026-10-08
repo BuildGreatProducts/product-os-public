@@ -8,6 +8,15 @@
 
 This is the same idea as *Validate by Distribution* from `productos/define/BONUS-Idea-Validation-Cheat-Sheet.md`: if you can't name the exact subreddit, hashtag, search query, or marketplace where your first 100 users already are, the product won't sell no matter how good it is. Distribution isn't what you do after you build — it's the bet the build rests on. Your channel choice should fall straight out of the Customer Persona in `docs/DEFINE.md` (where they spend time) and its Pricing Strategy (what your price can afford to spend acquiring them).
 
+## Contents
+
+- [Pick your channel first](#pick-your-channel-first)
+- [The twelve channels](#the-twelve-channels)
+- [Running more than one channel](#running-more-than-one-channel)
+- [A starter sequence (by who you're selling to)](#a-starter-sequence-by-who-youre-selling-to)
+- [The most common channel mistakes](#the-most-common-channel-mistakes)
+- [Final note](#final-note)
+
 ---
 
 ## Pick your channel first

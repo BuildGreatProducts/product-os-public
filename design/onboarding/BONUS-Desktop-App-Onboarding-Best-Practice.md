@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Onboarding Pattern Should You Build?](#the-decision-tree--which-onboarding-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example 1 — The Granola Funnel Reconstructed](#worked-example-1--the-granola-funnel-reconstructed)
+- [Worked Example 2 — The Raycast Funnel Reconstructed](#worked-example-2--the-raycast-funnel-reconstructed)
+- [Worked Example 3 — The Notion / Linear / Figma Desktop Funnel](#worked-example-3--the-notion--linear--figma-desktop-funnel)
+- [Anti-Patterns — What Kills Desktop App Onboarding](#anti-patterns--what-kills-desktop-app-onboarding)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The Desktop-App Operating Model](#the-desktop-app-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **A desktop app is an active commitment. The user downloaded, opened, granted permissions, and now keeps it in their dock. Every one of those steps had friction the web app didn't — and the user crossed each one because they expect the desktop app to be faster, more keyboard-driven, more native-feeling, and more powerful than the web equivalent. Onboarding is the act of proving each of those expectations is true, before the dock icon becomes one of the ten the user never clicks.**

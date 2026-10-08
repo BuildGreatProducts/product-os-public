@@ -2,6 +2,15 @@
 
 Five completed personas across different software business models — vertical B2B SaaS, agent-native app, AI-enabled service, consumer mobile subscription, and developer tools. Use these as references when filling out [Customer Persona Framework](2-Customer-Persona.md) for your own customer. Each answer follows the framework's "good" guidance: specific, dated, evidence-backed, and tight enough that a stranger could re-recognize the person.
 
+## Contents
+
+- [Example 1 — Vertical B2B SaaS: Dental Practice Management](#example-1--vertical-b2b-saas-dental-practice-management)
+- [Example 2 — Agent-Native App: Autonomous Outbound for Founder-Led Sales](#example-2--agent-native-app-autonomous-outbound-for-founder-led-sales)
+- [Example 3 — AI-Enabled Service: Done-For-You Bookkeeping for Trades](#example-3--ai-enabled-service-done-for-you-bookkeeping-for-trades)
+- [Example 4 — Consumer Mobile Subscription: Sleep Recovery for New Parents](#example-4--consumer-mobile-subscription-sleep-recovery-for-new-parents)
+- [Example 5 — Developer Tool: LLM Observability for Growth-Stage Engineering](#example-5--developer-tool-llm-observability-for-growth-stage-engineering)
+- [How to use these examples](#how-to-use-these-examples)
+
 ---
 
 ## Example 1 — Vertical B2B SaaS: Dental Practice Management

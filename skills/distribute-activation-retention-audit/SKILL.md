@@ -11,39 +11,33 @@ description: >-
 
 # Distribute: Activation & Retention Audit
 
-This skill runs in the **app repo** — the repository that contains `productos/` — and produces a prioritized **activation and retention audit** — the leaks between "users arrive" and "users stay." The output is `docs/ACTIVATION-RETENTION-AUDIT.md` (creating `docs/` if needed): a scored breakdown of the activation path (signup → magic moment) and the retention loop (what brings users back), each finding tagged by severity, file location, and the fix — ending in a paste-ready prompt the user can drop into their coding agent to fix the top leaks in one pass.
-
-This exists because of the **leaky bucket**: scaling acquisition into a product that doesn't activate or retain just pours water through the holes. Before a founder runs the Scale skill and pours traffic on, this audit finds the holes. Most products lose more users to three or four fixable code gaps — a signup wall before any value, a blank empty state, no re-engagement email at all, an activation event that isn't even tracked — than to anything wrong with their acquisition.
+Run in the **app repo** — the repository that contains `productos/` — and produce a prioritized audit of the leaks between "users arrive" and "users stay": a scored breakdown of the activation path (signup → magic moment) and the retention loop (what brings users back), each finding tagged by severity, file location, effort, impact, and the fix — ending in a paste-ready prompt the member can drop into their coding agent. The output is `docs/ACTIVATION-RETENTION-AUDIT.md` (create `docs/` if needed). It runs before `distribute-scale-automate`: scaling acquisition into a product that doesn't activate or retain pours water through the holes.
 
 **Boundary with the other two codebase audits — keep them distinct:**
 
-- **`develop-cro-audit`** covers *arrive → sign up / pay* (conversion surfaces: performance, forms, CTAs, pricing, trust). If a finding is about getting a visitor to convert, it belongs there.
+- **`develop-cro-audit`** covers *arrive → sign up / pay* (conversion surfaces: performance, forms, CTAs, pricing, trust). If a finding is about getting a visitor to convert, note it and defer there; don't double-count.
 - **`develop-design-review`** covers *does the UI match `DESIGN.md`* (visual consistency).
-- **This skill** covers *sign up → reach the magic moment → come back* (everything after the conversion). When in doubt: CRO ends at the signup/payment event; this skill begins there.
-
-The voice is a senior activation and lifecycle consultant who has audited hundreds of products and knows the 2026 patterns that separate products retaining 40%+ at Day 1 from products leaking 75% of signups in the first session. The job is not to reassure; it's to surface the specific code gaps bleeding activation and retention right now, ranked by effort × impact, pointed at the exact files where the fixes live.
+- **This skill** covers *sign up → reach the magic moment → come back*. When in doubt: CRO ends at the signup/payment event; this skill begins there.
 
 ## The auditor's voice
+
+A senior activation and lifecycle consultant. The job is not to reassure; it's to surface the specific code gaps bleeding activation and retention, ranked by effort × impact, pointed at the exact files.
 
 - **Honest about severity.** A signup wall before any value is a P0; a missing milestone email is a P2. Don't conflate them.
 - **Specific to the file.** Never "onboarding is too long." Always "`src/onboarding/Wizard.tsx` forces 7 screens with no skip before the first value; the benchmark is ≤3."
 - **Effort × Impact aware.** Sort by effort × impact, not severity alone. A 2-hour dunning-email fix that recovers passive churn beats a 2-week gamification build.
-- **Calibrated to the product type.** Don't demand daily push notifications from a tax-filing app; don't accept "no re-engagement at all" from a habit tracker.
-- **Code-review tone.** The user is a technical founder; give findings they can implement, not advice they have to translate.
+- **Calibrated to the product type.** Don't demand daily push notifications from a tax-filing app; don't accept "no re-engagement at all" from a habit tracker. Penalizing a transactional product for lacking daily mechanics is the single most common mistake.
+- **Code-review tone.** Give findings the member can implement, not advice they have to translate.
 
 ## Inputs
 
-1. **The user's product codebase** — **required**. Run in the repo root; detect the framework (Next.js, Vite/React, Vue/Nuxt, SvelteKit, Remix, native iOS/Android, Electron/Tauri, Expo/React Native, backend frameworks) before scanning so the file heuristics apply.
-
-2. **Magic Moment** — at `docs/MAGIC-MOMENT.md`. **The most valuable input** — absent only in a repo without ProductOS — it names the activation event the whole audit measures against. If absent, ask: *"What's the one action that makes a user 'get it' — the moment they feel the product working?"*
-
+1. **The product codebase** — **required**. Run in the repo root; detect the framework before scanning so the file heuristics apply.
+2. **Magic Moment** — `docs/MAGIC-MOMENT.md`. **The most valuable input** — absent only in a repo without ProductOS — it names the activation event the whole audit measures against. If absent, ask: *"What's the one action that makes a user 'get it' — the moment they feel the product working?"*
 3. **Onboarding Flow** — usually `docs/ONBOARDING.md`. **Optional.** The intended first-run path; lets the audit flag where shipped code drifted from the designed flow.
-
 4. **DEFINE.md** — usually `docs/DEFINE.md`. **Optional.** Its Summary and Offer give the product type, its Pricing Strategy the business model, and Business Strategy → North Star (when filled) the north star — which set the retention bar (daily / weekly / occasional).
+5. **Measurement & Attribution** — `productos/distribute/BONUS-Measurement-and-Attribution.md`, **if present**. Optional: the Area H checks are complete without it.
 
-5. **Measurement & Attribution** — usually `productos/distribute/BONUS-Measurement-and-Attribution.md`. **Optional.** The reference for the instrumentation check in Area H.
-
-If the ProductOS docs are absent, the skill works standalone using the calibration benchmarks embedded below and one or two clarifying questions.
+If the ProductOS docs are absent, the skill works standalone using [references/benchmarks.md](references/benchmarks.md) and one or two clarifying questions.
 
 ## Workflow
 
@@ -66,72 +60,11 @@ Before scoring, trace two paths through the actual code:
 
 ### 3. Scan the eight audit areas
 
-Walk these in order. For each, scan for the patterns, surface findings, and score them. **A–D are activation; E–H are retention.**
-
-#### A. Time-to-Value & the Activation Path
-Users who reach the "aha" in their first session (or within 48h) are ~3.4× more likely to convert to paid.
-- Count actions from auth-complete to the magic moment (cross-ref `docs/MAGIC-MOMENT.md`) — flag if >3–5, or if it requires setup/config first.
-- Is the magic moment engineered into the first-run path at all? Flag if the documented activation event isn't visibly built before the user hits the general UI.
-- "Setup tax" before value — mandatory profile completion, workspace config, integration connection. Flag anything that delays the first win.
-- A guided path to the first win vs. dumping the user into the full app.
-
-#### B. Signup Gating & Friction Walls
-The most common activation leak is a wall placed before any value.
-- Auth wall before any value — flag forced signup before a demo/sample/try-it; prefer value-first or a guest mode.
-- Permission prompts (push / location / contacts / camera) fired on first launch before value — flag (tanks opt-in and trust).
-- Hard paywall before the magic moment — flag for products that should let users *feel* value first.
-- Email-verification hard gate blocking first use — flag.
-- SSO on signup — flag if absent (every extra signup step costs activation).
-
-#### C. Empty States & First-Run Guidance
-A new user in a blank screen with no next action is a silent killer.
-- Empty-state handling — does the app open to a blank dashboard/list? Flag absence.
-- Seed/sample data or templates for first-run — flag absence where a blank workspace = no value (B2B SaaS, tools).
-- Getting-started checklist / first-action prompt / contextual tips — flag absence.
-- Progressive disclosure — flag if the full UI dumps at once instead of guiding the first action.
-- Every empty state has a primary CTA toward the magic moment — flag dead-end empty states.
-
-#### D. Onboarding Flow Friction
-- Onboarding step count (search `onboarding`/`welcome`/`getting-started` routes/components) — flag >3–5 screens. Benchmark: 3-step tours complete at ~72%, 7-step at ~16%.
-- Skippable / non-blocking — flag forced tours with no skip.
-- Required fields — flag every required field not essential to the first value.
-- Progress indication — flag missing step counter/progress.
-- Onboarding ends **at** the magic moment, not before it — flag flows that dump the user at a dashboard short of the aha. Cross-ref `docs/ONBOARDING.md` for drift.
-
-#### E. Re-engagement Channels *(the #1 retention leak)*
-The most common retention leak is *no mechanism to bring users back at all*.
-- Lifecycle email infrastructure (Resend, Postmark, SendGrid, Loops, Customer.io, Klaviyo) — flag if only transactional email exists, or none.
-- Welcome / onboarding email series — flag absence.
-- Re-engagement / win-back emails for dormant users ("you left X unfinished," "we miss you") — flag absence.
-- Milestone / triggered / behavioral emails — flag absence.
-- Push notifications (mobile/PWA): SDK present, permission asked *after* first value, and actual triggered sends wired up — flag if a daily/weekly product has no push.
-- Calibrate to the retention model: daily products need an active trigger; occasional products lean on email and can skip push.
-
-#### F. The Return Loop & Stored Value
-Is there a reason *and* a trigger to come back?
-- A recurring trigger — scheduled digests, reminders, streaks, cron jobs that nudge users back. Flag absence for habit/daily products.
-- Stored value / saved state — does use accumulate data, history, or config that creates switching cost? Flag "stateless" products that reset each session.
-- Progress / streaks / personalization that improves with use — flag if the product is identical on day 30 as day 1 (calibrate to type).
-
-#### G. Churn & Win-Back Surfaces
-Where users leave, and whether anything catches them.
-- Cancel flow — a save offer / pause / downgrade step, or one-click cancel into the void? Flag the absence of any retention step.
-- Failed-payment dunning — Stripe smart retries + dunning emails. Flag absence: involuntary/passive churn is a large share of subscription churn (often ~20–40%) and the cheapest to recover.
-- Downgrade path vs. hard cancel for price-sensitive churners — flag if cancel is the only option.
-- Exit survey / cancellation-reason capture — flag absence (silent churn teaches you nothing).
-- Grace period / post-cancel win-back offer — flag absence.
-
-#### H. Activation & Retention Instrumentation
-You can't fix a leak you can't see (cross-ref `productos/distribute/BONUS-Measurement-and-Attribution.md`).
-- Is the magic-moment / activation event tracked? Flag if the activation event doesn't fire to analytics.
-- Funnel events (signup → activated → retained) instrumented — flag gaps.
-- Retention measurability — product analytics that can cut cohorts/returns (PostHog, Mixpanel, Amplitude). Flag if only page-view analytics exist (can't see retention).
-- Churn events (cancel, payment_failed, reactivated) tracked — flag absence.
-- A retention/north-star metric visible somewhere — flag if the team is flying blind.
+Read [references/audit-areas.md](references/audit-areas.md) and walk all eight areas in order — **A–D activation** (Time-to-Value, Signup Gating, Empty States, Onboarding Friction), **E–H retention** (Re-engagement Channels, Return Loop & Stored Value, Churn & Win-Back, Instrumentation). Scan every area before drafting anything: a partial audit produces a misleading priority order.
 
 ### 4. Score and prioritize each finding
 
-Capture for each: **Area** (A–H), **Finding** (one sentence), **Location** (file + line where applicable), **Severity** (P0–P3), **Effort** (S <4h / M 1–2d / L >2d), **Estimated impact**, **Fix** (one specific, code-level paragraph).
+Read [references/benchmarks.md](references/benchmarks.md) to calibrate. Capture for each finding: **Area** (A–H), **Finding** (one sentence), **Location** (file + line where applicable — cite the file for every finding), **Severity** (P0–P3), **Effort** (`S` <4h / `M` 1–2d / `L` >2d), **Impact** (`L` / `M` / `H` — how much fixing it moves activation or retention for this retention model), **Fix** (one specific, code-level paragraph). Rank by effort × impact: `S`+`H` first.
 
 **Severity rubric:**
 - **P0** — structurally loses users now; fix this week (signup wall before any value, app opens to a dead-end blank screen, no re-engagement mechanism at all, activation event untracked).
@@ -147,93 +80,19 @@ Five gaps that almost always have a finding: (1) the **permission prompt on firs
 
 If `docs/MAGIC-MOMENT.md` or `docs/ONBOARDING.md` exist, check the shipped code against them: does the onboarding match the designed flow? Does the documented activation event actually fire and get tracked? Drift between documented strategy and shipped code is a P1 finding — the thinking was done but the code didn't follow.
 
-### 7. Draft section-by-section, then write the report
+### 7. Draft section-by-section, then write the audit
 
-Build the report one section at a time, confirming findings with the user as you go (the conversation about the leaks is the point). Then write `docs/ACTIVATION-RETENTION-AUDIT.md` (create `docs/` with `mkdir -p docs` if it doesn't exist):
-
-```
-# Activation & Retention Audit
-
-*Drafted: [Month Year]. Product type: [type]. Framework: [framework]. Retention model: [daily/weekly/occasional]. Magic moment: [event].*
-
-## Summary
-[Three sentences: total findings, P0/P1 count, the single biggest leak and its headline fix.]
-
-## Top 5 fixes ranked by effort × impact
-1. **[Finding]** — `[location]` — P[X], Effort [S/M/L], Est. impact [x]. [One-sentence fix.]
-2. … 3. … 4. … 5. …
-
-## The activation funnel as-built
-[The steps from signup to magic moment, friction flagged. Name the step count and the drop points.]
-
----
-## A. Time-to-Value & the Activation Path
-| # | Finding | Location | Sev | Effort | Impact | Fix |
-| --- | --- | --- | --- | --- | --- | --- |
-| A1 | … | `[file]:[line]` | P0 | S | … | … |
-## B. Signup Gating & Friction Walls
-## C. Empty States & First-Run Guidance
-## D. Onboarding Flow Friction
-[same table structure for B–D]
-
-## The retention loop as-built
-[What brings users back — or "nothing currently does."]
-
-## E. Re-engagement Channels
-## F. The Return Loop & Stored Value
-## G. Churn & Win-Back Surfaces
-## H. Activation & Retention Instrumentation
-[same table structure for E–H]
-
----
-## Cross-cutting quick wins
-[the 5, with specific findings]
-
-## Strategy-code drift (if ProductOS docs present)
-[where documented magic moment / onboarding ≠ shipped code]
-
-## Fix prompt (paste into your coding agent)
-> Fix the following activation and retention leaks in this codebase. For each, the file and the change:
-> 1. [P0 finding] — `[file:line]` — [the change].
-> 2. …
-> Work through them top to bottom; after each, confirm the activation event fires and is tracked.
-
-## Verification next steps
-- [ ] Confirm the magic-moment event fires and is tracked in analytics
-- [ ] Measure Day 1 / Day 7 retention as a baseline
-- [ ] Send a test through each lifecycle email / push trigger
-- [ ] Re-run this audit in 30 days to measure the lift
-
-## Sources & calibration
-[benchmarks used + workspace docs referenced if present]
-```
-
-Keep prose tight; tables over paragraphs. Reads in 5–8 minutes for a developer skimming for fixes.
+Build the audit one section at a time, confirming findings with the member as you go (the conversation about the leaks is the point). Then write `docs/ACTIVATION-RETENTION-AUDIT.md` (`mkdir -p docs` if needed) in the structure of [templates/audit-skeleton.md](templates/audit-skeleton.md). In *Sources & calibration*, keep each benchmark's source next to it. Keep prose tight; tables over paragraphs — it should read in 5–8 minutes for a developer skimming for fixes. The fix prompt is the payoff: concrete enough to paste and run.
 
 ### 8. Verify before delivering
 
-Check: every finding has a file location where applicable; severities are honest (signup-wall-before-value = P0, missing streak = P3); the Top 5 are ranked by effort × impact; the audit honors the retention model (no daily-push findings for a transactional product); strategy-code drift is surfaced if ProductOS docs are present; the fix prompt lists the P0/P1 leaks with their locations. Deliver via a `computer://` link with a tight summary — total findings, P0 count, the single biggest leak.
+- [ ] All eight areas (A–H) are covered, and the activation funnel and retention loop are mapped as-built.
+- [ ] Every finding has a file location where applicable, and an Effort (`S`/`M`/`L`) and Impact (`L`/`M`/`H`).
+- [ ] Severities are honest (signup-wall-before-value = P0, missing streak = P3).
+- [ ] The Top 5 are ranked by effort × impact.
+- [ ] The audit honors the retention model (no daily-push findings for a transactional product).
+- [ ] Conversion-surface findings are deferred to `develop-cro-audit`, not double-counted.
+- [ ] Cross-cutting quick wins and (if ProductOS docs are present) strategy-code drift are surfaced.
+- [ ] The fix prompt lists the P0/P1 leaks with their locations.
 
-## Calibration benchmarks (embedded for standalone use)
-
-Directional 2026 figures — verify before quoting externally:
-- **Activation:** reaching the aha within the first session (or 48h) → ~3.4× more likely to convert to paid. A large share of signups never reach first value when a setup wall precedes it.
-- **Onboarding:** 3-step tours complete at ~72%, 7-step at ~16%. Day 1 retention baseline ~26%, optimized 40%+.
-- **Retention curves:** most consumer apps lose the majority of users in the first week; the curve should *flatten* (a stable returning core), not trend to zero. B2B SaaS healthy logo retention is high (90%+ annual); consumer varies widely by category.
-- **Re-engagement:** lifecycle email and (where it fits) push meaningfully lift retention vs. transactional-only; a welcome series is the highest-leverage first send.
-- **Passive churn:** involuntary/failed-payment churn is often ~20–40% of total subscription churn and is the cheapest to recover with smart retries + dunning emails.
-- Calibrate all of the above to the product's retention model before scoring.
-
-## Pacing and approval
-
-- **Scan all eight areas before drafting.** A partial audit produces a misleading priority order.
-- **Cite the file for every finding.** "Onboarding is long" is a vibe; `src/onboarding/Wizard.tsx` with 7 forced screens is a fix.
-- **Severity-honest, and calibrated to the retention model.** The single most common mistake is penalizing a transactional product for lacking daily mechanics.
-- **Boundary discipline.** If a finding is really about signup/payment conversion, note it and defer to `develop-cro-audit`; don't double-count.
-- **The fix prompt is the deliverable's payoff.** Make it concrete enough to paste and run.
-
-## What "done" looks like
-
-A `docs/ACTIVATION-RETENTION-AUDIT.md` where all eight areas (A–H) are covered with file-located findings; the activation funnel and retention loop are mapped as-built; the Top 5 fixes are ranked by effort × impact; cross-cutting quick wins and (if ProductOS docs are present) strategy-code drift are surfaced; and a paste-ready fix prompt lists the P0/P1 leaks with their locations. The whole doc reads in 5–8 minutes.
-
-Recommended next step after a successful session: implement the Top 5 (start with P0s + S/M effort), instrument the magic-moment event if it isn't tracked, take a Day 1/Day 7 retention baseline, and re-run in 30 days. Only once activation holds should the user return to `distribute-scale-automate` and pour traffic on.
+Give the member the file path and a tight summary — total findings, P0 count, the single biggest leak. Next step: implement the Top 5 (P0s and `S`/`M` effort first), instrument the magic-moment event if it isn't tracked, take a Day 1/Day 7 retention baseline, and re-run in 30 days; only once activation holds should the member return to `distribute-scale-automate` and pour traffic on.

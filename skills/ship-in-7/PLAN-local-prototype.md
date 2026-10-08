@@ -25,10 +25,16 @@ This is the least crowded path, so it carries the fullest quality gate and a rea
 
 ## Compression (a missed or short session)
 
+Actions, in order — use the first that fits:
+
 1. Drop Announce, then Polish.
 2. Merge Days 2–3: audit and fix the Critical/High only; Medium and Low go to the Fix plan for after launch.
 3. Merge Days 4–5: the deploy guide is written and worked in one session on the simplest hosting path the guide names.
-4. Never move the gate after go live; never move go live past Day 7.
+
+**Constraints** (rules, not steps — no action above may break them):
+
+- Never move the gate after go live.
+- Never move go live past Day 7.
 
 ## What Day 7 looks like
 

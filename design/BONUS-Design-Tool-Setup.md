@@ -4,6 +4,19 @@
 
 ---
 
+## Contents
+
+- [Why this guide exists](#why-this-guide-exists)
+- [Quick reference](#quick-reference)
+- [MagicPath](#magicpath)
+- [paper.design](#paperdesign)
+- [pencil.dev (Pencil)](#pencildev-pencil)
+- [Verifying any of the three connections](#verifying-any-of-the-three-connections)
+- [What to do after setup](#what-to-do-after-setup)
+- [Sources](#sources)
+
+---
+
 ## Why this guide exists
 
 The Design Prompt Generator skill writes paste-ready prompts for AI design tools, but the prompts only generate on-brand screens if your AI coding client can actually *talk to* the design tool. That conversation happens over the open **Agent Skills ecosystem** for MagicPath (the recommended starting point — one prompt installs everywhere), and over **MCP (Model Context Protocol)** for paper.design and pencil.dev. This guide gives you the exact commands and config snippets to set up each of the nine combinations (three tools × three clients).

@@ -68,7 +68,7 @@ Status: Open · Day [N] of 30 · Week [W]
 | | Warm asks | | | | | | |
 | | | | | | | | |
 
-*Warm/cold: `warm`, `cold`, or `mixed · n warm, n cold`; the weekly read and the Sell Report sum this column. Rungs are Sell in 30's response scale: none / reply / conversation / signup / activated user / payment. Silence is "0 · none". Verbatims also go to the Persona section of `docs/DEFINE.md` and the Cumulative Learnings in `docs/GROWTH-TRACKER.md`.*
+*Step + artefact: which "Do this" step ran, and what it produced (post, listing, message batch, fix). Reach: how many people it reached or was sent to (a number, or "unknown"; on follow-up days, threads replied to). Warm/cold: `warm` (they know the member), `cold` (strangers), or `mixed · n warm, n cold`; the one place the label is set, and the weekly read and the Sell Report sum this column. Response: how many responded, at the highest rung each reached on Sell in 30's response scale — none → reply → conversation → signup → activated user → payment — counted per rung when there's more than one (`2 · reply, 1 · conversation`); silence is "0 · none". Verbatim: the most useful thing anyone said, in their words (or "silence"). Surprise: one line on what the member didn't expect. Verbatims also go to the Persona section of `docs/DEFINE.md` and the Cumulative Learnings in `docs/GROWTH-TRACKER.md`.*
 
 ---
 
@@ -117,6 +117,8 @@ Status: Open · Day [N] of 30 · Week [W]
 | Day 28 | Sell in 30 - Week 4! [rung reached] | |
 | the day it lands | Sell in 30 - My first customer! 🚀 | |
 | Day 30 | Sell in 30 completed! Here's what I learnt | |
+
+*Not in the Skool community? Leave this section out.*
 
 ---
 

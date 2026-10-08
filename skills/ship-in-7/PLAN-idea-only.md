@@ -25,10 +25,16 @@
 
 ## Compression (a missed or short session)
 
+Actions, in order — use the first that fits:
+
 1. Drop Announce.
 2. Merge Days 3–4 into one build day: the magic moment screen only, no onboarding, no settings.
 3. Shorten Day 2's Look: run `design-design-system` with the framework's default component library as the reference instead of a chosen image, and move on to the spec.
-4. Never move Day 5 (gate) after Day 6 (go live). Never move go live past Day 7.
+
+**Constraints** (rules, not steps — no action above may break them):
+
+- Never move Day 5 (gate) after Day 6 (go live).
+- Never move go live past Day 7.
 
 ## What Day 7 looks like
 

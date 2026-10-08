@@ -2,6 +2,18 @@
 
 Default comparison data for ProductOS's Develop-phase tech stack questions. Use these as a baseline and adapt recommendations based on the specific product’s needs. The comparison format and pros/cons should be adjusted to reflect how each option fits the founder’s particular product.
 
+## Contents
+
+- [Frontend Frameworks](#frontend-frameworks)
+- [Backend](#backend)
+- [Database](#database)
+- [Auth Providers](#auth-providers)
+- [Payment Providers](#payment-providers)
+- [Analytics](#analytics)
+- [Transactional Email](#transactional-email)
+- [Error Tracking & Monitoring](#error-tracking--monitoring)
+- [Hosting & Deployment](#hosting--deployment)
+
 -----
 
 ## Frontend Frameworks

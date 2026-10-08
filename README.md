@@ -103,7 +103,8 @@ Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in e
 - **Checklists** (`*-CHECKLIST.md`) — the runbook for each phase. Source of truth for how each step runs; your plan says which steps apply to you.
 - **Numbered worksheets** (`1-`–`4-` in each phase folder) — the structure and `> Good/Bad` calibration each skill follows. The skills read them and write your answers to `docs/`; the worksheets stay blank.
 - **BONUS docs** — reference playbooks: worked examples, failure patterns, channel guides, best-practice libraries.
-- **`productos/skills/`** — one flat folder per skill (39 total). Each contains a `SKILL.md` plus any bundled reference files.
+- **`productos/skills/`** — one flat folder per skill (39 total). Each contains a `SKILL.md` plus any bundled files it loads only when needed (`references/`, `templates/`).
+- **`productos/scripts/`** — maintainer tools: `lint-skills.py` checks every skill against Anthropic's skill-authoring rules; `sync-bonus.py` copies the phase-folder BONUS docs into the skills that bundle them. You don't need these to use ProductOS.
 - **`productos/setup/CLAUDE.md` + `productos/setup/AGENTS.md`** — agent guidelines wired into your repo root at setup (by `setup`), so your coding agent behaves from day one.
 
 ## Requirements
@@ -113,4 +114,4 @@ Skill names follow the `<phase>-*` convention (e.g. `define-offer-builder`) in e
 
 ## Version
 
-**1.14.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.
+**1.15.0** — see `productos/CHANGELOG.md`. Licensed for individual commercial use — see `productos/LICENSE.md`.

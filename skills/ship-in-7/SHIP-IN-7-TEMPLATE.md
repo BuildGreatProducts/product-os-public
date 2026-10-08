@@ -55,7 +55,7 @@ Status: Open · Day [N] of 7
 | the day it passes | Ship in 7 - It's live! 🚀 | |
 | 7 | Ship in 7 completed! Here's what I learnt | |
 
-*The "It's live" post goes out the day the smoke test passes, whatever the day number; if that is also the day of the close, the two merge into one post: `Ship in 7 completed! [app name] is live 🚀`. Handed-off days: draft the post with a `[proof]` slot, finish it when the proof lands.*
+*The "It's live" post goes out the day the smoke test passes, whatever the day number; if that is also the day of the close, the two merge into one post: `Ship in 7 completed! [app name] is live 🚀`. Handed-off days: draft the post with a `[proof]` slot, finish it when the proof lands. Not in the Skool community? Leave this section out.*
 
 ---
 

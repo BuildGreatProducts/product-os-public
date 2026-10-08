@@ -14,7 +14,7 @@ Build the complete app by executing every task in `docs/ROADMAP.md`, in order, u
 
 ## Setup
 
-Read `docs/ROADMAP.md` first — it is the source of truth for what to build and in what order. `docs/PRD.md` is the technical spec behind it; `docs/DESIGN.md` holds the visual design tokens; `docs/DEFINE.md` holds the product strategy. Do not load these documents wholesale — each phase lists the specific Reference sections to read, plus whatever a task's Notes line points to. If `docs/ROADMAP.md` or `docs/PRD.md` is missing, stop and tell the user to run `develop-prd-roadmap` first.
+Read `docs/ROADMAP.md` first — it is the source of truth for what to build and in what order. `docs/PRD.md` is the technical spec behind it; `docs/DESIGN.md` holds the visual design tokens; `docs/DEFINE.md` holds the product strategy. Do not load these documents wholesale — each phase lists the specific Reference sections to read, plus whatever a task's Notes line points to. If `docs/ROADMAP.md` or `docs/PRD.md` is missing, stop and tell the member to run `develop-prd-roadmap` first.
 
 ## Work loop
 
@@ -25,7 +25,7 @@ Repeat until every task in the roadmap is complete:
 3. **Implement the task** exactly as specified — file paths, package names, and config values are deliberate. Follow the repo's `CLAUDE.md`/`AGENTS.md` guidelines: simplest implementation that satisfies the task, no speculative features, surgical changes only.
 4. **Test and verify before moving on.** Run the verification step at the end of the task's Notes, run the app, run existing tests, and add tests for new logic. If verification fails, fix it first — never mark a failing task complete or start the next task with the app broken.
 5. **Mark the task complete** — change `- [ ]` to `- [x]` and update the header status line (`**Status:** X/Y tasks complete`, `**Current Phase:** ...`).
-6. **At each phase boundary:** run the app end to end and confirm the phase's Goal is true and demoable. Commit with a message `Phase {N}: {Phase Title}` summarizing the goal and completed task range, then push and keep building — there's no need to open a pull request or pause for review between phases. If the phase touched auth, payments, user input, or data access, run the coding agent's built-in review (`/review` in Claude Code, or the equivalent in Cursor or Codex) and address the findings before continuing.
+6. **At each phase boundary:** run the app end to end and confirm the phase's Goal is true and demoable. Commit with a message `Phase {N}: {Phase Title}` summarizing the goal and completed task range, push if a remote is configured, and keep building — there's no need to open a pull request or pause for review between phases. If the phase touched auth, payments, user input, or data access, run the coding agent's built-in review (`/review` in Claude Code, or the equivalent in Cursor or Codex) and address the findings before continuing.
 
 ## Rules
 

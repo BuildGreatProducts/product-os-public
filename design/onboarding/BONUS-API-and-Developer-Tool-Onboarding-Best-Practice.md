@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Onboarding Pattern Should You Build?](#the-decision-tree--which-onboarding-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example 1 — The Stripe Funnel Reconstructed](#worked-example-1--the-stripe-funnel-reconstructed)
+- [Worked Example 2 — The Twilio 2025 Redesign](#worked-example-2--the-twilio-2025-redesign)
+- [Worked Example 3 — The Modern AI API Stack (OpenAI / Anthropic / Resend)](#worked-example-3--the-modern-ai-api-stack-openai--anthropic--resend)
+- [Anti-Patterns — What Kills Developer Tool Onboarding](#anti-patterns--what-kills-developer-tool-onboarding)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The Developer-Tool Operating Model](#the-developer-tool-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **A developer is not evaluating your features. They are evaluating whether your product will save them or cost them an afternoon. Onboarding is the demonstration that the answer is "save" — measured by the seconds between landing on your homepage and receiving a working API response. Every UI element that does not directly compress that loop is friction the developer did not agree to pay for.**

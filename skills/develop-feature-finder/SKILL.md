@@ -15,7 +15,7 @@ Turn a business objective into ranked, evidence-backed feature recommendations g
 
 ## 1. Pin down the objective
 
-Ask what the user wants to achieve. If they're vague, offer the common shapes: activation (more users reach the core value), retention (they come back), conversion (free → paid), revenue per user, referrals/virality, engagement depth, or reduced churn. Push until the objective is measurable — *"improve retention"* becomes *"more users return in week 2."* One objective per session; mixing goals produces mush.
+Ask what the member wants to achieve. If they're vague, offer the common shapes: activation (more users reach the core value), retention (they come back), conversion (free → paid), revenue per user, referrals/virality, engagement depth, or reduced churn. Push until the objective is measurable — *"improve retention"* becomes *"more users return in week 2."* One objective per session; mixing goals produces mush.
 
 ## 2. Review the codebase
 
@@ -23,7 +23,7 @@ Read the repository to understand the product as built: what it does, the core u
 
 ## 3. Research what works
 
-Research the objective live — current best practices for this product category, and specifically what named comparable products have done with documented results (e.g. Duolingo's streaks for retention, Dropbox's referral storage, Superhuman's onboarding for activation). Prioritize documented outcomes over listicle advice. Map each pattern against this app: does the mechanism that made it work exist here?
+Research the objective live — current best practices for this product category, and specifically what named comparable products have done with documented results (e.g. Duolingo's streaks for retention, Dropbox's referral storage, Superhuman's onboarding for activation). Prioritize documented outcomes over listicle advice. Map each pattern against this app: does the mechanism that made it work exist here? If web search isn't available, say so, ask the member for comparables they know, and mark those claims unverified.
 
 ## 4. Recommend
 
@@ -39,7 +39,13 @@ Lead with your top 3 in detail; list the rest briefly. Include at least one chea
 
 ## 5. Hand off
 
-Discuss and let the user pick. For chosen recommendations, offer to add them as properly formatted tasks to the plan file (roadmap or task list) if one exists — sized, ordered, with verification steps — ready for a build-loop skill to execute. If no plan exists, offer to write the chosen recommendations up as one.
+Discuss and let the member pick. For chosen recommendations, offer to add them as tasks ready for a build-loop skill to execute:
+
+- Append them to `docs/ROADMAP.md` — or `docs/REFACTOR.md` if that's the active plan — as `TASK-NNN` continuing from the last ID, in the three-line format from `productos/develop/guides/ROADMAP-GENERATION.md` (checkbox + ID + description, `Files:`, `Notes:` ending with `Verify:`), sized to one agent session and ordered.
+- Update the plan's `**Status:** X/Y tasks complete` total to include them.
+- Never write to `docs/PLAN.md` or the `productos/*-CHECKLIST.md` files — they are not build plans.
+
+Outside ProductOS (no `docs/ROADMAP.md`), add them to the repo's existing task list if there is one; if no plan exists, offer to write the chosen recommendations up as one.
 
 ## Rules
 

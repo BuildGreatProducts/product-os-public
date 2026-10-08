@@ -12,41 +12,31 @@ description: >-
 
 # Design: Design System from Code (DESIGN.md)
 
-This skill is the **reverse** of `design-design-system`. Instead of going *forward* — Product Identity + a reference image → a brand-new `docs/DESIGN.md` — it goes *backward*: it reads the design system that already lives, implicitly and inconsistently, inside an existing product codebase, and turns it into a single documented, Google-format `docs/DESIGN.md`, with the same `docs/DESIGN.html` mirror the forward skill builds. The forward skill is for greenfield products with a brand but no code. This skill is for brownfield products with code but no documented system.
+The **reverse** of `design-design-system`: instead of Product Identity + a reference image → a new system, read the design system that already lives — implicitly and inconsistently — inside an existing codebase, and write it down as a single Google-format `docs/DESIGN.md` with the same `docs/DESIGN.html` mirror. Every shipping codebase has three blues that all mean "primary", button padding forked between components, cards rounded at 8, 12, and 14px, and a `--color-text` variable half the code ignores. The job: **find the de-facto system, surface every internal conflict, let the member pick the canonical value for each role, and document the result.**
 
-Every shipping codebase already *has* a design system — it's just undocumented, scattered across CSS files and component props, and almost always internally inconsistent. There are three blues that all mean "primary," button padding that's `12px 24px` in one component and `10px 20px` in another, cards rounded at 8px, 12px, and 14px depending on who wrote them, and a `--color-text` custom property that half the codebase ignores in favour of inline hex. The job of this skill is to **find the de-facto system, surface every internal conflict, let the user pick the canonical value for each role, and write the result down** in the exact format the rest of ProductOS consumes.
-
-The cardinal rule is **document reality, don't silently improve it.** This skill captures what the code *actually does* — including the real fonts, the real palette, the real spacing scale. It does not invent a new aesthetic, substitute "better" fonts, or quietly fix contrast. The only thing it actively resolves is *internal inconsistency* — and even that it resolves *with the user*, never on its own. Quality issues (a pair that fails WCAG AA, a non-free font, a sprawling type scale) get **flagged as advisory notes** at the end, never silently changed. A `DESIGN.md` that lies about the codebase is worse than none.
-
-The voice is a senior design systems engineer doing a brownfield audit — someone who has reverse-engineered token systems out of React, Vue, Svelte, SwiftUI, Android, and raw-CSS codebases, knows the difference between a deliberate variant and an accidental fork, and is allergic to documenting a system that doesn't match the code it claims to describe.
-
-> **Session length:** Designed to be completable in 30–60 minutes. The skill scans the codebase, builds the token inventory, clusters the conflicts, walks the user through resolving each one, and writes the file and its HTML mirror. No external research required — everything needed lives in the code, with optional context from the `## Product Identity` section of `docs/DESIGN.md` and from `docs/DEFINE.md` if they exist in the workspace.
+The cardinal rule is **document reality, don't silently improve it.** Capture the real fonts, palette, and spacing scale. Don't invent an aesthetic, substitute "better" fonts, or quietly fix contrast. The only thing you actively resolve is *internal inconsistency* — and only with the member. Quality issues (a pair failing WCAG AA, a non-free font, a sprawling type scale) are **advisory notes** delivered outside the file. A `DESIGN.md` that lies about the codebase is worse than none. No external research is needed — everything lives in the code.
 
 ## Inputs
 
-Locate the following. The skill runs in the **app repo root** — the repository that contains `productos/` (it also works standalone in any codebase without ProductOS).
+Run in the app repo root — the repository that contains `productos/` (also works standalone in any codebase without ProductOS).
 
-1. **The user's product codebase** — **required.** The repository whose UI you'll read. Identify the framework and styling approach before doing anything else (see Workflow step 2). If the repo has no UI code at all (pure backend, CLI, data pipeline), stop and tell the user there's no design system to extract.
+1. **The product codebase** — **required.** Identify the framework and styling approach first (step 2). If the repo has no UI code (pure backend, CLI, data pipeline), stop and say there's no design system to extract.
+2. **The format** — **required**, embedded in "Output format" below so this skill works standalone. If `productos/skills/design-design-system/REFERENCE-DESIGN.md` exists, use it as the format exemplar. If `docs/DESIGN.md` already has tokens, read it first, treat its structure as the format reference, and run the session as a reconciliation. If it holds only a `## Product Identity` section (no token groups — written by `design-identity-creator`), it's still a from-scratch extraction; keep that section.
+3. **The Product Identity** — the `## Product Identity` section of `docs/DESIGN.md` — **optional, tiebreaker only.** Its tone and named visual references break ties only when code evidence is genuinely ambiguous; they never override what the code does. If absent, resolve on code evidence alone.
+4. **`docs/DEFINE.md`** — **optional, context only.** Its Summary, Offer → Customer and Persona help name the aesthetic in `Brand & Style` and show which surfaces matter most.
 
-2. **The Google DESIGN.md format spec** — **required, embedded below.** The output must conform exactly to Google's open-source DESIGN.md format (Google Labs, Apache 2.0, [github.com/google-labs-code/design.md](https://github.com/google-labs-code/design.md)) — the same format `design-design-system` produces. If the `REFERENCE-DESIGN.md` bundled with the `design-design-system` skill happens to be accessible, read it once as the structural blueprint. If you're running inside the product repo where it isn't present, use the embedded spec in the "Output format" section below. If a `docs/DESIGN.md` already exists, read it first and treat its structure as the format reference, and the session as a reconciliation rather than a from-scratch write. If it holds only a `## Product Identity` section (frontmatter with no token groups — written by `design-identity-creator`), this is still a from-scratch extraction; keep that section.
+## Voice
 
-3. **The Product Identity** — the `## Product Identity` section of `docs/DESIGN.md` — **optional, tiebreaker only** — absent in a repo without ProductOS or before `design-identity-creator` has run. When present, the Identity's tone and named visual references are used *only* as a tiebreaker when the code is genuinely ambiguous (e.g., two blues are used equally often and you need a reason to pick one). It does **not** override what the code does — this skill documents the implementation, not the aspiration. If absent, resolve conflicts purely on code evidence.
+A senior design systems engineer doing a brownfield audit:
 
-4. **`docs/DEFINE.md`** — **optional, context only.** If present, its `## Summary`, Offer → Customer and Customer Persona tell you what the product is and who uses it — useful for naming the aesthetic in the `Brand & Style` section and for sanity-checking which surfaces matter most. Not required.
-
-## The engineer's voice
-
-Adopt the voice of a senior design systems engineer reverse-engineering a system from code:
-
-- **Evidence-led.** Every claim is anchored in the code. Not "your primary color is blue," but "`#2563EB` appears in 34 places, `#2D6CDF` in 6, and `#3B82F6` in 2 — all used as the primary action color. I'm proposing `#2563EB` as canonical `primary`. Confirm or pick another."
-- **Descriptive, not prescriptive.** The system already exists; your job is to *document* it, not redesign it. Resist the urge to "improve" the palette or swap the fonts. The one thing you actively fix is internal inconsistency — and only with the user's sign-off.
-- **Token-fluent.** Speak in tokens and exact values. Not "the spacing is a bit irregular," but "spacing clusters cleanly on a 4px base — `4 / 8 / 16 / 24 / 32 / 64` — except for `13px`, `18px`, and `25px`, which appear once or twice each and look like off-grid one-offs. Snap them to the nearest scale step?"
-- **Conflict-precise.** Never "there are some inconsistencies." Always the specific cluster: the competing values, where each is used, and the occurrence count, with a recommended canonical pick and the reason.
-- **Honest about gaps.** If a category has no discernible system (e.g., elevation is a free-for-all of ad-hoc shadows), say so plainly and propose the smallest defensible system that fits what's there — flagged as a proposal, not a discovery.
+- **Evidence-led.** "`#2563EB` appears in 34 places, `#2D6CDF` in 6, and `#3B82F6` in 2 — all used as the primary action color. I'm proposing `#2563EB` as canonical `primary`. Confirm or pick another."
+- **Descriptive, not prescriptive.** Document the system; resist "improving" the palette or swapping fonts.
+- **Token-fluent and conflict-precise.** "Spacing clusters on a 4px base — `4 / 8 / 16 / 24 / 32 / 64` — except `13px`, `18px`, `25px`, which appear once or twice each. Snap them to the nearest step?" Never "there are some inconsistencies."
+- **Honest about gaps.** If a category has no discernible system (elevation as a free-for-all of ad-hoc shadows), say so and propose the smallest defensible system — flagged as a proposal, not a discovery.
 
 ## Output format (Google DESIGN.md spec — embedded)
 
-The file is two parts: YAML frontmatter (machine-readable tokens) and a Markdown body (eight sections, fixed order). In ProductOS the body may also open with a `## Product Identity` section (written by `design-identity-creator`); if present, it sits before the eight canonical sections and is preserved verbatim — Google's spec preserves unknown sections. This is normative — do not improvise the schema, the section set, or the section order.
+Two parts: YAML frontmatter (machine-readable tokens) and a Markdown body (eight sections, fixed order) — Google's open format ([github.com/google-labs-code/design.md](https://github.com/google-labs-code/design.md)), the same one `design-design-system` produces. In ProductOS the body may open with a `## Product Identity` section (from `design-identity-creator`); if present, it sits before the eight sections and is preserved verbatim — the spec preserves unknown sections. This is normative — don't improvise the schema, section set, or order.
 
 **YAML frontmatter:**
 
@@ -81,77 +71,58 @@ components:
 
 **Token naming conventions** (map the code's de-facto values onto these names):
 
-- Colors: `primary`, `secondary`, `tertiary`, `neutral`, `surface`, `surface-container`, `surface-container-high`, `on-surface`, `on-surface-variant`, `outline`, `outline-variant`, `error`, `on-error`. Add roles only when the code genuinely uses them (e.g., `success`, `warning` if the product has status colors).
-- Typography: `display-lg`, `headline-lg`, `headline-md`, `body-lg`, `body-md`, `body-sm`, `label-md`, `label-sm`. Aim for 6–10 levels; never exceed 15. If the code has 24 font sizes, that *is* the conflict — collapse them to a documented scale with the user.
+- Colors: `primary`, `secondary`, `tertiary`, `neutral`, `surface`, `surface-container`, `surface-container-high`, `on-surface`, `on-surface-variant`, `outline`, `outline-variant`, `error`, `on-error`. Add roles only when the code genuinely uses them (e.g., `success`, `warning`).
+- Typography: `display-lg`, `headline-lg`, `headline-md`, `body-lg`, `body-md`, `body-sm`, `label-md`, `label-sm`. Aim for 6–10 levels; never exceed 15. If the code has 24 font sizes, that *is* the conflict — collapse them to a documented scale with the member.
 - Rounded: `none`, `sm`, `md`, `lg`, `xl`, `full`.
 - Spacing: `xs`, `sm`, `md`, `lg`, `xl`, plus named tokens like `gutter` and `margin` where the layout uses them repeatedly.
 
-**Token-reference syntax:** components reference tokens with `"{colors.primary}"`, `"{typography.body-md}"`, `"{rounded.md}"` — braces, dot-path, exact token name, always in double quotes (unquoted, YAML reads `{…}` as a map, not a string).
+**Token-reference syntax:** components reference tokens with `"{colors.primary}"`, `"{typography.body-md}"`, `"{rounded.md}"` — braces, dot-path, exact token name, always in double quotes (unquoted, YAML reads `{…}` as a map).
 
-**Markdown body — the eight canonical sections, in this order** (after the Product Identity section, if present):
+**Markdown body — the eight canonical sections, in this order** (after the Product Identity section, if present), each **3–8 tight sentences** (bullets for per-role values don't count against it):
 
-1. `## Brand & Style` — 2 paragraphs naming the aesthetic the code adds up to (e.g., "utilitarian dashboard," "consumer-playful," "editorial-minimal"). Derived from the code, contextualized by `docs/DEFINE.md` if present.
-2. `## Colors` — palette strategy in prose, then a named bullet per color role with hex and where it's used in the code. End noting any colors you consolidated.
-3. `## Typography` — the type system in prose (single family / pair / sprawl-collapsed-to-scale), then a bullet per level. Document the **real** font families as used in the code.
-4. `## Layout & Spacing` — the spacing base unit and scale, container widths, and grid/layout model as found in the code.
+1. `## Brand & Style` — the aesthetic the code adds up to ("utilitarian dashboard," "consumer-playful," "editorial-minimal"), derived from the code and contextualized by `docs/DEFINE.md` if present.
+2. `## Colors` — palette strategy, then a bullet per color role with hex and where it's used. Note any colors you consolidated.
+3. `## Typography` — the type system (single family / pair / sprawl-collapsed-to-scale), then a bullet per level. Document the **real** font families as used in the code.
+4. `## Layout & Spacing` — the base unit and scale, container widths, and grid/layout model as found in the code.
 5. `## Elevation & Depth` — the depth model actually in use (shadows / borders / glass / tonal / flat), or the model you proposed to consolidate an ad-hoc one.
 6. `## Shapes` — the corner-radius philosophy and how radius varies by component type.
 7. `## Components` — style guidance per documented component (buttons, inputs, cards, list items, chips, plus product-specific ones). Every component here has a YAML entry and vice versa.
-8. `## Do's and Don'ts` — 4–8 guardrails, biased toward the consolidation decisions made this session ("Do use `{colors.primary}` (`#2563EB`) for primary actions — not the legacy `#3B82F6`").
+8. `## Do's and Don'ts` — 4–8 guardrails, biased toward this session's consolidation decisions ("Do use `{colors.primary}` (`#2563EB`) for primary actions — not the legacy `#3B82F6`").
 
 ## Workflow
 
 ### 1. Read context and set expectations
 
-If `docs/DESIGN.md` already exists, read it — this becomes a reconciliation session (extend/correct the existing file) rather than a from-scratch write; tell the user. If `docs/DESIGN.md` has a `## Product Identity` section and/or `docs/DEFINE.md` exists, read them for tiebreaker and naming context. State the plan back in one line: *"I'll scan the codebase, inventory the design tokens you're actually using, flag every internal inconsistency, we'll pick the canonical value for each together, then I'll write `docs/DESIGN.md` in the Google format. Starting the scan."*
+If `docs/DESIGN.md` exists, read it — this is a reconciliation (extend/correct) rather than a from-scratch write; tell the member. Read the Product Identity section and/or `docs/DEFINE.md` if present for tiebreaker and naming context. State the plan in one line: *"I'll scan the codebase, inventory the design tokens you're actually using, flag every internal inconsistency, we'll pick the canonical value for each together, then I'll write `docs/DESIGN.md` in the Google format. Starting the scan."*
 
 ### 2. Map the styling architecture
 
-Before extracting values, find *where* design decisions live. Identify the framework and the styling approach(es) in use — there are often several layered together:
+Before extracting any value, find *where* design decisions live — don't grep for hex until you know whether the source of truth is a Tailwind config, a theme file, or nothing. Use the checklist in [references/extraction-playbook.md](references/extraction-playbook.md) → Styling architectures (Tailwind, CSS custom properties, CSS-in-JS, token files, component-library themes, native, raw/scattered). State it back: *"Styling architecture: Tailwind config with a partial token theme, plus ~40 arbitrary-value escapes and a handful of inline hex in page components. Primary token source is `tailwind.config.ts`; the conflicts are mostly in the escapes. Scanning those now."*
 
-- **Tailwind:** `tailwind.config.{js,ts,cjs,mjs}` — read `theme` and `theme.extend` (colors, fontFamily, fontSize, spacing, borderRadius, boxShadow). Then grep for arbitrary values (`bg-[#...]`, `p-[13px]`, `rounded-[14px]`) which are the off-system escapes.
-- **CSS custom properties:** `:root { --color-...: ... }` in global CSS, plus any `[data-theme]` / `.dark` overrides. Then grep for raw hex / px used directly instead of the variables.
-- **CSS-in-JS:** styled-components / emotion / vanilla-extract — theme objects (`theme.colors.*`), `styled.button\`...\``, and inline `style={{ }}` props.
-- **Design-token files:** `tokens.json` (Style Dictionary / W3C DTCG), `theme.ts`, `tokens.ts`, `colors.ts`, `typography.ts`, `design-tokens/*`.
-- **Component-library theme overrides:** MUI `createTheme`, Chakra `extendTheme`, Mantine theme, shadcn `globals.css` variables.
-- **Native:** SwiftUI `Color`/`Font` extensions and asset catalogs; Android `colors.xml` / `themes.xml` / Compose `Theme.kt`; Flutter `ThemeData`.
-- **Raw / scattered:** SCSS `$variables`, plain CSS, and the hardest case — values hardcoded inline throughout components with no central source.
-
-State the architecture back: *"Styling architecture: Tailwind config with a partial token theme, plus ~40 arbitrary-value escapes and a handful of inline hex in page components. Primary token source is `tailwind.config.ts`; the conflicts are mostly in the escapes. Scanning those now."*
-
-If it's a **monorepo or multi-app** repository, ask which app/package to document before scanning — don't blend two products' systems into one file.
+In a **monorepo or multi-app** repository, ask which app/package to document before scanning — never blend two products' systems into one file.
 
 ### 3. Extract the de-facto token inventory
 
-Sweep the code and collect every value actually used, grouped by category. **Count occurrences and note locations** — frequency and location are how conflicts get resolved later. Capture reality, including the mess; do not clean up yet.
+Sweep the code and collect every value actually used, grouped by category. **Count occurrences and note locations** — they're how conflicts get resolved. Capture reality fully, including the mess; don't clean up yet.
 
 - **Colors:** every hex, `rgb()/rgba()`, `hsl()/hsla()`, named CSS color, Tailwind color (config + arbitrary), CSS variable value, and native color literal. Group by apparent role (background / text / border / accent / status).
 - **Typography:** every `font-family`, `font-size`, `font-weight`, `line-height`, `letter-spacing`; Tailwind text/font classes; `@font-face`; native font calls. Note which families are actually loaded.
 - **Spacing:** every `margin` / `padding` / `gap` / inset value and Tailwind spacing class. Detect the base unit (usually 4 or 8) and which values are on- vs off-grid.
 - **Radius:** every `border-radius` value and radius class, grouped by the component type it's applied to.
 - **Elevation:** every `box-shadow`, `drop-shadow`, `backdrop-filter`, and hairline-`border`-as-elevation. Note whether one model dominates or several coexist.
-- **Components:** every recurring UI primitive (button, input, card, list item, chip, badge, modal) and its concrete style values — including duplicate/forked implementations of the same primitive.
+- **Components:** every recurring UI primitive (button, input, card, list item, chip, badge, modal) and its concrete style values — including duplicate/forked implementations.
 
 ### 4. Detect internal inconsistencies (the core of this skill)
 
-Cluster the inventory into **conflicts** — places where the code uses competing values for what should be a single role. This is the only thing the skill actively resolves, and it resolves it *with* the user. Look for these patterns (see "Inconsistency patterns" below for detail):
-
-- Near-duplicate colors mapped to one role (multiple "primary" blues).
-- Token defined but bypassed (a `--color-primary` exists, yet raw hex of ~the same color is used directly elsewhere).
-- Off-grid spacing values breaking an otherwise clean scale.
-- Multiple radii for the same component category.
-- Mixed units for the same property (`rem` vs `px` vs `em`).
-- Font sprawl (multiple sans families; a weight set that isn't a scale; 20+ font sizes).
-- Competing elevation models for the same elevation level (shadow here, border there).
-- Forked components (two `Button` implementations with divergent padding/radius/states).
+Cluster the inventory into **conflicts** — competing values for what should be one role. Read [references/extraction-playbook.md](references/extraction-playbook.md) → Inconsistency patterns for how to detect each type: near-duplicate colors, token defined but bypassed, off-grid spacing, multiple radii per component type, mixed units, font sprawl, competing elevation models, forked components, dead tokens.
 
 Build a **conflict list**: each entry is one role with its competing values, the occurrence count and representative locations for each, and your recommended canonical pick with the reason. De-duplicate (the same stray hex in 12 files is one conflict with 12 locations) and cluster forked components into one entry.
 
 Summarize before resolving: *"Inventory done. Clean on radius and base spacing. [N] conflicts to resolve: 3 primary blues, 2 body-text greys, button padding forked 3 ways, 4 off-grid spacing values, and two Button components. Want to walk through them now?"*
 
-### 5. Walk through the conflicts interactively
+### 5. Walk through the conflicts, one at a time
 
-For **each conflict**, present it the same way and get a decision before moving on:
+Present each conflict the same way and get a decision before moving on:
 
 > **Role: `primary` (primary action color)** — 3 competing values:
 > - `#2563EB` — 34 uses (Button, Link, theme config) ← **recommend canonical**
@@ -159,129 +130,55 @@ For **each conflict**, present it the same way and get a decision before moving 
 > - `#3B82F6` — 2 uses (one CTA, one icon)
 > Recommend `#2563EB`: most-used, and it's the one defined in `tailwind.config.ts`. Keep it? (or pick another / I can show the swatches)
 
-Apply the **resolution heuristics** (below) to form the recommendation, but the user decides. Capture each decision tersely. Where the user picks a canonical value that differs from values still in the code, note that those are now *drift* — they'll be documented as "the wrong value" and `develop-design-review` will catch them later. Keep momentum: one conflict, one recommendation, one confirm, next.
+Form each recommendation with the **Resolution heuristics** in the playbook (frequency → source authority → location weight → identity tiebreaker → accessibility tiebreaker → recency), but the member decides — never resolve silently. Capture each decision tersely. Values the member didn't pick that remain in the code are now *drift* — documented as the wrong value, for `develop-design-review` to catch later. One conflict, one recommendation, one confirm, next.
 
-Do **not** turn quality issues into conflicts here. If `primary` on `surface` fails WCAG AA, that's not a conflict to resolve — it's an advisory note for step 8. Stay focused on internal inconsistency.
+Don't turn quality issues into conflicts. If `primary` on `surface` fails WCAG AA, that's an advisory for step 8, not a conflict.
 
 ### 6. Assemble the DESIGN.md
 
-With every conflict resolved, map the canonical values onto the Google format:
+Map the canonical values onto the format above:
 
-- Write the **YAML frontmatter** — canonical colors under the standard role names, the consolidated type scale, the spacing scale, the radius scale, and a `components` entry for each documented primitive using `{token}` references.
-- Keep the **`## Product Identity` section** verbatim right after the frontmatter (and title) if the existing file has one — never rewrite or drop it.
-- Write the **eight markdown sections** in order after it, in tight prose. Document the **real** fonts and values. In `Colors`, `Typography`, and `Do's and Don'ts`, briefly record the consolidation decisions ("consolidated three primary blues to `#2563EB`") so the file explains *why* it looks the way it does and what the code should refactor toward.
-- Pick a `name` for the system that describes what the code adds up to (use `docs/DEFINE.md` / the Product Identity for flavour if present, else descriptive — "Acme Dashboard System").
+- **YAML frontmatter** — canonical colors under the standard role names, the consolidated type scale, spacing scale, radius scale, and a `components` entry for each documented primitive using `{token}` references.
+- **`## Product Identity`** — kept verbatim right after the frontmatter and title if the existing file has one; never rewrite or drop it.
+- **The eight sections** in order after it. Document the **real** fonts and values. In `Colors`, `Typography`, and `Do's and Don'ts`, briefly record the consolidation decisions ("consolidated three primary blues to `#2563EB`") so the file explains what the code should refactor toward.
+- A `name` that describes what the code adds up to (use DEFINE.md / the Product Identity for flavour if present, else descriptive — "Acme Dashboard System").
 
-### 7. Show the user and iterate
+### 7. Show the member and iterate
 
-Present in two passes: **YAML frontmatter first** (confirm the canonical tokens and the consolidated scales), then the **markdown body** (confirm tone and the per-component prose). Fold in corrections. Iterate once or twice. Keep each section to 2–4 short paragraphs — this is a reference doc, not an essay.
+Two passes: **YAML frontmatter first** (confirm the canonical tokens and consolidated scales), then the **markdown body** (confirm tone and per-component prose). Fold in corrections; iterate once or twice. Don't dump the whole file at once.
 
-### 8. Write to `docs/DESIGN.md`, then flag advisories
+### 8. Write `docs/DESIGN.md` and `docs/DESIGN.html`, then flag advisories
 
-Write the approved file to `docs/DESIGN.md` (`mkdir -p docs` if needed). If the file already exists, show the diff in conversation and overwrite only on the user's approval — carrying its `## Product Identity` section over untouched.
+Write the approved file to `docs/DESIGN.md` (`mkdir -p docs` if needed). If it already exists, show the diff and overwrite only on the member's approval — carrying its `## Product Identity` section over untouched.
 
-Then build the **`docs/DESIGN.html` mirror** from the markdown just approved — the same human-readable twin `design-design-system` builds, so the pair never drifts:
+Then build the **`docs/DESIGN.html` mirror** from the approved markdown — the same twin `design-design-system` builds:
 
 - **Self-contained and dependency-free.** One file: all CSS inline in a `<style>` block, no frameworks, no external JS. Web fonts may load via a Google Fonts `<link>` when a documented family needs it; otherwise fall back to the stack the code uses.
-- **Token-driven.** Declare every YAML token as a CSS custom property in `:root` (`--color-primary`, `--type-body-md-size`, `--rounded-md`, `--space-md`) and style every swatch, specimen, and component from those variables — the values must match the YAML exactly.
+- **Token-driven.** Declare every YAML token as a CSS custom property in `:root` (`--color-primary`, `--type-body-md-size`, `--rounded-md`, `--space-md`) and style every swatch, specimen, and component from those variables — values must match the YAML exactly.
 - **Sections, in order:** Header (name, description, "human-readable mirror of `docs/DESIGN.md`") → **Product Identity** (if the md has one) → Colors → Typography → Spacing → Radius → Elevation → Components (every YAML component rendered live, variants and states grouped) → Do's and Don'ts. Neutral style-guide chrome, not a marketing page.
-- **Keep the Product Identity.** If `docs/DESIGN.html` already has a Product Identity section, carry it over with its content unchanged (restyling it with the tokens is fine); otherwise render it from the md section. Never drop it.
-- **Never overwrite silently.** If `docs/DESIGN.html` already exists, say what will change (new token sections, regenerated components, identity kept) and write only on the user's approval — the same approval rule as the md.
+- **Keep the Product Identity.** If the html already has that section, carry it over with content unchanged (restyling with the tokens is fine); otherwise render it from the md. Never drop it.
+- **Never overwrite silently.** If `docs/DESIGN.html` exists, say what will change (new token sections, regenerated components, identity kept) and write only on approval.
 
-Then, **separately from the file**, surface the advisory notes you deliberately kept out of it — the quality issues you found but didn't silently fix:
+Then, **separately from the file**, give the member the advisory notes you deliberately kept out of it:
 
-- **Contrast:** any documented `backgroundColor` + `textColor` pair that fails WCAG AA (4.5:1 body, 3:1 large). State the ratio; propose a fix; let the user decide whether to adjust the token or accept it.
-- **Non-free / excluded fonts:** if a documented family isn't free for commercial use, or is on ProductOS's exclusion list (Inter, Instrument Serif, Outfit, Plus Jakarta Sans), note it — but **keep the real font in the file** unless the user explicitly asks to substitute. The file documents the code; substitution is a separate decision.
-- **Residual sprawl:** anything you collapsed aggressively (24 sizes → 8 levels) so the user knows what got rounded.
+- **Contrast:** every documented `backgroundColor` + `textColor` pair that fails WCAG AA (4.5:1 body, 3:1 large) — state the ratio, propose a fix, let the member decide whether to adjust the token or accept it.
+- **Non-free / excluded fonts:** a documented family that isn't free for commercial use, or is on ProductOS's exclusion list (Inter, Instrument Serif, Outfit, Plus Jakarta Sans) — note it, but **keep the real font in the file** unless the member explicitly asks to substitute.
+- **Residual sprawl:** anything collapsed aggressively (24 sizes → 8 levels) so the member knows what got rounded.
 
-### 9. Verify before delivering
+## Verify before delivering
 
-Re-read the written file and check:
+Re-read both files:
 
-- **YAML parses** — consistent indentation, hex and every `{…}` reference quoted, no trailing colons.
-- **The Product Identity section, if there was one, is intact** right after the frontmatter — and right after the Header in `docs/DESIGN.html`.
-- **The HTML mirrors the md** — every CSS custom property matches its YAML value, every YAML component renders, and the sections follow the md's order.
-- **All eight sections present, in order** — Brand & Style, Colors, Typography, Layout & Spacing, Elevation & Depth, Shapes, Components, Do's and Don'ts.
-- **Every component in YAML has prose in `Components`, and vice versa.**
-- **Token references use exact `{colors.primary}` / `{typography.body-md}` / `{rounded.md}` syntax.**
-- **Every canonical decision from step 5 is reflected** — the documented value is the one the user picked, not a competing one.
-- **The file describes the code, not an idealized version** — fonts and values match what's actually in the repo (advisories noted separately, not silently applied).
-- **Contrast advisories computed** for every documented component pair and reported to the user (not necessarily fixed).
-- **Readable end-to-end in 4–6 minutes.**
+- [ ] YAML parses — consistent indentation, hex and every `{…}` reference quoted, no trailing colons — with `version`, `name`, `description`, and populated `colors`, `typography`, `rounded`, `spacing`, `components`.
+- [ ] The Product Identity section, if there was one, is intact right after the frontmatter — and right after the Header in `docs/DESIGN.html`.
+- [ ] All eight sections are present, in order, each 3–8 tight sentences, with consolidation decisions recorded.
+- [ ] Every YAML component has prose in `Components`, and vice versa; token references use exact `{colors.primary}` / `{typography.body-md}` / `{rounded.md}` syntax.
+- [ ] Every canonical decision from step 5 is reflected — one value per role, the one the member picked.
+- [ ] The file describes the code, not an idealized version — real fonts and values; advisories noted separately, not silently applied.
+- [ ] Contrast was computed for every documented component pair and reported (not necessarily fixed).
+- [ ] The HTML mirrors the md — every custom property matches its YAML value, every YAML component renders, sections follow the md's order — and an existing html was overwritten only with approval.
+- [ ] The md reads end to end in 4–6 minutes.
 
-Deliver both files via `computer://` links and a tight summary: one line per token group (colors, typography, spacing, shapes, components), one line on conflicts resolved (e.g., "9 conflicts consolidated"), and the advisory notes. Then point to the natural next step: run `develop-design-review` in this repo to find every place the code still uses the now-non-canonical values, and use its paste-ready fix prompt to consolidate the codebase onto the documented tokens in one pass.
+Give the member both file paths and a tight summary: one line per token group (colors, typography, spacing, shapes, components), one line on conflicts resolved ("9 conflicts consolidated"), and the advisory notes.
 
-## Inconsistency patterns
-
-How to detect and resolve each conflict type. Apply detection at step 4, resolution-recommendation at step 5.
-
-### Near-duplicate colors
-
-Multiple hex values within a small perceptual distance, all used for the same role. **Detect:** cluster colors by role and by closeness (e.g., values within ~ΔE 5, or that round to the same name). **Resolve:** recommend the most-used; break ties with the value defined in the central token source, then the Identity's temperature hint, then the one meeting AA. Document the chosen value; the others become drift.
-
-### Token defined but bypassed
-
-A CSS variable / theme token exists, but raw literals of (nearly) the same value appear directly in components. **Detect:** for each token, grep for its literal value used outside the token. **Resolve:** the token wins by definition — document it, and note the inline literals as drift to replace with the token reference.
-
-### Off-grid spacing
-
-An otherwise-clean base scale (4 or 8) polluted by stray values (`13px`, `18px`, `25px`). **Detect:** infer the base unit from the modal spacing values; flag anything not a clean multiple. **Resolve:** snap each off-grid value to the nearest scale step unless the user says it's intentional (e.g., an optical-alignment nudge).
-
-### Multiple radii per component type
-
-Cards (or buttons, or inputs) rounded at several different values. **Detect:** group radius values by the component type they're applied to. **Resolve:** one radius per component category; recommend the most-used, mapped to the nearest `rounded` scale level.
-
-### Mixed units
-
-The same property expressed in `rem`, `px`, and `em` across the codebase. **Detect:** per property, list the units in use. **Resolve:** pick the dominant unit for the documented token (note: the file records one canonical unit; the code can keep computing in others as long as the value matches).
-
-### Font sprawl
-
-More sans/serif families than the system needs, a weight set that doesn't form a scale, or an explosion of font sizes. **Detect:** list distinct families, weights, and sizes with counts. **Resolve:** collapse to a documented scale (6–10 type levels); recommend keeping the families that are actually loaded and most-used; flag any extra family as a candidate to drop (advisory, not a silent removal).
-
-### Competing elevation models
-
-Some surfaces use `box-shadow`, others use a hairline `border`, for the same elevation level. **Detect:** group elevation treatments by the elevation level they represent (resting card vs. floating menu). **Resolve:** recommend one model per level based on what dominates and what fits the product type; document it explicitly.
-
-### Forked components
-
-Two or more implementations of the same primitive (e.g., `Button` and `LegacyButton`) with divergent values. **Detect:** find duplicate primitives by name and by shape. **Resolve:** document one canonical definition (recommend the newer/more-used), and note the fork so review can reconcile usages.
-
-### Dead tokens
-
-Tokens defined but never referenced. **Detect:** tokens with zero usages. **Resolve:** low priority — mention them, but don't document unused tokens in the file unless the user wants them retained for a known upcoming use.
-
-## Resolution heuristics
-
-When recommending a canonical value, weigh these in order — but always present the recommendation and let the user decide; never resolve silently:
-
-1. **Frequency.** The most-used value is the default canonical pick. Production usage is the strongest evidence of intent.
-2. **Source authority.** A value defined in the central token source (Tailwind config, `:root`, theme file, token JSON) outranks scattered inline literals, even if the inline ones are individually more numerous.
-3. **Location weight.** Values in shared / design-system / component-library folders outrank values in one-off pages or marketing routes.
-4. **Identity tiebreaker.** Only when code evidence is genuinely tied: use the Product Identity section of `docs/DESIGN.md` (tone, visual style references) to break the tie. Never to override clear code evidence.
-5. **Accessibility tiebreaker.** Among otherwise-equal candidates, prefer the one meeting WCAG AA. (Note: this is a *tiebreaker*, not a mandate to change a clear winner — AA failures of a clear winner are advisories in step 8.)
-6. **Recency.** Newer code may reflect the current direction; use git history sparingly as a final tiebreaker, not a primary signal.
-
-## Pacing and approval
-
-- **Map the architecture before extracting.** Don't grep for hex until you know whether the source of truth is a Tailwind config, a theme file, or nothing.
-- **Inventory before conflicts.** Capture reality fully — including the mess — before you start consolidating.
-- **One conflict at a time.** Present the competing values, the counts, a recommendation, and the reason. Get a one-word confirm. Move on. Silent consolidation is how a documented system ends up not matching the code.
-- **Document reality, don't redesign.** The only thing you actively resolve is internal inconsistency, and only with the user. Quality issues are advisories, not silent edits.
-- **Two-pass review.** YAML tokens first, markdown prose second. Don't dump the whole file at once.
-- **Strict to the spec.** Eight sections, fixed order, fixed YAML schema, `{token}` reference syntax. The Google format is normative.
-
-## What "done" looks like
-
-A `docs/DESIGN.md` file, and its `docs/DESIGN.html` mirror, where:
-
-- **YAML frontmatter** contains `version: alpha`, `name`, `description`, and populated `colors`, `typography`, `rounded`, `spacing`, and `components` — matching Google's schema exactly.
-- **The documented values are the canonical ones the user chose** during conflict resolution — one value per role, no competing duplicates.
-- **The file matches the code's reality** — real fonts, real palette, real scales — with quality concerns recorded as advisories *outside* the file rather than silently applied.
-- **Markdown body** keeps any Product Identity section untouched, then has all eight sections in the prescribed order, each a focused 2–4 paragraph explanation, with consolidation decisions briefly recorded.
-- **Every component** in the YAML has prose in `Components`, and vice versa; **token references** use exact `{path.to.token}` syntax.
-- **An advisory summary** was delivered in conversation: contrast pairs that fail AA, non-free/excluded fonts left in place, and anything aggressively collapsed.
-- **The file is readable end-to-end in 4–6 minutes** by a human and parseable as YAML by a coding agent.
-- **`docs/DESIGN.html` opens in a browser** and renders every token and component from the same values, with the Product Identity section (if any) kept after the Header — written only with the user's approval if it already existed.
-
-Recommended next step after a successful session: run `develop-design-review` inside this same repo. It will compare the codebase against the freshly-documented `docs/DESIGN.md` and produce a prioritized, paste-ready fix prompt to migrate every non-canonical value (the "drift" you identified during conflict resolution) onto the documented tokens — turning the newly-written system into the one the code actually follows. From there, `develop-design-better` will keep new UI on-system as it's built.
+**Next:** run `develop-design-review` in this repo — it finds every place the code still uses non-canonical values and produces a paste-ready fix prompt to consolidate onto the documented tokens; `develop-design-better` then keeps new UI on-system.

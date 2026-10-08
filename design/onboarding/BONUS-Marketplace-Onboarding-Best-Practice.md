@@ -4,6 +4,23 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Marketplace Onboarding Pattern Should You Build?](#the-decision-tree--which-marketplace-onboarding-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example 1 — The Airbnb Funnel Reconstructed](#worked-example-1--the-airbnb-funnel-reconstructed)
+- [Worked Example 2 — The Fiverr / Upwork Tiered-Quality Funnel](#worked-example-2--the-fiverr--upwork-tiered-quality-funnel)
+- [Worked Example 3 — The AI Agent Marketplace (2026 frontier)](#worked-example-3--the-ai-agent-marketplace-2026-frontier)
+- [Anti-Patterns — What Kills Marketplace Onboarding](#anti-patterns--what-kills-marketplace-onboarding)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [The Marketplace Operating Model](#the-marketplace-operating-model)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **A marketplace has no value to anyone until it has value to both sides at the same time, in the same context. Onboarding is not "welcome to the platform" — it is the engineered manufacture of the first successful transaction. Every day a supplier listing sits without a buyer, and every day a buyer browses without a transaction, is a day the cold-start problem is winning.**

@@ -4,6 +4,20 @@
 
 ---
 
+## Contents
+
+- [The Meta-Rule](#the-meta-rule)
+- [The Numbers That Set the Stakes](#the-numbers-that-set-the-stakes)
+- [The 12 Principles](#the-12-principles)
+- [The Decision Tree — Which Onboarding Pattern Should You Build?](#the-decision-tree--which-onboarding-pattern-should-you-build)
+- [The 18 Tactics](#the-18-tactics)
+- [Worked Example — The Cal AI Funnel Reconstructed](#worked-example--the-cal-ai-funnel-reconstructed)
+- [Anti-Patterns — What Kills AI Onboarding](#anti-patterns--what-kills-ai-onboarding)
+- [Calibration — What Good Looks Like](#calibration--what-good-looks-like)
+- [Closing — The One Mental Model That Beats Everything](#closing--the-one-mental-model-that-beats-everything)
+
+---
+
 ## The Meta-Rule
 
 > **Onboarding is not a tutorial. It is a manufactured journey from "I just tapped install" to "I'll pay before I've tried it" — and every screen between those two moments exists to make the next screen feel inevitable.**
