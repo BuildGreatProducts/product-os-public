@@ -10,6 +10,12 @@ Running a challenge (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` open)? It says 
 
 ---
 
+## Step 2 — Verify your setup *(runs first)*
+
+- **When:** First thing in Develop, before migrating or writing any code — `develop-phase` runs it at the start of the phase.
+- **What to do:** Turn on version history if your product is built from code here. Define and Design ran in a plain project folder; from here on the build saves its work at every phase, so the folder becomes a git repository. Your agent does it with `setup` → *Version history* — one commit of everything so far. Your shape file's *2 — Verify setup* row says whether you need it: products built from code always do; a hosted-builder assistant, a no-code service, or a template product doesn't. Then confirm the root `CLAUDE.md`/`AGENTS.md` carry the ProductOS guidelines (wired at setup; if they're missing, `setup` fixes it in seconds).
+- **Also recommended:** Push the repo to GitHub so your work is backed up and versioned. The agent builds straight through all phases in one go — there's no need to gate each phase behind a pull request. Code review is built in: `develop-build` reviews at every phase boundary, and `build-loop` reviews once its work is finished — no separate service needed.
+
 ## Step 0 — Migrate *(apps on a prompt-to-app platform only)*
 
 - **What to do:** Coming from Lovable, Bolt, v0, Base44, Replit, or similar? Run `develop-migrate` before anything else.
@@ -26,11 +32,6 @@ Running a challenge (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` open)? It says 
 
 - **What to do:** Run `develop-agent-evals` before the build.
 - **What it does:** Produces `docs/EVALS.md` — at least three scenarios per core job, each with the request, the inputs, and the expected behaviour as a checkable rubric, plus a baseline without your product and runs across the models your customers use. It's the bar "done" is measured against: the build isn't finished until the evals pass.
-
-## Step 2 — Verify your setup
-
-- **What to do:** Nothing to create or copy — ProductOS already lives inside your app repo, and the specs are already at `docs/`. Just confirm the root `CLAUDE.md`/`AGENTS.md` carry the ProductOS guidelines (wired from `productos/setup/` at setup; if they're missing, `setup` fixes it in seconds).
-- **Also recommended:** Push the repo to GitHub so your work is backed up and versioned. The agent builds straight through all phases in one go — there's no need to gate each phase behind a pull request. Code review is built in: `develop-build` reviews at every phase boundary, and `build-loop` reviews once its work is finished — no separate service needed.
 
 ## Step 3 — Build the MVP
 

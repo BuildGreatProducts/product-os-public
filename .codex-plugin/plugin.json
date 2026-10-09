@@ -1,7 +1,7 @@
 {
   "name": "productos",
   "version": "2.0.0",
-  "description": "ProductOS — a complete operating system for taking an AI product from idea to revenue with AI agents — apps, agent plugins and skills, MCP servers, chat assistants, developer tools, services, websites, and digital products. Installs inside your product's repo as productos/, optionally ships with a coach-composed programme plan, and runs four phases (Define, Design, Develop, Distribute), each with checklists, worksheets, and 44 skills that write every output to your repo's docs/ folder.",
+  "description": "ProductOS — a complete operating system for taking an AI product from idea to revenue with AI agents — apps, agent plugins and skills, MCP servers, chat assistants, developer tools, services, websites, and digital products. Installs inside your product's repo as productos/, optionally ships with a coach-composed programme plan, and runs four phases (Define, Design, Develop, Distribute), each with checklists, worksheets, and 45 skills that write every output to your repo's docs/ folder.",
   "author": {
     "name": "Chris Ashby",
     "email": "chris@telescope.design",
@@ -34,6 +34,7 @@
     ],
     "websiteURL": "https://telescope.design",
     "defaultPrompt": [
+      "Continue where I left off",
       "Set up ProductOS in my repo",
       "Start define (new project)",
       "Audit my product (existing project)",

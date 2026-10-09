@@ -58,7 +58,7 @@ A real customer (warm network counts; the member's own test purchase doesn't) pa
 | 0 — Migrate | Skip | Not applicable to extensions; a companion web app migrates under its own `web-app` route. |
 | 1 — PRD & Roadmap | Full | Manifest V3 architecture, permissions, and target browsers are decided here. |
 | 1b — Evals | Optional | Run it when the magic moment is an AI output (a drafted reply, a summary). |
-| 2 — Verify setup | Full | Normally already done by `setup`. |
+| 2 — Verify setup | Full | Turn on version history (git) if it isn't on yet — the build saves its work there at every phase — and check the guidelines `setup` wired. Runs first in Develop. |
 | 3 — Build | Full | The roadmap includes the backend (auth, billing, AI proxy) and a store-ready packaged build. |
 | 4 — Build loop | Full | Host sites change their markup without warning — budget loop time for selector breakage. |
 | 5 — Code review | Full | For changes made outside the build skills. |

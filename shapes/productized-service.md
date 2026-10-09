@@ -58,7 +58,7 @@ A real client (warm network counts; a pilot paid in kind doesn't) pays the state
 | 0 — Migrate | Skip | Not applicable. |
 | 1 — PRD & Roadmap | Adapted | The PRD becomes the delivery spec (below); the roadmap builds the delivery engine — sales page, checkout, intake, AI workflows, templates, QA — in the order the first client needs them. |
 | 1b — Evals | Optional | Run it on the AI steps of delivery (the first-draft generator, the categoriser) so output quality before human QA is measured, not felt. |
-| 2 — Verify setup | Full | The repo holds `docs/`, the SOP, prompts, templates, and any automation code. |
+| 2 — Verify setup | Full / Skip | Full when the roadmap builds code (a custom sales page, intake, automations, prompt workflows): turn on version history (git) first in Develop. Skip when the whole delivery stack is no-code tools; offer version history for the SOP, prompts, and templates if the member wants drafts kept. |
 | 3 — Build | Adapted | `develop-build` builds what's code (sales page, intake, automations, prompt workflows); the rest is set up in no-code tools and checked off the same roadmap. |
 | 4 — Build loop | Optional | Automate the delivery steps that repeat once several clients have been through them — this loop is where the sequence to `web-app` begins. |
 | 5 — Code review | Optional | Only for custom code (automations, the sales site, scripts). |

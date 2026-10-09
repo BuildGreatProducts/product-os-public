@@ -46,7 +46,7 @@ Confirm with the member in one line before proceeding.
 
 ### 1. Setup check
 
-Ship in 7 runs after `setup`, but the member may run it first. Check the four setup conditions: `productos/` sits inside a git repo; the root `CLAUDE.md`/`AGENTS.md` carry the `<!-- BEGIN PRODUCTOS -->` block; `.gitignore` excludes `productos/` *and* nothing under it is tracked (`git ls-files productos` is empty); any shipped `productos/PLAN.md` has been moved to `docs/PLAN.md`. **If any fails, run `setup` in full now** (it takes seconds and is idempotent), then continue. Don't send the member away.
+Ship in 7 runs after `setup`, but the member may run it first. Check the four setup conditions: `productos/` sits inside the product's project folder; the root `CLAUDE.md`/`AGENTS.md` carry the `<!-- BEGIN PRODUCTOS -->` block; `.gitignore` excludes `productos/` and, if the folder is a git repository, nothing under it is tracked (`git ls-files productos` is empty); any shipped `productos/PLAN.md` has been moved to `docs/PLAN.md`. **If any fails, run `setup` in full now** (it takes seconds and is idempotent), then continue. Don't send the member away. Version history isn't an enrol condition: for a shape built from code it goes on at the first session that writes code (`setup` → *Version history*, ROUTING.md hard rule 6).
 
 ### 2. Read the repo and show the evidence
 

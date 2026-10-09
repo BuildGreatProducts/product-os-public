@@ -57,7 +57,7 @@ A real customer (warm network counts; the member's own test purchase doesn't) pa
 | 0 — Migrate | Full / Skip | Full when the app lives on a prompt-to-app platform (Lovable, Bolt, v0, Base44, Replit); Skip otherwise. |
 | 1 — PRD & Roadmap | Full | New build, or existing-codebase mode for a gap roadmap. |
 | 1b — Evals | Optional | Run it when the magic moment is an AI output (a generated draft, an analysis, a classification); skip for a CRUD tool with incidental AI. |
-| 2 — Verify setup | Full | Normally already done by `setup`. |
+| 2 — Verify setup | Full | Turn on version history (git) if it isn't on yet — the build saves its work there at every phase — and check the guidelines `setup` wired. Runs first in Develop. |
 | 3 — Build | Full | `develop-build` through the roadmap until the magic moment works end to end. |
 | 4 — Build loop | Full | `build-loop` for every post-MVP feature; `develop-feature-finder` when unsure what's next. |
 | 5 — Code review | Full | For changes made outside the build skills. |

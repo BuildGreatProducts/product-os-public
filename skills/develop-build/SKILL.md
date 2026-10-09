@@ -24,6 +24,8 @@ Execute every task in the roadmap, in order, until all tasks are checked off.
 
 ## Setup
 
+**Version history must be on** — the build commits at every phase boundary and resets to the last phase commit when one breaks. Not a git repository yet? Run `setup` → *Version history* first (in a ProductOS project; elsewhere, ask the member before running `git init`).
+
 Read the plan first — it is the source of truth for what to build and in what order. An existing-codebase plan also encodes keep/remove decisions already made with the member; don't relitigate them. `docs/PRD.md` is the spec the plan builds toward (missing → stop and run `develop-prd-roadmap`); `docs/DESIGN.md` holds the visual tokens; `docs/DEFINE.md` holds the strategy; `docs/EVALS.md`, when it exists, holds the scenarios an AI-native product must pass. Don't load these wholesale — each phase lists its Reference sections, plus whatever a task's Notes line points to.
 
 ## Work loop

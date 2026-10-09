@@ -57,7 +57,7 @@ A real customer (warm network counts; the member's own test purchase doesn't) pa
 | 0 — Migrate | Full / Skip | Full when the site was generated on a prompt-to-app platform and needs to move; Skip when it's on a site builder or publishing platform the member intends to keep — those are legitimate homes. |
 | 1 — PRD & Roadmap | Adapted | The PRD centres on the content model and pipeline (below); on a site builder, the roadmap is mostly configuration and content tasks. |
 | 1b — Evals | Optional | Run it when AI generates or enriches content (listing summaries, auto-categorisation, AI search) — the evals check accuracy before it publishes. |
-| 2 — Verify setup | Full | The repo holds `docs/`, content scripts, and the site code if custom. |
+| 2 — Verify setup | Full / Skip | Full for a code-built site: turn on version history (git) first in Develop. Skip for a site-builder or publishing-platform site, which keeps its own history; offer it for content scripts if the member wants them kept. |
 | 3 — Build | Full | Code-built sites: `develop-build`. Site-builder sites: configured against the same roadmap; the content seed is a roadmap phase of its own. |
 | 4 — Build loop | Full | New templates, filters, and member features; on a builder, it's mostly content and integrations. |
 | 5 — Code review | Optional | Full for a code-built site; Skip for a builder with no custom code. |

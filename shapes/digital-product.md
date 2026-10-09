@@ -57,7 +57,7 @@ A real customer (warm network counts; the member's own test purchase doesn't) bu
 | 0 — Migrate | Skip | Not applicable. |
 | 1 — PRD & Roadmap | Adapted | The PRD is the product spec (below); the roadmap is a production plan — outline, build the asset, test it with buyers, write the quickstart, set up the storefront. |
 | 1b — Evals | Optional | Run it for prompt packs and AI-powered templates: each prompt scored on the outputs it produces across the models the buyer may use. Skip for non-AI products. |
-| 2 — Verify setup | Full | The repo holds `docs/`, the source files, and the quickstart under version control. |
+| 2 — Verify setup | Full / Skip | Full when the product includes code (starters, scripts, a code-built storefront): turn on version history (git) first in Develop. Skip when it's templates, ebooks, courses, or presets made in their own tools; offer version history for the source files if the member wants drafts kept. |
 | 3 — Build | Adapted | Produce the asset against the roadmap: `develop-build` for code starters and scripted pieces; the member and agent together for templates, ebooks, and course material. |
 | 4 — Build loop | Optional | For version updates driven by buyer feedback; announce updates to past buyers. |
 | 5 — Code review | Optional | Full for code starters and anything with scripts; Skip otherwise. |

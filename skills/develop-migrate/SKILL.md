@@ -28,6 +28,8 @@ Read inputs from `docs/` and the guides from `productos/develop/` at the app rep
 
 Standalone fallback: with no ProductOS folder, run the same session and write `docs/MIGRATION.md` at the repo root.
 
+The migration's baseline is a tagged commit, so version history must be on before export: not a git repository yet → run `setup` → *Version history* first (in a ProductOS project; elsewhere, ask the member before running `git init`).
+
 ## Workflow
 
 ### 1. Inventory the platform wiring

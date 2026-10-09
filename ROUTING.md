@@ -1,6 +1,6 @@
 # Routing — which step runs next
 
-The rulebook every ProductOS orchestrator follows: the four phase orchestrators (`define-phase`, `design-phase`, `develop-phase`, `distribute-phase`), `product-audit` (which composes a plan from it), `product-refactor` (which runs that plan), and the challenges. The phase checklists remain the source of truth for **how** each step runs; this file says **which** steps apply, **when**, and **how to tell a step is done**.
+The rulebook every ProductOS orchestrator follows: the four phase orchestrators (`define-phase`, `design-phase`, `develop-phase`, `distribute-phase`), `product-audit` (which composes a plan from it), `product-refactor` (which runs that plan), the challenges, and `continue` (which hands each session to the right one). The phase checklists remain the source of truth for **how** each step runs; this file says **which** steps apply, **when**, and **how to tell a step is done**.
 
 ## Contents
 
@@ -9,6 +9,7 @@ The rulebook every ProductOS orchestrator follows: the four phase orchestrators 
 - [Hard rules](#hard-rules)
 - [The step catalog](#the-step-catalog)
 - [Running a step](#running-a-step)
+- [Your path — docs/PATH.md](#your-path--docspathmd)
 - [Reading progress](#reading-progress)
 
 ## Three layers decide the route
@@ -18,6 +19,8 @@ The rulebook every ProductOS orchestrator follows: the four phase orchestrators 
 3. **The phase checklists** — `productos/<phase>/<PHASE>-CHECKLIST.md`. The default order, and how each step runs.
 
 No plan → follow the shape file's route through the checklist order. No shape yet → Define runs up to Step 1b (`define-product-shape`) before anything else is routed.
+
+Each phase orchestrator resolves the three layers — plus the choices it settles with the member — into its phase's section of **`docs/PATH.md`** the first time it sets the route, and reads that section on every later visit instead of working the route out again. See [Your path](#your-path--docspathmd).
 
 ## Modes
 
@@ -46,6 +49,7 @@ When the plan and the shape disagree, the plan wins, but say so: a coach may hav
 3. **Distribute is never skipped.** Every programme ends in the Distribute loop; only its timing varies.
 4. **Needs come first.** Every scheduled step's needed files come from an earlier scheduled step or are Already-done. If a plan skips a producer, it schedules the fast-track producer instead — never quietly un-skips half a phase.
 5. **Security before go-live.** Any shape that ships code to customers runs `develop-security-audit` before `develop-golive`, and the audit's Critical and High findings are fixed first.
+6. **Version history before code — and not before it's needed.** Define and Design need only the project folder: no git. Develop Step 2 (Verify setup) runs **first** in Develop and turns version history (git) on wherever the route runs that step — every shape built from code here. It's done with `setup` → *Version history*, before any step that writes, moves, or baselines code (Migrate, the existing-codebase PRD, the build). A shape whose route skips the step (a hosted-builder assistant, a no-code service, a template product) never needs it.
 
 ## The step catalog
 
@@ -81,7 +85,7 @@ When the plan and the shape disagree, the plan wins, but say so: a coach may hav
 | 0 — Migrate *(prompt-to-app platforms only)* | `develop-migrate` | `docs/MIGRATION.md` → the app in the member's own repo | an app on Lovable, Bolt, v0, Base44, Replit… | MIGRATION.md tasks all checked | Full when on such a platform · Skip otherwise |
 | 1 — PRD & Roadmap | `develop-prd-roadmap` | `docs/PRD.md` + `docs/ROADMAP.md` | Define, Design (Lite is enough where the shape allows) | both files exist | Full (new build, or existing-codebase mode: a roadmap of the gap) · Already-done |
 | 1b — Evals *(AI-native shapes and AI features)* | `develop-agent-evals` | `docs/EVALS.md` | PRD | file exists with at least three scenarios | Full for `agent-skill`, `agent-plugin`, `mcp-server`, `chat-assistant` · Optional for other shapes — recommended when the core output is AI-generated · Skip otherwise |
-| 2 — Verify setup | `setup` | root guidelines wired | — | root CLAUDE.md/AGENTS.md carry the ProductOS block | Already-done (normally) |
+| 2 — Verify setup *(runs first in Develop)* | `setup` → *Version history* | version history on; root guidelines wired | — | root CLAUDE.md/AGENTS.md carry the ProductOS block, and the project is a git repository wherever the route runs this step | Full where the shape builds code · Skip where the shape file allows (no code here) · Already-done (an existing repo) |
 | 3 — Build | `develop-build` | ROADMAP.md tasks checked | PRD, ROADMAP | ROADMAP status line reads Y/Y | Full · Already-done (codebase already matches the PRD) |
 | 4 — Build loop | `build-loop` (+ `develop-feature-finder`) | shipped features | a codebase | ongoing | Full whenever post-MVP code work is scheduled |
 | 5 — Code review | `develop-code-review` | verdict, in conversation | uncommitted changes | — | Full for changes made outside the build skills |
@@ -109,12 +113,45 @@ Every orchestrator runs a step the same way:
 4. **Verify the output** against the step's "Done when" (re-run `scripts/status.py`).
 5. **Name the next step**, or the hand-off to the next phase's orchestrator once the phase is done.
 
+## Your path — `docs/PATH.md`
+
+The route each phase orchestrator sets, written down — so the next session, `continue`, the status script, and the session-start greeting all follow the same path, and the member is never asked the same question twice. One section per phase, written by that phase's orchestrator when it sets the route and read on every later visit.
+
+```markdown
+# Your path
+
+The route through each phase for this product: which steps run, in what order, in what mode, and why. The phase guides write it when each phase starts. What's done is read from the documents in `docs/`, not from this file.
+
+## Design — `agent-skill`
+
+*Set 2026-10-09 · No plan · Design system from an image the member loves*
+
+| Step | Skill | Mode | Why |
+| --- | --- | --- | --- |
+| 1 — Product Identity | `design-identity-creator` | Lite | shape: name, worldview, tone; visuals only for the listing |
+| 2 — UX Writing | `design-ux-writing` | Adapted | shape: skill description, output formats, README |
+| 3 — Design System | `design-design-system` | Lite | shape: brand tokens for the listing |
+| 4 — Design Prompts | — | Skip | shape: no screens |
+| 5 — Magic Moment | `design-magic-moment` | Adapted | shape: before/after on the same request |
+| 6 — Onboarding | `design-onboarding-flow` | Adapted | shape: install → first invocation → first output |
+| 7 — Acquisition surface(s) | `design-marketplace-listing`, `design-landing-page` | Full | shape: skill directories + README; member: paid, so a landing page too |
+```
+
+- **Rows are decisions, not progress.** The Step cell starts with the step's number from the catalog above. The Skill cell names the skill that will actually run — the fast-track producer, `design-design-system-from-code`, the specific acquisition surfaces. Mode is one of Full, Fast-track, Adapted, Lite, Optional (offered, not yet decided), Skip, or Already-done. Why starts with its source — `plan`, `shape`, or `member` — then the reason in a few words. Never record done or not-done here: the status script reads that from `docs/`.
+- **Rows run in table order.** List the steps in the order they'll run, including Skips (with their reason) so the member sees them. In Develop, *2 — Verify setup* is the first row (hard rule 6). Develop's ongoing steps (4 build loop, 5 code review, 6 design changes) may be listed; they never count as the next step.
+- **The italic line** under the heading records the date and the choices settled with the member that aren't rows: the entry route (new idea, idea first, fast-track from code; new build, existing codebase, migrate first), the design-system source, the coding agent, the native channel.
+- **Write once, update on decisions.** The orchestrator writes its section when it first sets the route and edits a row only when a decision changes — an Optional step accepted (→ its run mode) or declined (→ Skip, `member: declined`), a Conditional settled, the plan revised. It never touches another phase's section.
+- **The shape in the heading must match `docs/DEFINE.md`.** Define's heading carries no shape. If the primary shape has changed since a later section was written, that section is stale: the orchestrator sets the route again and rewrites it, telling the member why.
+- **The plan still wins, and the hard rules always hold.** With a `docs/PLAN.md`, the section records the plan's steps and modes for the phase (Why: `plan`). `product-refactor` walks the plan itself and doesn't need the path. A path that would break a hard rule is wrong — fix the section.
+- **Creating the file:** if `docs/PATH.md` doesn't exist, start it with the title and intro paragraph above. Sections go in phase order.
+
 ## Reading progress
 
-Run the status script from the app repo root to see what's done:
+Run the status script from the app repo root:
 
 ```bash
 python3 productos/scripts/status.py
+python3 productos/scripts/status.py --detail
 ```
 
-(In a plugin install with no `productos/` folder, run it from this file's folder: `python3 scripts/status.py --repo <app-repo-root>`.) It prints every step above with `done`, `partial`, `missing`, or `n/a`, the primary shape, whether a plan or challenge is active, and the next step in checklist order. It reads files only; it never writes. Without Python, check the "Done when" column by hand.
+(In a plugin install with no `productos/` folder, run it from this file's folder: `python3 scripts/status.py --repo <app-repo-root>`.) With no flag it prints a short plain-English summary for the member: where they are, the next step in a sentence, and to say "continue". With `--detail` — what the orchestrators read — it prints every step above with `done`, `partial`, `missing`, or `n/a`, the primary shape, whether a plan or challenge is active, and the next step: from `docs/PATH.md` for a phase whose route is set, otherwise checklist order filtered by the shape. It reads files only; it never writes. Without Python, check the "Done when" column by hand.

@@ -56,7 +56,7 @@ A real customer (warm network counts; the member's own test purchase doesn't) pa
 | 0 — Migrate | Skip | Not applicable. |
 | 1 — PRD & Roadmap | Adapted | The PRD specifies components (below) instead of screens; the roadmap builds one component at a time, each with its eval scenarios. |
 | 1b — Evals | Full | `develop-agent-evals` — trigger tests (the right skill or command fires, and the wrong ones don't) plus output-quality scenarios for each component. |
-| 2 — Verify setup | Full | Normally already done by `setup`. |
+| 2 — Verify setup | Full | Turn on version history (git) if it isn't on yet — the build saves its work there at every phase — and check the guidelines `setup` wired. Runs first in Develop. |
 | 3 — Build | Full | `develop-build` writes the manifests, skills, commands, agents, hooks, and connectors, running the evals as each component lands. |
 | 4 — Build loop | Full | Each change re-runs the evals; host tools change their plugin formats, so re-test on new host versions. |
 | 5 — Code review | Full | For hooks, scripts, and connector code changed outside the build skills; skill text gets the same review. |

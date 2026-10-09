@@ -58,7 +58,7 @@ A real customer (warm network counts; the member's own test purchase doesn't) pa
 | 0 — Migrate | Skip | Prompt-to-app platforms don't produce developer tools; Skip unless the dashboard came from one. |
 | 1 — PRD & Roadmap | Adapted | The PRD centres on the interface contract (below); the roadmap builds the core endpoint or command first, then keys, metering, billing, SDKs, and docs. |
 | 1b — Evals | Optional | Run it when the API's core output is AI-generated (extraction, generation, classification) — evals become the quality bar the docs can quote. |
-| 2 — Verify setup | Full | Normally already done by `setup`. |
+| 2 — Verify setup | Full | Turn on version history (git) if it isn't on yet — the build saves its work there at every phase — and check the guidelines `setup` wired. Runs first in Develop. |
 | 3 — Build | Full | `develop-build`, with contract tests for every endpoint or command and the quickstart run as an end-to-end test. |
 | 4 — Build loop | Full | Every change checks backwards compatibility; breaking changes need a new version and a deprecation notice. |
 | 5 — Code review | Full | For changes made outside the build skills. |
