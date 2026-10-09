@@ -154,6 +154,18 @@ def valid_slugs():
     return list(shape_names())
 
 
+def wired_block(repo):
+    """True if the root CLAUDE.md or AGENTS.md carries the ProductOS block (its BEGIN marker on a line of its own)."""
+    return any(re.search(r"^<!-- BEGIN PRODUCTOS -->", read(os.path.join(repo, f)) or "", re.M)
+               for f in ("CLAUDE.md", "AGENTS.md"))
+
+
+def gitignored(repo):
+    """True if the project's .gitignore has a line covering productos/."""
+    lines = (read(os.path.join(repo, ".gitignore")) or "").split("\n")
+    return any(l.strip() in ("productos", "productos/", "/productos", "/productos/") for l in lines)
+
+
 def has_git(repo):
     """True if the project folder is under version history (in this folder or one above it)."""
     here = os.path.abspath(repo)
@@ -257,10 +269,9 @@ def status(repo):
     roadmap = doc("ROADMAP.md")
     refactor = doc("REFACTOR.md")
     tracker = doc("GROWTH-TRACKER.md") or ""
-    root_rules = (read(os.path.join(repo, "CLAUDE.md")) or "") + (read(os.path.join(repo, "AGENTS.md")) or "")
-    wired = "BEGIN PRODUCTOS" in root_rules or "ProductOS" in root_rules
+    wired = wired_block(repo)
     git = has_git(repo)
-    result["setup"] = {"guidelines": wired, "version_history": git}
+    result["setup"] = {"guidelines": wired, "gitignored": gitignored(repo), "version_history": git}
 
     def step_mode(phase, label, keywords):
         """(mode, path row or None): the route in docs/PATH.md wins over the shape file."""
@@ -415,6 +426,7 @@ def render(r):
              f"Plan: {r['plan'] or 'none'}   Challenges: {', '.join(f'{k} {v}' for k, v in r['challenges'].items()) or 'none'}",
              f"Path: {', '.join(r['path']) + ' set in docs/PATH.md' if r['path'] else 'none set yet'}",
              f"Setup: root guidelines {'wired' if r['setup']['guidelines'] else 'NOT wired'} · "
+             f"productos/ {'gitignored' if r['setup']['gitignored'] else 'NOT gitignored'} · "
              f"version history {'on' if r['setup']['version_history'] else 'off'}", ""]
     phase = None
     for s in r["steps"]:
@@ -467,15 +479,32 @@ def summary(r):
 
 
 def uses_productos(repo):
-    """True if this repo has ProductOS set up — the greeting stays silent everywhere else."""
+    """True if this folder has ProductOS set up — the greeting stays silent everywhere else."""
     if os.path.isfile(os.path.join(repo, "ROUTING.md")) and os.path.isdir(os.path.join(repo, "shapes")):
         return False  # a checkout of ProductOS itself, not a product repo
     if os.path.isdir(os.path.join(repo, "productos")):
         return True
     if any(os.path.isfile(os.path.join(repo, "docs", f)) for f in ("DEFINE.md", "PLAN.md", "PATH.md")):
         return True
-    return any(re.search(r"^<!-- BEGIN PRODUCTOS -->", read(os.path.join(repo, f)) or "", re.M)
-               for f in ("CLAUDE.md", "AGENTS.md"))
+    return wired_block(repo)
+
+
+def productos_root(start):
+    """The project folder that uses ProductOS: `start` or the nearest folder above it, or None.
+
+    Stops at the repository boundary (a folder with .git) and never climbs to the home folder or
+    above — a general folder isn't a project folder.
+    """
+    here, home = os.path.abspath(start), os.path.abspath(os.path.expanduser("~"))
+    while here != home and os.path.dirname(here) != here:
+        if os.path.isfile(os.path.join(here, "ROUTING.md")) and os.path.isdir(os.path.join(here, "shapes")):
+            return None  # inside a checkout of ProductOS itself
+        if uses_productos(here):
+            return here
+        if os.path.exists(os.path.join(here, ".git")):
+            return None
+        here = os.path.dirname(here)
+    return None
 
 
 def greeting(r):
@@ -498,9 +527,12 @@ def main():
     args = ap.parse_args()
     if not os.path.isdir(args.repo):
         sys.exit(f"Not a folder: {args.repo}")
-    if args.greet and not uses_productos(args.repo):
-        return
-    r = status(args.repo)
+    repo = args.repo
+    if args.greet:
+        repo = productos_root(repo)
+        if repo is None:
+            return
+    r = status(repo)
     if args.json:
         print(json.dumps(r, indent=2))
     elif args.greet:

@@ -25,7 +25,7 @@ The first match wins:
 
 | The state | Hand over to |
 | --- | --- |
-| ProductOS isn't set up: the status script's *Setup* line shows the root guidelines not wired, `productos/` isn't in `.gitignore`, or ProductOS is standalone rather than inside a project folder | `setup` |
+| ProductOS isn't set up: the status script's *Setup* line shows the root guidelines not wired or `productos/` not gitignored (without the script, read the root `CLAUDE.md`/`AGENTS.md` and `.gitignore` directly), or ProductOS is standalone rather than inside a project folder | `setup` |
 | A challenge is open (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` with `Status: Open`) | its check-in: `ship-in-7` or `sell-in-30` |
 | `docs/PLAN.md` exists | `product-refactor`, which walks the plan in its own order |
 | No `docs/DEFINE.md` yet | setup's question — *where would you like to start?* Find a new idea → `define-phase` (idea first); start from an idea they have → `define-phase` (new idea); start from an existing project → `product-audit`; take on a challenge → `ship-in-7`, or `sell-in-30` for a live product |
