@@ -69,7 +69,7 @@ Only week one changes with the starting point (the plan files). Weeks two to fou
 
 ### 1. Setup check
 
-Check the four `setup` conditions (inside a git repo; root `CLAUDE.md`/`AGENTS.md` carry the PRODUCTOS block; `productos/` gitignored *and* untracked, `git ls-files productos` empty; any shipped plan moved to `docs/PLAN.md`). **If any fails, run `setup` in full now**, then continue.
+Check the four `setup` conditions (inside the product's project folder; root `CLAUDE.md`/`AGENTS.md` carry the PRODUCTOS block; `productos/` gitignored and, in a git repository, untracked — `git ls-files productos` empty; any shipped plan moved to `docs/PLAN.md`). **If any fails, run `setup` in full now**, then continue. A product built from code here needs version history before any session changes its code (`setup` → *Version history*); a no-code product never does.
 
 ### 2. Shape and prerequisite check
 

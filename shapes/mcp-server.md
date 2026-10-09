@@ -57,7 +57,7 @@ A real customer (warm network counts; the member's own test purchase doesn't) pa
 | 0 — Migrate | Skip | Not applicable. |
 | 1 — PRD & Roadmap | Adapted | The PRD centres on the tool list, auth, and transports (below); the roadmap builds tools in order of the magic-moment task. |
 | 1b — Evals | Full | `develop-agent-evals` — agent-in-the-loop scenarios: given a realistic prompt, does the agent pick the right tool, fill parameters correctly, and recover from errors? Run on at least two clients' models. |
-| 2 — Verify setup | Full | Normally already done by `setup`. |
+| 2 — Verify setup | Full | Turn on version history (git) if it isn't on yet — the build saves its work there at every phase — and check the guidelines `setup` wired. Runs first in Develop. |
 | 3 — Build | Full | `develop-build`, testing each tool with the MCP Inspector and the evals as it lands. |
 | 4 — Build loop | Full | Tool description changes are behaviour changes — re-run the evals for them like code changes. |
 | 5 — Code review | Full | For changes made outside the build skills. |

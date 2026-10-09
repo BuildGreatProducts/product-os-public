@@ -59,7 +59,7 @@ A real customer (warm network counts; the member's sandbox purchase doesn't) com
 | 0 — Migrate | Full / Skip | Full when the app was generated on a prompt-to-app platform the member doesn't control the code of; Skip otherwise. |
 | 1 — PRD & Roadmap | Full | Stack choice (Expo / Flutter / native) and the store-billing approach are decided here. |
 | 1b — Evals | Optional | Run it when the magic moment is an AI output (a generated image, a plan, a transcript summary). |
-| 2 — Verify setup | Full | Normally already done by `setup`. |
+| 2 — Verify setup | Full | Turn on version history (git) if it isn't on yet — the build saves its work there at every phase — and check the guidelines `setup` wired. Runs first in Develop. |
 | 3 — Build | Full | The roadmap must include store accounts, bundle IDs, signing, and a TestFlight / internal-testing build before the final phase. |
 | 4 — Build loop | Full | Every release after launch goes through store review — batch changes into releases. |
 | 5 — Code review | Full | For changes made outside the build skills. |

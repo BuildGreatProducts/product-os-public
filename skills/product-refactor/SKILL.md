@@ -21,7 +21,7 @@ Follow [ROUTING.md](../../ROUTING.md) — its *Modes*, *Hard rules*, step catalo
 
 - **No `docs/PLAN.md`** → an existing product needs `product-audit` first; a new idea goes to `define-phase`.
 - **A challenge is open** (`docs/SHIP-IN-7.md` or `docs/SELL-IN-30.md` with `Status: Open`) → its check-in owns today's step; hand over.
-- Run `python3 productos/scripts/status.py` (in a plugin install: `<this skill's folder>/../../scripts/status.py --repo .`) and read `docs/PLAN.md` → **Your Programme**.
+- Run `python3 productos/scripts/status.py --detail` (in a plugin install: `<this skill's folder>/../../scripts/status.py --detail --repo .`) and read `docs/PLAN.md` → **Your Programme**.
 
 ### 2. Find the next step
 

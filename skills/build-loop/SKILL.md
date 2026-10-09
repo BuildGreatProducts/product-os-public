@@ -17,6 +17,8 @@ Quality-gated feature work: nothing ships on "it compiles" — every task is bui
 - **A plan file exists** (task list with `- [ ]` checkboxes): work the first unchecked task. In a ProductOS repo, work only the build plans the root `CLAUDE.md`/`AGENTS.md` name — never `docs/PLAN.md` or the `productos/*-CHECKLIST.md` files, even though they contain lists. Elsewhere, search the repo for the plan. Tasks are ordered intentionally — never skip ahead. If the plan references spec docs, read only the sections relevant to the current task.
 - **No plan (or the request is outside it):** build from the user's prompt. Restate it as a verifiable goal with 2–4 success criteria and confirm scope in one message before building.
 
+**Version history must be on** — the review reads the uncommitted changes, and the work is committed when it's done. Not a git repository yet? In a ProductOS project run `setup` → *Version history* first; elsewhere, ask the user before running `git init`.
+
 ## The loop
 
 Steps 1–4 run per task (or per prompted feature) — do not advance until each passes. Step 5 runs once, when the requested scope is complete.

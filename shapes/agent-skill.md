@@ -56,7 +56,7 @@ A real customer (warm network counts; the member's own test purchase doesn't) pa
 | 0 — Migrate | Skip | Not applicable. |
 | 1 — PRD & Roadmap | Adapted | The PRD specifies the skill's structure, triggering, and eval set (below); the roadmap builds the core instructions first, then references, scripts, and evals. |
 | 1b — Evals | Full | `develop-agent-evals` — trigger scenarios (fires when it should, stays quiet on neighbours) and output-quality scenarios with pass criteria, run with and without the skill. |
-| 2 — Verify setup | Full | Normally already done by `setup`. |
+| 2 — Verify setup | Full | Turn on version history (git) if it isn't on yet — the build saves its work there at every phase — and check the guidelines `setup` wired. Runs first in Develop. |
 | 3 — Build | Adapted | `develop-build` writes `SKILL.md`, reference files, templates, and scripts, running the evals after each task. The bar is the eval set passing, not features shipped. |
 | 4 — Build loop | Full | Every change re-runs the evals; re-test when the target agents release new models. |
 | 5 — Code review | Adapted | Review bundled scripts as code and the skill text for contradictions, stale facts, and instructions the agent can't follow. |

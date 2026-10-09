@@ -58,7 +58,7 @@ A real customer (warm network counts; the member's own test purchase doesn't) bu
 | 0 — Migrate | Skip | Prompt-to-app platforms don't produce desktop apps; Skip unless a web app is being wrapped from one. |
 | 1 — PRD & Roadmap | Full | Framework, target OSes, and distribution channel (direct vs store) are decided here — store sandboxing rules shape the architecture. |
 | 1b — Evals | Optional | Run it when the magic moment is an AI output (a transcript summary, a rewrite, a code suggestion). |
-| 2 — Verify setup | Full | Normally already done by `setup`. |
+| 2 — Verify setup | Full | Turn on version history (git) if it isn't on yet — the build saves its work there at every phase — and check the guidelines `setup` wired. Runs first in Develop. |
 | 3 — Build | Full | The roadmap must include signing, notarization, the installer, and the auto-update pipeline as tasks — not afterthoughts. |
 | 4 — Build loop | Full | Each release is a versioned, signed build with release notes the updater shows. |
 | 5 — Code review | Full | For changes made outside the build skills. |

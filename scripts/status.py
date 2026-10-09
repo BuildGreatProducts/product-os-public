@@ -3,11 +3,14 @@
 
 Run from the app repo root:   python3 productos/scripts/status.py
 Or point it at a repo:        python3 <productos>/scripts/status.py --repo <app-repo-root>
-Add --json for machine-readable output.
+With no flag it prints a short plain-English summary for the member. Add --detail for every step
+(what the orchestrators read), --json for machine-readable output, or --greet for the
+session-start hook's JSON (silent when the repo doesn't use ProductOS).
 
 Read-only: it inspects docs/ and the root guidelines and never writes. ROUTING.md defines each
 step and its "Done when"; this script checks exactly those conditions. The order it suggests is
-checklist order filtered by the product's shape. A docs/PLAN.md, when present, overrides it.
+the phase's route in docs/PATH.md when the phase orchestrator has set one, otherwise checklist
+order filtered by the product's shape. A docs/PLAN.md, when present, overrides both.
 """
 import argparse
 import json
@@ -32,10 +35,11 @@ STEPS = [
     ("Design", "5 — Magic Moment", "design-magic-moment", ["magic moment"]),
     ("Design", "6 — Onboarding", "design-onboarding-flow", ["onboarding"]),
     ("Design", "7 — Acquisition surface(s)", "design-landing-page / design-app-listing / design-marketplace-listing", ["acquisition"]),
+    # Verify setup runs first in Develop: version history goes on before any code is written or moved
+    ("Develop", "2 — Verify setup", "setup", ["verify setup", "setup"]),
     ("Develop", "0 — Migrate", "develop-migrate", ["migrate"]),
     ("Develop", "1 — PRD & Roadmap", "develop-prd-roadmap", ["prd"]),
     ("Develop", "1b — Evals", "develop-agent-evals", ["evals"]),
-    ("Develop", "2 — Verify setup", "setup", ["verify setup", "setup"]),
     ("Develop", "3 — Build", "develop-build", ["build"]),
     ("Develop", "7 — Conversion review", "develop-cro-audit", ["conversion"]),
     ("Develop", "8 — Security audit", "develop-security-audit", ["security"]),
@@ -46,7 +50,40 @@ STEPS = [
     ("Distribute", "4 — Scale & Automate", "distribute-scale-automate", None),
 ]
 # Steps the next-step suggestion skips over: optional, ongoing, or only for some members.
-NOT_GATING = {"4 — Business Strategy (optional)", "0 — Migrate", "2 — Verify setup", "7 — Conversion review"}
+# A route in docs/PATH.md that runs one of them makes it count.
+NOT_GATING = {"4 — Business Strategy (optional)", "0 — Migrate", "7 — Conversion review"}
+PHASES = ["Define", "Design", "Develop", "Distribute"]
+# Modes a docs/PATH.md row can carry; the run modes make a step count toward the next step.
+PATH_MODES = {m.lower(): m for m in ("Full", "Fast-track", "Adapted", "Lite", "Optional", "Skip", "Already-done")}
+RUN_MODES = {"Full", "Fast-track", "Adapted", "Lite"}
+# What each step does for the member, in plain words, for the summary and the greeting.
+PLAIN = {
+    ("Define", "1"): "describe who your product is for, the problem it solves, and what it promises",
+    ("Define", "1b"): "decide what form your product takes — an app, a plugin, a service, and so on",
+    ("Define", "2"): "describe your ideal customer",
+    ("Define", "3"): "set your price",
+    ("Define", "4"): "check the numbers behind the business",
+    ("Design", "1"): "name your product and set its personality",
+    ("Design", "2"): "set the words your product uses with customers",
+    ("Design", "3"): "choose your colours, fonts, and styles",
+    ("Design", "4"): "write the prompts that generate your screens",
+    ("Design", "5"): "pin down the moment customers first see the value",
+    ("Design", "6"): "plan a new customer's first few minutes",
+    ("Design", "7"): "write the page or listing that wins customers",
+    ("Develop", "0"): "move your app off the app-builder platform into your own project",
+    ("Develop", "1"): "turn your plans into a build spec and a task list",
+    ("Develop", "1b"): "set the tests your product's AI must pass",
+    ("Develop", "2"): "turn on version history, so every change to your product is saved and can be undone",
+    ("Develop", "3"): "your coding agent builds the product, task by task",
+    ("Develop", "7"): "check signup, pricing, and checkout for where people drop off",
+    ("Develop", "8"): "check the product is safe for your customers and their data",
+    ("Develop", "9"): "put the product in front of real customers",
+    ("Distribute", "1"): "choose the channels where you'll find customers",
+    ("Distribute", "2"): "design small experiments to grow",
+    ("Distribute", "3"): "run the experiments and log what happened",
+    ("Distribute", "4"): "double down on what works",
+}
+CHALLENGE_NAMES = {"SHIP-IN-7.md": "Ship in 7", "SELL-IN-30.md": "Sell in 30"}
 SURFACES = {"landing-page": "LANDING-PAGE.md", "app-listing": "APP-LISTING.md",
             "marketplace-listing": "MARKETPLACE-LISTING.md"}
 
@@ -107,9 +144,51 @@ def subsection_state(body):
     return "partial" if filled else "missing"
 
 
-def valid_slugs():
+def shape_names():
+    """{slug: display name} from the shapes table in shapes/SHAPES.md."""
     text = read(os.path.join(PRODUCTOS, "shapes", "SHAPES.md")) or ""
-    return re.findall(r"^\|\s*`([a-z-]+)`\s*\|", text, re.M)
+    return dict(re.findall(r"^\|\s*`([a-z-]+)`\s*\|\s*([^|]+?)\s*\|", text, re.M))
+
+
+def valid_slugs():
+    return list(shape_names())
+
+
+def has_git(repo):
+    """True if the project folder is under version history (in this folder or one above it)."""
+    here = os.path.abspath(repo)
+    while True:
+        if os.path.exists(os.path.join(here, ".git")):
+            return True
+        parent = os.path.dirname(here)
+        if parent == here:
+            return False
+        here = parent
+
+
+def step_number(label):
+    return label.split(" ")[0]
+
+
+def path_routes(text):
+    """{phase: {"shape": slug or None, "rows": [{num, skill, mode, why}]}} from docs/PATH.md."""
+    out = {}
+    for heading, body in sections(text or "").items():
+        m = re.match(r"(Define|Design|Develop|Distribute)\b(?:\s*[—–-]\s*`?([a-z-]+)`?)?", heading)
+        if not m:
+            continue
+        rows = []
+        for line in body.split("\n"):
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if not line.lstrip().startswith("|") or len(cells) < 3:
+                continue
+            num = re.match(r"\**(\d+[a-z]?)\b", cells[0])
+            mode = re.match(r"\**([A-Za-z-]+)", cells[2])
+            if num and mode and mode.group(1).lower() in PATH_MODES:
+                rows.append({"num": num.group(1), "skill": ", ".join(re.findall(r"`([^`]+)`", cells[1])),
+                             "mode": PATH_MODES[mode.group(1).lower()], "why": cells[3] if len(cells) > 3 else ""})
+        out[m.group(1)] = {"shape": m.group(2), "rows": rows}
+    return out
 
 
 def shape_routes(slug):
@@ -163,11 +242,44 @@ def status(repo):
     result["shape_source"] = "docs/DEFINE.md" if primary else f"default ({DEFAULT_SHAPE}) — no Product Shape yet"
     routes = shape_routes(result["shape"])
 
+    # The route each phase orchestrator wrote down. A later phase's section written for another
+    # shape is stale: ignore it until the orchestrator sets the route again.
+    path = {}
+    for phase, sec in path_routes(doc("PATH.md")).items():
+        if phase != "Define" and sec["shape"] and primary and sec["shape"] != primary:
+            result["notes"].append(f"docs/PATH.md's {phase} route was set for `{sec['shape']}`, not `{primary}` "
+                                   f"— {phase.lower()}-phase sets it again.")
+            continue
+        path[phase] = sec
+    result["path"] = sorted(path, key=PHASES.index)
+
     design = doc("DESIGN.md") or ""
     roadmap = doc("ROADMAP.md")
     refactor = doc("REFACTOR.md")
     tracker = doc("GROWTH-TRACKER.md") or ""
     root_rules = (read(os.path.join(repo, "CLAUDE.md")) or "") + (read(os.path.join(repo, "AGENTS.md")) or "")
+    wired = "BEGIN PRODUCTOS" in root_rules or "ProductOS" in root_rules
+    git = has_git(repo)
+    result["setup"] = {"guidelines": wired, "version_history": git}
+
+    def step_mode(phase, label, keywords):
+        """(mode, path row or None): the route in docs/PATH.md wins over the shape file."""
+        rows = path[phase]["rows"] if phase in path else []
+        row = next((r for r in rows if r["num"] == step_number(label)), None)
+        if row:
+            return row["mode"], row
+        route = route_for(routes, keywords)
+        return (route[0] if route else ("Optional" if "optional" in label else "Full")), None
+
+    def verify_setup():
+        # Version history is needed when the route runs this step: the shape builds from code here
+        mode = step_mode("Develop", "2 — Verify setup", ["verify setup", "setup"])[0]
+        needed = mode in RUN_MODES
+        history = "version history on" if git else (
+            "version history off — goes on at the start of Develop" if needed
+            else "version history off — not needed unless the product is built from code here")
+        state = "done" if wired and (git or not needed) else "missing"
+        return state, ("root guidelines wired" if wired else "root CLAUDE.md / AGENTS.md not wired") + "; " + history
 
     def exists(name):
         return "done" if doc(name) is not None else "missing"
@@ -208,6 +320,10 @@ def status(repo):
             continue
         wanted += [k for k in SURFACES if f"design-{k}" in sentence and k not in wanted]
     wanted = wanted or ["landing-page"]
+    # the surfaces the member's Design route settled on win over the shape's defaults
+    chosen = [r for r in path.get("Design", {}).get("rows", []) if r["num"] == "7"]
+    chosen = [k for k in SURFACES if chosen and f"design-{k}" in chosen[0]["skill"]]
+    wanted = chosen or wanted
 
     checks = {
         "1 — Product Offer": lambda: (
@@ -238,8 +354,7 @@ def status(repo):
             else ("partial" if doc("PRD.md") is not None or roadmap is not None else "missing"),
             "keep-or-remove decisions still in draft" if roadmap and "## Decisions (draft)" in roadmap else ""),
         "1b — Evals": lambda: (exists("EVALS.md"), ""),
-        "2 — Verify setup": lambda: ("done" if "BEGIN PRODUCTOS" in root_rules or "ProductOS" in root_rules else "missing",
-                                     "root CLAUDE.md / AGENTS.md"),
+        "2 — Verify setup": verify_setup,
         "3 — Build": evidence_roadmap,
         "7 — Conversion review": lambda: (exists("CRO-AUDIT.md"), ""),
         "8 — Security audit": security,
@@ -252,18 +367,27 @@ def status(repo):
                                         "activation audit " + ("done" if doc("ACTIVATION-RETENTION-AUDIT.md") is not None else "not run")),
     }
 
-    for phase, label, skill, keywords in STEPS:
+    for i, (phase, label, skill, keywords) in enumerate(STEPS):
         state, evidence = checks[label]()
-        route = route_for(routes, keywords)
-        mode = route[0] if route else ("Optional" if "optional" in label else "Full")
+        mode, row = step_mode(phase, label, keywords)
+        nums = [r["num"] for r in path[phase]["rows"]] if phase in path else []
+        if row:
+            skill = row["skill"] or skill
+            if mode in RUN_MODES and state == "n/a":
+                state = "missing"  # the route runs a step that is otherwise only for some members
+            gating = mode in RUN_MODES
+        else:
+            gating = label not in NOT_GATING and mode not in ("Skip", "Optional", "Conditional")
         if mode == "Skip" and state != "done":
             state = "n/a"
+        # path rows run in table order; steps the route doesn't list follow it
+        order = (PHASES.index(phase), nums.index(step_number(label)) if row else len(nums) + i)
         result["steps"].append({"phase": phase, "step": label, "skill": skill, "status": state,
-                                "shape_mode": mode, "evidence": evidence})
+                                "shape_mode": mode, "route": "path" if row else "shape",
+                                "gating": gating, "evidence": evidence, "_order": order})
 
-    nxt = next((s for s in result["steps"]
-                if s["status"] in ("missing", "partial") and s["step"] not in NOT_GATING
-                and s["shape_mode"] not in ("Skip", "Optional", "Conditional")), None)
+    result["steps"].sort(key=lambda s: s.pop("_order"))
+    nxt = next((s for s in result["steps"] if s["status"] in ("missing", "partial") and s["gating"]), None)
     result["next"] = nxt
 
     plan = doc("PLAN.md")
@@ -279,7 +403,7 @@ def status(repo):
     if define and not primary:
         result["notes"].append(f"No Product Shape yet — routes assume `{DEFAULT_SHAPE}` until define-product-shape runs.")
     if plan is not None:
-        result["notes"].append("docs/PLAN.md exists — it decides the order; the next step below is checklist order only.")
+        result["notes"].append("docs/PLAN.md exists — it decides the order; product-refactor walks it.")
     if any(v == "open" for v in challenges.values()):
         result["notes"].append("A challenge is open — its check-in decides today's step.")
     return result
@@ -288,7 +412,10 @@ def status(repo):
 def render(r):
     lines = [f"ProductOS status — {r['repo']}",
              f"Shape: {r['shape']}  ({r['shape_source']})",
-             f"Plan: {r['plan'] or 'none'}   Challenges: {', '.join(f'{k} {v}' for k, v in r['challenges'].items()) or 'none'}", ""]
+             f"Plan: {r['plan'] or 'none'}   Challenges: {', '.join(f'{k} {v}' for k, v in r['challenges'].items()) or 'none'}",
+             f"Path: {', '.join(r['path']) + ' set in docs/PATH.md' if r['path'] else 'none set yet'}",
+             f"Setup: root guidelines {'wired' if r['setup']['guidelines'] else 'NOT wired'} · "
+             f"version history {'on' if r['setup']['version_history'] else 'off'}", ""]
     phase = None
     for s in r["steps"]:
         if s["phase"] != phase:
@@ -299,20 +426,87 @@ def render(r):
         lines.append(f"  {s['status']:<8} {s['step']}{mode}{ev}")
     lines.append("")
     n = r["next"]
-    lines.append(f"Next (checklist order): {n['phase']} {n['step']} → {n['skill']}" if n else "Next: every gating step is done — keep running the Distribute loop.")
+    source = "your path" if n and n["route"] == "path" else "checklist order"
+    lines.append(f"Next ({source}): {n['phase']} {n['step']} → {n['skill']}" if n else "Next: every gating step is done — keep running the Distribute loop.")
     lines += [f"Note: {x}" for x in r["notes"]]
     return "\n".join(lines)
+
+
+def summary(r):
+    """The plain-English version: where the member is, the next step in a sentence, what to say."""
+    lines = []
+    names = shape_names()
+    if r["shape_source"] == "docs/DEFINE.md":
+        lines.append(f"Product shape: {names.get(r['shape'], r['shape'])}.")
+    progress = []
+    for phase in PHASES:
+        counted = [s for s in r["steps"] if s["phase"] == phase and s["status"] != "n/a"
+                   and (s["gating"] or s["status"] == "done")]
+        done = sum(s["status"] == "done" for s in counted)
+        if counted and done == len(counted):
+            progress.append(f"{phase} done")
+        elif done:
+            progress.append(f"{phase} {done} of {len(counted)} steps done")
+        else:
+            progress.append(f"{phase} not started")
+    lines.append(" · ".join(progress))
+    lines.append("")
+    open_challenge = next((CHALLENGE_NAMES[k] for k, v in r["challenges"].items() if v == "open"), None)
+    n = r["next"]
+    if open_challenge:
+        lines.append(f"You're in the {open_challenge} challenge, so today's check-in comes first.")
+    elif r["plan"]:
+        lines.append("Your programme plan sets the order of your steps, and your agent picks up the next one in it.")
+    if n and not open_challenge and not r["plan"]:
+        what = PLAIN.get((n["phase"], step_number(n["step"])), n["step"].split("— ")[-1].lower())
+        lines.append(f"Next up, in {n['phase']}: {what}.")
+    elif not n:
+        lines.append("Every step is done. Keep the growth loop going: log your latest results and plan the next experiments.")
+    lines.append('Say "continue" and your agent will take you through it. You can stop after any step.')
+    return "\n".join(lines)
+
+
+def uses_productos(repo):
+    """True if this repo has ProductOS set up — the greeting stays silent everywhere else."""
+    if os.path.isfile(os.path.join(repo, "ROUTING.md")) and os.path.isdir(os.path.join(repo, "shapes")):
+        return False  # a checkout of ProductOS itself, not a product repo
+    if os.path.isdir(os.path.join(repo, "productos")):
+        return True
+    if any(os.path.isfile(os.path.join(repo, "docs", f)) for f in ("DEFINE.md", "PLAN.md", "PATH.md")):
+        return True
+    return any(re.search(r"^<!-- BEGIN PRODUCTOS -->", read(os.path.join(repo, f)) or "", re.M)
+               for f in ("CLAUDE.md", "AGENTS.md"))
+
+
+def greeting(r):
+    """SessionStart hook output: the summary as context, with how to open the session."""
+    context = ("ProductOS is set up in this repo. Where the member is right now:\n\n" + summary(r) + "\n\n"
+               "If the member's first message doesn't already ask for something specific, open your reply "
+               "with a short, plain-English welcome back (two or three lines): where they are and what saying "
+               "\"continue\" will do next. Don't start a step until they say so. If they ask for something "
+               "else, do that and skip the welcome.")
+    return json.dumps({"hookSpecificOutput": {"hookEventName": "SessionStart", "additionalContext": context}})
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--repo", default=".", help="app repo root (default: current directory)")
-    ap.add_argument("--json", action="store_true", help="print JSON instead of a table")
+    out = ap.add_mutually_exclusive_group()
+    out.add_argument("--detail", action="store_true", help="print every step (what the orchestrators read)")
+    out.add_argument("--json", action="store_true", help="print JSON instead of a table")
+    out.add_argument("--greet", action="store_true", help="print the session-start hook's JSON; silent outside ProductOS repos")
     args = ap.parse_args()
     if not os.path.isdir(args.repo):
         sys.exit(f"Not a folder: {args.repo}")
+    if args.greet and not uses_productos(args.repo):
+        return
     r = status(args.repo)
-    print(json.dumps(r, indent=2) if args.json else render(r))
+    if args.json:
+        print(json.dumps(r, indent=2))
+    elif args.greet:
+        print(greeting(r))
+    else:
+        print(render(r) if args.detail else summary(r))
 
 
 if __name__ == "__main__":

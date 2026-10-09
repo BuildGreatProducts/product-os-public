@@ -23,7 +23,7 @@ Confirm ProductOS is set up (root guidelines wired, `productos/` gitignored); if
 
 ### 2. Inventory the evidence
 
-Run `python3 productos/scripts/status.py` (in a plugin install: `<this skill's folder>/../../scripts/status.py --repo .`) for the docs picture. Then read the product itself, each item with a one-phrase assessment:
+Run `python3 productos/scripts/status.py --detail` (in a plugin install: `<this skill's folder>/../../scripts/status.py --detail --repo .`) for the docs picture. Then read the product itself, each item with a one-phrase assessment:
 
 - **Code** — stack, size, structure, tests and whether they pass, deploy config, payments, analytics, error tracking, obvious security smells (committed secrets, open database rules).
 - **Docs** — every `docs/` file and the README; how current each is.

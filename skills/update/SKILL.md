@@ -14,13 +14,13 @@ Move an installed copy of ProductOS to the latest release without losing the mem
 
 Write rules: write inside `productos/`, plus what `setup` steps 2–3 write at the repo root. Write to `docs/` only to move an older copy's outputs there, one file at a time with the member's approval, and never overwrite a `docs/` file — the member's canonical documents are theirs. Write nothing until the member has seen what's new and said go.
 
-Run every command from the **app repo root** (the folder that contains `productos/`). Git is required — ProductOS already needs it.
+Run every command from the **project folder's root** (the folder that contains `productos/`). Git must be installed — the update compares against the official repository's history — but the project itself needn't be under version history yet. No git on the machine? Give `setup`'s one-line install guidance, then carry on.
 
 ## Workflow
 
 ### 1. Check the install and read the version
 
-Run the same setup check the challenges use: `productos/` sits inside a git repo; the root `CLAUDE.md`/`AGENTS.md` carry the `<!-- BEGIN PRODUCTOS -->` block; `.gitignore` excludes `productos/` and nothing under it is tracked. This step only reads. Don't fix anything yet — note which checks failed, tell the member, and carry on. Step 6 runs `setup` in full after they've approved the update. The one exception: if `productos/` isn't inside a git repo at all, stop here and offer to run `setup` first, because it may move the folder.
+Run the same setup check the challenges use: `productos/` sits inside the product's project folder; the root `CLAUDE.md`/`AGENTS.md` carry the `<!-- BEGIN PRODUCTOS -->` block; `.gitignore` excludes `productos/` and, if the folder is a git repository, nothing under it is tracked. This step only reads. Don't fix anything yet — note which checks failed, tell the member, and carry on. Step 6 runs `setup` in full after they've approved the update. The one exception: if `productos/` is standalone — not inside a project folder at all — stop here and offer to run `setup` first, because it may move the folder.
 
 The installed version is the `version` in `productos/.claude-plugin/plugin.json` (older copies without it: the **Version** line at the end of `productos/README.md`). Call it `V`.
 

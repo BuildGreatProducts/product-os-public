@@ -19,7 +19,7 @@ Follow [ROUTING.md](../../ROUTING.md) — its *Hard rules*, the Distribute table
 
 ### 1. Read the state and the needs
 
-Run the status script from the app repo root: `python3 productos/scripts/status.py` (in a plugin install: `python3 <this skill's folder>/../../scripts/status.py --repo .`).
+Run the status script from the app repo root: `python3 productos/scripts/status.py --detail` (in a plugin install: `python3 <this skill's folder>/../../scripts/status.py --detail --repo .`).
 
 - **A challenge is open** → hand over to its check-in (`ship-in-7` / `sell-in-30`).
 - **Define isn't done** → `define-phase` (an existing product takes the fast-track — hours, not weeks).
@@ -27,6 +27,8 @@ Run the status script from the app repo root: `python3 productos/scripts/status.
 - **`docs/PLAN.md` exists** → its Distribute timing wins.
 
 Read the primary shape and the **Distribute notes** in `productos/shapes/<slug>.md` (from this skill's folder, `../../shapes/<slug>.md`): the native channels, and what "activated" and "returned" mean for this shape.
+
+On the first visit — no `## Distribute` section in `docs/PATH.md`, or one for a different shape — write it, in the format in ROUTING.md → *Your path*: the four steps in order (Go-To-Market and Growth Experiments always Full; Scale noted as waiting for a Pass + double down winner), and the italic line naming the shape's native channel. Once GO-TO-MARKET.md picks its channels, add them to the italic line. Later visits read the section rather than re-deciding.
 
 ### 2. Say where the loop stands
 
@@ -53,4 +55,5 @@ For each step: name it, check its needs, confirm in one line, run the skill, and
 - [ ] The member knows where the loop stands: channels, experiments running, results due.
 - [ ] Every result the member shared is logged in the tracker with a decision.
 - [ ] Scaling only follows a Pass + double down winner and a clean activation check.
+- [ ] `docs/PATH.md` → `## Distribute` exists and names the channels in play.
 - [ ] The next action and its date are named.

@@ -45,7 +45,7 @@ Read inputs from `docs/` and the guides from `productos/develop/guides/` at the 
 
 ### 1. Check state and pick the mode
 
-**Existing-codebase mode** applies when the repo already has product code (source beyond `productos/` and `docs/`) that wasn't built from the current `docs/ROADMAP.md`, or when `docs/PLAN.md` or the member says so. Confirm it in one line, then read [references/existing-codebase.md](references/existing-codebase.md) and follow it. Read that file whenever this mode applies — including to resume, when `docs/ROADMAP.md` holds a `## Decisions (draft)` table from an interrupted review. It reuses steps 2, 4, and 5 below for their formats.
+**Existing-codebase mode** applies when the repo already has product code (source beyond `productos/` and `docs/`) that wasn't built from the current `docs/ROADMAP.md`, or when `docs/PLAN.md` or the member says so. Confirm it in one line, then read [references/existing-codebase.md](references/existing-codebase.md) and follow it. Its baseline needs version history: not a git repository yet → run `setup` → *Version history* first. Read that file whenever this mode applies — including to resume, when `docs/ROADMAP.md` holds a `## Decisions (draft)` table from an interrupted review. It reuses steps 2, 4, and 5 below for their formats.
 
 Otherwise this is a **new build**. The skill is resumable:
 

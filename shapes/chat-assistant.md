@@ -58,7 +58,7 @@ A real customer (warm network counts; the member's own test purchase doesn't) pa
 | 0 — Migrate | Skip | Not applicable. (A hosted-builder assistant that outgrows its builder becomes a bot build — PRD & Roadmap, not Migrate.) |
 | 1 — PRD & Roadmap | Adapted | The PRD centres on the conversation design, knowledge, and actions (below). For a hosted-builder assistant, the "build" is configuration and the roadmap is short. |
 | 1b — Evals | Full | `develop-agent-evals` — conversation scenarios: typical questions, edge cases, out-of-scope requests, attempts to extract the system prompt or knowledge, and the magic-moment exchange, with pass criteria. |
-| 2 — Verify setup | Full | Normally already done by `setup`; for a hosted-builder assistant the repo holds the system prompt, knowledge files, and evals under version control. |
+| 2 — Verify setup | Full / Skip | Full for a bot assistant: turn on version history (git) before the backend is built — it runs first in Develop. Skip for a hosted-builder assistant (a custom GPT, a Claude Project): there's no code to version, and `setup` already wired the guidelines; offer version history for the system prompt, knowledge files, and evals if the member wants drafts kept. |
 | 3 — Build | Full | Bot assistants: `develop-build` for the backend, platform integration, billing, and memory. Hosted builders: write the instructions and knowledge files, configure actions, run the evals. |
 | 4 — Build loop | Full | Every prompt or knowledge change re-runs the evals. |
 | 5 — Code review | Full | For bot code changed outside the build skills; Skip for a configuration-only assistant. |
