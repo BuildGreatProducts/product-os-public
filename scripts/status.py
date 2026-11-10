@@ -513,7 +513,9 @@ def greeting(r):
                "If the member's first message doesn't already ask for something specific, open your reply "
                "with a short, plain-English welcome back (two or three lines): where they are and what saying "
                "\"continue\" will do next. Don't start a step until they say so. If they ask for something "
-               "else, do that and skip the welcome.")
+               "else, do that and skip the welcome.\n\n"
+               "ProductOS 3.0 is out (github.com/BuildGreatProducts/product-os). In the welcome, add one line: "
+               "their 2.0 work comes with them, and saying \"update ProductOS\" will move them to it.")
     return json.dumps({"hookSpecificOutput": {"hookEventName": "SessionStart", "additionalContext": context}})
 
 

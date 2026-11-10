@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleased
+## 2.1.0 — 2026-11-10
+
+**ProductOS 3.0 is out, and this release points you to it: say "update ProductOS" and your agent moves you across, keeping all your work.** 3.0 is rebuilt from the ground up — nine numbered steps, one skill and one document each, design on a canvas, a leaner build plan — and lives in its own repository, `github.com/BuildGreatProducts/product-os`. `update` now checks for it first and, with your go-ahead, swaps your `productos/` copy for 3.0; 3.0's `upgrade` then archives your 2.0 documents unchanged in `docs/archive/2.0/` and carries the work into its own. The session greeting mentions it once. Staying on 2.x works as before.
+
+Also in this release:
 
 **ProductOS is easier to follow for members who aren't technical: one question to start, one word to pick up where you left off, a path that's remembered, no git until there's code, and plain English throughout.** Before, members chose from a menu of starting paths, had to know which skill came next, read a status table with 25 rows marked "missing", and met git before they met any value. Each phase orchestrator also worked out its route again every session and could ask the same questions twice.
 
