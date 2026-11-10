@@ -26,6 +26,21 @@ The installed version is the `version` in `productos/.claude-plugin/plugin.json`
 
 ### 2. Fetch the latest and show what's new
 
+**First, check for ProductOS 3.0.** 3.0 is the next version of ProductOS, rebuilt from the ground up and published in its own repository, `github.com/BuildGreatProducts/product-os`. This skill's file-by-file update must never run against it. Check for it before anything else:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/BuildGreatProducts/product-os/main/.claude-plugin/plugin.json | grep -m1 '"version"'
+```
+
+- **It reports 3.x** → stop here; don't clone or compare anything. Tell the member in two or three plain lines: ProductOS 3.0 is out — nine numbered steps, one document each, design on a canvas, a leaner build plan — and their 2.0 work comes with them. Offer to move them to it, and on a yes:
+  1. Move `productos/` to a temporary folder outside the project (it's the system, not their work; their documents are all in `docs/`).
+  2. `git clone https://github.com/BuildGreatProducts/product-os productos` in the project folder. In Claude Code, re-install the plugin from it (`claude plugin install ./productos`); in Codex or Cursor, add it the way its `README.md` says.
+  3. Once the new copy is in place, delete the old one from the temporary folder.
+  4. Ask the member to start a new session in the project folder and say **"continue"**: 3.0 sees their 2.0 documents and runs its `upgrade` skill, which archives the originals unchanged in `docs/archive/2.0/` and carries the work into the new documents. Nothing in `docs/` is touched until then.
+
+  A member who'd rather stay on 2.x carries on with the steps below.
+- **Nothing comes back** (no network, or the check fails) → carry on with 2.x below, and mention once that 3.0 may be available at that address.
+
 Clone the official repository into a temporary folder — never inside the app repo, and never from any other source (ProductOS is licensed from the official repository only; see `productos/LICENSE.md`). The full history is needed for step 3, so no `--depth`:
 
 ```bash
